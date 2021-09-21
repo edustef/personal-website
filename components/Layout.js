@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function Layout({ children }) {
-  return <div className='min-h-screen'>{children}</div>;
+  return <div className='min-h-screen bg-gray-100'>{children}</div>;
 }
