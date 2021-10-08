@@ -7,7 +7,7 @@ import ProfileImage from '../components/ProfileImage';
 import Projects from '../components/Projects';
 import Section from '../components/Section';
 import Skills from '../components/Skills';
-import Timeline from '../components/Timeline';
+import Certificates from '../components/Certificates';
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
           <div className='relative z-20'>
             <Description />
             <Section title='Certificates'>
-              <Timeline />
+              <Certificates />
             </Section>
 
             <Section title='Skills' twMaxWidth='max-w-7xl'>
