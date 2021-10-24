@@ -25,6 +25,20 @@ export default function Projects() {
         ]}
       />
       <ProjectBlock
+        title='MovieDB'
+        description='A react application using TheMovieDB API to fetch latest the movies.'
+        siteUrl='https://dws-movie-db.netlify.app'
+        sourceUrl='https://github.com/edustef/simple-movie-db'
+        stackLogoUrl='/svgs/react.svg'
+        duration='2 weeks'
+        features={[
+          'Infinite scroll',
+          'Simple transitions on component mount',
+          'Using netlify lambda functions for storing comments in a MongoDB database',
+          'React Router'
+        ]}
+      />
+      <ProjectBlock
         title='Realtime Markdown Editor'
         description='Simple markdown editor done in React.'
         siteUrl='https://edustef.github.io/markdown-fcc/'
@@ -35,21 +49,6 @@ export default function Projects() {
           'Local Storage',
           'Real time parallel scroll of two divs',
           'Download the markdown or the generated HTML',
-        ]}
-      />
-      {/* DWS Practicas */}
-      <ProjectBlock
-        title='A website for my school practices'
-        description='A website made in pure PHP that I created to organize my practices in school and also be able to easly share
-        them with my professor.'
-        siteUrl='https://dws-practicas.herokuapp.com/index.php'
-        sourceUrl='https://github.com/edustef/dws-practicas'
-        stackLogoUrl='/svgs/js.svg'
-        duration='1 month'
-        features={[
-          'Browser Local Storage / Session',
-          'Lots of exercises using many different algorithms',
-          'Simple sidebar that&apos;s using summary/details. Implemented by reading the folder structure with recursion',
         ]}
       />
     </div>
