@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from 'react'
+import Image from 'next/image'
 
 export default function ProfileImage() {
   return (
@@ -17,5 +17,5 @@ export default function ProfileImage() {
         A Web Developer who builds creative and innovative websites.
       </p>
     </div>
-  );
+  )
 }

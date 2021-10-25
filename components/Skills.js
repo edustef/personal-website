@@ -1,6 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
-import SkillBlock from './SkillBlock';
+import React from 'react'
+import Image from 'next/image'
+import SkillBlock from './SkillBlock'
 
 export default function Skills() {
   return (
@@ -72,5 +72,5 @@ export default function Skills() {
         </SkillBlock>
       </div>
     </div>
-  );
+  )
 }

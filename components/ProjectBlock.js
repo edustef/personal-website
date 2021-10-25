@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from 'react'
+import Image from 'next/image'
 
 export default function ProjectBlock({ stackLogoUrl, siteUrl, sourceUrl, duration, title, description, features }) {
   return (
@@ -53,5 +53,5 @@ export default function ProjectBlock({ stackLogoUrl, siteUrl, sourceUrl, duratio
         </a>
       </div>
     </div>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-import React, { Children } from 'react';
-import CertificateBlock from './CertificateBlock';
+import React, { Children } from 'react'
+import CertificateBlock from './CertificateBlock'
 
 export default function Certificates({ children }) {
-  const childrenArray = Children.count(children);
+  const childrenArray = Children.count(children)
   return (
     <div>
       <CertificateBlock
@@ -50,5 +50,5 @@ export default function Certificates({ children }) {
         </p>
       </CertificateBlock>
     </div>
-  );
+  )
 }

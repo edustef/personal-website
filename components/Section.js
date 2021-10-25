@@ -1,5 +1,5 @@
-import React from 'react';
-import Title from './Title';
+import React from 'react'
+import Title from './Title'
 
 export default function Section({ title, children, twMaxWidth }) {
   return (
@@ -7,5 +7,5 @@ export default function Section({ title, children, twMaxWidth }) {
       <Title name={title} />
       {children}
     </div>
-  );
+  )
 }

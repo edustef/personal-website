@@ -1,6 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
-import ProjectBlock from './ProjectBlock';
+import React from 'react'
+import Image from 'next/image'
+import ProjectBlock from './ProjectBlock'
 
 export default function Projects() {
   return (
@@ -21,7 +21,7 @@ export default function Projects() {
           'Google Maps API',
           'Facebook API',
           'Google Analytics',
-          'Cookie Banner GDPR Complaint',
+          'Cookie Banner GDPR Complaint'
         ]}
       />
       <ProjectBlock
@@ -48,9 +48,9 @@ export default function Projects() {
         features={[
           'Local Storage',
           'Real time parallel scroll of two divs',
-          'Download the markdown or the generated HTML',
+          'Download the markdown or the generated HTML'
         ]}
       />
     </div>
-  );
+  )
 }
