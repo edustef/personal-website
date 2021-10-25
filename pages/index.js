@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Border from '../components/Border';
 import Description from '../components/Description';
 import Footer from '../components/Footer';
@@ -8,8 +7,11 @@ import Projects from '../components/Projects';
 import Section from '../components/Section';
 import Skills from '../components/Skills';
 import Certificates from '../components/Certificates';
+import client from '../utils/apollo-client';
+import gql from 'graphql-tag';
 
-export default function Home() {
+export default function Home({ data }) {
+  console.log(data);
   return (
     <Layout>
       <div className='px-4 mx-auto'>
@@ -18,6 +20,7 @@ export default function Home() {
           <Border />
           <div className='relative z-20'>
             <Description />
+
             <Section title='Certificates'>
               <Certificates />
             </Section>
@@ -35,4 +38,23 @@ export default function Home() {
       <Footer />
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      query Query {
+        certificates {
+          id
+          title
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      data: data,
+    },
+  };
 }
