@@ -21,8 +21,7 @@ export default function Home({ data }) {
           <div className='relative z-20'>
             <Description />
 
-            <Section title='Certificates'>
-              <Certificates />
+            <Section title='Certificates' twMaxWidth='md:max-w-[80vw]'>
             </Section>
 
             <Section title='Skills' twMaxWidth='max-w-7xl'>
