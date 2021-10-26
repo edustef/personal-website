@@ -11,7 +11,7 @@ import client from '../utils/apollo-client'
 import gql from 'graphql-tag'
 
 export default function Home({ data }) {
-  console.log(data)
+  const { profile, certificates } = data
   return (
     <Layout>
       <div className='px-4 mx-auto'>
@@ -19,9 +19,10 @@ export default function Home({ data }) {
         <div className='relative z-0 py-8'>
           <Border />
           <div className='relative z-20'>
-            <Description />
+            <Description profile={profile} />
 
             <Section title='Certificates' twMaxWidth='md:max-w-[80vw]'>
+              <Certificates certificates={certificates} />
             </Section>
 
             <Section title='Skills' twMaxWidth='max-w-7xl'>
@@ -46,6 +47,12 @@ export async function getStaticProps() {
         certificates {
           id
           title
+          description
+          dateIssued
+          link
+        }
+        profile {
+          aboutMe
         }
       }
     `
