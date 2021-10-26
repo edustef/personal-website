@@ -43,11 +43,7 @@ export default function Certificates({ children }) {
           </a>
         </h2>
         <small className='text-sm italic text-white'>Issued - December 28, 2019</small>
-        <p className='mt-3 text-sm font-medium leading-snug tracking-wide text-white text-opacity-100'>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
-        </p>
+        <p className='mt-3 text-sm font-medium leading-snug tracking-wide text-white text-opacity-100'></p>
       </CertificateBlock>
     </div>
   )
