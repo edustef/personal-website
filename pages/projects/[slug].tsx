@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Project() {
   const { query } = useRouter()
-  const slug = typeof query.slug === 'string' ? query.slug : query.slug[0]
+  // const slug = typeof query.slug === 'string' ? query.slug : query.slug[0]
 
-  return <div>{slug}</div>
+  return <div></div>
 }
