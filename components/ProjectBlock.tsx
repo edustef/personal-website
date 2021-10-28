@@ -6,19 +6,20 @@ import clsx from 'clsx'
 const ProjectBlock: React.FC<Partial<Project>> = ({ siteUrl, sourceUrl, duration, name, description, skills }) => {
   return (
     <div className='p-6 border-b border-gray-300'>
-      <div className='inline-flex items-center justify-center w-10 h-10 mb-4 text-indigo-500 bg-indigo-100 rounded-full'>
-        {/* <Image width={36} height={36} className='w-6 h-6 fill-curent' src={image} alt='' /> */}
-      </div>
-      <h2 className='text-lg font-medium title-font'>
+      <h2 className='text-2xl font-medium title-font'>
         <a href={siteUrl} target='_blank' rel='noreferrer' className='underline'>
           {name}
         </a>
       </h2>
 
-      <ReactMarkdown className='remark'>{description}</ReactMarkdown>
+      <ReactMarkdown className='mt-4 remark'>{description}</ReactMarkdown>
       <div className='flex space-x-2'>
         {skills.map(({ id, name, tagColor }) => (
-          <span key={id} className={clsx('inline-block px-4 py-1 my-3 rounded-full', tagColor.value)}>
+          <span
+            key={id}
+            className={clsx('inline-block px-4 py-1 my-3 rounded-full', !tagColor.isTextBlack && 'text-white')}
+            style={{ backgroundColor: tagColor.value.hex }}
+          >
             {name}
           </span>
         ))}

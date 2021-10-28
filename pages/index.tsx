@@ -48,68 +48,78 @@ export default function Home({ data }: InferGetStaticPropsType<typeof getStaticP
 }
 
 export async function getStaticProps() {
-  const { data } = await apolloClient.query<{
-    certificates: Certificate[]
-    profile: Profile
-    projects: Project[]
-    skills: Skill[]
-    jobs: Job[]
-  }>({
-    query: gql`
-      query getData {
-        profile(where: { id: "ckv9gcv4w9y7x0c089b6fe7e3" }) {
-          id
-          name
-          about
-          motto
-          picture {
+  try {
+    const { data } = await apolloClient.query<{
+      certificates: Certificate[]
+      profile: Profile
+      projects: Project[]
+      skills: Skill[]
+      jobs: Job[]
+    }>({
+      query: gql`
+        query getData {
+          profile(where: { id: "ckv9gcv4w9y7x0c089b6fe7e3" }) {
             id
-            url
-            width
-            height
-          }
-        }
-
-        certificates {
-          id
-          title
-          description
-          dateIssued
-          link
-        }
-        skills {
-          id
-          name
-          projects {
-            id
-            slug
             name
+            about
+            motto
+            picture {
+              id
+              url
+              width
+              height
+            }
           }
-        }
-        projects {
-          id
-          name
-          description
-          duration
-          sourceUrl
-          siteUrl
-          slug
+          certificates {
+            id
+            title
+            description
+            dateIssued
+            link
+          }
           skills {
             id
             name
-            tagColor {
+            projects {
+              id
+              slug
               name
-              value
+            }
+          }
+          projects {
+            id
+            name
+            description
+            duration
+            sourceUrl
+            siteUrl
+            slug
+            skills {
+              id
+              name
+              tagColor {
+                name
+                value {
+                  hex
+                }
+                isTextBlack
+              }
             }
           }
         }
+      `
+    })
+
+    return {
+      props: {
+        data: data
       }
-    `
-  })
+    }
+  } catch (err) {
+    console.log(err.networkError.result)
+  }
 
   return {
-    props: {
-      data: data
-    }
+    props: {}
   }
 }

@@ -1,4 +1,9 @@
 export default interface TagColor {
   name: string
-  value: string
+  value: {
+    hex: string
+    rgba: string
+    css: string
+  }
+  isTextBlack: string
 }
