@@ -1,24 +1,29 @@
 import React from 'react'
-import Image from 'next/image'
+import Project from 'interfaces/project'
+import ReactMarkdown from 'react-markdown'
+import clsx from 'clsx'
 
-export default function ProjectBlock({ stackLogoUrl, siteUrl, sourceUrl, duration, title, description, features }) {
+const ProjectBlock: React.FC<Partial<Project>> = ({ siteUrl, sourceUrl, duration, name, description, skills }) => {
   return (
     <div className='p-6 border-b border-gray-300'>
-      <div className='inline-flex items-center justify-center w-10 h-10 mb-4 text-indigo-500 bg-indigo-100 rounded-full'>
-        <Image width={36} height={36} className='w-6 h-6 fill-curent' src={stackLogoUrl} alt='' />
-      </div>
-      <h2 className='text-lg font-medium title-font'>
+      <h2 className='text-2xl font-medium title-font'>
         <a href={siteUrl} target='_blank' rel='noreferrer' className='underline'>
-          {title}
+          {name}
         </a>
       </h2>
-      <p className='mt-4 text-base leading-relaxed'>{description}</p>
-      <p className='mt-4 text-base leading-relaxed'>Features:</p>
-      <ul className='list-disc list-inside'>
-        {features.map((feature, key) => (
-          <li key={key}>{feature}</li>
+
+      <ReactMarkdown className='mt-4 remark'>{description}</ReactMarkdown>
+      <div className='flex space-x-2'>
+        {skills.map(({ id, name, tagColor }) => (
+          <span
+            key={id}
+            className={clsx('inline-block px-4 py-1 my-3 rounded-full', !tagColor.isTextBlack && 'text-white')}
+            style={{ backgroundColor: tagColor.value.hex }}
+          >
+            {name}
+          </span>
         ))}
-      </ul>
+      </div>
       <div className='flex flex-col items-baseline justify-between w-full mt-4 leading-none text-center md:flex-row'>
         <span className='inline-flex items-center py-2 mr-3 text-sm leading-none'>
           <svg
@@ -55,3 +60,5 @@ export default function ProjectBlock({ stackLogoUrl, siteUrl, sourceUrl, duratio
     </div>
   )
 }
+
+export default ProjectBlock

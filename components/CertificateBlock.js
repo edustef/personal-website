@@ -1,6 +1,8 @@
 import React from 'react'
+import ReactMarkdown from 'react-markdown'
 
-export default function CertificateBlock({ title, link, dateIssued, num, isRight, twColor, children }) {
+export default function CertificateBlock({ title, link, description, dateIssued, num, isRight = false, twColor }) {
+  const formatedDate = new Date(dateIssued).toLocaleDateString('en-GB', { dateStyle: 'long' })
   return (
     <div
       className={`flex flex-col items-center justify-center w-full mt-8 ${
@@ -17,8 +19,10 @@ export default function CertificateBlock({ title, link, dateIssued, num, isRight
             {title}
           </a>
         </h2>
-        <small className='text-sm italic text-white'>Issued - {dateIssued}</small>
-        <p className='mt-3 text-sm font-medium leading-snug tracking-wide text-white text-opacity-100'>{children}</p>
+        <small className='text-sm italic text-gray-300'>Issued on {formatedDate}</small>
+        <div className='mt-3 text-sm leading-snug tracking-wide text-white text-opacity-100'>
+          <ReactMarkdown className='remark'>{description}</ReactMarkdown>
+        </div>
       </div>
     </div>
   )
