@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import { getMedia } from 'utils/getMedia'
 
 const Layout: React.FC<{ title?: string; description?: string; image?: string }> = ({
   children,
@@ -8,7 +9,7 @@ const Layout: React.FC<{ title?: string; description?: string; image?: string }>
   image
 }) => {
   const fTitle = title || 'Home'
-  const fImage = image || 'meta-image.png'
+  const fImage = getMedia(image) || `${process.env.NEXT_PUBLIC_URL}/meta-image.png`
   const fDescription = description || 'Web Developer who builts creative and innovative websites.'
   return (
     <>

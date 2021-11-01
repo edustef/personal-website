@@ -9,4 +9,5 @@ export default interface Profile extends System {
   phone: string
   about: string
   picture: Asset
+  metaImage: Asset
 }
