@@ -9,7 +9,7 @@ const Layout: React.FC<{ title?: string; description?: string; image?: string }>
   image
 }) => {
   const fTitle = title || 'Home'
-  const fImage = getMedia(image) || `${process.env.NEXT_PUBLIC_URL}/meta-image.png`
+  const fImage = image ? getMedia(image) : `${process.env.NEXT_PUBLIC_URL}/meta-image.png`
   const fDescription = description || 'Web Developer who builts creative and innovative websites.'
   return (
     <>
