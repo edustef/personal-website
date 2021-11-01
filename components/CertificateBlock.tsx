@@ -1,7 +1,17 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
-export default function CertificateBlock({ title, link, description, dateIssued, num, isRight = false, twColor }) {
+interface Props {
+  title: string
+  link: string
+  description: string
+  dateIssued: string
+  num: number
+  isRight: boolean
+  twColor: string
+}
+
+const CertificateBlock: React.FC<Props> = ({ title, link, description, dateIssued, num, isRight = false, twColor }) => {
   const formatedDate = new Date(dateIssued).toLocaleDateString('en-GB', { dateStyle: 'long' })
   return (
     <div
@@ -27,3 +37,5 @@ export default function CertificateBlock({ title, link, description, dateIssued,
     </div>
   )
 }
+
+export default CertificateBlock

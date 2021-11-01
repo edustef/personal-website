@@ -7,14 +7,9 @@ import Projects from 'components/Projects'
 import Section from 'components/Section'
 import Skills from 'components/Skills'
 import Certificates from 'components/Certificates'
-import apolloClient from '../utils/apolloClient'
-import gql from 'graphql-tag'
-import { Certificate } from 'crypto'
-import Profile from 'interfaces/profile'
 import { InferGetStaticPropsType } from 'next'
-import Project from 'interfaces/project'
-import Skill from 'interfaces/skill'
-import Job from 'interfaces/job'
+import fetchGQL from 'utils/fetchGQL'
+import initialPageQuery, { InitialPageQueryType } from 'queries/initialPageQuery'
 
 export default function Home({ data }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { profile, certificates, projects, jobs, skills } = data
@@ -49,67 +44,7 @@ export default function Home({ data }: InferGetStaticPropsType<typeof getStaticP
 
 export async function getStaticProps() {
   try {
-    const { data } = await apolloClient.query<{
-      certificates: Certificate[]
-      profile: Profile
-      projects: Project[]
-      skills: Skill[]
-      jobs: Job[]
-    }>({
-      query: gql`
-        query getData {
-          profile(where: { id: "ckv9gcv4w9y7x0c089b6fe7e3" }) {
-            id
-            name
-            about
-            motto
-            picture {
-              id
-              url
-              width
-              height
-            }
-          }
-          certificates {
-            id
-            title
-            description
-            dateIssued
-            link
-          }
-          skills {
-            id
-            name
-            projects {
-              id
-              slug
-              name
-            }
-          }
-          projects {
-            id
-            name
-            description
-            duration
-            sourceUrl
-            siteUrl
-            slug
-            skills {
-              id
-              name
-              tagColor {
-                name
-                value {
-                  hex
-                }
-                isTextBlack
-              }
-            }
-          }
-        }
-      `
-    })
-
+    const data = await fetchGQL<InitialPageQueryType>(initialPageQuery)
     return {
       props: {
         data: data

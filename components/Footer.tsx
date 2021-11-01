@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Footer() {
+const Footer = () => {
   return (
     <footer className='relative z-20 flex flex-col justify-around p-8 space-y-4 border-t border-gray-700 bg-gray-50 bg bg- md:flex-row md:space-y-0 border-opacity-20'>
       <a className='hover:text-gray-700' href='https://tailwindcss.com/' target='_blank' rel='noreferrer'>
@@ -59,3 +59,5 @@ export default function Footer() {
     </footer>
   )
 }
+
+export default Footer

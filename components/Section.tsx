@@ -1,7 +1,7 @@
 import React from 'react'
 import Title from './Title'
 
-export default function Section({ title, children, twMaxWidth }) {
+const Section: React.FC<{ title: string; twMaxWidth: string }> = ({ title, children, twMaxWidth }) => {
   return (
     <div className={`flex flex-col items-center mt-16 mx-auto ${twMaxWidth}`}>
       <Title name={title} />
@@ -9,3 +9,5 @@ export default function Section({ title, children, twMaxWidth }) {
     </div>
   )
 }
+
+export default Section

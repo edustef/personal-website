@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import SkillBlock from './SkillBlock'
 
-export default function Skills() {
+const Skills = () => {
   return (
     <div className='self-stretch p-6 mt-8 border border-gray-300 rounded-md bg-gray-50'>
       <div className='flex flex-col flex-wrap items-center justify-around md:items-start md:flex-row'>
@@ -74,3 +74,5 @@ export default function Skills() {
     </div>
   )
 }
+
+export default Skills
