@@ -15,7 +15,7 @@ export default function Home({ data }: InferGetStaticPropsType<typeof getStaticP
   const { profile, certificates, projects, jobs, skills } = data
 
   return (
-    <Layout>
+    <Layout title='Portofolio'>
       <div className='px-4 mx-auto'>
         <ProfileImage motto={profile.motto} url={profile.picture.url} />
         <div className='relative z-0 py-8'>
