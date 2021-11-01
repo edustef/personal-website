@@ -8,8 +8,8 @@ const ProfileImage: React.FC<{ url: string; motto: string }> = ({ url, motto }) 
     <div className='flex flex-col items-center justify-center pt-8'>
       <div className='w-24 h-24 mb-4 md:w-48 md:h-48'>
         <Image
-          width={264}
-          height={264}
+          width={667}
+          height={667}
           className='object-cover w-24 h-24 rounded-full md:w-48 md:h-48'
           src={fullUrl}
           alt=''
