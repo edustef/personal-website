@@ -13,7 +13,7 @@ const ProjectBlock: React.FC<Partial<Project>> = ({ siteUrl, sourceUrl, duration
       </h2>
 
       <ReactMarkdown className='mt-4 remark'>{description}</ReactMarkdown>
-      <div className='flex flex-wrap'>
+      <div className='flex flex-wrap mt-2 -ml-2'>
         {skills.map(({ id, name, tagColor }) => (
           <span
             key={id}
@@ -24,7 +24,7 @@ const ProjectBlock: React.FC<Partial<Project>> = ({ siteUrl, sourceUrl, duration
           </span>
         ))}
       </div>
-      <div className='flex flex-col items-baseline justify-between w-full mt-4 leading-none text-center md:flex-row'>
+      <div className='flex flex-col items-baseline justify-between w-full mt-2 leading-none text-center md:flex-row'>
         <span className='inline-flex items-center py-2 mr-3 text-sm leading-none'>
           <svg
             className='w-5 mr-2 text-blue-500 fill-current '
