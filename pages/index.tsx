@@ -17,7 +17,7 @@ export default function Home({ data }: InferGetStaticPropsType<typeof getStaticP
   return (
     <Layout title='Portofolio'>
       <div className='px-4 mx-auto'>
-        <ProfileImage motto={profile.motto} url={profile.picture.url} />
+        <ProfileImage motto={profile.motto} picture={profile.picture} />
         <div className='relative z-0 py-8'>
           <Border />
           <div className='relative z-20'>
