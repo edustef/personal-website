@@ -3,9 +3,17 @@ import Project from 'interfaces/project'
 import ReactMarkdown from 'react-markdown'
 import clsx from 'clsx'
 
-const ProjectBlock: React.FC<Partial<Project>> = ({ siteUrl, sourceUrl, duration, name, description, skills }) => {
+const ProjectBlock: React.FC<Partial<Project> & { isLast: boolean }> = ({
+  siteUrl,
+  sourceUrl,
+  duration,
+  name,
+  description,
+  skills,
+  isLast
+}) => {
   return (
-    <div className='p-6 border-b border-gray-300'>
+    <div className={`p-6 ${!isLast && 'border-b'} border-gray-300`}>
       <h2 className='text-2xl font-medium title-font'>
         <a href={siteUrl} target='_blank' rel='noreferrer' className='min-w-0 underline whitespace-nowrap'>
           {name}
