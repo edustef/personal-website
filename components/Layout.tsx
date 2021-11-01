@@ -14,6 +14,7 @@ const Layout: React.FC<{ title?: string; description?: string; image?: string }>
     <>
       <Head>
         <title>Eduard Stefan | {fTitle || 'Home'}</title>
+        <meta name='description' content={fDescription} />
         <meta name='og:title' content={fTitle} />
         <meta name='og:image' content={fImage} />
         <meta name='og:description' content={fDescription} />
