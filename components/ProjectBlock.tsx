@@ -7,17 +7,17 @@ const ProjectBlock: React.FC<Partial<Project>> = ({ siteUrl, sourceUrl, duration
   return (
     <div className='p-6 border-b border-gray-300'>
       <h2 className='text-2xl font-medium title-font'>
-        <a href={siteUrl} target='_blank' rel='noreferrer' className='underline'>
+        <a href={siteUrl} target='_blank' rel='noreferrer' className='min-w-0 underline whitespace-nowrap'>
           {name}
         </a>
       </h2>
 
       <ReactMarkdown className='mt-4 remark'>{description}</ReactMarkdown>
-      <div className='flex space-x-2'>
+      <div className='flex flex-wrap'>
         {skills.map(({ id, name, tagColor }) => (
           <span
             key={id}
-            className={clsx('inline-block px-4 py-1 my-3 rounded-full', !tagColor.isTextBlack && 'text-white')}
+            className={clsx('inline-block px-4 py-1 my-3 mx-2 rounded-full', !tagColor.isTextBlack && 'text-white')}
             style={{ backgroundColor: tagColor.value.hex }}
           >
             {name}
