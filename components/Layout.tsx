@@ -15,9 +15,12 @@ const Layout: React.FC<{ title?: string; description?: string; image?: string }>
       <Head>
         <title>Eduard Stefan | {fTitle || 'Home'}</title>
         <meta name='description' content={fDescription} />
-        <meta name='og:title' content={fTitle} />
-        <meta name='og:image' content={fImage} />
-        <meta name='og:description' content={fDescription} />
+
+        <meta property='og:title' content={fTitle} />
+        <meta property='og:image' content={fImage} />
+        <meta property='og:description' content={fDescription} />
+
+        <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:title' content={fTitle} />
         <meta name='twitter:image' content={fImage} />
         <meta name='twitter:description' content={fDescription} />
