@@ -15,7 +15,12 @@ const ProjectBlock: React.FC<Partial<Project> & { isLast: boolean }> = ({
   return (
     <div className={`p-6 ${!isLast && 'border-b'} border-gray-300`}>
       <h2 className='text-2xl font-medium title-font'>
-        <a href={siteUrl} target='_blank' rel='noreferrer' className='min-w-0 underline whitespace-nowrap'>
+        <a
+          href={siteUrl}
+          target='_blank'
+          rel='noreferrer'
+          className='min-w-0 underline whitespace-nowrap'
+        >
           {name}
         </a>
       </h2>
@@ -25,7 +30,10 @@ const ProjectBlock: React.FC<Partial<Project> & { isLast: boolean }> = ({
         {skills.map(({ id, name, tagColor }) => (
           <span
             key={id}
-            className={clsx('inline-block px-4 py-1 my-3 mx-2 rounded-full', !tagColor.isTextBlack && 'text-white')}
+            className={clsx(
+              'inline-block px-4 py-1 my-3 mx-2 rounded-full',
+              !tagColor.isTextBlack && 'text-white'
+            )}
             style={{ backgroundColor: tagColor.value.hex }}
           >
             {name}

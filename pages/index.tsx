@@ -9,9 +9,13 @@ import Skills from 'components/Skills'
 import Certificates from 'components/Certificates'
 import { InferGetStaticPropsType } from 'next'
 import fetchGQL from 'utils/fetchGQL'
-import initialPageQuery, { InitialPageQueryType } from 'queries/initialPageQuery'
+import initialPageQuery, {
+  InitialPageQueryType
+} from 'queries/initialPageQuery'
 
-export default function Home({ data }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home({
+  data
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const { profile, certificates, projects, jobs, skills } = data
 
   return (

@@ -34,14 +34,28 @@ const Skills = () => {
               <p className='text-lg text-center'>React</p>
             </div>
             <div className='flex flex-col items-center justify-center p-2'>
-              <Image width={48} height={48} className='w-16 h-16 my-2' src='/svgs/next-js-seeklogo.com.svg' alt='' />
+              <Image
+                width={48}
+                height={48}
+                className='w-16 h-16 my-2'
+                src='/svgs/next-js-seeklogo.com.svg'
+                alt=''
+              />
               <p className='text-lg text-center'>NextJS</p>
             </div>
             <div className='flex flex-col items-center justify-center p-2'>
-              <Image width={48} height={48} className='w-12 h-12 my-4' src='/svgs/svelte.svg' alt='' />
+              <Image
+                width={48}
+                height={48}
+                className='w-12 h-12 my-4'
+                src='/svgs/svelte.svg'
+                alt=''
+              />
               <p className='text-lg text-center'>Svelte</p>
             </div>
-            <div className='flex items-center justify-center p-2 text-lg'>ExpressJS</div>
+            <div className='flex items-center justify-center p-2 text-lg'>
+              ExpressJS
+            </div>
           </div>
         </SkillBlock>
 

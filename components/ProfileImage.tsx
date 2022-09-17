@@ -3,7 +3,10 @@ import Image from 'next/image'
 import { getMedia } from 'utils/getMedia'
 import Asset from 'interfaces/asset'
 
-const ProfileImage: React.FC<{ picture: Asset; motto: string }> = ({ picture, motto }) => {
+const ProfileImage: React.FC<{ picture: Asset; motto: string }> = ({
+  picture,
+  motto
+}) => {
   const fullUrl = getMedia(picture.url)
   return (
     <div className='flex flex-col items-center justify-center pt-8'>
@@ -17,7 +20,9 @@ const ProfileImage: React.FC<{ picture: Asset; motto: string }> = ({ picture, mo
           alt=''
         />
       </div>
-      <p className='w-64 text-sm italic text-center text-gray-600 md:w-full'>{motto}</p>
+      <p className='w-64 text-sm italic text-center text-gray-600 md:w-full'>
+        {motto}
+      </p>
     </div>
   )
 }

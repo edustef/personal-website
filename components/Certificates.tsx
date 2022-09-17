@@ -4,7 +4,9 @@ import CertificateBlock from './CertificateBlock'
 
 const twColors = ['bg-blue-800', 'bg-green-800', 'bg-red-800', 'bg-pink-800']
 
-const Certificates: React.FC<{ certificates: Certificate[] }> = ({ certificates }) => {
+const Certificates: React.FC<{ certificates: Certificate[] }> = ({
+  certificates
+}) => {
   return (
     <div className='w-full'>
       {certificates.map((props, index) => (

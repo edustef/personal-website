@@ -3,7 +3,12 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer className='relative z-20 flex flex-col justify-around p-8 space-y-4 border-t border-gray-700 bg-gray-50 bg bg- md:flex-row md:space-y-0 border-opacity-20'>
-      <a className='hover:text-gray-700' href='https://tailwindcss.com/' target='_blank' rel='noreferrer'>
+      <a
+        className='hover:text-gray-700'
+        href='https://tailwindcss.com/'
+        target='_blank'
+        rel='noreferrer'
+      >
         <svg
           className='inline w-5 mr-2'
           aria-hidden='true'
@@ -19,7 +24,12 @@ const Footer = () => {
         </svg>
         <span className='font-semibold'>See my Github Page</span>
       </a>
-      <a className='hover:text-gray-700' href='https://linkedin.com/' target='_blank' rel='noreferrer'>
+      <a
+        className='hover:text-gray-700'
+        href='https://linkedin.com/'
+        target='_blank'
+        rel='noreferrer'
+      >
         <svg
           className='inline w-5 mr-2 text-indigo-500'
           aria-hidden='true'
@@ -35,8 +45,18 @@ const Footer = () => {
         </svg>
         <span className='font-semibold'>Follow me on LinkedIn</span>
       </a>
-      <a className='hover:text-gray-700' href='https://github.com/edustef' target='_blank' rel='noreferrer'>
-        <svg className='inline w-5 mr-2' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 54 33'>
+      <a
+        className='hover:text-gray-700'
+        href='https://github.com/edustef'
+        target='_blank'
+        rel='noreferrer'
+      >
+        <svg
+          className='inline w-5 mr-2'
+          xmlns='http://www.w3.org/2000/svg'
+          fill='none'
+          viewBox='0 0 54 33'
+        >
           <g clipPath='url(#prefix__clip0)'>
             <path
               fill='#06B6D4'
@@ -54,7 +74,8 @@ const Footer = () => {
         <span className='font-semibold'>Build with TailwindCSS</span>
       </a>
       <p className='mt-4 font-semibold'>
-        <span className='mr-2 text-xl'>&copy;</span>Website created by Eduard Stefan
+        <span className='mr-2 text-xl'>&copy;</span>Website created by Eduard
+        Stefan
       </p>
     </footer>
   )
