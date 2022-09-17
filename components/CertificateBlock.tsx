@@ -25,16 +25,16 @@ const CertificateBlock: React.FC<Props> = ({
   })
   return (
     <div
-      className={`flex flex-col items-center justify-center w-full mt-8 ${
+      className={`mt-8 flex w-full flex-col items-center justify-center ${
         !isRight ? 'md:flex-row-reverse' : 'md:flex-row'
-      } md:justify-between left-timeline`}
+      } left-timeline md:justify-between`}
     >
       <div className='hidden w-5/12 md:block'></div>
-      <div className='flex items-center order-1 w-8 h-8 bg-gray-800 rounded-full shadow-lg'>
+      <div className='order-1 flex h-8 w-8 items-center rounded-full bg-gray-800 shadow-lg'>
         <h1 className='mx-auto text-lg font-semibold text-white'>{num}</h1>
       </div>
       <div
-        className={`self-stretch order-1 px-6 py-4 mt-4 ${twColor} rounded-lg shadow-lg md:mt-0 md:w-5/12`}
+        className={`order-1 mt-4 self-stretch px-6 py-4 ${twColor} rounded-lg shadow-lg md:mt-0 md:w-5/12`}
       >
         <h2 className='text-xl font-bold text-white'>
           <a

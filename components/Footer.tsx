@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className='relative z-20 flex flex-col justify-around p-8 space-y-4 border-t border-gray-700 bg-gray-50 bg bg- md:flex-row md:space-y-0 border-opacity-20'>
+    <footer className='bg bg- relative z-20 flex flex-col justify-around space-y-4 border-t border-gray-700 border-opacity-20 bg-gray-50 p-8 md:flex-row md:space-y-0'>
       <a
         className='hover:text-gray-700'
         href='https://tailwindcss.com/'
@@ -10,7 +10,7 @@ const Footer = () => {
         rel='noreferrer'
       >
         <svg
-          className='inline w-5 mr-2'
+          className='mr-2 inline w-5'
           aria-hidden='true'
           data-prefix='fab'
           data-icon='github'
@@ -31,7 +31,7 @@ const Footer = () => {
         rel='noreferrer'
       >
         <svg
-          className='inline w-5 mr-2 text-indigo-500'
+          className='mr-2 inline w-5 text-indigo-500'
           aria-hidden='true'
           data-prefix='fab'
           data-icon='linkedin'
@@ -52,7 +52,7 @@ const Footer = () => {
         rel='noreferrer'
       >
         <svg
-          className='inline w-5 mr-2'
+          className='mr-2 inline w-5'
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
           viewBox='0 0 54 33'

@@ -14,24 +14,24 @@ const ProjectBlock: React.FC<Partial<Project> & { isLast: boolean }> = ({
 }) => {
   return (
     <div className={`p-6 ${!isLast && 'border-b'} border-gray-300`}>
-      <h2 className='text-2xl font-medium title-font'>
+      <h2 className='title-font text-2xl font-medium'>
         <a
           href={siteUrl}
           target='_blank'
           rel='noreferrer'
-          className='min-w-0 underline whitespace-nowrap'
+          className='min-w-0 whitespace-nowrap underline'
         >
           {name}
         </a>
       </h2>
 
-      <ReactMarkdown className='mt-4 remark'>{description}</ReactMarkdown>
-      <div className='flex flex-wrap mt-2 -ml-2'>
+      <ReactMarkdown className='remark mt-4'>{description}</ReactMarkdown>
+      <div className='mt-2 -ml-2 flex flex-wrap'>
         {skills.map(({ id, name, tagColor }) => (
           <span
             key={id}
             className={clsx(
-              'inline-block px-4 py-1 my-3 mx-2 rounded-full',
+              'my-3 mx-2 inline-block rounded-full px-4 py-1',
               !tagColor.isTextBlack && 'text-white'
             )}
             style={{ backgroundColor: tagColor.value.hex }}
@@ -40,10 +40,10 @@ const ProjectBlock: React.FC<Partial<Project> & { isLast: boolean }> = ({
           </span>
         ))}
       </div>
-      <div className='flex flex-col items-baseline justify-between w-full mt-2 leading-none text-center md:flex-row'>
-        <span className='inline-flex items-center py-2 mr-3 text-sm leading-none'>
+      <div className='mt-2 flex w-full flex-col items-baseline justify-between text-center leading-none md:flex-row'>
+        <span className='mr-3 inline-flex items-center py-2 text-sm leading-none'>
           <svg
-            className='w-5 mr-2 text-blue-500 fill-current '
+            className='mr-2 w-5 fill-current text-blue-500 '
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 512 512'
           >
@@ -52,13 +52,13 @@ const ProjectBlock: React.FC<Partial<Project> & { isLast: boolean }> = ({
           {duration}
         </span>
         <a
-          className='inline-flex items-center py-1 mr-3 text-sm leading-none underline hover:text-gray-700'
+          className='mr-3 inline-flex items-center py-1 text-sm leading-none underline hover:text-gray-700'
           href={sourceUrl}
           target='_blank'
           rel='noreferrer'
         >
           <svg
-            className='inline w-5 mr-2'
+            className='mr-2 inline w-5'
             aria-hidden='true'
             data-prefix='fab'
             data-icon='github'

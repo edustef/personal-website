@@ -2,7 +2,7 @@
 @tailwind components;
 
 .remark li {
-  @apply list-disc ml-6 mt-2;
+  @apply ml-6 mt-2 list-disc;
 }
 
 @tailwind utilities;

@@ -10,17 +10,17 @@ const ProfileImage: React.FC<{ picture: Asset; motto: string }> = ({
   const fullUrl = getMedia(picture.url)
   return (
     <div className='flex flex-col items-center justify-center pt-8'>
-      <div className='w-32 h-32 mb-4 md:w-48 md:h-48'>
+      <div className='mb-4 h-32 w-32 md:h-48 md:w-48'>
         <Image
           priority
           width={picture.width}
           height={picture.height}
-          className='object-cover w-24 h-24 rounded-full md:w-48 md:h-48'
+          className='h-24 w-24 rounded-full object-cover md:h-48 md:w-48'
           src={fullUrl}
           alt=''
         />
       </div>
-      <p className='w-64 text-sm italic text-center text-gray-600 md:w-full'>
+      <p className='w-64 text-center text-sm italic text-gray-600 md:w-full'>
         {motto}
       </p>
     </div>

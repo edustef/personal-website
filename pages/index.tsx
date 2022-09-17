@@ -20,7 +20,7 @@ export default function Home({
 
   return (
     <Layout title='Portofolio'>
-      <div className='px-4 mx-auto'>
+      <div className='mx-auto px-4'>
         <ProfileImage motto={profile.motto} picture={profile.picture} />
         <div className='relative z-0 py-8'>
           <Border />

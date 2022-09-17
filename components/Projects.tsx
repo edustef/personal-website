@@ -5,7 +5,7 @@ import Project from 'interfaces/project'
 
 const Projects: React.FC<{ projects: Project[] }> = ({ projects }) => {
   return (
-    <div className='self-stretch p-6 mt-8 border border-gray-300 rounded-md bg-gray-50'>
+    <div className='mt-8 self-stretch rounded-md border border-gray-300 bg-gray-50 p-6'>
       {projects.map(
         (
           {

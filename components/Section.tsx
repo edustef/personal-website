@@ -7,7 +7,7 @@ const Section: React.FC<{ title: string; twMaxWidth: string }> = ({
   twMaxWidth
 }) => {
   return (
-    <div className={`flex flex-col items-center mt-16 mx-auto ${twMaxWidth}`}>
+    <div className={`mx-auto mt-16 flex flex-col items-center ${twMaxWidth}`}>
       <Title name={title} />
       {children}
     </div>
