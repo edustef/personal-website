@@ -16,31 +16,9 @@ import initialPageQuery, {
 export default function Home({
   data
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const { profile, certificates, projects, jobs, skills } = data
-
   return (
     <Layout title='Portofolio'>
-      <div className='mx-auto px-4'>
-        <ProfileImage motto={profile.motto} picture={profile.picture} />
-        <div className='relative z-0 py-8'>
-          <Border />
-          <div className='relative z-20'>
-            <Description about={profile.about} />
-
-            <Section title='Projects' twMaxWidth='max-w-7xl'>
-              <Projects projects={projects} />
-            </Section>
-
-            <Section title='Skills' twMaxWidth='max-w-7xl'>
-              <Skills />
-            </Section>
-
-            <Section title='Certificates' twMaxWidth='md:max-w-[80vw]'>
-              <Certificates certificates={certificates} />
-            </Section>
-          </div>
-        </div>
-      </div>
+      <h1>Hello World</h1>
       <Footer />
     </Layout>
   )

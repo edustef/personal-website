@@ -1,12 +1,15 @@
-import React from 'react'
+import  { ReactNode } from 'react'
 import Head from 'next/head'
 import { getMedia } from 'utils/getMedia'
 
-const Layout: React.FC<{
+type Props = {
   title?: string
   description?: string
   image?: string
-}> = ({ children, title, description, image }) => {
+  children: ReactNode
+}
+
+const Layout = ({ children, title, description, image }: Props) => {
   const fTitle = title || 'Home'
   const fImage = image
     ? getMedia(image)
