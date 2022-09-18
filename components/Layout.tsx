@@ -13,6 +13,7 @@ const Layout: React.FC<{
     : `${process.env.NEXT_PUBLIC_URL}/meta-image.png`
   const fDescription =
     description || 'Web Developer who builts creative and innovative websites.'
+
   return (
     <>
       <Head>
