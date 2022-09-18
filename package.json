@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
+    "lint": "next lint",
     "@apollo/client": "^3.4.16",
     "clsx": "^1.1.1",
     "graphql": "^16.6.0",

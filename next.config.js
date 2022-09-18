@@ -2,9 +2,8 @@
  * @type {import('next').NextConfig}
  */
 module.exports = {
+  swcMinify: true,
   reactStrictMode: true,
-  locales: ['en-US', 'es'],
-  defaultLocale: 'en-US',
   images: {
     domains: ['media.graphcms.com']
   }
