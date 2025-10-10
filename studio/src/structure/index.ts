@@ -1,6 +1,7 @@
 import {CogIcon} from '@sanity/icons'
 import type {StructureBuilder, StructureResolver} from 'sanity/structure'
 import pluralize from 'pluralize-esm'
+import {singletons} from '../schemaTypes/singletons'
 
 /**
  * Structure builder is useful whenever you want to control how documents are grouped and
@@ -8,7 +9,21 @@ import pluralize from 'pluralize-esm'
  * Learn more: https://www.sanity.io/docs/structure-builder-introduction
  */
 
-const DISABLED_TYPES = ['settings', 'assist.instruction.context']
+const SINGLETON_TYPES = singletons.map((s) => s.name)
+const DISABLED_TYPES = ['assist.instruction.context', ...SINGLETON_TYPES]
+
+
+const createSingletonListItem = (S: StructureBuilder, schema: any) => {
+  const typeName = schema.name as string
+  const title = schema.title as string
+  const icon = schema.icon as any | undefined
+
+  const listItem = S.listItem().title(title).child(
+    S.document().schemaType(typeName).documentId(typeName)
+  )
+
+  return icon ? listItem.icon(icon) : listItem
+}
 
 export const structure: StructureResolver = (S: StructureBuilder) =>
   S.list()
@@ -21,9 +36,6 @@ export const structure: StructureResolver = (S: StructureBuilder) =>
         .map((listItem) => {
           return listItem.title(pluralize(listItem.getTitle() as string))
         }),
-      // Settings Singleton in order to view/edit the one particular document for Settings.  Learn more about Singletons: https://www.sanity.io/docs/create-a-link-to-a-single-edit-page-in-your-main-document-type-list
-      S.listItem()
-        .title('Site Settings')
-        .child(S.document().schemaType('settings').documentId('siteSettings'))
-        .icon(CogIcon),
+      // Add singleton entries programmatically
+      ...singletons.map((schema: any) => createSingletonListItem(S, schema)),
     ])

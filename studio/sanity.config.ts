@@ -16,6 +16,8 @@ import {
   type DocumentLocation,
 } from 'sanity/presentation'
 import {assist} from '@sanity/assist'
+import {internationalizedArray} from 'sanity-plugin-internationalized-array'
+import {media, mediaAssetSource} from 'sanity-plugin-media'
 
 // Environment variables for project configuration
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'your-projectID'
@@ -126,7 +128,24 @@ export default defineConfig({
     unsplashImageAsset(),
     assist(),
     visionTool(),
+    internationalizedArray({
+      languages: [
+        {id: 'en', title: 'English'},
+        {id: 'ro', title: 'Romanian'},
+        {id: 'es', title: 'Spanish'},
+      ],
+      defaultLanguages: ['en'],
+      fieldTypes: ['string', 'blockContent'],
+    }),
+    media(),
   ],
+
+  form: {
+    file: {
+      assetSources: (previousAssetSources) =>
+        previousAssetSources.filter((assetSource) => assetSource !== mediaAssetSource),
+    },
+  },
 
   // Schema configuration, imported from ./src/schemaTypes/index.ts
   schema: {
