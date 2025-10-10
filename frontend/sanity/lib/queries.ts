@@ -2,6 +2,122 @@ import {defineQuery} from 'next-sanity'
 
 export const settingsQuery = defineQuery(`*[_type == "settings"][0]`)
 
+export const homeQuery = defineQuery(`
+  *[_type == "home"][0]{
+  _id,
+    title,
+    headline,
+    tagline,
+    ctaButtons[]{
+      text,
+      link{
+        href,
+        external
+      }
+    },
+    profile->{
+      name,
+      email,
+      phone,
+      motto,
+      about,
+      location,
+      picture,
+      workPreference,
+      socialLinks[]{
+        platform,
+        url
+      }
+    },
+    featuredProjects[]->{
+      _id,
+      "title": name,
+      description,
+      "image": coverImage,
+      "technologies": skills[]->name,
+      "link": websiteLink,
+      "github": sourceLink,
+      featured
+    }
+  }
+`)
+
+export const profileQuery = defineQuery(`
+  *[_type == "profile"][0]{
+    _id,
+    name,
+    email,
+    phone,
+    motto,
+    about,
+    location,
+    picture,
+    workPreference,
+    socialLinks[]{
+      platform,
+      url
+    }
+  }
+`)
+
+export const resumeQuery = defineQuery(`
+  *[_type == "resume"][0]{
+    _id,
+    title,
+    description,
+    showSkills,
+    showProjects,
+    showCertificates
+  }
+`)
+
+export const allJobsQuery = defineQuery(`
+  *[_type == "job"] | order(startDate desc){
+    _id,
+    "title": position,
+    company,
+    location,
+    startDate,
+    endDate,
+    "current": isCurrent,
+    "description": description,
+    responsibilities,
+    "technologies": skills[]->name
+  }
+`)
+
+export const allProjectsQuery = defineQuery(`
+  *[_type == "project"] | order(_createdAt desc){
+    _id,
+    "title": name,
+    description,
+    "image": coverImage,
+    "technologies": skills[]->name,
+    "link": websiteLink,
+    "github": sourceLink,
+    featured,
+    duration
+  }
+`)
+
+export const allSkillsQuery = defineQuery(`
+  *[_type == "skill"] | order(name asc){
+    _id,
+    name
+  }
+`)
+
+export const allCertificatesQuery = defineQuery(`
+  *[_type == "certificate"] | order(dateIssued desc){
+    _id,
+    "name": title,
+    "issuer": title,
+    "issueDate": dateIssued,
+    "description": description,
+    "link": link
+  }
+`)
+
 const postFields = /* groq */ `
   _id,
   "status": select(_originalId in path("drafts.**") => "draft", "published"),
@@ -10,51 +126,16 @@ const postFields = /* groq */ `
   excerpt,
   coverImage,
   "date": coalesce(date, _updatedAt),
-  "author": author->{firstName, lastName, picture},
 `
 
 const linkReference = /* groq */ `
   _type == "link" => {
-    "page": page->slug.current,
     "post": post->slug.current
   }
 `
 
-const linkFields = /* groq */ `
-  link {
-      ...,
-      ${linkReference}
-      }
-`
-
-export const getPageQuery = defineQuery(`
-  *[_type == 'page' && slug.current == $slug][0]{
-    _id,
-    _type,
-    name,
-    slug,
-    heading,
-    subheading,
-    "pageBuilder": pageBuilder[]{
-      ...,
-      _type == "callToAction" => {
-        ${linkFields},
-      },
-      _type == "infoSection" => {
-        content[]{
-          ...,
-          markDefs[]{
-            ...,
-            ${linkReference}
-          }
-        }
-      },
-    },
-  }
-`)
-
 export const sitemapData = defineQuery(`
-  *[_type == "page" || _type == "post" && defined(slug.current)] | order(_type asc) {
+  *[_type == "post" && defined(slug.current)] | order(_type asc) {
     "slug": slug.current,
     _type,
     _updatedAt,
@@ -88,10 +169,5 @@ export const postQuery = defineQuery(`
 
 export const postPagesSlugs = defineQuery(`
   *[_type == "post" && defined(slug.current)]
-  {"slug": slug.current}
-`)
-
-export const pagesSlugs = defineQuery(`
-  *[_type == "page" && defined(slug.current)]
   {"slug": slug.current}
 `)

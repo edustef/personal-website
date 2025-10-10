@@ -38,8 +38,6 @@ function resolveHref(documentType?: string, slug?: string): string | undefined {
   switch (documentType) {
     case 'post':
       return slug ? `/posts/${slug}` : undefined
-    case 'page':
-      return slug ? `/${slug}` : undefined
     default:
       console.warn('Invalid document type:', documentType)
       return undefined
@@ -49,7 +47,7 @@ function resolveHref(documentType?: string, slug?: string): string | undefined {
 // Main Sanity configuration
 export default defineConfig({
   name: 'default',
-  title: 'Sanity + Next.js Starter Template',
+  title: 'Personal Portfolio',
 
   projectId,
   dataset,
@@ -68,11 +66,11 @@ export default defineConfig({
         mainDocuments: defineDocuments([
           {
             route: '/',
-            filter: `_type == "settings" && _id == "siteSettings"`,
+            filter: `_type == "home" && _id == "home"`,
           },
           {
-            route: '/:slug',
-            filter: `_type == "page" && slug.current == $slug || _id == $slug`,
+            route: '/resume',
+            filter: `_type == "resume" && _id == "resume"`,
           },
           {
             route: '/posts/:slug',
@@ -86,19 +84,20 @@ export default defineConfig({
             message: 'This document is used on all pages',
             tone: 'positive',
           }),
-          page: defineLocations({
-            select: {
-              name: 'name',
-              slug: 'slug.current',
-            },
-            resolve: (doc) => ({
-              locations: [
-                {
-                  title: doc?.name || 'Untitled',
-                  href: resolveHref('page', doc?.slug)!,
-                },
-              ],
-            }),
+          home: defineLocations({
+            locations: [homeLocation],
+            message: 'This is your home page',
+            tone: 'positive',
+          }),
+          resume: defineLocations({
+            locations: [
+              {
+                title: 'Resume',
+                href: '/resume',
+              },
+            ],
+            message: 'This is your resume page',
+            tone: 'positive',
           }),
           post: defineLocations({
             select: {
