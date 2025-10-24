@@ -4,7 +4,7 @@ export const settingsQuery = defineQuery(`*[_type == "settings"][0]`)
 
 export const homeQuery = defineQuery(`
   *[_type == "home"][0]{
-  _id,
+    _id,
     title,
     headline,
     tagline,
@@ -31,7 +31,7 @@ export const homeQuery = defineQuery(`
     },
     featuredProjects[]->{
       _id,
-      "title": name,
+      name,
       description,
       "image": coverImage,
       "technologies": skills[]->name,
@@ -74,13 +74,13 @@ export const resumeQuery = defineQuery(`
 export const allJobsQuery = defineQuery(`
   *[_type == "job"] | order(startDate desc){
     _id,
-    "title": position,
+    position,
     company,
     location,
     startDate,
     endDate,
     "current": isCurrent,
-    "description": description,
+    description,
     responsibilities,
     "technologies": skills[]->name
   }
@@ -89,7 +89,7 @@ export const allJobsQuery = defineQuery(`
 export const allProjectsQuery = defineQuery(`
   *[_type == "project"] | order(_createdAt desc){
     _id,
-    "title": name,
+    name,
     description,
     "image": coverImage,
     "technologies": skills[]->name,
@@ -108,20 +108,13 @@ export const allSkillsQuery = defineQuery(`
 `)
 
 export const allCertificatesQuery = defineQuery(`
-  *[_type == "certificate"] | order(dateIssued desc){
-    _id,
-    "name": title,
-    "issuer": title,
-    "issueDate": dateIssued,
-    "description": description,
-    "link": link
-  }
+  *[_type == "certificate"] | order(dateIssued desc)
 `)
 
 const postFields = /* groq */ `
   _id,
   "status": select(_originalId in path("drafts.**") => "draft", "published"),
-  "title": coalesce(title, "Untitled"),
+  title,
   "slug": slug.current,
   excerpt,
   coverImage,
@@ -156,13 +149,7 @@ export const morePostsQuery = defineQuery(`
 
 export const postQuery = defineQuery(`
   *[_type == "post" && slug.current == $slug] [0] {
-    content[]{
-    ...,
-    markDefs[]{
-      ...,
-      ${linkReference}
-    }
-  },
+    content,
     ${postFields}
   }
 `)

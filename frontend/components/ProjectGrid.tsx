@@ -1,28 +1,22 @@
 import Image from 'next/image'
 import {PortableText} from '@portabletext/react'
 import {urlForImage} from '@/sanity/lib/utils'
+import {localizeField, localizeBlockContent, type LanguageId} from '@/lib/i18n'
 
-type Project = {
-  _id: string
-  title: string
-  description?: any
-  image?: any
-  technologies?: string[]
-  link?: string
-  github?: string
-  featured?: boolean
-}
+type Project = any
 
 type ProjectGridProps = {
   projects: Project[]
   title?: string
   subtitle?: string
+  locale: LanguageId
 }
 
 export default function ProjectGrid({
   projects,
   title = 'Featured Projects',
   subtitle = 'Some of my recent work',
+  locale,
 }: ProjectGridProps) {
   if (!projects || projects.length === 0) {
     return null
@@ -41,6 +35,9 @@ export default function ProjectGrid({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => {
+              const projectName = localizeField(project.name, locale)
+              const projectDescription = localizeBlockContent(project.description, locale)
+
               return (
                 <div
                   key={project._id}
@@ -56,7 +53,7 @@ export default function ProjectGrid({
                       <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-primary-100 to-accent-100">
                         <Image
                           src={urlForImage(project.image)?.width(600).height(400).url() || ''}
-                          alt={project.title}
+                          alt={projectName || 'Project'}
                           fill
                           className="object-cover group-hover:scale-110 transition-transform duration-300"
                         />
@@ -65,22 +62,18 @@ export default function ProjectGrid({
 
                     <div className="p-6 space-y-4">
                       <h3 className="text-2xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
-                        {project.title}
+                        {projectName || 'Untitled'}
                       </h3>
 
-                      {project.description && (
+                      {projectDescription && projectDescription.length > 0 && (
                         <div className="text-gray-600 line-clamp-3 prose prose-sm max-w-none">
-                          {Array.isArray(project.description) && project.description[0]?.value ? (
-                            <PortableText value={project.description[0].value} />
-                          ) : (
-                            <PortableText value={project.description} />
-                          )}
+                          <PortableText value={projectDescription} />
                         </div>
                       )}
 
                       {project.technologies && project.technologies.length > 0 && (
                         <div className="flex flex-wrap gap-2">
-                          {project.technologies.slice(0, 4).map((tech, i) => (
+                          {project.technologies.slice(0, 4).map((tech: string, i: number) => (
                             <span
                               key={i}
                               className="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-md"

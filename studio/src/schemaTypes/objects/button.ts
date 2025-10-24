@@ -1,4 +1,4 @@
-import { defineType } from 'sanity'
+import {defineType} from 'sanity'
 
 export const button = defineType({
   name: 'button',
@@ -7,17 +7,14 @@ export const button = defineType({
   fields: [
     {
       name: 'text',
-
       title: 'Text',
-      type: 'string',
+      type: 'internationalizedArrayString',
       validation: (rule) => rule.required(),
     },
     {
-      name: 'href',
-      title: 'Href',
-      type: 'url',
-      validation: (rule) => rule.required(),
-      hidden: ({ parent }) => parent?.isExternal === false,
+      name: 'link',
+      title: 'Link',
+      type: 'link',
     },
   ],
 })

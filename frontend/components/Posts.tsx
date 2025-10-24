@@ -4,12 +4,16 @@ import Image from 'next/image'
 import {sanityFetch} from '@/sanity/lib/live'
 import {morePostsQuery, allPostsQuery} from '@/sanity/lib/queries'
 import {AllPostsQueryResult} from '@/sanity.types'
-import DateComponent from '@/app/components/Date'
+import DateComponent from '@/components/Date'
 import {createDataAttribute} from 'next-sanity'
 import {urlForImage} from '@/sanity/lib/utils'
+import {localizeField, type LanguageId} from '@/lib/i18n'
 
-const Post = ({post}: {post: AllPostsQueryResult[number]}) => {
+const Post = ({post, locale}: {post: AllPostsQueryResult[number]; locale: LanguageId}) => {
   const {_id, title, slug, excerpt, date, coverImage} = post
+
+  const postTitle = localizeField(title, locale) || 'Untitled'
+  const postExcerpt = localizeField(excerpt, locale)
 
   const attr = createDataAttribute({
     id: _id,
@@ -27,7 +31,7 @@ const Post = ({post}: {post: AllPostsQueryResult[number]}) => {
         <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-primary-100 to-accent-100">
           <Image
             src={urlForImage(coverImage)?.width(800).height(400).url() || ''}
-            alt={title}
+            alt={postTitle}
             fill
             className="object-cover group-hover:scale-110 transition-transform duration-300"
           />
@@ -35,14 +39,19 @@ const Post = ({post}: {post: AllPostsQueryResult[number]}) => {
       )}
       <div className="p-6 flex flex-col justify-between">
         <div>
-          <Link className="hover:text-primary-600 transition-colors block" href={`/posts/${slug}`}>
+          <Link
+            className="hover:text-primary-600 transition-colors block"
+            href={`/${locale}/posts/${slug}`}
+          >
             <h3 className="text-2xl font-bold mb-3 leading-tight text-gray-900 group-hover:text-primary-600 transition-colors">
-              {title}
+              {postTitle}
             </h3>
           </Link>
 
-          {excerpt && (
-            <p className="line-clamp-3 text-base leading-relaxed text-gray-600 mb-4">{excerpt}</p>
+          {postExcerpt && (
+            <p className="line-clamp-3 text-base leading-relaxed text-gray-600 mb-4">
+              {postExcerpt}
+            </p>
           )}
         </div>
         <div className="flex items-center justify-between pt-4 border-t border-gray-200">
@@ -50,7 +59,7 @@ const Post = ({post}: {post: AllPostsQueryResult[number]}) => {
             <DateComponent dateString={date} />
           </time>
           <Link
-            href={`/posts/${slug}`}
+            href={`/${locale}/posts/${slug}`}
             className="text-primary-600 hover:text-primary-700 font-medium text-sm inline-flex items-center gap-1 group"
           >
             Read more
@@ -73,10 +82,18 @@ const Posts = ({children}: {children: React.ReactNode}) => (
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">{children}</div>
 )
 
-export const MorePosts = async ({skip, limit}: {skip: string; limit: number}) => {
+export const MorePosts = async ({
+  skip,
+  limit,
+  locale,
+}: {
+  skip: string
+  limit: number
+  locale: LanguageId
+}) => {
   const {data} = await sanityFetch({
     query: morePostsQuery,
-    params: {skip, limit},
+    params: {skip, limit, locale},
   })
 
   if (!data || data.length === 0) {
@@ -86,14 +103,14 @@ export const MorePosts = async ({skip, limit}: {skip: string; limit: number}) =>
   return (
     <Posts>
       {data?.map((post: any) => (
-        <Post key={post._id} post={post} />
+        <Post key={post._id} post={post} locale={locale} />
       ))}
     </Posts>
   )
 }
 
-export const AllPosts = async () => {
-  const {data} = await sanityFetch({query: allPostsQuery})
+export const AllPosts = async (locale: LanguageId) => {
+  const {data} = await sanityFetch({query: allPostsQuery, params: {locale}})
 
   if (!data || data.length === 0) {
     return (
@@ -106,7 +123,7 @@ export const AllPosts = async () => {
   return (
     <Posts>
       {data.map((post: any) => (
-        <Post key={post._id} post={post} />
+        <Post key={post._id} post={post} locale={locale} />
       ))}
     </Posts>
   )

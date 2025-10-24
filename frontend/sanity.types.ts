@@ -13,24 +13,26 @@
  */
 
 // Source: schema.json
-export type CallToAction = {
-  _type: 'callToAction'
-  heading: string
-  text?: string
-  buttonText?: string
+export type SocialLink = {
+  _type: 'socialLink'
+  name?: string
+  url?: string
+}
+
+export type Button = {
+  _type: 'button'
+  text: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
   link?: Link
 }
 
 export type Link = {
   _type: 'link'
-  linkType?: 'href' | 'page' | 'post'
+  linkType?: 'href' | 'post'
   href?: string
-  page?: {
-    _ref: string
-    _type: 'reference'
-    _weak?: boolean
-    [internalGroqTypeReferenceTo]?: 'page'
-  }
   post?: {
     _ref: string
     _type: 'reference'
@@ -40,40 +42,42 @@ export type Link = {
   openInNewTab?: boolean
 }
 
-export type InfoSection = {
-  _type: 'infoSection'
-  heading?: string
-  subheading?: string
-  content?: Array<{
-    children?: Array<{
-      marks?: Array<string>
-      text?: string
-      _type: 'span'
-      _key: string
-    }>
-    style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote'
-    listItem?: 'bullet' | 'number'
-    markDefs?: Array<{
-      linkType?: 'href' | 'page' | 'post'
-      href?: string
-      page?: {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'page'
-      }
-      post?: {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'post'
-      }
-      openInNewTab?: boolean
-      _type: 'link'
-      _key: string
-    }>
-    level?: number
-    _type: 'block'
+export type Milestone = {
+  _type: 'milestone'
+  title: string
+  description?: string
+  image?: {
+    asset?: {
+      _ref: string
+      _type: 'reference'
+      _weak?: boolean
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+    }
+    media?: unknown
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  }
+  tags?: Array<string>
+  duration: Duration
+}
+
+export type Duration = {
+  _type: 'duration'
+  start?: string
+  end?: string
+}
+
+export type Timeline = {
+  _type: 'timeline'
+  items?: Array<{
+    title?: string
+    milestones?: Array<
+      {
+        _key: string
+      } & Milestone
+    >
+    _type: 'item'
     _key: string
   }>
 }
@@ -88,14 +92,8 @@ export type BlockContent = Array<{
   style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote'
   listItem?: 'bullet' | 'number'
   markDefs?: Array<{
-    linkType?: 'href' | 'page' | 'post'
+    linkType?: 'href' | 'post'
     href?: string
-    page?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'page'
-    }
     post?: {
       _ref: string
       _type: 'reference'
@@ -110,6 +108,219 @@ export type BlockContent = Array<{
   _type: 'block'
   _key: string
 }>
+
+export type Certificate = {
+  _id: string
+  _type: 'certificate'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title?: string
+  description?: Array<
+    {
+      _key: string
+    } & InternationalizedArrayBlockContentValue
+  >
+  dateIssued?: string
+  link?: string
+}
+
+export type Job = {
+  _id: string
+  _type: 'job'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  company: string
+  logo: {
+    asset?: {
+      _ref: string
+      _type: 'reference'
+      _weak?: boolean
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+    }
+    media?: unknown
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  }
+  position?: string
+  isCurrent?: boolean
+  startDate: string
+  endDate?: string
+  description: Array<
+    {
+      _key: string
+    } & InternationalizedArrayBlockContentValue
+  >
+  todayText?: string
+  skills?: Array<{
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    _key: string
+    [internalGroqTypeReferenceTo]?: 'skill'
+  }>
+}
+
+export type Skill = {
+  _id: string
+  _type: 'skill'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  name: string
+}
+
+export type Project = {
+  _id: string
+  _type: 'project'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  name: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
+  coverImage?: {
+    asset?: {
+      _ref: string
+      _type: 'reference'
+      _weak?: boolean
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+    }
+    media?: unknown
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  }
+  description?: Array<
+    {
+      _key: string
+    } & InternationalizedArrayBlockContentValue
+  >
+  duration?: string
+  sourceLink?: string
+  websiteLink?: string
+  skills?: Array<{
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    _key: string
+    [internalGroqTypeReferenceTo]?: 'skill'
+  }>
+}
+
+export type Resume = {
+  _id: string
+  _type: 'resume'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
+  description?: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
+  showSkills?: boolean
+  showProjects?: boolean
+  showCertificates?: boolean
+}
+
+export type Home = {
+  _id: string
+  _type: 'home'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
+  headline: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
+  tagline?: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
+  profile?: {
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    [internalGroqTypeReferenceTo]?: 'profile'
+  }
+  ctaButtons?: Array<
+    {
+      _key: string
+    } & Button
+  >
+  featuredProjects?: Array<{
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    _key: string
+    [internalGroqTypeReferenceTo]?: 'project'
+  }>
+}
+
+export type Profile = {
+  _id: string
+  _type: 'profile'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  name?: string
+  email?: string
+  phone?: string
+  motto?: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
+  about?: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
+  location?: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
+  picture?: {
+    asset?: {
+      _ref: string
+      _type: 'reference'
+      _weak?: boolean
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+    }
+    media?: unknown
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  }
+  workPreference?: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
+  socialLinks?: Array<
+    {
+      _key: string
+    } & SocialLink
+  >
+}
 
 export type Settings = {
   _id: string
@@ -128,14 +339,8 @@ export type Settings = {
     style?: 'normal'
     listItem?: never
     markDefs?: Array<{
-      linkType?: 'href' | 'page' | 'post'
+      linkType?: 'href' | 'post'
       href?: string
-      page?: {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'page'
-      }
       post?: {
         _ref: string
         _type: 'reference'
@@ -143,6 +348,38 @@ export type Settings = {
         [internalGroqTypeReferenceTo]?: 'post'
       }
       openInNewTab?: boolean
+      _type: 'link'
+      _key: string
+    }>
+    level?: number
+    _type: 'block'
+    _key: string
+  }>
+  menuItems?: Array<
+    | {
+        _ref: string
+        _type: 'reference'
+        _weak?: boolean
+        [internalGroqTypeReferenceTo]?: 'home'
+      }
+    | {
+        _ref: string
+        _type: 'reference'
+        _weak?: boolean
+        [internalGroqTypeReferenceTo]?: 'project'
+      }
+  >
+  footer?: Array<{
+    children?: Array<{
+      marks?: Array<string>
+      text?: string
+      _type: 'span'
+      _key: string
+    }>
+    style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote'
+    listItem?: 'bullet' | 'number'
+    markDefs?: Array<{
+      href?: string
       _type: 'link'
       _key: string
     }>
@@ -166,25 +403,30 @@ export type Settings = {
   }
 }
 
-export type Page = {
+export type MediaTag = {
   _id: string
-  _type: 'page'
+  _type: 'media.tag'
   _createdAt: string
   _updatedAt: string
   _rev: string
-  name: string
-  slug: Slug
-  heading: string
-  subheading?: string
-  pageBuilder?: Array<
-    | ({
-        _key: string
-      } & CallToAction)
-    | ({
-        _key: string
-      } & InfoSection)
-  >
+  name?: Slug
 }
+
+export type InternationalizedArrayBlockContentValue = {
+  _type: 'internationalizedArrayBlockContentValue'
+  value?: BlockContent
+}
+
+export type InternationalizedArrayStringValue = {
+  _type: 'internationalizedArrayStringValue'
+  value?: string
+}
+
+export type InternationalizedArrayBlockContent = Array<
+  {
+    _key: string
+  } & InternationalizedArrayBlockContentValue
+>
 
 export type Post = {
   _id: string
@@ -192,10 +434,18 @@ export type Post = {
   _createdAt: string
   _updatedAt: string
   _rev: string
-  title: string
+  title: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
   slug: Slug
-  content?: BlockContent
-  excerpt?: string
+  content?: InternationalizedArrayBlockContent
+  excerpt?: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
   coverImage: {
     asset?: {
       _ref: string
@@ -210,36 +460,13 @@ export type Post = {
     _type: 'image'
   }
   date?: string
-  author?: {
-    _ref: string
-    _type: 'reference'
-    _weak?: boolean
-    [internalGroqTypeReferenceTo]?: 'person'
-  }
 }
 
-export type Person = {
-  _id: string
-  _type: 'person'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  firstName: string
-  lastName: string
-  picture: {
-    asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    alt?: string
-    _type: 'image'
-  }
-}
+export type InternationalizedArrayString = Array<
+  {
+    _key: string
+  } & InternationalizedArrayStringValue
+>
 
 export type SanityAssistInstructionTask = {
   _type: 'sanity.assist.instructionTask'
@@ -397,25 +624,25 @@ export type SanityImagePalette = {
 
 export type SanityImageDimensions = {
   _type: 'sanity.imageDimensions'
-  height?: number
-  width?: number
-  aspectRatio?: number
+  height: number
+  width: number
+  aspectRatio: number
 }
 
 export type SanityImageHotspot = {
   _type: 'sanity.imageHotspot'
-  x?: number
-  y?: number
-  height?: number
-  width?: number
+  x: number
+  y: number
+  height: number
+  width: number
 }
 
 export type SanityImageCrop = {
   _type: 'sanity.imageCrop'
-  top?: number
-  bottom?: number
-  left?: number
-  right?: number
+  top: number
+  bottom: number
+  left: number
+  right: number
 }
 
 export type SanityFileAsset = {
@@ -495,14 +722,27 @@ export type SanityAssetSourceData = {
 }
 
 export type AllSanitySchemaTypes =
-  | CallToAction
+  | SocialLink
+  | Button
   | Link
-  | InfoSection
+  | Milestone
+  | Duration
+  | Timeline
   | BlockContent
+  | Certificate
+  | Job
+  | Skill
+  | Project
+  | Resume
+  | Home
+  | Profile
   | Settings
-  | Page
+  | MediaTag
+  | InternationalizedArrayBlockContentValue
+  | InternationalizedArrayStringValue
+  | InternationalizedArrayBlockContent
   | Post
-  | Person
+  | InternationalizedArrayString
   | SanityAssistInstructionTask
   | SanityAssistTaskStatus
   | SanityAssistSchemaTypeAnnotations
@@ -547,14 +787,8 @@ export type SettingsQueryResult = {
     style?: 'normal'
     listItem?: never
     markDefs?: Array<{
-      linkType?: 'href' | 'page' | 'post'
+      linkType?: 'href' | 'post'
       href?: string
-      page?: {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'page'
-      }
       post?: {
         _ref: string
         _type: 'reference'
@@ -562,6 +796,38 @@ export type SettingsQueryResult = {
         [internalGroqTypeReferenceTo]?: 'post'
       }
       openInNewTab?: boolean
+      _type: 'link'
+      _key: string
+    }>
+    level?: number
+    _type: 'block'
+    _key: string
+  }>
+  menuItems?: Array<
+    | {
+        _ref: string
+        _type: 'reference'
+        _weak?: boolean
+        [internalGroqTypeReferenceTo]?: 'home'
+      }
+    | {
+        _ref: string
+        _type: 'reference'
+        _weak?: boolean
+        [internalGroqTypeReferenceTo]?: 'project'
+      }
+  >
+  footer?: Array<{
+    children?: Array<{
+      marks?: Array<string>
+      text?: string
+      _type: 'span'
+      _key: string
+    }>
+    style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'normal'
+    listItem?: 'bullet' | 'number'
+    markDefs?: Array<{
+      href?: string
       _type: 'link'
       _key: string
     }>
@@ -585,26 +851,241 @@ export type SettingsQueryResult = {
   }
 } | null
 // Variable: homeQuery
-// Query: *[_type == "home"][0]{    _id,    title,    headline,    tagline,    ctaButtons[]{      text,      link{        href,        external      }    },    profile->{      name,      email,      phone,      motto,      about,      location,      picture,      workPreference,      socialLinks[]{        platform,        url      }    },    featuredProjects[]->{      _id,      "title": name,      description,      "image": coverImage,      "technologies": skills[]->name,      "link": websiteLink,      "github": sourceLink,      featured    }  }
-export type HomeQueryResult = null
+// Query: *[_type == "home"][0]{    _id,    title,    headline,    tagline,    ctaButtons[]{      text,      link{        href,        external      }    },    profile->{      name,      email,      phone,      motto,      about,      location,      picture,      workPreference,      socialLinks[]{        platform,        url      }    },    featuredProjects[]->{      _id,      name,      description,      "image": coverImage,      "technologies": skills[]->name,      "link": websiteLink,      "github": sourceLink,      featured    }  }
+export type HomeQueryResult = {
+  _id: string
+  title: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
+  headline: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
+  tagline: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  > | null
+  ctaButtons: Array<{
+    text: Array<
+      {
+        _key: string
+      } & InternationalizedArrayStringValue
+    >
+    link: {
+      href: string | null
+      external: null
+    } | null
+  }> | null
+  profile: {
+    name: string | null
+    email: string | null
+    phone: string | null
+    motto: Array<
+      {
+        _key: string
+      } & InternationalizedArrayStringValue
+    > | null
+    about: Array<
+      {
+        _key: string
+      } & InternationalizedArrayStringValue
+    > | null
+    location: Array<
+      {
+        _key: string
+      } & InternationalizedArrayStringValue
+    > | null
+    picture: {
+      asset?: {
+        _ref: string
+        _type: 'reference'
+        _weak?: boolean
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+      }
+      media?: unknown
+      hotspot?: SanityImageHotspot
+      crop?: SanityImageCrop
+      _type: 'image'
+    } | null
+    workPreference: Array<
+      {
+        _key: string
+      } & InternationalizedArrayStringValue
+    > | null
+    socialLinks: Array<{
+      platform: null
+      url: string | null
+    }> | null
+  } | null
+  featuredProjects: Array<{
+    _id: string
+    name: Array<
+      {
+        _key: string
+      } & InternationalizedArrayStringValue
+    >
+    description: Array<
+      {
+        _key: string
+      } & InternationalizedArrayBlockContentValue
+    > | null
+    image: {
+      asset?: {
+        _ref: string
+        _type: 'reference'
+        _weak?: boolean
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+      }
+      media?: unknown
+      hotspot?: SanityImageHotspot
+      crop?: SanityImageCrop
+      _type: 'image'
+    } | null
+    technologies: Array<string> | null
+    link: string | null
+    github: string | null
+    featured: null
+  }> | null
+} | null
 // Variable: profileQuery
 // Query: *[_type == "profile"][0]{    _id,    name,    email,    phone,    motto,    about,    location,    picture,    workPreference,    socialLinks[]{      platform,      url    }  }
-export type ProfileQueryResult = null
+export type ProfileQueryResult = {
+  _id: string
+  name: string | null
+  email: string | null
+  phone: string | null
+  motto: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  > | null
+  about: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  > | null
+  location: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  > | null
+  picture: {
+    asset?: {
+      _ref: string
+      _type: 'reference'
+      _weak?: boolean
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+    }
+    media?: unknown
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  } | null
+  workPreference: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  > | null
+  socialLinks: Array<{
+    platform: null
+    url: string | null
+  }> | null
+} | null
 // Variable: resumeQuery
 // Query: *[_type == "resume"][0]{    _id,    title,    description,    showSkills,    showProjects,    showCertificates  }
-export type ResumeQueryResult = null
+export type ResumeQueryResult = {
+  _id: string
+  title: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
+  description: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  > | null
+  showSkills: boolean | null
+  showProjects: boolean | null
+  showCertificates: boolean | null
+} | null
 // Variable: allJobsQuery
-// Query: *[_type == "job"] | order(startDate desc){    _id,    "title": position,    company,    location,    startDate,    endDate,    "current": isCurrent,    "description": description,    responsibilities,    "technologies": skills[]->name  }
-export type AllJobsQueryResult = Array<never>
+// Query: *[_type == "job"] | order(startDate desc){    _id,    position,    company,    location,    startDate,    endDate,    "current": isCurrent,    description,    responsibilities,    "technologies": skills[]->name  }
+export type AllJobsQueryResult = Array<{
+  _id: string
+  position: string | null
+  company: string
+  location: null
+  startDate: string
+  endDate: string | null
+  current: boolean | null
+  description: Array<
+    {
+      _key: string
+    } & InternationalizedArrayBlockContentValue
+  >
+  responsibilities: null
+  technologies: Array<string> | null
+}>
 // Variable: allProjectsQuery
-// Query: *[_type == "project"] | order(_createdAt desc){    _id,    "title": name,    description,    "image": coverImage,    "technologies": skills[]->name,    "link": websiteLink,    "github": sourceLink,    featured,    duration  }
-export type AllProjectsQueryResult = Array<never>
+// Query: *[_type == "project"] | order(_createdAt desc){    _id,    name,    description,    "image": coverImage,    "technologies": skills[]->name,    "link": websiteLink,    "github": sourceLink,    featured,    duration  }
+export type AllProjectsQueryResult = Array<{
+  _id: string
+  name: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
+  description: Array<
+    {
+      _key: string
+    } & InternationalizedArrayBlockContentValue
+  > | null
+  image: {
+    asset?: {
+      _ref: string
+      _type: 'reference'
+      _weak?: boolean
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+    }
+    media?: unknown
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  } | null
+  technologies: Array<string> | null
+  link: string | null
+  github: string | null
+  featured: null
+  duration: string | null
+}>
 // Variable: allSkillsQuery
 // Query: *[_type == "skill"] | order(name asc){    _id,    name  }
-export type AllSkillsQueryResult = Array<never>
+export type AllSkillsQueryResult = Array<{
+  _id: string
+  name: string
+}>
 // Variable: allCertificatesQuery
-// Query: *[_type == "certificate"] | order(dateIssued desc){    _id,    "name": title,    "issuer": title,    "issueDate": dateIssued,    "description": description,    "link": link  }
-export type AllCertificatesQueryResult = Array<never>
+// Query: *[_type == "certificate"] | order(dateIssued desc)
+export type AllCertificatesQueryResult = Array<{
+  _id: string
+  _type: 'certificate'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title?: string
+  description?: Array<
+    {
+      _key: string
+    } & InternationalizedArrayBlockContentValue
+  >
+  dateIssued?: string
+  link?: string
+}>
 // Variable: sitemapData
 // Query: *[_type == "post" && defined(slug.current)] | order(_type asc) {    "slug": slug.current,    _type,    _updatedAt,  }
 export type SitemapDataResult = Array<{
@@ -613,13 +1094,21 @@ export type SitemapDataResult = Array<{
   _updatedAt: string
 }>
 // Variable: allPostsQuery
-// Query: *[_type == "post" && defined(slug.current)] | order(date desc, _updatedAt desc) {      _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  }
+// Query: *[_type == "post" && defined(slug.current)] | order(date desc, _updatedAt desc) {      _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  title,  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  }
 export type AllPostsQueryResult = Array<{
   _id: string
   status: 'draft' | 'published'
-  title: string
+  title: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
   slug: string
-  excerpt: string | null
+  excerpt: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  > | null
   coverImage: {
     asset?: {
       _ref: string
@@ -636,13 +1125,21 @@ export type AllPostsQueryResult = Array<{
   date: string
 }>
 // Variable: morePostsQuery
-// Query: *[_type == "post" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {      _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  }
+// Query: *[_type == "post" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {      _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  title,  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  }
 export type MorePostsQueryResult = Array<{
   _id: string
   status: 'draft' | 'published'
-  title: string
+  title: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
   slug: string
-  excerpt: string | null
+  excerpt: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  > | null
   coverImage: {
     asset?: {
       _ref: string
@@ -659,40 +1156,22 @@ export type MorePostsQueryResult = Array<{
   date: string
 }>
 // Variable: postQuery
-// Query: *[_type == "post" && slug.current == $slug] [0] {    content[]{    ...,    markDefs[]{      ...,        _type == "link" => {    "post": post->slug.current  }    }  },      _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  }
+// Query: *[_type == "post" && slug.current == $slug] [0] {    content,      _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  title,  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  }
 export type PostQueryResult = {
-  content: Array<{
-    children?: Array<{
-      marks?: Array<string>
-      text?: string
-      _type: 'span'
-      _key: string
-    }>
-    style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'normal'
-    listItem?: 'bullet' | 'number'
-    markDefs: Array<{
-      linkType?: 'href' | 'page' | 'post'
-      href?: string
-      page?: {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'page'
-      }
-      post: string | null
-      openInNewTab?: boolean
-      _type: 'link'
-      _key: string
-    }> | null
-    level?: number
-    _type: 'block'
-    _key: string
-  }> | null
+  content: InternationalizedArrayBlockContent | null
   _id: string
   status: 'draft' | 'published'
-  title: string
+  title: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  >
   slug: string
-  excerpt: string | null
+  excerpt: Array<
+    {
+      _key: string
+    } & InternationalizedArrayStringValue
+  > | null
   coverImage: {
     asset?: {
       _ref: string
@@ -719,17 +1198,17 @@ import '@sanity/client'
 declare module '@sanity/client' {
   interface SanityQueries {
     '*[_type == "settings"][0]': SettingsQueryResult
-    '\n  *[_type == "home"][0]{\n    _id,\n    title,\n    headline,\n    tagline,\n    ctaButtons[]{\n      text,\n      link{\n        href,\n        external\n      }\n    },\n    profile->{\n      name,\n      email,\n      phone,\n      motto,\n      about,\n      location,\n      picture,\n      workPreference,\n      socialLinks[]{\n        platform,\n        url\n      }\n    },\n    featuredProjects[]->{\n      _id,\n      "title": name,\n      description,\n      "image": coverImage,\n      "technologies": skills[]->name,\n      "link": websiteLink,\n      "github": sourceLink,\n      featured\n    }\n  }\n': HomeQueryResult
+    '\n  *[_type == "home"][0]{\n    _id,\n    title,\n    headline,\n    tagline,\n    ctaButtons[]{\n      text,\n      link{\n        href,\n        external\n      }\n    },\n    profile->{\n      name,\n      email,\n      phone,\n      motto,\n      about,\n      location,\n      picture,\n      workPreference,\n      socialLinks[]{\n        platform,\n        url\n      }\n    },\n    featuredProjects[]->{\n      _id,\n      name,\n      description,\n      "image": coverImage,\n      "technologies": skills[]->name,\n      "link": websiteLink,\n      "github": sourceLink,\n      featured\n    }\n  }\n': HomeQueryResult
     '\n  *[_type == "profile"][0]{\n    _id,\n    name,\n    email,\n    phone,\n    motto,\n    about,\n    location,\n    picture,\n    workPreference,\n    socialLinks[]{\n      platform,\n      url\n    }\n  }\n': ProfileQueryResult
     '\n  *[_type == "resume"][0]{\n    _id,\n    title,\n    description,\n    showSkills,\n    showProjects,\n    showCertificates\n  }\n': ResumeQueryResult
-    '\n  *[_type == "job"] | order(startDate desc){\n    _id,\n    "title": position,\n    company,\n    location,\n    startDate,\n    endDate,\n    "current": isCurrent,\n    "description": description,\n    responsibilities,\n    "technologies": skills[]->name\n  }\n': AllJobsQueryResult
-    '\n  *[_type == "project"] | order(_createdAt desc){\n    _id,\n    "title": name,\n    description,\n    "image": coverImage,\n    "technologies": skills[]->name,\n    "link": websiteLink,\n    "github": sourceLink,\n    featured,\n    duration\n  }\n': AllProjectsQueryResult
+    '\n  *[_type == "job"] | order(startDate desc){\n    _id,\n    position,\n    company,\n    location,\n    startDate,\n    endDate,\n    "current": isCurrent,\n    description,\n    responsibilities,\n    "technologies": skills[]->name\n  }\n': AllJobsQueryResult
+    '\n  *[_type == "project"] | order(_createdAt desc){\n    _id,\n    name,\n    description,\n    "image": coverImage,\n    "technologies": skills[]->name,\n    "link": websiteLink,\n    "github": sourceLink,\n    featured,\n    duration\n  }\n': AllProjectsQueryResult
     '\n  *[_type == "skill"] | order(name asc){\n    _id,\n    name\n  }\n': AllSkillsQueryResult
-    '\n  *[_type == "certificate"] | order(dateIssued desc){\n    _id,\n    "name": title,\n    "issuer": title,\n    "issueDate": dateIssued,\n    "description": description,\n    "link": link\n  }\n': AllCertificatesQueryResult
+    '\n  *[_type == "certificate"] | order(dateIssued desc)\n': AllCertificatesQueryResult
     '\n  *[_type == "post" && defined(slug.current)] | order(_type asc) {\n    "slug": slug.current,\n    _type,\n    _updatedAt,\n  }\n': SitemapDataResult
-    '\n  *[_type == "post" && defined(slug.current)] | order(date desc, _updatedAt desc) {\n    \n  _id,\n  "status": select(_originalId in path("drafts.**") => "draft", "published"),\n  "title": coalesce(title, "Untitled"),\n  "slug": slug.current,\n  excerpt,\n  coverImage,\n  "date": coalesce(date, _updatedAt),\n\n  }\n': AllPostsQueryResult
-    '\n  *[_type == "post" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {\n    \n  _id,\n  "status": select(_originalId in path("drafts.**") => "draft", "published"),\n  "title": coalesce(title, "Untitled"),\n  "slug": slug.current,\n  excerpt,\n  coverImage,\n  "date": coalesce(date, _updatedAt),\n\n  }\n': MorePostsQueryResult
-    '\n  *[_type == "post" && slug.current == $slug] [0] {\n    content[]{\n    ...,\n    markDefs[]{\n      ...,\n      \n  _type == "link" => {\n    "post": post->slug.current\n  }\n\n    }\n  },\n    \n  _id,\n  "status": select(_originalId in path("drafts.**") => "draft", "published"),\n  "title": coalesce(title, "Untitled"),\n  "slug": slug.current,\n  excerpt,\n  coverImage,\n  "date": coalesce(date, _updatedAt),\n\n  }\n': PostQueryResult
+    '\n  *[_type == "post" && defined(slug.current)] | order(date desc, _updatedAt desc) {\n    \n  _id,\n  "status": select(_originalId in path("drafts.**") => "draft", "published"),\n  title,\n  "slug": slug.current,\n  excerpt,\n  coverImage,\n  "date": coalesce(date, _updatedAt),\n\n  }\n': AllPostsQueryResult
+    '\n  *[_type == "post" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {\n    \n  _id,\n  "status": select(_originalId in path("drafts.**") => "draft", "published"),\n  title,\n  "slug": slug.current,\n  excerpt,\n  coverImage,\n  "date": coalesce(date, _updatedAt),\n\n  }\n': MorePostsQueryResult
+    '\n  *[_type == "post" && slug.current == $slug] [0] {\n    content,\n    \n  _id,\n  "status": select(_originalId in path("drafts.**") => "draft", "published"),\n  title,\n  "slug": slug.current,\n  excerpt,\n  coverImage,\n  "date": coalesce(date, _updatedAt),\n\n  }\n': PostQueryResult
     '\n  *[_type == "post" && defined(slug.current)]\n  {"slug": slug.current}\n': PostPagesSlugsResult
   }
 }

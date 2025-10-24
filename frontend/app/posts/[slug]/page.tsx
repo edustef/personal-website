@@ -3,13 +3,14 @@ import {notFound} from 'next/navigation'
 import {type PortableTextBlock} from 'next-sanity'
 import {Suspense} from 'react'
 
-import CoverImage from '@/app/components/CoverImage'
-import DateComponent from '@/app/components/Date'
-import {MorePosts} from '@/app/components/Posts'
-import PortableText from '@/app/components/PortableText'
+import CoverImage from '@/components/CoverImage'
+import DateComponent from '@/components/Date'
+import {MorePosts} from '@/components/Posts'
+import PortableText from '@/components/PortableText'
 import {sanityFetch} from '@/sanity/lib/live'
 import {postPagesSlugs, postQuery} from '@/sanity/lib/queries'
 import {resolveOpenGraphImage} from '@/sanity/lib/utils'
+import {getLocalizedField, getLocalizedBlockContent} from '@/lib/i18n'
 
 type Props = {
   params: Promise<{slug: string}>
@@ -38,15 +39,17 @@ export async function generateMetadata(props: Props, parent: ResolvingMetadata):
   const {data: post} = await sanityFetch({
     query: postQuery,
     params,
-    // Metadata should never contain stega
     stega: false,
   })
   const previousImages = (await parent).openGraph?.images || []
   const ogImage = resolveOpenGraphImage(post?.coverImage)
 
+  const postTitle = getLocalizedField(post?.title, 'en') || 'Untitled'
+  const postExcerpt = getLocalizedField(post?.excerpt, 'en')
+
   return {
-    title: post?.title,
-    description: post?.excerpt,
+    title: postTitle,
+    description: postExcerpt,
     openGraph: {
       images: ogImage ? [ogImage, ...previousImages] : previousImages,
     },
@@ -61,6 +64,10 @@ export default async function PostPage(props: Props) {
     return notFound()
   }
 
+  const postTitle = getLocalizedField(post.title, 'en') || 'Untitled'
+  const postExcerpt = getLocalizedField(post.excerpt, 'en')
+  const postContent = getLocalizedBlockContent(post.content, 'en')
+
   return (
     <>
       <div className="bg-gradient-to-b from-white to-gray-50">
@@ -74,15 +81,15 @@ export default async function PostPage(props: Props) {
               )}
               <div className="space-y-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                  <span className="gradient-text">{post.title}</span>
+                  <span className="gradient-text">{postTitle}</span>
                 </h1>
                 <div className="flex items-center gap-4 text-gray-600">
                   <time dateTime={post.date} className="text-sm font-medium">
                     <DateComponent dateString={post.date} />
                   </time>
                 </div>
-                {post.excerpt && (
-                  <p className="text-xl text-gray-600 leading-relaxed">{post.excerpt}</p>
+                {postExcerpt && (
+                  <p className="text-xl text-gray-600 leading-relaxed">{postExcerpt}</p>
                 )}
               </div>
             </div>
@@ -101,7 +108,9 @@ export default async function PostPage(props: Props) {
               prose-ul:my-6 prose-ol:my-6
               prose-li:my-2"
             >
-              {post.content?.length && <PortableText value={post.content as PortableTextBlock[]} />}
+              {postContent?.length > 0 && (
+                <PortableText value={postContent as PortableTextBlock[]} />
+              )}
             </article>
           </div>
         </div>

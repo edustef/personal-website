@@ -1,5 +1,5 @@
-import { defineType } from 'sanity'
-import { toPlainText } from '../../lib/toPlainText'
+import {defineType} from 'sanity'
+import {toPlainText} from '../../lib/toPlainText'
 
 export const certificate = defineType({
   name: 'certificate',
@@ -34,9 +34,9 @@ export const certificate = defineType({
       description: 'description',
       dateIssued: 'dateIssued',
     },
-    prepare({ title, description, dateIssued }) {
+    prepare({title, description, dateIssued}) {
       const descriptionText = toPlainText(description)
-      return { title, subtitle:  `${descriptionText} on ${dateIssued}`}
+      return {title, subtitle: `${descriptionText} on ${dateIssued}`}
     },
   },
 })

@@ -1,5 +1,5 @@
 import {HomeIcon} from '@sanity/icons'
-import {defineArrayMember, defineField, defineType} from 'sanity'
+import {defineField, defineType} from 'sanity'
 
 export const home = defineType({
   name: 'home',
@@ -11,22 +11,21 @@ export const home = defineType({
       name: 'title',
       description: 'This field is the title of your personal website.',
       title: 'Title',
-      type: 'string',
+      type: 'internationalizedArrayString',
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'headline',
       title: 'Hero Headline',
       description: 'Large text shown in the hero section',
-      type: 'string',
+      type: 'internationalizedArrayString',
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'tagline',
       title: 'Hero Tagline',
       description: 'Subtitle shown below the headline',
-      type: 'text',
-      rows: 3,
+      type: 'internationalizedArrayString',
     }),
     defineField({
       name: 'profile',

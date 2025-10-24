@@ -1,6 +1,6 @@
 import {Suspense} from 'react'
 import type {Metadata} from 'next'
-import {AllPosts} from '@/app/components/Posts'
+import {AllPosts} from '@/components/Posts'
 
 export const metadata: Metadata = {
   title: 'Blog',

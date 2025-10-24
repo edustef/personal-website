@@ -1,5 +1,5 @@
-import { DocumentIcon } from '@sanity/icons'
-import { defineField, defineType } from 'sanity'
+import {DocumentIcon} from '@sanity/icons'
+import {defineField, defineType} from 'sanity'
 
 export const project = defineType({
   name: 'project',
@@ -11,7 +11,7 @@ export const project = defineType({
       name: 'name',
       description: 'This field is the title of your project.',
       title: 'Name',
-      type: 'string',
+      type: 'internationalizedArrayString',
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -25,8 +25,7 @@ export const project = defineType({
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'array',
-      of: [{ type: 'block' }],
+      type: 'internationalizedArrayBlockContent',
     }),
     defineField({
       name: 'duration',
@@ -50,7 +49,7 @@ export const project = defineType({
       of: [
         {
           type: 'reference',
-          to: [{ type: 'skill' }],
+          to: [{type: 'skill'}],
         },
       ],
       options: {

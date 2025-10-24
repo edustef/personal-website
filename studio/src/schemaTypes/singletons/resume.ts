@@ -11,14 +11,14 @@ export const resume = defineType({
       name: 'title',
       description: 'The title for the resume page',
       title: 'Title',
-      type: 'string',
+      type: 'internationalizedArrayString',
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'description',
       title: 'Description',
       description: 'A brief description for SEO',
-      type: 'text',
+      type: 'internationalizedArrayString',
     }),
     defineField({
       name: 'showSkills',

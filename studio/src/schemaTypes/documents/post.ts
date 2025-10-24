@@ -16,7 +16,7 @@ export const post = defineType({
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'string',
+      type: 'internationalizedArrayString',
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -25,7 +25,7 @@ export const post = defineType({
       type: 'slug',
       description: 'A slug is required for the post to show up in the preview',
       options: {
-        source: 'title',
+        source: 'title[0].value',
         maxLength: 96,
         isUnique: (value, context) => context.defaultIsUnique(value, context),
       },
@@ -34,12 +34,12 @@ export const post = defineType({
     defineField({
       name: 'content',
       title: 'Content',
-      type: 'blockContent',
+      type: 'internationalizedArrayBlockContent',
     }),
     defineField({
       name: 'excerpt',
       title: 'Excerpt',
-      type: 'text',
+      type: 'internationalizedArrayString',
     }),
     defineField({
       name: 'coverImage',

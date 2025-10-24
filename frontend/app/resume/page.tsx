@@ -12,6 +12,7 @@ import {
 } from '@/sanity/lib/queries'
 import {sanityFetch} from '@/sanity/lib/live'
 import {urlForImage} from '@/sanity/lib/utils'
+import {getLocalizedField, getLocalizedBlockContent} from '@/lib/i18n'
 
 export async function generateMetadata(): Promise<Metadata> {
   const {data: resume} = await sanityFetch({
@@ -19,9 +20,13 @@ export async function generateMetadata(): Promise<Metadata> {
     stega: false,
   })
 
+  const resumeTitle = getLocalizedField((resume as any)?.title, 'en') || 'Resume'
+  const resumeDescription =
+    getLocalizedField((resume as any)?.description, 'en') || 'Professional resume'
+
   return {
-    title: (resume as any)?.title || 'Resume',
-    description: (resume as any)?.description || 'Professional resume',
+    title: resumeTitle,
+    description: resumeDescription,
   }
 }
 
@@ -52,10 +57,8 @@ export default async function ResumePage() {
   const name = profileData?.name || 'Name'
   const email = profileData?.email
   const phone = profileData?.phone
-  const location = Array.isArray(profileData?.location)
-    ? profileData.location[0]?.value
-    : profileData?.location
-  const about = Array.isArray(profileData?.about) ? profileData.about[0]?.value : profileData?.about
+  const location = getLocalizedField(profileData?.location, 'en')
+  const about = getLocalizedField(profileData?.about, 'en')
 
   const groupedSkills: Record<string, any[]> = {}
   if (skillsData && skillsData.length > 0) {
@@ -189,16 +192,15 @@ export default async function ResumePage() {
                       : job.endDate
                         ? format(new Date(job.endDate), 'MMM yyyy')
                         : 'Present'
-                    const jobLocation = Array.isArray(job.location)
-                      ? job.location[0]?.value
-                      : job.location
+                    const jobPosition = getLocalizedField(job.position, 'en')
+                    const jobDescription = getLocalizedBlockContent(job.description, 'en')
 
                     return (
                       <div key={job._id} className="print:break-inside-avoid">
                         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 print:gap-1 mb-2 print:mb-1">
                           <div>
                             <h3 className="text-lg print:text-base font-bold text-gray-900">
-                              {job.title}
+                              {jobPosition}
                             </h3>
                             <p className="text-base print:text-sm font-semibold text-primary-600 print:text-gray-700">
                               {job.company}
@@ -206,18 +208,11 @@ export default async function ResumePage() {
                           </div>
                           <div className="text-sm print:text-xs text-gray-600 flex-shrink-0">
                             {startFormatted} - {endFormatted}
-                            {jobLocation && (
-                              <span className="block print:inline print:ml-2">{jobLocation}</span>
-                            )}
                           </div>
                         </div>
-                        {job.description && (
+                        {jobDescription && jobDescription.length > 0 && (
                           <div className="text-gray-700 print:text-gray-800 text-sm print:text-xs mb-2 prose prose-sm print:prose-xs max-w-none">
-                            {Array.isArray(job.description) && job.description[0]?.value ? (
-                              <PortableText value={job.description[0].value} />
-                            ) : (
-                              <PortableText value={job.description} />
-                            )}
+                            <PortableText value={jobDescription} />
                           </div>
                         )}
                         {job.technologies && job.technologies.length > 0 && (
@@ -277,18 +272,17 @@ export default async function ResumePage() {
                 </h2>
                 <div className="space-y-4 print:space-y-3">
                   {projectsData.slice(0, 6).map((project: any) => {
+                    const projectName = getLocalizedField(project.name, 'en')
+                    const projectDescription = getLocalizedBlockContent(project.description, 'en')
+
                     return (
                       <div key={project._id} className="print:break-inside-avoid">
                         <h3 className="text-lg print:text-base font-bold text-gray-900 mb-1">
-                          {project.title}
+                          {projectName}
                         </h3>
-                        {project.description && (
+                        {projectDescription && projectDescription.length > 0 && (
                           <div className="text-gray-700 print:text-gray-800 text-sm print:text-xs mb-2 print:mb-1 prose prose-sm print:prose-xs max-w-none">
-                            {Array.isArray(project.description) && project.description[0]?.value ? (
-                              <PortableText value={project.description[0].value} />
-                            ) : (
-                              <PortableText value={project.description} />
-                            )}
+                            <PortableText value={projectDescription} />
                           </div>
                         )}
                         {project.technologies && project.technologies.length > 0 && (
@@ -318,23 +312,26 @@ export default async function ResumePage() {
                     Certifications
                   </h2>
                   <div className="space-y-3 print:space-y-2">
-                    {certificatesData.map((cert: any) => (
-                      <div key={cert._id} className="print:break-inside-avoid">
-                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
-                          <div>
-                            <h3 className="text-base print:text-sm font-semibold text-gray-900">
-                              {cert.name}
-                            </h3>
-                            <p className="text-sm print:text-xs text-gray-600">{cert.issuer}</p>
+                    {certificatesData.map((cert: any) => {
+                      const certTitle = getLocalizedField(cert.title, 'en')
+
+                      return (
+                        <div key={cert._id} className="print:break-inside-avoid">
+                          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+                            <div>
+                              <h3 className="text-base print:text-sm font-semibold text-gray-900">
+                                {certTitle}
+                              </h3>
+                            </div>
+                            {cert.issueDate && (
+                              <span className="text-sm print:text-xs text-gray-600">
+                                {format(new Date(cert.issueDate), 'MMM yyyy')}
+                              </span>
+                            )}
                           </div>
-                          {cert.issueDate && (
-                            <span className="text-sm print:text-xs text-gray-600">
-                              {format(new Date(cert.issueDate), 'MMM yyyy')}
-                            </span>
-                          )}
                         </div>
-                      </div>
-                    ))}
+                      )
+                    })}
                   </div>
                 </section>
               )}

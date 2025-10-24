@@ -9,10 +9,9 @@ export const job = defineType({
       name: 'duration',
       title: 'Duration',
       options: {
-        columns: 2
-      }
+        columns: 2,
+      },
     },
-    
   ],
   fields: [
     {
