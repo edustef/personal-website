@@ -1,62 +1,62 @@
-import {HomeIcon} from '@sanity/icons'
-import {defineField, defineType} from 'sanity'
+import { HomeIcon } from "@sanity/icons";
+import { defineField, defineType } from "sanity";
 
 export const home = defineType({
-  name: 'home',
-  title: 'Home',
-  type: 'document',
+  name: "home",
+  title: "Home",
+  type: "document",
   icon: HomeIcon,
   fields: [
     defineField({
-      name: 'title',
-      description: 'This field is the title of your personal website.',
-      title: 'Title',
-      type: 'internationalizedArrayString',
+      name: "title",
+      description: "This field is the title of your personal website.",
+      title: "Title",
+      type: "internationalizedArrayString",
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'headline',
-      title: 'Hero Headline',
-      description: 'Large text shown in the hero section',
-      type: 'internationalizedArrayString',
+      name: "headline",
+      title: "Hero Headline",
+      description: "Large text shown in the hero section",
+      type: "internationalizedArrayString",
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'tagline',
-      title: 'Hero Tagline',
-      description: 'Subtitle shown below the headline',
-      type: 'internationalizedArrayString',
+      name: "tagline",
+      title: "Hero Tagline",
+      description: "Subtitle shown below the headline",
+      type: "internationalizedArrayString",
     }),
     defineField({
-      name: 'profile',
-      title: 'Profile',
-      type: 'reference',
-      to: [{type: 'profile'}],
+      name: "profile",
+      title: "Profile",
+      type: "reference",
+      to: [{ type: "profile" }],
     }),
     defineField({
-      name: 'ctaButtons',
-      title: 'CTA Buttons',
-      type: 'array',
-      of: [{type: 'button'}],
+      name: "ctaButtons",
+      title: "CTA Buttons",
+      type: "array",
+      of: [{ type: "button" }],
       validation: (rule) => rule.max(3),
     }),
     defineField({
-      name: 'featuredProjects',
-      title: 'Featured Projects',
-      description: 'Select projects to feature on the homepage',
-      type: 'array',
-      of: [{type: 'reference', to: [{type: 'project'}]}],
+      name: "featuredProjects",
+      title: "Featured Projects",
+      description: "Select projects to feature on the homepage",
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "project" }] }],
     }),
   ],
   preview: {
     select: {
-      title: 'title',
+      title: "title",
     },
-    prepare({title}) {
+    prepare({ title }) {
       return {
-        subtitle: 'Home',
+        subtitle: "Home",
         title,
-      }
+      };
     },
   },
-})
+});

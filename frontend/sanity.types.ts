@@ -14,712 +14,712 @@
 
 // Source: schema.json
 export type SocialLink = {
-  _type: 'socialLink'
-  name?: string
-  url?: string
-}
+  _type: "socialLink";
+  name?: string;
+  url?: string;
+};
 
 export type Button = {
-  _type: 'button'
+  _type: "button";
   text: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
-  link?: Link
-}
+  >;
+  link?: Link;
+};
 
 export type Link = {
-  _type: 'link'
-  linkType?: 'href' | 'post'
-  href?: string
+  _type: "link";
+  linkType?: "href" | "post";
+  href?: string;
   post?: {
-    _ref: string
-    _type: 'reference'
-    _weak?: boolean
-    [internalGroqTypeReferenceTo]?: 'post'
-  }
-  openInNewTab?: boolean
-}
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "post";
+  };
+  openInNewTab?: boolean;
+};
 
 export type Milestone = {
-  _type: 'milestone'
-  title: string
-  description?: string
+  _type: "milestone";
+  title: string;
+  description?: string;
   image?: {
     asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
-  tags?: Array<string>
-  duration: Duration
-}
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  tags?: Array<string>;
+  duration: Duration;
+};
 
 export type Duration = {
-  _type: 'duration'
-  start?: string
-  end?: string
-}
+  _type: "duration";
+  start?: string;
+  end?: string;
+};
 
 export type Timeline = {
-  _type: 'timeline'
+  _type: "timeline";
   items?: Array<{
-    title?: string
+    title?: string;
     milestones?: Array<
       {
-        _key: string
+        _key: string;
       } & Milestone
-    >
-    _type: 'item'
-    _key: string
-  }>
-}
+    >;
+    _type: "item";
+    _key: string;
+  }>;
+};
 
 export type BlockContent = Array<{
   children?: Array<{
-    marks?: Array<string>
-    text?: string
-    _type: 'span'
-    _key: string
-  }>
-  style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote'
-  listItem?: 'bullet' | 'number'
+    marks?: Array<string>;
+    text?: string;
+    _type: "span";
+    _key: string;
+  }>;
+  style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+  listItem?: "bullet" | "number";
   markDefs?: Array<{
-    linkType?: 'href' | 'post'
-    href?: string
+    linkType?: "href" | "post";
+    href?: string;
     post?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'post'
-    }
-    openInNewTab?: boolean
-    _type: 'link'
-    _key: string
-  }>
-  level?: number
-  _type: 'block'
-  _key: string
-}>
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "post";
+    };
+    openInNewTab?: boolean;
+    _type: "link";
+    _key: string;
+  }>;
+  level?: number;
+  _type: "block";
+  _key: string;
+}>;
 
 export type Certificate = {
-  _id: string
-  _type: 'certificate'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  title?: string
+  _id: string;
+  _type: "certificate";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
   description?: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayBlockContentValue
-  >
-  dateIssued?: string
-  link?: string
-}
+  >;
+  dateIssued?: string;
+  link?: string;
+};
 
 export type Job = {
-  _id: string
-  _type: 'job'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  company: string
+  _id: string;
+  _type: "job";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  company: string;
   logo: {
     asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
-  position?: string
-  isCurrent?: boolean
-  startDate: string
-  endDate?: string
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  position?: string;
+  isCurrent?: boolean;
+  startDate: string;
+  endDate?: string;
   description: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayBlockContentValue
-  >
-  todayText?: string
+  >;
+  todayText?: string;
   skills?: Array<{
-    _ref: string
-    _type: 'reference'
-    _weak?: boolean
-    _key: string
-    [internalGroqTypeReferenceTo]?: 'skill'
-  }>
-}
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "skill";
+  }>;
+};
 
 export type Skill = {
-  _id: string
-  _type: 'skill'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  name: string
-}
+  _id: string;
+  _type: "skill";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name: string;
+};
 
 export type Project = {
-  _id: string
-  _type: 'project'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
+  _id: string;
+  _type: "project";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
   name: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
+  >;
   coverImage?: {
     asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
   description?: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayBlockContentValue
-  >
-  duration?: string
-  sourceLink?: string
-  websiteLink?: string
+  >;
+  duration?: string;
+  sourceLink?: string;
+  websiteLink?: string;
   skills?: Array<{
-    _ref: string
-    _type: 'reference'
-    _weak?: boolean
-    _key: string
-    [internalGroqTypeReferenceTo]?: 'skill'
-  }>
-}
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "skill";
+  }>;
+};
 
 export type Resume = {
-  _id: string
-  _type: 'resume'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
+  _id: string;
+  _type: "resume";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
   title: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
+  >;
   description?: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
-  showSkills?: boolean
-  showProjects?: boolean
-  showCertificates?: boolean
-}
+  >;
+  showSkills?: boolean;
+  showProjects?: boolean;
+  showCertificates?: boolean;
+};
 
 export type Home = {
-  _id: string
-  _type: 'home'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
+  _id: string;
+  _type: "home";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
   title: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
+  >;
   headline: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
+  >;
   tagline?: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
+  >;
   profile?: {
-    _ref: string
-    _type: 'reference'
-    _weak?: boolean
-    [internalGroqTypeReferenceTo]?: 'profile'
-  }
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "profile";
+  };
   ctaButtons?: Array<
     {
-      _key: string
+      _key: string;
     } & Button
-  >
+  >;
   featuredProjects?: Array<{
-    _ref: string
-    _type: 'reference'
-    _weak?: boolean
-    _key: string
-    [internalGroqTypeReferenceTo]?: 'project'
-  }>
-}
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "project";
+  }>;
+};
 
 export type Profile = {
-  _id: string
-  _type: 'profile'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  name?: string
-  email?: string
-  phone?: string
+  _id: string;
+  _type: "profile";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  email?: string;
+  phone?: string;
   motto?: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
+  >;
   about?: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
+  >;
   location?: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
+  >;
   picture?: {
     asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
   workPreference?: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
+  >;
   socialLinks?: Array<
     {
-      _key: string
+      _key: string;
     } & SocialLink
-  >
-}
+  >;
+};
 
 export type Settings = {
-  _id: string
-  _type: 'settings'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  title: string
+  _id: string;
+  _type: "settings";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title: string;
   description?: Array<{
     children?: Array<{
-      marks?: Array<string>
-      text?: string
-      _type: 'span'
-      _key: string
-    }>
-    style?: 'normal'
-    listItem?: never
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal";
+    listItem?: never;
     markDefs?: Array<{
-      linkType?: 'href' | 'post'
-      href?: string
+      linkType?: "href" | "post";
+      href?: string;
       post?: {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'post'
-      }
-      openInNewTab?: boolean
-      _type: 'link'
-      _key: string
-    }>
-    level?: number
-    _type: 'block'
-    _key: string
-  }>
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "post";
+      };
+      openInNewTab?: boolean;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
   menuItems?: Array<
     | {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'home'
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "home";
       }
     | {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'project'
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "project";
       }
-  >
+  >;
   footer?: Array<{
     children?: Array<{
-      marks?: Array<string>
-      text?: string
-      _type: 'span'
-      _key: string
-    }>
-    style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote'
-    listItem?: 'bullet' | 'number'
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
     markDefs?: Array<{
-      href?: string
-      _type: 'link'
-      _key: string
-    }>
-    level?: number
-    _type: 'block'
-    _key: string
-  }>
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
   ogImage?: {
     asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    alt?: string
-    metadataBase?: string
-    _type: 'image'
-  }
-}
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    metadataBase?: string;
+    _type: "image";
+  };
+};
 
 export type MediaTag = {
-  _id: string
-  _type: 'media.tag'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  name?: Slug
-}
+  _id: string;
+  _type: "media.tag";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: Slug;
+};
 
 export type InternationalizedArrayBlockContentValue = {
-  _type: 'internationalizedArrayBlockContentValue'
-  value?: BlockContent
-}
+  _type: "internationalizedArrayBlockContentValue";
+  value?: BlockContent;
+};
 
 export type InternationalizedArrayStringValue = {
-  _type: 'internationalizedArrayStringValue'
-  value?: string
-}
+  _type: "internationalizedArrayStringValue";
+  value?: string;
+};
 
 export type InternationalizedArrayBlockContent = Array<
   {
-    _key: string
+    _key: string;
   } & InternationalizedArrayBlockContentValue
->
+>;
 
 export type Post = {
-  _id: string
-  _type: 'post'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
+  _id: string;
+  _type: "post";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
   title: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
-  slug: Slug
-  content?: InternationalizedArrayBlockContent
+  >;
+  slug: Slug;
+  content?: InternationalizedArrayBlockContent;
   excerpt?: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
+  >;
   coverImage: {
     asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    alt?: string
-    _type: 'image'
-  }
-  date?: string
-}
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+  date?: string;
+};
 
 export type InternationalizedArrayString = Array<
   {
-    _key: string
+    _key: string;
   } & InternationalizedArrayStringValue
->
+>;
 
 export type SanityAssistInstructionTask = {
-  _type: 'sanity.assist.instructionTask'
-  path?: string
-  instructionKey?: string
-  started?: string
-  updated?: string
-  info?: string
-}
+  _type: "sanity.assist.instructionTask";
+  path?: string;
+  instructionKey?: string;
+  started?: string;
+  updated?: string;
+  info?: string;
+};
 
 export type SanityAssistTaskStatus = {
-  _type: 'sanity.assist.task.status'
+  _type: "sanity.assist.task.status";
   tasks?: Array<
     {
-      _key: string
+      _key: string;
     } & SanityAssistInstructionTask
-  >
-}
+  >;
+};
 
 export type SanityAssistSchemaTypeAnnotations = {
-  _type: 'sanity.assist.schemaType.annotations'
-  title?: string
+  _type: "sanity.assist.schemaType.annotations";
+  title?: string;
   fields?: Array<
     {
-      _key: string
+      _key: string;
     } & SanityAssistSchemaTypeField
-  >
-}
+  >;
+};
 
 export type SanityAssistOutputType = {
-  _type: 'sanity.assist.output.type'
-  type?: string
-}
+  _type: "sanity.assist.output.type";
+  type?: string;
+};
 
 export type SanityAssistOutputField = {
-  _type: 'sanity.assist.output.field'
-  path?: string
-}
+  _type: "sanity.assist.output.field";
+  path?: string;
+};
 
 export type SanityAssistInstructionContext = {
-  _type: 'sanity.assist.instruction.context'
+  _type: "sanity.assist.instruction.context";
   reference: {
-    _ref: string
-    _type: 'reference'
-    _weak?: boolean
-    [internalGroqTypeReferenceTo]?: 'assist.instruction.context'
-  }
-}
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "assist.instruction.context";
+  };
+};
 
 export type AssistInstructionContext = {
-  _id: string
-  _type: 'assist.instruction.context'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  title?: string
+  _id: string;
+  _type: "assist.instruction.context";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
   context?: Array<{
     children?: Array<{
-      marks?: Array<string>
-      text?: string
-      _type: 'span'
-      _key: string
-    }>
-    style?: 'normal'
-    listItem?: never
-    markDefs?: null
-    level?: number
-    _type: 'block'
-    _key: string
-  }>
-}
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal";
+    listItem?: never;
+    markDefs?: null;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+};
 
 export type SanityAssistInstructionUserInput = {
-  _type: 'sanity.assist.instruction.userInput'
-  message: string
-  description?: string
-}
+  _type: "sanity.assist.instruction.userInput";
+  message: string;
+  description?: string;
+};
 
 export type SanityAssistInstructionPrompt = Array<{
   children?: Array<
     | {
-        marks?: Array<string>
-        text?: string
-        _type: 'span'
-        _key: string
+        marks?: Array<string>;
+        text?: string;
+        _type: "span";
+        _key: string;
       }
     | ({
-        _key: string
+        _key: string;
       } & SanityAssistInstructionFieldRef)
     | ({
-        _key: string
+        _key: string;
       } & SanityAssistInstructionContext)
     | ({
-        _key: string
+        _key: string;
       } & SanityAssistInstructionUserInput)
-  >
-  style?: 'normal'
-  listItem?: never
-  markDefs?: null
-  level?: number
-  _type: 'block'
-  _key: string
-}>
+  >;
+  style?: "normal";
+  listItem?: never;
+  markDefs?: null;
+  level?: number;
+  _type: "block";
+  _key: string;
+}>;
 
 export type SanityAssistInstructionFieldRef = {
-  _type: 'sanity.assist.instruction.fieldRef'
-  path?: string
-}
+  _type: "sanity.assist.instruction.fieldRef";
+  path?: string;
+};
 
 export type SanityAssistInstruction = {
-  _type: 'sanity.assist.instruction'
-  prompt?: SanityAssistInstructionPrompt
-  icon?: string
-  title?: string
-  userId?: string
-  createdById?: string
+  _type: "sanity.assist.instruction";
+  prompt?: SanityAssistInstructionPrompt;
+  icon?: string;
+  title?: string;
+  userId?: string;
+  createdById?: string;
   output?: Array<
     | ({
-        _key: string
+        _key: string;
       } & SanityAssistOutputField)
     | ({
-        _key: string
+        _key: string;
       } & SanityAssistOutputType)
-  >
-}
+  >;
+};
 
 export type SanityAssistSchemaTypeField = {
-  _type: 'sanity.assist.schemaType.field'
-  path?: string
+  _type: "sanity.assist.schemaType.field";
+  path?: string;
   instructions?: Array<
     {
-      _key: string
+      _key: string;
     } & SanityAssistInstruction
-  >
-}
+  >;
+};
 
 export type SanityImagePaletteSwatch = {
-  _type: 'sanity.imagePaletteSwatch'
-  background?: string
-  foreground?: string
-  population?: number
-  title?: string
-}
+  _type: "sanity.imagePaletteSwatch";
+  background?: string;
+  foreground?: string;
+  population?: number;
+  title?: string;
+};
 
 export type SanityImagePalette = {
-  _type: 'sanity.imagePalette'
-  darkMuted?: SanityImagePaletteSwatch
-  lightVibrant?: SanityImagePaletteSwatch
-  darkVibrant?: SanityImagePaletteSwatch
-  vibrant?: SanityImagePaletteSwatch
-  dominant?: SanityImagePaletteSwatch
-  lightMuted?: SanityImagePaletteSwatch
-  muted?: SanityImagePaletteSwatch
-}
+  _type: "sanity.imagePalette";
+  darkMuted?: SanityImagePaletteSwatch;
+  lightVibrant?: SanityImagePaletteSwatch;
+  darkVibrant?: SanityImagePaletteSwatch;
+  vibrant?: SanityImagePaletteSwatch;
+  dominant?: SanityImagePaletteSwatch;
+  lightMuted?: SanityImagePaletteSwatch;
+  muted?: SanityImagePaletteSwatch;
+};
 
 export type SanityImageDimensions = {
-  _type: 'sanity.imageDimensions'
-  height: number
-  width: number
-  aspectRatio: number
-}
+  _type: "sanity.imageDimensions";
+  height: number;
+  width: number;
+  aspectRatio: number;
+};
 
 export type SanityImageHotspot = {
-  _type: 'sanity.imageHotspot'
-  x: number
-  y: number
-  height: number
-  width: number
-}
+  _type: "sanity.imageHotspot";
+  x: number;
+  y: number;
+  height: number;
+  width: number;
+};
 
 export type SanityImageCrop = {
-  _type: 'sanity.imageCrop'
-  top: number
-  bottom: number
-  left: number
-  right: number
-}
+  _type: "sanity.imageCrop";
+  top: number;
+  bottom: number;
+  left: number;
+  right: number;
+};
 
 export type SanityFileAsset = {
-  _id: string
-  _type: 'sanity.fileAsset'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  originalFilename?: string
-  label?: string
-  title?: string
-  description?: string
-  altText?: string
-  sha1hash?: string
-  extension?: string
-  mimeType?: string
-  size?: number
-  assetId?: string
-  uploadId?: string
-  path?: string
-  url?: string
-  source?: SanityAssetSourceData
-}
+  _id: string;
+  _type: "sanity.fileAsset";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  originalFilename?: string;
+  label?: string;
+  title?: string;
+  description?: string;
+  altText?: string;
+  sha1hash?: string;
+  extension?: string;
+  mimeType?: string;
+  size?: number;
+  assetId?: string;
+  uploadId?: string;
+  path?: string;
+  url?: string;
+  source?: SanityAssetSourceData;
+};
 
 export type SanityImageAsset = {
-  _id: string
-  _type: 'sanity.imageAsset'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  originalFilename?: string
-  label?: string
-  title?: string
-  description?: string
-  altText?: string
-  sha1hash?: string
-  extension?: string
-  mimeType?: string
-  size?: number
-  assetId?: string
-  uploadId?: string
-  path?: string
-  url?: string
-  metadata?: SanityImageMetadata
-  source?: SanityAssetSourceData
-}
+  _id: string;
+  _type: "sanity.imageAsset";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  originalFilename?: string;
+  label?: string;
+  title?: string;
+  description?: string;
+  altText?: string;
+  sha1hash?: string;
+  extension?: string;
+  mimeType?: string;
+  size?: number;
+  assetId?: string;
+  uploadId?: string;
+  path?: string;
+  url?: string;
+  metadata?: SanityImageMetadata;
+  source?: SanityAssetSourceData;
+};
 
 export type SanityImageMetadata = {
-  _type: 'sanity.imageMetadata'
-  location?: Geopoint
-  dimensions?: SanityImageDimensions
-  palette?: SanityImagePalette
-  lqip?: string
-  blurHash?: string
-  hasAlpha?: boolean
-  isOpaque?: boolean
-}
+  _type: "sanity.imageMetadata";
+  location?: Geopoint;
+  dimensions?: SanityImageDimensions;
+  palette?: SanityImagePalette;
+  lqip?: string;
+  blurHash?: string;
+  hasAlpha?: boolean;
+  isOpaque?: boolean;
+};
 
 export type Geopoint = {
-  _type: 'geopoint'
-  lat?: number
-  lng?: number
-  alt?: number
-}
+  _type: "geopoint";
+  lat?: number;
+  lng?: number;
+  alt?: number;
+};
 
 export type Slug = {
-  _type: 'slug'
-  current: string
-  source?: string
-}
+  _type: "slug";
+  current: string;
+  source?: string;
+};
 
 export type SanityAssetSourceData = {
-  _type: 'sanity.assetSourceData'
-  name?: string
-  id?: string
-  url?: string
-}
+  _type: "sanity.assetSourceData";
+  name?: string;
+  id?: string;
+  url?: string;
+};
 
 export type AllSanitySchemaTypes =
   | SocialLink
@@ -765,450 +765,450 @@ export type AllSanitySchemaTypes =
   | SanityImageMetadata
   | Geopoint
   | Slug
-  | SanityAssetSourceData
-export declare const internalGroqTypeReferenceTo: unique symbol
+  | SanityAssetSourceData;
+export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/lib/queries.ts
 // Variable: settingsQuery
 // Query: *[_type == "settings"][0]
 export type SettingsQueryResult = {
-  _id: string
-  _type: 'settings'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  title: string
+  _id: string;
+  _type: "settings";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title: string;
   description?: Array<{
     children?: Array<{
-      marks?: Array<string>
-      text?: string
-      _type: 'span'
-      _key: string
-    }>
-    style?: 'normal'
-    listItem?: never
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal";
+    listItem?: never;
     markDefs?: Array<{
-      linkType?: 'href' | 'post'
-      href?: string
+      linkType?: "href" | "post";
+      href?: string;
       post?: {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'post'
-      }
-      openInNewTab?: boolean
-      _type: 'link'
-      _key: string
-    }>
-    level?: number
-    _type: 'block'
-    _key: string
-  }>
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "post";
+      };
+      openInNewTab?: boolean;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
   menuItems?: Array<
     | {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'home'
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "home";
       }
     | {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'project'
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "project";
       }
-  >
+  >;
   footer?: Array<{
     children?: Array<{
-      marks?: Array<string>
-      text?: string
-      _type: 'span'
-      _key: string
-    }>
-    style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'normal'
-    listItem?: 'bullet' | 'number'
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+    listItem?: "bullet" | "number";
     markDefs?: Array<{
-      href?: string
-      _type: 'link'
-      _key: string
-    }>
-    level?: number
-    _type: 'block'
-    _key: string
-  }>
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
   ogImage?: {
     asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    alt?: string
-    metadataBase?: string
-    _type: 'image'
-  }
-} | null
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    metadataBase?: string;
+    _type: "image";
+  };
+} | null;
 // Variable: homeQuery
 // Query: *[_type == "home"][0]{    _id,    title,    headline,    tagline,    ctaButtons[]{      text,      link{        href,        external      }    },    profile->{      name,      email,      phone,      motto,      about,      location,      picture,      workPreference,      socialLinks[]{        platform,        url      }    },    featuredProjects[]->{      _id,      name,      description,      "image": coverImage,      "technologies": skills[]->name,      "link": websiteLink,      "github": sourceLink,      featured    }  }
 export type HomeQueryResult = {
-  _id: string
+  _id: string;
   title: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
+  >;
   headline: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
+  >;
   tagline: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  > | null
+  > | null;
   ctaButtons: Array<{
     text: Array<
       {
-        _key: string
+        _key: string;
       } & InternationalizedArrayStringValue
-    >
+    >;
     link: {
-      href: string | null
-      external: null
-    } | null
-  }> | null
+      href: string | null;
+      external: null;
+    } | null;
+  }> | null;
   profile: {
-    name: string | null
-    email: string | null
-    phone: string | null
+    name: string | null;
+    email: string | null;
+    phone: string | null;
     motto: Array<
       {
-        _key: string
+        _key: string;
       } & InternationalizedArrayStringValue
-    > | null
+    > | null;
     about: Array<
       {
-        _key: string
+        _key: string;
       } & InternationalizedArrayStringValue
-    > | null
+    > | null;
     location: Array<
       {
-        _key: string
+        _key: string;
       } & InternationalizedArrayStringValue
-    > | null
+    > | null;
     picture: {
       asset?: {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-      }
-      media?: unknown
-      hotspot?: SanityImageHotspot
-      crop?: SanityImageCrop
-      _type: 'image'
-    } | null
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
     workPreference: Array<
       {
-        _key: string
+        _key: string;
       } & InternationalizedArrayStringValue
-    > | null
+    > | null;
     socialLinks: Array<{
-      platform: null
-      url: string | null
-    }> | null
-  } | null
+      platform: null;
+      url: string | null;
+    }> | null;
+  } | null;
   featuredProjects: Array<{
-    _id: string
+    _id: string;
     name: Array<
       {
-        _key: string
+        _key: string;
       } & InternationalizedArrayStringValue
-    >
+    >;
     description: Array<
       {
-        _key: string
+        _key: string;
       } & InternationalizedArrayBlockContentValue
-    > | null
+    > | null;
     image: {
       asset?: {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-      }
-      media?: unknown
-      hotspot?: SanityImageHotspot
-      crop?: SanityImageCrop
-      _type: 'image'
-    } | null
-    technologies: Array<string> | null
-    link: string | null
-    github: string | null
-    featured: null
-  }> | null
-} | null
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
+    technologies: Array<string> | null;
+    link: string | null;
+    github: string | null;
+    featured: null;
+  }> | null;
+} | null;
 // Variable: profileQuery
 // Query: *[_type == "profile"][0]{    _id,    name,    email,    phone,    motto,    about,    location,    picture,    workPreference,    socialLinks[]{      platform,      url    }  }
 export type ProfileQueryResult = {
-  _id: string
-  name: string | null
-  email: string | null
-  phone: string | null
+  _id: string;
+  name: string | null;
+  email: string | null;
+  phone: string | null;
   motto: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  > | null
+  > | null;
   about: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  > | null
+  > | null;
   location: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  > | null
+  > | null;
   picture: {
     asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  } | null
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  } | null;
   workPreference: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  > | null
+  > | null;
   socialLinks: Array<{
-    platform: null
-    url: string | null
-  }> | null
-} | null
+    platform: null;
+    url: string | null;
+  }> | null;
+} | null;
 // Variable: resumeQuery
 // Query: *[_type == "resume"][0]{    _id,    title,    description,    showSkills,    showProjects,    showCertificates  }
 export type ResumeQueryResult = {
-  _id: string
+  _id: string;
   title: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
+  >;
   description: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  > | null
-  showSkills: boolean | null
-  showProjects: boolean | null
-  showCertificates: boolean | null
-} | null
+  > | null;
+  showSkills: boolean | null;
+  showProjects: boolean | null;
+  showCertificates: boolean | null;
+} | null;
 // Variable: allJobsQuery
 // Query: *[_type == "job"] | order(startDate desc){    _id,    position,    company,    location,    startDate,    endDate,    "current": isCurrent,    description,    responsibilities,    "technologies": skills[]->name  }
 export type AllJobsQueryResult = Array<{
-  _id: string
-  position: string | null
-  company: string
-  location: null
-  startDate: string
-  endDate: string | null
-  current: boolean | null
+  _id: string;
+  position: string | null;
+  company: string;
+  location: null;
+  startDate: string;
+  endDate: string | null;
+  current: boolean | null;
   description: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayBlockContentValue
-  >
-  responsibilities: null
-  technologies: Array<string> | null
-}>
+  >;
+  responsibilities: null;
+  technologies: Array<string> | null;
+}>;
 // Variable: allProjectsQuery
 // Query: *[_type == "project"] | order(_createdAt desc){    _id,    name,    description,    "image": coverImage,    "technologies": skills[]->name,    "link": websiteLink,    "github": sourceLink,    featured,    duration  }
 export type AllProjectsQueryResult = Array<{
-  _id: string
+  _id: string;
   name: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
+  >;
   description: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayBlockContentValue
-  > | null
+  > | null;
   image: {
     asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  } | null
-  technologies: Array<string> | null
-  link: string | null
-  github: string | null
-  featured: null
-  duration: string | null
-}>
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  } | null;
+  technologies: Array<string> | null;
+  link: string | null;
+  github: string | null;
+  featured: null;
+  duration: string | null;
+}>;
 // Variable: allSkillsQuery
 // Query: *[_type == "skill"] | order(name asc){    _id,    name  }
 export type AllSkillsQueryResult = Array<{
-  _id: string
-  name: string
-}>
+  _id: string;
+  name: string;
+}>;
 // Variable: allCertificatesQuery
 // Query: *[_type == "certificate"] | order(dateIssued desc)
 export type AllCertificatesQueryResult = Array<{
-  _id: string
-  _type: 'certificate'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  title?: string
+  _id: string;
+  _type: "certificate";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
   description?: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayBlockContentValue
-  >
-  dateIssued?: string
-  link?: string
-}>
+  >;
+  dateIssued?: string;
+  link?: string;
+}>;
 // Variable: sitemapData
 // Query: *[_type == "post" && defined(slug.current)] | order(_type asc) {    "slug": slug.current,    _type,    _updatedAt,  }
 export type SitemapDataResult = Array<{
-  slug: string
-  _type: 'post'
-  _updatedAt: string
-}>
+  slug: string;
+  _type: "post";
+  _updatedAt: string;
+}>;
 // Variable: allPostsQuery
 // Query: *[_type == "post" && defined(slug.current)] | order(date desc, _updatedAt desc) {      _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  title,  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  }
 export type AllPostsQueryResult = Array<{
-  _id: string
-  status: 'draft' | 'published'
+  _id: string;
+  status: "draft" | "published";
   title: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
-  slug: string
+  >;
+  slug: string;
   excerpt: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  > | null
+  > | null;
   coverImage: {
     asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    alt?: string
-    _type: 'image'
-  }
-  date: string
-}>
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+  date: string;
+}>;
 // Variable: morePostsQuery
 // Query: *[_type == "post" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {      _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  title,  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  }
 export type MorePostsQueryResult = Array<{
-  _id: string
-  status: 'draft' | 'published'
+  _id: string;
+  status: "draft" | "published";
   title: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
-  slug: string
+  >;
+  slug: string;
   excerpt: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  > | null
+  > | null;
   coverImage: {
     asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    alt?: string
-    _type: 'image'
-  }
-  date: string
-}>
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+  date: string;
+}>;
 // Variable: postQuery
 // Query: *[_type == "post" && slug.current == $slug] [0] {    content,      _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  title,  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  }
 export type PostQueryResult = {
-  content: InternationalizedArrayBlockContent | null
-  _id: string
-  status: 'draft' | 'published'
+  content: InternationalizedArrayBlockContent | null;
+  _id: string;
+  status: "draft" | "published";
   title: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  >
-  slug: string
+  >;
+  slug: string;
   excerpt: Array<
     {
-      _key: string
+      _key: string;
     } & InternationalizedArrayStringValue
-  > | null
+  > | null;
   coverImage: {
     asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    alt?: string
-    _type: 'image'
-  }
-  date: string
-} | null
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+  date: string;
+} | null;
 // Variable: postPagesSlugs
 // Query: *[_type == "post" && defined(slug.current)]  {"slug": slug.current}
 export type PostPagesSlugsResult = Array<{
-  slug: string
-}>
+  slug: string;
+}>;
 
 // Query TypeMap
-import '@sanity/client'
-declare module '@sanity/client' {
+import "@sanity/client";
+declare module "@sanity/client" {
   interface SanityQueries {
-    '*[_type == "settings"][0]': SettingsQueryResult
-    '\n  *[_type == "home"][0]{\n    _id,\n    title,\n    headline,\n    tagline,\n    ctaButtons[]{\n      text,\n      link{\n        href,\n        external\n      }\n    },\n    profile->{\n      name,\n      email,\n      phone,\n      motto,\n      about,\n      location,\n      picture,\n      workPreference,\n      socialLinks[]{\n        platform,\n        url\n      }\n    },\n    featuredProjects[]->{\n      _id,\n      name,\n      description,\n      "image": coverImage,\n      "technologies": skills[]->name,\n      "link": websiteLink,\n      "github": sourceLink,\n      featured\n    }\n  }\n': HomeQueryResult
-    '\n  *[_type == "profile"][0]{\n    _id,\n    name,\n    email,\n    phone,\n    motto,\n    about,\n    location,\n    picture,\n    workPreference,\n    socialLinks[]{\n      platform,\n      url\n    }\n  }\n': ProfileQueryResult
-    '\n  *[_type == "resume"][0]{\n    _id,\n    title,\n    description,\n    showSkills,\n    showProjects,\n    showCertificates\n  }\n': ResumeQueryResult
-    '\n  *[_type == "job"] | order(startDate desc){\n    _id,\n    position,\n    company,\n    location,\n    startDate,\n    endDate,\n    "current": isCurrent,\n    description,\n    responsibilities,\n    "technologies": skills[]->name\n  }\n': AllJobsQueryResult
-    '\n  *[_type == "project"] | order(_createdAt desc){\n    _id,\n    name,\n    description,\n    "image": coverImage,\n    "technologies": skills[]->name,\n    "link": websiteLink,\n    "github": sourceLink,\n    featured,\n    duration\n  }\n': AllProjectsQueryResult
-    '\n  *[_type == "skill"] | order(name asc){\n    _id,\n    name\n  }\n': AllSkillsQueryResult
-    '\n  *[_type == "certificate"] | order(dateIssued desc)\n': AllCertificatesQueryResult
-    '\n  *[_type == "post" && defined(slug.current)] | order(_type asc) {\n    "slug": slug.current,\n    _type,\n    _updatedAt,\n  }\n': SitemapDataResult
-    '\n  *[_type == "post" && defined(slug.current)] | order(date desc, _updatedAt desc) {\n    \n  _id,\n  "status": select(_originalId in path("drafts.**") => "draft", "published"),\n  title,\n  "slug": slug.current,\n  excerpt,\n  coverImage,\n  "date": coalesce(date, _updatedAt),\n\n  }\n': AllPostsQueryResult
-    '\n  *[_type == "post" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {\n    \n  _id,\n  "status": select(_originalId in path("drafts.**") => "draft", "published"),\n  title,\n  "slug": slug.current,\n  excerpt,\n  coverImage,\n  "date": coalesce(date, _updatedAt),\n\n  }\n': MorePostsQueryResult
-    '\n  *[_type == "post" && slug.current == $slug] [0] {\n    content,\n    \n  _id,\n  "status": select(_originalId in path("drafts.**") => "draft", "published"),\n  title,\n  "slug": slug.current,\n  excerpt,\n  coverImage,\n  "date": coalesce(date, _updatedAt),\n\n  }\n': PostQueryResult
-    '\n  *[_type == "post" && defined(slug.current)]\n  {"slug": slug.current}\n': PostPagesSlugsResult
+    '*[_type == "settings"][0]': SettingsQueryResult;
+    '\n  *[_type == "home"][0]{\n    _id,\n    title,\n    headline,\n    tagline,\n    ctaButtons[]{\n      text,\n      link{\n        href,\n        external\n      }\n    },\n    profile->{\n      name,\n      email,\n      phone,\n      motto,\n      about,\n      location,\n      picture,\n      workPreference,\n      socialLinks[]{\n        platform,\n        url\n      }\n    },\n    featuredProjects[]->{\n      _id,\n      name,\n      description,\n      "image": coverImage,\n      "technologies": skills[]->name,\n      "link": websiteLink,\n      "github": sourceLink,\n      featured\n    }\n  }\n': HomeQueryResult;
+    '\n  *[_type == "profile"][0]{\n    _id,\n    name,\n    email,\n    phone,\n    motto,\n    about,\n    location,\n    picture,\n    workPreference,\n    socialLinks[]{\n      platform,\n      url\n    }\n  }\n': ProfileQueryResult;
+    '\n  *[_type == "resume"][0]{\n    _id,\n    title,\n    description,\n    showSkills,\n    showProjects,\n    showCertificates\n  }\n': ResumeQueryResult;
+    '\n  *[_type == "job"] | order(startDate desc){\n    _id,\n    position,\n    company,\n    location,\n    startDate,\n    endDate,\n    "current": isCurrent,\n    description,\n    responsibilities,\n    "technologies": skills[]->name\n  }\n': AllJobsQueryResult;
+    '\n  *[_type == "project"] | order(_createdAt desc){\n    _id,\n    name,\n    description,\n    "image": coverImage,\n    "technologies": skills[]->name,\n    "link": websiteLink,\n    "github": sourceLink,\n    featured,\n    duration\n  }\n': AllProjectsQueryResult;
+    '\n  *[_type == "skill"] | order(name asc){\n    _id,\n    name\n  }\n': AllSkillsQueryResult;
+    '\n  *[_type == "certificate"] | order(dateIssued desc)\n': AllCertificatesQueryResult;
+    '\n  *[_type == "post" && defined(slug.current)] | order(_type asc) {\n    "slug": slug.current,\n    _type,\n    _updatedAt,\n  }\n': SitemapDataResult;
+    '\n  *[_type == "post" && defined(slug.current)] | order(date desc, _updatedAt desc) {\n    \n  _id,\n  "status": select(_originalId in path("drafts.**") => "draft", "published"),\n  title,\n  "slug": slug.current,\n  excerpt,\n  coverImage,\n  "date": coalesce(date, _updatedAt),\n\n  }\n': AllPostsQueryResult;
+    '\n  *[_type == "post" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {\n    \n  _id,\n  "status": select(_originalId in path("drafts.**") => "draft", "published"),\n  title,\n  "slug": slug.current,\n  excerpt,\n  coverImage,\n  "date": coalesce(date, _updatedAt),\n\n  }\n': MorePostsQueryResult;
+    '\n  *[_type == "post" && slug.current == $slug] [0] {\n    content,\n    \n  _id,\n  "status": select(_originalId in path("drafts.**") => "draft", "published"),\n  title,\n  "slug": slug.current,\n  excerpt,\n  coverImage,\n  "date": coalesce(date, _updatedAt),\n\n  }\n': PostQueryResult;
+    '\n  *[_type == "post" && defined(slug.current)]\n  {"slug": slug.current}\n': PostPagesSlugsResult;
   }
 }

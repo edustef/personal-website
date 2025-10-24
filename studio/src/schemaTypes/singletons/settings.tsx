@@ -1,7 +1,7 @@
-import {CogIcon} from '@sanity/icons'
-import {defineArrayMember, defineField, defineType} from 'sanity'
+import { CogIcon } from "@sanity/icons";
+import { defineArrayMember, defineField, defineType } from "sanity";
 
-import * as demo from '../../lib/initialValues'
+import * as demo from "../../lib/initialValues";
 
 /**
  * Settings schema Singleton.  Singletons are single documents that are displayed not in a collection, handy for things like site settings and other global configurations.
@@ -9,29 +9,29 @@ import * as demo from '../../lib/initialValues'
  */
 
 export const settings = defineType({
-  name: 'settings',
-  title: 'Settings',
-  type: 'document',
+  name: "settings",
+  title: "Settings",
+  type: "document",
   icon: CogIcon,
   fields: [
     defineField({
-      name: 'title',
-      description: 'This field is the title of your blog.',
-      title: 'Title',
-      type: 'string',
+      name: "title",
+      description: "This field is the title of your blog.",
+      title: "Title",
+      type: "string",
       initialValue: demo.title,
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'description',
-      description: 'Used on the Homepage',
-      title: 'Description',
-      type: 'array',
+      name: "description",
+      description: "Used on the Homepage",
+      title: "Description",
+      type: "array",
       initialValue: demo.description,
       of: [
         // Define a minified block content field for the description. https://www.sanity.io/docs/block-content
         defineArrayMember({
-          type: 'block',
+          type: "block",
           options: {},
           styles: [],
           lists: [],
@@ -39,54 +39,55 @@ export const settings = defineType({
             decorators: [],
             annotations: [
               {
-                name: 'link',
-                type: 'object',
-                title: 'Link',
+                name: "link",
+                type: "object",
+                title: "Link",
                 fields: [
                   defineField({
-                    name: 'linkType',
-                    title: 'Link Type',
-                    type: 'string',
-                    initialValue: 'href',
+                    name: "linkType",
+                    title: "Link Type",
+                    type: "string",
+                    initialValue: "href",
                     options: {
                       list: [
-                        {title: 'URL', value: 'href'},
-                        {title: 'Post', value: 'post'},
+                        { title: "URL", value: "href" },
+                        { title: "Post", value: "post" },
                       ],
-                      layout: 'radio',
+                      layout: "radio",
                     },
                   }),
                   defineField({
-                    name: 'href',
-                    title: 'URL',
-                    type: 'url',
-                    hidden: ({parent}) => parent?.linkType !== 'href' && parent?.linkType != null,
+                    name: "href",
+                    title: "URL",
+                    type: "url",
+                    hidden: ({ parent }) =>
+                      parent?.linkType !== "href" && parent?.linkType != null,
                     validation: (Rule) =>
                       Rule.custom((value, context: any) => {
-                        if (context.parent?.linkType === 'href' && !value) {
-                          return 'URL is required when Link Type is URL'
+                        if (context.parent?.linkType === "href" && !value) {
+                          return "URL is required when Link Type is URL";
                         }
-                        return true
+                        return true;
                       }),
                   }),
                   defineField({
-                    name: 'post',
-                    title: 'Post',
-                    type: 'reference',
-                    to: [{type: 'post'}],
-                    hidden: ({parent}) => parent?.linkType !== 'post',
+                    name: "post",
+                    title: "Post",
+                    type: "reference",
+                    to: [{ type: "post" }],
+                    hidden: ({ parent }) => parent?.linkType !== "post",
                     validation: (Rule) =>
                       Rule.custom((value, context: any) => {
-                        if (context.parent?.linkType === 'post' && !value) {
-                          return 'Post reference is required when Link Type is Post'
+                        if (context.parent?.linkType === "post" && !value) {
+                          return "Post reference is required when Link Type is Post";
                         }
-                        return true
+                        return true;
                       }),
                   }),
                   defineField({
-                    name: 'openInNewTab',
-                    title: 'Open in new tab',
-                    type: 'boolean',
+                    name: "openInNewTab",
+                    title: "Open in new tab",
+                    type: "boolean",
                     initialValue: false,
                   }),
                 ],
@@ -97,44 +98,45 @@ export const settings = defineType({
       ],
     }),
     defineField({
-      name: 'menuItems',
-      title: 'Menu Item list',
-      description: 'Links displayed on the header of your site.',
-      type: 'array',
+      name: "menuItems",
+      title: "Menu Item list",
+      description: "Links displayed on the header of your site.",
+      type: "array",
       of: [
         {
-          title: 'Reference',
-          type: 'reference',
+          title: "Reference",
+          type: "reference",
           to: [
             {
-              type: 'home',
+              type: "home",
             },
             {
-              type: 'project',
+              type: "project",
             },
           ],
         },
       ],
     }),
     defineField({
-      name: 'footer',
-      description: 'This is a block of text that will be displayed at the bottom of the page.',
-      title: 'Footer Info',
-      type: 'array',
+      name: "footer",
+      description:
+        "This is a block of text that will be displayed at the bottom of the page.",
+      title: "Footer Info",
+      type: "array",
       of: [
         defineArrayMember({
-          type: 'block',
+          type: "block",
           marks: {
             annotations: [
               {
-                name: 'link',
-                type: 'object',
-                title: 'Link',
+                name: "link",
+                type: "object",
+                title: "Link",
                 fields: [
                   {
-                    name: 'href',
-                    type: 'url',
-                    title: 'Url',
+                    name: "href",
+                    type: "url",
+                    title: "Url",
                   },
                 ],
               },
@@ -144,34 +146,34 @@ export const settings = defineType({
       ],
     }),
     defineField({
-      name: 'ogImage',
-      title: 'Open Graph Image',
-      type: 'image',
-      description: 'Displayed on social cards and search engine results.',
+      name: "ogImage",
+      title: "Open Graph Image",
+      type: "image",
+      description: "Displayed on social cards and search engine results.",
       options: {
         hotspot: true,
         aiAssist: {
-          imageDescriptionField: 'alt',
+          imageDescriptionField: "alt",
         },
       },
       fields: [
         defineField({
-          name: 'alt',
-          description: 'Important for accessibility and SEO.',
-          title: 'Alternative text',
-          type: 'string',
+          name: "alt",
+          description: "Important for accessibility and SEO.",
+          title: "Alternative text",
+          type: "string",
           validation: (rule) => {
             return rule.custom((alt, context) => {
               if ((context.document?.ogImage as any)?.asset?._ref && !alt) {
-                return 'Required'
+                return "Required";
               }
-              return true
-            })
+              return true;
+            });
           },
         }),
         defineField({
-          name: 'metadataBase',
-          type: 'url',
+          name: "metadataBase",
+          type: "url",
           description: (
             <a
               href="https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase"
@@ -187,8 +189,8 @@ export const settings = defineType({
   preview: {
     prepare() {
       return {
-        title: 'Settings',
-      }
+        title: "Settings",
+      };
     },
   },
-})
+});

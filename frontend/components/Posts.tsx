@@ -1,103 +1,116 @@
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from "next/link";
+import Image from "next/image";
 
-import {sanityFetch} from '@/sanity/lib/live'
-import {morePostsQuery, allPostsQuery} from '@/sanity/lib/queries'
-import {AllPostsQueryResult} from '@/sanity.types'
-import DateComponent from '@/components/Date'
-import {createDataAttribute} from 'next-sanity'
-import {urlForImage} from '@/sanity/lib/utils'
-import {localizeField, type LanguageId} from '@/lib/i18n'
+import { sanityFetch } from "@/sanity/lib/live";
+import { morePostsQuery, allPostsQuery } from "@/sanity/lib/queries";
+import { AllPostsQueryResult } from "@/sanity.types";
+import DateComponent from "@/components/Date";
+import { createDataAttribute } from "next-sanity";
+import { urlForImage } from "@/sanity/lib/utils";
+import { localizeField, type LanguageId } from "@/lib/i18n";
 
-const Post = ({post, locale}: {post: AllPostsQueryResult[number]; locale: LanguageId}) => {
-  const {_id, title, slug, excerpt, date, coverImage} = post
+const Post = ({
+  post,
+  locale,
+}: {
+  post: AllPostsQueryResult[number];
+  locale: LanguageId;
+}) => {
+  const { _id, title, slug, excerpt, date, coverImage } = post;
 
-  const postTitle = localizeField(title, locale) || 'Untitled'
-  const postExcerpt = localizeField(excerpt, locale)
+  const postTitle = localizeField(title, locale) || "Untitled";
+  const postExcerpt = localizeField(excerpt, locale);
 
   const attr = createDataAttribute({
     id: _id,
-    type: 'post',
-    path: 'title',
-  })
+    type: "post",
+    path: "title",
+  });
 
   return (
     <article
       data-sanity={attr()}
       key={_id}
-      className="group glass-card rounded-2xl overflow-hidden shadow-elevation-medium hover:shadow-elevation-high transition-all duration-300 hover:scale-[1.02]"
+      className="group glass-card shadow-elevation-medium hover:shadow-elevation-high overflow-hidden rounded-2xl transition-all duration-300 hover:scale-[1.02]"
     >
       {coverImage && (
-        <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-primary-100 to-accent-100">
+        <div className="from-primary-100 to-accent-100 relative h-48 w-full overflow-hidden bg-gradient-to-br">
           <Image
-            src={urlForImage(coverImage)?.width(800).height(400).url() || ''}
+            src={urlForImage(coverImage)?.width(800).height(400).url() || ""}
             alt={postTitle}
             fill
-            className="object-cover group-hover:scale-110 transition-transform duration-300"
+            className="object-cover transition-transform duration-300 group-hover:scale-110"
           />
         </div>
       )}
-      <div className="p-6 flex flex-col justify-between">
+      <div className="flex flex-col justify-between p-6">
         <div>
           <Link
-            className="hover:text-primary-600 transition-colors block"
+            className="hover:text-primary-600 block transition-colors"
             href={`/${locale}/posts/${slug}`}
           >
-            <h3 className="text-2xl font-bold mb-3 leading-tight text-gray-900 group-hover:text-primary-600 transition-colors">
+            <h3 className="group-hover:text-primary-600 mb-3 text-2xl leading-tight font-bold text-gray-900 transition-colors">
               {postTitle}
             </h3>
           </Link>
 
           {postExcerpt && (
-            <p className="line-clamp-3 text-base leading-relaxed text-gray-600 mb-4">
+            <p className="mb-4 line-clamp-3 text-base leading-relaxed text-gray-600">
               {postExcerpt}
             </p>
           )}
         </div>
-        <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-          <time className="text-gray-500 text-sm font-medium" dateTime={date}>
+        <div className="flex items-center justify-between border-t border-gray-200 pt-4">
+          <time className="text-sm font-medium text-gray-500" dateTime={date}>
             <DateComponent dateString={date} />
           </time>
           <Link
             href={`/${locale}/posts/${slug}`}
-            className="text-primary-600 hover:text-primary-700 font-medium text-sm inline-flex items-center gap-1 group"
+            className="text-primary-600 hover:text-primary-700 group inline-flex items-center gap-1 text-sm font-medium"
           >
             Read more
             <svg
-              className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              className="h-4 w-4 transition-transform group-hover:translate-x-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
             </svg>
           </Link>
         </div>
       </div>
     </article>
-  )
-}
+  );
+};
 
-const Posts = ({children}: {children: React.ReactNode}) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">{children}</div>
-)
+const Posts = ({ children }: { children: React.ReactNode }) => (
+  <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+    {children}
+  </div>
+);
 
 export const MorePosts = async ({
   skip,
   limit,
   locale,
 }: {
-  skip: string
-  limit: number
-  locale: LanguageId
+  skip: string;
+  limit: number;
+  locale: LanguageId;
 }) => {
-  const {data} = await sanityFetch({
+  const { data } = await sanityFetch({
     query: morePostsQuery,
-    params: {skip, limit, locale},
-  })
+    params: { skip, limit, locale },
+  });
 
   if (!data || data.length === 0) {
-    return null
+    return null;
   }
 
   return (
@@ -106,18 +119,21 @@ export const MorePosts = async ({
         <Post key={post._id} post={post} locale={locale} />
       ))}
     </Posts>
-  )
-}
+  );
+};
 
 export const AllPosts = async (locale: LanguageId) => {
-  const {data} = await sanityFetch({query: allPostsQuery, params: {locale}})
+  const { data } = await sanityFetch({
+    query: allPostsQuery,
+    params: { locale },
+  });
 
   if (!data || data.length === 0) {
     return (
-      <div className="text-center py-20">
-        <p className="text-gray-600 text-lg">No posts yet. Check back soon!</p>
+      <div className="py-20 text-center">
+        <p className="text-lg text-gray-600">No posts yet. Check back soon!</p>
       </div>
-    )
+    );
   }
 
   return (
@@ -126,5 +142,5 @@ export const AllPosts = async (locale: LanguageId) => {
         <Post key={post._id} post={post} locale={locale} />
       ))}
     </Posts>
-  )
-}
+  );
+};

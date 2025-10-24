@@ -1,74 +1,98 @@
-import {format} from 'date-fns'
-import {PortableText} from '@portabletext/react'
-import {localizeBlockContent, type LanguageId} from '@/lib/i18n'
-import {Job} from '@/sanity.types'
-import {Card, CardContent, CardHeader, CardTitle, CardDescription} from '@/components/ui/card'
-import {Badge} from '@/components/ui/badge'
+import { format } from "date-fns";
+import { PortableText } from "@portabletext/react";
+import { localizeBlockContent, type LanguageId } from "@/lib/i18n";
+import { Job } from "@/sanity.types";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 type ExperienceTimelineProps = {
-  jobs: Job[]
-  locale: LanguageId
-}
+  jobs: Job[];
+  locale: LanguageId;
+};
 
-export default function ExperienceTimeline({jobs, locale}: ExperienceTimelineProps) {
+export default function ExperienceTimeline({
+  jobs,
+  locale,
+}: ExperienceTimelineProps) {
   if (!jobs || jobs.length === 0) {
-    return null
+    return null;
   }
 
   return (
-    <section className="py-24 bg-gradient-to-b from-background to-muted/20">
+    <section className="from-background to-muted/20 bg-gradient-to-b py-24">
       <div className="container">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-4">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-5xl font-bold md:text-6xl">
               <span className="gradient-text">Experience</span>
             </h2>
-            <p className="text-xl text-muted-foreground">My professional journey</p>
+            <p className="text-muted-foreground text-xl">
+              My professional journey
+            </p>
           </div>
 
           <div className="relative">
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/30 via-primary/50 to-primary/30" />
+            <div className="from-primary/30 via-primary/50 to-primary/30 absolute top-0 bottom-0 left-8 w-0.5 bg-gradient-to-b md:left-1/2" />
 
             <div className="space-y-12">
               {jobs.map((job, index) => {
-                const isEven = index % 2 === 0
-                const startFormatted = format(new Date(job.startDate), 'MMM yyyy')
+                const isEven = index % 2 === 0;
+                const startFormatted = format(
+                  new Date(job.startDate),
+                  "MMM yyyy",
+                );
                 const endFormatted = job.isCurrent
-                  ? 'Present'
+                  ? "Present"
                   : job.endDate
-                    ? format(new Date(job.endDate), 'MMM yyyy')
-                    : 'Present'
-                const jobDescription = localizeBlockContent(job.description, locale)
+                    ? format(new Date(job.endDate), "MMM yyyy")
+                    : "Present";
+                const jobDescription = localizeBlockContent(
+                  job.description,
+                  locale,
+                );
 
                 return (
                   <div
                     key={job._id}
-                    className={`relative flex items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                    className={`relative flex items-center ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
                   >
-                    <div className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-primary shadow-lg transform -translate-x-1.5 md:-translate-x-2 z-10" />
+                    <div className="bg-primary absolute left-8 z-10 h-4 w-4 -translate-x-1.5 transform rounded-full shadow-lg md:left-1/2 md:-translate-x-2" />
 
-                    <div className={`w-full md:w-1/2 ${isEven ? 'md:pr-12' : 'md:pl-12'}`}>
+                    <div
+                      className={`w-full md:w-1/2 ${isEven ? "md:pr-12" : "md:pl-12"}`}
+                    >
                       <div className="ml-16 md:ml-0">
                         <Card
-                          className="hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
+                          className="transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                           style={{
-                            animation: 'var(--animate-slide-up)',
+                            animation: "var(--animate-slide-up)",
                             animationDelay: `${index * 0.1}s`,
-                            animationFillMode: 'both',
+                            animationFillMode: "both",
                           }}
                         >
                           <CardHeader>
-                            <CardTitle className="text-2xl">{job.position}</CardTitle>
-                            <CardDescription className="text-lg font-semibold text-primary">
+                            <CardTitle className="text-2xl">
+                              {job.position}
+                            </CardTitle>
+                            <CardDescription className="text-primary text-lg font-semibold">
                               {job.company}
                             </CardDescription>
                           </CardHeader>
 
                           <CardContent>
-                            <div className="flex flex-wrap gap-2 mb-4">
-                              <Badge variant="outline" className="inline-flex items-center gap-1">
+                            <div className="mb-4 flex flex-wrap gap-2">
+                              <Badge
+                                variant="outline"
+                                className="inline-flex items-center gap-1"
+                              >
                                 <svg
-                                  className="w-4 h-4"
+                                  className="h-4 w-4"
                                   fill="none"
                                   stroke="currentColor"
                                   viewBox="0 0 24 24"
@@ -94,14 +118,14 @@ export default function ExperienceTimeline({jobs, locale}: ExperienceTimelinePro
                       </div>
                     </div>
 
-                    <div className="hidden md:block w-1/2" />
+                    <div className="hidden w-1/2 md:block" />
                   </div>
-                )
+                );
               })}
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

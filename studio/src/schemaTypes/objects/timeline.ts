@@ -1,59 +1,62 @@
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const timeline = defineType({
-  name: 'timeline',
-  title: 'Timeline',
-  type: 'object',
+  name: "timeline",
+  title: "Timeline",
+  type: "object",
   fields: [
     defineField({
-      name: 'items',
-      title: 'Items',
+      name: "items",
+      title: "Items",
       description:
         "Allows for creating a number of timelines (max 2) for displaying in the page's body",
-      type: 'array',
+      type: "array",
       validation: (Rule) => Rule.max(2),
       of: [
         defineArrayMember({
-          name: 'item',
-          title: 'Item',
-          type: 'object',
+          name: "item",
+          title: "Item",
+          type: "object",
           fields: [
             defineField({
-              name: 'title',
-              title: 'Title',
-              type: 'string',
+              name: "title",
+              title: "Title",
+              type: "string",
             }),
             defineField({
-              name: 'milestones',
-              title: 'Milestones',
-              type: 'array',
+              name: "milestones",
+              title: "Milestones",
+              type: "array",
               of: [
                 defineArrayMember({
-                  name: 'milestone',
-                  title: 'Milestone',
-                  type: 'milestone',
+                  name: "milestone",
+                  title: "Milestone",
+                  type: "milestone",
                 }),
               ],
             }),
           ],
           preview: {
             select: {
-              items: 'milestones',
-              title: 'title',
+              items: "milestones",
+              title: "title",
             },
             prepare({ items, title }) {
-              const hasItems = Array.isArray(items) && items.length > 0
+              const hasItems = Array.isArray(items) && items.length > 0;
               const milestoneNames =
-                hasItems && items.map((timeline: { title: string }) => timeline.title).join(', ')
+                hasItems &&
+                items
+                  .map((timeline: { title: string }) => timeline.title)
+                  .join(", ");
 
               return {
                 subtitle: hasItems
                   ? `${milestoneNames} (${items.length} item${
-                      items.length > 1 ? 's' : ''
+                      items.length > 1 ? "s" : ""
                     })`
-                  : 'No milestones',
+                  : "No milestones",
                 title,
-              }
+              };
             },
           },
         }),
@@ -62,21 +65,22 @@ export const timeline = defineType({
   ],
   preview: {
     select: {
-      items: 'items',
+      items: "items",
     },
     prepare({ items }) {
-      const hasItems = Array.isArray(items) && items.length > 0
+      const hasItems = Array.isArray(items) && items.length > 0;
       const timelineNames =
-        hasItems && items.map((timeline: { title: string }) => timeline.title).join(', ')
+        hasItems &&
+        items.map((timeline: { title: string }) => timeline.title).join(", ");
 
       return {
-        title: 'Timelines',
+        title: "Timelines",
         subtitle: hasItems
           ? `${timelineNames} (${items.length} item${
-              items.length > 1 ? 's' : ''
+              items.length > 1 ? "s" : ""
             })`
-          : 'No timelines',
-      }
+          : "No timelines",
+      };
     },
   },
-})
+});

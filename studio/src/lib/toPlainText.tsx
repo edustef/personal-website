@@ -1,18 +1,20 @@
-import { PortableTextTextBlock} from "sanity"
+import { PortableTextTextBlock } from "sanity";
 
 export function toPlainText(blocks: PortableTextTextBlock[]) {
-    return blocks
+  return (
+    blocks
       // loop through each block
-      .map(block => {
-        // if it's not a text block with children, 
+      .map((block) => {
+        // if it's not a text block with children,
         // return nothing
-        if (block._type !== 'block' || !block.children) {
-          return ''
+        if (block._type !== "block" || !block.children) {
+          return "";
         }
         // loop through the children spans, and join the
         // text strings
-        return block.children.map(child => child.text).join('')
+        return block.children.map((child) => child.text).join("");
       })
       // join the paragraphs leaving split by two linebreaks
-      .join('\n\n')
-  }
+      .join("\n\n")
+  );
+}

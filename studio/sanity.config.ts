@@ -3,51 +3,52 @@
  * Learn more: https://www.sanity.io/docs/configuration
  */
 
-import {defineConfig} from 'sanity'
-import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './src/schemaTypes'
-import {structure} from './src/structure'
-import {unsplashImageAsset} from 'sanity-plugin-asset-source-unsplash'
+import { defineConfig } from "sanity";
+import { structureTool } from "sanity/structure";
+import { visionTool } from "@sanity/vision";
+import { schemaTypes } from "./src/schemaTypes";
+import { structure } from "./src/structure";
+import { unsplashImageAsset } from "sanity-plugin-asset-source-unsplash";
 import {
   presentationTool,
   defineDocuments,
   defineLocations,
   type DocumentLocation,
-} from 'sanity/presentation'
-import {assist} from '@sanity/assist'
-import {internationalizedArray} from 'sanity-plugin-internationalized-array'
-import {media, mediaAssetSource} from 'sanity-plugin-media'
+} from "sanity/presentation";
+import { assist } from "@sanity/assist";
+import { internationalizedArray } from "sanity-plugin-internationalized-array";
+import { media, mediaAssetSource } from "sanity-plugin-media";
 
 // Environment variables for project configuration
-const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'your-projectID'
-const dataset = process.env.SANITY_STUDIO_DATASET || 'production'
+const projectId = process.env.SANITY_STUDIO_PROJECT_ID || "your-projectID";
+const dataset = process.env.SANITY_STUDIO_DATASET || "production";
 
 // URL for preview functionality, defaults to localhost:3000 if not set
-const SANITY_STUDIO_PREVIEW_URL = process.env.SANITY_STUDIO_PREVIEW_URL || 'http://localhost:3000'
+const SANITY_STUDIO_PREVIEW_URL =
+  process.env.SANITY_STUDIO_PREVIEW_URL || "http://localhost:3000";
 
 // Define the home location for the presentation tool
 const homeLocation = {
-  title: 'Home',
-  href: '/',
-} satisfies DocumentLocation
+  title: "Home",
+  href: "/",
+} satisfies DocumentLocation;
 
 // resolveHref() is a convenience function that resolves the URL
 // path for different document types and used in the presentation tool.
 function resolveHref(documentType?: string, slug?: string): string | undefined {
   switch (documentType) {
-    case 'post':
-      return slug ? `/posts/${slug}` : undefined
+    case "post":
+      return slug ? `/posts/${slug}` : undefined;
     default:
-      console.warn('Invalid document type:', documentType)
-      return undefined
+      console.warn("Invalid document type:", documentType);
+      return undefined;
   }
 }
 
 // Main Sanity configuration
 export default defineConfig({
-  name: 'default',
-  title: 'Personal Portfolio',
+  name: "default",
+  title: "Personal Portfolio",
 
   projectId,
   dataset,
@@ -58,22 +59,22 @@ export default defineConfig({
       previewUrl: {
         origin: SANITY_STUDIO_PREVIEW_URL,
         previewMode: {
-          enable: '/api/draft-mode/enable',
+          enable: "/api/draft-mode/enable",
         },
       },
       resolve: {
         // The Main Document Resolver API provides a method of resolving a main document from a given route or route pattern. https://www.sanity.io/docs/presentation-resolver-api#57720a5678d9
         mainDocuments: defineDocuments([
           {
-            route: '/',
+            route: "/",
             filter: `_type == "home" && _id == "home"`,
           },
           {
-            route: '/resume',
+            route: "/resume",
             filter: `_type == "resume" && _id == "resume"`,
           },
           {
-            route: '/posts/:slug',
+            route: "/posts/:slug",
             filter: `_type == "post" && slug.current == $slug || _id == $slug`,
           },
         ]),
@@ -81,38 +82,38 @@ export default defineConfig({
         locations: {
           settings: defineLocations({
             locations: [homeLocation],
-            message: 'This document is used on all pages',
-            tone: 'positive',
+            message: "This document is used on all pages",
+            tone: "positive",
           }),
           home: defineLocations({
             locations: [homeLocation],
-            message: 'This is your home page',
-            tone: 'positive',
+            message: "This is your home page",
+            tone: "positive",
           }),
           resume: defineLocations({
             locations: [
               {
-                title: 'Resume',
-                href: '/resume',
+                title: "Resume",
+                href: "/resume",
               },
             ],
-            message: 'This is your resume page',
-            tone: 'positive',
+            message: "This is your resume page",
+            tone: "positive",
           }),
           post: defineLocations({
             select: {
-              title: 'title',
-              slug: 'slug.current',
+              title: "title",
+              slug: "slug.current",
             },
             resolve: (doc) => ({
               locations: [
                 {
-                  title: doc?.title || 'Untitled',
-                  href: resolveHref('post', doc?.slug)!,
+                  title: doc?.title || "Untitled",
+                  href: resolveHref("post", doc?.slug)!,
                 },
                 {
-                  title: 'Home',
-                  href: '/',
+                  title: "Home",
+                  href: "/",
                 } satisfies DocumentLocation,
               ].filter(Boolean) as DocumentLocation[],
             }),
@@ -129,12 +130,12 @@ export default defineConfig({
     visionTool(),
     internationalizedArray({
       languages: [
-        {id: 'en', title: 'English'},
-        {id: 'ro', title: 'Romanian'},
-        {id: 'es', title: 'Spanish'},
+        { id: "en", title: "English" },
+        { id: "ro", title: "Romanian" },
+        { id: "es", title: "Spanish" },
       ],
-      defaultLanguages: ['en'],
-      fieldTypes: ['string', 'blockContent'],
+      defaultLanguages: ["en"],
+      fieldTypes: ["string", "blockContent"],
     }),
     media(),
   ],
@@ -142,7 +143,9 @@ export default defineConfig({
   form: {
     file: {
       assetSources: (previousAssetSources) =>
-        previousAssetSources.filter((assetSource) => assetSource !== mediaAssetSource),
+        previousAssetSources.filter(
+          (assetSource) => assetSource !== mediaAssetSource,
+        ),
     },
   },
 
@@ -150,4 +153,4 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
-})
+});

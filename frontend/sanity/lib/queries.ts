@@ -1,6 +1,6 @@
-import {defineQuery} from 'next-sanity'
+import { defineQuery } from "next-sanity";
 
-export const settingsQuery = defineQuery(`*[_type == "settings"][0]`)
+export const settingsQuery = defineQuery(`*[_type == "settings"][0]`);
 
 export const homeQuery = defineQuery(`
   *[_type == "home"][0]{
@@ -40,7 +40,7 @@ export const homeQuery = defineQuery(`
       featured
     }
   }
-`)
+`);
 
 export const profileQuery = defineQuery(`
   *[_type == "profile"][0]{
@@ -58,7 +58,7 @@ export const profileQuery = defineQuery(`
       url
     }
   }
-`)
+`);
 
 export const resumeQuery = defineQuery(`
   *[_type == "resume"][0]{
@@ -69,7 +69,7 @@ export const resumeQuery = defineQuery(`
     showProjects,
     showCertificates
   }
-`)
+`);
 
 export const allJobsQuery = defineQuery(`
   *[_type == "job"] | order(startDate desc){
@@ -84,7 +84,7 @@ export const allJobsQuery = defineQuery(`
     responsibilities,
     "technologies": skills[]->name
   }
-`)
+`);
 
 export const allProjectsQuery = defineQuery(`
   *[_type == "project"] | order(_createdAt desc){
@@ -98,18 +98,18 @@ export const allProjectsQuery = defineQuery(`
     featured,
     duration
   }
-`)
+`);
 
 export const allSkillsQuery = defineQuery(`
   *[_type == "skill"] | order(name asc){
     _id,
     name
   }
-`)
+`);
 
 export const allCertificatesQuery = defineQuery(`
   *[_type == "certificate"] | order(dateIssued desc)
-`)
+`);
 
 const postFields = /* groq */ `
   _id,
@@ -119,13 +119,13 @@ const postFields = /* groq */ `
   excerpt,
   coverImage,
   "date": coalesce(date, _updatedAt),
-`
+`;
 
 const linkReference = /* groq */ `
   _type == "link" => {
     "post": post->slug.current
   }
-`
+`;
 
 export const sitemapData = defineQuery(`
   *[_type == "post" && defined(slug.current)] | order(_type asc) {
@@ -133,28 +133,28 @@ export const sitemapData = defineQuery(`
     _type,
     _updatedAt,
   }
-`)
+`);
 
 export const allPostsQuery = defineQuery(`
   *[_type == "post" && defined(slug.current)] | order(date desc, _updatedAt desc) {
     ${postFields}
   }
-`)
+`);
 
 export const morePostsQuery = defineQuery(`
   *[_type == "post" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {
     ${postFields}
   }
-`)
+`);
 
 export const postQuery = defineQuery(`
   *[_type == "post" && slug.current == $slug] [0] {
     content,
     ${postFields}
   }
-`)
+`);
 
 export const postPagesSlugs = defineQuery(`
   *[_type == "post" && defined(slug.current)]
   {"slug": slug.current}
-`)
+`);

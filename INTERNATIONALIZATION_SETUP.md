@@ -19,13 +19,13 @@ The `sanity-plugin-internationalized-array` is already installed and configured 
 ```typescript
 internationalizedArray({
   languages: [
-    {id: 'en', title: 'English'},
-    {id: 'ro', title: 'Romanian'},
-    {id: 'es', title: 'Spanish'},
+    { id: "en", title: "English" },
+    { id: "ro", title: "Romanian" },
+    { id: "es", title: "Spanish" },
   ],
-  defaultLanguages: ['en'],
-  fieldTypes: ['string', 'blockContent'],
-})
+  defaultLanguages: ["en"],
+  fieldTypes: ["string", "blockContent"],
+});
 ```
 
 ### Internationalized Schema Fields
@@ -167,11 +167,11 @@ To add a new language:
 2. Update `frontend/app/lib/i18n.ts`:
    ```typescript
    export const languages = [
-     {id: 'en', title: 'English'},
-     {id: 'ro', title: 'Romanian'},
-     {id: 'es', title: 'Spanish'},
-     {id: 'fr', title: 'French'}, // Add new language
-   ] as const
+     { id: "en", title: "English" },
+     { id: "ro", title: "Romanian" },
+     { id: "es", title: "Spanish" },
+     { id: "fr", title: "French" }, // Add new language
+   ] as const;
    ```
 
 ## Next Steps
