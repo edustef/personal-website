@@ -1,12 +1,5 @@
-import { Suspense } from "react";
 import { notFound } from "next/navigation";
 
-import { AllPosts } from "@/components/Posts";
-import HeroSection from "@/components/HeroSection";
-import ExperienceTimeline from "@/components/ExperienceTimeline";
-import ProjectGrid from "@/components/ProjectGrid";
-import SkillsSection from "@/components/SkillsSection";
-import CertificatesSection from "@/components/CertificatesSection";
 import {
   homeQuery,
   allJobsQuery,
@@ -19,42 +12,30 @@ import { languages, type LanguageId } from "@/lib/i18n";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import underConstructionImage from "@/assets/images/under-construction.png";
-import { Label } from "@/components/ui/label";
-import { InputGroup, InputGroupInput } from "@/components/ui/input-group";
 import {
   Field,
-  FieldContent,
   FieldGroup,
   FieldLabel,
   FieldLegend,
-  FieldSet,
 } from "@/components/ui/field";
-import {
-  ConstructionIcon,
-  ExternalLinkIcon,
-  FileTextIcon,
-  LinkedinIcon,
-  Moon,
-  Sun,
-} from "lucide-react";
+import { ConstructionIcon, ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
-import {
-  ButtonGroup,
-  ButtonGroupSeparator,
-} from "@/components/ui/button-group";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
 
 type Props = {
   params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata(props: Props) {
+  const params = await props.params;
+  const locale = params.locale as LanguageId;
+
+  return {
+    title: "Home",
+    description: "Home",
+  };
+}
 
 export default async function Page(props: Props) {
   const params = await props.params;
@@ -130,29 +111,8 @@ export default async function Page(props: Props) {
   // );
 
   return (
-    <div className="mx-auto mt-24 flex max-w-4xl flex-col items-start justify-center gap-8 px-3">
-      <Card className="bg-secondary text-secondary-foreground relative w-full">
-        <CardContent className="flex flex-row items-center gap-4">
-          <ConstructionIcon className="size-24" />
-          <div className="flex flex-col gap-4">
-            <CardTitle className="text-3xl font-bold">
-              Under Construction
-            </CardTitle>
-            <Button className="w-fit" variant="outline" asChild>
-              <a
-                href="/files/eduard-stefan-resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>Get my resume</span>
-                <ExternalLinkIcon className="size-4" />
-              </a>
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-
-      <div className="flex w-full flex-col items-start justify-between gap-24 md:flex-row">
+    <div className="mx-auto flex max-w-4xl flex-col items-start justify-center gap-8 px-4 pt-12 pb-12 md:pt-24">
+      <div className="flex w-full flex-col items-start justify-between gap-16 md:flex-row">
         <form className="flex w-full flex-col gap-4 md:max-w-sm" action="">
           <h2 className="text-2xl font-bold">Contact me</h2>
           <FieldGroup>

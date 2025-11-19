@@ -289,7 +289,7 @@ export default async function ResumePage(props: Props) {
                             {categorySkills.map((skill) => (
                               <span
                                 key={skill.name}
-                                className="rounded-lg bg-gray-100 px-3 py-1 text-sm text-gray-700 print:rounded print:border print:border-gray-300 print:bg-white print:px-2 print:py-0.5 print:text-xs"
+                                className="rounded-lg bg-gray-100 px-4 py-1 text-sm text-gray-700 print:rounded print:border print:border-gray-300 print:bg-white print:px-2 print:py-0.5 print:text-xs"
                               >
                                 {localizeField(skill.name, locale)}
                               </span>

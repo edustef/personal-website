@@ -13,12 +13,11 @@ export async function Footer({ className }: { className?: string }) {
   return (
     <footer
       className={cn(
-        "bg-secondary text-secondary-foreground relative overflow-hidden",
+        "bg-background text-foreground relative overflow-hidden px-3",
         className,
       )}
     >
-      <div className="absolute inset-0 bg-[url(/images/tile-grid-black.png)] opacity-5" />
-      <div className="relative container py-16">
+      <div className="relative py-16">
         <div className="mx-auto max-w-6xl">
           {/* <div className="mb-12 grid grid-cols-1 gap-12 md:grid-cols-3">
             <div>

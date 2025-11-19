@@ -1,7 +1,7 @@
 import { homeQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
 import { Button } from "@/components/ui/button";
-import { FileText } from "lucide-react";
+import { ExternalLinkIcon, FileText } from "lucide-react";
 import { localizeField, type LanguageId } from "@/lib/i18n";
 import { ModeToggle } from "@/components/theme-toggle";
 import {
@@ -28,14 +28,17 @@ export async function Header({ locale, className }: HeaderProps) {
   return (
     <header
       className={cn(
-        "bg-background border-border sticky inset-0 z-50 flex h-24 w-full items-center border-b px-3",
+        "bg-background border-border sticky inset-0 z-50 flex h-24 w-full items-center border-b px-4",
         className,
       )}
     >
       <div className="container mx-auto w-full max-w-6xl">
         <div className="flex items-center justify-between gap-5">
-          <Link className="group flex items-center gap-2" href={`/${locale}`}>
-            <span className="text-foreground hover:text-primary text-xl font-bold transition-colors sm:text-2xl">
+          <Link
+            className="group flex items-center gap-2 p-0"
+            href={`/${locale}`}
+          >
+            <span className="text-foreground hover:text-primary text-lg font-bold transition-colors sm:text-2xl">
               {title}
             </span>
           </Link>
@@ -63,6 +66,18 @@ export async function Header({ locale, className }: HeaderProps) {
                 </Button>
               </NavigationMenuItem> */}
 
+              <NavigationMenuItem>
+                <Button className="w-fit" variant="outline" asChild>
+                  <a
+                    href="/files/eduard-stefan-resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>Get my resume</span>
+                    <ExternalLinkIcon className="size-4" />
+                  </a>
+                </Button>
+              </NavigationMenuItem>
               <NavigationMenuItem>
                 <ModeToggle />
               </NavigationMenuItem>

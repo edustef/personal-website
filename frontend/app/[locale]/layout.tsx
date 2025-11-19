@@ -18,13 +18,6 @@ import { handleError } from "../../lib/client-utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { languages, type LanguageId } from "@/lib/i18n";
 import { LocaleProvider } from "./locale-provider";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import Image from "next/image";
-import underConstructionImage from "@/assets/images/under-construction.png";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { data: settings } = await sanityFetch({
