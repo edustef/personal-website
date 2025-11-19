@@ -126,7 +126,7 @@ export default async function Page(props: Props) {
             </Field>
             <Field>
               <FieldLabel>Your message</FieldLabel>
-              <Textarea />
+              <Textarea placeholder="Your message..." />
             </Field>
             <Button type="submit">Send</Button>
           </FieldGroup>
