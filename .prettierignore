@@ -1,1 +1,5 @@
 .github/**
+studio/node_modules/**
+frontend/node_modules/**
+frontend/.next
+studio/.sanity

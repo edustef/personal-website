@@ -28,7 +28,6 @@
     "deploy:studio": "npm run deploy --workspace=studio",
     "deploy": "npm-run-all --parallel --print-label deploy:*",
     "format": "prettier --cache --write .",
-    "import-sample-data": "cd studio && sanity dataset import sample-data.tar.gz --replace",
     "lint": "npm run lint --workspace=frontend",
     "type-check": "npm run type-check --workspaces"
   },
