@@ -11,5 +11,16 @@ export const skill = defineType({
       type: "string",
       validation: (rule) => rule.required(),
     },
+    {
+      name: "type",
+      title: "Type",
+      type: "string",
+      options: {
+        list: [
+          { title: "Technical", value: "technical" },
+          { title: "Soft", value: "soft" },
+        ],
+      },
+    },
   ],
 });

@@ -20,6 +20,11 @@ import { languages, type LanguageId } from "@/lib/i18n";
 import { LocaleProvider } from "./locale-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import Image from "next/image";
+import underConstructionImage from "@/assets/images/under-construction.png";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { data: settings } = await sanityFetch({
@@ -90,7 +95,7 @@ export default async function LocaleLayout(props: Props) {
       className={`${dmSans.variable} ${dmMono.variable} dark bg-background text-foreground`}
       suppressHydrationWarning
     >
-      <body>
+      <body className="isolate">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -107,6 +112,7 @@ export default async function LocaleLayout(props: Props) {
             )}
             <SanityLive onError={handleError} />
             <Header locale={locale} />
+            <div className="absolute inset-0 -z-10 bg-[url(/images/tile-grid-black.png)] opacity-5" />
             <main className="min-h-screen">{props.children}</main>
             <Footer />
           </LocaleProvider>

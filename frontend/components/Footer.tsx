@@ -10,16 +10,16 @@ export async function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+    <footer className="bg-secondary text-secondary-foreground relative overflow-hidden">
       <div className="absolute inset-0 bg-[url(/images/tile-grid-black.png)] opacity-5" />
       <div className="relative container py-16">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-12 grid grid-cols-1 gap-12 md:grid-cols-3">
+          {/* <div className="mb-12 grid grid-cols-1 gap-12 md:grid-cols-3">
             <div>
               <h3 className="gradient-text-animated mb-4 text-2xl font-bold">
                 {profile?.name || "Portfolio"}
               </h3>
-              <p className="leading-relaxed text-gray-400">
+              <p className="leading-relaxed">
                 {Array.isArray(profile?.about)
                   ? profile.about[0]?.value
                   : profile?.about || "Web Developer"}
@@ -32,7 +32,7 @@ export async function Footer() {
                 <li>
                   <Link
                     href="/"
-                    className="hover:text-primary-400 text-gray-400 transition-colors"
+                    className="hover:text-primary-400 transition-colors"
                   >
                     Home
                   </Link>
@@ -40,7 +40,7 @@ export async function Footer() {
                 <li>
                   <Link
                     href="/posts"
-                    className="hover:text-primary-400 text-gray-400 transition-colors"
+                    className="hover:text-primary-400 transition-colors"
                   >
                     Blog
                   </Link>
@@ -48,7 +48,7 @@ export async function Footer() {
                 <li>
                   <Link
                     href="/resume"
-                    className="hover:text-primary-400 text-gray-400 transition-colors"
+                    className="hover:text-primary-400 transition-colors"
                   >
                     Resume
                   </Link>
@@ -66,7 +66,7 @@ export async function Footer() {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-primary-400 inline-flex items-center gap-2 text-gray-400 transition-colors"
+                        className="hover:text-primary-400 inline-flex items-center gap-2 transition-colors"
                       >
                         {link.platform}
                         <svg
@@ -88,10 +88,10 @@ export async function Footer() {
                 </ul>
               </div>
             )}
-          </div>
+          </div> */}
 
           <div className="border-t border-gray-700 pt-8 text-center">
-            <p className="text-sm text-gray-400">
+            <p className="text-sm">
               © {currentYear} {profile?.name || "Portfolio"}. Built with
               Next.js & Sanity.
             </p>

@@ -25,7 +25,7 @@ export async function Header({ locale }: HeaderProps) {
 
   return (
     <header className="bg-background border-border sticky inset-0 z-50 flex h-24 w-full items-center border-b px-3">
-      <div className="container mx-auto py-6">
+      <div className="container mx-auto w-full max-w-6xl">
         <div className="flex items-center justify-between gap-5">
           <Link className="group flex items-center gap-2" href={`/${locale}`}>
             <span className="text-foreground hover:text-primary text-xl font-bold transition-colors sm:text-2xl">
@@ -35,7 +35,7 @@ export async function Header({ locale }: HeaderProps) {
 
           <NavigationMenu>
             <NavigationMenuList className="gap-4 md:gap-6">
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <Link href={`/${locale}`}>Home</Link>
                 </NavigationMenuLink>
@@ -54,7 +54,7 @@ export async function Header({ locale }: HeaderProps) {
                     Resume
                   </Link>
                 </Button>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
 
               <NavigationMenuItem>
                 <ModeToggle />
