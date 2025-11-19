@@ -103,7 +103,8 @@ export const allProjectsQuery = defineQuery(`
 export const allSkillsQuery = defineQuery(`
   *[_type == "skill"] | order(name asc){
     _id,
-    name
+    name,
+    type
   }
 `);
 

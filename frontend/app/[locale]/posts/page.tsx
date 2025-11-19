@@ -1,11 +1,10 @@
 import { Suspense } from "react";
-import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { AllPosts } from "@/components/Posts";
-import { languages, type LanguageId } from "@/lib/i18n";
+import { LanguageId } from "@/lib/i18n";
 
 type Props = {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: LanguageId }>;
 };
 
 export const metadata: Metadata = {
@@ -15,11 +14,6 @@ export const metadata: Metadata = {
 
 export default async function BlogPage(props: Props) {
   const params = await props.params;
-  const locale = params.locale as LanguageId;
-
-  if (!languages.find((lang) => lang.id === locale)) {
-    notFound();
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 py-12">
@@ -39,7 +33,7 @@ export default async function BlogPage(props: Props) {
               <div className="text-center text-gray-500">Loading posts...</div>
             }
           >
-            {await AllPosts(locale)}
+            <AllPosts locale={params.locale} />
           </Suspense>
         </div>
       </div>

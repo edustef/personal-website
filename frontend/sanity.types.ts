@@ -13,22 +13,6 @@
  */
 
 // Source: schema.json
-export type SocialLink = {
-  _type: "socialLink";
-  name?: string;
-  url?: string;
-};
-
-export type Button = {
-  _type: "button";
-  text: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
-  link?: Link;
-};
-
 export type Link = {
   _type: "link";
   linkType?: "href" | "post";
@@ -40,6 +24,24 @@ export type Link = {
     [internalGroqTypeReferenceTo]?: "post";
   };
   openInNewTab?: boolean;
+};
+
+export type SocialLink = {
+  _type: "socialLink";
+  name?: string;
+  url: string;
+};
+
+export type Button = {
+  _type: "button";
+  text: InternationalizedArrayString;
+  link?: Link;
+};
+
+export type Duration = {
+  _type: "duration";
+  start?: string;
+  end?: string;
 };
 
 export type Milestone = {
@@ -62,12 +64,6 @@ export type Milestone = {
   duration: Duration;
 };
 
-export type Duration = {
-  _type: "duration";
-  start?: string;
-  end?: string;
-};
-
 export type Timeline = {
   _type: "timeline";
   items?: Array<{
@@ -80,6 +76,22 @@ export type Timeline = {
     _type: "item";
     _key: string;
   }>;
+};
+
+export type SanityImageCrop = {
+  _type: "sanity.imageCrop";
+  top: number;
+  bottom: number;
+  left: number;
+  right: number;
+};
+
+export type SanityImageHotspot = {
+  _type: "sanity.imageHotspot";
+  x: number;
+  y: number;
+  height: number;
+  width: number;
 };
 
 export type BlockContent = Array<{
@@ -116,14 +128,16 @@ export type Certificate = {
   _updatedAt: string;
   _rev: string;
   title?: string;
-  description?: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayBlockContentValue
-  >;
+  description?: InternationalizedArrayBlockContent;
   dateIssued?: string;
   link?: string;
 };
+
+export type InternationalizedArrayBlockContent = Array<
+  {
+    _key: string;
+  } & InternationalizedArrayBlockContentValue
+>;
 
 export type Job = {
   _id: string;
@@ -148,11 +162,7 @@ export type Job = {
   isCurrent?: boolean;
   startDate: string;
   endDate?: string;
-  description: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayBlockContentValue
-  >;
+  description: InternationalizedArrayBlockContent;
   todayText?: string;
   skills?: Array<{
     _ref: string;
@@ -170,6 +180,7 @@ export type Skill = {
   _updatedAt: string;
   _rev: string;
   name: string;
+  type: "technical" | "soft";
 };
 
 export type Project = {
@@ -178,11 +189,7 @@ export type Project = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  name: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
+  name: InternationalizedArrayString;
   coverImage?: {
     asset?: {
       _ref: string;
@@ -195,11 +202,7 @@ export type Project = {
     crop?: SanityImageCrop;
     _type: "image";
   };
-  description?: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayBlockContentValue
-  >;
+  description?: InternationalizedArrayBlockContent;
   duration?: string;
   sourceLink?: string;
   websiteLink?: string;
@@ -212,22 +215,20 @@ export type Project = {
   }>;
 };
 
+export type InternationalizedArrayString = Array<
+  {
+    _key: string;
+  } & InternationalizedArrayStringValue
+>;
+
 export type Resume = {
   _id: string;
   _type: "resume";
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
-  description?: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
+  title: InternationalizedArrayString;
+  description?: InternationalizedArrayString;
   showSkills?: boolean;
   showProjects?: boolean;
   showCertificates?: boolean;
@@ -239,21 +240,9 @@ export type Home = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
-  headline: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
-  tagline?: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
+  title: InternationalizedArrayString;
+  headline: InternationalizedArrayString;
+  tagline?: InternationalizedArrayString;
   profile?: {
     _ref: string;
     _type: "reference";
@@ -283,21 +272,9 @@ export type Profile = {
   name?: string;
   email?: string;
   phone?: string;
-  motto?: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
-  about?: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
-  location?: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
+  motto?: InternationalizedArrayString;
+  about?: InternationalizedArrayString;
+  location?: InternationalizedArrayString;
   picture?: {
     asset?: {
       _ref: string;
@@ -310,11 +287,7 @@ export type Profile = {
     crop?: SanityImageCrop;
     _type: "image";
   };
-  workPreference?: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
+  workPreference?: InternationalizedArrayString;
   socialLinks?: Array<
     {
       _key: string;
@@ -412,6 +385,12 @@ export type MediaTag = {
   name?: Slug;
 };
 
+export type Slug = {
+  _type: "slug";
+  current: string;
+  source?: string;
+};
+
 export type InternationalizedArrayBlockContentValue = {
   _type: "internationalizedArrayBlockContentValue";
   value?: BlockContent;
@@ -422,30 +401,16 @@ export type InternationalizedArrayStringValue = {
   value?: string;
 };
 
-export type InternationalizedArrayBlockContent = Array<
-  {
-    _key: string;
-  } & InternationalizedArrayBlockContentValue
->;
-
 export type Post = {
   _id: string;
   _type: "post";
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
+  title: InternationalizedArrayString;
   slug: Slug;
   content?: InternationalizedArrayBlockContent;
-  excerpt?: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
+  excerpt?: InternationalizedArrayString;
   coverImage: {
     asset?: {
       _ref: string;
@@ -461,12 +426,6 @@ export type Post = {
   };
   date?: string;
 };
-
-export type InternationalizedArrayString = Array<
-  {
-    _key: string;
-  } & InternationalizedArrayStringValue
->;
 
 export type SanityAssistInstructionTask = {
   _type: "sanity.assist.instructionTask";
@@ -629,20 +588,15 @@ export type SanityImageDimensions = {
   aspectRatio: number;
 };
 
-export type SanityImageHotspot = {
-  _type: "sanity.imageHotspot";
-  x: number;
-  y: number;
-  height: number;
-  width: number;
-};
-
-export type SanityImageCrop = {
-  _type: "sanity.imageCrop";
-  top: number;
-  bottom: number;
-  left: number;
-  right: number;
+export type SanityImageMetadata = {
+  _type: "sanity.imageMetadata";
+  location?: Geopoint;
+  dimensions?: SanityImageDimensions;
+  palette?: SanityImagePalette;
+  lqip?: string;
+  blurHash?: string;
+  hasAlpha?: boolean;
+  isOpaque?: boolean;
 };
 
 export type SanityFileAsset = {
@@ -665,6 +619,13 @@ export type SanityFileAsset = {
   path?: string;
   url?: string;
   source?: SanityAssetSourceData;
+};
+
+export type SanityAssetSourceData = {
+  _type: "sanity.assetSourceData";
+  name?: string;
+  id?: string;
+  url?: string;
 };
 
 export type SanityImageAsset = {
@@ -690,17 +651,6 @@ export type SanityImageAsset = {
   source?: SanityAssetSourceData;
 };
 
-export type SanityImageMetadata = {
-  _type: "sanity.imageMetadata";
-  location?: Geopoint;
-  dimensions?: SanityImageDimensions;
-  palette?: SanityImagePalette;
-  lqip?: string;
-  blurHash?: string;
-  hasAlpha?: boolean;
-  isOpaque?: boolean;
-};
-
 export type Geopoint = {
   _type: "geopoint";
   lat?: number;
@@ -708,41 +658,31 @@ export type Geopoint = {
   alt?: number;
 };
 
-export type Slug = {
-  _type: "slug";
-  current: string;
-  source?: string;
-};
-
-export type SanityAssetSourceData = {
-  _type: "sanity.assetSourceData";
-  name?: string;
-  id?: string;
-  url?: string;
-};
-
 export type AllSanitySchemaTypes =
+  | Link
   | SocialLink
   | Button
-  | Link
-  | Milestone
   | Duration
+  | Milestone
   | Timeline
+  | SanityImageCrop
+  | SanityImageHotspot
   | BlockContent
   | Certificate
+  | InternationalizedArrayBlockContent
   | Job
   | Skill
   | Project
+  | InternationalizedArrayString
   | Resume
   | Home
   | Profile
   | Settings
   | MediaTag
+  | Slug
   | InternationalizedArrayBlockContentValue
   | InternationalizedArrayStringValue
-  | InternationalizedArrayBlockContent
   | Post
-  | InternationalizedArrayString
   | SanityAssistInstructionTask
   | SanityAssistTaskStatus
   | SanityAssistSchemaTypeAnnotations
@@ -758,14 +698,11 @@ export type AllSanitySchemaTypes =
   | SanityImagePaletteSwatch
   | SanityImagePalette
   | SanityImageDimensions
-  | SanityImageHotspot
-  | SanityImageCrop
-  | SanityFileAsset
-  | SanityImageAsset
   | SanityImageMetadata
-  | Geopoint
-  | Slug
-  | SanityAssetSourceData;
+  | SanityFileAsset
+  | SanityAssetSourceData
+  | SanityImageAsset
+  | Geopoint;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/lib/queries.ts
 // Variable: settingsQuery
@@ -854,27 +791,11 @@ export type SettingsQueryResult = {
 // Query: *[_type == "home"][0]{    _id,    title,    headline,    tagline,    ctaButtons[]{      text,      link{        href,        external      }    },    profile->{      name,      email,      phone,      motto,      about,      location,      picture,      workPreference,      socialLinks[]{        platform,        url      }    },    featuredProjects[]->{      _id,      name,      description,      "image": coverImage,      "technologies": skills[]->name,      "link": websiteLink,      "github": sourceLink,      featured    }  }
 export type HomeQueryResult = {
   _id: string;
-  title: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
-  headline: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
-  tagline: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  > | null;
+  title: InternationalizedArrayString;
+  headline: InternationalizedArrayString;
+  tagline: InternationalizedArrayString | null;
   ctaButtons: Array<{
-    text: Array<
-      {
-        _key: string;
-      } & InternationalizedArrayStringValue
-    >;
+    text: InternationalizedArrayString;
     link: {
       href: string | null;
       external: null;
@@ -884,21 +805,9 @@ export type HomeQueryResult = {
     name: string | null;
     email: string | null;
     phone: string | null;
-    motto: Array<
-      {
-        _key: string;
-      } & InternationalizedArrayStringValue
-    > | null;
-    about: Array<
-      {
-        _key: string;
-      } & InternationalizedArrayStringValue
-    > | null;
-    location: Array<
-      {
-        _key: string;
-      } & InternationalizedArrayStringValue
-    > | null;
+    motto: InternationalizedArrayString | null;
+    about: InternationalizedArrayString | null;
+    location: InternationalizedArrayString | null;
     picture: {
       asset?: {
         _ref: string;
@@ -911,28 +820,16 @@ export type HomeQueryResult = {
       crop?: SanityImageCrop;
       _type: "image";
     } | null;
-    workPreference: Array<
-      {
-        _key: string;
-      } & InternationalizedArrayStringValue
-    > | null;
+    workPreference: InternationalizedArrayString | null;
     socialLinks: Array<{
       platform: null;
-      url: string | null;
+      url: string;
     }> | null;
   } | null;
   featuredProjects: Array<{
     _id: string;
-    name: Array<
-      {
-        _key: string;
-      } & InternationalizedArrayStringValue
-    >;
-    description: Array<
-      {
-        _key: string;
-      } & InternationalizedArrayBlockContentValue
-    > | null;
+    name: InternationalizedArrayString;
+    description: InternationalizedArrayBlockContent | null;
     image: {
       asset?: {
         _ref: string;
@@ -958,21 +855,9 @@ export type ProfileQueryResult = {
   name: string | null;
   email: string | null;
   phone: string | null;
-  motto: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  > | null;
-  about: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  > | null;
-  location: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  > | null;
+  motto: InternationalizedArrayString | null;
+  about: InternationalizedArrayString | null;
+  location: InternationalizedArrayString | null;
   picture: {
     asset?: {
       _ref: string;
@@ -985,30 +870,18 @@ export type ProfileQueryResult = {
     crop?: SanityImageCrop;
     _type: "image";
   } | null;
-  workPreference: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  > | null;
+  workPreference: InternationalizedArrayString | null;
   socialLinks: Array<{
     platform: null;
-    url: string | null;
+    url: string;
   }> | null;
 } | null;
 // Variable: resumeQuery
 // Query: *[_type == "resume"][0]{    _id,    title,    description,    showSkills,    showProjects,    showCertificates  }
 export type ResumeQueryResult = {
   _id: string;
-  title: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
-  description: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  > | null;
+  title: InternationalizedArrayString;
+  description: InternationalizedArrayString | null;
   showSkills: boolean | null;
   showProjects: boolean | null;
   showCertificates: boolean | null;
@@ -1023,11 +896,7 @@ export type AllJobsQueryResult = Array<{
   startDate: string;
   endDate: string | null;
   current: boolean | null;
-  description: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayBlockContentValue
-  >;
+  description: InternationalizedArrayBlockContent;
   responsibilities: null;
   technologies: Array<string> | null;
 }>;
@@ -1035,16 +904,8 @@ export type AllJobsQueryResult = Array<{
 // Query: *[_type == "project"] | order(_createdAt desc){    _id,    name,    description,    "image": coverImage,    "technologies": skills[]->name,    "link": websiteLink,    "github": sourceLink,    featured,    duration  }
 export type AllProjectsQueryResult = Array<{
   _id: string;
-  name: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
-  description: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayBlockContentValue
-  > | null;
+  name: InternationalizedArrayString;
+  description: InternationalizedArrayBlockContent | null;
   image: {
     asset?: {
       _ref: string;
@@ -1064,10 +925,11 @@ export type AllProjectsQueryResult = Array<{
   duration: string | null;
 }>;
 // Variable: allSkillsQuery
-// Query: *[_type == "skill"] | order(name asc){    _id,    name  }
+// Query: *[_type == "skill"] | order(name asc){    _id,    name,    type  }
 export type AllSkillsQueryResult = Array<{
   _id: string;
   name: string;
+  type: "soft" | "technical";
 }>;
 // Variable: allCertificatesQuery
 // Query: *[_type == "certificate"] | order(dateIssued desc)
@@ -1078,11 +940,7 @@ export type AllCertificatesQueryResult = Array<{
   _updatedAt: string;
   _rev: string;
   title?: string;
-  description?: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayBlockContentValue
-  >;
+  description?: InternationalizedArrayBlockContent;
   dateIssued?: string;
   link?: string;
 }>;
@@ -1098,17 +956,9 @@ export type SitemapDataResult = Array<{
 export type AllPostsQueryResult = Array<{
   _id: string;
   status: "draft" | "published";
-  title: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
+  title: InternationalizedArrayString;
   slug: string;
-  excerpt: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  > | null;
+  excerpt: InternationalizedArrayString | null;
   coverImage: {
     asset?: {
       _ref: string;
@@ -1129,17 +979,9 @@ export type AllPostsQueryResult = Array<{
 export type MorePostsQueryResult = Array<{
   _id: string;
   status: "draft" | "published";
-  title: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
+  title: InternationalizedArrayString;
   slug: string;
-  excerpt: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  > | null;
+  excerpt: InternationalizedArrayString | null;
   coverImage: {
     asset?: {
       _ref: string;
@@ -1161,17 +1003,9 @@ export type PostQueryResult = {
   content: InternationalizedArrayBlockContent | null;
   _id: string;
   status: "draft" | "published";
-  title: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  >;
+  title: InternationalizedArrayString;
   slug: string;
-  excerpt: Array<
-    {
-      _key: string;
-    } & InternationalizedArrayStringValue
-  > | null;
+  excerpt: InternationalizedArrayString | null;
   coverImage: {
     asset?: {
       _ref: string;
@@ -1203,7 +1037,7 @@ declare module "@sanity/client" {
     '\n  *[_type == "resume"][0]{\n    _id,\n    title,\n    description,\n    showSkills,\n    showProjects,\n    showCertificates\n  }\n': ResumeQueryResult;
     '\n  *[_type == "job"] | order(startDate desc){\n    _id,\n    position,\n    company,\n    location,\n    startDate,\n    endDate,\n    "current": isCurrent,\n    description,\n    responsibilities,\n    "technologies": skills[]->name\n  }\n': AllJobsQueryResult;
     '\n  *[_type == "project"] | order(_createdAt desc){\n    _id,\n    name,\n    description,\n    "image": coverImage,\n    "technologies": skills[]->name,\n    "link": websiteLink,\n    "github": sourceLink,\n    featured,\n    duration\n  }\n': AllProjectsQueryResult;
-    '\n  *[_type == "skill"] | order(name asc){\n    _id,\n    name\n  }\n': AllSkillsQueryResult;
+    '\n  *[_type == "skill"] | order(name asc){\n    _id,\n    name,\n    type\n  }\n': AllSkillsQueryResult;
     '\n  *[_type == "certificate"] | order(dateIssued desc)\n': AllCertificatesQueryResult;
     '\n  *[_type == "post" && defined(slug.current)] | order(_type asc) {\n    "slug": slug.current,\n    _type,\n    _updatedAt,\n  }\n': SitemapDataResult;
     '\n  *[_type == "post" && defined(slug.current)] | order(date desc, _updatedAt desc) {\n    \n  _id,\n  "status": select(_originalId in path("drafts.**") => "draft", "published"),\n  title,\n  "slug": slug.current,\n  excerpt,\n  coverImage,\n  "date": coalesce(date, _updatedAt),\n\n  }\n': AllPostsQueryResult;

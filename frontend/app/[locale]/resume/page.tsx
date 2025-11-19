@@ -19,6 +19,7 @@ import {
   localizeBlockContent,
   type LanguageId,
 } from "@/lib/i18n";
+import { AllSkillsQueryResult } from "@/sanity.types";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -72,29 +73,24 @@ export default async function ResumePage(props: Props) {
     sanityFetch({ query: allCertificatesQuery }),
   ]);
 
-  const resumeData = resume as any;
-  const profileData = profile as any;
-  const jobsData = jobs as any[];
-  const projectsData = projects as any[];
-  const skillsData = skills as any[];
-  const certificatesData = certificates as any[];
-
-  const name = profileData?.name || "Name";
-  const email = profileData?.email;
-  const phone = profileData?.phone;
-  const location = localizeField(profileData?.location, locale);
-  const about = localizeField(profileData?.about, locale);
-
-  const groupedSkills: Record<string, any[]> = {};
-  if (skillsData && skillsData.length > 0) {
-    skillsData.forEach((skill: any) => {
-      const category = "Skills";
-      if (!groupedSkills[category]) {
-        groupedSkills[category] = [];
-      }
-      groupedSkills[category].push(skill);
-    });
+  if (!profile || !jobs || !projects || !skills || !certificates) {
+    notFound();
   }
+
+  const name = profile.name || "Name";
+  const email = profile.email;
+  const phone = profile.phone;
+  const location = localizeField(profile.location, locale);
+  const about = localizeField(profile.about, locale);
+
+  const groupedSkills: Record<string, AllSkillsQueryResult> = {};
+  skills.forEach((skill) => {
+    const category = "Skills";
+    if (!groupedSkills[category]) {
+      groupedSkills[category] = [];
+    }
+    groupedSkills[category].push(skill);
+  });
 
   return (
     <div className="from-primary-50 to-accent-50 min-h-screen bg-gradient-to-br py-12 print:bg-white print:py-0">
@@ -176,29 +172,28 @@ export default async function ResumePage(props: Props) {
                     </span>
                   )}
                 </div>
-                {profileData?.socialLinks &&
-                  profileData.socialLinks.length > 0 && (
-                    <div className="mt-4 flex flex-wrap gap-3 print:mt-2 print:hidden print:gap-2">
-                      {profileData.socialLinks.map((link: any, i: number) => (
-                        <a
-                          key={i}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-primary-600 text-gray-600 transition-colors"
-                        >
-                          <span className="text-sm">{link.platform}</span>
-                        </a>
-                      ))}
-                    </div>
-                  )}
+                {profile?.socialLinks && profile?.socialLinks.length > 0 && (
+                  <div className="mt-4 flex flex-wrap gap-3 print:mt-2 print:hidden print:gap-2">
+                    {profile?.socialLinks.map((link, i: number) => (
+                      <a
+                        key={i}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-primary-600 text-gray-600 transition-colors"
+                      >
+                        <span className="text-sm">{link.platform}</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
-              {profileData?.picture && (
+              {profile?.picture && (
                 <div className="flex-shrink-0 print:hidden">
                   <div className="shadow-elevation-medium relative h-32 w-32 overflow-hidden rounded-xl">
                     <Image
                       src={
-                        urlForImage(profileData.picture)
+                        urlForImage(profile?.picture)
                           ?.width(200)
                           .height(200)
                           .url() || ""
@@ -212,13 +207,13 @@ export default async function ResumePage(props: Props) {
               )}
             </div>
 
-            {jobsData && jobsData.length > 0 && (
+            {jobs && jobs.length > 0 && (
               <section className="mb-8 print:mb-6 print:break-inside-avoid">
                 <h2 className="border-primary-500 mb-4 border-b-2 pb-2 text-2xl font-bold text-gray-900 print:mb-3 print:border-gray-400 print:text-xl">
                   Experience
                 </h2>
                 <div className="space-y-6 print:space-y-4">
-                  {jobsData.map((job: any) => {
+                  {jobs.map((job) => {
                     const startFormatted = format(
                       new Date(job.startDate),
                       "MMM yyyy",
@@ -255,7 +250,7 @@ export default async function ResumePage(props: Props) {
                         )}
                         {job.technologies && job.technologies.length > 0 && (
                           <div className="flex flex-wrap gap-2 print:gap-1">
-                            {job.technologies.map((tech: any, i: number) => (
+                            {job.technologies.map((tech, i: number) => (
                               <span
                                 key={i}
                                 className="bg-primary-100 text-primary-700 rounded px-2 py-1 text-xs font-medium print:rounded-sm print:bg-gray-100 print:px-1 print:py-0.5 print:text-[10px] print:text-gray-700"
@@ -272,7 +267,7 @@ export default async function ResumePage(props: Props) {
               </section>
             )}
 
-            {resumeData?.showSkills !== false &&
+            {resume?.showSkills !== false &&
               groupedSkills &&
               Object.keys(groupedSkills).length > 0 && (
                 <section className="mb-8 print:mb-6 print:break-inside-avoid">
@@ -290,12 +285,12 @@ export default async function ResumePage(props: Props) {
                             {category}
                           </h3>
                           <div className="flex flex-wrap gap-2 print:gap-1">
-                            {categorySkills.map((skill: any) => (
+                            {categorySkills.map((skill) => (
                               <span
-                                key={skill._id}
+                                key={skill.name}
                                 className="rounded-lg bg-gray-100 px-3 py-1 text-sm text-gray-700 print:rounded print:border print:border-gray-300 print:bg-white print:px-2 print:py-0.5 print:text-xs"
                               >
-                                {skill.name}
+                                {localizeField(skill.name, locale)}
                               </span>
                             ))}
                           </div>
@@ -306,16 +301,15 @@ export default async function ResumePage(props: Props) {
                 </section>
               )}
 
-            {resumeData?.showProjects !== false &&
-              projectsData &&
-              projectsData.length > 0 && (
+            {resume?.showProjects !== false &&
+              projects &&
+              projects.length > 0 && (
                 <section className="mb-8 print:mb-6 print:break-inside-avoid">
                   <h2 className="border-primary-500 mb-4 border-b-2 pb-2 text-2xl font-bold text-gray-900 print:mb-3 print:border-gray-400 print:text-xl">
                     Projects
                   </h2>
                   <div className="space-y-4 print:space-y-3">
-                    {projectsData.slice(0, 6).map((project: any) => {
-                      const projectName = localizeField(project.name, locale);
+                    {projects.slice(0, 6).map((project) => {
                       const projectDescription = localizeBlockContent(
                         project.description,
                         locale,
@@ -327,7 +321,7 @@ export default async function ResumePage(props: Props) {
                           className="print:break-inside-avoid"
                         >
                           <h3 className="mb-1 text-lg font-bold text-gray-900 print:text-base">
-                            {projectName}
+                            {localizeField(project.name, locale)}
                           </h3>
                           {projectDescription &&
                             projectDescription.length > 0 && (
@@ -338,16 +332,14 @@ export default async function ResumePage(props: Props) {
                           {project.technologies &&
                             project.technologies.length > 0 && (
                               <div className="flex flex-wrap gap-2 print:gap-1">
-                                {project.technologies.map(
-                                  (tech: any, i: number) => (
-                                    <span
-                                      key={i}
-                                      className="bg-accent-100 text-accent-700 rounded px-2 py-1 text-xs font-medium print:rounded-sm print:bg-gray-100 print:px-1 print:py-0.5 print:text-[10px] print:text-gray-700"
-                                    >
-                                      {tech}
-                                    </span>
-                                  ),
-                                )}
+                                {project.technologies.map((tech, i: number) => (
+                                  <span
+                                    key={i}
+                                    className="bg-accent-100 text-accent-700 rounded px-2 py-1 text-xs font-medium print:rounded-sm print:bg-gray-100 print:px-1 print:py-0.5 print:text-[10px] print:text-gray-700"
+                                  >
+                                    {tech}
+                                  </span>
+                                ))}
                               </div>
                             )}
                         </div>
@@ -357,25 +349,28 @@ export default async function ResumePage(props: Props) {
                 </section>
               )}
 
-            {resumeData?.showCertificates !== false &&
-              certificatesData &&
-              certificatesData.length > 0 && (
+            {resume?.showCertificates !== false &&
+              certificates &&
+              certificates.length > 0 && (
                 <section className="mb-8 print:mb-6 print:break-inside-avoid">
                   <h2 className="border-primary-500 mb-4 border-b-2 pb-2 text-2xl font-bold text-gray-900 print:mb-3 print:border-gray-400 print:text-xl">
                     Certifications
                   </h2>
                   <div className="space-y-3 print:space-y-2">
-                    {certificatesData.map((cert: any) => (
-                      <div key={cert._id} className="print:break-inside-avoid">
+                    {certificates.map((cert) => (
+                      <div
+                        key={cert.title}
+                        className="print:break-inside-avoid"
+                      >
                         <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                           <div>
                             <h3 className="text-base font-semibold text-gray-900 print:text-sm">
                               {cert.title}
                             </h3>
                           </div>
-                          {cert.issueDate && (
+                          {cert.dateIssued && (
                             <span className="text-sm text-gray-600 print:text-xs">
-                              {format(new Date(cert.issueDate), "MMM yyyy")}
+                              {new Date(cert.dateIssued).toLocaleDateString()}
                             </span>
                           )}
                         </div>

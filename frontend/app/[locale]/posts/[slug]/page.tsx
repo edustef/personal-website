@@ -10,60 +10,47 @@ import PortableText from "@/components/PortableText";
 import { sanityFetch } from "@/sanity/lib/live";
 import { postPagesSlugs, postQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
-import {
-  languages,
-  localizeField,
-  localizeBlockContent,
-  type LanguageId,
-} from "@/lib/i18n";
+import { localizeField, localizeBlockContent, LanguageId } from "@/lib/i18n";
 
 type Props = {
-  params: Promise<{ slug: string; locale: string }>;
+  params: Promise<{ slug: string; locale: LanguageId }>;
 };
 
+/**
+ * Generate the static params for the page.
+ * Learn more: https://nextjs.org/docs/app/api-reference/functions/generate-static-params
+ */
 export async function generateStaticParams() {
   const { data } = await sanityFetch({
     query: postPagesSlugs,
+    // Use the published perspective in generateStaticParams
     perspective: "published",
     stega: false,
   });
-
-  const locales = languages.map((lang) => lang.id);
-  const params: { slug: string; locale: string }[] = [];
-
-  data?.forEach((post) => {
-    locales.forEach((locale) => {
-      params.push({
-        slug: post.slug,
-        locale,
-      });
-    });
-  });
-
-  return params;
+  return data;
 }
 
+/**
+ * Generate metadata for the page.
+ * Learn more: https://nextjs.org/docs/app/api-reference/functions/generate-metadata#generatemetadata-function
+ */
 export async function generateMetadata(
   props: Props,
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const params = await props.params;
-  const locale = params.locale as LanguageId;
-
-  if (!languages.find((lang) => lang.id === locale)) {
-    return {};
-  }
 
   const { data: post } = await sanityFetch({
     query: postQuery,
-    params: { slug: params.slug },
+    params,
     stega: false,
   });
+
   const previousImages = (await parent).openGraph?.images || [];
   const ogImage = resolveOpenGraphImage(post?.coverImage);
 
-  const postTitle = localizeField(post?.title, locale) || "Untitled";
-  const postExcerpt = localizeField(post?.excerpt, locale);
+  const postTitle = localizeField(post?.title, "en") || "Untitled";
+  const postExcerpt = localizeField(post?.excerpt, "en");
 
   return {
     title: postTitle,
@@ -76,23 +63,17 @@ export async function generateMetadata(
 
 export default async function PostPage(props: Props) {
   const params = await props.params;
-  const locale = params.locale as LanguageId;
-
-  if (!languages.find((lang) => lang.id === locale)) {
-    notFound();
-  }
-
   const [{ data: post }] = await Promise.all([
-    sanityFetch({ query: postQuery, params: { slug: params.slug } }),
+    sanityFetch({ query: postQuery, params }),
   ]);
 
   if (!post?._id) {
     return notFound();
   }
 
-  const postTitle = localizeField(post.title, locale) || "Untitled";
-  const postExcerpt = localizeField(post.excerpt, locale);
-  const postContent = localizeBlockContent(post.content, locale);
+  const postTitle = localizeField(post.title, "en") || "Untitled";
+  const postExcerpt = localizeField(post.excerpt, "en");
+  const postContent = localizeBlockContent(post.content, "en");
 
   return (
     <>
@@ -123,7 +104,7 @@ export default async function PostPage(props: Props) {
             </div>
 
             <article className="prose prose-lg prose-gray prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-3 prose-p:leading-relaxed prose-p:text-gray-700 prose-a:text-primary-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-strong:font-semibold prose-code:text-primary-600 prose-code:bg-primary-50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-pre:bg-gray-900 prose-pre:shadow-elevation-medium prose-img:rounded-xl prose-img:shadow-elevation-medium prose-ul:my-6 prose-ol:my-6 prose-li:my-2 max-w-none">
-              {postContent && postContent.length > 0 && (
+              {postContent?.length > 0 && (
                 <PortableText value={postContent as PortableTextBlock[]} />
               )}
             </article>
@@ -131,7 +112,11 @@ export default async function PostPage(props: Props) {
         </div>
       </div>
 
-      {(await MorePosts({ skip: post._id, limit: 3, locale })) && (
+      {(await MorePosts({
+        skip: post._id,
+        limit: 3,
+        locale: params.locale,
+      })) && (
         <div className="border-t border-gray-200 bg-white py-16 lg:py-24">
           <div className="container">
             <div className="mx-auto max-w-6xl">
@@ -143,7 +128,11 @@ export default async function PostPage(props: Props) {
                   <div className="text-center text-gray-500">Loading...</div>
                 }
               >
-                {await MorePosts({ skip: post._id, limit: 3, locale })}
+                {await MorePosts({
+                  skip: post._id,
+                  limit: 3,
+                  locale: params.locale,
+                })}
               </Suspense>
             </div>
           </div>

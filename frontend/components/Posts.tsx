@@ -95,7 +95,7 @@ const Posts = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
-export const MorePosts = async ({
+export async function MorePosts({
   skip,
   limit,
   locale,
@@ -103,7 +103,7 @@ export const MorePosts = async ({
   skip: string;
   limit: number;
   locale: LanguageId;
-}) => {
+}) {
   const { data } = await sanityFetch({
     query: morePostsQuery,
     params: { skip, limit, locale },
@@ -115,14 +115,14 @@ export const MorePosts = async ({
 
   return (
     <Posts>
-      {data?.map((post: any) => (
+      {data?.map((post) => (
         <Post key={post._id} post={post} locale={locale} />
       ))}
     </Posts>
   );
-};
+}
 
-export const AllPosts = async (locale: LanguageId) => {
+export async function AllPosts({ locale }: { locale: LanguageId }) {
   const { data } = await sanityFetch({
     query: allPostsQuery,
     params: { locale },
@@ -138,9 +138,9 @@ export const AllPosts = async (locale: LanguageId) => {
 
   return (
     <Posts>
-      {data.map((post: any) => (
+      {data.map((post) => (
         <Post key={post._id} post={post} locale={locale} />
       ))}
     </Posts>
   );
-};
+}
