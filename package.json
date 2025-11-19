@@ -34,7 +34,6 @@
     "type-check": "npm run type-check --workspaces"
   },
   "devDependencies": {
-    "@sanity/prettier-config": "^2.0.1",
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.6.2"
   }
