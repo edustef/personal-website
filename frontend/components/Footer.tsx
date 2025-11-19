@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { profileQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
+import { cn } from "@/lib/utils";
 
-export async function Footer() {
+export async function Footer({ className }: { className?: string }) {
   const { data: profile } = await sanityFetch({
     query: profileQuery,
   });
@@ -10,7 +11,12 @@ export async function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary text-secondary-foreground relative overflow-hidden">
+    <footer
+      className={cn(
+        "bg-secondary text-secondary-foreground relative overflow-hidden",
+        className,
+      )}
+    >
       <div className="absolute inset-0 bg-[url(/images/tile-grid-black.png)] opacity-5" />
       <div className="relative container py-16">
         <div className="mx-auto max-w-6xl">

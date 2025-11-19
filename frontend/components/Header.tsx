@@ -11,12 +11,14 @@ import {
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import { Link } from "@/components/ui/link";
+import { cn } from "@/lib/utils";
 
 type HeaderProps = {
   locale: LanguageId;
+  className?: string;
 };
 
-export async function Header({ locale }: HeaderProps) {
+export async function Header({ locale, className }: HeaderProps) {
   const { data: home } = await sanityFetch({
     query: homeQuery,
   });
@@ -24,7 +26,12 @@ export async function Header({ locale }: HeaderProps) {
   const title = localizeField(home?.title, locale) || "Portfolio";
 
   return (
-    <header className="bg-background border-border sticky inset-0 z-50 flex h-24 w-full items-center border-b px-3">
+    <header
+      className={cn(
+        "bg-background border-border sticky inset-0 z-50 flex h-24 w-full items-center border-b px-3",
+        className,
+      )}
+    >
       <div className="container mx-auto w-full max-w-6xl">
         <div className="flex items-center justify-between gap-5">
           <Link className="group flex items-center gap-2" href={`/${locale}`}>

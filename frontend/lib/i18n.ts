@@ -17,6 +17,8 @@ export function localizeField<
   T extends InternationalizedArrayString | null | undefined,
 >(field: T, locale: LanguageId = defaultLanguage): string | null {
   if (!field) return null;
+  if (!Array.isArray(field)) return null;
+
   const localized = field.find((item) => item._key === locale);
   if (localized) return localized.value ?? null;
   const fallback = field.find((item) => item._key === defaultLanguage);
@@ -27,6 +29,7 @@ export function localizeBlockContent<
   T extends InternationalizedArrayBlockContent | null | undefined,
 >(field: T, locale: LanguageId = defaultLanguage) {
   if (!field) return [];
+  if (!Array.isArray(field)) return [];
 
   const localized = field.find((item) => item._key === locale);
   if (localized) return localized.value ?? [];

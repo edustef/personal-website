@@ -111,10 +111,7 @@ export default async function LocaleLayout(props: Props) {
               </>
             )}
             <SanityLive onError={handleError} />
-            <Header locale={locale} />
-            <div className="absolute inset-0 -z-10 bg-[url(/images/tile-grid-black.png)] opacity-5" />
-            <main className="min-h-screen">{props.children}</main>
-            <Footer />
+            {props.children}
           </LocaleProvider>
           <SpeedInsights />
         </ThemeProvider>
