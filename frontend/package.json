@@ -1,6 +1,7 @@
 {
   "name": "frontend",
-  "private": true,
+  "license": "UNLICENSED",
+  "main": "package.json",
   "scripts": {
     "prebuild": "npm run typegen",
     "build": "next build",
