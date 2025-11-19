@@ -5,7 +5,6 @@ import type { Metadata } from "next";
 import { DM_Sans, DM_Mono } from "next/font/google";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
-import { toPlainText } from "next-sanity";
 import { Toaster } from "sonner";
 import { notFound } from "next/navigation";
 
@@ -43,7 +42,6 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s | ${title}`,
       default: title,
     },
-    description: toPlainText(description),
     openGraph: {
       images: ogImage ? [ogImage] : [],
     },
