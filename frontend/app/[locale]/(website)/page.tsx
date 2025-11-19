@@ -133,7 +133,7 @@ export default async function Page(props: Props) {
         </form>
         <div className="flex w-full flex-col gap-4 md:max-w-sm">
           <h2 className="text-2xl font-bold">Find me on</h2>
-          <div className="flex flex-col justify-center gap-2">
+          <div className="flex flex-col justify-center gap-4">
             <Button variant="outline" asChild>
               <Link href="https://www.linkedin.com/in/eduard-stefan-089371100/">
                 LinkedIn
