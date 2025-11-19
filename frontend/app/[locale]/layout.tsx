@@ -2,7 +2,7 @@ import "../globals.css";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans, DM_Mono } from "next/font/google";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
 import { toPlainText } from "next-sanity";
@@ -58,8 +58,14 @@ export async function generateStaticParams() {
   }));
 }
 
-const inter = Inter({
-  variable: "--font-inter",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
+  subsets: ["latin"],
+  display: "swap",
+});
+const dmMono = DM_Mono({
+  weight: ["300", "400", "500"],
+  variable: "--font-dm-mono",
   subsets: ["latin"],
   display: "swap",
 });
@@ -81,7 +87,7 @@ export default async function LocaleLayout(props: Props) {
   return (
     <html
       lang={locale}
-      className={`${inter.variable} dark bg-background text-foreground`}
+      className={`${dmSans.variable} ${dmMono.variable} dark bg-background text-foreground`}
       suppressHydrationWarning
     >
       <body>

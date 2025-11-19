@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { homeQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
 import { Button } from "@/components/ui/button";
@@ -11,6 +10,7 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
+import { Link } from "@/components/ui/link";
 
 type HeaderProps = {
   locale: LanguageId;
