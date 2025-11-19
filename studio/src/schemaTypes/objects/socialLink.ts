@@ -14,6 +14,7 @@ export const socialLink = defineType({
       name: "url",
       title: "URL",
       type: "url",
+      validation: (rule) => rule.required(),
     },
   ],
 });

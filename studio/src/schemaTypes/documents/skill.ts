@@ -21,6 +21,7 @@ export const skill = defineType({
           { title: "Soft", value: "soft" },
         ],
       },
+      validation: (rule) => rule.required(),
     },
   ],
 });

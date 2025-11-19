@@ -11,10 +11,13 @@ const projectId = process.env.SANITY_STUDIO_PROJECT_ID || "<your project ID>";
 const dataset = process.env.SANITY_STUDIO_DATASET || "production";
 
 export default defineCliConfig({
+  deployment: {
+    appId: "o3s8lvdhvdqbilmaiwb83e8b",
+    autoUpdates: true,
+  },
   api: {
     projectId,
     dataset,
   },
   studioHost: process.env.SANITY_STUDIO_STUDIO_HOST || "", // Visit https://www.sanity.io/docs/environment-variables to learn more about using environment variables for local & production.
-  autoUpdates: true,
 });
