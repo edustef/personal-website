@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { PaintRollerIcon } from "lucide-react";
+import { RenovationBadge } from "@/components/renovation-badge";
 
 type HeroIntroProps = {
   headline?: string | null;
@@ -47,19 +47,10 @@ export function HeroIntro({
         animate={fadeUp.animate}
         transition={{ duration: 3, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="bg-secondary/30 text-secondary-foreground relative w-fit rounded-lg px-4 py-2">
-          <div className="mx-auto flex max-w-6xl flex-row items-center gap-2">
-            <PaintRollerIcon className="size-5" />
-            <div className="flex flex-row items-center text-sm uppercase">
-              <span className="font-bold tracking-widest uppercase">
-                {renovationLabelPrimary || "Under"}
-              </span>
-              <span className="ml-0.5 tracking-tight">
-                {renovationLabelSecondary || "Renovation"}
-              </span>
-            </div>
-          </div>
-        </div>
+        <RenovationBadge
+          primary={renovationLabelPrimary}
+          secondary={renovationLabelSecondary}
+        />
         <h1 className="text-foreground max-w-3xl text-4xl leading-normal font-semibold text-pretty md:text-6xl md:leading-tight">
           {headline}
         </h1>
