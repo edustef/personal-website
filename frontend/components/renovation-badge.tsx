@@ -39,8 +39,8 @@ export function RenovationBadge({
       <div className="relative z-10 flex items-center gap-2 rounded-lg bg-secondary/30 px-5 py-2 text-secondary-foreground">
         <RocketIcon className="size-4" />
         <div className="flex flex-row items-center text-sm leading-none tracking-widest uppercase">
-          <span className="font-bold">{primary}</span>
-          <span className="ml-2">{secondary}</span>
+          <span>{primary}</span>
+          <span className="font-bold ml-2">{secondary}</span>
         </div>
       </div>
     </div>
