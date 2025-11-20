@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLinkIcon, FileText } from "lucide-react";
 import { localizeField, type LanguageId } from "@/lib/i18n";
 import { ModeToggle } from "@/components/theme-toggle";
+import { LanguageToggle } from "@/components/language-toggle";
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -78,6 +79,9 @@ export async function Header({ locale, className }: HeaderProps) {
                     <ExternalLinkIcon className="size-4" />
                   </a>
                 </Button>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <LanguageToggle />
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>

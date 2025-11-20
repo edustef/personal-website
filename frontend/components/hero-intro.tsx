@@ -40,7 +40,7 @@ export function HeroIntro({
   }
 
   return (
-    <section className="mx-auto flex w-full max-w-6xl flex-1 flex-col justify-between gap-8 md:justify-start">
+    <section className="mx-auto flex w-full max-w-6xl flex-1 flex-col justify-between gap-16 md:justify-start">
       <motion.div
         className="flex flex-col gap-4 mix-blend-difference"
         initial={fadeUp.initial}
@@ -60,9 +60,12 @@ export function HeroIntro({
             </div>
           </div>
         </div>
-        <h1 className="text-foreground max-w-2xl text-4xl leading-normal font-semibold text-pretty md:text-6xl md:leading-tight">
+        <h1 className="text-foreground max-w-3xl text-4xl leading-normal font-semibold text-pretty md:text-6xl md:leading-tight">
           {headline}
         </h1>
+        {tagline && (
+          <p className="text-muted-foreground text-lg md:text-xl">{tagline}</p>
+        )}
       </motion.div>
 
       <motion.div

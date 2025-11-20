@@ -254,7 +254,8 @@ export type Home = {
   title: InternationalizedArrayString;
   headline: InternationalizedArrayString;
   tagline?: InternationalizedArrayString;
-  renovationLabel?: InternationalizedArrayString;
+  renovationLabelPrimary?: InternationalizedArrayString;
+  renovationLabelSecondary?: InternationalizedArrayString;
   findMeOnLabel?: InternationalizedArrayString;
   resumeButtonLabel?: InternationalizedArrayString;
   profile?: {
@@ -275,6 +276,7 @@ export type Home = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "project";
   }>;
+  footer?: InternationalizedArrayBlockContent;
 };
 
 export type Profile = {

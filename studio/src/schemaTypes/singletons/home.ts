@@ -71,6 +71,12 @@ export const home = defineType({
       type: "array",
       of: [{ type: "reference", to: [{ type: "project" }] }],
     }),
+    defineField({
+      name: "footer",
+      title: "Footer Content",
+      description: "Localized rich text shown at the bottom of the home page",
+      type: "internationalizedArrayBlockContent",
+    }),
   ],
   preview: {
     select: {

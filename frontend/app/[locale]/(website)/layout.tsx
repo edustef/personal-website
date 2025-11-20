@@ -19,7 +19,7 @@ export default async function WebsiteLayout(props: Props) {
           {props.children}
         </main>
       </div>
-      <Footer />
+      <Footer locale={locale} />
     </>
   );
 }

@@ -42,6 +42,16 @@ export const homeQuery = defineQuery(`
       "link": websiteLink,
       "github": sourceLink,
       featured
+    },
+    footer
+  }
+`);
+
+export const homeFooterQuery = defineQuery(`
+  *[_type == "home"][0]{
+    footer,
+    profile->{
+      name
     }
   }
 `);

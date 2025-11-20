@@ -19,6 +19,18 @@ function getLocale(request: Request): LanguageId {
   ) as LanguageId;
 }
 
+function getCookieLocale(request: Request): LanguageId | undefined {
+  const cookieHeader = request.headers.get("cookie");
+  if (!cookieHeader) return undefined;
+  const cookies = cookieHeader.split(";").map((cookie) => cookie.trim());
+  const entry = cookies.find((cookie) =>
+    cookie.startsWith("preferred_language="),
+  );
+  if (!entry) return undefined;
+  const value = entry.split("=")[1];
+  return languages.find((lang) => lang.id === value)?.id;
+}
+
 export function proxy(request: Request) {
   // Check if there is any supported locale in the pathname
   const { pathname } = new URL(request.url);
@@ -30,7 +42,7 @@ export function proxy(request: Request) {
   if (pathnameHasLocale) return;
 
   // Redirect if there is no locale
-  const locale = getLocale(request);
+  const locale = getCookieLocale(request) ?? getLocale(request);
   const url = new URL(request.url);
   url.pathname = `/${locale}${pathname}`;
 

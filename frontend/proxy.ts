@@ -17,6 +17,11 @@ function getLocale(request: Request): LanguageId {
   return locale || defaultLocale;
 }
 
+function getCookieLocale(request: NextRequest): LanguageId | undefined {
+  const value = request.cookies.get("preferred_language")?.value;
+  return languages.find((lang) => lang.id === value)?.id;
+}
+
 export function proxy(request: NextRequest) {
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl;
@@ -27,7 +32,7 @@ export function proxy(request: NextRequest) {
 
   if (pathnameHasLocale) return;
 
-  const locale = getLocale(request);
+  const locale = getCookieLocale(request) ?? getLocale(request);
   request.nextUrl.pathname = `/${locale}${pathname}`;
 
   return NextResponse.redirect(request.nextUrl);

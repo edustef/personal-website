@@ -14,7 +14,7 @@ export default async function PrintLayout(props: Props) {
     <>
       <Header className="print:hidden" locale={locale} />
       <main className="min-h-screen">{props.children}</main>
-      <Footer className="print:hidden" />
+      <Footer className="print:hidden" locale={locale} />
     </>
   );
 }
