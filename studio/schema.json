@@ -1557,6 +1557,14 @@
           }
         },
         "optional": true
+      },
+      "footer": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "inline",
+          "name": "internationalizedArrayBlockContent"
+        },
+        "optional": true
       }
     }
   },

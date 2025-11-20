@@ -75,7 +75,7 @@ export const home = defineType({
       name: "footer",
       title: "Footer Content",
       description: "Localized rich text shown at the bottom of the home page",
-      type: "internationalizedArrayBlockContent",
+      type: "internationalizedArrayString",
     }),
   ],
   preview: {

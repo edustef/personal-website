@@ -1,7 +1,6 @@
-import PortableText from "@/components/PortableText";
 import { homeFooterQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
-import { LanguageId, localizeBlockContent } from "@/lib/i18n";
+import { LanguageId, localizeField } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 type FooterProps = {
@@ -15,8 +14,10 @@ export async function Footer({ className, locale }: FooterProps) {
   });
 
   const currentYear = new Date().getFullYear();
-  const footerContent = localizeBlockContent(home?.footer, locale);
-  const profileName = home?.profile?.name;
+  const footerTemplate = localizeField(home?.footer, locale);
+  const footerContent =
+    footerTemplate?.replace("{currentYear}", currentYear.toString()) ||
+    `@ ${currentYear} ${home?.profile?.name || "Portfolio"}. Built with Next.js & Sanity.`;
 
   return (
     <footer
@@ -27,17 +28,8 @@ export async function Footer({ className, locale }: FooterProps) {
     >
       <div className="relative py-16">
         <div className="mx-auto flex max-w-5xl flex-col items-center">
-          {footerContent.length > 0 && (
-            <PortableText
-              className="prose-invert text-center"
-              value={footerContent}
-            />
-          )}
           <div className="mt-12 w-full border-t border-gray-700 pt-8 text-center">
-            <p className="text-sm">
-              © {currentYear} {profileName || "Portfolio"}. Built with Next.js
-              & Sanity.
-            </p>
+            <p className="text-sm">{footerContent}</p>
           </div>
         </div>
       </div>
