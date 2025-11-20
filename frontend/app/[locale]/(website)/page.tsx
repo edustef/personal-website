@@ -9,19 +9,9 @@ import {
 } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
 import { languages, type LanguageId } from "@/lib/i18n";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import {
-  Field,
-  FieldGroup,
-  FieldLabel,
-  FieldLegend,
-} from "@/components/ui/field";
-import { ConstructionIcon, ExternalLinkIcon } from "lucide-react";
+import { ContactForm } from "@/components/ContactForm";
 import Link from "next/link";
-
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -113,24 +103,9 @@ export default async function Page(props: Props) {
   return (
     <div className="mx-auto flex max-w-4xl flex-col items-start justify-center gap-8 px-4 pt-12 pb-12 md:pt-24">
       <div className="flex w-full flex-col items-start justify-between gap-16 md:flex-row">
-        <form className="flex w-full flex-col gap-4 md:max-w-sm" action="">
-          <h2 className="text-2xl font-bold">Contact me</h2>
-          <FieldGroup>
-            <Field>
-              <FieldLabel>My email address</FieldLabel>
-              <Input disabled value={profile?.email || ""} />
-            </Field>
-            <Field>
-              <FieldLabel>Your email address</FieldLabel>
-              <Input name="email" placeholder="Your email address" />
-            </Field>
-            <Field>
-              <FieldLabel>Your message</FieldLabel>
-              <Textarea placeholder="Your message..." />
-            </Field>
-            <Button type="submit">Send</Button>
-          </FieldGroup>
-        </form>
+        {profile?.email && (
+          <ContactForm recipientEmail={profile.email} />
+        )}
         <div className="flex w-full flex-col gap-4 md:max-w-sm">
           <h2 className="text-2xl font-bold">Find me on</h2>
           <div className="flex flex-col justify-center gap-4">

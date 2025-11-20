@@ -19,7 +19,6 @@ export const settings = defineType({
       description: "This field is the title of your blog.",
       title: "Title",
       type: "string",
-      initialValue: demo.title,
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -27,7 +26,7 @@ export const settings = defineType({
       description: "Used on the Homepage",
       title: "Description",
       type: "array",
-      initialValue: demo.description,
+      validation: (rule) => rule.required(),
       of: [
         // Define a minified block content field for the description. https://www.sanity.io/docs/block-content
         defineArrayMember({
@@ -144,6 +143,7 @@ export const settings = defineType({
           },
         }),
       ],
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "ogImage",

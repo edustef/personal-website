@@ -121,6 +121,17 @@ export type BlockContent = Array<{
   _key: string;
 }>;
 
+export type Contact = {
+  _id: string;
+  _type: "contact";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  email: string;
+  message: string;
+  createdAt?: string;
+};
+
 export type Certificate = {
   _id: string;
   _type: "certificate";
@@ -668,6 +679,7 @@ export type AllSanitySchemaTypes =
   | SanityImageCrop
   | SanityImageHotspot
   | BlockContent
+  | Contact
   | Certificate
   | InternationalizedArrayBlockContent
   | Job
