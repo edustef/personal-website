@@ -1945,7 +1945,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "menuItems": {
         "type": "objectAttribute",
@@ -2188,7 +2188,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "ogImage": {
         "type": "objectAttribute",
