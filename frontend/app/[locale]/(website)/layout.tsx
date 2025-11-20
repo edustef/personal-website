@@ -24,7 +24,6 @@ export default async function WebsiteLayout(props: Props) {
       </div>
       <Header locale={locale} />
       <main className="relative isolate min-h-screen">
-        <div className="absolute inset-0 -z-10 bg-[url(/images/tile-grid-black.png)] bg-repeat opacity-5 invert" />
         {props.children}
       </main>
       <Footer />

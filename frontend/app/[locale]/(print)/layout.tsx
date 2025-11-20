@@ -13,7 +13,6 @@ export default async function PrintLayout(props: Props) {
   return (
     <>
       <Header className="print:hidden" locale={locale} />
-      <div className="absolute inset-0 -z-10 bg-[url(/images/tile-grid-black.png)] opacity-5 invert print:hidden" />
       <main className="min-h-screen">{props.children}</main>
       <Footer className="print:hidden" />
     </>
