@@ -80,7 +80,7 @@ export function ContactForm({ recipientEmail }: ContactFormProps) {
     <form
       ref={formRef}
       action={formAction}
-      className="flex w-full flex-col gap-4 md:max-w-sm"
+      className="flex w-full flex-col gap-4"
     >
       <h2 className="text-2xl font-bold">Contact me</h2>
       <FieldGroup>

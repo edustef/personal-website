@@ -13,7 +13,7 @@ export function HeroSpline({ className }: HeroSplineProps) {
     <div
       aria-hidden="true"
       className={cn(
-        "animate-in fade-in absolute inset-0 -z-10 overflow-hidden duration-2000",
+        "animate-in fade-in absolute inset-0 -z-10 overflow-hidden duration-2000 w-full h-[calc(100vh)]",
         className,
       )}
     >

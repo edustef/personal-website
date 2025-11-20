@@ -13,6 +13,7 @@ import { languages, localizeField, type LanguageId } from "@/lib/i18n";
 import { HeroIntro } from "@/components/hero-intro";
 import { HeroSpline } from "@/components/hero-spline";
 import { getLocalizedSettingsMetadata } from "@/lib/seo";
+import { ContactForm } from "@/components/ContactForm";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -128,7 +129,7 @@ export default async function Page(props: Props) {
 
   return (
     <>
-      <div className="flex flex-1 flex-col px-4 pt-12 pb-12 md:pt-24">
+      <div className="flex min-h-[calc(100vh-4rem)] flex-col px-4 pt-12 pb-12 md:pt-24">
         <HeroSpline />
         {home && (
           <HeroIntro
@@ -151,16 +152,26 @@ export default async function Page(props: Props) {
                 ? localizeField(home.findMeOnLabel, locale)
                 : undefined
             }
+            resumeButtonLabel={
+              home.resumeButtonLabel
+                ? localizeField(home.resumeButtonLabel, locale)
+                : undefined
+            }
           />
         )}
       </div>
-      {/* <div className="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-16 md:flex-row">
-        {profile?.email && (
-          <div className="w-full max-w-2xl">
-            <ContactForm recipientEmail={profile.email} />
+      {profile?.email && (
+        <section
+          id="contact"
+          className="bg-background mt-16 px-4 py-24 md:mt-24"
+        >
+          <div className="mx-auto flex w-full max-w-6xl justify-center">
+            <div className="w-full max-w-lg">
+              <ContactForm recipientEmail={profile.email} />
+            </div>
           </div>
-        )}
-      </div> */}
+        </section>
+      )}
     </>
   );
 }

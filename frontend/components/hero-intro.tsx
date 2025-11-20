@@ -12,6 +12,7 @@ type HeroIntroProps = {
   renovationLabelPrimary?: string | null;
   renovationLabelSecondary?: string | null;
   findMeOnLabel?: string | null;
+  resumeButtonLabel?: string | null;
 };
 
 const fadeUp = {
@@ -25,6 +26,7 @@ export function HeroIntro({
   renovationLabelPrimary,
   renovationLabelSecondary,
   findMeOnLabel,
+  resumeButtonLabel,
 }: HeroIntroProps) {
   const links = [
     {
@@ -66,12 +68,25 @@ export function HeroIntro({
         transition={{ duration: 3, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
       >
         <h2 className="text-2xl font-bold">{findMeOnLabel || "Find me on"}</h2>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-4">
           {links.map((link) => (
             <Button key={link.href} variant="outline" asChild>
               <Link href={link.href}>{link.label}</Link>
             </Button>
           ))}
+          {resumeButtonLabel && (
+            <div>
+              <Button variant="outline" size="lg" asChild>
+                <Link
+                  href="/files/eduard-stefan-resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {resumeButtonLabel || "Get my resume"}
+                </Link>
+              </Button>
+            </div>
+          )}
         </div>
       </motion.div>
     </section>

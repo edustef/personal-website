@@ -1,8 +1,5 @@
-import { homeQuery } from "@/sanity/lib/queries";
-import { sanityFetch } from "@/sanity/lib/live";
 import { Button } from "@/components/ui/button";
-import { ExternalLinkIcon } from "lucide-react";
-import { localizeField, type LanguageId } from "@/lib/i18n";
+import { type LanguageId } from "@/lib/i18n";
 import { LanguageToggle } from "@/components/language-toggle";
 import {
   NavigationMenu,
@@ -26,20 +23,21 @@ const navCopy: Record<LanguageId, string> = {
   es: "Navegacion principal",
 };
 
+const contactCopy: Record<LanguageId, string> = {
+  en: "Contact me",
+  ro: "Contacteaza-ma",
+  es: "Contactame",
+};
+
 type HeaderProps = {
   locale: LanguageId;
   className?: string;
 };
 
 export async function Header({ locale, className }: HeaderProps) {
-  const { data: home } = await sanityFetch({
-    query: homeQuery,
-  });
-
-  const resumeLabel =
-    localizeField(home?.resumeButtonLabel, locale) || "Get my resume";
   const skipLinkText = skipCopy[locale] ?? skipCopy.en;
   const navLabel = navCopy[locale] ?? navCopy.en;
+  const contactLabel = contactCopy[locale] ?? contactCopy.en;
 
   return (
     <header
@@ -95,14 +93,7 @@ export async function Header({ locale, className }: HeaderProps) {
 
               <NavigationMenuItem>
                 <Button className="w-fit" asChild>
-                  <a
-                    href="/files/eduard-stefan-resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span>{resumeLabel}</span>
-                    <ExternalLinkIcon className="size-4" />
-                  </a>
+                  <a href="#contact">{contactLabel}</a>
                 </Button>
               </NavigationMenuItem>
               <NavigationMenuItem>
