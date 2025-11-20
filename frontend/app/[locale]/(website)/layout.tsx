@@ -1,7 +1,6 @@
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { LanguageId } from "@/lib/i18n";
-import { ConstructionIcon } from "lucide-react";
 
 type Props = {
   children: React.ReactNode;

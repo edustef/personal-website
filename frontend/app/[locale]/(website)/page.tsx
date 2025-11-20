@@ -36,16 +36,16 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     openGraph: {
       type: "website",
       locale,
-      title: pageTitle || "",
-      description: pageDescription,
+      title: localizedSettings.title || "",
+      description: localizedSettings.description || "",
       images: localizedSettings.ogImage
         ? [localizedSettings.ogImage]
         : undefined,
     },
     twitter: {
       card: localizedSettings.ogImage ? "summary_large_image" : "summary",
-      title: pageTitle || "",
-      description: pageDescription,
+      title: localizedSettings.title || "",
+      description: localizedSettings.description || "",
       images: localizedSettings.ogImage
         ? [localizedSettings.ogImage.url]
         : undefined,
