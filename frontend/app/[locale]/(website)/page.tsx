@@ -8,7 +8,7 @@ import {
   allCertificatesQuery,
 } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
-import { languages, type LanguageId } from "@/lib/i18n";
+import { languages, localizeField, type LanguageId } from "@/lib/i18n";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/ContactForm";
 import Link from "next/link";
@@ -101,11 +101,16 @@ export default async function Page(props: Props) {
   // );
 
   return (
-    <div className="mx-auto flex max-w-4xl flex-col items-start justify-center gap-8 px-4 pt-12 pb-12 md:pt-24">
-      <div className="flex w-full flex-col items-start justify-between gap-16 md:flex-row">
-        {profile?.email && (
-          <ContactForm recipientEmail={profile.email} />
-        )}
+    <div className="flex flex-col items-start justify-center gap-8 pt-12 px-4 pb-12 md:pt-24">
+      {home && (
+        <section className="mx-auto w-full max-w-6xl">
+          <h1 className="text-foreground max-w-2xl text-4xl leading-tight font-semibold md:text-5xl">
+            {localizeField(home.headline, locale)}
+          </h1>
+        </section>
+      )}
+      <div className="mx-auto flex w-full max-w-4xl flex-col items-start justify-between gap-16 md:flex-row">
+        {profile?.email && <ContactForm recipientEmail={profile.email} />}
         <div className="flex w-full flex-col gap-4 md:max-w-sm">
           <h2 className="text-2xl font-bold">Find me on</h2>
           <div className="flex flex-col justify-center gap-4">

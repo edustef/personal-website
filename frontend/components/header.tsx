@@ -66,7 +66,7 @@ export async function Header({ locale, className }: HeaderProps) {
               </NavigationMenuItem> */}
 
               <NavigationMenuItem>
-                <Button className="w-fit" variant="outline" asChild>
+                <Button className="w-fit" asChild>
                   <a
                     href="/files/eduard-stefan-resume.pdf"
                     target="_blank"

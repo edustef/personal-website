@@ -23,7 +23,7 @@ export default async function WebsiteLayout(props: Props) {
         </div>
       </div>
       <Header locale={locale} />
-      <main className="relative isolate min-h-screen">
+      <main className="relative isolate">
         {props.children}
       </main>
       <Footer />

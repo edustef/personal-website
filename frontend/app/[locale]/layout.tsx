@@ -83,16 +83,11 @@ export default async function LocaleLayout(props: Props) {
   return (
     <html
       lang={locale}
-      className={`${dmSans.variable} ${dmMono.variable} dark bg-background text-foreground`}
+      className={`${dmSans.variable} ${dmMono.variable} dark bg-background text-foreground min-h-screen transition-colors duration-300`}
       suppressHydrationWarning
     >
-      <body className="isolate">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+      <body className="bg-background text-foreground isolate transition-colors duration-300 ease-in-out">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <LocaleProvider locale={locale}>
             <Toaster />
             {isDraftMode && (
