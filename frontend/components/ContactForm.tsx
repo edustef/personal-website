@@ -2,7 +2,6 @@
 
 import { useActionState, useRef, useEffect } from "react";
 import { useFormStatus } from "react-dom";
-import { z } from "zod";
 import { toast } from "sonner";
 
 import { submitContactForm, type ContactFormState } from "@/lib/actions";
@@ -15,14 +14,7 @@ import {
   FieldLabel,
   FieldError,
 } from "@/components/ui/field";
-
-const contactFormSchema = z.object({
-  email: z.string().email("Please enter a valid email address"),
-  message: z
-    .string()
-    .min(10, "Message must be at least 10 characters")
-    .max(5000, "Message must be less than 5000 characters"),
-});
+import Form from "next/form";
 
 type ContactFormProps = {
   recipientEmail: string;
@@ -75,13 +67,23 @@ export function ContactForm({ recipientEmail }: ContactFormProps) {
   const hasErrors = !state?.success && state?.errors;
   const emailErrors = hasErrors ? state.errors?.email : undefined;
   const messageErrors = hasErrors ? state.errors?.message : undefined;
+  const data = hasErrors ? state.data : undefined;
 
   return (
-    <form
+    <Form
       ref={formRef}
       action={formAction}
       className="flex w-full flex-col gap-4"
     >
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        defaultValue=""
+        className="hidden"
+        aria-hidden="true"
+      />
       <h2 className="text-2xl font-bold">Contact me</h2>
       <FieldGroup>
         <Field>
@@ -91,10 +93,15 @@ export function ContactForm({ recipientEmail }: ContactFormProps) {
         <Field data-invalid={!!emailErrors}>
           <FieldLabel>Your email address</FieldLabel>
           <Input
+            defaultValue={data?.email || ""}
             name="email"
-            type="email"
+            type="text"
             placeholder="Your email address"
-            required
+            inputMode="email"
+            autoCapitalize="none"
+            autoCorrect="off"
+            autoComplete="email"
+            spellCheck={false}
             aria-invalid={!!emailErrors}
             aria-describedby={emailErrors ? "email-error" : undefined}
           />
@@ -108,10 +115,13 @@ export function ContactForm({ recipientEmail }: ContactFormProps) {
         <Field data-invalid={!!messageErrors}>
           <FieldLabel>Your message</FieldLabel>
           <Textarea
-            className="min-h-30 max-h-52"
+            className="max-h-52 min-h-30"
+            defaultValue={data?.message || ""}
             name="message"
             placeholder="Your message..."
-            required
+            minLength={2}
+            maxLength={5000}
+            autoComplete="off"
             aria-invalid={!!messageErrors}
             aria-describedby={messageErrors ? "message-error" : undefined}
           />
@@ -124,6 +134,6 @@ export function ContactForm({ recipientEmail }: ContactFormProps) {
         </Field>
         <SubmitButton />
       </FieldGroup>
-    </form>
+    </Form>
   );
 }
