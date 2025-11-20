@@ -108,10 +108,10 @@ export function ContactForm({ recipientEmail }: ContactFormProps) {
         <Field data-invalid={!!messageErrors}>
           <FieldLabel>Your message</FieldLabel>
           <Textarea
+            className="min-h-30 max-h-52"
             name="message"
             placeholder="Your message..."
             required
-            rows={6}
             aria-invalid={!!messageErrors}
             aria-describedby={messageErrors ? "message-error" : undefined}
           />
