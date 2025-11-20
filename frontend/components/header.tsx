@@ -27,7 +27,7 @@ export async function Header({ locale, className }: HeaderProps) {
   return (
     <header
       className={cn(
-        "bg-background border-border sticky inset-0 z-50 flex h-24 w-full items-center border-b px-4",
+        "sticky inset-0 z-50 flex h-24 w-full items-center bg-transparent px-4 backdrop-blur-lg backdrop-brightness-50 backdrop-grayscale-75",
         className,
       )}
     >
@@ -76,9 +76,6 @@ export async function Header({ locale, className }: HeaderProps) {
                     <ExternalLinkIcon className="size-4" />
                   </a>
                 </Button>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <ModeToggle />
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>

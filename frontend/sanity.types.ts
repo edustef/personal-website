@@ -313,7 +313,7 @@ export type Settings = {
   _updatedAt: string;
   _rev: string;
   title: string;
-  description?: Array<{
+  description: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -353,7 +353,7 @@ export type Settings = {
         [internalGroqTypeReferenceTo]?: "project";
       }
   >;
-  footer?: Array<{
+  footer: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -726,7 +726,7 @@ export type SettingsQueryResult = {
   _updatedAt: string;
   _rev: string;
   title: string;
-  description?: Array<{
+  description: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -766,7 +766,7 @@ export type SettingsQueryResult = {
         [internalGroqTypeReferenceTo]?: "project";
       }
   >;
-  footer?: Array<{
+  footer: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;

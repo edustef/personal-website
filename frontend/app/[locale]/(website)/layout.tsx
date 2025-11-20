@@ -13,19 +13,12 @@ export default async function WebsiteLayout(props: Props) {
   const locale = params.locale as LanguageId;
   return (
     <>
-      <div className="bg-secondary text-secondary-foreground relative w-full px-4 py-2">
-        <div className="mx-auto flex max-w-6xl flex-row items-center gap-4 md:flex-row md:gap-4">
-          <ConstructionIcon className="size-5" />
-          <div className="flex flex-row items-center text-sm uppercase">
-            <span className="font-bold tracking-widest uppercase">Under</span>
-            <span className="ml-0.5 tracking-tight">Renovation</span>
-          </div>
-        </div>
+      <div className="relative isolate flex min-h-screen flex-col">
+        <Header locale={locale} />
+        <main className="flex flex-1 flex-col justify-center">
+          {props.children}
+        </main>
       </div>
-      <Header locale={locale} />
-      <main className="relative isolate">
-        {props.children}
-      </main>
       <Footer />
     </>
   );
