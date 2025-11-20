@@ -15,9 +15,14 @@ export async function Footer({ className, locale }: FooterProps) {
 
   const currentYear = new Date().getFullYear();
   const footerTemplate = localizeField(home?.footer, locale);
-  const footerContent =
-    footerTemplate?.replace("{currentYear}", currentYear.toString()) ||
-    `@ ${currentYear} ${home?.profile?.name || "Portfolio"}. Built with Next.js & Sanity.`;
+  const fallbackTemplate = `@ {currentYear} ${
+    home?.profile?.name || "Portfolio"
+  }. Built with Next.js & Sanity.`;
+  const template = footerTemplate || fallbackTemplate;
+  const hasPlaceholder = template.includes("{currentYear}");
+  const [beforeYear, afterYear = ""] = hasPlaceholder
+    ? template.split("{currentYear}")
+    : [template, ""];
 
   return (
     <footer
@@ -29,7 +34,17 @@ export async function Footer({ className, locale }: FooterProps) {
       <div className="relative py-16">
         <div className="mx-auto flex max-w-5xl flex-col items-center">
           <div className="mt-12 w-full border-t border-gray-700 pt-8 text-center">
-            <p className="text-sm">{footerContent}</p>
+            <p className="text-sm">
+              {hasPlaceholder ? (
+                <>
+                  {beforeYear}
+                  <time dateTime={currentYear.toString()}>{currentYear}</time>
+                  {afterYear}
+                </>
+              ) : (
+                template
+              )}
+            </p>
           </div>
         </div>
       </div>

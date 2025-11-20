@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 import {
   homeQuery,
@@ -9,21 +10,46 @@ import {
 } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
 import { languages, localizeField, type LanguageId } from "@/lib/i18n";
-import { ContactForm } from "@/components/ContactForm";
 import { HeroIntro } from "@/components/hero-intro";
 import { HeroSpline } from "@/components/hero-spline";
+import { getLocalizedSettingsMetadata } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata(props: Props) {
+export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
   const locale = params.locale as LanguageId;
+  const [{ data: home }, localizedSettings] = await Promise.all([
+    sanityFetch({ query: homeQuery, params: { locale }, stega: false }),
+    getLocalizedSettingsMetadata(locale),
+  ]);
+
+  const pageTitle = localizeField(home?.title, locale);
+  const pageDescription =
+    localizeField(home?.tagline, locale) || localizedSettings.description;
 
   return {
-    title: "Home",
-    description: "Home",
+    title: pageTitle,
+    description: pageDescription,
+    openGraph: {
+      type: "website",
+      locale,
+      title: pageTitle || "",
+      description: pageDescription,
+      images: localizedSettings.ogImage
+        ? [localizedSettings.ogImage]
+        : undefined,
+    },
+    twitter: {
+      card: localizedSettings.ogImage ? "summary_large_image" : "summary",
+      title: pageTitle || "",
+      description: pageDescription,
+      images: localizedSettings.ogImage
+        ? [localizedSettings.ogImage.url]
+        : undefined,
+    },
   };
 }
 

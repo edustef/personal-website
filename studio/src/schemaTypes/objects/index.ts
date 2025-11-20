@@ -5,6 +5,7 @@ import { duration } from "./duration";
 import { button } from "./button";
 import { socialLink } from "./socialLink";
 import { link } from "./link";
+import { ogImage } from "./ogImage";
 
 export const objects = [
   blockContent,
@@ -14,4 +15,5 @@ export const objects = [
   button,
   socialLink,
   link,
+  ogImage,
 ];

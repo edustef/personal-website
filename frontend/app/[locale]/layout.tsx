@@ -9,41 +9,52 @@ import { Toaster } from "sonner";
 import { notFound } from "next/navigation";
 
 import DraftModeToast from "@/components/DraftModeToast";
-import * as demo from "@/sanity/lib/demo";
-import { sanityFetch, SanityLive } from "@/sanity/lib/live";
-import { settingsQuery } from "@/sanity/lib/queries";
-import { resolveOpenGraphImage } from "@/sanity/lib/utils";
+import { SanityLive } from "@/sanity/lib/live";
 import { handleError } from "../../lib/client-utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { languages, type LanguageId } from "@/lib/i18n";
+import { getLocalizedSettingsMetadata } from "@/lib/seo";
 import { LocaleProvider } from "./locale-provider";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { data: settings } = await sanityFetch({
-    query: settingsQuery,
-    // Metadata should never contain stega
-    stega: false,
-  });
-  const title = settings?.title || demo.title;
-  const description = settings?.description || demo.description;
+type MetadataProps = {
+  params: Promise<{ locale: string }>;
+};
 
-  const ogImage = resolveOpenGraphImage(settings?.ogImage);
-  let metadataBase: URL | undefined = undefined;
-  try {
-    metadataBase = settings?.ogImage?.metadataBase
-      ? new URL(settings.ogImage.metadataBase)
-      : undefined;
-  } catch {
-    // ignore
-  }
+export async function generateMetadata(
+  props: MetadataProps,
+): Promise<Metadata> {
+  const params = await props.params;
+  const locale = params.locale as LanguageId;
+  const localized = await getLocalizedSettingsMetadata(locale);
+  const alternateLocale = languages
+    .map((lang) => lang.id)
+    .filter((lang) => lang !== locale);
+
   return {
-    metadataBase,
+    metadataBase: localized.metadataBase,
     title: {
-      template: `%s | ${title}`,
-      default: title,
+      template: `%s | ${localized.title}`,
+      default: localized.title,
+    },
+    description: localized.description,
+    alternates: {
+      languages: Object.fromEntries(
+        languages.map((lang) => [lang.id, `/${lang.id}`]),
+      ),
     },
     openGraph: {
-      images: ogImage ? [ogImage] : [],
+      type: "website",
+      locale,
+      alternateLocale,
+      title: localized.title,
+      description: localized.description,
+      images: localized.ogImage ? [localized.ogImage] : undefined,
+    },
+    twitter: {
+      card: localized.ogImage ? "summary_large_image" : "summary",
+      title: localized.title,
+      description: localized.description,
+      images: localized.ogImage ? [localized.ogImage.url] : undefined,
     },
   };
 }

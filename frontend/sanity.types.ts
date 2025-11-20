@@ -13,6 +13,21 @@
  */
 
 // Source: schema.json
+export type OgImage = {
+  _type: "ogImage";
+  asset?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+  };
+  media?: unknown;
+  hotspot?: SanityImageHotspot;
+  crop?: SanityImageCrop;
+  alt?: string;
+  metadataBase?: string;
+};
+
 export type Link = {
   _type: "link";
   linkType?: "href" | "post";
@@ -317,33 +332,8 @@ export type Settings = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title: string;
-  description: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal";
-    listItem?: never;
-    markDefs?: Array<{
-      linkType?: "href" | "post";
-      href?: string;
-      post?: {
-        _ref: string;
-        _type: "reference";
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "post";
-      };
-      openInNewTab?: boolean;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
+  title: InternationalizedArrayString;
+  description: InternationalizedArrayBlockContent;
   menuItems?: Array<
     | {
         _ref: string;
@@ -358,39 +348,14 @@ export type Settings = {
         [internalGroqTypeReferenceTo]?: "project";
       }
   >;
-  footer: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
-  ogImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    metadataBase?: string;
-    _type: "image";
-  };
+  ogImage?: InternationalizedArrayOgImage;
 };
+
+export type InternationalizedArrayOgImage = Array<
+  {
+    _key: string;
+  } & InternationalizedArrayOgImageValue
+>;
 
 export type MediaTag = {
   _id: string;
@@ -405,6 +370,11 @@ export type Slug = {
   _type: "slug";
   current: string;
   source?: string;
+};
+
+export type InternationalizedArrayOgImageValue = {
+  _type: "internationalizedArrayOgImageValue";
+  value?: OgImage;
 };
 
 export type InternationalizedArrayBlockContentValue = {
@@ -675,6 +645,7 @@ export type Geopoint = {
 };
 
 export type AllSanitySchemaTypes =
+  | OgImage
   | Link
   | SocialLink
   | Button
@@ -695,8 +666,10 @@ export type AllSanitySchemaTypes =
   | Home
   | Profile
   | Settings
+  | InternationalizedArrayOgImage
   | MediaTag
   | Slug
+  | InternationalizedArrayOgImageValue
   | InternationalizedArrayBlockContentValue
   | InternationalizedArrayStringValue
   | Post
@@ -730,33 +703,8 @@ export type SettingsQueryResult = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title: string;
-  description: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal";
-    listItem?: never;
-    markDefs?: Array<{
-      linkType?: "href" | "post";
-      href?: string;
-      post?: {
-        _ref: string;
-        _type: "reference";
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "post";
-      };
-      openInNewTab?: boolean;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
+  title: InternationalizedArrayString;
+  description: InternationalizedArrayBlockContent;
   menuItems?: Array<
     | {
         _ref: string;
@@ -771,38 +719,7 @@ export type SettingsQueryResult = {
         [internalGroqTypeReferenceTo]?: "project";
       }
   >;
-  footer: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
-  ogImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    metadataBase?: string;
-    _type: "image";
-  };
+  ogImage?: InternationalizedArrayOgImage;
 } | null;
 // Variable: homeQuery
 // Query: *[_type == "home"][0]{    _id,    title,    headline,    tagline,    renovationLabelPrimary,    renovationLabelSecondary,    findMeOnLabel,    resumeButtonLabel,    ctaButtons[]{      text,      link{        href,        external      }    },    profile->{      name,      email,      phone,      motto,      about,      location,      picture,      workPreference,      socialLinks[]{        platform,        url      }    },    featuredProjects[]->{      _id,      name,      description,      "image": coverImage,      "technologies": skills[]->name,      "link": websiteLink,      "github": sourceLink,      featured    },    footer  }

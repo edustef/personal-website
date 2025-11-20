@@ -1,9 +1,8 @@
 import { homeQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
 import { Button } from "@/components/ui/button";
-import { ExternalLinkIcon, FileText } from "lucide-react";
+import { ExternalLinkIcon } from "lucide-react";
 import { localizeField, type LanguageId } from "@/lib/i18n";
-import { ModeToggle } from "@/components/theme-toggle";
 import { LanguageToggle } from "@/components/language-toggle";
 import {
   NavigationMenu,
@@ -12,6 +11,20 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Link } from "@/components/ui/link";
 import { cn } from "@/lib/utils";
+import Logo from "@/assets/images/eduard-stefan-logo.svg";
+import Image from "next/image";
+
+const skipCopy: Record<LanguageId, string> = {
+  en: "Skip to main content",
+  ro: "Sari la continutul principal",
+  es: "Saltar al contenido principal",
+};
+
+const navCopy: Record<LanguageId, string> = {
+  en: "Primary navigation",
+  ro: "Navigatie principala",
+  es: "Navegacion principal",
+};
 
 type HeaderProps = {
   locale: LanguageId;
@@ -23,29 +36,41 @@ export async function Header({ locale, className }: HeaderProps) {
     query: homeQuery,
   });
 
-  const title = localizeField(home?.title, locale) || "Portfolio";
   const resumeLabel =
     localizeField(home?.resumeButtonLabel, locale) || "Get my resume";
+  const skipLinkText = skipCopy[locale] ?? skipCopy.en;
+  const navLabel = navCopy[locale] ?? navCopy.en;
 
   return (
     <header
       className={cn(
-        "sticky inset-0 z-50 flex h-24 w-full items-center bg-transparent px-4 backdrop-blur-lg backdrop-brightness-50 backdrop-grayscale-75",
+        "sticky inset-0 z-50 flex h-16 w-full items-center bg-transparent px-4 backdrop-blur-lg backdrop-brightness-50 backdrop-grayscale-75 md:h-20",
         className,
       )}
     >
+      <a
+        href="#main-content"
+        className="focus-visible:bg-primary focus-visible:text-primary-foreground focus-visible:ring-offset-background sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-4 focus-visible:left-4 focus-visible:z-50 focus-visible:rounded-full focus-visible:px-4 focus-visible:py-2 focus-visible:shadow-lg focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+      >
+        {skipLinkText}
+      </a>
       <div className="container mx-auto w-full max-w-6xl">
         <div className="flex items-center justify-between gap-5">
           <Link
             className="group flex items-center gap-2 p-0"
             href={`/${locale}`}
           >
-            <span className="text-foreground hover:text-primary text-lg font-bold transition-colors sm:text-2xl">
+            <Image
+              className="size-10 md:size-12"
+              src={Logo}
+              alt="Eduard Stefan Logo"
+            />
+            {/* <span className="text-foreground hover:text-primary text-lg font-bold transition-colors sm:text-2xl">
               {title}
-            </span>
+            </span> */}
           </Link>
 
-          <NavigationMenu>
+          <NavigationMenu aria-label={navLabel}>
             <NavigationMenuList className="gap-4 md:gap-6">
               {/* <NavigationMenuItem>
                 <NavigationMenuLink asChild>

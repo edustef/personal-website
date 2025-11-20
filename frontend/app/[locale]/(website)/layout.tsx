@@ -15,7 +15,11 @@ export default async function WebsiteLayout(props: Props) {
     <>
       <div className="relative isolate flex min-h-screen flex-col">
         <Header locale={locale} />
-        <main className="flex flex-1 flex-col justify-center">
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="flex flex-1 flex-col justify-center"
+        >
           {props.children}
         </main>
       </div>

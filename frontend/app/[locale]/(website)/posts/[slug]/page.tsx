@@ -10,7 +10,13 @@ import PortableText from "@/components/PortableText";
 import { sanityFetch } from "@/sanity/lib/live";
 import { postPagesSlugs, postQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
-import { localizeField, localizeBlockContent, LanguageId } from "@/lib/i18n";
+import {
+  localizeField,
+  localizeBlockContent,
+  LanguageId,
+  languages,
+} from "@/lib/i18n";
+import { getLocalizedSettingsMetadata } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ slug: string; locale: LanguageId }>;
@@ -39,30 +45,65 @@ export async function generateMetadata(
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const params = await props.params;
+  const locale = params.locale as LanguageId;
 
-  const { data: post } = await sanityFetch({
-    query: postQuery,
-    params,
-    stega: false,
-  });
+  const [{ data: post }, localizedSettings, parentMetadata] = await Promise.all([
+    sanityFetch({ query: postQuery, params, stega: false }),
+    getLocalizedSettingsMetadata(locale),
+    parent,
+  ]);
 
-  const previousImages = (await parent).openGraph?.images || [];
-  const ogImage = resolveOpenGraphImage(post?.coverImage);
+  if (!post?._id) {
+    return {
+      title: localizedSettings.title,
+      description: localizedSettings.description,
+    };
+  }
 
-  const postTitle = localizeField(post?.title, "en") || "Untitled";
-  const postExcerpt = localizeField(post?.excerpt, "en");
+  const postTitle =
+    localizeField(post.title, locale) || localizedSettings.title;
+  const postExcerpt =
+    localizeField(post.excerpt, locale) || localizedSettings.description;
+  const postImage =
+    resolveOpenGraphImage(post.coverImage) || localizedSettings.ogImage;
+  const previousImages = parentMetadata.openGraph?.images || [];
+  const images = postImage
+    ? [postImage, ...previousImages]
+    : previousImages.length
+      ? previousImages
+      : undefined;
+  const alternateLanguages = Object.fromEntries(
+    languages.map((lang) => [lang.id, `/${lang.id}/posts/${params.slug}`]),
+  );
 
   return {
     title: postTitle,
-    description: postExcerpt,
-    openGraph: {
-      images: ogImage ? [ogImage, ...previousImages] : previousImages,
+    description: postExcerpt || localizedSettings.description,
+    alternates: {
+      canonical: `/${locale}/posts/${params.slug}`,
+      languages: alternateLanguages,
     },
-  } satisfies Metadata;
+    openGraph: {
+      type: "article",
+      locale,
+      title: postTitle,
+      description: postExcerpt || localizedSettings.description,
+      publishedTime: post.date,
+      modifiedTime: post.date,
+      images,
+    },
+    twitter: {
+      card: postImage ? "summary_large_image" : "summary",
+      title: postTitle,
+      description: postExcerpt || localizedSettings.description,
+      images: postImage ? [postImage.url] : undefined,
+    },
+  };
 }
 
 export default async function PostPage(props: Props) {
   const params = await props.params;
+  const locale = params.locale as LanguageId;
   const [{ data: post }] = await Promise.all([
     sanityFetch({ query: postQuery, params }),
   ]);
@@ -71,9 +112,9 @@ export default async function PostPage(props: Props) {
     return notFound();
   }
 
-  const postTitle = localizeField(post.title, "en") || "Untitled";
-  const postExcerpt = localizeField(post.excerpt, "en");
-  const postContent = localizeBlockContent(post.content, "en");
+  const postTitle = localizeField(post.title, locale) || "Untitled";
+  const postExcerpt = localizeField(post.excerpt, locale);
+  const postContent = localizeBlockContent(post.content, locale);
 
   return (
     <>
@@ -115,7 +156,7 @@ export default async function PostPage(props: Props) {
       {(await MorePosts({
         skip: post._id,
         limit: 3,
-        locale: params.locale,
+        locale,
       })) && (
         <div className="border-t border-gray-200 bg-white py-16 lg:py-24">
           <div className="container">
@@ -131,7 +172,7 @@ export default async function PostPage(props: Props) {
                 {await MorePosts({
                   skip: post._id,
                   limit: 3,
-                  locale: params.locale,
+                  locale,
                 })}
               </Suspense>
             </div>
