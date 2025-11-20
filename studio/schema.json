@@ -1562,7 +1562,7 @@
         "type": "objectAttribute",
         "value": {
           "type": "inline",
-          "name": "internationalizedArrayBlockContent"
+          "name": "internationalizedArrayString"
         },
         "optional": true
       }
