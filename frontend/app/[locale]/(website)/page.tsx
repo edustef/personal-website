@@ -110,6 +110,21 @@ export default async function Page(props: Props) {
             tagline={
               home.tagline ? localizeField(home.tagline, locale) : undefined
             }
+            renovationLabelPrimary={
+              home.renovationLabelPrimary
+                ? localizeField(home.renovationLabelPrimary, locale)
+                : undefined
+            }
+            renovationLabelSecondary={
+              home.renovationLabelSecondary
+                ? localizeField(home.renovationLabelSecondary, locale)
+                : undefined
+            }
+            findMeOnLabel={
+              home.findMeOnLabel
+                ? localizeField(home.findMeOnLabel, locale)
+                : undefined
+            }
           />
         )}
       </div>

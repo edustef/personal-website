@@ -8,6 +8,10 @@ export const homeQuery = defineQuery(`
     title,
     headline,
     tagline,
+    renovationLabelPrimary,
+    renovationLabelSecondary,
+    findMeOnLabel,
+    resumeButtonLabel,
     ctaButtons[]{
       text,
       link{

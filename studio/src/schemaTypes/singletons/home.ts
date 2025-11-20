@@ -28,6 +28,30 @@ export const home = defineType({
       type: "internationalizedArrayString",
     }),
     defineField({
+      name: "renovationLabelPrimary",
+      title: "Renovation Badge Primary",
+      description: "First word in the hero badge",
+      type: "internationalizedArrayString",
+    }),
+    defineField({
+      name: "renovationLabelSecondary",
+      title: "Renovation Badge Secondary",
+      description: "Second word in the hero badge",
+      type: "internationalizedArrayString",
+    }),
+    defineField({
+      name: "findMeOnLabel",
+      title: "Find Me On",
+      description: "Heading shown above the social links",
+      type: "internationalizedArrayString",
+    }),
+    defineField({
+      name: "resumeButtonLabel",
+      title: "Resume Button",
+      description: "Label for the resume button in the header",
+      type: "internationalizedArrayString",
+    }),
+    defineField({
       name: "profile",
       title: "Profile",
       type: "reference",

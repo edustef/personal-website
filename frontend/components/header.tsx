@@ -23,6 +23,8 @@ export async function Header({ locale, className }: HeaderProps) {
   });
 
   const title = localizeField(home?.title, locale) || "Portfolio";
+  const resumeLabel =
+    localizeField(home?.resumeButtonLabel, locale) || "Get my resume";
 
   return (
     <header
@@ -72,7 +74,7 @@ export async function Header({ locale, className }: HeaderProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span>Get my resume</span>
+                    <span>{resumeLabel}</span>
                     <ExternalLinkIcon className="size-4" />
                   </a>
                 </Button>

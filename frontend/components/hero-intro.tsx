@@ -4,11 +4,14 @@ import { motion } from "motion/react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { ConstructionIcon, PaintRollerIcon } from "lucide-react";
+import { PaintRollerIcon } from "lucide-react";
 
 type HeroIntroProps = {
   headline?: string | null;
   tagline?: string | null;
+  renovationLabelPrimary?: string | null;
+  renovationLabelSecondary?: string | null;
+  findMeOnLabel?: string | null;
 };
 
 const fadeUp = {
@@ -16,7 +19,13 @@ const fadeUp = {
   animate: { opacity: 1, y: 0 },
 };
 
-export function HeroIntro({ headline, tagline }: HeroIntroProps) {
+export function HeroIntro({
+  headline,
+  tagline,
+  renovationLabelPrimary,
+  renovationLabelSecondary,
+  findMeOnLabel,
+}: HeroIntroProps) {
   const links = [
     {
       href: "https://www.linkedin.com/in/eduard-stefan-089371100/",
@@ -42,8 +51,12 @@ export function HeroIntro({ headline, tagline }: HeroIntroProps) {
           <div className="mx-auto flex max-w-6xl flex-row items-center gap-2">
             <PaintRollerIcon className="size-5" />
             <div className="flex flex-row items-center text-sm uppercase">
-              <span className="font-bold tracking-widest uppercase">Under</span>
-              <span className="ml-0.5 tracking-tight">Renovation</span>
+              <span className="font-bold tracking-widest uppercase">
+                {renovationLabelPrimary || "Under"}
+              </span>
+              <span className="ml-0.5 tracking-tight">
+                {renovationLabelSecondary || "Renovation"}
+              </span>
             </div>
           </div>
         </div>
@@ -58,7 +71,7 @@ export function HeroIntro({ headline, tagline }: HeroIntroProps) {
         animate={fadeUp.animate}
         transition={{ duration: 3, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
       >
-        <h2 className="text-2xl font-bold">Find me on</h2>
+        <h2 className="text-2xl font-bold">{findMeOnLabel || "Find me on"}</h2>
         <div className="flex items-center gap-4">
           {links.map((link) => (
             <Button key={link.href} variant="outline" asChild>

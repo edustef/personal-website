@@ -254,6 +254,9 @@ export type Home = {
   title: InternationalizedArrayString;
   headline: InternationalizedArrayString;
   tagline?: InternationalizedArrayString;
+  renovationLabel?: InternationalizedArrayString;
+  findMeOnLabel?: InternationalizedArrayString;
+  resumeButtonLabel?: InternationalizedArrayString;
   profile?: {
     _ref: string;
     _type: "reference";
@@ -800,12 +803,16 @@ export type SettingsQueryResult = {
   };
 } | null;
 // Variable: homeQuery
-// Query: *[_type == "home"][0]{    _id,    title,    headline,    tagline,    ctaButtons[]{      text,      link{        href,        external      }    },    profile->{      name,      email,      phone,      motto,      about,      location,      picture,      workPreference,      socialLinks[]{        platform,        url      }    },    featuredProjects[]->{      _id,      name,      description,      "image": coverImage,      "technologies": skills[]->name,      "link": websiteLink,      "github": sourceLink,      featured    }  }
+// Query: *[_type == "home"][0]{    _id,    title,    headline,    tagline,    renovationLabelPrimary,    renovationLabelSecondary,    findMeOnLabel,    resumeButtonLabel,    ctaButtons[]{      text,      link{        href,        external      }    },    profile->{      name,      email,      phone,      motto,      about,      location,      picture,      workPreference,      socialLinks[]{        platform,        url      }    },    featuredProjects[]->{      _id,      name,      description,      "image": coverImage,      "technologies": skills[]->name,      "link": websiteLink,      "github": sourceLink,      featured    }  }
 export type HomeQueryResult = {
   _id: string;
   title: InternationalizedArrayString;
   headline: InternationalizedArrayString;
   tagline: InternationalizedArrayString | null;
+  renovationLabelPrimary: null;
+  renovationLabelSecondary: null;
+  findMeOnLabel: InternationalizedArrayString | null;
+  resumeButtonLabel: InternationalizedArrayString | null;
   ctaButtons: Array<{
     text: InternationalizedArrayString;
     link: {
@@ -1044,7 +1051,7 @@ import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     '*[_type == "settings"][0]': SettingsQueryResult;
-    '\n  *[_type == "home"][0]{\n    _id,\n    title,\n    headline,\n    tagline,\n    ctaButtons[]{\n      text,\n      link{\n        href,\n        external\n      }\n    },\n    profile->{\n      name,\n      email,\n      phone,\n      motto,\n      about,\n      location,\n      picture,\n      workPreference,\n      socialLinks[]{\n        platform,\n        url\n      }\n    },\n    featuredProjects[]->{\n      _id,\n      name,\n      description,\n      "image": coverImage,\n      "technologies": skills[]->name,\n      "link": websiteLink,\n      "github": sourceLink,\n      featured\n    }\n  }\n': HomeQueryResult;
+    '\n  *[_type == "home"][0]{\n    _id,\n    title,\n    headline,\n    tagline,\n    renovationLabelPrimary,\n    renovationLabelSecondary,\n    findMeOnLabel,\n    resumeButtonLabel,\n    ctaButtons[]{\n      text,\n      link{\n        href,\n        external\n      }\n    },\n    profile->{\n      name,\n      email,\n      phone,\n      motto,\n      about,\n      location,\n      picture,\n      workPreference,\n      socialLinks[]{\n        platform,\n        url\n      }\n    },\n    featuredProjects[]->{\n      _id,\n      name,\n      description,\n      "image": coverImage,\n      "technologies": skills[]->name,\n      "link": websiteLink,\n      "github": sourceLink,\n      featured\n    }\n  }\n': HomeQueryResult;
     '\n  *[_type == "profile"][0]{\n    _id,\n    name,\n    email,\n    phone,\n    motto,\n    about,\n    location,\n    picture,\n    workPreference,\n    socialLinks[]{\n      platform,\n      url\n    }\n  }\n': ProfileQueryResult;
     '\n  *[_type == "resume"][0]{\n    _id,\n    title,\n    description,\n    showSkills,\n    showProjects,\n    showCertificates\n  }\n': ResumeQueryResult;
     '\n  *[_type == "job"] | order(startDate desc){\n    _id,\n    position,\n    company,\n    location,\n    startDate,\n    endDate,\n    "current": isCurrent,\n    description,\n    responsibilities,\n    "technologies": skills[]->name\n  }\n': AllJobsQueryResult;
