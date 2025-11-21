@@ -8,8 +8,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Link } from "@/components/ui/link";
 import { cn } from "@/lib/utils";
-import Logo from "@/assets/images/eduard-stefan-logo.svg";
-import Image from "next/image";
+import { AnimatedLogo } from "./animated-logo";
 
 const skipCopy: Record<LanguageId, string> = {
   en: "Skip to main content",
@@ -55,14 +54,15 @@ export async function Header({ locale, className }: HeaderProps) {
       <div className="container mx-auto w-full max-w-6xl">
         <div className="flex items-center justify-between gap-5">
           <Link
-            className="group flex items-center gap-2 p-0"
+            className="size-10 md:size-14 group flex items-center gap-2 p-0"
             href={`/${locale}`}
           >
-            <Image
+            {/* <Image
               className="size-6 md:size-8"
               src={Logo}
               alt="Eduard Stefan Logo"
-            />
+            /> */}
+            <AnimatedLogo />
             {/* <span className="text-foreground hover:text-primary text-lg font-bold transition-colors sm:text-2xl">
               {title}
             </span> */}

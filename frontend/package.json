@@ -13,7 +13,6 @@
     "typegen": "sanity typegen generate"
   },
   "dependencies": {
-    "@vercel/firewall": "^1.1.1",
     "@formatjs/intl-localematcher": "^0.6.2",
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-accordion": "^1.2.12",
@@ -37,6 +36,7 @@
     "@radix-ui/react-toggle": "^1.1.10",
     "@radix-ui/react-toggle-group": "^1.1.11",
     "@radix-ui/react-tooltip": "^1.2.8",
+    "@rive-app/react-canvas": "^4.24.0",
     "@sanity/client": "^7.13.0",
     "@sanity/image-url": "^1.2.0",
     "@sanity/uuid": "^3.0.2",
@@ -44,6 +44,7 @@
     "@splinetool/react-spline": "^4.1.0",
     "@tailwindcss/postcss": "^4.1.17",
     "@tailwindcss/typography": "^0.5.19",
+    "@vercel/firewall": "^1.1.1",
     "@vercel/speed-insights": "^1.2.0",
     "autoprefixer": "^10.4.22",
     "class-variance-authority": "^0.7.1",
