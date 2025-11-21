@@ -59,7 +59,7 @@ export async function Header({ locale, className }: HeaderProps) {
             href={`/${locale}`}
           >
             <Image
-              className="size-10 md:size-12"
+              className="size-6 md:size-8"
               src={Logo}
               alt="Eduard Stefan Logo"
             />
