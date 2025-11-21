@@ -54,7 +54,7 @@ export async function Header({ locale, className }: HeaderProps) {
       <div className="container mx-auto w-full max-w-6xl">
         <div className="flex items-center justify-between gap-5">
           <Link
-            className="size-10 md:size-14 group flex items-center gap-2 p-0"
+            className="size-6 md:size-8 group flex items-center gap-2 p-0"
             href={`/${locale}`}
           >
             {/* <Image
