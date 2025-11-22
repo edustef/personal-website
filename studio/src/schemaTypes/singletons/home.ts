@@ -3,10 +3,26 @@ import { defineField, defineType } from "sanity";
 
 export const home = defineType({
   name: "home",
-  title: "Home",
+  title: "Home Page",
   type: "document",
   icon: HomeIcon,
+  fieldsets: [
+    {
+      name: "seo",
+      title: "SEO",
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+    },
+  ],
   fields: [
+    defineField({
+      name: "seo",
+      title: "SEO",
+      type: "seo",
+      fieldset: "seo",
+    }),
     defineField({
       name: "title",
       description: "This field is the title of your personal website.",
@@ -84,7 +100,7 @@ export const home = defineType({
     },
     prepare({ title }) {
       return {
-        subtitle: "Home",
+        subtitle: "Home Page",
         title,
       };
     },

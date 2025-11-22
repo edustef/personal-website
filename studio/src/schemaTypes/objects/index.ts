@@ -6,6 +6,12 @@ import { button } from "./button";
 import { socialLink } from "./socialLink";
 import { link } from "./link";
 import { ogImage } from "./ogImage";
+import { servicePackage } from "./servicePackage";
+import { serviceAddOn } from "./serviceAddOn";
+import { maintenancePlan } from "./maintenancePlan";
+import { processStep } from "./processStep";
+import { serviceView } from "./serviceView";
+import { seo } from "./seo";
 
 export const objects = [
   blockContent,
@@ -16,4 +22,10 @@ export const objects = [
   socialLink,
   link,
   ogImage,
+  servicePackage,
+  serviceAddOn,
+  maintenancePlan,
+  processStep,
+  serviceView,
+  seo,
 ];

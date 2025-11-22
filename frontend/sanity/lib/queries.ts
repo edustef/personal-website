@@ -85,6 +85,8 @@ export const resumeQuery = defineQuery(`
   }
 `);
 
+export const servicesPageQuery = defineQuery(`*[_type == "servicesPage"][0]`);
+
 export const allJobsQuery = defineQuery(`
   *[_type == "job"] | order(startDate desc){
     _id,

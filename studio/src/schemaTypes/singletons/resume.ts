@@ -3,10 +3,26 @@ import { defineField, defineType } from "sanity";
 
 export const resume = defineType({
   name: "resume",
-  title: "Resume",
+  title: "Resume Page",
   type: "document",
   icon: DocumentIcon,
+  fieldsets: [
+    {
+      name: "seo",
+      title: "SEO",
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+    },
+  ],
   fields: [
+    defineField({
+      name: "seo",
+      title: "SEO",
+      type: "seo",
+      fieldset: "seo",
+    }),
     defineField({
       name: "title",
       description: "The title for the resume page",
@@ -42,7 +58,7 @@ export const resume = defineType({
   preview: {
     prepare() {
       return {
-        title: "Resume",
+        title: "Resume Page",
       };
     },
   },

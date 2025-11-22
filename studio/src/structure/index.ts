@@ -12,6 +12,9 @@ import { singletons } from "../schemaTypes/singletons";
 const SINGLETON_TYPES = singletons.map((s) => s.name);
 const DISABLED_TYPES = ["assist.instruction.context", ...SINGLETON_TYPES];
 
+const PAGE_SINGLETONS = ["home", "servicesPage", "resume"];
+const NON_PAGE_SINGLETONS = ["settings", "profile"];
+
 const createSingletonListItem = (S: StructureBuilder, schema: any) => {
   const typeName = schema.name as string;
   const title = schema.title as string;
@@ -24,17 +27,29 @@ const createSingletonListItem = (S: StructureBuilder, schema: any) => {
   return icon ? listItem.icon(icon) : listItem;
 };
 
-export const structure: StructureResolver = (S: StructureBuilder) =>
-  S.list()
+export const structure: StructureResolver = (S: StructureBuilder) => {
+  const nonPageSingletons = singletons.filter(
+    (schema: any) => NON_PAGE_SINGLETONS.includes(schema.name),
+  );
+  const pageSingletons = singletons.filter((schema: any) =>
+    PAGE_SINGLETONS.includes(schema.name),
+  );
+
+  return S.list()
     .title("Website Content")
     .items([
+      ...nonPageSingletons.map((schema: any) =>
+        createSingletonListItem(S, schema),
+      ),
+      S.divider(),
+      ...pageSingletons.map((schema: any) =>
+        createSingletonListItem(S, schema),
+      ),
+      S.divider(),
       ...S.documentTypeListItems()
-        // Remove the "assist.instruction.context" and "settings" content  from the list of content types
         .filter((listItem: any) => !DISABLED_TYPES.includes(listItem.getId()))
-        // Pluralize the title of each document type.  This is not required but just an option to consider.
         .map((listItem) => {
           return listItem.title(pluralize(listItem.getTitle() as string));
         }),
-      // Add singleton entries programmatically
-      ...singletons.map((schema: any) => createSingletonListItem(S, schema)),
     ]);
+};

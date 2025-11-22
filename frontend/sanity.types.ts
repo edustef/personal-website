@@ -13,6 +13,77 @@
  */
 
 // Source: schema.json
+export type ServiceView = {
+  _type: "serviceView";
+  heroHeadline?: InternationalizedArrayString;
+  heroDescription?: InternationalizedArrayString;
+  packages?: Array<
+    {
+      _key: string;
+    } & ServicePackage
+  >;
+  addOns?: Array<
+    {
+      _key: string;
+    } & ServiceAddOn
+  >;
+  maintenancePlans?: Array<
+    {
+      _key: string;
+    } & MaintenancePlan
+  >;
+  process?: Array<
+    {
+      _key: string;
+    } & ProcessStep
+  >;
+};
+
+export type ProcessStep = {
+  _type: "processStep";
+  title: InternationalizedArrayString;
+  description?: InternationalizedArrayBlockContent;
+};
+
+export type MaintenancePlan = {
+  _type: "maintenancePlan";
+  name: InternationalizedArrayString;
+  price?: string;
+  description?: InternationalizedArrayBlockContent;
+  features?: Array<
+    {
+      _key: string;
+    } & InternationalizedArrayString
+  >;
+  notIncluded?: Array<
+    {
+      _key: string;
+    } & InternationalizedArrayString
+  >;
+};
+
+export type ServiceAddOn = {
+  _type: "serviceAddOn";
+  name: InternationalizedArrayString;
+  description?: InternationalizedArrayString;
+  price?: string;
+};
+
+export type ServicePackage = {
+  _type: "servicePackage";
+  name: InternationalizedArrayString;
+  price: string;
+  description: InternationalizedArrayBlockContent;
+  bestFor?: InternationalizedArrayString;
+  deliverables?: Array<
+    {
+      _key: string;
+    } & InternationalizedArrayString
+  >;
+  timeline?: InternationalizedArrayString;
+  isPopular?: boolean;
+};
+
 export type OgImage = {
   _type: "ogImage";
   asset?: {
@@ -246,6 +317,23 @@ export type InternationalizedArrayString = Array<
     _key: string;
   } & InternationalizedArrayStringValue
 >;
+
+export type ServicesPage = {
+  _id: string;
+  _type: "servicesPage";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title: InternationalizedArrayString;
+  selectionTitle?: InternationalizedArrayString;
+  selectionDescription?: InternationalizedArrayString;
+  technicalOptionLabel?: InternationalizedArrayString;
+  technicalOptionDescription?: InternationalizedArrayString;
+  solutionOptionLabel?: InternationalizedArrayString;
+  solutionOptionDescription?: InternationalizedArrayString;
+  technicalView?: ServiceView;
+  solutionView?: ServiceView;
+};
 
 export type Resume = {
   _id: string;
@@ -645,6 +733,11 @@ export type Geopoint = {
 };
 
 export type AllSanitySchemaTypes =
+  | ServiceView
+  | ProcessStep
+  | MaintenancePlan
+  | ServiceAddOn
+  | ServicePackage
   | OgImage
   | Link
   | SocialLink
@@ -662,6 +755,7 @@ export type AllSanitySchemaTypes =
   | Skill
   | Project
   | InternationalizedArrayString
+  | ServicesPage
   | Resume
   | Home
   | Profile
@@ -833,6 +927,24 @@ export type ResumeQueryResult = {
   showProjects: boolean | null;
   showCertificates: boolean | null;
 } | null;
+// Variable: servicesPageQuery
+// Query: *[_type == "servicesPage"][0]
+export type ServicesPageQueryResult = {
+  _id: string;
+  _type: "servicesPage";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title: InternationalizedArrayString;
+  selectionTitle?: InternationalizedArrayString;
+  selectionDescription?: InternationalizedArrayString;
+  technicalOptionLabel?: InternationalizedArrayString;
+  technicalOptionDescription?: InternationalizedArrayString;
+  solutionOptionLabel?: InternationalizedArrayString;
+  solutionOptionDescription?: InternationalizedArrayString;
+  technicalView?: ServiceView;
+  solutionView?: ServiceView;
+} | null;
 // Variable: allJobsQuery
 // Query: *[_type == "job"] | order(startDate desc){    _id,    position,    company,    location,    startDate,    endDate,    "current": isCurrent,    description,    responsibilities,    "technologies": skills[]->name  }
 export type AllJobsQueryResult = Array<{
@@ -983,6 +1095,7 @@ declare module "@sanity/client" {
     '\n  *[_type == "home"][0]{\n    footer,\n    profile->{\n      name\n    }\n  }\n': HomeFooterQueryResult;
     '\n  *[_type == "profile"][0]{\n    _id,\n    name,\n    email,\n    phone,\n    motto,\n    about,\n    location,\n    picture,\n    workPreference,\n    socialLinks[]{\n      platform,\n      url\n    }\n  }\n': ProfileQueryResult;
     '\n  *[_type == "resume"][0]{\n    _id,\n    title,\n    description,\n    showSkills,\n    showProjects,\n    showCertificates\n  }\n': ResumeQueryResult;
+    '*[_type == "servicesPage"][0]': ServicesPageQueryResult;
     '\n  *[_type == "job"] | order(startDate desc){\n    _id,\n    position,\n    company,\n    location,\n    startDate,\n    endDate,\n    "current": isCurrent,\n    description,\n    responsibilities,\n    "technologies": skills[]->name\n  }\n': AllJobsQueryResult;
     '\n  *[_type == "project"] | order(_createdAt desc){\n    _id,\n    name,\n    description,\n    "image": coverImage,\n    "technologies": skills[]->name,\n    "link": websiteLink,\n    "github": sourceLink,\n    featured,\n    duration\n  }\n': AllProjectsQueryResult;
     '\n  *[_type == "skill"] | order(name asc){\n    _id,\n    name,\n    type\n  }\n': AllSkillsQueryResult;

@@ -1,4 +1,4 @@
-import { defineType } from "sanity";
+import { defineField, defineType } from "sanity";
 
 export const profile = defineType({
   name: "profile",
