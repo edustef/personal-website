@@ -1,6 +1,5 @@
 import { HomeIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
-import { toPlainText } from "../../lib/toPlainText";
 
 export const home = defineType({
   name: "home",

@@ -135,7 +135,7 @@ export default defineConfig({
         { id: "es", title: "Spanish" },
       ],
       defaultLanguages: ["en"],
-      fieldTypes: ["string", "blockContent", "ogImage", "image"],
+      fieldTypes: ["string", "blockContent", "ogImage", "image", 'slug'],
     }),
     media(),
   ],

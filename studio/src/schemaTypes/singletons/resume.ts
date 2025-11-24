@@ -14,6 +14,12 @@ export const resume = defineType({
       type: "seo",
     }),
     defineField({
+      name: "slug",
+      title: "Slug",
+      type: "internationalizedArraySlug",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: "title",
       description: "The title for the resume page",
       title: "Title",

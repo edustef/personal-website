@@ -14,10 +14,9 @@ export const servicesPage = defineType({
       type: "seo",
     }),
     defineField({
-      name: "title",
-      title: "Page Title",
-      description: "The title of the page (SEO)",
-      type: "internationalizedArrayString",
+      name: "slug",
+      title: "Slug",
+      type: "internationalizedArraySlug",
       validation: (rule) => rule.required(),
     }),
     defineField({
