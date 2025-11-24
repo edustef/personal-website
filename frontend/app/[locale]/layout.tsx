@@ -12,6 +12,7 @@ import DraftModeToast from "@/components/draft-mode-toast";
 import { SanityLive } from "@/sanity/lib/live";
 import { handleError } from "../../lib/client-utils";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ConvexClientProvider } from "@/components/convex-client-provider";
 import { getLocalizedSettingsMetadata } from "@/lib/seo";
 import { NextIntlClientProvider } from "next-intl";
 import { locales } from "@/i18n/routing";
@@ -97,18 +98,20 @@ export default async function LocaleLayout(props: Props) {
     >
       <body className="isolate transition-colors duration-300 ease-in-out">
         <NextIntlClientProvider>
-          <ThemeProvider attribute="class" forcedTheme="dark">
-            <Toaster />
-            {isDraftMode && (
-              <>
-                <DraftModeToast />
-                <VisualEditing />
-              </>
-            )}
-            <SanityLive onError={handleError} />
-            {props.children}
-            <SpeedInsights />
-          </ThemeProvider>
+          <ConvexClientProvider>
+            <ThemeProvider attribute="class" forcedTheme="dark">
+              <Toaster />
+              {isDraftMode && (
+                <>
+                  <DraftModeToast />
+                  <VisualEditing />
+                </>
+              )}
+              <SanityLive onError={handleError} />
+              {props.children}
+              <SpeedInsights />
+            </ThemeProvider>
+          </ConvexClientProvider>
         </NextIntlClientProvider>
       </body>
     </html>

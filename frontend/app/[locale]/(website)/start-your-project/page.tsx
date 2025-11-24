@@ -4,16 +4,14 @@ import type { Metadata } from "next";
 import { servicesPageQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
 import { getLocalizedSettingsMetadata } from "@/lib/seo";
-import { ServicesSelection } from "@/components/ServicesSelection";
-import { ServicesContent } from "@/components/services-content";
 import { localizeField } from "@/sanity/lib/localization";
 import { hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { ClientProjectInflow } from "@/components/client-project-inflow";
 
 type Props = {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<{ audience?: string }>;
 };
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
@@ -42,9 +40,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   };
 }
 
-export default async function ServicesPage(props: Props) {
+export default async function StartProjectPage(props: Props) {
   const params = await props.params;
-  const searchParams = await props.searchParams;
   const { locale } = params;
 
   if (!hasLocale(routing.locales, locale)) {
@@ -52,46 +49,9 @@ export default async function ServicesPage(props: Props) {
   }
   setRequestLocale(locale);
 
-  const audience = searchParams.audience;
-
-  const { data: page } = await sanityFetch({
-    query: servicesPageQuery,
-  });
-
-  if (!page) {
-    return notFound();
-  }
-
-  const selectionProps = {
-    title: localizeField(page.selectionTitle, locale),
-    description: localizeField(page.selectionDescription, locale),
-    technicalLabel: localizeField(page.technicalOptionLabel, locale),
-    technicalDescription: localizeField(
-      page.technicalOptionDescription,
-      locale,
-    ),
-    solutionLabel: localizeField(page.solutionOptionLabel, locale),
-    solutionDescription: localizeField(page.solutionOptionDescription, locale),
-  };
-
-  // Render content based on selection
-  if (audience === "technical" && page.technicalView) {
-    return (
-      <ServicesContent
-        viewData={page.technicalView}
-        onBack={async () => {
-          "use server";
-          // Server action not needed for simple link, handled by client component or we can pass a server action if we wanted to clear params server-side, but client router.push is easier.
-          // Actually, for the server component, we just render. The client component handles the back navigation.
-        }}
-      />
-    );
-  }
-
-  if (audience === "solution" && page.solutionView) {
-    return <ServicesContent viewData={page.solutionView} onBack={() => {}} />;
-  }
-
-  // Default to selection screen
-  return <ServicesSelection {...selectionProps} />;
+  return (
+    <div className="container mx-auto px-4 py-12">
+      <ClientProjectInflow />
+    </div>
+  );
 }
