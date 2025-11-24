@@ -19,7 +19,7 @@ import { HighlightBadge } from "@/components/ui/highlight-badge";
 import CustomPortableText from "@/components/sanity/portable-text";
 import { Button } from "@/components/ui/button";
 import { hasLocale } from "next-intl";
-import { locales, routing } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
 import {
   localizeBlockContent,

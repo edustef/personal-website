@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { AnimatedLogo } from "./animated-logo";
 import { sanityFetch } from "@/sanity/lib/live";
 import { settingsQuery } from "@/sanity/lib/queries";
+import ResolvedLink from "./sanity/resolved-link";
 
 type HeaderProps = {
   locale: string;
@@ -29,7 +30,6 @@ export async function Header({ locale, className }: HeaderProps) {
 
   const skipLinkText = localizeField(settings.header.skipLinkText, locale);
   const navigationLabel = localizeField(settings.header.navLabel, locale);
-  const buttonLabel = localizeField(settings.header.buttonLabel, locale);
 
   return (
     <header
@@ -48,27 +48,17 @@ export async function Header({ locale, className }: HeaderProps) {
         <div className="flex items-center justify-between gap-5">
           <Link
             className="group flex size-6 items-center gap-2 p-0 md:size-8"
-            href={`/${locale}`}
+            href="/"
           >
-            {/* <Image
-              className="size-6 md:size-8"
-              src={Logo}
-              alt="Eduard Stefan Logo"
-            /> */}
             <AnimatedLogo />
-            {/* <span className="text-foreground hover:text-primary text-lg font-bold transition-colors sm:text-2xl">
-              {title}
-            </span> */}
           </Link>
 
           <NavigationMenu aria-label={navigationLabel}>
             <NavigationMenuList className="gap-4 md:gap-6">
               <NavigationMenuItem>
-                <Button className="w-fit" asChild>
-                  <Link lang={locale} href="/start-your-project">
-                    {buttonLabel}
-                  </Link>
-                </Button>
+                <ResolvedLink variant="default" link={settings.header.cta.link}>
+                  {localizeField(settings.header.cta.text, locale)}
+                </ResolvedLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <LanguageToggle currentLocale={locale} />

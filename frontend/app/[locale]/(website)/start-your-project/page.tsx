@@ -7,6 +7,9 @@ import { getLocalizedSettingsMetadata } from "@/lib/seo";
 import { ServicesSelection } from "@/components/ServicesSelection";
 import { ServicesContent } from "@/components/services-content";
 import { localizeField } from "@/sanity/lib/localization";
+import { hasLocale } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -43,6 +46,11 @@ export default async function ServicesPage(props: Props) {
   const params = await props.params;
   const searchParams = await props.searchParams;
   const { locale } = params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+  setRequestLocale(locale);
 
   const audience = searchParams.audience;
 

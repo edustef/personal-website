@@ -16,7 +16,7 @@ export const resume = defineType({
     defineField({
       name: "slug",
       title: "Slug",
-      type: "internationalizedArraySlug",
+      type: "slug",
       validation: (rule) => rule.required(),
     }),
     defineField({

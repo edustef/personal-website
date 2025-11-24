@@ -1,11 +1,10 @@
 import { Link as UiLink, LinkProps as UiLinkProps } from "@/components/ui/link";
 
-import { linkResolver } from "@/sanity/lib/utils";
-import { HomeQueryResult, Link } from "@/sanity.types";
+import { linkResolver, LinkResolverProps } from "@/sanity/lib/utils";
 
-interface ResolvedLinkProps extends Omit<UiLinkProps, "href"> {
-  link: HomeQueryResult["ctaButtons"][number]["link"] | undefined;
-}
+type ResolvedLinkProps = {
+  link: LinkResolverProps;
+} & Omit<UiLinkProps, "href">;
 
 export default function ResolvedLink({
   link,

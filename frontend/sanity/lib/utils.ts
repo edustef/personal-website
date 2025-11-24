@@ -47,16 +47,17 @@ export function resolveOpenGraphImage(image: any, width = 1200, height = 627) {
   return { url, alt: image?.alt as string, width, height };
 }
 
-type Link = {
+export type LinkResolverProps = {
   linkType?: "href" | "internal";
-  openInNewTab?: boolean;
-  href?: string;
+  openInNewTab?: boolean | null;
+  href?: string | null;
   internal?: {
-    slug: string;
-  };
+    slug?: string | null;
+    _type: string;
+  } | null;
 };
 
-export function linkResolver(link: Link | undefined) {
+export function linkResolver(link: LinkResolverProps | undefined) {
   if (!link) return null;
 
   if (!link.linkType && link.href) {
@@ -67,8 +68,17 @@ export function linkResolver(link: Link | undefined) {
     case "href":
       return link.href || null;
     case "internal":
-      if (link?.post && typeof link.post === "string") {
-        return `/posts/${link.post}`;
+      switch (link.internal?._type) {
+        case "post":
+          return `/blog/${link.internal.slug}`;
+        case "servicesPage":
+          return `/start-your-project`;
+        case "resume":
+          return `/resume`;
+        case "home":
+          return `/`;
+        default:
+          return null;
       }
     default:
       return null;
