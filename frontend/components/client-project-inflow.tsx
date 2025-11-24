@@ -3,8 +3,11 @@
 import { useState, useEffect } from "react";
 import { useQuery, useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { Check, ChevronRight, ChevronLeft, Loader2 } from "lucide-react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Controller, useForm } from "react-hook-form";
+import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -18,15 +21,36 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Field,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "@/components/ui/field";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { Doc, Id } from "@/convex/_generated/dataModel";
+import { sendProjectInquiryEmail } from "@/lib/actions";
 
 const TOTAL_STEPS = 7;
 
-export function ClientProjectInflow() {
-  const [id, setId] = useState<Id<"projectInquiries"> | undefined>(undefined);
+type ClientProjectInflowProps = {
+  recipientEmail?: string;
+};
+
+const emailFormSchema = z.object({
+  email: z.email("Please enter a valid email address."),
+  bookCall: z.boolean(),
+});
+
+type EmailFormValues = z.infer<typeof emailFormSchema>;
+
+export function ClientProjectInflow({
+  recipientEmail,
+}: ClientProjectInflowProps = {}) {
   const [isMounted, setIsMounted] = useState(false);
+  const [id, setId] = useState<Id<"projectInquiries"> | undefined>(undefined);
 
   const inquiry = useQuery(
     api.projectInquiries.getInquiry,
@@ -35,6 +59,25 @@ export function ClientProjectInflow() {
 
   const saveProgress = useMutation(api.projectInquiries.saveProgress);
   const submitInquiry = useMutation(api.projectInquiries.submitInquiry);
+
+  const currentStep = inquiry?.currentStep ?? 0;
+  const isEmailStep = currentStep === 7;
+
+  const emailForm = useForm<EmailFormValues>({
+    resolver: zodResolver(emailFormSchema),
+    defaultValues: {
+      email: "",
+      bookCall: false,
+    },
+    values:
+      isEmailStep && inquiry
+        ? {
+            email: inquiry.email ?? "",
+            bookCall: inquiry.bookCall ?? false,
+          }
+        : undefined,
+    mode: "onBlur",
+  });
 
   useEffect(() => {
     setIsMounted(true);
@@ -126,22 +169,42 @@ export function ClientProjectInflow() {
     });
   };
 
-  const handleSubmit = async ({
-    email,
-    bookCall,
-  }: {
-    email: string;
-    bookCall: boolean;
-  }) => {
+  const handleSubmit = async (data: EmailFormValues) => {
+    if (!id || !inquiry) return;
     try {
       await submitInquiry({
         _id: id,
-        email,
-        bookCall,
+        email: data.email,
+        bookCall: data.bookCall,
       });
+
+      const emailResult = await sendProjectInquiryEmail(
+        {
+          email: data.email,
+          isTech: inquiry.isTech,
+          projectType: inquiry.projectType,
+          targetAudience: inquiry.targetAudience,
+          projectPurpose: inquiry.projectPurpose,
+          features: inquiry.features,
+          currentStatus: inquiry.currentStatus,
+          currentLink: inquiry.currentLink,
+          budgetRange: inquiry.budgetRange,
+          timeline: inquiry.timeline,
+          businessContext: inquiry.businessContext,
+          successCriteria: inquiry.successCriteria,
+          bookCall: data.bookCall,
+        },
+        recipientEmail,
+      );
+
+      if (!emailResult.success) {
+        console.error("Failed to send email:", emailResult.message);
+      }
+
       toast.success("Project inquiry submitted! We'll be in touch soon.");
-      // Reset or redirect
+      localStorage.removeItem("project_inquiry_session");
     } catch (error) {
+      console.error("Error submitting inquiry:", error);
       toast.error("Failed to submit. Please try again.");
     }
   };
@@ -155,16 +218,15 @@ export function ClientProjectInflow() {
       </div>
     );
   }
-  if (inquiry === null) return null;
 
-  const currentStep = inquiry.currentStep ?? 0;
+  if (inquiry === null) return null;
 
   // Steps Rendering Logic
   const renderStep = () => {
     switch (currentStep) {
       case 0: // Tech Check
         return (
-          <div className="flex flex-col gap-6">
+          <motion.div layout className="flex flex-col gap-6">
             <h2 className="text-2xl font-bold">First things first...</h2>
             <p className="text-muted-foreground">
               To tailor the questions for you, are you technical?
@@ -189,11 +251,11 @@ export function ClientProjectInflow() {
                 description="I focus on business/design, I need you to handle the tech."
               />
             </div>
-          </div>
+          </motion.div>
         );
       case 1: // Goal & Project Type
         return (
-          <div className="flex flex-col gap-6">
+          <motion.div layout className="flex flex-col gap-6">
             <StepHeader
               title="What do you want to create or improve?"
               description="Select all that apply."
@@ -218,11 +280,11 @@ export function ClientProjectInflow() {
                 />
               ))}
             </div>
-          </div>
+          </motion.div>
         );
       case 2: // Audience & Purpose
         return (
-          <div className="flex flex-col gap-6">
+          <motion.div layout className="flex flex-col gap-6">
             <StepHeader
               title="Audience & Purpose"
               description="Who is this for and what is the main goal?"
@@ -267,11 +329,11 @@ export function ClientProjectInflow() {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         );
       case 3: // Features
         return (
-          <div className="flex flex-col gap-6">
+          <motion.div layout className="flex flex-col gap-6">
             <StepHeader
               title="Which features do you need?"
               description="Select the core functionalities."
@@ -307,11 +369,11 @@ export function ClientProjectInflow() {
                 />
               ))}
             </div>
-          </div>
+          </motion.div>
         );
       case 4: // Current State
         return (
-          <div className="flex flex-col gap-6">
+          <motion.div layout className="flex flex-col gap-6">
             <StepHeader title="Do you already have something started?" />
             <RadioGroup
               value={inquiry.currentStatus ?? ""}
@@ -343,11 +405,11 @@ export function ClientProjectInflow() {
                 />
               </div>
             )}
-          </div>
+          </motion.div>
         );
       case 5: // Budget & Timeline
         return (
-          <div className="flex flex-col gap-6">
+          <motion.div layout className="flex flex-col gap-6">
             <StepHeader
               title="Budget & Timeline"
               description="This helps me understand the scope."
@@ -396,11 +458,11 @@ export function ClientProjectInflow() {
                 </SelectContent>
               </Select>
             </div>
-          </div>
+          </motion.div>
         );
       case 6: // Business Context
         return (
-          <div className="flex flex-col gap-6">
+          <motion.div layout className="flex flex-col gap-6">
             <StepHeader
               title="Tell me a bit about your business or goals"
               description="Optional context to help me understand."
@@ -419,49 +481,82 @@ export function ClientProjectInflow() {
                 placeholder="I want to increase sales by 20%..."
               />
             </div>
-          </div>
+          </motion.div>
         );
       case 7: // Email + CTA
         return (
-          <div className="flex flex-col gap-6">
+          <motion.div layout className="flex flex-col gap-6">
             <StepHeader title="Where should I send your personalized plan?" />
-            <div className="space-y-4">
-              <Label>Email Address</Label>
-              <Input
-                type="email"
-                value={inquiry.email}
-                onChange={(e) => updateField("email", e.target.value)}
-                placeholder="you@example.com"
-              />
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <Checkbox
-                id="bookCall"
-                checked={inquiry.bookCall}
-                onCheckedChange={(c) => updateField("bookCall", c === true)}
-              />
-              <Label htmlFor="bookCall">
-                I’d also like to book a 15-min intro call.
-              </Label>
-            </div>
-
-            <Button
-              onClick={() =>
-                handleSubmit({
-                  // TODO: Get email and bookCall from the form
-                  email: "",
-                  bookCall: false,
-                })
-              }
-              className="mt-4 w-full"
-              disabled={!inquiry.email}
+            <form
+              id="email-form"
+              onSubmit={emailForm.handleSubmit(handleSubmit)}
+              className="space-y-6"
             >
-              {inquiry.email
-                ? "Get My Personalized Estimate"
-                : "Enter Email to Submit"}
-            </Button>
-          </div>
+              <FieldGroup>
+                <Controller
+                  name="email"
+                  control={emailForm.control}
+                  render={({ field, fieldState }) => (
+                    <Field data-invalid={fieldState.invalid}>
+                      <FieldLabel htmlFor="email-form-email">
+                        Email Address
+                      </FieldLabel>
+                      <Input
+                        {...field}
+                        id="email-form-email"
+                        type="email"
+                        placeholder="you@example.com"
+                        autoComplete="email"
+                        aria-invalid={fieldState.invalid}
+                        onBlur={(e) => {
+                          field.onBlur();
+                          if (id && !fieldState.invalid && field.value) {
+                            updateField("email", field.value);
+                          }
+                        }}
+                      />
+                      {fieldState.invalid && (
+                        <FieldError errors={[fieldState.error]} />
+                      )}
+                    </Field>
+                  )}
+                />
+                <Controller
+                  name="bookCall"
+                  control={emailForm.control}
+                  render={({ field }) => (
+                    <Field orientation="horizontal">
+                      <div className="flex items-center space-x-2">
+                        <Checkbox
+                          id="email-form-bookCall"
+                          checked={field.value}
+                          onCheckedChange={(checked) => {
+                            field.onChange(checked === true);
+                            if (id) {
+                              updateField("bookCall", checked === true);
+                            }
+                          }}
+                        />
+                        <FieldLabel htmlFor="email-form-bookCall">
+                          I'd also like to book a 15-min intro call.
+                        </FieldLabel>
+                      </div>
+                    </Field>
+                  )}
+                />
+              </FieldGroup>
+              <Button
+                type="submit"
+                form="email-form"
+                className="w-full"
+                disabled={emailForm.formState.isSubmitting}
+              >
+                {emailForm.formState.isSubmitting
+                  ? "Submitting..."
+                  : "Get My Personalized Estimate"}
+              </Button>
+            </form>
+          </motion.div>
         );
       default:
         return null;
@@ -486,22 +581,18 @@ export function ClientProjectInflow() {
         </div>
       </div>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentStep}
-          layout
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          className="min-h-[300px]"
-          transition={{
-            duration: 0.3,
-            layout: { duration: 0.3, ease: "easeInOut" },
-          }}
-        >
-          {renderStep()}
-        </motion.div>
-      </AnimatePresence>
+      <motion.div
+        key={currentStep}
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -20 }}
+        className="min-h-[300px]"
+        transition={{
+          duration: 0.3,
+        }}
+      >
+        {renderStep()}
+      </motion.div>
 
       <motion.div
         layout
