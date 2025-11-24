@@ -8,7 +8,7 @@ import { localizeField } from "@/sanity/lib/localization";
 import { hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { ClientProjectInflow } from "@/components/client-project-inflow";
+import { ClientProjectInflow } from "@/app/[locale]/(website)/start-your-project/client-project-inflow";
 
 type Props = {
   params: Promise<{ locale: string }>;
