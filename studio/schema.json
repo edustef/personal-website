@@ -28,11 +28,11 @@
           },
           "optional": false
         },
-        "buttonLabel": {
+        "cta": {
           "type": "objectAttribute",
           "value": {
             "type": "inline",
-            "name": "internationalizedArrayString"
+            "name": "button"
           },
           "optional": false
         }
@@ -544,11 +544,7 @@
               },
               {
                 "type": "string",
-                "value": "post"
-              },
-              {
-                "type": "string",
-                "value": "page"
+                "value": "internal"
               }
             ]
           },
@@ -561,7 +557,14 @@
           },
           "optional": true
         },
-        "page": {
+        "openInNewTab": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
+          },
+          "optional": true
+        },
+        "internal": {
           "type": "objectAttribute",
           "value": {
             "type": "union",
@@ -647,43 +650,6 @@
             ]
           },
           "optional": true
-        },
-        "post": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "object",
-            "attributes": {
-              "_ref": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string"
-                }
-              },
-              "_type": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string",
-                  "value": "reference"
-                }
-              },
-              "_weak": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "boolean"
-                },
-                "optional": true
-              }
-            },
-            "dereferencesTo": "post"
-          },
-          "optional": true
-        },
-        "openInNewTab": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "boolean"
-          },
-          "optional": true
         }
       }
     }
@@ -745,7 +711,7 @@
             "type": "inline",
             "name": "link"
           },
-          "optional": true
+          "optional": false
         }
       }
     }
@@ -1952,6 +1918,14 @@
         },
         "optional": true
       },
+      "slug": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "inline",
+          "name": "internationalizedArraySlug"
+        },
+        "optional": false
+      },
       "selectionTitle": {
         "type": "objectAttribute",
         "value": {
@@ -2019,6 +1993,28 @@
     }
   },
   {
+    "name": "internationalizedArraySlug",
+    "type": "type",
+    "value": {
+      "type": "array",
+      "of": {
+        "type": "object",
+        "attributes": {
+          "_key": {
+            "type": "objectAttribute",
+            "value": {
+              "type": "string"
+            }
+          }
+        },
+        "rest": {
+          "type": "inline",
+          "name": "internationalizedArraySlugValue"
+        }
+      }
+    }
+  },
+  {
     "name": "resume",
     "type": "document",
     "attributes": {
@@ -2060,6 +2056,14 @@
           "name": "seo"
         },
         "optional": true
+      },
+      "slug": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "inline",
+          "name": "internationalizedArraySlug"
+        },
+        "optional": false
       },
       "title": {
         "type": "objectAttribute",
@@ -2646,6 +2650,30 @@
           "type": "objectAttribute",
           "value": {
             "type": "string"
+          },
+          "optional": true
+        }
+      }
+    }
+  },
+  {
+    "name": "internationalizedArraySlugValue",
+    "type": "type",
+    "value": {
+      "type": "object",
+      "attributes": {
+        "_type": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string",
+            "value": "internationalizedArraySlugValue"
+          }
+        },
+        "value": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "inline",
+            "name": "slug"
           },
           "optional": true
         }

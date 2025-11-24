@@ -20,10 +20,9 @@ export const header = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: "buttonLabel",
-      title: "Button Label",
-      description: "Text for the button in the header",
-      type: "internationalizedArrayString",
+      name: "cta",
+      title: "CTA",
+      type: "button",
       validation: (rule) => rule.required(),
     }),
   ],

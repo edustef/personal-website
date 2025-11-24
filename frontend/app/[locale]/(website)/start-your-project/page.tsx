@@ -3,11 +3,10 @@ import type { Metadata } from "next";
 
 import { servicesPageQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
-import { localizeField, type LanguageId } from "@/lib/i18n";
 import { getLocalizedSettingsMetadata } from "@/lib/seo";
 import { ServicesSelection } from "@/components/ServicesSelection";
 import { ServicesContent } from "@/components/services-content";
-import { ServiceView } from "@/sanity.types";
+import { localizeField } from "@/sanity/lib/localization";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -16,7 +15,8 @@ type Props = {
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
-  const locale = params.locale as LanguageId;
+  const { locale } = params;
+
   const [{ data: page }, localizedSettings] = await Promise.all([
     sanityFetch({ query: servicesPageQuery, params: { locale } }),
     getLocalizedSettingsMetadata(locale),
@@ -29,7 +29,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     };
   }
 
-  const title = localizeField(page.title, locale);
+  const title = localizeField(page.seo?.title, locale);
 
   return {
     title: title
@@ -42,7 +42,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 export default async function ServicesPage(props: Props) {
   const params = await props.params;
   const searchParams = await props.searchParams;
-  const locale = params.locale as LanguageId;
+  const { locale } = params;
+
   const audience = searchParams.audience;
 
   const { data: page } = await sanityFetch({

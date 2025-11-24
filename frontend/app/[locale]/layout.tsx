@@ -12,9 +12,9 @@ import DraftModeToast from "@/components/draft-mode-toast";
 import { SanityLive } from "@/sanity/lib/live";
 import { handleError } from "../../lib/client-utils";
 import { ThemeProvider } from "@/components/theme-provider";
-import { languages, type LanguageId } from "@/lib/i18n";
 import { getLocalizedSettingsMetadata } from "@/lib/seo";
-import { LocaleProvider } from "./locale-provider";
+import { NextIntlClientProvider } from "next-intl";
+import { locales } from "@/i18n/routing";
 
 type MetadataProps = {
   params: Promise<{ locale: string }>;
@@ -23,10 +23,9 @@ type MetadataProps = {
 export async function generateMetadata(
   props: MetadataProps,
 ): Promise<Metadata> {
-  const params = await props.params;
-  const locale = params.locale as LanguageId;
+  const { locale } = await props.params;
   const localized = await getLocalizedSettingsMetadata(locale);
-  const alternateLocale = languages
+  const alternateLocale = locales
     .map((lang) => lang.id)
     .filter((lang) => lang !== locale);
 
@@ -39,7 +38,7 @@ export async function generateMetadata(
     description: localized.description,
     alternates: {
       languages: Object.fromEntries(
-        languages.map((lang) => [lang.id, `/${lang.id}`]),
+        locales.map((locale) => [locale.id, `/${locale.id}`]),
       ),
     },
     openGraph: {
@@ -60,7 +59,7 @@ export async function generateMetadata(
 }
 
 export async function generateStaticParams() {
-  return languages.map((lang) => ({
+  return locales.map((lang) => ({
     locale: lang.id,
   }));
 }
@@ -84,22 +83,21 @@ type Props = {
 
 export default async function LocaleLayout(props: Props) {
   const params = await props.params;
-  const locale = params.locale as LanguageId;
   const { isEnabled: isDraftMode } = await draftMode();
 
-  if (!languages.find((lang) => lang.id === locale)) {
+  if (!locales.find((locale) => locale.id === params.locale)) {
     notFound();
   }
 
   return (
     <html
-      lang={locale}
+      lang={params.locale}
       className={`${dmSans.variable} ${dmMono.variable} dark bg-background text-foreground min-h-screen transition-colors duration-300`}
       suppressHydrationWarning
     >
       <body className="isolate transition-colors duration-300 ease-in-out">
-        <ThemeProvider attribute="class" forcedTheme="dark">
-          <LocaleProvider locale={locale}>
+        <NextIntlClientProvider>
+          <ThemeProvider attribute="class" forcedTheme="dark">
             <Toaster />
             {isDraftMode && (
               <>
@@ -109,9 +107,9 @@ export default async function LocaleLayout(props: Props) {
             )}
             <SanityLive onError={handleError} />
             {props.children}
-          </LocaleProvider>
-          <SpeedInsights />
-        </ThemeProvider>
+            <SpeedInsights />
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

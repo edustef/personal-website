@@ -1,16 +1,13 @@
 import { toPlainText } from "next-sanity";
 
-import {
-  localizeBlockContent,
-  localizeField,
-  defaultLanguage,
-  localizedImage,
-} from "@/lib/i18n";
-import type { LanguageId } from "@/lib/i18n";
 import { sanityFetch } from "@/sanity/lib/live";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
-
+import {
+  localizeBlockContent,
+  localizedImage,
+  localizeField,
+} from "@/sanity/lib/localization";
 
 export type LocalizedSettingsMetadata = {
   title: string;
@@ -20,7 +17,7 @@ export type LocalizedSettingsMetadata = {
 };
 
 export async function getLocalizedSettingsMetadata(
-  locale: LanguageId,
+  locale: string,
 ): Promise<LocalizedSettingsMetadata> {
   const { data: settings } = await sanityFetch({
     query: settingsQuery,

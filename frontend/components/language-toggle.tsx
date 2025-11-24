@@ -1,7 +1,5 @@
 "use client";
 
-import { useCallback } from "react";
-import { usePathname, useRouter } from "next/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,45 +7,41 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { languages, type LanguageId } from "@/lib/i18n";
-import { useLocale } from "@/app/[locale]/locale-provider";
+import { Link } from "@/components/ui/link";
+import { locales } from "@/i18n/routing";
+import { usePathname } from "@/i18n/navigation";
 
-export function LanguageToggle({ className }: { className?: string }) {
-  const locale = useLocale();
-  const router = useRouter();
+export function LanguageToggle({
+  currentLocale,
+  className,
+}: {
+  currentLocale: string;
+  className?: string;
+}) {
   const pathname = usePathname();
-
-  const setPreferredLanguage = useCallback(
-    (nextLocale: LanguageId) => {
-      document.cookie = `preferred_language=${nextLocale}; path=/; max-age=31536000; sameSite=Lax`;
-      const parts = pathname.split("/");
-      const rest = parts.slice(2).join("/");
-      const nextPath = rest ? `/${nextLocale}/${rest}` : `/${nextLocale}`;
-      router.push(nextPath);
-    },
-    [pathname, router],
-  );
+  const pathnameWithoutLocale = pathname.split("/").slice(1).join("/");
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon" className={className}>
-          {locale.toUpperCase()}
+          {currentLocale.toUpperCase()}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {languages.map((lang) => (
+        {locales.map(({ id, title }) => (
           <DropdownMenuItem
-            key={lang.id}
-            onSelect={(event) => {
-              event.preventDefault();
-              if (lang.id !== locale) {
-                setPreferredLanguage(lang.id);
-              }
-            }}
-            className={lang.id === locale ? "font-semibold" : undefined}
+            key={id}
+            className={id === currentLocale ? "font-semibold" : undefined}
           >
-            {lang.title}
+            <Link
+              locale={id}
+              href={
+                pathnameWithoutLocale === "" ? "/" : `/${pathnameWithoutLocale}`
+              }
+            >
+              {title}
+            </Link>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

@@ -13,14 +13,12 @@ import {
 } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
 import { urlForImage } from "@/sanity/lib/utils";
-import {
-  languages,
-  localizeField,
-  localizeBlockContent,
-  type LanguageId,
-} from "@/lib/i18n";
 import { AllSkillsQueryResult } from "@/sanity.types";
 import PrintButton from "./print-button";
+import { localizeBlockContent, localizeField } from "@/sanity/lib/localization";
+import { hasLocale } from "next-intl";
+import { routing } from "@/i18n/routing";
+import { setRequestLocale } from "next-intl/server";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -28,11 +26,7 @@ type Props = {
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
-  const locale = params.locale as LanguageId;
-
-  if (!languages.find((lang) => lang.id === locale)) {
-    return {};
-  }
+  const { locale } = params;
 
   const { data: resume } = await sanityFetch({
     query: resumeQuery,
@@ -52,11 +46,12 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
 export default async function ResumePage(props: Props) {
   const params = await props.params;
-  const locale = params.locale as LanguageId;
+  const locale = params.locale;
 
-  if (!languages.find((lang) => lang.id === locale)) {
+  if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+  setRequestLocale(locale);
 
   const [
     { data: resume },
@@ -94,7 +89,7 @@ export default async function ResumePage(props: Props) {
   });
 
   return (
-    <div className="from-primary-50 to-accent-50 min-h-screen bg-gradient-to-br py-12 print:bg-white print:py-0">
+    <div className="from-primary-50 to-accent-50 min-h-screen bg-linear-to-br py-12 print:bg-white print:py-0">
       <div className="container max-w-5xl">
         <div className="shadow-elevation-high overflow-hidden rounded-2xl bg-white print:rounded-none print:shadow-none">
           <div className="p-8 md:p-12 print:p-8">
@@ -190,7 +185,7 @@ export default async function ResumePage(props: Props) {
                 )}
               </div>
               {profile?.picture && (
-                <div className="flex-shrink-0 print:hidden">
+                <div className="shrink-0 print:hidden">
                   <div className="shadow-elevation-medium relative h-32 w-32 overflow-hidden rounded-xl">
                     <Image
                       src={
@@ -240,7 +235,7 @@ export default async function ResumePage(props: Props) {
                               {job.company}
                             </p>
                           </div>
-                          <div className="flex-shrink-0 text-sm text-gray-600 print:text-xs">
+                          <div className="shrink-0 text-sm text-gray-600 print:text-xs">
                             {startFormatted} - {endFormatted}
                           </div>
                         </div>

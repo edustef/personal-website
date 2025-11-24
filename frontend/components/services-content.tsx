@@ -14,9 +14,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ServiceView } from "@/sanity.types";
-import { localizeBlockContent, localizeField } from "@/lib/i18n";
 import CustomPortableText from "./sanity/portable-text";
-import { useLocale } from "@/app/[locale]/locale-provider";
+import { localizeBlockContent, localizeField } from "@/sanity/lib/localization";
+import { useLocale } from "next-intl";
 
 type ServicesContentProps = {
   viewData: ServiceView;
@@ -24,10 +24,10 @@ type ServicesContentProps = {
 };
 
 export function ServicesContent({ viewData, onBack }: ServicesContentProps) {
+  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const locale = useLocale();
 
   const handleBack = () => {
     if (onBack) {

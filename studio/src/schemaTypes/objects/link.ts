@@ -20,9 +20,8 @@ export const link = defineType({
       initialValue: "url",
       options: {
         list: [
-          { title: "URL", value: "href" },
-          { title: "Post", value: "post" },
-          { title: "Page", value: "page" },
+          { title: "External", value: "href" },
+          { title: "Internal", value: "internal" },
         ],
         layout: "dropdown",
       },
@@ -42,40 +41,26 @@ export const link = defineType({
         }),
     }),
     defineField({
-      name: "page",
-      title: "Page",
-      type: "reference",
-      to: [{ type: "home" }, { type: "resume" }, { type: "servicesPage" }],
-      hidden: ({ parent }) => parent?.linkType !== "page",
-      validation: (Rule) =>
-        Rule.custom((value, context: any) => {
-          if (context.parent?.linkType === "page" && !value) {
-            return "Page reference is required when Link Type is Page";
-          }
-          return true;
-        }),
-    }),
-
-    defineField({
-      name: "post",
-      title: "Post",
-      type: "reference",
-      to: [{ type: "post" }],
-      hidden: ({ parent }) => parent?.linkType !== "post",
-      validation: (Rule) =>
-        // Custom validation to ensure post reference is provided if the link type is 'post'
-        Rule.custom((value, context: any) => {
-          if (context.parent?.linkType === "post" && !value) {
-            return "Post reference is required when Link Type is Post";
-          }
-          return true;
-        }),
-    }),
-    defineField({
       name: "openInNewTab",
       title: "Open in new tab",
       type: "boolean",
       initialValue: false,
+    }),
+    defineField({
+      name: "internal",
+      title: "Internal",
+      type: "reference",
+      to: [{ type: "home" }, { type: "resume" }, { type: "servicesPage" }],
+      hidden: ({ parent }) => parent?.linkType !== "internal",
+      validation: (rule) => [
+        rule.custom((value, { parent }) => {
+          const type = (parent as { type?: string })?.type;
+          if (type === "internal" && !value?._ref) {
+            return "internal can't be empty";
+          }
+          return true;
+        }),
+      ],
     }),
   ],
 });

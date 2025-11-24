@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import NextLink from "next/link";
+import { Link as NextLink } from "@/i18n/navigation";
 import { buttonVariants } from "./button";
 import { VariantProps } from "class-variance-authority";
 

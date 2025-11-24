@@ -1,6 +1,9 @@
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { LanguageId } from "@/lib/i18n";
+import { hasLocale } from "next-intl";
+import { routing } from "@/i18n/routing";
+import { notFound } from "next/navigation";
+import { setRequestLocale } from "next-intl/server";
 
 type Props = {
   children: React.ReactNode;
@@ -9,7 +12,13 @@ type Props = {
 
 export default async function WebsiteLayout(props: Props) {
   const params = await props.params;
-  const locale = params.locale as LanguageId;
+  const { locale } = params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+  setRequestLocale(locale);
+
   return (
     <>
       <div className="relative isolate flex min-h-screen flex-col">

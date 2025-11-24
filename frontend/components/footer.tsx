@@ -1,11 +1,11 @@
 import { homeFooterQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
-import { LanguageId, localizeField } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import { localizeField } from "@/sanity/lib/localization";
 
 type FooterProps = {
   className?: string;
-  locale: LanguageId;
+  locale: string;
 };
 
 export async function Footer({ className, locale }: FooterProps) {

@@ -15,6 +15,7 @@ export const button = defineType({
       name: "link",
       title: "Link",
       type: "link",
+      validation: (rule) => rule.required(),
     },
   ],
   preview: {

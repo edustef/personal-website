@@ -3,13 +3,6 @@ import type { Metadata } from "next";
 
 import { homeQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
-import {
-  languages,
-  localizeBlockContent,
-  localizedImage,
-  localizeField,
-  type LanguageId,
-} from "@/lib/i18n";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 
 import {
@@ -25,6 +18,15 @@ import ResolvedLink from "@/components/sanity/resolved-link";
 import { HighlightBadge } from "@/components/ui/highlight-badge";
 import CustomPortableText from "@/components/sanity/portable-text";
 import { Button } from "@/components/ui/button";
+import { hasLocale } from "next-intl";
+import { locales, routing } from "@/i18n/routing";
+import { setRequestLocale } from "next-intl/server";
+import {
+  localizeBlockContent,
+  localizedImage,
+  localizeField,
+} from "@/sanity/lib/localization";
+import { AnimatedContainer } from "@/components/ui/animated-container";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -32,7 +34,8 @@ type Props = {
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
-  const locale = params.locale as LanguageId;
+  const { locale } = params;
+
   const [{ data: home }] = await Promise.all([
     sanityFetch({ query: homeQuery, params: { locale }, stega: false }),
   ]);
@@ -64,11 +67,12 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
 export default async function Page(props: Props) {
   const params = await props.params;
-  const locale = params.locale as LanguageId;
+  const { locale } = params;
 
-  if (!languages.find((lang) => lang.id === locale)) {
+  if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+  setRequestLocale(locale);
 
   const [{ data: home }] = await Promise.all([
     sanityFetch({ query: homeQuery, params: { locale } }),
@@ -117,9 +121,11 @@ export default async function Page(props: Props) {
             </HeroIntroContent>
 
             <div className="flex flex-col gap-4">
-              <h2 className="text-foreground text-lg font-semibold">
-                {localizeField(home.findMeOnLabel, locale)}
-              </h2>
+              <AnimatedContainer>
+                <h2 className="text-foreground text-lg font-semibold">
+                  {localizeField(home.findMeOnLabel, locale)}
+                </h2>
+              </AnimatedContainer>
               <HeroIntroSocialLinks>
                 {profile.socialLinks?.map(({ url, name }) => (
                   <Button key={url} asChild variant="outline">

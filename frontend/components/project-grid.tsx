@@ -1,11 +1,7 @@
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { urlForImage } from "@/sanity/lib/utils";
-import {
-  localizeField,
-  localizeBlockContent,
-  type LanguageId,
-} from "@/lib/i18n";
+import { localizeField, localizeBlockContent } from "@/sanity/lib/localization";
 
 type Project = any;
 
@@ -13,7 +9,7 @@ type ProjectGridProps = {
   projects: Project[];
   title?: string;
   subtitle?: string;
-  locale: LanguageId;
+  locale: string;
 };
 
 export default function ProjectGrid({
@@ -57,7 +53,7 @@ export default function ProjectGrid({
                 >
                   <div className="glass-card shadow-elevation-medium hover:shadow-elevation-high relative h-full overflow-hidden rounded-2xl transition-all duration-300 hover:scale-[1.02]">
                     {project.image && (
-                      <div className="from-primary-100 to-accent-100 relative h-48 w-full overflow-hidden bg-gradient-to-br">
+                      <div className="from-primary-100 to-accent-100 relative h-48 w-full overflow-hidden bg-linear-to-br">
                         <Image
                           src={
                             urlForImage(project.image)
@@ -110,7 +106,7 @@ export default function ProjectGrid({
                             href={project.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="from-primary-600 to-accent-600 hover:shadow-glow-primary inline-flex items-center gap-2 rounded-lg bg-gradient-to-r px-4 py-2 text-sm font-medium text-white transition-all"
+                            className="from-primary-600 to-accent-600 hover:shadow-glow-primary inline-flex items-center gap-2 rounded-lg bg-linear-to-r px-4 py-2 text-sm font-medium text-white transition-all"
                           >
                             <span>View Project</span>
                             <svg

@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 import { PortableText } from "@portabletext/react";
-import { localizeBlockContent, type LanguageId } from "@/lib/i18n";
+import { localizeBlockContent } from "@/sanity/lib/localization";
 import { Job } from "@/sanity.types";
 import {
   Card,
@@ -13,7 +13,7 @@ import { Badge } from "@/components/ui/badge";
 
 type ExperienceTimelineProps = {
   jobs: Job[];
-  locale: LanguageId;
+  locale: string;
 };
 
 export default function ExperienceTimeline({
@@ -25,7 +25,7 @@ export default function ExperienceTimeline({
   }
 
   return (
-    <section className="from-background to-muted/20 bg-gradient-to-b py-24">
+    <section className="from-background to-muted/20 bg-linear-to-b py-24">
       <div className="container">
         <div className="mx-auto max-w-5xl">
           <div className="mb-16 text-center">
@@ -38,7 +38,7 @@ export default function ExperienceTimeline({
           </div>
 
           <div className="relative">
-            <div className="from-primary/30 via-primary/50 to-primary/30 absolute top-0 bottom-0 left-8 w-0.5 bg-gradient-to-b md:left-1/2" />
+            <div className="from-primary/30 via-primary/50 to-primary/30 absolute top-0 bottom-0 left-8 w-0.5 bg-linear-to-b md:left-1/2" />
 
             <div className="space-y-12">
               {jobs.map((job, index) => {

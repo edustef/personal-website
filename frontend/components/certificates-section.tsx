@@ -9,13 +9,12 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Award } from "lucide-react";
-import { localizeBlockContent, type LanguageId } from "@/lib/i18n";
-
+import { localizeBlockContent } from "@/sanity/lib/localization";
 type Certificate = any;
 
 type CertificatesSectionProps = {
   certificates: Certificate[];
-  locale: LanguageId;
+  locale: string;
 };
 
 export default function CertificatesSection({

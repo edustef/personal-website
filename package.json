@@ -36,5 +36,8 @@
   "devDependencies": {
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.6.2"
+  },
+  "dependencies": {
+    "next-intl": "^4.5.5"
   }
 }

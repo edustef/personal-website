@@ -115,15 +115,28 @@ export type OgImage = {
 
 export type Link = {
   _type: "link";
-  linkType?: "href" | "post" | "startProjectPage";
+  linkType?: "external" | "internal";
   href?: string;
-  post?: {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "post";
-  };
   openInNewTab?: boolean;
+  internal?:
+    | {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "home";
+      }
+    | {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "resume";
+      }
+    | {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "servicesPage";
+      };
 };
 
 export type SocialLink = {
@@ -135,7 +148,7 @@ export type SocialLink = {
 export type Button = {
   _type: "button";
   text: InternationalizedArrayString;
-  link?: Link;
+  link: Link;
 };
 
 export type Duration = {
@@ -339,7 +352,7 @@ export type ServicesPage = {
   _updatedAt: string;
   _rev: string;
   seo?: Seo;
-  title: InternationalizedArrayString;
+  slug: InternationalizedArraySlug;
   selectionTitle?: InternationalizedArrayString;
   selectionDescription?: InternationalizedArrayString;
   technicalOptionLabel?: InternationalizedArrayString;
@@ -350,6 +363,12 @@ export type ServicesPage = {
   solutionView?: ServiceView;
 };
 
+export type InternationalizedArraySlug = Array<
+  {
+    _key: string;
+  } & InternationalizedArraySlugValue
+>;
+
 export type Resume = {
   _id: string;
   _type: "resume";
@@ -357,6 +376,7 @@ export type Resume = {
   _updatedAt: string;
   _rev: string;
   seo?: Seo;
+  slug: InternationalizedArraySlug;
   title: InternationalizedArrayString;
   description?: InternationalizedArrayString;
   showSkills?: boolean;
@@ -462,6 +482,11 @@ export type Slug = {
   _type: "slug";
   current: string;
   source?: string;
+};
+
+export type InternationalizedArraySlugValue = {
+  _type: "internationalizedArraySlugValue";
+  value?: Slug;
 };
 
 export type InternationalizedArrayImageValue = {
@@ -784,6 +809,7 @@ export type AllSanitySchemaTypes =
   | Project
   | InternationalizedArrayString
   | ServicesPage
+  | InternationalizedArraySlug
   | Resume
   | Home
   | Profile
@@ -791,6 +817,7 @@ export type AllSanitySchemaTypes =
   | InternationalizedArrayOgImage
   | MediaTag
   | Slug
+  | InternationalizedArraySlugValue
   | InternationalizedArrayImageValue
   | InternationalizedArrayOgImageValue
   | InternationalizedArrayBlockContentValue
@@ -820,7 +847,7 @@ export type AllSanitySchemaTypes =
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/lib/queries.ts
 // Variable: settingsQuery
-// Query: *[_type == "settings"][0]
+// Query: *[_type == "settings"][0]{    ...,    header{      ...,      cta    }  }
 export type SettingsQueryResult = {
   _id: string;
   _type: "settings";
@@ -830,10 +857,16 @@ export type SettingsQueryResult = {
   seo: Seo;
   title: InternationalizedArrayString;
   description: InternationalizedArrayBlockContent;
-  header: Header;
+  header: {
+    _type: "header";
+    skipLinkText: InternationalizedArrayString;
+    navLabel: InternationalizedArrayString;
+    buttonLabel: InternationalizedArrayString;
+    cta: null;
+  };
 } | null;
 // Variable: homeQuery
-// Query: *[_type == "home"][0]{    ...,    profile->{      name,      email,      phone,      motto,      about,      location,      picture,      workPreference,      socialLinks[]{        name,        url      }    },    featuredProjects[]->{      _id,      name,      description,      "image": coverImage,      "technologies": skills[]->name,      "link": websiteLink,      "github": sourceLink,      featured    },    footer  }
+// Query: *[_type == "home"][0]{    ...,    ctaButtons[]{      ...,      link{              },    },    profile->{      name,      email,      phone,      motto,      about,      location,      picture,      workPreference,      socialLinks[]{        name,        url      }    },    featuredProjects[]->{      _id,      name,      description,      "image": coverImage,      "technologies": skills[]->name,      "link": websiteLink,      "github": sourceLink,      featured    },    footer  }
 export type HomeQueryResult = {
   _id: string;
   _type: "home";
@@ -873,11 +906,12 @@ export type HomeQueryResult = {
       url: string;
     }> | null;
   };
-  ctaButtons?: Array<
-    {
-      _key: string;
-    } & Button
-  >;
+  ctaButtons: Array<{
+    _key: string;
+    _type: "button";
+    text: InternationalizedArrayString;
+    link: {};
+  }> | null;
   featuredProjects: Array<{
     _id: string;
     name: InternationalizedArrayString;
@@ -956,7 +990,7 @@ export type ServicesPageQueryResult = {
   _updatedAt: string;
   _rev: string;
   seo?: Seo;
-  title: InternationalizedArrayString;
+  slug: InternationalizedArraySlug;
   selectionTitle?: InternationalizedArrayString;
   selectionDescription?: InternationalizedArrayString;
   technicalOptionLabel?: InternationalizedArrayString;
@@ -1111,8 +1145,8 @@ export type PostPagesSlugsResult = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '\n  *[_type == "settings"][0]\n': SettingsQueryResult;
-    '\n  *[_type == "home"][0]{\n    ...,\n    profile->{\n      name,\n      email,\n      phone,\n      motto,\n      about,\n      location,\n      picture,\n      workPreference,\n      socialLinks[]{\n        name,\n        url\n      }\n    },\n    featuredProjects[]->{\n      _id,\n      name,\n      description,\n      "image": coverImage,\n      "technologies": skills[]->name,\n      "link": websiteLink,\n      "github": sourceLink,\n      featured\n    },\n    footer\n  }\n': HomeQueryResult;
+    '\n  *[_type == "settings"][0]{\n    ...,\n    header{\n      ...,\n      cta\n    }\n  }\n': SettingsQueryResult;
+    '\n  *[_type == "home"][0]{\n    ...,\n    ctaButtons[]{\n      ...,\n      link{\n        \n      },\n    },\n    profile->{\n      name,\n      email,\n      phone,\n      motto,\n      about,\n      location,\n      picture,\n      workPreference,\n      socialLinks[]{\n        name,\n        url\n      }\n    },\n    featuredProjects[]->{\n      _id,\n      name,\n      description,\n      "image": coverImage,\n      "technologies": skills[]->name,\n      "link": websiteLink,\n      "github": sourceLink,\n      featured\n    },\n    footer\n  }\n': HomeQueryResult;
     '\n  *[_type == "home"][0]{\n    footer,\n    profile->{\n      name\n    }\n  }\n': HomeFooterQueryResult;
     '\n  *[_type == "profile"][0]{\n    _id,\n    name,\n    email,\n    phone,\n    motto,\n    about,\n    location,\n    picture,\n    workPreference,\n    socialLinks[]{\n      platform,\n      url\n    }\n  }\n': ProfileQueryResult;
     '\n  *[_type == "resume"][0]{\n    _id,\n    title,\n    description,\n    showSkills,\n    showProjects,\n    showCertificates\n  }\n': ResumeQueryResult;

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { type LanguageId, localizeField } from "@/lib/i18n";
+import { localizeField } from "@/sanity/lib/localization";
 import { LanguageToggle } from "@/components/language-toggle";
 import {
   NavigationMenu,
@@ -13,7 +13,7 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { settingsQuery } from "@/sanity/lib/queries";
 
 type HeaderProps = {
-  locale: LanguageId;
+  locale: string;
   className?: string;
 };
 
@@ -71,7 +71,7 @@ export async function Header({ locale, className }: HeaderProps) {
                 </Button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <LanguageToggle />
+                <LanguageToggle currentLocale={locale} />
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>

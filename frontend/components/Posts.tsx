@@ -7,14 +7,14 @@ import { AllPostsQueryResult } from "@/sanity.types";
 import DateComponent from "@/components/date";
 import { createDataAttribute } from "next-sanity";
 import { urlForImage } from "@/sanity/lib/utils";
-import { localizeField, type LanguageId } from "@/lib/i18n";
+import { localizeField } from "@/sanity/lib/localization";
 
 const Post = ({
   post,
   locale,
 }: {
   post: AllPostsQueryResult[number];
-  locale: LanguageId;
+  locale: string;
 }) => {
   const { _id, title, slug, excerpt, date, coverImage } = post;
 
@@ -34,7 +34,7 @@ const Post = ({
       className="group glass-card shadow-elevation-medium hover:shadow-elevation-high overflow-hidden rounded-2xl transition-all duration-300 hover:scale-[1.02]"
     >
       {coverImage && (
-        <div className="from-primary-100 to-accent-100 relative h-48 w-full overflow-hidden bg-gradient-to-br">
+        <div className="from-primary-100 to-accent-100 relative h-48 w-full overflow-hidden bg-linear-to-br">
           <Image
             src={urlForImage(coverImage)?.width(800).height(400).url() || ""}
             alt={postTitle}
@@ -102,7 +102,7 @@ export async function MorePosts({
 }: {
   skip: string;
   limit: number;
-  locale: LanguageId;
+  locale: string;
 }) {
   const { data } = await sanityFetch({
     query: morePostsQuery,
@@ -122,7 +122,7 @@ export async function MorePosts({
   );
 }
 
-export async function AllPosts({ locale }: { locale: LanguageId }) {
+export async function AllPosts({ locale }: { locale: string }) {
   const { data } = await sanityFetch({
     query: allPostsQuery,
     params: { locale },

@@ -1,6 +1,9 @@
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { LanguageId } from "@/lib/i18n";
+import { routing } from "@/i18n/routing";
+import { hasLocale } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
 
 type Props = {
   children: React.ReactNode;
@@ -9,7 +12,13 @@ type Props = {
 
 export default async function PrintLayout(props: Props) {
   const params = await props.params;
-  const locale = params.locale as LanguageId;
+  const { locale } = params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+  setRequestLocale(locale);
+
   return (
     <>
       <Header className="print:hidden" locale={locale} />

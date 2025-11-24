@@ -1,16 +1,11 @@
 "use client";
 
-import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import { AnimatedContainer } from "@/components/ui/animated-container";
 
 type CommonProps = {
   children: React.ReactNode;
   className?: string;
-};
-
-const fadeUp = {
-  initial: { opacity: 0, y: 32 },
-  animate: { opacity: 1, y: 0 },
 };
 
 export function HeroIntro({ className, children }: CommonProps) {
@@ -28,45 +23,42 @@ export function HeroIntro({ className, children }: CommonProps) {
 
 export const HeroIntroContent = ({ children, className }: CommonProps) => {
   return (
-    <motion.div
+    <AnimatedContainer
       className={cn("flex flex-col gap-4 mix-blend-difference", className)}
-      initial={fadeUp.initial}
-      animate={fadeUp.animate}
-      transition={{ duration: 3, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+      duration={3}
+      delay={0.2}
+      ease="smooth"
     >
       {children}
-    </motion.div>
+    </AnimatedContainer>
   );
 };
 
 export const HeroIntroSocialLinks = ({ children, className }: CommonProps) => {
   return (
-    <motion.div
+    <AnimatedContainer
       className={cn(
         "flex flex-col gap-4 mix-blend-difference md:flex-row",
         className,
       )}
-      initial={fadeUp.initial}
-      animate={fadeUp.animate}
-      transition={{ duration: 3, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+      duration={3}
+      delay={0.2}
+      ease="smooth"
     >
       {children}
-    </motion.div>
+    </AnimatedContainer>
   );
 };
 
 export const HeroIntroCtaButtons = ({ children, className }: CommonProps) => {
   return (
-    <motion.div
+    <div
       className={cn(
         "flex flex-col gap-4 mix-blend-difference md:flex-row",
         className,
       )}
-      initial={fadeUp.initial}
-      animate={fadeUp.animate}
-      transition={{ duration: 3, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 };
