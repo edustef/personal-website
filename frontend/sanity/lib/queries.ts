@@ -1,28 +1,17 @@
 import { defineQuery } from "next-sanity";
 
-export const linkQuery = defineQuery(`
-  ...,
-  href,
-  internal->{
-    _type,
-    "slug": slug.current
-  }
-`);
-
-const buttonQuery = defineQuery(`
-  ...,
-  link{
-    ${linkQuery}
-  }
-`);
-
 export const settingsQuery = defineQuery(`
   *[_type == "settings"][0]{
     ...,
     header{
       ...,
       cta{
-        ${buttonQuery}
+        ...,
+  href,
+  internal->{
+    _type,
+    "slug": slug.current
+  }
       }
     }
   }
@@ -32,7 +21,12 @@ export const homeQuery = defineQuery(`
   *[_type == "home"][0]{
     ...,
     ctaButtons[]{
-      ${buttonQuery}
+      ...,
+  href,
+  internal->{
+    _type,
+    "slug": slug.current
+  }
     },
     profile->{
       name,
