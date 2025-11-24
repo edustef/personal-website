@@ -1,1 +1,149 @@
-{}
+{
+  "startYourProject": {
+    "slug": "inicia-tu-proyecto",
+    "title": "Inicia Tu Proyecto",
+    "description": "Elige la opción que mejor te describa."
+  },
+  "clientProjectInflow": {
+    "step0": {
+      "title": "Primero lo primero...",
+      "description": "Para adaptar las preguntas para ti, ¿eres técnico?",
+      "technical": {
+        "title": "Sí, soy técnico",
+        "description": "Entiendo código, tecnologías y flujos de desarrollo."
+      },
+      "nonTechnical": {
+        "title": "No, no soy técnico",
+        "description": "Me enfoco en negocios/diseño, necesito que te encargues de la parte técnica."
+      }
+    },
+    "step1": {
+      "title": "¿Qué quieres crear o mejorar?",
+      "description": "Selecciona todas las que apliquen.",
+      "options": {
+        "newWebsite": "Un sitio web nuevo",
+        "improveWebsite": "Mejorar/rediseñar sitio web actual",
+        "mobileApp": "Una aplicación móvil (iOS/Android)",
+        "aiFeatures": "Agregar funciones de IA",
+        "performance": "Mejorar rendimiento/SEO",
+        "maintenance": "Mantenimiento continuo",
+        "notSure": "Aún no estoy seguro"
+      }
+    },
+    "step2": {
+      "title": "Audiencia y Propósito",
+      "description": "¿Para quién es esto y cuál es el objetivo principal?",
+      "audience": {
+        "label": "¿Para quién es tu proyecto?",
+        "customers": "Clientes",
+        "internalTeam": "Equipo interno",
+        "community": "Comunidad/usuarios",
+        "other": "Otro"
+      },
+      "purpose": {
+        "label": "¿Cuál es el propósito principal?",
+        "generateLeads": "Generar leads",
+        "sellProducts": "Vender productos/servicios",
+        "showcasePortfolio": "Mostrar portafolio",
+        "improveWorkflow": "Mejorar flujo de trabajo",
+        "increaseConversions": "Aumentar conversiones",
+        "validateIdea": "Validar idea de aplicación",
+        "other": "Otro"
+      }
+    },
+    "step3": {
+      "title": "¿Qué funciones necesitas?",
+      "description": "Selecciona las funcionalidades principales.",
+      "features": {
+        "landingPage": "Página de destino",
+        "multiPage": "Sitio web multi-página",
+        "blog": "Blog",
+        "booking": "Sistema de reservas",
+        "ecommerce": "E-commerce",
+        "apiIntegrations": "Integraciones API",
+        "headlessCms": "Headless CMS",
+        "customComponents": "Componentes personalizados",
+        "authentication": "Autenticación",
+        "userProfiles": "Perfiles de usuario",
+        "chatMessaging": "Chat/Mensajería",
+        "pushNotifications": "Notificaciones push",
+        "mapsGeolocation": "Mapas/Geolocalización",
+        "payments": "Pagos",
+        "aiAssistant": "Asistente de IA",
+        "customChatbot": "Chatbot personalizado",
+        "automatedWorkflows": "Flujos de trabajo automatizados",
+        "dataDashboards": "Paneles de datos"
+      }
+    },
+    "step4": {
+      "title": "¿Ya tienes algo iniciado?",
+      "options": {
+        "fromScratch": "No, empezando desde cero",
+        "needsImprovement": "Sí — necesita mejoras",
+        "haveDesigns": "Tengo diseños",
+        "haveBranding": "Tengo marca",
+        "haveBackend": "Tengo backend/API",
+        "haveContent": "Tengo contenido",
+        "justExploring": "Solo explorando"
+      },
+      "currentLink": {
+        "label": "Comparte tu enlace actual (opcional)",
+        "placeholder": "https://..."
+      }
+    },
+    "step5": {
+      "title": "Presupuesto y Cronograma",
+      "description": "Esto me ayuda a entender el alcance.",
+      "budget": {
+        "label": "Rango de Presupuesto",
+        "range1": "€1,000–2,500",
+        "range2": "€2,500–5,000",
+        "range3": "€5,000–10,000",
+        "range4": "€10,000+",
+        "dontKnow": "Aún no lo sé"
+      },
+      "timeline": {
+        "label": "¿Cuándo te gustaría comenzar?",
+        "placeholder": "Cronograma",
+        "asap": "Lo antes posible",
+        "oneTwoMonths": "En 1–2 meses",
+        "threePlusMonths": "En 3+ meses",
+        "justExploring": "Solo explorando"
+      }
+    },
+    "step6": {
+      "title": "Cuéntame un poco sobre tu negocio u objetivos",
+      "description": "Contexto opcional para ayudarme a entender.",
+      "businessContext": {
+        "placeholder": "Mi negocio ayuda a X a hacer Y..."
+      },
+      "successCriteria": {
+        "label": "¿Cómo se ve el éxito para ti?",
+        "placeholder": "Quiero aumentar las ventas en un 20%..."
+      }
+    },
+    "step7": {
+      "title": "¿A dónde debo enviar tu plan personalizado?",
+      "email": {
+        "label": "Dirección de Correo Electrónico",
+        "placeholder": "tu@ejemplo.com",
+        "error": "Por favor ingresa una dirección de correo electrónico válida."
+      },
+      "bookCall": {
+        "label": "También me gustaría reservar una llamada introductoria de 15 minutos."
+      },
+      "submit": {
+        "button": "Obtener Mi Estimación Personalizada",
+        "submitting": "Enviando..."
+      }
+    },
+    "navigation": {
+      "back": "Atrás",
+      "next": "Siguiente"
+    },
+    "messages": {
+      "submitted": "¡Consulta de proyecto enviada! Nos pondremos en contacto pronto.",
+      "submitError": "Error al enviar. Por favor intenta de nuevo."
+    }
+  }
+}

@@ -3,5 +3,147 @@
     "slug": "start-your-project",
     "title": "Start Your Project",
     "description": "Choose the option that best describes you."
+  },
+  "clientProjectInflow": {
+    "step0": {
+      "title": "First things first...",
+      "description": "To tailor the questions for you, are you technical?",
+      "technical": {
+        "title": "Yes, I'm technical",
+        "description": "I understand code, stacks, and development flows."
+      },
+      "nonTechnical": {
+        "title": "No, I'm non-technical",
+        "description": "I focus on business/design, I need you to handle the tech."
+      }
+    },
+    "step1": {
+      "title": "What do you want to create or improve?",
+      "description": "Select all that apply.",
+      "options": {
+        "newWebsite": "A new website",
+        "improveWebsite": "Improve/redesign current website",
+        "mobileApp": "A mobile app (iOS/Android)",
+        "aiFeatures": "Add AI features",
+        "performance": "Improve performance/SEO",
+        "maintenance": "Ongoing maintenance",
+        "notSure": "Not sure yet"
+      }
+    },
+    "step2": {
+      "title": "Audience & Purpose",
+      "description": "Who is this for and what is the main goal?",
+      "audience": {
+        "label": "Who is your project for?",
+        "customers": "Customers",
+        "internalTeam": "Internal team",
+        "community": "Community/users",
+        "other": "Other"
+      },
+      "purpose": {
+        "label": "What is the main purpose?",
+        "generateLeads": "Generate leads",
+        "sellProducts": "Sell products/services",
+        "showcasePortfolio": "Showcase portfolio",
+        "improveWorkflow": "Improve workflow",
+        "increaseConversions": "Increase conversions",
+        "validateIdea": "Validate app idea",
+        "other": "Other"
+      }
+    },
+    "step3": {
+      "title": "Which features do you need?",
+      "description": "Select the core functionalities.",
+      "features": {
+        "landingPage": "Landing page",
+        "multiPage": "Multi-page website",
+        "blog": "Blog",
+        "booking": "Booking system",
+        "ecommerce": "E-commerce",
+        "apiIntegrations": "API integrations",
+        "headlessCms": "Headless CMS",
+        "customComponents": "Custom components",
+        "authentication": "Authentication",
+        "userProfiles": "User profiles",
+        "chatMessaging": "Chat/Messaging",
+        "pushNotifications": "Push notifications",
+        "mapsGeolocation": "Maps/Geolocation",
+        "payments": "Payments",
+        "aiAssistant": "AI assistant",
+        "customChatbot": "Custom chatbot",
+        "automatedWorkflows": "Automated workflows",
+        "dataDashboards": "Data dashboards"
+      }
+    },
+    "step4": {
+      "title": "Do you already have something started?",
+      "options": {
+        "fromScratch": "No, starting from scratch",
+        "needsImprovement": "Yes — needs improvement",
+        "haveDesigns": "I have designs",
+        "haveBranding": "I have branding",
+        "haveBackend": "I have backend/API",
+        "haveContent": "I have content",
+        "justExploring": "Just exploring"
+      },
+      "currentLink": {
+        "label": "Share your current link (optional)",
+        "placeholder": "https://..."
+      }
+    },
+    "step5": {
+      "title": "Budget & Timeline",
+      "description": "This helps me understand the scope.",
+      "budget": {
+        "label": "Budget Range",
+        "range1": "€1,000–2,500",
+        "range2": "€2,500–5,000",
+        "range3": "€5,000–10,000",
+        "range4": "€10,000+",
+        "dontKnow": "I don't know yet"
+      },
+      "timeline": {
+        "label": "When would you like to start?",
+        "placeholder": "Timeline",
+        "asap": "ASAP",
+        "oneTwoMonths": "In 1–2 months",
+        "threePlusMonths": "In 3+ months",
+        "justExploring": "Just exploring"
+      }
+    },
+    "step6": {
+      "title": "Tell me a bit about your business or goals",
+      "description": "Optional context to help me understand.",
+      "businessContext": {
+        "placeholder": "My business helps X do Y..."
+      },
+      "successCriteria": {
+        "label": "What does success look like for you?",
+        "placeholder": "I want to increase sales by 20%..."
+      }
+    },
+    "step7": {
+      "title": "Where should I send your personalized plan?",
+      "email": {
+        "label": "Email Address",
+        "placeholder": "you@example.com",
+        "error": "Please enter a valid email address."
+      },
+      "bookCall": {
+        "label": "I'd also like to book a 15-min intro call."
+      },
+      "submit": {
+        "button": "Get My Personalized Estimate",
+        "submitting": "Submitting..."
+      }
+    },
+    "navigation": {
+      "back": "Back",
+      "next": "Next"
+    },
+    "messages": {
+      "submitted": "Project inquiry submitted! We'll be in touch soon.",
+      "submitError": "Failed to submit. Please try again."
+    }
   }
 }

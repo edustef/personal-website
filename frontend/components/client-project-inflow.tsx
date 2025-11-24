@@ -23,7 +23,6 @@ import {
 } from "@/components/ui/select";
 import {
   Field,
-  FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
@@ -32,6 +31,7 @@ import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { Doc, Id } from "@/convex/_generated/dataModel";
 import { sendProjectInquiryEmail } from "@/lib/actions";
+import { useTranslations } from "next-intl";
 
 const TOTAL_STEPS = 7;
 
@@ -39,16 +39,21 @@ type ClientProjectInflowProps = {
   recipientEmail?: string;
 };
 
-const emailFormSchema = z.object({
-  email: z.email("Please enter a valid email address."),
-  bookCall: z.boolean(),
-});
+const createEmailFormSchema = (errorMessage: string) =>
+  z.object({
+    email: z.email(errorMessage),
+    bookCall: z.boolean(),
+  });
 
-type EmailFormValues = z.infer<typeof emailFormSchema>;
+type EmailFormValues = {
+  email: string;
+  bookCall: boolean;
+};
 
 export function ClientProjectInflow({
   recipientEmail,
 }: ClientProjectInflowProps = {}) {
+  const t = useTranslations("clientProjectInflow");
   const [isMounted, setIsMounted] = useState(false);
   const [id, setId] = useState<Id<"projectInquiries"> | undefined>(undefined);
 
@@ -62,6 +67,8 @@ export function ClientProjectInflow({
 
   const currentStep = inquiry?.currentStep ?? 0;
   const isEmailStep = currentStep === 7;
+
+  const emailFormSchema = createEmailFormSchema(t("step7.email.error"));
 
   const emailForm = useForm<EmailFormValues>({
     resolver: zodResolver(emailFormSchema),
@@ -201,11 +208,11 @@ export function ClientProjectInflow({
         console.error("Failed to send email:", emailResult.message);
       }
 
-      toast.success("Project inquiry submitted! We'll be in touch soon.");
+      toast.success(t("messages.submitted"));
       localStorage.removeItem("project_inquiry_session");
     } catch (error) {
       console.error("Error submitting inquiry:", error);
-      toast.error("Failed to submit. Please try again.");
+      toast.error(t("messages.submitError"));
     }
   };
 
@@ -224,13 +231,11 @@ export function ClientProjectInflow({
   // Steps Rendering Logic
   const renderStep = () => {
     switch (currentStep) {
-      case 0: // Tech Check
+      case 0:
         return (
           <motion.div layout className="flex flex-col gap-6">
-            <h2 className="text-2xl font-bold">First things first...</h2>
-            <p className="text-muted-foreground">
-              To tailor the questions for you, are you technical?
-            </p>
+            <h2 className="text-2xl font-bold">{t("step0.title")}</h2>
+            <p className="text-muted-foreground">{t("step0.description")}</p>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <CardOption
                 selected={inquiry.isTech === true}
@@ -238,8 +243,8 @@ export function ClientProjectInflow({
                   await updateField("isTech", true);
                   await handleNext();
                 }}
-                title="Yes, I'm technical"
-                description="I understand code, stacks, and development flows."
+                title={t("step0.technical.title")}
+                description={t("step0.technical.description")}
               />
               <CardOption
                 selected={inquiry.isTech === false}
@@ -247,28 +252,28 @@ export function ClientProjectInflow({
                   await updateField("isTech", false);
                   await handleNext();
                 }}
-                title="No, I'm non-technical"
-                description="I focus on business/design, I need you to handle the tech."
+                title={t("step0.nonTechnical.title")}
+                description={t("step0.nonTechnical.description")}
               />
             </div>
           </motion.div>
         );
-      case 1: // Goal & Project Type
+      case 1:
         return (
           <motion.div layout className="flex flex-col gap-6">
             <StepHeader
-              title="What do you want to create or improve?"
-              description="Select all that apply."
+              title={t("step1.title")}
+              description={t("step1.description")}
             />
             <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
               {[
-                "A new website",
-                "Improve/redesign current website",
-                "A mobile app (iOS/Android)",
-                "Add AI features",
-                "Improve performance/SEO",
-                "Ongoing maintenance",
-                "Not sure yet",
+                t("step1.options.newWebsite"),
+                t("step1.options.improveWebsite"),
+                t("step1.options.mobileApp"),
+                t("step1.options.aiFeatures"),
+                t("step1.options.performance"),
+                t("step1.options.maintenance"),
+                t("step1.options.notSure"),
               ].map((opt) => (
                 <CardOption
                   size="sm"
@@ -282,42 +287,45 @@ export function ClientProjectInflow({
             </div>
           </motion.div>
         );
-      case 2: // Audience & Purpose
+      case 2:
         return (
           <motion.div layout className="flex flex-col gap-6">
             <StepHeader
-              title="Audience & Purpose"
-              description="Who is this for and what is the main goal?"
+              title={t("step2.title")}
+              description={t("step2.description")}
             />
 
             <div className="space-y-4">
-              <Label>Who is your project for?</Label>
+              <Label>{t("step2.audience.label")}</Label>
               <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-                {["Customers", "Internal team", "Community/users", "Other"].map(
-                  (opt) => (
-                    <CardOption
-                      size="sm"
-                      key={opt}
-                      selected={inquiry.targetAudience === opt}
-                      onClick={() => updateField("targetAudience", opt)}
-                      title={opt}
-                    />
-                  ),
-                )}
+                {[
+                  t("step2.audience.customers"),
+                  t("step2.audience.internalTeam"),
+                  t("step2.audience.community"),
+                  t("step2.audience.other"),
+                ].map((opt) => (
+                  <CardOption
+                    size="sm"
+                    key={opt}
+                    selected={inquiry.targetAudience === opt}
+                    onClick={() => updateField("targetAudience", opt)}
+                    title={opt}
+                  />
+                ))}
               </div>
             </div>
 
             <div className="space-y-4">
-              <Label>What is the main purpose?</Label>
+              <Label>{t("step2.purpose.label")}</Label>
               <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
                 {[
-                  "Generate leads",
-                  "Sell products/services",
-                  "Showcase portfolio",
-                  "Improve workflow",
-                  "Increase conversions",
-                  "Validate app idea",
-                  "Other",
+                  t("step2.purpose.generateLeads"),
+                  t("step2.purpose.sellProducts"),
+                  t("step2.purpose.showcasePortfolio"),
+                  t("step2.purpose.improveWorkflow"),
+                  t("step2.purpose.increaseConversions"),
+                  t("step2.purpose.validateIdea"),
+                  t("step2.purpose.other"),
                 ].map((opt) => (
                   <CardOption
                     size="sm"
@@ -331,33 +339,33 @@ export function ClientProjectInflow({
             </div>
           </motion.div>
         );
-      case 3: // Features
+      case 3:
         return (
           <motion.div layout className="flex flex-col gap-6">
             <StepHeader
-              title="Which features do you need?"
-              description="Select the core functionalities."
+              title={t("step3.title")}
+              description={t("step3.description")}
             />
             <div className="grid grid-cols-2 gap-3">
               {[
-                "Landing page",
-                "Multi-page website",
-                "Blog",
-                "Booking system",
-                "E-commerce",
-                "API integrations",
-                "Headless CMS",
-                "Custom components",
-                "Authentication",
-                "User profiles",
-                "Chat/Messaging",
-                "Push notifications",
-                "Maps/Geolocation",
-                "Payments",
-                "AI assistant",
-                "Custom chatbot",
-                "Automated workflows",
-                "Data dashboards",
+                t("step3.features.landingPage"),
+                t("step3.features.multiPage"),
+                t("step3.features.blog"),
+                t("step3.features.booking"),
+                t("step3.features.ecommerce"),
+                t("step3.features.apiIntegrations"),
+                t("step3.features.headlessCms"),
+                t("step3.features.customComponents"),
+                t("step3.features.authentication"),
+                t("step3.features.userProfiles"),
+                t("step3.features.chatMessaging"),
+                t("step3.features.pushNotifications"),
+                t("step3.features.mapsGeolocation"),
+                t("step3.features.payments"),
+                t("step3.features.aiAssistant"),
+                t("step3.features.customChatbot"),
+                t("step3.features.automatedWorkflows"),
+                t("step3.features.dataDashboards"),
               ].map((opt) => (
                 <CardOption
                   key={opt}
@@ -371,22 +379,22 @@ export function ClientProjectInflow({
             </div>
           </motion.div>
         );
-      case 4: // Current State
+      case 4:
         return (
           <motion.div layout className="flex flex-col gap-6">
-            <StepHeader title="Do you already have something started?" />
+            <StepHeader title={t("step4.title")} />
             <RadioGroup
               value={inquiry.currentStatus ?? ""}
               onValueChange={(v) => updateField("currentStatus", v)}
             >
               {[
-                "No, starting from scratch",
-                "Yes — needs improvement",
-                "I have designs",
-                "I have branding",
-                "I have backend/API",
-                "I have content",
-                "Just exploring",
+                t("step4.options.fromScratch"),
+                t("step4.options.needsImprovement"),
+                t("step4.options.haveDesigns"),
+                t("step4.options.haveBranding"),
+                t("step4.options.haveBackend"),
+                t("step4.options.haveContent"),
+                t("step4.options.justExploring"),
               ].map((o) => (
                 <div key={o} className="flex items-center space-x-2 py-1">
                   <RadioGroupItem value={o} id={o} />
@@ -395,35 +403,35 @@ export function ClientProjectInflow({
               ))}
             </RadioGroup>
 
-            {inquiry.currentStatus?.includes("Yes") && (
+            {inquiry.currentStatus === t("step4.options.needsImprovement") && (
               <div className="space-y-2">
-                <Label>Share your current link (optional)</Label>
+                <Label>{t("step4.currentLink.label")}</Label>
                 <Input
                   value={inquiry.currentLink ?? ""}
                   onChange={(e) => updateField("currentLink", e.target.value)}
-                  placeholder="https://..."
+                  placeholder={t("step4.currentLink.placeholder")}
                 />
               </div>
             )}
           </motion.div>
         );
-      case 5: // Budget & Timeline
+      case 5:
         return (
           <motion.div layout className="flex flex-col gap-6">
             <StepHeader
-              title="Budget & Timeline"
-              description="This helps me understand the scope."
+              title={t("step5.title")}
+              description={t("step5.description")}
             />
 
             <div className="space-y-4">
-              <Label>Budget Range</Label>
+              <Label>{t("step5.budget.label")}</Label>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  "€1,000–2,500",
-                  "€2,500–5,000",
-                  "€5,000–10,000",
-                  "€10,000+",
-                  "I don’t know yet",
+                  t("step5.budget.range1"),
+                  t("step5.budget.range2"),
+                  t("step5.budget.range3"),
+                  t("step5.budget.range4"),
+                  t("step5.budget.dontKnow"),
                 ].map((opt) => (
                   <CardOption
                     key={opt}
@@ -436,20 +444,20 @@ export function ClientProjectInflow({
             </div>
 
             <div className="space-y-4">
-              <Label>When would you like to start?</Label>
+              <Label>{t("step5.timeline.label")}</Label>
               <Select
                 value={inquiry.timeline}
                 onValueChange={(v) => updateField("timeline", v)}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Timeline" />
+                  <SelectValue placeholder={t("step5.timeline.placeholder")} />
                 </SelectTrigger>
                 <SelectContent>
                   {[
-                    "ASAP",
-                    "In 1–2 months",
-                    "In 3+ months",
-                    "Just exploring",
+                    t("step5.timeline.asap"),
+                    t("step5.timeline.oneTwoMonths"),
+                    t("step5.timeline.threePlusMonths"),
+                    t("step5.timeline.justExploring"),
                   ].map((o) => (
                     <SelectItem key={o} value={o}>
                       {o}
@@ -460,33 +468,33 @@ export function ClientProjectInflow({
             </div>
           </motion.div>
         );
-      case 6: // Business Context
+      case 6:
         return (
           <motion.div layout className="flex flex-col gap-6">
             <StepHeader
-              title="Tell me a bit about your business or goals"
-              description="Optional context to help me understand."
+              title={t("step6.title")}
+              description={t("step6.description")}
             />
             <Textarea
               value={inquiry.businessContext}
               onChange={(e) => updateField("businessContext", e.target.value)}
-              placeholder="My business helps X do Y..."
+              placeholder={t("step6.businessContext.placeholder")}
               className="min-h-[120px]"
             />
             <div className="space-y-2">
-              <Label>What does success look like for you?</Label>
+              <Label>{t("step6.successCriteria.label")}</Label>
               <Textarea
                 value={inquiry.successCriteria}
                 onChange={(e) => updateField("successCriteria", e.target.value)}
-                placeholder="I want to increase sales by 20%..."
+                placeholder={t("step6.successCriteria.placeholder")}
               />
             </div>
           </motion.div>
         );
-      case 7: // Email + CTA
+      case 7:
         return (
           <motion.div layout className="flex flex-col gap-6">
-            <StepHeader title="Where should I send your personalized plan?" />
+            <StepHeader title={t("step7.title")} />
             <form
               id="email-form"
               onSubmit={emailForm.handleSubmit(handleSubmit)}
@@ -499,13 +507,13 @@ export function ClientProjectInflow({
                   render={({ field, fieldState }) => (
                     <Field data-invalid={fieldState.invalid}>
                       <FieldLabel htmlFor="email-form-email">
-                        Email Address
+                        {t("step7.email.label")}
                       </FieldLabel>
                       <Input
                         {...field}
                         id="email-form-email"
                         type="email"
-                        placeholder="you@example.com"
+                        placeholder={t("step7.email.placeholder")}
                         autoComplete="email"
                         aria-invalid={fieldState.invalid}
                         onBlur={(e) => {
@@ -538,7 +546,7 @@ export function ClientProjectInflow({
                           }}
                         />
                         <FieldLabel htmlFor="email-form-bookCall">
-                          I'd also like to book a 15-min intro call.
+                          {t("step7.bookCall.label")}
                         </FieldLabel>
                       </div>
                     </Field>
@@ -552,8 +560,8 @@ export function ClientProjectInflow({
                 disabled={emailForm.formState.isSubmitting}
               >
                 {emailForm.formState.isSubmitting
-                  ? "Submitting..."
-                  : "Get My Personalized Estimate"}
+                  ? t("step7.submit.submitting")
+                  : t("step7.submit.button")}
               </Button>
             </form>
           </motion.div>
@@ -601,13 +609,13 @@ export function ClientProjectInflow({
       >
         {currentStep > 0 && (
           <Button variant="ghost" onClick={handleBack}>
-            <ChevronLeft className="mr-2 h-4 w-4" /> Back
+            <ChevronLeft className="mr-2 h-4 w-4" /> {t("navigation.back")}
           </Button>
         )}
         <div className="flex-1" />
         {currentStep > 0 && currentStep < TOTAL_STEPS && (
           <Button onClick={handleNext}>
-            Next <ChevronRight className="ml-2 h-4 w-4" />
+            {t("navigation.next")} <ChevronRight className="ml-2 h-4 w-4" />
           </Button>
         )}
       </motion.div>

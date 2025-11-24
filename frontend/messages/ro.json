@@ -1,1 +1,149 @@
-{}
+{
+  "startYourProject": {
+    "slug": "incepe-proiectul-tau",
+    "title": "Începe Proiectul Tău",
+    "description": "Alege opțiunea care te descrie cel mai bine."
+  },
+  "clientProjectInflow": {
+    "step0": {
+      "title": "Mai întâi...",
+      "description": "Pentru a adapta întrebările pentru tine, ești tehnic?",
+      "technical": {
+        "title": "Da, sunt tehnic",
+        "description": "Înțeleg codul, tehnologiile și fluxurile de dezvoltare."
+      },
+      "nonTechnical": {
+        "title": "Nu, nu sunt tehnic",
+        "description": "Mă concentrez pe afaceri/design, am nevoie de tine să te ocupi de partea tehnică."
+      }
+    },
+    "step1": {
+      "title": "Ce vrei să creezi sau să îmbunătățești?",
+      "description": "Selectează toate opțiunile care se aplică.",
+      "options": {
+        "newWebsite": "Un site web nou",
+        "improveWebsite": "Îmbunătățește/redesign site-ul actual",
+        "mobileApp": "O aplicație mobilă (iOS/Android)",
+        "aiFeatures": "Adaugă funcții AI",
+        "performance": "Îmbunătățește performanța/SEO",
+        "maintenance": "Întreținere continuă",
+        "notSure": "Nu sunt sigur încă"
+      }
+    },
+    "step2": {
+      "title": "Public Țintă și Scop",
+      "description": "Pentru cine este acest proiect și care este obiectivul principal?",
+      "audience": {
+        "label": "Pentru cine este proiectul tău?",
+        "customers": "Clienți",
+        "internalTeam": "Echipă internă",
+        "community": "Comunitate/utilizatori",
+        "other": "Altul"
+      },
+      "purpose": {
+        "label": "Care este scopul principal?",
+        "generateLeads": "Generează lead-uri",
+        "sellProducts": "Vinde produse/servicii",
+        "showcasePortfolio": "Prezintă portofoliul",
+        "improveWorkflow": "Îmbunătățește fluxul de lucru",
+        "increaseConversions": "Crește conversiile",
+        "validateIdea": "Validează ideea de aplicație",
+        "other": "Altul"
+      }
+    },
+    "step3": {
+      "title": "Ce funcții ai nevoie?",
+      "description": "Selectează funcționalitățile de bază.",
+      "features": {
+        "landingPage": "Pagină de destinație",
+        "multiPage": "Site web multi-pagină",
+        "blog": "Blog",
+        "booking": "Sistem de rezervare",
+        "ecommerce": "E-commerce",
+        "apiIntegrations": "Integrări API",
+        "headlessCms": "Headless CMS",
+        "customComponents": "Componente personalizate",
+        "authentication": "Autentificare",
+        "userProfiles": "Profiluri utilizatori",
+        "chatMessaging": "Chat/Mesagerie",
+        "pushNotifications": "Notificări push",
+        "mapsGeolocation": "Hărți/Geolocație",
+        "payments": "Plăți",
+        "aiAssistant": "Asistent AI",
+        "customChatbot": "Chatbot personalizat",
+        "automatedWorkflows": "Fluxuri de lucru automate",
+        "dataDashboards": "Tablouri de bord date"
+      }
+    },
+    "step4": {
+      "title": "Ai deja ceva început?",
+      "options": {
+        "fromScratch": "Nu, încep de la zero",
+        "needsImprovement": "Da — are nevoie de îmbunătățiri",
+        "haveDesigns": "Am design-uri",
+        "haveBranding": "Am branding",
+        "haveBackend": "Am backend/API",
+        "haveContent": "Am conținut",
+        "justExploring": "Doar explorez"
+      },
+      "currentLink": {
+        "label": "Partajează link-ul tău actual (opțional)",
+        "placeholder": "https://..."
+      }
+    },
+    "step5": {
+      "title": "Buget și Cronogramă",
+      "description": "Asta mă ajută să înțeleg domeniul de aplicare.",
+      "budget": {
+        "label": "Interval Buget",
+        "range1": "€1,000–2,500",
+        "range2": "€2,500–5,000",
+        "range3": "€5,000–10,000",
+        "range4": "€10,000+",
+        "dontKnow": "Nu știu încă"
+      },
+      "timeline": {
+        "label": "Când ai dori să începi?",
+        "placeholder": "Cronogramă",
+        "asap": "Cât mai curând",
+        "oneTwoMonths": "În 1–2 luni",
+        "threePlusMonths": "În 3+ luni",
+        "justExploring": "Doar explorez"
+      }
+    },
+    "step6": {
+      "title": "Spune-mi puțin despre afacerea sau obiectivele tale",
+      "description": "Context opțional pentru a mă ajuta să înțeleg.",
+      "businessContext": {
+        "placeholder": "Afacerea mea ajută X să facă Y..."
+      },
+      "successCriteria": {
+        "label": "Cum arată succesul pentru tine?",
+        "placeholder": "Vreau să cresc vânzările cu 20%..."
+      }
+    },
+    "step7": {
+      "title": "Unde ar trebui să îți trimit planul personalizat?",
+      "email": {
+        "label": "Adresă Email",
+        "placeholder": "tu@exemplu.com",
+        "error": "Te rugăm să introduci o adresă de email validă."
+      },
+      "bookCall": {
+        "label": "Aș dori, de asemenea, să rezerv un apel introductiv de 15 minute."
+      },
+      "submit": {
+        "button": "Obține Estimarea Mea Personalizată",
+        "submitting": "Se trimite..."
+      }
+    },
+    "navigation": {
+      "back": "Înapoi",
+      "next": "Următorul"
+    },
+    "messages": {
+      "submitted": "Cererea de proiect a fost trimisă! Vom lua legătura în curând.",
+      "submitError": "Trimiterea a eșuat. Te rugăm să încerci din nou."
+    }
+  }
+}
