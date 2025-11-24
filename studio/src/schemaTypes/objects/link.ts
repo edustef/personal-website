@@ -22,8 +22,9 @@ export const link = defineType({
         list: [
           { title: "URL", value: "href" },
           { title: "Post", value: "post" },
+          { title: "Page", value: "page" },
         ],
-        layout: "radio",
+        layout: "dropdown",
       },
     }),
     defineField({
@@ -36,6 +37,20 @@ export const link = defineType({
         Rule.custom((value, context: any) => {
           if (context.parent?.linkType === "href" && !value) {
             return "URL is required when Link Type is URL";
+          }
+          return true;
+        }),
+    }),
+    defineField({
+      name: "page",
+      title: "Page",
+      type: "reference",
+      to: [{ type: "home" }, { type: "resume" }, { type: "servicesPage" }],
+      hidden: ({ parent }) => parent?.linkType !== "page",
+      validation: (Rule) =>
+        Rule.custom((value, context: any) => {
+          if (context.parent?.linkType === "page" && !value) {
+            return "Page reference is required when Link Type is Page";
           }
           return true;
         }),

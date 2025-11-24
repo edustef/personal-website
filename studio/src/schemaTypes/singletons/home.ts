@@ -1,27 +1,17 @@
 import { HomeIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
+import { toPlainText } from "../../lib/toPlainText";
 
 export const home = defineType({
   name: "home",
   title: "Home Page",
   type: "document",
   icon: HomeIcon,
-  fieldsets: [
-    {
-      name: "seo",
-      title: "SEO",
-      options: {
-        collapsible: true,
-        collapsed: true,
-      },
-    },
-  ],
   fields: [
     defineField({
       name: "seo",
       title: "SEO",
       type: "seo",
-      fieldset: "seo",
     }),
     defineField({
       name: "title",
@@ -41,37 +31,43 @@ export const home = defineType({
       name: "tagline",
       title: "Hero Tagline",
       description: "Subtitle shown below the headline",
-      type: "internationalizedArrayString",
+      type: "internationalizedArrayBlockContent",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "renovationLabelPrimary",
       title: "Renovation Badge Primary",
       description: "First word in the hero badge",
       type: "internationalizedArrayString",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "renovationLabelSecondary",
       title: "Renovation Badge Secondary",
       description: "Second word in the hero badge",
       type: "internationalizedArrayString",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "findMeOnLabel",
       title: "Find Me On",
       description: "Heading shown above the social links",
       type: "internationalizedArrayString",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "resumeButtonLabel",
       title: "Resume Button",
       description: "Label for the resume button in the header",
       type: "internationalizedArrayString",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "profile",
       title: "Profile",
       type: "reference",
       to: [{ type: "profile" }],
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "ctaButtons",
@@ -92,16 +88,13 @@ export const home = defineType({
       title: "Footer Content",
       description: "Localized rich text shown at the bottom of the home page",
       type: "internationalizedArrayString",
+      validation: (rule) => rule.required(),
     }),
   ],
   preview: {
-    select: {
-      title: "title",
-    },
-    prepare({ title }) {
+    prepare() {
       return {
-        subtitle: "Home Page",
-        title,
+        title: "Home Page",
       };
     },
   },

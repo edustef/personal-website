@@ -1,24 +1,12 @@
 import { defineQuery } from "next-sanity";
 
-export const settingsQuery = defineQuery(`*[_type == "settings"][0]`);
+export const settingsQuery = defineQuery(`
+  *[_type == "settings"][0]
+`);
 
 export const homeQuery = defineQuery(`
   *[_type == "home"][0]{
-    _id,
-    title,
-    headline,
-    tagline,
-    renovationLabelPrimary,
-    renovationLabelSecondary,
-    findMeOnLabel,
-    resumeButtonLabel,
-    ctaButtons[]{
-      text,
-      link{
-        href,
-        external
-      }
-    },
+    ...,
     profile->{
       name,
       email,
@@ -29,7 +17,7 @@ export const homeQuery = defineQuery(`
       picture,
       workPreference,
       socialLinks[]{
-        platform,
+        name,
         url
       }
     },

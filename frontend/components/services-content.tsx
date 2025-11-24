@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/card";
 import { ServiceView } from "@/sanity.types";
 import { localizeBlockContent, localizeField } from "@/lib/i18n";
-import CustomPortableText from "./PortableText";
+import CustomPortableText from "./sanity/portable-text";
 import { useLocale } from "@/app/[locale]/locale-provider";
 
 type ServicesContentProps = {

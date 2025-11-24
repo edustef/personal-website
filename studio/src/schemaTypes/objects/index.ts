@@ -12,6 +12,7 @@ import { maintenancePlan } from "./maintenancePlan";
 import { processStep } from "./processStep";
 import { serviceView } from "./serviceView";
 import { seo } from "./seo";
+import { header } from "./header";
 
 export const objects = [
   blockContent,
@@ -28,4 +29,5 @@ export const objects = [
   processStep,
   serviceView,
   seo,
+  header,
 ];

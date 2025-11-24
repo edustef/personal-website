@@ -6,22 +6,12 @@ export const servicesPage = defineType({
   title: "Services Page",
   type: "document",
   icon: TagIcon,
-  fieldsets: [
-    {
-      name: "seo",
-      title: "SEO",
-      options: {
-        collapsible: true,
-        collapsed: true,
-      },
-    },
-  ],
+
   fields: [
     defineField({
       name: "seo",
       title: "SEO",
       type: "seo",
-      fieldset: "seo",
     }),
     defineField({
       name: "title",

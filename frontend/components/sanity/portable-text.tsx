@@ -14,14 +14,15 @@ import {
   type PortableTextBlock,
 } from "next-sanity";
 
-import ResolvedLink from "@/components/ResolvedLink";
+import ResolvedLink from "@/components/sanity/resolved-link";
+import { BlockContent } from "@/sanity.types";
 
 export default function CustomPortableText({
   className,
   value,
 }: {
   className?: string;
-  value: PortableTextBlock[];
+  value: BlockContent;
 }) {
   const components: PortableTextComponents = {
     block: {

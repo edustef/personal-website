@@ -64,6 +64,8 @@ export function linkResolver(link: Link | undefined) {
       if (link?.post && typeof link.post === "string") {
         return `/posts/${link.post}`;
       }
+    case "startProjectPage":
+      return "/start-your-project";
     default:
       return null;
   }

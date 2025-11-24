@@ -6,7 +6,7 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { localizeField, type LanguageId } from "@/lib/i18n";
 import { getLocalizedSettingsMetadata } from "@/lib/seo";
 import { ServicesSelection } from "@/components/ServicesSelection";
-import { ServicesContent } from "@/components/ServicesContent";
+import { ServicesContent } from "@/components/services-content";
 import { ServiceView } from "@/sanity.types";
 
 type Props = {

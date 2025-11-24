@@ -135,31 +135,7 @@ export default defineConfig({
         { id: "es", title: "Spanish" },
       ],
       defaultLanguages: ["en"],
-      fieldTypes: [
-        "string",
-        "blockContent",
-        'ogImage'
-        // {
-        //   name: "ogImage",
-        //   type: "image",
-        //   options: {
-        //     hotspot: true,
-        //   },
-        //   fields: [
-        //     {
-        //       name: "alt",
-        //       title: "Alt",
-        //       type: "string",
-        //     },
-        //     {
-        //       name: "metadataBase",
-        //       title: "Metadata Base",
-        //       type: "url",
-        //     },
-        //   ],
-        //   validation: (rule) => rule.required(),
-        // },
-      ],
+      fieldTypes: ["string", "blockContent", "ogImage", "image"],
     }),
     media(),
   ],

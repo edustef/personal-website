@@ -1,16 +1,16 @@
-import type { PortableTextBlock } from "next-sanity";
+import { toPlainText } from "next-sanity";
 
 import {
   localizeBlockContent,
   localizeField,
   defaultLanguage,
+  localizedImage,
 } from "@/lib/i18n";
 import type { LanguageId } from "@/lib/i18n";
-import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/live";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
-import type { Settings } from "@/sanity.types";
+
 
 export type LocalizedSettingsMetadata = {
   title: string;
@@ -26,20 +26,19 @@ export async function getLocalizedSettingsMetadata(
     query: settingsQuery,
     stega: false,
   });
+  if (!settings) {
+    throw new Error("Settings not found");
+  }
 
-  const title =
-    localizeField(settings?.title, locale) ??
-    localizeField(settings?.title, defaultLanguage) ??
-    demo.title;
+  const title = localizeField(settings.seo.title, locale);
 
-  const descriptionBlocks = localizeBlockContent(settings?.description, locale);
-  const description =
-    truncateText(portableTextToPlainText(descriptionBlocks)) ||
-    truncateText(
-      portableTextToPlainText(demo.description as PortableTextBlock[]),
-    );
+  const descriptionBlocks = localizeBlockContent(
+    settings.seo.description,
+    locale,
+  );
+  const description = truncateText(toPlainText(descriptionBlocks));
 
-  const localizedOgImage = pickLocalizedImage(settings?.ogImage, locale);
+  const localizedOgImage = localizedImage(settings.seo.ogImage, locale);
   const ogImage = resolveOpenGraphImage(localizedOgImage);
 
   const metadataBase = parseMetadataBase(localizedOgImage?.metadataBase);
@@ -50,33 +49,6 @@ export async function getLocalizedSettingsMetadata(
     ogImage,
     metadataBase,
   };
-}
-
-function pickLocalizedImage(
-  image: Settings["ogImage"] | null | undefined,
-  locale: LanguageId,
-) {
-  if (!image) return undefined;
-
-  const localized =
-    image.find((item) => item._key === locale)?.value ??
-    image.find((item) => item._key === defaultLanguage)?.value ??
-    image[0]?.value;
-  return localized ?? undefined;
-}
-
-function portableTextToPlainText(
-  blocks: PortableTextBlock[] | null | undefined,
-) {
-  if (!blocks || blocks.length === 0) return "";
-  return blocks
-    .map(
-      (block) =>
-        block.children?.map((child) => child.text ?? "").join("") ?? "",
-    )
-    .join("\n")
-    .replace(/\s+/g, " ")
-    .trim();
 }
 
 function truncateText(value: string, maxLength = 160) {

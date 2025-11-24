@@ -3,10 +3,10 @@ import { notFound } from "next/navigation";
 import { type PortableTextBlock } from "next-sanity";
 import { Suspense } from "react";
 
-import CoverImage from "@/components/CoverImage";
-import DateComponent from "@/components/Date";
-import { MorePosts } from "@/components/Posts";
-import PortableText from "@/components/PortableText";
+import CoverImage from "@/components/cover-image";
+import DateComponent from "@/components/date";
+import { MorePosts } from "@/components/posts";
+import PortableText from "@/components/sanity/portable-text";
 import { sanityFetch } from "@/sanity/lib/live";
 import { postPagesSlugs, postQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
@@ -47,11 +47,13 @@ export async function generateMetadata(
   const params = await props.params;
   const locale = params.locale as LanguageId;
 
-  const [{ data: post }, localizedSettings, parentMetadata] = await Promise.all([
-    sanityFetch({ query: postQuery, params, stega: false }),
-    getLocalizedSettingsMetadata(locale),
-    parent,
-  ]);
+  const [{ data: post }, localizedSettings, parentMetadata] = await Promise.all(
+    [
+      sanityFetch({ query: postQuery, params, stega: false }),
+      getLocalizedSettingsMetadata(locale),
+      parent,
+    ],
+  );
 
   if (!post?._id) {
     return {
@@ -118,7 +120,7 @@ export default async function PostPage(props: Props) {
 
   return (
     <>
-      <div className="bg-gradient-to-b from-white to-gray-50">
+      <div className="bg-linear-to-b from-white to-gray-50">
         <div className="container py-12 lg:py-24">
           <div className="mx-auto max-w-4xl">
             <div className="mb-12">

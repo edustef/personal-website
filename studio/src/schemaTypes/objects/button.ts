@@ -17,4 +17,16 @@ export const button = defineType({
       type: "link",
     },
   ],
+  preview: {
+    select: {
+      text: "text",
+      link: "link",
+    },
+    prepare({ text, link }) {
+      return {
+        title: text[0].value,
+        subtitle: link?.linkType,
+      };
+    },
+  },
 });

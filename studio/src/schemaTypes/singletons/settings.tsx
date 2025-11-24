@@ -1,19 +1,19 @@
 import { CogIcon } from "@sanity/icons";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
-import * as demo from "../../lib/initialValues";
-
-/**
- * Settings schema Singleton.  Singletons are single documents that are displayed not in a collection, handy for things like site settings and other global configurations.
- * Learn more: https://www.sanity.io/docs/create-a-link-to-a-single-edit-page-in-your-main-document-type-list
- */
-
 export const settings = defineType({
   name: "settings",
   title: "Settings",
   type: "document",
   icon: CogIcon,
+
   fields: [
+    defineField({
+      name: "seo",
+      title: "SEO",
+      type: "seo",
+      validation: (rule) => rule.required(),
+    }),
     defineField({
       name: "title",
       description: "This field is the title of your blog.",
@@ -29,36 +29,10 @@ export const settings = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: "menuItems",
-      title: "Menu Item list",
-      description: "Links displayed on the header of your site.",
-      type: "array",
-      of: [
-        {
-          title: "Reference",
-          type: "reference",
-          to: [
-            {
-              type: "home",
-            },
-            {
-              type: "project",
-            },
-          ],
-        },
-      ],
-    }),
-    defineField({
-      name: "ogImage",
-      title: "Open Graph Image",
-      type: "internationalizedArrayOgImage",
-      description: "Displayed on social cards and search engine results.",
-      options: {
-        hotspot: true,
-        aiAssist: {
-          imageDescriptionField: "alt",
-        },
-      },
+      name: "header",
+      title: "Header",
+      type: "header",
+      validation: (rule) => rule.required(),
     }),
   ],
   preview: {

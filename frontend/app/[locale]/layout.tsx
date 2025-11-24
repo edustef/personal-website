@@ -8,7 +8,7 @@ import { VisualEditing } from "next-sanity/visual-editing";
 import { Toaster } from "sonner";
 import { notFound } from "next/navigation";
 
-import DraftModeToast from "@/components/DraftModeToast";
+import DraftModeToast from "@/components/draft-mode-toast";
 import { SanityLive } from "@/sanity/lib/live";
 import { handleError } from "../../lib/client-utils";
 import { ThemeProvider } from "@/components/theme-provider";

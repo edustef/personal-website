@@ -4,6 +4,10 @@ export const seo = defineType({
   name: "seo",
   title: "SEO",
   type: "object",
+  options: {
+    collapsible: true,
+    collapsed: true,
+  },
   fields: [
     defineField({
       name: "title",
@@ -15,7 +19,7 @@ export const seo = defineType({
       name: "description",
       title: "SEO Description",
       description: "Meta description for search engines",
-      type: "internationalizedArrayString",
+      type: "internationalizedArrayBlockContent",
     }),
     defineField({
       name: "ogImage",
@@ -31,4 +35,3 @@ export const seo = defineType({
     }),
   ],
 });
-

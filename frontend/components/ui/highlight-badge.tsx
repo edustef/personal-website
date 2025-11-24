@@ -2,22 +2,11 @@
 
 import { motion } from "motion/react";
 import { RocketIcon } from "lucide-react";
+import { cn, CommonProps } from "@/lib/utils";
 
-type RenovationBadgeProps = {
-  primary?: string | null;
-  secondary?: string | null;
-};
-
-export function RenovationBadge({
-  primary,
-  secondary,
-}: RenovationBadgeProps) {
-  if (!primary && !secondary) {
-    return null;
-  }
-
+export function HighlightBadge({ children, className }: CommonProps) {
   return (
-    <div className="relative inline-flex w-fit">
+    <div className={cn("relative inline-flex w-fit", className)}>
       <motion.span
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 rounded-lg"
@@ -36,14 +25,12 @@ export function RenovationBadge({
         }}
         transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
       />
-      <div className="relative z-10 flex items-center gap-2 rounded-lg bg-secondary/30 px-5 py-2 text-secondary-foreground">
+      <div className="bg-secondary/30 text-secondary-foreground relative z-10 flex items-center gap-2 rounded-lg px-5 py-2">
         <RocketIcon className="size-4" />
         <div className="flex flex-row items-center text-sm leading-none tracking-widest uppercase">
-          <span>{primary}</span>
-          <span className="font-bold ml-2">{secondary}</span>
+          {children}
         </div>
       </div>
     </div>
   );
 }
-

@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
-import { AllPosts } from "@/components/Posts";
+import { AllPosts } from "@/components/posts";
 import { LanguageId } from "@/lib/i18n";
 
 type Props = {

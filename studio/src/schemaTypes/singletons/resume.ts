@@ -6,22 +6,12 @@ export const resume = defineType({
   title: "Resume Page",
   type: "document",
   icon: DocumentIcon,
-  fieldsets: [
-    {
-      name: "seo",
-      title: "SEO",
-      options: {
-        collapsible: true,
-        collapsed: true,
-      },
-    },
-  ],
+
   fields: [
     defineField({
       name: "seo",
       title: "SEO",
       type: "seo",
-      fieldset: "seo",
     }),
     defineField({
       name: "title",

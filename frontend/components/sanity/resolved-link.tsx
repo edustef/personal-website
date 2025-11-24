@@ -1,31 +1,29 @@
-import Link from "next/link";
+import { Link as UiLink, LinkProps as UiLinkProps } from "@/components/ui/link";
 
 import { linkResolver } from "@/sanity/lib/utils";
+import { Link } from "@/sanity.types";
 
-interface ResolvedLinkProps {
-  link: any;
-  children: React.ReactNode;
-  className?: string;
+interface ResolvedLinkProps extends Omit<UiLinkProps, "href"> {
+  link: Link | undefined;
 }
 
 export default function ResolvedLink({
   link,
   children,
-  className,
+  ...props
 }: ResolvedLinkProps) {
-  // resolveLink() is used to determine the type of link and return the appropriate URL.
   const resolvedLink = linkResolver(link);
 
   if (typeof resolvedLink === "string") {
     return (
-      <Link
+      <UiLink
         href={resolvedLink}
         target={link?.openInNewTab ? "_blank" : undefined}
         rel={link?.openInNewTab ? "noopener noreferrer" : undefined}
-        className={className}
+        {...props}
       >
         {children}
-      </Link>
+      </UiLink>
     );
   }
   return <>{children}</>;

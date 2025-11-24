@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { type LanguageId } from "@/lib/i18n";
+import { type LanguageId, localizeField } from "@/lib/i18n";
 import { LanguageToggle } from "@/components/language-toggle";
 import {
   NavigationMenu,
@@ -9,24 +9,8 @@ import {
 import { Link } from "@/components/ui/link";
 import { cn } from "@/lib/utils";
 import { AnimatedLogo } from "./animated-logo";
-
-const skipCopy: Record<LanguageId, string> = {
-  en: "Skip to main content",
-  ro: "Sari la continutul principal",
-  es: "Saltar al contenido principal",
-};
-
-const navCopy: Record<LanguageId, string> = {
-  en: "Primary navigation",
-  ro: "Navigatie principala",
-  es: "Navegacion principal",
-};
-
-const contactCopy: Record<LanguageId, string> = {
-  en: "Contact me",
-  ro: "Contacteaza-ma",
-  es: "Contactame",
-};
+import { sanityFetch } from "@/sanity/lib/live";
+import { settingsQuery } from "@/sanity/lib/queries";
 
 type HeaderProps = {
   locale: LanguageId;
@@ -34,9 +18,18 @@ type HeaderProps = {
 };
 
 export async function Header({ locale, className }: HeaderProps) {
-  const skipLinkText = skipCopy[locale] ?? skipCopy.en;
-  const navLabel = navCopy[locale] ?? navCopy.en;
-  const contactLabel = contactCopy[locale] ?? contactCopy.en;
+  const { data: settings } = await sanityFetch({
+    query: settingsQuery,
+    stega: false,
+  });
+
+  if (!settings) {
+    return null;
+  }
+
+  const skipLinkText = localizeField(settings.header.skipLinkText, locale);
+  const navigationLabel = localizeField(settings.header.navLabel, locale);
+  const buttonLabel = localizeField(settings.header.buttonLabel, locale);
 
   return (
     <header
@@ -54,7 +47,7 @@ export async function Header({ locale, className }: HeaderProps) {
       <div className="container mx-auto w-full max-w-6xl">
         <div className="flex items-center justify-between gap-5">
           <Link
-            className="size-6 md:size-8 group flex items-center gap-2 p-0"
+            className="group flex size-6 items-center gap-2 p-0 md:size-8"
             href={`/${locale}`}
           >
             {/* <Image
@@ -68,32 +61,13 @@ export async function Header({ locale, className }: HeaderProps) {
             </span> */}
           </Link>
 
-          <NavigationMenu aria-label={navLabel}>
+          <NavigationMenu aria-label={navigationLabel}>
             <NavigationMenuList className="gap-4 md:gap-6">
-              {/* <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link href={`/${locale}`}>Home</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link href={`/${locale}/posts`}>Blog</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Button size="sm" asChild>
-                  <Link href={`/${locale}/resume`}>
-                    <FileText className="mr-2 h-4 w-4" />
-                    Resume
-                  </Link>
-                </Button>
-              </NavigationMenuItem> */}
-
               <NavigationMenuItem>
                 <Button className="w-fit" asChild>
-                  <a href="#contact">{contactLabel}</a>
+                  <Link lang={locale} href="/start-your-project">
+                    {buttonLabel}
+                  </Link>
                 </Button>
               </NavigationMenuItem>
               <NavigationMenuItem>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { sanityFetch } from "@/sanity/lib/live";
 import { morePostsQuery, allPostsQuery } from "@/sanity/lib/queries";
 import { AllPostsQueryResult } from "@/sanity.types";
-import DateComponent from "@/components/Date";
+import DateComponent from "@/components/date";
 import { createDataAttribute } from "next-sanity";
 import { urlForImage } from "@/sanity/lib/utils";
 import { localizeField, type LanguageId } from "@/lib/i18n";
