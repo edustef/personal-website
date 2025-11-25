@@ -60,9 +60,11 @@ export default async function StartProjectPage(props: Props) {
   setRequestLocale(locale);
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <>
       <Spotlight />
-      <ClientProjectInflow />
-    </div>
+      <div className="container mx-auto px-4 py-12">
+        <ClientProjectInflow />
+      </div>
+    </>
   );
 }

@@ -38,7 +38,7 @@ export async function Header({ locale, className }: HeaderProps) {
   return (
     <header
       className={cn(
-        "sticky inset-0 z-50 flex h-16 w-full items-center bg-transparent px-4 backdrop-blur-lg backdrop-brightness-50 backdrop-grayscale-75 md:h-20",
+        "fixed inset-0 z-50 flex h-16 w-full items-center bg-transparent px-4 backdrop-blur-lg backdrop-brightness-50 backdrop-grayscale-75 md:h-20",
         className,
       )}
     >

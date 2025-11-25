@@ -1,5 +1,6 @@
 import posthog from "posthog-js";
+import { getBaseUrl } from "./lib/utils";
 
 posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
-  api_host: "https://www.eduardstefan.dev/magical-app",
+  api_host: `${getBaseUrl()}/magical-app`,
 });
