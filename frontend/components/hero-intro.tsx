@@ -37,7 +37,7 @@ export const HeroIntroContent = ({ children, className }: CommonProps) => {
 export const HeroIntroSocialLinks = ({ children, className }: CommonProps) => {
   return (
     <AnimatedContainer
-      className={cn("flex flex-col gap-4 md:flex-row", className)}
+      className={cn("flex flex-row gap-4", className)}
       duration={3}
       delay={0.2}
       ease="smooth"
