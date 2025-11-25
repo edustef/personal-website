@@ -17,6 +17,7 @@ export type Header = {
   _type: "header";
   skipLinkText: InternationalizedArrayString;
   navLabel: InternationalizedArrayString;
+  homeButtonLabel: InternationalizedArrayString;
   cta: Button;
 };
 
@@ -848,6 +849,7 @@ export type SettingsQueryResult = {
     _type: "header";
     skipLinkText: InternationalizedArrayString;
     navLabel: InternationalizedArrayString;
+    homeButtonLabel: InternationalizedArrayString;
     cta: {
       _type: "button";
       text: InternationalizedArrayString;

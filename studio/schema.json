@@ -28,6 +28,14 @@
           },
           "optional": false
         },
+        "homeButtonLabel": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "inline",
+            "name": "internationalizedArrayString"
+          },
+          "optional": false
+        },
         "cta": {
           "type": "objectAttribute",
           "value": {

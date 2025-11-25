@@ -20,6 +20,13 @@ export const header = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "homeButtonLabel",
+      title: "Home Button Label",
+      description: "ARIA label for the home button",
+      type: "internationalizedArrayString",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: "cta",
       title: "CTA",
       type: "button",

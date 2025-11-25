@@ -30,7 +30,10 @@ export async function Header({ locale, className }: HeaderProps) {
 
   const skipLinkText = localizeField(settings.header.skipLinkText, locale);
   const navigationLabel = localizeField(settings.header.navLabel, locale);
-
+  const homeButtonLabel = localizeField(
+    settings.header.homeButtonLabel,
+    locale,
+  );
 
   return (
     <header
@@ -48,6 +51,7 @@ export async function Header({ locale, className }: HeaderProps) {
       <div className="container mx-auto w-full max-w-6xl">
         <div className="flex items-center justify-between gap-5">
           <Link
+            aria-label={homeButtonLabel}
             className="group flex size-6 items-center gap-2 p-0 md:size-8"
             href="/"
           >
