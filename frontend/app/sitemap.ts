@@ -23,17 +23,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   });
 
   sitemap.push({
-    url: `${domain}/resume`,
+    url: `${domain}/start-your-project`,
     lastModified: new Date(),
     priority: 0.9,
     changeFrequency: "monthly",
-  });
-
-  sitemap.push({
-    url: `${domain}/posts`,
-    lastModified: new Date(),
-    priority: 0.7,
-    changeFrequency: "weekly",
   });
 
   if (allPostsAndPages != null && allPostsAndPages.data.length != 0) {
