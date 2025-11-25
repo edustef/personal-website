@@ -65,10 +65,7 @@ function parseMetadataBase(value: string | undefined) {
   }
 }
 
-export function getCanonicalUrl(
-  locale: string,
-  path: string = "",
-): string {
+export function getCanonicalUrl(locale: string, path: string = ""): string {
   const baseUrl = getBaseUrl();
   const localePath = locale === routing.defaultLocale ? "" : `/${locale}`;
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
