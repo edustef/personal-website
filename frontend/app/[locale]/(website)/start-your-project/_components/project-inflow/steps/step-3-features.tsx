@@ -48,7 +48,7 @@ export function Step3Features({ inquiryId, onToggle }: Step3FeaturesProps) {
         title={t("step3.title")}
         description={t("step3.description")}
       />
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid gap-3">
         {features.map((opt) => (
           <CardOption
             key={opt}
