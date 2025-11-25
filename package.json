@@ -26,6 +26,7 @@
     "build:next": "npm run build --workspace=frontend",
     "build:studio": "npm run build --workspace=studio",
     "build": "npm-run-all --parallel --print-label build:*",
+    "serve:next": "npm run start --workspace=frontend",
     "deploy:next": "npm run deploy --workspace=frontend",
     "deploy:studio": "npm run deploy --workspace=studio",
     "deploy": "npm-run-all --parallel --print-label deploy:*",

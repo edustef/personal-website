@@ -7,11 +7,14 @@ export const settingsQuery = defineQuery(`
       ...,
       cta{
         ...,
-  href,
-  internal->{
-    _type,
-    "slug": slug.current
-  }
+        link{
+          ...,
+          href,
+          internal->{
+            _type,
+            "slug": slug.current
+          }
+        }
       }
     }
   }
@@ -22,11 +25,14 @@ export const homeQuery = defineQuery(`
     ...,
     ctaButtons[]{
       ...,
-  href,
-  internal->{
-    _type,
-    "slug": slug.current
-  }
+      link{
+        ...,
+        href,
+        internal->{
+          _type,
+          "slug": slug.current
+        }
+      }
     },
     profile->{
       name,

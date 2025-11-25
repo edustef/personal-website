@@ -31,6 +31,8 @@ export async function Header({ locale, className }: HeaderProps) {
   const skipLinkText = localizeField(settings.header.skipLinkText, locale);
   const navigationLabel = localizeField(settings.header.navLabel, locale);
 
+  console.log(settings.header.cta);
+
   return (
     <header
       className={cn(
