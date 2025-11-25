@@ -22,18 +22,18 @@ export function Navigation({
   return (
     <motion.div
       layout
-      className="mt-8 flex justify-between border-t pt-8"
+      className="mt-8 flex justify-between items-center border-t pt-8"
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       {currentStep > 0 && (
         <Button variant="ghost" onClick={onBack}>
-          <ChevronLeft className="mr-2 h-4 w-4" /> {backLabel}
+          <ChevronLeft className="size-5" /> {backLabel}
         </Button>
       )}
       <div className="flex-1" />
       {currentStep > 0 && currentStep < totalSteps && (
         <Button onClick={onNext}>
-          {nextLabel} <ChevronRight className="ml-2 h-4 w-4" />
+          {nextLabel} <ChevronRight className="size-5" />
         </Button>
       )}
     </motion.div>
