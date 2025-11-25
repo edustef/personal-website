@@ -110,7 +110,7 @@ export default async function Page(props: Props) {
                 </h1>
                 <CustomPortableText
                   value={localizeBlockContent(home.tagline, locale)}
-                  className="text-muted-foreground text-lg md:text-xl"
+                  className="text-muted-foreground text-lg md:max-w-2xl md:text-xl"
                 />
               </HeroIntroContent>
               <HeroIntroCtaButtons>
