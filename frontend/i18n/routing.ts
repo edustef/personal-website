@@ -8,7 +8,7 @@ export const locales = [
 
 export type LocaleId = (typeof locales)[number]["id"];
 
-export const defaultLocale: LocaleId = "en";
+export const defaultLocale = "en" satisfies LocaleId;
 
 export const routing = defineRouting({
   defaultLocale: "en",

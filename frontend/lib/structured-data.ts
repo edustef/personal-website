@@ -58,13 +58,14 @@ export type ArticleSchema = {
 
 export function createPersonSchema(
   person: {
-    name?: string;
-    email?: string;
-    phone?: string;
-    motto?: string;
-    about?: string;
-    picture?: { asset?: { url?: string } };
-    socialLinks?: Array<{ url?: string }>;
+    name?: string | null;
+    email?: string | null;
+    phone?: string | null;
+    motto?: string | null;
+    about?: string | null;
+    picture?: string | null;
+    socialLinks?: Array<{ url?: string | null }> | null;
+    workPreference?: string | null;
   },
   locale: string,
 ): PersonSchema {
@@ -93,8 +94,8 @@ export function createPersonSchema(
     schema.description = person.about;
   }
 
-  if (person.picture?.asset?.url) {
-    schema.image = person.picture.asset.url;
+  if (person.picture) {
+    schema.image = person.picture;
   }
 
   if (person.socialLinks && person.socialLinks.length > 0) {
@@ -106,20 +107,19 @@ export function createPersonSchema(
   return schema;
 }
 
-export async function createWebSiteSchema(
+export function createWebSiteSchema(
   name: string,
   description: string | undefined,
   locale: string,
-): Promise<WebSiteSchema> {
-  const url = await getCanonicalUrl(locale, "");
-  const locales = routing.locales.map((loc) => loc.id);
+): WebSiteSchema {
+  const url = getCanonicalUrl(locale, "");
 
   const schema: WebSiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name,
     url,
-    inLanguage: locales,
+    inLanguage: routing.locales,
   };
 
   if (description) {

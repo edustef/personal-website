@@ -46,7 +46,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
   const pageTitle = localizeField(home.seo?.title, locale);
   const pageDescription = localizeBlockContent(home.seo?.description, locale);
-  const canonicalUrl = await getCanonicalUrl(locale, "/");
+  const canonicalUrl = getCanonicalUrl(locale, "/");
 
   return {
     title: pageTitle,

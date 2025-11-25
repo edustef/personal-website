@@ -5,9 +5,9 @@ import { servicesPageQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
 import { getLocalizedSettingsMetadata, getCanonicalUrl } from "@/lib/seo";
 import { localizeField } from "@/sanity/lib/localization";
-import { hasLocale } from "next-intl";
+import { hasLocale, Locale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import { routing } from "@/i18n/routing";
+import { defaultLocale, LocaleId, routing } from "@/i18n/routing";
 import { ClientProjectInflow } from "@/app/[locale]/(website)/start-your-project/client-project-inflow";
 
 type Props = {
@@ -16,7 +16,7 @@ type Props = {
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
-  const { locale } = params;
+  const locale = params.locale as LocaleId;
 
   const [{ data: page }, localizedSettings] = await Promise.all([
     sanityFetch({ query: servicesPageQuery, params: { locale } }),
@@ -31,8 +31,12 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   }
 
   const title = localizeField(page.seo?.title, locale);
-  const localizedPath = routing.pathnames?.["/start-your-project"]?.[locale] || "/start-your-project";
-  const canonicalUrl = await getCanonicalUrl(locale, localizedPath);
+  const localizedPath =
+    locale === defaultLocale
+      ? "/start-your-project"
+      : routing.pathnames?.["/start-your-project"]?.[locale] ||
+        "/start-your-project";
+  const canonicalUrl = getCanonicalUrl(locale, localizedPath);
 
   return {
     title: title

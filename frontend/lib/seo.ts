@@ -1,5 +1,4 @@
 import { toPlainText } from "next-sanity";
-import { headers } from "next/headers";
 
 import { sanityFetch } from "@/sanity/lib/live";
 import { settingsQuery } from "@/sanity/lib/queries";
@@ -10,6 +9,7 @@ import {
   localizeField,
 } from "@/sanity/lib/localization";
 import { routing } from "@/i18n/routing";
+import { getBaseUrl } from "@/lib/utils";
 
 export type LocalizedSettingsMetadata = {
   title: string;
@@ -65,14 +65,12 @@ function parseMetadataBase(value: string | undefined) {
   }
 }
 
-export async function getCanonicalUrl(
+export function getCanonicalUrl(
   locale: string,
   path: string = "",
-): Promise<string> {
-  const headersList = await headers();
-  const host = headersList.get("host");
-  const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
+): string {
+  const baseUrl = getBaseUrl();
   const localePath = locale === routing.defaultLocale ? "" : `/${locale}`;
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
-  return `${protocol}://${host}${localePath}${cleanPath}`;
+  return `${baseUrl}${localePath}${cleanPath}`;
 }

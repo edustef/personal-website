@@ -18,10 +18,9 @@ import { NextIntlClientProvider } from "next-intl";
 import { locales, routing } from "@/i18n/routing";
 import { sanityFetch } from "@/sanity/lib/live";
 import { homeQuery, settingsQuery } from "@/sanity/lib/queries";
-import {
-  createPersonSchema,
-  createWebSiteSchema,
-} from "@/lib/structured-data";
+import { createPersonSchema, createWebSiteSchema } from "@/lib/structured-data";
+import { localizeField } from "@/sanity/lib/localization";
+import { urlForImage } from "@/sanity/lib/utils";
 
 type MetadataProps = {
   params: Promise<{ locale: string }>;
@@ -36,13 +35,11 @@ export async function generateMetadata(
     .map((lang) => lang.id)
     .filter((lang) => lang !== locale);
 
-  const hreflangUrls = await Promise.all(
-    locales.map(async (loc) => {
-      const localePath = loc.id === routing.defaultLocale ? "" : `/${loc.id}`;
-      const url = await getCanonicalUrl(loc.id, "");
-      return [loc.id, url];
-    }),
-  );
+  const hreflangUrls = locales.map((loc) => {
+    const localePath = loc.id === routing.defaultLocale ? "" : `/${loc.id}`;
+    const url = getCanonicalUrl(loc.id, "");
+    return [loc.id, url];
+  });
 
   return {
     metadataBase: localized.metadataBase,
@@ -102,18 +99,28 @@ export default async function LocaleLayout(props: Props) {
     notFound();
   }
 
-  const [{ data: home }, { data: settings }, localizedSettings] =
-    await Promise.all([
-      sanityFetch({ query: homeQuery, params: { locale: params.locale } }),
-      sanityFetch({ query: settingsQuery }),
-      getLocalizedSettingsMetadata(params.locale),
-    ]);
+  const [{ data: home }, localizedSettings] = await Promise.all([
+    sanityFetch({ query: homeQuery, params: { locale: params.locale } }),
+    getLocalizedSettingsMetadata(params.locale),
+  ]);
 
   const personSchema = home?.profile
-    ? createPersonSchema(home.profile, params.locale)
+    ? createPersonSchema(
+        {
+          ...home.profile,
+          motto: localizeField(home.profile.motto, params.locale),
+          about: localizeField(home.profile.about, params.locale),
+          workPreference: localizeField(
+            home.profile.workPreference,
+            params.locale,
+          ),
+          picture: urlForImage(home.profile.picture)?.url() || null,
+        },
+        params.locale,
+      )
     : null;
 
-  const webSiteSchema = await createWebSiteSchema(
+  const webSiteSchema = createWebSiteSchema(
     localizedSettings.title,
     localizedSettings.description,
     params.locale,
