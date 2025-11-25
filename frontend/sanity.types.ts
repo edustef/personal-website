@@ -834,7 +834,7 @@ export type AllSanitySchemaTypes =
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/lib/queries.ts
 // Variable: settingsQuery
-// Query: *[_type == "settings"][0]{    ...,    header{      ...,      cta{        ...,  href,  internal->{    _type,    "slug": slug.current  }      }    }  }
+// Query: *[_type == "settings"][0]{    ...,    header{      ...,      cta{        ...,        link{          ...,          href,          internal->{            _type,            "slug": slug.current          }        }      }    }  }
 export type SettingsQueryResult = {
   _id: string;
   _type: "settings";
@@ -851,14 +851,31 @@ export type SettingsQueryResult = {
     cta: {
       _type: "button";
       text: InternationalizedArrayString;
-      link: Link;
-      href: null;
-      internal: null;
+      link: {
+        _type: "link";
+        linkType?: "href" | "internal";
+        href: string | null;
+        openInNewTab?: boolean;
+        internal:
+          | {
+              _type: "home";
+              slug: null;
+            }
+          | {
+              _type: "resume";
+              slug: string;
+            }
+          | {
+              _type: "servicesPage";
+              slug: string;
+            }
+          | null;
+      };
     };
   };
 } | null;
 // Variable: homeQuery
-// Query: *[_type == "home"][0]{    ...,    ctaButtons[]{      ...,  href,  internal->{    _type,    "slug": slug.current  }    },    profile->{      name,      email,      phone,      motto,      about,      location,      picture,      workPreference,      socialLinks[]{        name,        url      }    },    featuredProjects[]->{      _id,      name,      description,      "image": coverImage,      "technologies": skills[]->name,      "link": websiteLink,      "github": sourceLink,      featured    },    footer  }
+// Query: *[_type == "home"][0]{    ...,    ctaButtons[]{      ...,      link{        ...,        href,        internal->{          _type,          "slug": slug.current        }      }    },    profile->{      name,      email,      phone,      motto,      about,      location,      picture,      workPreference,      socialLinks[]{        name,        url      }    },    featuredProjects[]->{      _id,      name,      description,      "image": coverImage,      "technologies": skills[]->name,      "link": websiteLink,      "github": sourceLink,      featured    },    footer  }
 export type HomeQueryResult = {
   _id: string;
   _type: "home";
@@ -902,9 +919,26 @@ export type HomeQueryResult = {
     _key: string;
     _type: "button";
     text: InternationalizedArrayString;
-    link: Link;
-    href: null;
-    internal: null;
+    link: {
+      _type: "link";
+      linkType?: "href" | "internal";
+      href: string | null;
+      openInNewTab?: boolean;
+      internal:
+        | {
+            _type: "home";
+            slug: null;
+          }
+        | {
+            _type: "resume";
+            slug: string;
+          }
+        | {
+            _type: "servicesPage";
+            slug: string;
+          }
+        | null;
+    };
   }> | null;
   featuredProjects: Array<{
     _id: string;
@@ -1139,8 +1173,8 @@ export type PostPagesSlugsResult = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '\n  *[_type == "settings"][0]{\n    ...,\n    header{\n      ...,\n      cta{\n        ...,\n  href,\n  internal->{\n    _type,\n    "slug": slug.current\n  }\n      }\n    }\n  }\n': SettingsQueryResult;
-    '\n  *[_type == "home"][0]{\n    ...,\n    ctaButtons[]{\n      ...,\n  href,\n  internal->{\n    _type,\n    "slug": slug.current\n  }\n    },\n    profile->{\n      name,\n      email,\n      phone,\n      motto,\n      about,\n      location,\n      picture,\n      workPreference,\n      socialLinks[]{\n        name,\n        url\n      }\n    },\n    featuredProjects[]->{\n      _id,\n      name,\n      description,\n      "image": coverImage,\n      "technologies": skills[]->name,\n      "link": websiteLink,\n      "github": sourceLink,\n      featured\n    },\n    footer\n  }\n': HomeQueryResult;
+    '\n  *[_type == "settings"][0]{\n    ...,\n    header{\n      ...,\n      cta{\n        ...,\n        link{\n          ...,\n          href,\n          internal->{\n            _type,\n            "slug": slug.current\n          }\n        }\n      }\n    }\n  }\n': SettingsQueryResult;
+    '\n  *[_type == "home"][0]{\n    ...,\n    ctaButtons[]{\n      ...,\n      link{\n        ...,\n        href,\n        internal->{\n          _type,\n          "slug": slug.current\n        }\n      }\n    },\n    profile->{\n      name,\n      email,\n      phone,\n      motto,\n      about,\n      location,\n      picture,\n      workPreference,\n      socialLinks[]{\n        name,\n        url\n      }\n    },\n    featuredProjects[]->{\n      _id,\n      name,\n      description,\n      "image": coverImage,\n      "technologies": skills[]->name,\n      "link": websiteLink,\n      "github": sourceLink,\n      featured\n    },\n    footer\n  }\n': HomeQueryResult;
     '\n  *[_type == "home"][0]{\n    footer,\n    profile->{\n      name\n    }\n  }\n': HomeFooterQueryResult;
     '\n  *[_type == "profile"][0]{\n    _id,\n    name,\n    email,\n    phone,\n    motto,\n    about,\n    location,\n    picture,\n    workPreference,\n    socialLinks[]{\n      platform,\n      url\n    }\n  }\n': ProfileQueryResult;
     '\n  *[_type == "resume"][0]{\n    _id,\n    title,\n    description,\n    showSkills,\n    showProjects,\n    showCertificates\n  }\n': ResumeQueryResult;
