@@ -49,8 +49,10 @@ export const HeroIntroSocialLinks = ({ children, className }: CommonProps) => {
 
 export const HeroIntroCtaButtons = ({ children, className }: CommonProps) => {
   return (
-    <div className={cn("flex flex-col gap-4 md:flex-row", className)}>
+    <AnimatedContainer
+      className={cn("flex flex-col gap-4 md:flex-row", className)}
+    >
       {children}
-    </div>
+    </AnimatedContainer>
   );
 };

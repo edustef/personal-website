@@ -95,22 +95,24 @@ export default async function Page(props: Props) {
         <HeroSpline />
         {home && (
           <HeroIntro>
-            <HeroIntroContent>
-              <HighlightBadge>
-                <span>
-                  {localizeField(home.renovationLabelPrimary, locale)}
-                </span>
-                <span className="ml-1.5 font-bold">
-                  {localizeField(home.renovationLabelSecondary, locale)}
-                </span>
-              </HighlightBadge>
-              <h1 className="text-foreground max-w-3xl text-4xl leading-normal font-semibold text-pretty md:text-6xl md:leading-tight">
-                {localizeField(home.headline, locale)}
-              </h1>
-              <CustomPortableText
-                value={localizeBlockContent(home.tagline, locale)}
-                className="text-muted-foreground text-lg md:text-xl"
-              />
+            <div className="flex flex-col gap-8">
+              <HeroIntroContent>
+                <HighlightBadge>
+                  <span>
+                    {localizeField(home.renovationLabelPrimary, locale)}
+                  </span>
+                  <span className="ml-1.5 font-bold">
+                    {localizeField(home.renovationLabelSecondary, locale)}
+                  </span>
+                </HighlightBadge>
+                <h1 className="text-foreground max-w-3xl text-4xl leading-normal font-semibold text-pretty md:text-6xl md:leading-tight">
+                  {localizeField(home.headline, locale)}
+                </h1>
+                <CustomPortableText
+                  value={localizeBlockContent(home.tagline, locale)}
+                  className="text-muted-foreground text-lg md:text-xl"
+                />
+              </HeroIntroContent>
               <HeroIntroCtaButtons>
                 {home.ctaButtons?.map(({ link, text, _key }) => (
                   <ResolvedLink
@@ -123,7 +125,7 @@ export default async function Page(props: Props) {
                   </ResolvedLink>
                 ))}
               </HeroIntroCtaButtons>
-            </HeroIntroContent>
+            </div>
 
             <div className="flex flex-col gap-4">
               <AnimatedContainer>
