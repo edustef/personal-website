@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 import { servicesPageQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
-import { getLocalizedSettingsMetadata } from "@/lib/seo";
+import { getLocalizedSettingsMetadata, getCanonicalUrl } from "@/lib/seo";
 import { localizeField } from "@/sanity/lib/localization";
 import { hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
@@ -31,12 +31,17 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   }
 
   const title = localizeField(page.seo?.title, locale);
+  const localizedPath = routing.pathnames?.["/start-your-project"]?.[locale] || "/start-your-project";
+  const canonicalUrl = await getCanonicalUrl(locale, localizedPath);
 
   return {
     title: title
       ? `${title} | ${localizedSettings.title}`
       : localizedSettings.title,
     description: localizedSettings.description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
   };
 }
 

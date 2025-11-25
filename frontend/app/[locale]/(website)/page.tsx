@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { homeQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
+import { getCanonicalUrl } from "@/lib/seo";
 
 import {
   HeroIntro,
@@ -45,10 +46,14 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
   const pageTitle = localizeField(home.seo?.title, locale);
   const pageDescription = localizeBlockContent(home.seo?.description, locale);
+  const canonicalUrl = await getCanonicalUrl(locale, "/");
 
   return {
     title: pageTitle,
     description: toPlainText(pageDescription),
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       type: "website",
       locale,

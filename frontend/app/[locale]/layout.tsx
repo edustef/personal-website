@@ -13,9 +13,15 @@ import { SanityLive } from "@/sanity/lib/live";
 import { handleError } from "../../lib/client-utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ConvexClientProvider } from "@/components/convex-client-provider";
-import { getLocalizedSettingsMetadata } from "@/lib/seo";
+import { getLocalizedSettingsMetadata, getCanonicalUrl } from "@/lib/seo";
 import { NextIntlClientProvider } from "next-intl";
-import { locales } from "@/i18n/routing";
+import { locales, routing } from "@/i18n/routing";
+import { sanityFetch } from "@/sanity/lib/live";
+import { homeQuery, settingsQuery } from "@/sanity/lib/queries";
+import {
+  createPersonSchema,
+  createWebSiteSchema,
+} from "@/lib/structured-data";
 
 type MetadataProps = {
   params: Promise<{ locale: string }>;
@@ -30,6 +36,14 @@ export async function generateMetadata(
     .map((lang) => lang.id)
     .filter((lang) => lang !== locale);
 
+  const hreflangUrls = await Promise.all(
+    locales.map(async (loc) => {
+      const localePath = loc.id === routing.defaultLocale ? "" : `/${loc.id}`;
+      const url = await getCanonicalUrl(loc.id, "");
+      return [loc.id, url];
+    }),
+  );
+
   return {
     metadataBase: localized.metadataBase,
     title: {
@@ -38,9 +52,7 @@ export async function generateMetadata(
     },
     description: localized.description,
     alternates: {
-      languages: Object.fromEntries(
-        locales.map((locale) => [locale.id, `/${locale.id}`]),
-      ),
+      languages: Object.fromEntries(hreflangUrls),
     },
     openGraph: {
       type: "website",
@@ -90,6 +102,23 @@ export default async function LocaleLayout(props: Props) {
     notFound();
   }
 
+  const [{ data: home }, { data: settings }, localizedSettings] =
+    await Promise.all([
+      sanityFetch({ query: homeQuery, params: { locale: params.locale } }),
+      sanityFetch({ query: settingsQuery }),
+      getLocalizedSettingsMetadata(params.locale),
+    ]);
+
+  const personSchema = home?.profile
+    ? createPersonSchema(home.profile, params.locale)
+    : null;
+
+  const webSiteSchema = await createWebSiteSchema(
+    localizedSettings.title,
+    localizedSettings.description,
+    params.locale,
+  );
+
   return (
     <html
       lang={params.locale}
@@ -97,6 +126,20 @@ export default async function LocaleLayout(props: Props) {
       suppressHydrationWarning
     >
       <body className="isolate transition-colors duration-300 ease-in-out">
+        {personSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(personSchema),
+            }}
+          />
+        )}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(webSiteSchema),
+          }}
+        />
         <NextIntlClientProvider>
           <ConvexClientProvider>
             <ThemeProvider attribute="class" forcedTheme="dark">
