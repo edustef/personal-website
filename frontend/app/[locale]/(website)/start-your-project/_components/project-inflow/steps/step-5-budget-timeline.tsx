@@ -39,6 +39,7 @@ export function Step5BudgetTimeline({
     t("step5.budget.range2"),
     t("step5.budget.range3"),
     t("step5.budget.range4"),
+    t("step5.budget.range5"),
     t("step5.budget.dontKnow"),
   ];
 
@@ -72,10 +73,7 @@ export function Step5BudgetTimeline({
 
       <div className="space-y-4">
         <Label>{t("step5.timeline.label")}</Label>
-        <Select
-          value={inquiry.timeline}
-          onValueChange={onTimelineChange}
-        >
+        <Select value={inquiry.timeline} onValueChange={onTimelineChange}>
           <SelectTrigger>
             <SelectValue placeholder={t("step5.timeline.placeholder")} />
           </SelectTrigger>
@@ -91,4 +89,3 @@ export function Step5BudgetTimeline({
     </motion.div>
   );
 }
-
