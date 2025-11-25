@@ -16,7 +16,6 @@ import { Step4CurrentStatus } from "./_components/project-inflow/steps/step-4-cu
 import { Step5BudgetTimeline } from "./_components/project-inflow/steps/step-5-budget-timeline";
 import { Step6BusinessContext } from "./_components/project-inflow/steps/step-6-business-context";
 import { Step7EmailForm } from "./_components/project-inflow/steps/step-7-email-form";
-import { Spotlight } from "@/components/ui/spotlight-new";
 
 const TOTAL_STEPS = 7;
 
@@ -196,7 +195,6 @@ export function ClientProjectInflow({
       className="mx-auto w-full max-w-2xl p-4 md:p-0"
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      <Spotlight />
       <ProgressBar
         className={currentStep === 0 ? "hidden" : ""}
         currentStep={currentStep}

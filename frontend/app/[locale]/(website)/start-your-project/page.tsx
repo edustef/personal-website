@@ -9,6 +9,7 @@ import { hasLocale, Locale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { defaultLocale, LocaleId, routing } from "@/i18n/routing";
 import { ClientProjectInflow } from "@/app/[locale]/(website)/start-your-project/client-project-inflow";
+import { Spotlight } from "@/components/ui/spotlight-new";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -60,6 +61,7 @@ export default async function StartProjectPage(props: Props) {
 
   return (
     <div className="container mx-auto px-4 py-12">
+      <Spotlight />
       <ClientProjectInflow />
     </div>
   );
