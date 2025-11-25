@@ -1,4 +1,4 @@
-import { defaultLocale, LocaleId } from "@/i18n/routing";
+import { defaultLocale } from "@/i18n/routing";
 import {
   BlockContent,
   InternationalizedArrayBlockContent,

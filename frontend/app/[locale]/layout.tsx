@@ -18,9 +18,15 @@ import { NextIntlClientProvider } from "next-intl";
 import { locales, routing } from "@/i18n/routing";
 import { sanityFetch } from "@/sanity/lib/live";
 import { homeQuery, settingsQuery } from "@/sanity/lib/queries";
-import { createPersonSchema, createWebSiteSchema } from "@/lib/structured-data";
+import {
+  createPersonSchema,
+  createWebSiteSchema,
+  sanitizeJsonLd,
+} from "@/lib/structured-data";
 import { localizeField } from "@/sanity/lib/localization";
 import { urlForImage } from "@/sanity/lib/utils";
+import { setRequestLocale } from "next-intl/server";
+import Script from "next/script";
 
 type MetadataProps = {
   params: Promise<{ locale: string }>;
@@ -99,6 +105,8 @@ export default async function LocaleLayout(props: Props) {
     notFound();
   }
 
+  setRequestLocale(params.locale);
+
   const [{ data: home }, localizedSettings] = await Promise.all([
     sanityFetch({ query: homeQuery, params: { locale: params.locale } }),
     getLocalizedSettingsMetadata(params.locale),
@@ -134,17 +142,17 @@ export default async function LocaleLayout(props: Props) {
     >
       <body className="isolate transition-colors duration-300 ease-in-out">
         {personSchema && (
-          <script
+          <Script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify(personSchema),
+              __html: sanitizeJsonLd(personSchema),
             }}
           />
         )}
-        <script
+        <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(webSiteSchema),
+            __html: sanitizeJsonLd(webSiteSchema),
           }}
         />
         <NextIntlClientProvider>

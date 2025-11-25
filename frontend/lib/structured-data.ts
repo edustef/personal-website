@@ -1,6 +1,10 @@
 import { getCanonicalUrl } from "./seo";
 import { routing } from "@/i18n/routing";
 
+export function sanitizeJsonLd(json: object): string {
+  return JSON.stringify(json).replace(/</g, "\\u003c");
+}
+
 export type PersonSchema = {
   "@context": "https://schema.org";
   "@type": "Person";
