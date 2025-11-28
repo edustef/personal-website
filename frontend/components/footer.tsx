@@ -2,6 +2,8 @@ import { homeFooterQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
 import { cn } from "@/lib/utils";
 import { localizeField } from "@/sanity/lib/localization";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 
 type FooterProps = {
   className?: string;
@@ -12,6 +14,8 @@ export async function Footer({ className, locale }: FooterProps) {
   const { data: home } = await sanityFetch({
     query: homeFooterQuery,
   });
+
+  const t = await getTranslations({ locale, namespace: "footer" });
 
   const currentYear = new Date().getFullYear();
   const footerTemplate = localizeField(home?.footer, locale);
@@ -44,6 +48,14 @@ export async function Footer({ className, locale }: FooterProps) {
               ) : (
                 template
               )}
+            </p>
+            <p className="mt-4 text-sm">
+              <Link
+                href="/privacy-policy"
+                className="text-muted-foreground hover:text-foreground underline transition-colors"
+              >
+                {t("privacyPolicy")}
+              </Link>
             </p>
           </div>
         </div>

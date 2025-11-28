@@ -18,16 +18,24 @@ import {
 } from "@/components/ui/field";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
-const createEmailFormSchema = (errorMessage: string) =>
+const createEmailFormSchema = (
+  emailErrorMessage: string,
+  privacyErrorMessage: string,
+) =>
   z.object({
-    email: z.email(errorMessage),
+    email: z.email(emailErrorMessage),
     bookCall: z.boolean(),
+    privacyConsent: z.boolean().refine((val) => val === true, {
+      message: privacyErrorMessage,
+    }),
   });
 
 type EmailFormValues = {
   email: string;
   bookCall: boolean;
+  privacyConsent: boolean;
 };
 
 type Step7EmailFormProps = {
@@ -48,21 +56,23 @@ export function Step7EmailForm({
     _id: inquiryId,
   });
 
-  const emailFormSchema = createEmailFormSchema(t("step7.email.error"));
+  const emailFormSchema = createEmailFormSchema(
+    t("step7.email.error"),
+    t("step7.privacyConsent.error"),
+  );
 
   const emailForm = useForm<EmailFormValues>({
     resolver: zodResolver(emailFormSchema),
     defaultValues: {
       email: "",
       bookCall: false,
+      privacyConsent: false,
     },
-    values:
-      inquiry
-        ? {
-            email: inquiry.email ?? "",
-            bookCall: inquiry.bookCall ?? false,
-          }
-        : undefined,
+    values: {
+      email: "",
+      bookCall: false,
+      privacyConsent: false,
+    },
     mode: "onBlur",
   });
 
@@ -126,6 +136,42 @@ export function Step7EmailForm({
               </Field>
             )}
           />
+          <Controller
+            name="privacyConsent"
+            control={emailForm.control}
+            render={({ field, fieldState }) => (
+              <Field className="flex flex-col items-start" orientation="horizontal" data-invalid={fieldState.invalid}>
+                <div className="flex items-start space-x-2">
+                  <Checkbox
+                    id="email-form-privacyConsent"
+                    checked={field.value}
+                    onCheckedChange={(checked) => {
+                      field.onChange(checked === true);
+                    }}
+                    className="mt-0.5"
+                  />
+                  <FieldLabel
+                    htmlFor="email-form-privacyConsent"
+                    className="text-sm block"
+                  >
+                    {t("step7.privacyConsent.label")}{" "}
+                    <Link
+                      href="/privacy-policy"
+                      className="inline underline hover:no-underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {t("step7.privacyConsent.link")}
+                    </Link>
+                    .
+                  </FieldLabel>
+                </div>
+                {fieldState.invalid && (
+                  <FieldError errors={[fieldState.error]} />
+                )}
+              </Field>
+            )}
+          />
         </FieldGroup>
         <Button
           type="submit"
@@ -141,4 +187,3 @@ export function Step7EmailForm({
     </motion.div>
   );
 }
-

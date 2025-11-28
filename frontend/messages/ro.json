@@ -133,6 +133,11 @@
       "bookCall": {
         "label": "Aș dori, de asemenea, să rezerv un apel introductiv de 15 minute."
       },
+      "privacyConsent": {
+        "label": "Accept procesarea datelor mele personale în conformitate cu",
+        "link": "Politica de Confidențialitate",
+        "error": "Trebuie să accepți Politica de Confidențialitate pentru a trimite acest formulariu."
+      },
       "submit": {
         "button": "Obține Estimarea Mea Personalizată",
         "submitting": "Se trimite..."
@@ -146,5 +151,78 @@
       "submitted": "Cererea de proiect a fost trimisă! Vom lua legătura în curând.",
       "submitError": "Trimiterea a eșuat. Te rugăm să încerci din nou."
     }
+  },
+  "privacyPolicy": {
+    "title": "Politica de Confidențialitate",
+    "description": "Politica noastră de confidențialitate explică modul în care colectăm, folosim și protejăm datele dvs. personale în conformitate cu GDPR.",
+    "lastUpdated": "Ultima actualizare: Ianuarie 2025",
+    "sections": {
+      "introduction": {
+        "title": "Introducere",
+        "content": "Această Politică de Confidențialitate explică modul în care colectăm, folosim și protejăm datele dvs. personale când utilizați site-ul nostru web și serviciile. Suntem angajați să vă protejăm confidențialitatea și să asigurăm conformitatea cu Regulamentul General privind Protecția Datelor (GDPR) și alte legi aplicabile privind protecția datelor."
+      },
+      "dataController": {
+        "title": "Operator de Date",
+        "content": "Operatorul de date responsabil pentru prelucrarea datelor dvs. personale este proprietarul acestui site web. Dacă aveți întrebări despre această Politică de Confidențialitate sau doriți să vă exercitați drepturile, vă rugăm să ne contactați folosind informațiile furnizate în secțiunea Contact."
+      },
+      "dataCollected": {
+        "title": "Date pe care le Colectăm",
+        "intro": "Colectăm următoarele tipuri de date personale:",
+        "items": {
+          "email": "Adresă de e-mail (când trimiteți un formular de cerere de proiect)",
+          "projectDetails": "Informații legate de proiect (buget, cronogramă, caracteristici, context de afaceri, etc.)",
+          "technicalInfo": "Informații tehnice colectate automat (adresă IP, tip de browser, informații despre dispozitiv) prin serviciul nostru de analiză"
+        }
+      },
+      "purpose": {
+        "title": "Scopul Prelucrării",
+        "intro": "Prelucrăm datele dvs. personale în următoarele scopuri:",
+        "items": {
+          "communication": "Pentru a comunica cu dvs. cu privire la cererea dvs. de proiect și pentru a furniza estimări de proiect",
+          "projectEstimate": "Pentru a înțelege cerințele proiectului dvs. și pentru a furniza recomandări personalizate",
+          "analytics": "Pentru a analiza utilizarea site-ului web și pentru a îmbunătăți serviciile noastre (folosind analiză fără cookie-uri)"
+        }
+      },
+      "legalBasis": {
+        "title": "Baza Legală",
+        "content": "Prelucrăm datele dvs. personale pe baza consimțământului dvs. explicit când trimiteți formularul de cerere de proiect. În scopuri de analiză, folosim urmărirea fără cookie-uri care nu necesită consimțământ, deoarece folosește hash-uri care păstrează confidențialitatea pe partea serverului."
+      },
+      "dataRetention": {
+        "title": "Păstrarea Datelor",
+        "content": "Păstrăm datele dvs. personale doar atât timp cât este necesar pentru a îndeplini scopurile descrise în această Politică de Confidențialitate sau conform cerințelor legii. Datele cererii de proiect sunt de obicei păstrate până la 2 ani, cu excepția cazului în care solicitați ștergerea mai devreme."
+      },
+      "yourRights": {
+        "title": "Drepturile Dvs.",
+        "intro": "Conform GDPR, aveți următoarele drepturi cu privire la datele dvs. personale:",
+        "items": {
+          "access": "Dreptul de acces: Puteți solicita o copie a datelor personale pe care le deținem despre dvs.",
+          "rectification": "Dreptul la rectificare: Puteți solicita corectarea datelor inexacte sau incomplete",
+          "erasure": "Dreptul la ștergere: Puteți solicita ștergerea datelor dvs. personale",
+          "restriction": "Dreptul la restricționarea prelucrării: Puteți solicita să limităm modul în care folosim datele dvs.",
+          "dataPortability": "Dreptul la portabilitatea datelor: Puteți solicita datele dvs. într-un format structurat, ușor de citit de mașină",
+          "object": "Dreptul de opoziție: Vă puteți opune prelucrării datelor dvs. personale"
+        },
+        "contact": "Pentru a exercita oricare dintre aceste drepturi, vă rugăm să ne contactați la contact@eduardstefan.dev sau prin formularul de contact de pe site-ul nostru web."
+      },
+      "analytics": {
+        "title": "Analiză",
+        "content": "Folosim PostHog pentru analiza site-ului web cu urmărire fără cookie-uri activată. Aceasta înseamnă că nu folosim cookie-uri sau stocare locală pentru urmărire. În schimb, folosim hash-uri care păstrează confidențialitatea pe partea serverului care nu stochează date personale în browser-ul dvs. Această abordare este conformă cu GDPR fără a necesita un banner de consimțământ pentru cookie-uri."
+      },
+      "dataSecurity": {
+        "title": "Securitatea Datelor",
+        "content": "Implementăm măsuri tehnice și organizatorice adecvate pentru a vă proteja datele personale împotriva accesului neautorizat, alterării, dezvăluirii sau distrugerii. Datele dvs. sunt stocate în siguranță folosind criptare standard din industrie și controale de acces."
+      },
+      "changes": {
+        "title": "Modificări la Această Politică",
+        "content": "Putem actualiza această Politică de Confidențialitate din când în când. Vă vom notifica despre orice modificări materiale prin publicarea noii Politici de Confidențialitate pe această pagină și actualizarea datei \"Ultima actualizare\"."
+      },
+      "contact": {
+        "title": "Contactați-ne",
+        "content": "Dacă aveți întrebări despre această Politică de Confidențialitate sau doriți să vă exercitați drepturile, vă rugăm să ne contactați prin formularul de contact de pe site-ul nostru web sau prin e-mail la contact@eduardstefan.dev. De asemenea, puteți solicita accesul sau ștergerea datelor trimitându-ne un e-mail cu solicitarea dvs."
+      }
+    }
+  },
+  "footer": {
+    "privacyPolicy": "Politica de Confidențialitate"
   }
 }

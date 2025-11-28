@@ -19,5 +19,9 @@ export const routing = defineRouting({
       ro: "/incepe-proiectul-tau",
       es: "/inicia-tu-proyecto",
     },
+    "/privacy-policy": {
+      ro: "/politica-de-confidențialitate",
+      es: "/política-de-privacidad",
+    },
   },
 });

@@ -133,6 +133,11 @@
       "bookCall": {
         "label": "También me gustaría reservar una llamada introductoria de 15 minutos."
       },
+      "privacyConsent": {
+        "label": "Acepto el procesamiento de mis datos personales de acuerdo con la",
+        "link": "Política de Privacidad",
+        "error": "Debes aceptar la Política de Privacidad para enviar este formulario."
+      },
       "submit": {
         "button": "Obtener Mi Estimación Personalizada",
         "submitting": "Enviando..."
@@ -146,5 +151,78 @@
       "submitted": "¡Consulta de proyecto enviada! Nos pondremos en contacto pronto.",
       "submitError": "Error al enviar. Por favor intenta de nuevo."
     }
+  },
+  "privacyPolicy": {
+    "title": "Política de Privacidad",
+    "description": "Nuestra política de privacidad explica cómo recopilamos, usamos y protegemos sus datos personales en cumplimiento del GDPR.",
+    "lastUpdated": "Última actualización: Enero 2025",
+    "sections": {
+      "introduction": {
+        "title": "Introducción",
+        "content": "Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos sus datos personales cuando utiliza nuestro sitio web y servicios. Estamos comprometidos a proteger su privacidad y garantizar el cumplimiento del Reglamento General de Protección de Datos (GDPR) y otras leyes de protección de datos aplicables."
+      },
+      "dataController": {
+        "title": "Responsable del Tratamiento",
+        "content": "El responsable del tratamiento de sus datos personales es el propietario de este sitio web. Si tiene alguna pregunta sobre esta Política de Privacidad o desea ejercer sus derechos, póngase en contacto con nosotros utilizando la información proporcionada en la sección de Contacto."
+      },
+      "dataCollected": {
+        "title": "Datos que Recopilamos",
+        "intro": "Recopilamos los siguientes tipos de datos personales:",
+        "items": {
+          "email": "Dirección de correo electrónico (cuando envía un formulario de consulta de proyecto)",
+          "projectDetails": "Información relacionada con el proyecto (presupuesto, cronograma, características, contexto comercial, etc.)",
+          "technicalInfo": "Información técnica recopilada automáticamente (dirección IP, tipo de navegador, información del dispositivo) a través de nuestro servicio de análisis"
+        }
+      },
+      "purpose": {
+        "title": "Propósito del Tratamiento",
+        "intro": "Procesamos sus datos personales para los siguientes propósitos:",
+        "items": {
+          "communication": "Para comunicarnos con usted respecto a su consulta de proyecto y proporcionar estimaciones de proyecto",
+          "projectEstimate": "Para entender los requisitos de su proyecto y proporcionar recomendaciones personalizadas",
+          "analytics": "Para analizar el uso del sitio web y mejorar nuestros servicios (usando análisis sin cookies)"
+        }
+      },
+      "legalBasis": {
+        "title": "Base Legal",
+        "content": "Procesamos sus datos personales basándonos en su consentimiento explícito cuando envía el formulario de consulta de proyecto. Para fines de análisis, utilizamos seguimiento sin cookies que no requiere consentimiento ya que utiliza hash preservador de privacidad del lado del servidor."
+      },
+      "dataRetention": {
+        "title": "Retención de Datos",
+        "content": "Conservamos sus datos personales solo durante el tiempo necesario para cumplir con los propósitos descritos en esta Política de Privacidad, o según lo requiera la ley. Los datos de consulta de proyecto generalmente se conservan hasta 2 años a menos que solicite su eliminación antes."
+      },
+      "yourRights": {
+        "title": "Sus Derechos",
+        "intro": "Bajo el GDPR, tiene los siguientes derechos con respecto a sus datos personales:",
+        "items": {
+          "access": "Derecho de acceso: Puede solicitar una copia de los datos personales que tenemos sobre usted",
+          "rectification": "Derecho a la rectificación: Puede solicitar la corrección de datos inexactos o incompletos",
+          "erasure": "Derecho al olvido: Puede solicitar la eliminación de sus datos personales",
+          "restriction": "Derecho a la limitación del tratamiento: Puede solicitar que limitemos cómo usamos sus datos",
+          "dataPortability": "Derecho a la portabilidad de datos: Puede solicitar sus datos en un formato estructurado y legible por máquina",
+          "object": "Derecho de oposición: Puede oponerse al tratamiento de sus datos personales"
+        },
+        "contact": "Para ejercer cualquiera de estos derechos, póngase en contacto con nosotros en contact@eduardstefan.dev o a través del formulario de contacto en nuestro sitio web."
+      },
+      "analytics": {
+        "title": "Análisis",
+        "content": "Utilizamos PostHog para el análisis del sitio web con seguimiento sin cookies habilitado. Esto significa que no utilizamos cookies ni almacenamiento local para el seguimiento. En su lugar, utilizamos hash preservador de privacidad del lado del servidor que no almacena datos personales en su navegador. Este enfoque cumple con el GDPR sin requerir un banner de consentimiento de cookies."
+      },
+      "dataSecurity": {
+        "title": "Seguridad de Datos",
+        "content": "Implementamos medidas técnicas y organizativas apropiadas para proteger sus datos personales contra acceso no autorizado, alteración, divulgación o destrucción. Sus datos se almacenan de forma segura utilizando cifrado estándar de la industria y controles de acceso."
+      },
+      "changes": {
+        "title": "Cambios a Esta Política",
+        "content": "Podemos actualizar esta Política de Privacidad de vez en cuando. Le notificaremos cualquier cambio material publicando la nueva Política de Privacidad en esta página y actualizando la fecha de \"Última actualización\"."
+      },
+      "contact": {
+        "title": "Contáctenos",
+        "content": "Si tiene alguna pregunta sobre esta Política de Privacidad o desea ejercer sus derechos, póngase en contacto con nosotros a través del formulario de contacto en nuestro sitio web o por correo electrónico a contact@eduardstefan.dev. También puede solicitar acceso o eliminación de datos enviándonos un correo electrónico con su solicitud."
+      }
+    }
+  },
+  "footer": {
+    "privacyPolicy": "Política de Privacidad"
   }
 }

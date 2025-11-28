@@ -133,6 +133,11 @@
       "bookCall": {
         "label": "I'd also like to book a 15-min intro call."
       },
+      "privacyConsent": {
+        "label": "I agree to the processing of my personal data in accordance with the",
+        "link": "Privacy Policy",
+        "error": "You must agree to the Privacy Policy to submit this form."
+      },
       "submit": {
         "button": "Get My Personalized Estimate",
         "submitting": "Submitting..."
@@ -146,5 +151,78 @@
       "submitted": "Project inquiry submitted! We'll be in touch soon.",
       "submitError": "Failed to submit. Please try again."
     }
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "description": "Our privacy policy explains how we collect, use, and protect your personal data in compliance with GDPR.",
+    "lastUpdated": "Last updated: January 2025",
+    "sections": {
+      "introduction": {
+        "title": "Introduction",
+        "content": "This Privacy Policy explains how we collect, use, and protect your personal data when you use our website and services. We are committed to protecting your privacy and ensuring compliance with the General Data Protection Regulation (GDPR) and other applicable data protection laws."
+      },
+      "dataController": {
+        "title": "Data Controller",
+        "content": "The data controller responsible for processing your personal data is the owner of this website. If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us using the information provided in the Contact section."
+      },
+      "dataCollected": {
+        "title": "Data We Collect",
+        "intro": "We collect the following types of personal data:",
+        "items": {
+          "email": "Email address (when you submit a project inquiry form)",
+          "projectDetails": "Project-related information (budget, timeline, features, business context, etc.)",
+          "technicalInfo": "Technical information automatically collected (IP address, browser type, device information) through our analytics service"
+        }
+      },
+      "purpose": {
+        "title": "Purpose of Processing",
+        "intro": "We process your personal data for the following purposes:",
+        "items": {
+          "communication": "To communicate with you regarding your project inquiry and provide project estimates",
+          "projectEstimate": "To understand your project requirements and provide personalized recommendations",
+          "analytics": "To analyze website usage and improve our services (using cookieless analytics)"
+        }
+      },
+      "legalBasis": {
+        "title": "Legal Basis",
+        "content": "We process your personal data based on your explicit consent when you submit the project inquiry form. For analytics purposes, we use cookieless tracking that does not require consent as it uses privacy-preserving server-side hashing."
+      },
+      "dataRetention": {
+        "title": "Data Retention",
+        "content": "We retain your personal data only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, or as required by law. Project inquiry data is typically retained for up to 2 years unless you request deletion earlier."
+      },
+      "yourRights": {
+        "title": "Your Rights",
+        "intro": "Under GDPR, you have the following rights regarding your personal data:",
+        "items": {
+          "access": "Right of access: You can request a copy of the personal data we hold about you",
+          "rectification": "Right to rectification: You can request correction of inaccurate or incomplete data",
+          "erasure": "Right to erasure: You can request deletion of your personal data",
+          "restriction": "Right to restriction of processing: You can request that we limit how we use your data",
+          "dataPortability": "Right to data portability: You can request your data in a structured, machine-readable format",
+          "object": "Right to object: You can object to processing of your personal data"
+        },
+        "contact": "To exercise any of these rights, please contact us at contact@eduardstefan.dev or through the contact form on our website."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "content": "We use PostHog for website analytics with cookieless tracking enabled. This means we do not use cookies or local storage for tracking. Instead, we use privacy-preserving server-side hashing that does not store personal data in your browser. This approach complies with GDPR without requiring a cookie consent banner."
+      },
+      "dataSecurity": {
+        "title": "Data Security",
+        "content": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. Your data is stored securely using industry-standard encryption and access controls."
+      },
+      "changes": {
+        "title": "Changes to This Policy",
+        "content": "We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the \"Last updated\" date."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "content": "If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us through the contact form on our website or by email at contact@eduardstefan.dev. You can also request data access or deletion by emailing us with your request."
+      }
+    }
+  },
+  "footer": {
+    "privacyPolicy": "Privacy Policy"
   }
 }

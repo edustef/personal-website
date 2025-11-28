@@ -26,6 +26,7 @@ type ClientProjectInflowProps = {
 type EmailFormValues = {
   email: string;
   bookCall: boolean;
+  privacyConsent: boolean;
 };
 
 export function ClientProjectInflow({
