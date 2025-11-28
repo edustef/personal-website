@@ -8,10 +8,18 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Link } from "@/components/ui/link";
 import { cn } from "@/lib/utils";
-import { AnimatedLogo } from "./animated-logo";
+import dynamic from "next/dynamic";
 import { sanityFetch } from "@/sanity/lib/live";
 import { settingsQuery } from "@/sanity/lib/queries";
 import ResolvedLink from "./sanity/resolved-link";
+
+const AnimatedLogo = dynamic(
+  () => import("./animated-logo").then((mod) => ({ default: mod.AnimatedLogo })),
+  {
+    ssr: false,
+    loading: () => <div className="size-6 md:size-8" />,
+  }
+);
 
 type HeaderProps = {
   locale: string;

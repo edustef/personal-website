@@ -144,6 +144,7 @@ export default async function LocaleLayout(props: Props) {
         {personSchema && (
           <Script
             type="application/ld+json"
+            strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: sanitizeJsonLd(personSchema),
             }}
@@ -151,6 +152,7 @@ export default async function LocaleLayout(props: Props) {
         )}
         <Script
           type="application/ld+json"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: sanitizeJsonLd(webSiteSchema),
           }}

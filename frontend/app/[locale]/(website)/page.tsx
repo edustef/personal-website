@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 
 import { homeQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
@@ -12,8 +13,18 @@ import {
   HeroIntroCtaButtons,
   HeroIntroSocialLinks,
 } from "@/components/hero-intro";
-import { HeroSpline } from "@/components/hero-spline";
-import { ContactForm } from "@/components/contact-form";
+
+
+
+const ContactForm = dynamic(
+  () =>
+    import("@/components/contact-form").then((mod) => ({
+      default: mod.ContactForm,
+    })),
+  {
+    ssr: true,
+  },
+);
 import { toPlainText } from "next-sanity";
 import ResolvedLink from "@/components/sanity/resolved-link";
 import { HighlightBadge } from "@/components/ui/highlight-badge";

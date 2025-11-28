@@ -1,8 +1,18 @@
 "use client";
 
-import Spline from "@splinetool/react-spline";
-
 import { cn } from "@/lib/utils";
+import dynamic from "next/dynamic";
+
+const Spline = dynamic(
+  () =>
+    import("@splinetool/react-spline").then((mod) => ({
+      default: mod.default,
+    })),
+  {
+    ssr: false,
+    loading: () => null,
+  },
+);
 
 type HeroSplineProps = {
   className?: string;

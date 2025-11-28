@@ -7,6 +7,13 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.join(__dirname, ".."),
   },
+  experimental: {
+    optimizePackageImports: [
+      "@splinetool/react-spline",
+      "@rive-app/react-canvas",
+      "motion",
+    ],
+  },
   async rewrites() {
     return [
       {
