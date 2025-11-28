@@ -14,8 +14,6 @@ import {
   HeroIntroSocialLinks,
 } from "@/components/hero-intro";
 
-
-
 const ContactForm = dynamic(
   () =>
     import("@/components/contact-form").then((mod) => ({
@@ -39,6 +37,7 @@ import {
   localizeField,
 } from "@/sanity/lib/localization";
 import { AnimatedContainer } from "@/components/ui/animated-container";
+import { HeroSpline } from "@/components/hero-spline";
 
 type Props = {
   params: Promise<{ locale: string }>;
