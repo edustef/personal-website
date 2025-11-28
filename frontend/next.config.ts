@@ -3,6 +3,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 import path from "path";
 
 const nextConfig: NextConfig = {
+  reactCompiler: true,
   turbopack: {
     root: path.join(__dirname, ".."),
   },
