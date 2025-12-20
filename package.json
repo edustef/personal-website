@@ -19,6 +19,9 @@
     "frontend"
   ],
   "scripts": {
+    "typegen:studio": "npm run extract-types --workspace=studio",
+    "typegen:frontend": "npm run typegen --workspace=frontend",
+    "typegen": "npm-run-all --print-label typegen:*",
     "dev": "npm-run-all --parallel --print-label dev:*",
     "dev:prebuild": "npm run prebuild --workspace=studio",
     "dev:next": "npm run dev --workspace=frontend",

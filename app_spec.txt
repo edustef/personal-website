@@ -1,0 +1,184 @@
+<project_specification>
+  <project_name>Eduard Stefan - Freelance Full-Stack Developer Portfolio</project_name>
+
+  <overview>
+    A high-performance personal portfolio website for a freelance full-stack developer.
+    The site serves as a central hub to showcase skills, display past projects through detailed case studies,
+    share knowledge via a blog, and capture high-quality leads through an interactive project inquiry wizard.
+    It is built for speed, SEO, and accessibility, with a focus on conversion optimization (turning visitors into clients).
+  </overview>
+
+  <technology_stack>
+    <frontend>
+      <framework>Next.js 16 (App Router)</framework>
+      <language>TypeScript</language>
+      <styling>Tailwind CSS 4, Shadcn UI, Framer Motion (animations)</styling>
+      <icons>Lucide React</icons>
+      <internationalization>next-intl (English, Romanian, Spanish)</internationalization>
+      <analytics>PostHog</analytics>
+    </frontend>
+
+    <backend_data>
+      <dynamic_db>Convex</dynamic_db>
+      <purpose>
+        - Handling interactive forms (Project Inquiry Wizard)
+        - Real-time features (Availability Status)
+        - User engagement data
+      </purpose>
+    </backend_data>
+
+    <content_management>
+      <cms>Sanity Studio (Embedded)</cms>
+      <purpose>
+        - Blog Posts
+        - Project Showcases / Case Studies
+        - Service Packages
+        - Testimonials
+        - Resume Data (Jobs, Skills, Certificates)
+        - Global Site Settings
+      </purpose>
+      <features>Visual Editing (Sanity Presentation), Internationalized Fields</features>
+    </content_management>
+
+    <infrastructure>
+      <hosting>Vercel (Frontend & Edge Functions)</hosting>
+      <email>Resend (Transactional emails for inquiries)</email>
+    </infrastructure>
+  </technology_stack>
+
+  <core_features>
+    <portfolio_showcase>
+      - **Projects Grid**: Filterable list of past work (by tech, industry, type).
+      - **Case Studies**: Deep-dive pages with "Challenge," "Solution," and "Result" sections.
+      - **Live Previews**: Links to live sites and GitHub repositories.
+      - **Tech Stack Highlighting**: Visual indicators of technologies used per project.
+    </portfolio_showcase>
+
+    <interactive_inquiry>
+      - **Smart Wizard**: Multi-step form (Step 0-7) to qualify leads.
+      - **Data Capture**:
+        - Project Type (Web App, Site, E-commerce)
+        - Audience & Purpose
+        - Features & Functionality
+        - Budget & Timeline
+        - Business Context
+      - **Backend**: Data stored in Convex `projectInquiries` table.
+      - **Notification**: Instant email alert via Resend upon submission.
+    </interactive_inquiry>
+
+    <content_marketing>
+      - **Blog**: Technical articles and thought leadership.
+      - **SEO**: Fully optimized metadata, sitemaps, and robots.txt.
+      - **RSS Feed**: Automatic feed generation.
+    </content_marketing>
+
+    <internationalization>
+      - **Multi-language**: Full content translation in EN, RO, ES.
+      - **Routing**: Sub-path routing (e.g., /ro/services).
+      - **Detection**: Automatic locale detection based on headers.
+    </internationalization>
+
+    <persuasion_conversion>
+      - **Service Packages**: Clear, productized offerings (e.g., "MVP Launch", "Performance Audit").
+      - **Availability Status**: Real-time "Open to Work" / "Booked until [Date]" indicator in header/footer.
+      - **Testimonial Engine**: Client reviews linked to specific projects for social proof.
+      - **Resume/CV**: Digital and printable versions of the resume.
+    </persuasion_conversion>
+  </core_features>
+
+  <database_schema>
+    <convex_schema>
+      <!-- Defined in frontend/convex/schema.ts -->
+      <table name="projectInquiries">
+        - userId (optional string)
+        - currentStep (number)
+        - isTech (optional boolean)
+        - status (string: "in_progress" | "submitted")
+        - projectType (array string)
+        - targetAudience (optional string)
+        - projectPurpose (optional string)
+        - features (optional array string)
+        - currentStatus (optional string)
+        - existingResources (optional array string)
+        - currentLink (optional string)
+        - budgetRange (optional string)
+        - timeline (optional string)
+        - businessContext (optional string)
+        - successCriteria (optional string)
+        - email (optional string)
+        - bookCall (optional boolean)
+        - updatedAt (number)
+      </table>
+    </convex_schema>
+
+    <sanity_schema>
+      <!-- Defined in studio/src/schemaTypes -->
+      <documents>
+        <type name="post">Blog posts with portable text and localized fields</type>
+        <type name="project">Portfolio projects with gallery, tech stack, and case study fields</type>
+        <type name="job">Work experience entries (Company, Position, Dates, Tech Stack)</type>
+        <type name="skill">Technical skills with proficiency levels and categories</type>
+        <type name="certificate">Certifications and awards</type>
+        <type name="service">Service packages (Price, Deliverables, Timeline) [Planned]</type>
+        <type name="testimonial">Client reviews (Author, Company, Quote, Rating) [Planned]</type>
+        <type name="author">Author metadata for posts</type>
+        <type name="home">Home page singleton content</type>
+        <type name="profile">Global profile singleton (Name, Socials, Bio)</type>
+      </documents>
+    </sanity_schema>
+  </database_schema>
+
+  <roadmap>
+    <phase_1 status="completed">
+      <title>Foundation & Core Structure</title>
+      - Next.js setup with Tailwind & Shadcn UI
+      - Sanity CMS integration with Visual Editing
+      - Basic Blog and Project listing
+      - Multi-language routing (i18n)
+    </phase_1>
+
+    <phase_2 status="current">
+      <title>Interactive Inquiry & Conversion</title>
+      - Implement multi-step "Start Your Project" wizard (Convex)
+      - Refine Project Detail pages (Case Study format)
+      - Add "Service Packages" section to clarify offerings
+    </phase_2>
+
+    <phase_3 status="planned">
+      <title>Social Proof & Automation</title>
+      - **Testimonials Module**: Link reviews to projects in Sanity.
+      - **Availability Toggle**: Admin dashboard in Convex to update work status globally.
+      - **Automated Follow-ups**: Resend email sequences for inquiry confirmations.
+      - **Performance Tuning**: Advanced caching and image optimization.
+    </phase_3>
+  </roadmap>
+
+  <design_system>
+    <theme>
+      - **Mode**: Dark/Light mode support (next-themes).
+      - **Typography**: Sans-serif (Inter/Geist) for clean, modern look.
+      - **Accent Colors**: Professional, trustworthy palette (e.g., Indigo/Emerald).
+    </theme>
+    <components>
+      - **UI Library**: Shadcn UI (Radix Primitives).
+      - **Animations**: Framer Motion for page transitions and scroll reveals.
+      - **Interactive**: Rive animations (e.g., animated logo).
+    </components>
+  </design_system>
+
+  <implementation_guidelines>
+    <code_style>
+      - **Functional Components**: React Server Components by default.
+      - **Client Components**: "use client" only where interactivity is needed.
+      - **Type Safety**: Strict TypeScript everywhere. Zod for validation.
+    </code_style>
+    <file_structure>
+      - `/frontend/app`: App Router pages and layouts.
+      - `/frontend/convex`: Backend logic and schema.
+      - `/frontend/components`: Shared UI components.
+      - `/frontend/sanity`: Sanity client and utility functions.
+      - `/studio`: Sanity Studio configuration.
+      - `/frontend/messages`: i18n JSON files.
+    </file_structure>
+  </implementation_guidelines>
+</project_specification>
