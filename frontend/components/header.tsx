@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { localizeField } from "@/sanity/lib/localization";
 import { LanguageToggle } from "@/components/language-toggle";
 import {
   NavigationMenu,
@@ -7,11 +5,11 @@ import {
   NavigationMenuItem,
 } from "@/components/ui/navigation-menu";
 import { Link } from "@/components/ui/link";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import dynamic from "next/dynamic";
-import { sanityFetch } from "@/sanity/lib/live";
-import { settingsQuery } from "@/sanity/lib/queries";
-import ResolvedLink from "./sanity/resolved-link";
+import { getTranslations } from "next-intl/server";
+import { Link as I18nLink } from "@/i18n/navigation";
 
 const AnimatedLogo = dynamic(
   () =>
@@ -27,21 +25,14 @@ type HeaderProps = {
 };
 
 export async function Header({ locale, className }: HeaderProps) {
-  const { data: settings } = await sanityFetch({
-    query: settingsQuery,
-    stega: false,
-  });
+  const t = await getTranslations({ locale, namespace: "settings.header" });
 
-  if (!settings) {
-    return null;
-  }
-
-  const skipLinkText = localizeField(settings.header.skipLinkText, locale);
-  const navigationLabel = localizeField(settings.header.navLabel, locale);
-  const homeButtonLabel = localizeField(
-    settings.header.homeButtonLabel,
-    locale,
-  );
+  const skipLinkText = t("skipLinkText");
+  const navigationLabel = t("navLabel");
+  const homeButtonLabel = t("homeButtonLabel");
+  const cta = t.raw("cta") as { text: string; href: string };
+  const ctaText = cta.text;
+  const ctaHref = cta.href;
 
   return (
     <header
@@ -69,9 +60,9 @@ export async function Header({ locale, className }: HeaderProps) {
           <NavigationMenu aria-label={navigationLabel}>
             <NavigationMenuList className="gap-4 md:gap-6">
               <NavigationMenuItem>
-                <ResolvedLink variant="default" link={settings.header.cta.link}>
-                  {localizeField(settings.header.cta.text, locale)}
-                </ResolvedLink>
+                <Button asChild variant="default">
+                  <I18nLink href={ctaHref}>{ctaText}</I18nLink>
+                </Button>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <LanguageToggle currentLocale={locale} />

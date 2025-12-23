@@ -1,7 +1,6 @@
 import { format } from "date-fns";
-import { PortableText } from "@portabletext/react";
-import { localizeBlockContent } from "@/sanity/lib/localization";
-import { Job } from "@/sanity.types";
+import Image from "next/image";
+import { jobs } from "@/lib/data/jobs";
 import {
   Card,
   CardContent,
@@ -12,15 +11,17 @@ import {
 import { Badge } from "@/components/ui/badge";
 
 type ExperienceTimelineProps = {
-  jobs: Job[];
+  jobs?: typeof jobs;
   locale: string;
 };
 
 export default function ExperienceTimeline({
-  jobs,
+  jobs: jobsProp,
   locale,
 }: ExperienceTimelineProps) {
-  if (!jobs || jobs.length === 0) {
+  const jobsToDisplay = jobsProp || jobs;
+  
+  if (!jobsToDisplay || jobsToDisplay.length === 0) {
     return null;
   }
 
@@ -41,7 +42,7 @@ export default function ExperienceTimeline({
             <div className="from-primary/30 via-primary/50 to-primary/30 absolute top-0 bottom-0 left-8 w-0.5 bg-linear-to-b md:left-1/2" />
 
             <div className="space-y-12">
-              {jobs.map((job, index) => {
+              {jobsToDisplay.map((job, index) => {
                 const isEven = index % 2 === 0;
                 const startFormatted = format(
                   new Date(job.startDate),
@@ -52,10 +53,7 @@ export default function ExperienceTimeline({
                   : job.endDate
                     ? format(new Date(job.endDate), "MMM yyyy")
                     : "Present";
-                const jobDescription = localizeBlockContent(
-                  job.description,
-                  locale,
-                );
+                const jobDescription = job.description[locale as "en" | "ro" | "es"] || job.description.en;
 
                 return (
                   <div
@@ -77,12 +75,24 @@ export default function ExperienceTimeline({
                           }}
                         >
                           <CardHeader>
-                            <CardTitle className="text-2xl">
-                              {job.position}
-                            </CardTitle>
-                            <CardDescription className="text-primary text-lg font-semibold">
-                              {job.company}
-                            </CardDescription>
+                            <div className="flex items-center gap-4">
+                              <div className="relative h-12 w-12 shrink-0">
+                                <Image
+                                  src={job.logo}
+                                  alt={job.company}
+                                  fill
+                                  className="object-contain"
+                                />
+                              </div>
+                              <div>
+                                <CardTitle className="text-2xl">
+                                  {job.position}
+                                </CardTitle>
+                                <CardDescription className="text-primary text-lg font-semibold">
+                                  {job.company}
+                                </CardDescription>
+                              </div>
+                            </div>
                           </CardHeader>
 
                           <CardContent>
@@ -109,8 +119,21 @@ export default function ExperienceTimeline({
                             </div>
 
                             {jobDescription && jobDescription.length > 0 && (
-                              <div className="prose prose-sm max-w-none">
-                                <PortableText value={jobDescription} />
+                              <div className="prose prose-sm max-w-none whitespace-pre-line">
+                                {jobDescription}
+                              </div>
+                            )}
+                            {job.skills && job.skills.length > 0 && (
+                              <div className="mt-4 flex flex-wrap gap-2">
+                                {job.skills.map((skill) => (
+                                  <Badge
+                                    key={skill}
+                                    variant="outline"
+                                    className="text-xs"
+                                  >
+                                    {skill}
+                                  </Badge>
+                                ))}
                               </div>
                             )}
                           </CardContent>

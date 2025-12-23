@@ -1,24 +1,22 @@
 import Image from "next/image";
-import { PortableText } from "@portabletext/react";
-import { urlForImage } from "@/sanity/lib/utils";
-import { localizeField, localizeBlockContent } from "@/sanity/lib/localization";
-
-type Project = any;
+import { projects } from "@/lib/data/projects";
 
 type ProjectGridProps = {
-  projects: Project[];
+  projects?: typeof projects;
   title?: string;
   subtitle?: string;
   locale: string;
 };
 
 export default function ProjectGrid({
-  projects,
+  projects: projectsProp,
   title = "Featured Projects",
   subtitle = "Some of my recent work",
   locale,
 }: ProjectGridProps) {
-  if (!projects || projects.length === 0) {
+  const projectsToDisplay = projectsProp || projects;
+  
+  if (!projectsToDisplay || projectsToDisplay.length === 0) {
     return null;
   }
 
@@ -34,12 +32,12 @@ export default function ProjectGrid({
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project, index) => {
-              const projectName = localizeField(project.name, locale);
-              const projectDescription = localizeBlockContent(
-                project.description,
-                locale,
-              );
+            {projectsToDisplay.map((project, index) => {
+              const projectName =
+                project.name[locale as "en" | "ro" | "es"] || project.name.en;
+              const projectDescription =
+                project.description[locale as "en" | "ro" | "es"] ||
+                project.description.en;
 
               return (
                 <div
@@ -55,12 +53,7 @@ export default function ProjectGrid({
                     {project.image && (
                       <div className="from-primary-100 to-accent-100 relative h-48 w-full overflow-hidden bg-linear-to-br">
                         <Image
-                          src={
-                            urlForImage(project.image)
-                              ?.width(600)
-                              .height(400)
-                              .url() || ""
-                          }
+                          src={project.image}
                           alt={projectName || "Project"}
                           fill
                           className="object-cover transition-transform duration-300 group-hover:scale-110"
@@ -74,8 +67,8 @@ export default function ProjectGrid({
                       </h3>
 
                       {projectDescription && projectDescription.length > 0 && (
-                        <div className="prose prose-sm line-clamp-3 max-w-none text-gray-600">
-                          <PortableText value={projectDescription} />
+                        <div className="prose prose-sm line-clamp-3 max-w-none text-gray-600 whitespace-pre-line">
+                          {projectDescription}
                         </div>
                       )}
 

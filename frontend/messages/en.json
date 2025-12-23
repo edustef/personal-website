@@ -223,6 +223,70 @@
     }
   },
   "footer": {
-    "privacyPolicy": "Privacy Policy"
+    "privacyPolicy": "Privacy Policy",
+    "text": "@ {currentYear} Eduard Sergiu Stefan. Built with Next.js."
+  },
+  "home": {
+    "headline": "Websites <strong>built to perform</strong>, not just exist.",
+    "tagline": "I am Eduard Stefan and I build websites that help you grow your online presence.",
+    "renovationLabelPrimary": "More ",
+    "renovationLabelSecondary": "soon",
+    "resumeButtonLabel": "See my resume",
+    "findMeOnLabel": "Find me on",
+    "ctaButtons": [
+      {
+        "text": "Get started",
+        "href": "/start-your-project",
+        "variant": "default"
+      }
+    ],
+    "seo": {
+      "title": "Home",
+      "description": "I am Eduard Stefan and I build Websites, Mobile Apps and AI solutions."
+    }
+  },
+  "profile": {
+    "name": "Eduard Sergiu Stefan",
+    "email": "contact@eduardstefan.dev",
+    "phone": "+40770378214",
+    "motto": "Master in the arts of <div>ination.",
+    "about": "About me",
+    "location": "Oradea, Romania",
+    "workPreference": "Remote",
+    "socialLinks": [
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/eduard-stefan-089371100/"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://instagram.com"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/edustef"
+      }
+    ]
+  },
+  "settings": {
+    "title": "Eduard Stefan",
+    "description": "I am Eduard Stefan and I build Websites, Mobile Apps and AI solutions.",
+    "header": {
+      "cta": {
+        "text": "Get started",
+        "href": "/start-your-project"
+      },
+      "homeButtonLabel": "Home",
+      "navLabel": "Primary navigation",
+      "skipLinkText": "Skip to main content"
+    },
+    "seo": {
+      "title": "Eduard Stefan",
+      "description": "I am Eduard Stefan and I build Websites, Mobile Apps and AI solutions."
+    }
+  },
+  "skills": {
+    "headline": "Websites <strong>built to perform</strong>, not just exist.",
+    "subtitle": "Technologies I work with"
   }
 }

@@ -1,5 +1,4 @@
 import { format } from "date-fns";
-import { PortableText } from "@portabletext/react";
 import {
   Card,
   CardContent,
@@ -9,19 +8,20 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Award } from "lucide-react";
-import { localizeBlockContent } from "@/sanity/lib/localization";
-type Certificate = any;
+import { certificates } from "@/lib/data/certificates";
 
 type CertificatesSectionProps = {
-  certificates: Certificate[];
+  certificates?: typeof certificates;
   locale: string;
 };
 
 export default function CertificatesSection({
-  certificates,
+  certificates: certificatesProp,
   locale,
 }: CertificatesSectionProps) {
-  if (!certificates || certificates.length === 0) {
+  const certificatesToDisplay = certificatesProp || certificates;
+  
+  if (!certificatesToDisplay || certificatesToDisplay.length === 0) {
     return null;
   }
 
@@ -39,13 +39,10 @@ export default function CertificatesSection({
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {certificates.map((certificate) => {
-              const description = localizeBlockContent(
-                certificate.description,
-                locale,
-              );
-              const formattedDate = certificate.issueDate
-                ? format(new Date(certificate.issueDate), "MMM yyyy")
+            {certificatesToDisplay.map((certificate) => {
+              const description = certificate.description[locale as "en" | "ro" | "es"] || certificate.description.en;
+              const formattedDate = certificate.dateIssued
+                ? format(new Date(certificate.dateIssued), "MMM yyyy")
                 : null;
 
               return (
@@ -61,8 +58,8 @@ export default function CertificatesSection({
 
                   <CardContent className="flex-1 space-y-4">
                     {description && description.length > 0 && (
-                      <div className="text-muted-foreground prose prose-sm max-w-none text-sm">
-                        <PortableText value={description} />
+                      <div className="text-muted-foreground prose prose-sm max-w-none text-sm whitespace-pre-line">
+                        {description}
                       </div>
                     )}
                     {formattedDate && (

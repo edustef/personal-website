@@ -1,15 +1,13 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
-import { servicesPageQuery } from "@/sanity/lib/queries";
-import { sanityFetch } from "@/sanity/lib/live";
 import { getLocalizedSettingsMetadata, getCanonicalUrl } from "@/lib/seo";
-import { localizeField } from "@/sanity/lib/localization";
-import { hasLocale, Locale } from "next-intl";
+import { hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import { defaultLocale, LocaleId, routing } from "@/i18n/routing";
+import { defaultLocale, routing } from "@/i18n/routing";
 import { ClientProjectInflow } from "@/app/[locale]/(website)/start-your-project/client-project-inflow";
 import { Spotlight } from "@/components/ui/spotlight-new";
+import { getTranslations } from "next-intl/server";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -17,21 +15,14 @@ type Props = {
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
-  const locale = params.locale as LocaleId;
+  const locale = params.locale;
 
-  const [{ data: page }, localizedSettings] = await Promise.all([
-    sanityFetch({ query: servicesPageQuery, params: { locale } }),
+  const [localizedSettings, t] = await Promise.all([
     getLocalizedSettingsMetadata(locale),
+    getTranslations({ locale, namespace: "startYourProject" }),
   ]);
 
-  if (!page) {
-    return {
-      title: localizedSettings.title,
-      description: localizedSettings.description,
-    };
-  }
-
-  const title = localizeField(page.seo?.title, locale);
+  const title = t("title");
   const localizedPath =
     locale === defaultLocale
       ? "/start-your-project"
@@ -40,9 +31,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const canonicalUrl = getCanonicalUrl(locale, localizedPath);
 
   return {
-    title: title
-      ? `${title} | ${localizedSettings.title}`
-      : localizedSettings.title,
+    title: `${title} | ${localizedSettings.title}`,
     description: localizedSettings.description,
     alternates: {
       canonical: canonicalUrl,

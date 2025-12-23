@@ -3,29 +3,22 @@ import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Lexend, DM_Mono } from "next/font/google";
-import { draftMode } from "next/headers";
-import { VisualEditing } from "next-sanity/visual-editing";
 import { Toaster } from "sonner";
 import { notFound } from "next/navigation";
 
-import DraftModeToast from "@/components/draft-mode-toast";
-import { SanityLive } from "@/sanity/lib/live";
 import { handleError } from "../../lib/client-utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ConvexClientProvider } from "@/components/convex-client-provider";
 import { getLocalizedSettingsMetadata, getCanonicalUrl } from "@/lib/seo";
 import { NextIntlClientProvider } from "next-intl";
 import { locales, routing } from "@/i18n/routing";
-import { sanityFetch } from "@/sanity/lib/live";
-import { homeQuery, settingsQuery } from "@/sanity/lib/queries";
 import {
 	createPersonSchema,
 	createWebSiteSchema,
 	sanitizeJsonLd,
 } from "@/lib/structured-data";
-import { localizeField } from "@/sanity/lib/localization";
-import { urlForImage } from "@/sanity/lib/utils";
 import { setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import Script from "next/script";
 
 type MetadataProps = {
@@ -99,7 +92,6 @@ type Props = {
 
 export default async function LocaleLayout(props: Props) {
 	const params = await props.params;
-	const { isEnabled: isDraftMode } = await draftMode();
 
 	if (!locales.find((locale) => locale.id === params.locale)) {
 		notFound();
@@ -107,26 +99,29 @@ export default async function LocaleLayout(props: Props) {
 
 	setRequestLocale(params.locale);
 
-	const [{ data: home }, localizedSettings] = await Promise.all([
-		sanityFetch({ query: homeQuery, params: { locale: params.locale } }),
+	const [localizedSettings, profileT] = await Promise.all([
 		getLocalizedSettingsMetadata(params.locale),
+		getTranslations({ locale: params.locale, namespace: "profile" }),
 	]);
 
-	const personSchema = home?.profile
-		? createPersonSchema(
-				{
-					...home.profile,
-					motto: localizeField(home.profile.motto, params.locale),
-					about: localizeField(home.profile.about, params.locale),
-					workPreference: localizeField(
-						home.profile.workPreference,
-						params.locale,
-					),
-					picture: urlForImage(home.profile.picture)?.url() || null,
-				},
-				params.locale,
-			)
-		: null;
+	const socialLinks = profileT.raw("socialLinks") as Array<{
+		name: string;
+		url: string;
+	}>;
+
+	const personSchema = createPersonSchema(
+		{
+			name: profileT("name"),
+			email: profileT("email"),
+			phone: profileT("phone"),
+			motto: profileT("motto"),
+			about: profileT("about"),
+			picture: null,
+			socialLinks: socialLinks.map((link) => ({ url: link.url })),
+			workPreference: profileT("workPreference"),
+		},
+		params.locale,
+	);
 
 	const webSiteSchema = createWebSiteSchema(
 		localizedSettings.title,
@@ -161,13 +156,6 @@ export default async function LocaleLayout(props: Props) {
 					<ConvexClientProvider>
 						<ThemeProvider attribute="class" forcedTheme="dark">
 							<Toaster />
-							{isDraftMode && (
-								<>
-									<DraftModeToast />
-									<VisualEditing />
-								</>
-							)}
-							<SanityLive onError={handleError} />
 							{props.children}
 							<SpeedInsights />
 						</ThemeProvider>

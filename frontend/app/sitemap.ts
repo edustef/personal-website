@@ -1,13 +1,8 @@
 import { MetadataRoute } from "next";
-import { sanityFetch } from "@/sanity/lib/live";
-import { sitemapData } from "@/sanity/lib/queries";
 import { locales, routing } from "@/i18n/routing";
 import { getBaseUrl } from "@/lib/utils";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const allPostsAndPages = await sanityFetch({
-    query: sitemapData,
-  });
   const baseUrl = getBaseUrl();
 
   const sitemap: MetadataRoute.Sitemap = [];
@@ -39,19 +34,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           priority: 0.9,
           changeFrequency: "monthly",
         });
-      }
-    }
-
-    if (allPostsAndPages != null && allPostsAndPages.data.length != 0) {
-      for (const p of allPostsAndPages.data) {
-        if (p._type === "post") {
-          sitemap.push({
-            url: `${baseUrl}${localePath}/posts/${p.slug}`,
-            lastModified: p._updatedAt ? new Date(p._updatedAt) : new Date(),
-            priority: 0.5,
-            changeFrequency: "never",
-          });
-        }
       }
     }
   }

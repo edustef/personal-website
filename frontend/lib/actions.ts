@@ -1,10 +1,9 @@
 "use server";
 
-import { draftMode, headers } from "next/headers";
+import { headers } from "next/headers";
 import { z } from "zod";
 import { checkRateLimit } from "@vercel/firewall";
 import { Resend } from "resend";
-import { writeClient } from "@/sanity/lib/write-client";
 import { normalizeMessage, sanitizeForHtml } from "@/lib/security";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -102,16 +101,7 @@ export async function submitContactForm(
     const cleanedMessage = normalizeMessage(message);
     const safeMessage = sanitizeForHtml(cleanedMessage);
 
-    const createdAt = new Date().toISOString();
-
-    await Promise.all([
-      writeClient.create({
-        _type: "contact",
-        email: normalizedEmail,
-        message: cleanedMessage,
-        createdAt,
-      }),
-      resend.emails.send({
+    await resend.emails.send({
         from:
           process.env.RESEND_FROM_EMAIL ||
           "Contact Form <onboarding@resend.dev>",
@@ -125,8 +115,7 @@ export async function submitContactForm(
           <p><strong>Message:</strong></p>
           <p>${safeMessage.replace(/\n/g, "<br>")}</p>
         `,
-      }),
-    ]);
+    });
 
     return {
       success: true,
@@ -305,10 +294,3 @@ Book a Call: ${emailContent.bookCall}`;
   }
 }
 
-export async function disableDraftMode() {
-  "use server";
-  await Promise.allSettled([
-    (await draftMode()).disable(),
-    new Promise((resolve) => setTimeout(resolve, 1000)),
-  ]);
-}

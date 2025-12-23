@@ -223,6 +223,70 @@
     }
   },
   "footer": {
-    "privacyPolicy": "Politica de Confidențialitate"
+    "privacyPolicy": "Politica de Confidențialitate",
+    "text": "@ {currentYear} Eduard Sergiu Ștefan. Realizat cu Next.js."
+  },
+  "home": {
+    "headline": "Site-uri web <strong>construite să performeze</strong>, nu doar să existe.",
+    "tagline": "Sunt Eduard Ștefan și construiesc site-uri web care te ajută să-ți crești prezența online.",
+    "renovationLabelPrimary": "Mai multe ",
+    "renovationLabelSecondary": "în curând",
+    "resumeButtonLabel": "Vezi CV-ul meu",
+    "findMeOnLabel": "Găsește-mă pe",
+    "ctaButtons": [
+      {
+        "text": "Începe",
+        "href": "/start-your-project",
+        "variant": "default"
+      }
+    ],
+    "seo": {
+      "title": "Acasa",
+      "description": "Eu sunt Eduard Ștefan și construiesc website-uri, mobile apps și soluții AI."
+    }
+  },
+  "profile": {
+    "name": "Eduard Sergiu Stefan",
+    "email": "contact@eduardstefan.dev",
+    "phone": "+40770378214",
+    "motto": "Master in the arts of <div>ination.",
+    "about": "Despre mine",
+    "location": "Oradea, România",
+    "workPreference": "Remote",
+    "socialLinks": [
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/eduard-stefan-089371100/"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://instagram.com"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/edustef"
+      }
+    ]
+  },
+  "settings": {
+    "title": "Eduard Stefan",
+    "description": "Creez experiențe elegante pentru Web. Apps. AI.",
+    "header": {
+      "cta": {
+        "text": "Începe",
+        "href": "/start-your-project"
+      },
+      "homeButtonLabel": "Acasa",
+      "navLabel": "Navigatie principala",
+      "skipLinkText": "Sari la continutul principal"
+    },
+    "seo": {
+      "title": "Eduard Stefan",
+      "description": "Sunt Eduard Ștefan și construiesc site-uri web, aplicații mobile și soluții AI."
+    }
+  },
+  "skills": {
+    "headline": "Site-uri web <strong>construite să performeze</strong>, nu doar să existe.",
+    "subtitle": "Tehnologii cu care lucrez"
   }
 }

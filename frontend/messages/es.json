@@ -223,6 +223,70 @@
     }
   },
   "footer": {
-    "privacyPolicy": "Política de Privacidad"
+    "privacyPolicy": "Política de Privacidad",
+    "text": "@ {currentYear} Eduard Sergiu Stefan. Construido con Next.js."
+  },
+  "home": {
+    "headline": "Sitios web <strong>construidos para rendir</strong>, no solo existir.",
+    "tagline": "Soy Eduard Stefan y diseño páginas web para potenciar tu presencia online.",
+    "renovationLabelPrimary": "Más ",
+    "renovationLabelSecondary": "próximamente",
+    "resumeButtonLabel": "Ver mi currículum",
+    "findMeOnLabel": "Encuéntrame en",
+    "ctaButtons": [
+      {
+        "text": "Empieza",
+        "href": "/start-your-project",
+        "variant": "default"
+      }
+    ],
+    "seo": {
+      "title": "Casa",
+      "description": "Soy Eduard Stefan y desarrollo websites, mobile apps y soluciones de IA."
+    }
+  },
+  "profile": {
+    "name": "Eduard Sergiu Stefan",
+    "email": "contact@eduardstefan.dev",
+    "phone": "+40770378214",
+    "motto": "Master in the arts of <div>ination.",
+    "about": "Sobre me",
+    "location": "Oradea, Rumanía",
+    "workPreference": "Teletrabajo",
+    "socialLinks": [
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/eduard-stefan-089371100/"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://instagram.com"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/edustef"
+      }
+    ]
+  },
+  "settings": {
+    "title": "Eduard Stefan",
+    "description": "Creo experiencias elegantes para Web. Apps. AI.",
+    "header": {
+      "cta": {
+        "text": "Empieza",
+        "href": "/start-your-project"
+      },
+      "homeButtonLabel": "Casa",
+      "navLabel": "Navegacion principal",
+      "skipLinkText": "Saltar al contenido principal"
+    },
+    "seo": {
+      "title": "Eduard Stefan",
+      "description": "Soy Eduard Stefan y desarrollo sitios web, aplicaciones móviles y soluciones de IA."
+    }
+  },
+  "skills": {
+    "headline": "Sitios web <strong>construidos para rendir</strong>, no solo existir.",
+    "subtitle": "Tecnologías con las que trabajo"
   }
 }

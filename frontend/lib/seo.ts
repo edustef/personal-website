@@ -1,68 +1,48 @@
-import { toPlainText } from "next-sanity";
-
-import { sanityFetch } from "@/sanity/lib/live";
-import { settingsQuery } from "@/sanity/lib/queries";
-import { resolveOpenGraphImage } from "@/sanity/lib/utils";
-import {
-  localizeBlockContent,
-  localizedImage,
-  localizeField,
-} from "@/sanity/lib/localization";
 import { routing } from "@/i18n/routing";
 import { getBaseUrl } from "@/lib/utils";
+import { getTranslations } from "next-intl/server";
+import homeOpengraphEn from "@/assets/images/home-opengraph-en.png";
+import homeOpengraphEs from "@/assets/images/home-opengraph-es.png";
+import homeOpengraphRo from "@/assets/images/home-opengraph-ro.png";
 
 export type LocalizedSettingsMetadata = {
   title: string;
   description?: string;
-  ogImage?: ReturnType<typeof resolveOpenGraphImage>;
+  ogImage?: {
+    url: string;
+    width: number;
+    height: number;
+    alt: string;
+  };
   metadataBase?: URL;
+};
+
+const ogImages = {
+  en: homeOpengraphEn,
+  es: homeOpengraphEs,
+  ro: homeOpengraphRo,
 };
 
 export async function getLocalizedSettingsMetadata(
   locale: string,
 ): Promise<LocalizedSettingsMetadata> {
-  const { data: settings } = await sanityFetch({
-    query: settingsQuery,
-    stega: false,
-  });
-  if (!settings) {
-    throw new Error("Settings not found");
-  }
+  const t = await getTranslations({ locale, namespace: "settings.seo" });
 
-  const title = localizeField(settings.seo.title, locale);
-
-  const descriptionBlocks = localizeBlockContent(
-    settings.seo.description,
-    locale,
-  );
-  const description = truncateText(toPlainText(descriptionBlocks));
-
-  const localizedOgImage = localizedImage(settings.seo.ogImage, locale);
-  const ogImage = resolveOpenGraphImage(localizedOgImage);
-
-  const metadataBase = parseMetadataBase(localizedOgImage?.metadataBase);
+  const title = t("title");
+  const description = t("description");
+  const ogImage = ogImages[locale as keyof typeof ogImages] || ogImages.en;
 
   return {
     title,
     description,
-    ogImage,
-    metadataBase,
+    ogImage: {
+      url: ogImage.src,
+      width: ogImage.width,
+      height: ogImage.height,
+      alt: description || title,
+    },
+    metadataBase: new URL(getBaseUrl()),
   };
-}
-
-function truncateText(value: string, maxLength = 160) {
-  if (!value) return "";
-  if (value.length <= maxLength) return value;
-  return `${value.slice(0, maxLength - 3).trimEnd()}...`;
-}
-
-function parseMetadataBase(value: string | undefined) {
-  if (!value) return undefined;
-  try {
-    return new URL(value);
-  } catch {
-    return undefined;
-  }
 }
 
 export function getCanonicalUrl(locale: string, path: string = ""): string {

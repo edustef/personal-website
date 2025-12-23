@@ -1,7 +1,4 @@
-import { homeFooterQuery } from "@/sanity/lib/queries";
-import { sanityFetch } from "@/sanity/lib/live";
 import { cn } from "@/lib/utils";
-import { localizeField } from "@/sanity/lib/localization";
 import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 
@@ -11,22 +8,14 @@ type FooterProps = {
 };
 
 export async function Footer({ className, locale }: FooterProps) {
-  const { data: home } = await sanityFetch({
-    query: homeFooterQuery,
-  });
-
   const t = await getTranslations({ locale, namespace: "footer" });
 
   const currentYear = new Date().getFullYear();
-  const footerTemplate = localizeField(home?.footer, locale);
-  const fallbackTemplate = `@ {currentYear} ${
-    home?.profile?.name || "Portfolio"
-  }. Built with Next.js & Sanity.`;
-  const template = footerTemplate || fallbackTemplate;
-  const hasPlaceholder = template.includes("{currentYear}");
+  const footerTemplate = t("text");
+  const hasPlaceholder = footerTemplate.includes("{currentYear}");
   const [beforeYear, afterYear = ""] = hasPlaceholder
-    ? template.split("{currentYear}")
-    : [template, ""];
+    ? footerTemplate.split("{currentYear}")
+    : [footerTemplate, ""];
 
   return (
     <footer
@@ -46,7 +35,7 @@ export async function Footer({ className, locale }: FooterProps) {
                   {afterYear}
                 </>
               ) : (
-                template
+                footerTemplate
               )}
             </p>
             <p className="mt-4 text-sm">
