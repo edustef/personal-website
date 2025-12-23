@@ -235,7 +235,7 @@
     "findMeOnLabel": "Encuéntrame en",
     "ctaButtons": [
       {
-        "text": "Empieza",
+        "text": "Obtén tu oferta",
         "href": "/start-your-project",
         "variant": "default"
       }
@@ -273,7 +273,7 @@
     "description": "Creo experiencias elegantes para Web. Apps. AI.",
     "header": {
       "cta": {
-        "text": "Empieza",
+        "text": "Obtén tu oferta",
         "href": "/start-your-project"
       },
       "homeButtonLabel": "Casa",

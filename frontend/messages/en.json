@@ -235,7 +235,7 @@
     "findMeOnLabel": "Find me on",
     "ctaButtons": [
       {
-        "text": "Get started",
+        "text": "Get your offer",
         "href": "/start-your-project",
         "variant": "default"
       }
@@ -273,7 +273,7 @@
     "description": "I am Eduard Stefan and I build Websites, Mobile Apps and AI solutions.",
     "header": {
       "cta": {
-        "text": "Get started",
+        "text": "Get your offer",
         "href": "/start-your-project"
       },
       "homeButtonLabel": "Home",

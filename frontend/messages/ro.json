@@ -235,7 +235,7 @@
     "findMeOnLabel": "Găsește-mă pe",
     "ctaButtons": [
       {
-        "text": "Începe",
+        "text": "Obține oferta ta",
         "href": "/start-your-project",
         "variant": "default"
       }
@@ -273,7 +273,7 @@
     "description": "Creez experiențe elegante pentru Web. Apps. AI.",
     "header": {
       "cta": {
-        "text": "Începe",
+        "text": "Obține oferta ta",
         "href": "/start-your-project"
       },
       "homeButtonLabel": "Acasa",

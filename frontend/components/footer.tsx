@@ -11,11 +11,8 @@ export async function Footer({ className, locale }: FooterProps) {
   const t = await getTranslations({ locale, namespace: "footer" });
 
   const currentYear = new Date().getFullYear();
-  const footerTemplate = t("text");
-  const hasPlaceholder = footerTemplate.includes("{currentYear}");
-  const [beforeYear, afterYear = ""] = hasPlaceholder
-    ? footerTemplate.split("{currentYear}")
-    : [footerTemplate, ""];
+  const footerText = t("text", { currentYear });
+  const parts = footerText.split(currentYear.toString());
 
   return (
     <footer
@@ -28,14 +25,14 @@ export async function Footer({ className, locale }: FooterProps) {
         <div className="mx-auto flex max-w-5xl flex-col items-center">
           <div className="mt-12 w-full border-t border-gray-700 pt-8 text-center">
             <p className="text-sm">
-              {hasPlaceholder ? (
+              {parts.length > 1 ? (
                 <>
-                  {beforeYear}
+                  {parts[0]}
                   <time dateTime={currentYear.toString()}>{currentYear}</time>
-                  {afterYear}
+                  {parts[1]}
                 </>
               ) : (
-                footerTemplate
+                footerText
               )}
             </p>
             <p className="mt-4 text-sm">
