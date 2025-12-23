@@ -705,6 +705,35 @@
             "value": "button"
           }
         },
+        "variant": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "union",
+            "of": [
+              {
+                "type": "string",
+                "value": "default"
+              },
+              {
+                "type": "string",
+                "value": "outline"
+              },
+              {
+                "type": "string",
+                "value": "secondary"
+              },
+              {
+                "type": "string",
+                "value": "ghost"
+              },
+              {
+                "type": "string",
+                "value": "link"
+              }
+            ]
+          },
+          "optional": false
+        },
         "text": {
           "type": "objectAttribute",
           "value": {
@@ -2175,7 +2204,7 @@
         "type": "objectAttribute",
         "value": {
           "type": "inline",
-          "name": "internationalizedArrayString"
+          "name": "internationalizedArrayBlockContent"
         },
         "optional": false
       },

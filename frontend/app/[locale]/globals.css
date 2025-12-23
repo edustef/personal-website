@@ -36,7 +36,7 @@
   --sidebar-accent-foreground: hsl(220.9091 39.2857% 10.9804%);
   --sidebar-border: hsl(220 13.0435% 90.9804%);
   --sidebar-ring: hsl(21.7450 65.6388% 55.4902%);
-  --font-sans: Geist Mono, ui-monospace, monospace;
+  --font-sans: var(--font-lexend), sans-serif;
   --font-serif: serif;
   --font-mono: JetBrains Mono, monospace;
   --radius: 0.75rem;
@@ -60,7 +60,7 @@
 
 .dark {
   --background: hsl(0, 0%, 0%);
-  --foreground: hsl(0 0% 75.6863%);
+  --foreground: hsl(22.2973 85.5102% 95.6863%);
   --card: hsl(0 0% 7.0588%);
   --card-foreground: hsl(0 0% 75.6863%);
   --popover: hsl(270 5.5556% 7.0588%);
@@ -70,7 +70,7 @@
   --secondary: hsl(180 17.3913% 45.0980%);
   --secondary-foreground: hsl(0 0% 100%);
   --muted: hsl(0 0% 13.3333%);
-  --muted-foreground: hsl(0 0% 53.3333%);
+  --muted-foreground: hsl(0 0% 73.3333%);
   --accent: hsl(0 0% 20%);
   --accent-foreground: hsl(0 0% 75.6863%);
   --destructive: oklch(80.8% 0.114 19.571);
@@ -91,7 +91,7 @@
   --sidebar-accent-foreground: hsl(0 0% 75.6863%);
   --sidebar-border: hsl(0 0% 13.3333%);
   --sidebar-ring: hsl(22.2973 75.5102% 61.5686%);
-  --font-sans: Geist Mono, ui-monospace, monospace;
+  --font-sans: var(--font-lexend), sans-serif;
   --font-serif: serif;
   --font-mono: JetBrains Mono, monospace;
   --radius: 0.75rem;
@@ -149,6 +149,7 @@
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
 
+  --radius-xs: 0.3rem;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

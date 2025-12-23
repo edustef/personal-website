@@ -23,7 +23,7 @@ export const home = defineType({
       name: "headline",
       title: "Hero Headline",
       description: "Large text shown in the hero section",
-      type: "internationalizedArrayString",
+      type: "internationalizedArrayBlockContent",
       validation: (rule) => rule.required(),
     }),
     defineField({

@@ -8,20 +8,20 @@ import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import { getCanonicalUrl } from "@/lib/seo";
 
 import {
-  HeroIntro,
-  HeroIntroContent,
-  HeroIntroCtaButtons,
-  HeroIntroSocialLinks,
+	HeroIntro,
+	HeroIntroContent,
+	HeroIntroCtaButtons,
+	HeroIntroSocialLinks,
 } from "@/components/hero-intro";
 
 const ContactForm = dynamic(
-  () =>
-    import("@/components/contact-form").then((mod) => ({
-      default: mod.ContactForm,
-    })),
-  {
-    ssr: true,
-  },
+	() =>
+		import("@/components/contact-form").then((mod) => ({
+			default: mod.ContactForm,
+		})),
+	{
+		ssr: true,
+	},
 );
 import { toPlainText } from "next-sanity";
 import ResolvedLink from "@/components/sanity/resolved-link";
@@ -32,140 +32,148 @@ import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
 import {
-  localizeBlockContent,
-  localizedImage,
-  localizeField,
+	localizeBlockContent,
+	localizedImage,
+	localizeField,
 } from "@/sanity/lib/localization";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { HeroSpline } from "@/components/hero-spline";
 
 type Props = {
-  params: Promise<{ locale: string }>;
+	params: Promise<{ locale: string }>;
 };
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
-  const params = await props.params;
-  const { locale } = params;
+	const params = await props.params;
+	const { locale } = params;
 
-  const [{ data: home }] = await Promise.all([
-    sanityFetch({ query: homeQuery, params: { locale }, stega: false }),
-  ]);
-  if (!home) {
-    return notFound();
-  }
+	const [{ data: home }] = await Promise.all([
+		sanityFetch({ query: homeQuery, params: { locale }, stega: false }),
+	]);
+	if (!home) {
+		return notFound();
+	}
 
-  const pageTitle = localizeField(home.seo?.title, locale);
-  const pageDescription = localizeBlockContent(home.seo?.description, locale);
-  const canonicalUrl = getCanonicalUrl(locale, "/");
+	const pageTitle = localizeField(home.seo?.title, locale);
+	const pageDescription = localizeBlockContent(home.seo?.description, locale);
+	const canonicalUrl = getCanonicalUrl(locale, "/");
 
-  return {
-    title: pageTitle,
-    description: toPlainText(pageDescription),
-    alternates: {
-      canonical: canonicalUrl,
-    },
-    openGraph: {
-      type: "website",
-      locale,
-      title: pageTitle,
-      description: toPlainText(pageDescription),
-      images: resolveOpenGraphImage(localizedImage(home.seo?.ogImage, locale)),
-    },
-    twitter: {
-      card: home.seo?.ogImage ? "summary_large_image" : "summary",
-      title: pageTitle,
-      description: toPlainText(pageDescription),
-      images: resolveOpenGraphImage(localizedImage(home.seo?.ogImage, locale)),
-    },
-  };
+	return {
+		title: pageTitle,
+		description: toPlainText(pageDescription),
+		alternates: {
+			canonical: canonicalUrl,
+		},
+		openGraph: {
+			type: "website",
+			locale,
+			title: pageTitle,
+			description: toPlainText(pageDescription),
+			images: resolveOpenGraphImage(localizedImage(home.seo?.ogImage, locale)),
+		},
+		twitter: {
+			card: home.seo?.ogImage ? "summary_large_image" : "summary",
+			title: pageTitle,
+			description: toPlainText(pageDescription),
+			images: resolveOpenGraphImage(localizedImage(home.seo?.ogImage, locale)),
+		},
+	};
 }
 
 export default async function Page(props: Props) {
-  const params = await props.params;
-  const { locale } = params;
+	const params = await props.params;
+	const { locale } = params;
 
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
-  setRequestLocale(locale);
+	if (!hasLocale(routing.locales, locale)) {
+		notFound();
+	}
+	setRequestLocale(locale);
 
-  const [{ data: home }] = await Promise.all([
-    sanityFetch({ query: homeQuery, params: { locale } }),
-  ]);
+	const [{ data: home }] = await Promise.all([
+		sanityFetch({ query: homeQuery, params: { locale } }),
+	]);
 
-  if (!home) {
-    notFound();
-  }
+	if (!home) {
+		notFound();
+	}
 
-  const profile = home.profile;
+	const profile = home.profile;
 
-  return (
-    <>
-      <div className="flex min-h-[calc(100vh-4rem)] flex-col px-4 pt-12 pb-12 md:pt-24">
-        <HeroSpline />
-        {home && (
-          <HeroIntro>
-            <div className="flex flex-col gap-8">
-              <HeroIntroContent>
-                <HighlightBadge>
-                  <span>
-                    {localizeField(home.renovationLabelPrimary, locale)}
-                  </span>
-                  <span className="ml-1.5 font-bold">
-                    {localizeField(home.renovationLabelSecondary, locale)}
-                  </span>
-                </HighlightBadge>
-                <h1 className="text-foreground max-w-3xl text-4xl leading-normal font-semibold text-pretty md:text-6xl md:leading-tight">
-                  {localizeField(home.headline, locale)}
-                </h1>
-                <CustomPortableText
-                  value={localizeBlockContent(home.tagline, locale)}
-                  className="text-muted-foreground text-lg md:max-w-2xl md:text-xl"
-                />
-              </HeroIntroContent>
-              <HeroIntroCtaButtons>
-                {home.ctaButtons?.map(({ link, text, _key }) => (
-                  <ResolvedLink
-                    variant="default"
-                    lang={locale}
-                    key={_key}
-                    link={link}
-                  >
-                    {localizeField(text, locale)}
-                  </ResolvedLink>
-                ))}
-              </HeroIntroCtaButtons>
-            </div>
+	return (
+		<>
+			<div className="flex min-h-[calc(100vh-4rem)] flex-col px-4 pt-12 pb-12 md:pt-24">
+				<HeroSpline />
+				{home && (
+					<HeroIntro>
+						<div className="flex flex-col gap-8">
+							<HeroIntroContent>
+								<HighlightBadge>
+									<span>
+										{localizeField(home.renovationLabelPrimary, locale)}
+									</span>
+									<span className="ml-1.5 font-bold">
+										{localizeField(home.renovationLabelSecondary, locale)}
+									</span>
+								</HighlightBadge>
+								<CustomPortableText
+									value={localizeBlockContent(home.headline, locale)}
+									className="text-foreground  leading-normal font-semibold md:leading-tight"
+									blocks={{
+										h1: ({ children }) => (
+											<h1 className="group relative text-balance text-3xl md:text-5xl">
+												{children}
+											</h1>
+										),
+									}}
+								/>
 
-            <div className="flex flex-col gap-4">
-              <AnimatedContainer>
-                <h2 className="text-foreground text-lg font-semibold">
-                  {localizeField(home.findMeOnLabel, locale)}
-                </h2>
-              </AnimatedContainer>
-              <HeroIntroSocialLinks>
-                {profile.socialLinks?.map(({ url, name }) => (
-                  <Button key={url} asChild variant="outline">
-                    <a href={url}>{name}</a>
-                  </Button>
-                ))}
-              </HeroIntroSocialLinks>
-            </div>
-          </HeroIntro>
-        )}
-      </div>
-      {profile?.email && (
-        <section
-          id="contact"
-          className="bg-background mt-16 px-4 py-24 md:mt-24"
-        >
-          <div className="mx-auto flex w-full max-w-6xl justify-center">
-            <div className="w-full max-w-lg">
-              <ContactForm recipientEmail={profile.email} />
-            </div>
-          </div>
-        </section>
-      )}
-    </>
-  );
+								<CustomPortableText
+									value={localizeBlockContent(home.tagline, locale)}
+								/>
+							</HeroIntroContent>
+							<HeroIntroCtaButtons>
+								{home.ctaButtons?.map(({ link, text, variant, _key }) => (
+									<ResolvedLink
+										variant={variant}
+										lang={locale}
+										key={_key}
+										link={link}
+									>
+										{localizeField(text, locale)}
+									</ResolvedLink>
+								))}
+							</HeroIntroCtaButtons>
+						</div>
+
+						<div className="flex flex-col gap-4">
+							<AnimatedContainer>
+								<h2 className="text-foreground text-lg font-semibold">
+									{localizeField(home.findMeOnLabel, locale)}
+								</h2>
+							</AnimatedContainer>
+							<HeroIntroSocialLinks>
+								{profile.socialLinks?.map(({ url, name }) => (
+									<Button key={url} asChild variant="outline">
+										<a href={url}>{name}</a>
+									</Button>
+								))}
+							</HeroIntroSocialLinks>
+						</div>
+					</HeroIntro>
+				)}
+			</div>
+			{profile?.email && (
+				<section
+					id="contact"
+					className="bg-background mt-16 px-4 py-24 md:mt-24"
+				>
+					<div className="mx-auto flex w-full max-w-6xl justify-center">
+						<div className="w-full max-w-lg">
+							<ContactForm recipientEmail={profile.email} />
+						</div>
+					</div>
+				</section>
+			)}
+		</>
+	);
 }

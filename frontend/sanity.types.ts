@@ -148,6 +148,7 @@ export type SocialLink = {
 
 export type Button = {
   _type: "button";
+  variant: "default" | "outline" | "secondary" | "ghost" | "link";
   text: InternationalizedArrayString;
   link: Link;
 };
@@ -393,7 +394,7 @@ export type Home = {
   _rev: string;
   seo?: Seo;
   title: InternationalizedArrayString;
-  headline: InternationalizedArrayString;
+  headline: InternationalizedArrayBlockContent;
   tagline: InternationalizedArrayBlockContent;
   renovationLabelPrimary: InternationalizedArrayString;
   renovationLabelSecondary: InternationalizedArrayString;
@@ -852,6 +853,7 @@ export type SettingsQueryResult = {
     homeButtonLabel: InternationalizedArrayString;
     cta: {
       _type: "button";
+      variant: "default" | "ghost" | "link" | "outline" | "secondary";
       text: InternationalizedArrayString;
       link: {
         _type: "link";
@@ -886,7 +888,7 @@ export type HomeQueryResult = {
   _rev: string;
   seo?: Seo;
   title: InternationalizedArrayString;
-  headline: InternationalizedArrayString;
+  headline: InternationalizedArrayBlockContent;
   tagline: InternationalizedArrayBlockContent;
   renovationLabelPrimary: InternationalizedArrayString;
   renovationLabelSecondary: InternationalizedArrayString;
@@ -920,6 +922,7 @@ export type HomeQueryResult = {
   ctaButtons: Array<{
     _key: string;
     _type: "button";
+    variant: "default" | "ghost" | "link" | "outline" | "secondary";
     text: InternationalizedArrayString;
     link: {
       _type: "link";
