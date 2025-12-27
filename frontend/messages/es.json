@@ -227,17 +227,18 @@
     "text": "@ {currentYear} Eduard Sergiu Stefan. Construido con Next.js."
   },
   "home": {
-    "headline": "Sitios web <strong>construidos para rendir</strong>, no solo existir.",
+    "headline": "Construido con precisión. Diseñado para crecer.",
     "tagline": "Soy Eduard Stefan y diseño páginas web para potenciar tu presencia online.",
-    "renovationLabelPrimary": "Más ",
-    "renovationLabelSecondary": "próximamente",
+    "announcementLabelPrimary": "Blog ",
+    "announcementLabelSecondary": "próximamente",
     "resumeButtonLabel": "Ver mi currículum",
     "findMeOnLabel": "Encuéntrame en",
+    "contactMe": "Contáctame",
     "ctaButtons": [
       {
         "text": "Obtén tu oferta",
         "href": "/start-your-project",
-        "variant": "default"
+        "variant": "secondary"
       }
     ],
     "seo": {
@@ -287,5 +288,132 @@
   "skills": {
     "headline": "Sitios web <strong>construidos para rendir</strong>, no solo existir.",
     "subtitle": "Tecnologías con las que trabajo"
+  },
+  "caseStudies": {
+    "label": "Trabajos Seleccionados",
+    "headline": "Resultados que hablan por sí solos",
+    "subtitle": "Proyectos reales, resultados reales. Ve cómo he ayudado a empresas a superar desafíos y alcanzar sus objetivos.",
+    "viewProject": "Ver estudio de caso",
+    "challenge": "Desafío",
+    "result": "Resultado"
+  },
+  "testimonials": {
+    "label": "Historias de Clientes",
+    "headline": "Confiado por fundadores y equipos",
+    "subtitle": "No me creas solo por mi palabra—escucha a las personas que han trabajado conmigo.",
+    "test-1": {
+      "quote": "Eduard transformó nuestra plataforma obsoleta en algo que nuestros usuarios realmente aman. La atención al detalle y el enfoque en el rendimiento marcaron la diferencia. Nuestras tasas de conversión hablan por sí solas."
+    },
+    "test-2": {
+      "quote": "Trabajar con Eduard fue un cambio de juego para nuestra startup. Entregó nuestro MVP en tiempo récord sin cortar esquinas. Aseguramos nuestra ronda inicial en gran parte debido a lo pulido que estaba el producto."
+    },
+    "test-3": {
+      "quote": "He trabajado con muchos desarrolladores, pero Eduard se destaca. No solo escribe código—entiende los objetivos comerciales y construye soluciones que generan resultados reales."
+    },
+    "test-4": {
+      "quote": "Nuestro sitio de comercio electrónico estaba perdiendo dinero debido a una mala experiencia móvil. El trabajo de optimización de Eduard se pagó solo en el primer mes. Altamente recomendado."
+    }
+  },
+  "projects": {
+    "proj-1": {
+      "name": "Plataforma de Trading FinTech",
+      "description": "Una plataforma integral de gestión de patrimonio que atiende a miles de usuarios a nivel mundial con seguimiento de cartera en tiempo real y estrategias de inversión automatizadas.",
+      "challenge": "El cliente necesitaba escalar su plataforma de trading heredada para manejar un crecimiento de usuarios 10 veces mayor mientras mantenía tiempos de respuesta inferiores a un segundo.",
+      "result": "Entregamos una arquitectura moderna y escalable que redujo los tiempos de carga de página en un 60% y permitió que la plataforma manejara volúmenes de trading pico sin esfuerzo.",
+      "duration": "18 meses",
+      "metrics": {
+        "loadTimeReduction": "Reducción de Tiempo de Carga",
+        "userGrowthHandled": "Crecimiento de Usuarios Manejado",
+        "uptime": "Tiempo de Actividad"
+      }
+    },
+    "proj-2": {
+      "name": "Impulso de Conversión E-commerce",
+      "description": "Rediseño completo y optimización de una tienda de comercio electrónico de mercado medio que luchaba con el abandono del carrito y un rendimiento móvil lento.",
+      "challenge": "Las altas tasas de rebote en móvil y una tasa de abandono del carrito del 78% estaban costando a la empresa ingresos significativos.",
+      "result": "Implementamos un flujo de checkout optimizado y una experiencia móvil optimizada, resultando en un crecimiento de ingresos medible en 3 meses.",
+      "duration": "4 meses",
+      "metrics": {
+        "conversionIncrease": "Aumento de Conversión",
+        "cartAbandonmentDrop": "Caída de Abandono del Carrito",
+        "mobileSpeedScore": "Puntuación de Velocidad Móvil"
+      }
+    },
+    "proj-3": {
+      "name": "Reconstrucción de Panel SaaS",
+      "description": "Transformé un panel de análisis desordenado en una interfaz intuitiva que los usuarios realmente disfrutan usar.",
+      "challenge": "Los tickets de soporte al cliente relacionados con confusión de UI estaban abrumando al equipo, y la retención de usuarios estaba disminuyendo.",
+      "result": "Rediseñé toda la UX con un enfoque en claridad y eficiencia. Los tickets de soporte disminuyeron significativamente y las puntuaciones de satisfacción del usuario mejoraron.",
+      "duration": "6 meses",
+      "metrics": {
+        "supportTickets": "Tickets de Soporte",
+        "userSatisfaction": "Satisfacción del Usuario"
+      }
+    },
+    "proj-4": {
+      "name": "Lanzamiento MVP Startup",
+      "description": "Llevé una idea desde un boceto en servilleta hasta un producto lanzado en tiempo récord, ayudando a los fundadores a validar su hipótesis de mercado.",
+      "challenge": "Los fundadores tenían un tiempo limitado y necesitaban llegar al mercado rápidamente para asegurar su próxima ronda de financiación.",
+      "result": "Entregué un MVP completamente funcional en 8 semanas que impresionó a los inversores y aseguró financiación inicial para la startup.",
+      "duration": "8 semanas",
+      "metrics": {
+        "timeToMarket": "Tiempo al Mercado",
+        "fundingSecured": "Financiación Asegurada"
+      }
+    }
+  },
+  "services": {
+    "label": "Lo que hago",
+    "headline": "Soluciones que generan resultados reales para el negocio",
+    "subtitle": "No solo construyo sitios web—construyo motores de crecimiento. Cada proyecto está diseñado para resolver un problema empresarial específico y entregar resultados medibles.",
+    "svc-1": {
+      "title": "Aplicaciones Web Personalizadas",
+      "description": "Soluciones a medida que resuelven tus desafíos comerciales específicos. Desde herramientas internas hasta plataformas orientadas al cliente, construidas para escalar y rendir."
+    },
+    "svc-2": {
+      "title": "Soluciones E-commerce",
+      "description": "Tiendas en línea de alta conversión optimizadas para ingresos. Flujos de checkout sin problemas, gestión de inventario y análisis que impulsan el crecimiento."
+    },
+    "svc-3": {
+      "title": "Optimización de Rendimiento",
+      "description": "La velocidad es dinero. Audito, optimizo y transformo sitios web lentos en experiencias ultrarrápidas que mantienen a los usuarios comprometidos."
+    },
+    "svc-4": {
+      "title": "Desarrollo MVP",
+      "description": "Llega al mercado rápido. Ayudo a las startups a validar ideas rápidamente con productos funcionales y ágiles que impresionan a los inversores."
+    },
+    "svc-5": {
+      "title": "Implementación UI/UX",
+      "description": "Ejecución perfecta de tus diseños. Cierro la brecha entre la visión del diseño y el producto funcional."
+    },
+    "svc-6": {
+      "title": "Soporte Continuo",
+      "description": "Asociación a largo plazo para mantenimiento, actualizaciones y mejora continua. Tu producto evoluciona a medida que crece tu negocio."
+    }
+  },
+  "certificates": {
+    "cert-1": {
+      "description": "Certificado FreeCodeCamp para el Diseño Responsive que equivale a unas 300 horas de curso.\n\nConceptos clave:\n- Flexbox y Grid\n- Diseño mobile-first / desktop-first\n- Diseño responsivo usando media queries\n- Accesibilidad y buenas prácticas"
+    },
+    "cert-2": {
+      "description": "Certificado FreeCodeCamp para Algoritmos y Estructuras de Datos en Javascript que equivale a unas 300 horas de curso.\n\nConceptos clave:\n- Aprendizaje de Javascript con la última versión ECMAScript 2021\n- Estructuras de datos y algoritmos\n- Pruebas y depuración\n- Programación funcional"
+    },
+    "cert-3": {
+      "description": ""
+    },
+    "cert-4": {
+      "description": "Un curso de 48 horas sobre React y cómo desarrollar SPAs completas.\n\nConceptos clave:\n- Diseñar componentes independientes y reutilizables\n- Creación de React Hooks personalizados\n- Componentes con estilo y módulos CSS\n- Uso de React con Redux como gestión de estados\n- NextJS y TypeScript"
+    },
+    "cert-5": {
+      "description": "Mi primer curso donde aprendí lo básico del desarrollo web.\n\nConceptos clave:\n- Diseño semántico y responsivo con **HTML** y **CSS**\n- Páginas interactivas y lllamadas asíncronas a la **API** usando **JavaScript**.\n- Codificación de un servidor web usando **ExpressJS**, **MongoDB** y **MySQL**\n- Autenticación, cookies, autorización, sesiones\n- Problemas comunes de seguridad y cómo evitarlos"
+    }
+  },
+  "jobs": {
+    "job-1": {
+      "description": "- Completé una pasantía de tres meses, trabajando en un proyecto para crear una página web interna para que los empleados soliciten artículos de los almacenes de la empresa\n- Accedí a la base de datos de inventario, monitoricé los niveles de stock y gestioné las solicitudes utilizando microservicios establecidos\n- Aprendí y apliqué la biblioteca Kendo UI, siguiendo las pautas de codificación y diseño del proyecto\n- Implementé características de autenticación y autorización en el front-end, asegurando la privacidad del usuario para el historial de solicitudes y las solicitudes en curso"
+    },
+    "job-2": {
+      "description": "- Trabajé estrechamente con diseñadores y gerentes de producto para convertir el diseño en características de alta calidad y listas para producción\n- Desarrollé componentes reutilizables que se integran con Headless CMS, lo que hizo posible la construcción independiente de páginas\n- Implementé Storybook en el código base para un mejor desarrollo y tener una única fuente de verdad\n- Trabajé con las herramientas y características más recientes de React (ESNext, componentes funcionales de React, hooks, Webpack, Vite, etc.)"
+    }
   }
 }

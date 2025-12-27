@@ -2,11 +2,10 @@ import "./globals.css";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Lexend, DM_Mono } from "next/font/google";
+import { Cardo, DM_Mono } from "next/font/google";
 import { Toaster } from "sonner";
 import { notFound } from "next/navigation";
 
-import { handleError } from "../../lib/client-utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ConvexClientProvider } from "@/components/convex-client-provider";
 import { getLocalizedSettingsMetadata, getCanonicalUrl } from "@/lib/seo";
@@ -73,8 +72,9 @@ export async function generateStaticParams() {
 	}));
 }
 
-const lexend = Lexend({
-	variable: "--font-lexend",
+const cardo = Cardo({
+	weight: ["400", "700"],
+	variable: "--font-cardo",
 	subsets: ["latin"],
 	display: "swap",
 });
@@ -131,7 +131,7 @@ export default async function LocaleLayout(props: Props) {
 	return (
 		<html
 			lang={params.locale}
-			className={`${lexend.variable} ${dmMono.variable} font-light dark bg-background text-foreground min-h-screen transition-colors duration-300`}
+			className={`${cardo.variable} ${dmMono.variable} font-light bg-background text-foreground min-h-screen transition-colors duration-300`}
 			suppressHydrationWarning
 		>
 			<body className="isolate transition-colors duration-300 ease-in-out">
@@ -153,7 +153,12 @@ export default async function LocaleLayout(props: Props) {
 				/>
 				<NextIntlClientProvider>
 					<ConvexClientProvider>
-						<ThemeProvider attribute="class" forcedTheme="dark">
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="dark"
+						enableSystem
+						disableTransitionOnChange
+					>
 							<Toaster />
 							{props.children}
 							<SpeedInsights />

@@ -9,13 +9,14 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { getTranslations } from "next-intl/server";
 
 type ExperienceTimelineProps = {
   jobs?: typeof jobs;
   locale: string;
 };
 
-export default function ExperienceTimeline({
+export default async function ExperienceTimeline({
   jobs: jobsProp,
   locale,
 }: ExperienceTimelineProps) {
@@ -24,6 +25,8 @@ export default function ExperienceTimeline({
   if (!jobsToDisplay || jobsToDisplay.length === 0) {
     return null;
   }
+
+  const t = await getTranslations({ locale, namespace: "jobs" });
 
   return (
     <section className="from-background to-muted/20 bg-linear-to-b py-24">
@@ -53,7 +56,6 @@ export default function ExperienceTimeline({
                   : job.endDate
                     ? format(new Date(job.endDate), "MMM yyyy")
                     : "Present";
-                const jobDescription = job.description[locale as "en" | "ro" | "es"] || job.description.en;
 
                 return (
                   <div
@@ -118,9 +120,9 @@ export default function ExperienceTimeline({
                               </Badge>
                             </div>
 
-                            {jobDescription && jobDescription.length > 0 && (
+                            {t(job.descriptionKey) && t(job.descriptionKey).length > 0 && (
                               <div className="prose prose-sm max-w-none whitespace-pre-line">
-                                {jobDescription}
+                                {t(job.descriptionKey)}
                               </div>
                             )}
                             {job.skills && job.skills.length > 0 && (

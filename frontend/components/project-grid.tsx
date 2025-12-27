@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { projects } from "@/lib/data/projects";
+import { getTranslations } from "next-intl/server";
 
 type ProjectGridProps = {
   projects?: typeof projects;
@@ -8,7 +9,7 @@ type ProjectGridProps = {
   locale: string;
 };
 
-export default function ProjectGrid({
+export default async function ProjectGrid({
   projects: projectsProp,
   title = "Featured Projects",
   subtitle = "Some of my recent work",
@@ -19,6 +20,8 @@ export default function ProjectGrid({
   if (!projectsToDisplay || projectsToDisplay.length === 0) {
     return null;
   }
+
+  const t = await getTranslations({ locale, namespace: "projects" });
 
   return (
     <section className="bg-white py-24">
@@ -33,11 +36,8 @@ export default function ProjectGrid({
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projectsToDisplay.map((project, index) => {
-              const projectName =
-                project.name[locale as "en" | "ro" | "es"] || project.name.en;
-              const projectDescription =
-                project.description[locale as "en" | "ro" | "es"] ||
-                project.description.en;
+              const projectName = t(project.nameKey);
+              const projectDescription = t(project.descriptionKey);
 
               return (
                 <div

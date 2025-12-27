@@ -36,6 +36,9 @@ export default async function ResumePage(props: Props) {
   setRequestLocale(locale);
 
   const profileT = await getTranslations({ locale, namespace: "profile" });
+  const tProjects = await getTranslations({ locale, namespace: "projects" });
+  const tJobs = await getTranslations({ locale, namespace: "jobs" });
+  const tCertificates = await getTranslations({ locale, namespace: "certificates" });
 
   const name = profileT("name");
   const email = profileT("email");
@@ -165,9 +168,6 @@ export default async function ResumePage(props: Props) {
                       : job.endDate
                         ? format(new Date(job.endDate), "MMM yyyy")
                         : "Present";
-                    const jobDescription =
-                      job.description[locale as "en" | "ro" | "es"] ||
-                      job.description.en;
 
                     return (
                       <div key={job._id} className="print:break-inside-avoid">
@@ -184,9 +184,9 @@ export default async function ResumePage(props: Props) {
                             {startFormatted} - {endFormatted}
                           </div>
                         </div>
-                        {jobDescription && jobDescription.length > 0 && (
+                        {tJobs(job.descriptionKey) && tJobs(job.descriptionKey).length > 0 && (
                           <div className="prose prose-sm print:prose-xs mb-2 max-w-none text-sm text-gray-700 whitespace-pre-line print:text-xs print:text-gray-800">
-                            {jobDescription}
+                            {tJobs(job.descriptionKey)}
                           </div>
                         )}
                         {job.skills && job.skills.length > 0 && (
@@ -248,12 +248,8 @@ export default async function ResumePage(props: Props) {
                 </h2>
                 <div className="space-y-4 print:space-y-3">
                   {projects.slice(0, 6).map((project) => {
-                    const projectDescription =
-                      project.description[locale as "en" | "ro" | "es"] ||
-                      project.description.en;
-                    const projectName =
-                      project.name[locale as "en" | "ro" | "es"] ||
-                      project.name.en;
+                    const projectDescription = tProjects(project.descriptionKey);
+                    const projectName = tProjects(project.nameKey);
 
                     return (
                       <div key={project._id} className="print:break-inside-avoid">

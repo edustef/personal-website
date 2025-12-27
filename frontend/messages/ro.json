@@ -227,17 +227,18 @@
     "text": "@ {currentYear} Eduard Sergiu Ștefan. Realizat cu Next.js."
   },
   "home": {
-    "headline": "Site-uri web <strong>construite să performeze</strong>, nu doar să existe.",
+    "headline": "Construit cu precizie. Proiectat pentru creștere.",
     "tagline": "Sunt Eduard Ștefan și construiesc site-uri web care te ajută să-ți crești prezența online.",
-    "renovationLabelPrimary": "Mai multe ",
-    "renovationLabelSecondary": "în curând",
+    "announcementLabelPrimary": "Blog ",
+    "announcementLabelSecondary": "în curând",
     "resumeButtonLabel": "Vezi CV-ul meu",
     "findMeOnLabel": "Găsește-mă pe",
+    "contactMe": "Contactează-mă",
     "ctaButtons": [
       {
         "text": "Obține oferta ta",
         "href": "/start-your-project",
-        "variant": "default"
+        "variant": "secondary"
       }
     ],
     "seo": {
@@ -287,5 +288,132 @@
   "skills": {
     "headline": "Site-uri web <strong>construite să performeze</strong>, nu doar să existe.",
     "subtitle": "Tehnologii cu care lucrez"
+  },
+  "caseStudies": {
+    "label": "Lucrări Selectate",
+    "headline": "Rezultate care vorbesc de la sine",
+    "subtitle": "Proiecte reale, rezultate reale. Vezi cum am ajutat afacerile să depășească provocările și să-și atingă obiectivele.",
+    "viewProject": "Vezi studiul de caz",
+    "challenge": "Provocare",
+    "result": "Rezultat"
+  },
+  "testimonials": {
+    "label": "Povești de la Clienți",
+    "headline": "De încredere de fondatori și echipe",
+    "subtitle": "Nu mă crede pe cuvânt—ascultă de la oamenii care au lucrat cu mine.",
+    "test-1": {
+      "quote": "Eduard a transformat platforma noastră învechită în ceva ce utilizatorii noștri iubesc cu adevărat. Atenția la detalii și focusul pe performanță au făcut toată diferența. Ratele noastre de conversie vorbesc de la sine."
+    },
+    "test-2": {
+      "quote": "Lucrul cu Eduard a fost un schimbător de joc pentru startup-ul nostru. A livrat MVP-ul nostru în timp record fără să facă compromisuri. Am asigurat runda noastră inițială în mare parte datorită cât de bine lucrat era produsul."
+    },
+    "test-3": {
+      "quote": "Am lucrat cu mulți dezvoltatori, dar Eduard se remarcă. Nu doar scrie cod—înțelege obiectivele de afaceri și construiește soluții care generează rezultate reale."
+    },
+    "test-4": {
+      "quote": "Site-ul nostru de e-commerce pierdea bani din cauza unei experiențe mobile slabe. Munca de optimizare a lui Eduard s-a plătit singură în prima lună. Recomand cu căldură."
+    }
+  },
+  "projects": {
+    "proj-1": {
+      "name": "Platformă Trading FinTech",
+      "description": "O platformă cuprinzătoare de gestionare a averii care deservește mii de utilizatori la nivel global cu urmărire în timp real a portofoliului și strategii de investiții automatizate.",
+      "challenge": "Clientul avea nevoie să extindă platforma sa de trading moștenită pentru a gestiona o creștere de utilizatori de 10 ori mai mare menținând în același timp timpuri de răspuns sub secundă.",
+      "result": "Am livrat o arhitectură modernă și scalabilă care a redus timpii de încărcare a paginilor cu 60% și a permis platformei să gestioneze volumele de tranzacționare de vârf fără efort.",
+      "duration": "18 luni",
+      "metrics": {
+        "loadTimeReduction": "Reducere Timp de Încărcare",
+        "userGrowthHandled": "Creștere Utilizatori Gestionată",
+        "uptime": "Timp de Funcționare"
+      }
+    },
+    "proj-2": {
+      "name": "Impuls Conversie E-commerce",
+      "description": "Redesign complet și optimizare a unui magazin de e-commerce de piață medie care se confrunta cu abandonul coșului și performanță mobilă lentă.",
+      "challenge": "Ratele ridicate de respingere pe mobil și o rată de abandon a coșului de 78% costau afacerea venituri semnificative.",
+      "result": "Am implementat un flux de checkout optimizat și o experiență mobilă optimizată, rezultând într-o creștere măsurabilă a veniturilor în 3 luni.",
+      "duration": "4 luni",
+      "metrics": {
+        "conversionIncrease": "Creștere Conversie",
+        "cartAbandonmentDrop": "Scădere Abandon Coș",
+        "mobileSpeedScore": "Scor Viteză Mobil"
+      }
+    },
+    "proj-3": {
+      "name": "Reconstrucție Panou SaaS",
+      "description": "Am transformat un panou de analiză aglomerat într-o interfață intuitivă pe care utilizatorii o iubesc cu adevărat să o folosească.",
+      "challenge": "Tichetele de suport pentru clienți legate de confuzia UI copleșeau echipa, iar păstrarea utilizatorilor era în declin.",
+      "result": "Am redesinat întreaga UX cu un focus pe claritate și eficiență. Tichetele de suport au scăzut semnificativ și scorurile de satisfacție a utilizatorilor au îmbunătățit.",
+      "duration": "6 luni",
+      "metrics": {
+        "supportTickets": "Tichete Suport",
+        "userSatisfaction": "Satisfacție Utilizatori"
+      }
+    },
+    "proj-4": {
+      "name": "Lansare MVP Startup",
+      "description": "Am transformat o idee dintr-un schiță pe șervețel într-un produs lansat în timp record, ajutând fondatorii să-și valideze ipoteza de piață.",
+      "challenge": "Fondatorii aveau timp limitat și trebuiau să ajungă pe piață rapid pentru a-și asigura următoarea rundă de finanțare.",
+      "result": "Am livrat un MVP complet funcțional în 8 săptămâni care a impresionat investitorii și a asigurat finanțare inițială pentru startup.",
+      "duration": "8 săptămâni",
+      "metrics": {
+        "timeToMarket": "Timp la Piață",
+        "fundingSecured": "Finanțare Asigurată"
+      }
+    }
+  },
+  "services": {
+    "label": "Ce fac",
+    "headline": "Soluții care generează rezultate reale pentru afaceri",
+    "subtitle": "Nu construiesc doar site-uri web—construiesc motoare de creștere. Fiecare proiect este proiectat să rezolve o problemă specifică de afaceri și să ofere rezultate măsurabile.",
+    "svc-1": {
+      "title": "Aplicații Web Personalizate",
+      "description": "Soluții adaptate care rezolvă provocările specifice ale afacerii tale. De la instrumente interne la platforme orientate către clienți, construite pentru scalare și performanță."
+    },
+    "svc-2": {
+      "title": "Soluții E-commerce",
+      "description": "Magazine online cu conversie ridicată optimizate pentru venituri. Fluxuri de checkout fără probleme, gestionare de inventar și analiză care stimulează creșterea."
+    },
+    "svc-3": {
+      "title": "Optimizare Performanță",
+      "description": "Viteza înseamnă bani. Auditez, optimizez și transform site-uri web lente în experiențe ultra-rapide care mențin utilizatorii implicați."
+    },
+    "svc-4": {
+      "title": "Dezvoltare MVP",
+      "description": "Ajungi pe piață rapid. Ajut startup-urile să valideze idei rapid cu produse funcționale și agil care impresionează investitorii."
+    },
+    "svc-5": {
+      "title": "Implementare UI/UX",
+      "description": "Execuție perfectă a design-urilor tale. Fac legătura între viziunea de design și produsul funcțional."
+    },
+    "svc-6": {
+      "title": "Suport Continuu",
+      "description": "Parteneriat pe termen lung pentru întreținere, actualizări și îmbunătățire continuă. Produsul tău evoluează pe măsură ce afacerea ta crește."
+    }
+  },
+  "certificates": {
+    "cert-1": {
+      "description": "Certificat FreeCodeCamp pentru Design Responsive care reprezintă aproximativ 300 de ore de curs.\n\nConcepte cheie:\n- Flexbox și Grid\n- Design mobile-first / desktop-first\n- Design responsiv folosind media queries\n- Accesibilitate și bune practici"
+    },
+    "cert-2": {
+      "description": "Certificat FreeCodeCamp pentru Algoritmi și Structuri de Date Javascript care reprezintă aproximativ 300 de ore de curs.\n\nConcepte cheie:\n- Am învățat Javascript cu cea mai recentă versiune ECMAScript 2021\n- Structuri de date și algoritmi\n- Testare și depanare\n- Programare funcțională"
+    },
+    "cert-3": {
+      "description": ""
+    },
+    "cert-4": {
+      "description": "Un curs de 48 de ore despre React și cum să construiești SPA-uri complete.\n\nConcepte cheie:\n- Design componente independente și reutilizabile\n- Crearea de React Hooks personalizate\n- Styled Components și CSS Modules\n- Folosirea React cu Redux ca management de stare\n- NextJS și TypeScript"
+    },
+    "cert-5": {
+      "description": "Primul meu curs unde am învățat elementele de bază ale dezvoltării web.\n\nConcepte cheie:\n- Design semantic și responsiv cu **HTML** și **CSS**\n- Pagini interactive și apeluri **API** asincrone folosind **JavaScript**.\n- Codificarea unui server web folosind **ExpressJS**, **MongoDB** și **MySQL**\n- Autentificare, cookie-uri, autorizare, sesiuni\n- Probleme comune de securitate și cum să le eviți"
+    }
+  },
+  "jobs": {
+    "job-1": {
+      "description": "- Am finalizat un stagiu de trei luni, lucrând la un proiect pentru crearea unei pagini web interne destinată angajaților pentru solicitarea de articole din depozitele companiei\n- Am accesat baza de date de inventar, am monitorizat nivelurile de stoc și am gestionat cererile folosind microserviciile stabilite\n- Am învățat și am aplicat biblioteca Kendo UI, respectând liniile directoare de codificare și design ale proiectului\n- Am implementat funcționalități de autentificare și autorizare pe front-end, asigurând confidențialitatea utilizatorilor pentru istoricul cererilor și cererile în curs"
+    },
+    "job-2": {
+      "description": "- Am lucrat îndeaproape cu designerii și managerii de produs pentru a transforma designul în funcționalități de înaltă calitate și gata pentru producție\n- Am dezvoltat componente reutilizabile care se integrează cu Headless CMS, ceea ce a făcut posibilă construirea independentă a paginilor\n- Am implementat Storybook în codul sursă pentru o dezvoltare mai bună și pentru a avea o singură sursă de adevăr\n- Am lucrat cu cele mai noi instrumente și funcționalități React (ESNext, componente funcționale React, hooks, Webpack, Vite, etc.)"
+    }
   }
 }

@@ -9,13 +9,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Award } from "lucide-react";
 import { certificates } from "@/lib/data/certificates";
+import { getTranslations } from "next-intl/server";
 
 type CertificatesSectionProps = {
   certificates?: typeof certificates;
   locale: string;
 };
 
-export default function CertificatesSection({
+export default async function CertificatesSection({
   certificates: certificatesProp,
   locale,
 }: CertificatesSectionProps) {
@@ -24,6 +25,8 @@ export default function CertificatesSection({
   if (!certificatesToDisplay || certificatesToDisplay.length === 0) {
     return null;
   }
+
+  const t = await getTranslations({ locale, namespace: "certificates" });
 
   return (
     <section className="bg-muted/50 py-24">
@@ -40,7 +43,6 @@ export default function CertificatesSection({
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {certificatesToDisplay.map((certificate) => {
-              const description = certificate.description[locale as "en" | "ro" | "es"] || certificate.description.en;
               const formattedDate = certificate.dateIssued
                 ? format(new Date(certificate.dateIssued), "MMM yyyy")
                 : null;
@@ -57,9 +59,9 @@ export default function CertificatesSection({
                   </CardHeader>
 
                   <CardContent className="flex-1 space-y-4">
-                    {description && description.length > 0 && (
+                    {t(certificate.descriptionKey) && t(certificate.descriptionKey).length > 0 && (
                       <div className="text-muted-foreground prose prose-sm max-w-none text-sm whitespace-pre-line">
-                        {description}
+                        {t(certificate.descriptionKey)}
                       </div>
                     )}
                     {formattedDate && (

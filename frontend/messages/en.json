@@ -227,17 +227,18 @@
     "text": "@ {currentYear} Eduard Sergiu Stefan. Built with Next.js."
   },
   "home": {
-    "headline": "Websites <strong>built to perform</strong>, not just exist.",
+    "headline": "Built with precision. Designed for growth.",
     "tagline": "I am Eduard Stefan and I build websites that help you grow your online presence.",
-    "renovationLabelPrimary": "More ",
-    "renovationLabelSecondary": "soon",
+    "announcementLabelPrimary": "Blog ",
+    "announcementLabelSecondary": "coming soon",
     "resumeButtonLabel": "See my resume",
     "findMeOnLabel": "Find me on",
+    "contactMe": "Contact me",
     "ctaButtons": [
       {
         "text": "Get your offer",
         "href": "/start-your-project",
-        "variant": "default"
+        "variant": "secondary"
       }
     ],
     "seo": {
@@ -288,11 +289,6 @@
     "headline": "Websites <strong>built to perform</strong>, not just exist.",
     "subtitle": "Technologies I work with"
   },
-  "services": {
-    "label": "What I do",
-    "headline": "Solutions that drive real business results",
-    "subtitle": "I don't just build websites—I build growth engines. Every project is designed to solve a specific business problem and deliver measurable outcomes."
-  },
   "caseStudies": {
     "label": "Selected Work",
     "headline": "Results that speak for themselves",
@@ -304,6 +300,120 @@
   "testimonials": {
     "label": "Client Stories",
     "headline": "Trusted by founders and teams",
-    "subtitle": "Don't take my word for it—hear from the people who've worked with me."
+    "subtitle": "Don't take my word for it—hear from the people who've worked with me.",
+    "test-1": {
+      "quote": "Eduard transformed our outdated platform into something our users genuinely love. The attention to detail and focus on performance made all the difference. Our conversion rates speak for themselves."
+    },
+    "test-2": {
+      "quote": "Working with Eduard was a game-changer for our startup. He delivered our MVP in record time without cutting corners. We secured our seed round largely because of how polished the product was."
+    },
+    "test-3": {
+      "quote": "I've worked with many developers, but Eduard stands out. He doesn't just write code—he understands business objectives and builds solutions that drive real results."
+    },
+    "test-4": {
+      "quote": "Our e-commerce site was bleeding money due to poor mobile experience. Eduard's optimization work paid for itself within the first month. Highly recommend."
+    }
+  },
+  "projects": {
+    "proj-1": {
+      "name": "FinTech Trading Platform",
+      "description": "A comprehensive wealth management platform serving thousands of users globally with real-time portfolio tracking and automated investment strategies.",
+      "challenge": "The client needed to scale their legacy trading platform to handle 10x user growth while maintaining sub-second response times.",
+      "result": "Delivered a modern, scalable architecture that reduced page load times by 60% and enabled the platform to handle peak trading volumes effortlessly.",
+      "duration": "18 months",
+      "metrics": {
+        "loadTimeReduction": "Load Time Reduction",
+        "userGrowthHandled": "User Growth Handled",
+        "uptime": "Uptime"
+      }
+    },
+    "proj-2": {
+      "name": "E-commerce Conversion Boost",
+      "description": "Complete redesign and optimization of a mid-market e-commerce store struggling with cart abandonment and slow mobile performance.",
+      "challenge": "High bounce rates on mobile and a 78% cart abandonment rate were costing the business significant revenue.",
+      "result": "Implemented a streamlined checkout flow and optimized mobile experience, resulting in measurable revenue growth within 3 months.",
+      "duration": "4 months",
+      "metrics": {
+        "conversionIncrease": "Conversion Increase",
+        "cartAbandonmentDrop": "Cart Abandonment Drop",
+        "mobileSpeedScore": "Mobile Speed Score"
+      }
+    },
+    "proj-3": {
+      "name": "SaaS Dashboard Rebuild",
+      "description": "Transformed a cluttered analytics dashboard into an intuitive interface that users actually love to use.",
+      "challenge": "Customer support tickets related to UI confusion were overwhelming the team, and user retention was declining.",
+      "result": "Redesigned the entire UX with a focus on clarity and efficiency. Support tickets dropped significantly and user satisfaction scores improved.",
+      "duration": "6 months",
+      "metrics": {
+        "supportTickets": "Support Tickets",
+        "userSatisfaction": "User Satisfaction"
+      }
+    },
+    "proj-4": {
+      "name": "Startup MVP Launch",
+      "description": "Took an idea from napkin sketch to launched product in record time, helping founders validate their market hypothesis.",
+      "challenge": "The founders had limited runway and needed to get to market fast to secure their next funding round.",
+      "result": "Delivered a fully functional MVP in 8 weeks that impressed investors and secured seed funding for the startup.",
+      "duration": "8 weeks",
+      "metrics": {
+        "timeToMarket": "Time to Market",
+        "fundingSecured": "Funding Secured"
+      }
+    }
+  },
+  "services": {
+    "label": "What I do",
+    "headline": "Solutions that drive real business results",
+    "subtitle": "I don't just build websites—I build growth engines. Every project is designed to solve a specific business problem and deliver measurable outcomes.",
+    "svc-1": {
+      "title": "Custom Web Applications",
+      "description": "Tailored solutions that solve your specific business challenges. From internal tools to customer-facing platforms, built for scale and performance."
+    },
+    "svc-2": {
+      "title": "E-commerce Solutions",
+      "description": "High-converting online stores optimized for revenue. Seamless checkout flows, inventory management, and analytics that drive growth."
+    },
+    "svc-3": {
+      "title": "Performance Optimization",
+      "description": "Speed is money. I audit, optimize, and transform slow websites into lightning-fast experiences that keep users engaged."
+    },
+    "svc-4": {
+      "title": "MVP Development",
+      "description": "Get to market fast. I help startups validate ideas quickly with lean, functional products that impress investors."
+    },
+    "svc-5": {
+      "title": "UI/UX Implementation",
+      "description": "Pixel-perfect execution of your designs. I bridge the gap between design vision and working product."
+    },
+    "svc-6": {
+      "title": "Ongoing Support",
+      "description": "Long-term partnership for maintenance, updates, and continuous improvement. Your product evolves as your business grows."
+    }
+  },
+  "certificates": {
+    "cert-1": {
+      "description": "FreeCodeCamp certificate for Responsive Design representing approximately 300 hours of coursework.\n\nKey concepts:\n- Flexbox and Grid\n- Mobile-first / desktop-first design\n- Responsive design using media queries\n- Accessibility and best practices"
+    },
+    "cert-2": {
+      "description": "FreeCodeCamp certificate for Javascript Algorithms and Data Structures representing approximately 300 hours of coursework.\n\nKey concepts:\n- Learned JavaScript with the latest version ECMAScript 2021\n- Data structures and algorithms\n- Testing and debugging\n- Functional programming"
+    },
+    "cert-3": {
+      "description": ""
+    },
+    "cert-4": {
+      "description": "A 48-hour course on React and how to build fully-fledged SPAs.\n\nKey concepts:\n- Design independent and reusable components\n- Creating custom React Hooks\n- Styled Components and CSS Modules\n- Using React with Redux as a state management\n- NextJS and TypeScript"
+    },
+    "cert-5": {
+      "description": "My first course where I learned the basic of web development.\n\nKey concepts:\n- Semantic and responsive design with **HTML** and **CSS**\n- Interactive pages and calling **APIs** asynchronously using **JavaScript**.\n- Coding a web server using **ExpressJS**, **MongoDB** and **MySQL**\n- Authentication, cookies, authorization, sessions\n- Common security issues and how to avoid them"
+    }
+  },
+  "jobs": {
+    "job-1": {
+      "description": "- Completed a three-month internship, working on a project to create an internal web page for employees to request items from company warehouses.\n- Accessed inventory database, monitored stock levels, and managed requests using established microservices.\n- Learned and applied the Kendo UI library, following the project's coding and design guidelines.\n- Implemented authentication and authorization features on the front-end, ensuring user privacy for request history and ongoing requests."
+    },
+    "job-2": {
+      "description": "- Worked closely with designers and product managers to bring design into high quality and production-ready features\n- Developed reusable components that integrate with Headless CMS which made independent page building possible.\n- Implemented Storybook into the codebase for better development and having a single source of truth\n- Worked with latest React tools and features (ESNext, React functional components, hooks, Webpack, Vite, etc.)"
+    }
   }
 }

@@ -17,6 +17,7 @@ export default async function CaseStudiesSection({
 
   const locale = await getLocale();
   const t = await getTranslations({ locale, namespace: "caseStudies" });
+  const tProjects = await getTranslations({ locale, namespace: "projects" });
 
   return (
     <section className="bg-muted/30 py-24 md:py-32">
@@ -35,16 +36,6 @@ export default async function CaseStudiesSection({
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projectsToDisplay.map((project, index) => {
-            const name =
-              project.name[locale as keyof typeof project.name] ||
-              project.name.en;
-            const description =
-              project.description[locale as keyof typeof project.description] ||
-              project.description.en;
-            const result =
-              project.result[locale as keyof typeof project.result] ||
-              project.result.en;
-
             const isFeatured = project.featured;
 
             return (
@@ -64,9 +55,9 @@ export default async function CaseStudiesSection({
                 >
                   <div className="mb-4 flex items-start justify-between">
                     <div className="flex flex-wrap gap-2">
-                      {project.duration && (
+                      {project.durationKey && (
                         <span className="bg-muted text-muted-foreground rounded-full px-3 py-1 text-xs font-medium">
-                          {project.duration}
+                          {tProjects(project.durationKey)}
                         </span>
                       )}
                     </div>
@@ -76,7 +67,7 @@ export default async function CaseStudiesSection({
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary"
-                        aria-label={`${t("viewProject")}: ${name}`}
+                        aria-label={`${t("viewProject")}: ${tProjects(project.nameKey)}`}
                       >
                         <ArrowUpRight className="h-5 w-5" />
                       </a>
@@ -91,7 +82,7 @@ export default async function CaseStudiesSection({
                         : "text-xl",
                     )}
                   >
-                    {name}
+                    {tProjects(project.nameKey)}
                   </h3>
 
                   <p
@@ -100,7 +91,7 @@ export default async function CaseStudiesSection({
                       isFeatured && index === 0 ? "text-base" : "text-sm",
                     )}
                   >
-                    {description}
+                    {tProjects(project.descriptionKey)}
                   </p>
 
                   <div className="mt-auto space-y-4">
@@ -109,7 +100,7 @@ export default async function CaseStudiesSection({
                         {t("result")}
                       </p>
                       <p className="text-foreground text-sm leading-relaxed">
-                        {result}
+                        {tProjects(project.resultKey)}
                       </p>
                     </div>
 
@@ -131,7 +122,7 @@ export default async function CaseStudiesSection({
                               {metric.value}
                             </p>
                             <p className="text-muted-foreground text-xs">
-                              {metric.label}
+                              {tProjects(metric.labelKey)}
                             </p>
                           </div>
                         ))}

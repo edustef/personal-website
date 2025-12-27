@@ -27,7 +27,7 @@ import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { AnimatedContainer } from "@/components/ui/animated-container";
-import { HeroSpline } from "@/components/hero-spline";
+import { Spotlight } from "@/components/ui/spotlight-new";
 import { Link } from "@/i18n/navigation";
 import ServicesSection from "@/components/services-section";
 import CaseStudiesSection from "@/components/case-studies-section";
@@ -35,6 +35,10 @@ import TestimonialsSection from "@/components/testimonials-section";
 import homeOpengraphEn from "@/assets/images/home-opengraph-en.png";
 import homeOpengraphEs from "@/assets/images/home-opengraph-es.png";
 import homeOpengraphRo from "@/assets/images/home-opengraph-ro.png";
+import {
+	FloatingContactButton,
+	HERO_CONTACT_BUTTON_ID,
+} from "@/components/contact-button-observer";
 
 type Props = {
 	params: Promise<{ locale: string }>;
@@ -115,21 +119,23 @@ export default async function Page(props: Props) {
 
 	return (
 		<>
-			<div className="flex min-h-[calc(100vh-4rem)] flex-col px-4 pt-12 pb-12 md:pt-24">
-				<HeroSpline />
+			<Spotlight />
+			<div className="relative flex min-h-[calc(100vh-4rem)] flex-col px-4 pt-12 pb-12 md:pt-24">
 				<HeroIntro>
 					<div className="flex flex-col gap-8">
 						<HeroIntroContent>
 							<HighlightBadge>
-								<span>{t("renovationLabelPrimary")}</span>
+								<span>{t("announcementLabelPrimary")}</span>
 								<span className="ml-1.5 font-bold">
-									{t("renovationLabelSecondary")}
+									{t("announcementLabelSecondary")}
 								</span>
 							</HighlightBadge>
-							<h1 className="text-foreground group relative text-balance text-3xl leading-normal font-semibold md:text-5xl md:leading-tight">
+							<h1 className="text-foreground group relative text-balance text-3xl leading-normal md:text-5xl md:leading-tight">
 								{t.rich("headline", {
 									strong: (chunks) => (
-										<strong className="text-primary">{chunks}</strong>
+										<strong className="text-primary font-semibold">
+											{chunks}
+										</strong>
 									),
 								})}
 							</h1>
@@ -138,12 +144,23 @@ export default async function Page(props: Props) {
 							</p>
 						</HeroIntroContent>
 						<HeroIntroCtaButtons>
+							<Button asChild size="lg" variant="default" id={HERO_CONTACT_BUTTON_ID}>
+								<a
+									href="https://wa.me/40775378525"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									{t("contactMe")}
+								</a>
+							</Button>
 							{ctaButtons.map((button) => (
 								<Button
 									key={button.href}
 									asChild
 									size="lg"
-									variant={button.variant as "default" | "outline"}
+									variant={
+										button.variant as "default" | "outline" | "secondary"
+									}
 								>
 									<Link
 										href={
@@ -159,9 +176,7 @@ export default async function Page(props: Props) {
 
 					<div className="flex flex-col gap-4">
 						<AnimatedContainer>
-							<h2 className="text-foreground text-lg font-semibold">
-								{t("findMeOnLabel")}
-							</h2>
+							<h2 className="text-foreground text-lg">{t("findMeOnLabel")}</h2>
 						</AnimatedContainer>
 						<HeroIntroSocialLinks>
 							{socialLinks.map(({ url, name }) => (
@@ -191,6 +206,10 @@ export default async function Page(props: Props) {
 					</div>
 				</section>
 			)}
+			<FloatingContactButton
+				contactMeText={t("contactMe")}
+				contactUrl="https://wa.me/40775378525"
+			/>
 		</>
 	);
 }
