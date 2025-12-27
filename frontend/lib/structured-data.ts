@@ -65,7 +65,6 @@ export function createPersonSchema(
     name?: string | null;
     email?: string | null;
     phone?: string | null;
-    motto?: string | null;
     about?: string | null;
     picture?: string | null;
     socialLinks?: Array<{ url?: string | null }> | null;
@@ -88,10 +87,6 @@ export function createPersonSchema(
 
   if (person.phone) {
     schema.telephone = person.phone;
-  }
-
-  if (person.motto) {
-    schema.jobTitle = person.motto;
   }
 
   if (person.about) {

@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import { getCanonicalUrl } from "@/lib/seo";
 import { getLocalizedSettingsMetadata } from "@/lib/seo";
 
@@ -30,7 +29,9 @@ import { getTranslations } from "next-intl/server";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { HeroSpline } from "@/components/hero-spline";
 import { Link } from "@/i18n/navigation";
-import SkillsSection from "@/components/skills-section";
+import ServicesSection from "@/components/services-section";
+import CaseStudiesSection from "@/components/case-studies-section";
+import TestimonialsSection from "@/components/testimonials-section";
 import homeOpengraphEn from "@/assets/images/home-opengraph-en.png";
 import homeOpengraphEs from "@/assets/images/home-opengraph-es.png";
 import homeOpengraphRo from "@/assets/images/home-opengraph-ro.png";
@@ -49,7 +50,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 	const params = await props.params;
 	const { locale } = params;
 
-	const [localizedSettings, t] = await Promise.all([
+	const [, t] = await Promise.all([
 		getLocalizedSettingsMetadata(locale),
 		getTranslations({ locale, namespace: "home.seo" }),
 	]);
@@ -127,19 +128,30 @@ export default async function Page(props: Props) {
 							</HighlightBadge>
 							<h1 className="text-foreground group relative text-balance text-3xl leading-normal font-semibold md:text-5xl md:leading-tight">
 								{t.rich("headline", {
-									strong: (chunks) => <strong>{chunks}</strong>,
+									strong: (chunks) => (
+										<strong className="text-primary">{chunks}</strong>
+									),
 								})}
 							</h1>
-							<p className="prose prose-sm max-w-none">{t("tagline")}</p>
+							<p className="text-muted-foreground max-w-xl text-lg leading-relaxed">
+								{t("tagline")}
+							</p>
 						</HeroIntroContent>
 						<HeroIntroCtaButtons>
-							{ctaButtons.map((button, index) => (
+							{ctaButtons.map((button) => (
 								<Button
-									key={index}
+									key={button.href}
 									asChild
+									size="lg"
 									variant={button.variant as "default" | "outline"}
 								>
-									<Link href={button.href}>{button.text}</Link>
+									<Link
+										href={
+											button.href as "/start-your-project" | "/privacy-policy"
+										}
+									>
+										{button.text}
+									</Link>
 								</Button>
 							))}
 						</HeroIntroCtaButtons>
@@ -163,12 +175,15 @@ export default async function Page(props: Props) {
 					</div>
 				</HeroIntro>
 			</div>
-			<SkillsSection />
+
+			<ServicesSection />
+
+			<CaseStudiesSection />
+
+			<TestimonialsSection />
+
 			{profileT("email") && (
-				<section
-					id="contact"
-					className="bg-background mt-16 px-4 py-24 md:mt-24"
-				>
+				<section id="contact" className="bg-muted/30 px-4 py-24 md:py-32">
 					<div className="mx-auto flex w-full max-w-6xl justify-center">
 						<div className="w-full max-w-lg">
 							<ContactForm recipientEmail={profileT("email")} />

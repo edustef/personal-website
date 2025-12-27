@@ -114,7 +114,6 @@ export default async function LocaleLayout(props: Props) {
 			name: profileT("name"),
 			email: profileT("email"),
 			phone: profileT("phone"),
-			motto: profileT("motto"),
 			about: profileT("about"),
 			picture: null,
 			socialLinks: socialLinks.map((link) => ({ url: link.url })),

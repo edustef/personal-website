@@ -249,7 +249,6 @@
     "name": "Eduard Sergiu Stefan",
     "email": "contact@eduardstefan.dev",
     "phone": "+40770378214",
-    "motto": "Master in the arts of <div>ination.",
     "about": "About me",
     "location": "Oradea, Romania",
     "workPreference": "Remote",
@@ -288,5 +287,23 @@
   "skills": {
     "headline": "Websites <strong>built to perform</strong>, not just exist.",
     "subtitle": "Technologies I work with"
+  },
+  "services": {
+    "label": "What I do",
+    "headline": "Solutions that drive real business results",
+    "subtitle": "I don't just build websites—I build growth engines. Every project is designed to solve a specific business problem and deliver measurable outcomes."
+  },
+  "caseStudies": {
+    "label": "Selected Work",
+    "headline": "Results that speak for themselves",
+    "subtitle": "Real projects, real outcomes. See how I've helped businesses overcome challenges and achieve their goals.",
+    "viewProject": "View case study",
+    "challenge": "Challenge",
+    "result": "Result"
+  },
+  "testimonials": {
+    "label": "Client Stories",
+    "headline": "Trusted by founders and teams",
+    "subtitle": "Don't take my word for it—hear from the people who've worked with me."
   }
 }
