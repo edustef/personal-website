@@ -248,7 +248,9 @@
     "contact": {
       "label": "Ponerse en contacto",
       "headline": "Trabajemos juntos",
-      "subtitle": "¿Tienes un proyecto en mente? Me encantaría saber de él. Envíame un mensaje y responderé lo antes posible."
+      "subtitle": "¿Tienes un proyecto en mente? Me encantaría saber de él. Inicia tu proyecto o contáctame directamente.",
+      "ctaButton": "Inicia tu proyecto",
+      "whatsappLabel": "Contáctame en WhatsApp"
     },
     "seo": {
       "title": "Casa",

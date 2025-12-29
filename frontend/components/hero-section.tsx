@@ -5,6 +5,7 @@ import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
+import { getSocialIcon } from "@/lib/social-icons";
 
 export default async function HeroSection() {
 	const locale = await getLocale();
@@ -27,7 +28,7 @@ export default async function HeroSection() {
 		<section className="py-24 md:py-32">
 			<div className="mx-auto max-w-6xl px-4">
 				<div className="flex w-full flex-col gap-12 lg:flex-row lg:items-start lg:gap-16">
-					<div className="flex flex-1 flex-col gap-8">
+					<div className="flex flex-1 flex-col gap-8 order-1 lg:order-1">
 						<AnimatedContainer className="flex max-w-2xl flex-col gap-4">
 							<HighlightBadge>
 								<span>{t("announcementLabelPrimary")}</span>
@@ -84,25 +85,38 @@ export default async function HeroSection() {
 							))}
 						</AnimatedContainer>
 
-						<div className="flex flex-col gap-4">
+						<div className="hidden flex-col gap-4 lg:flex">
 							<AnimatedContainer>
 								<h2 className="text-foreground text-lg">
 									{t("findMeOnLabel")}
 								</h2>
 							</AnimatedContainer>
 							<AnimatedContainer className="flex flex-row gap-4">
-								{socialLinks.map(({ url, name }) => (
-									<Button key={url} asChild variant="outline">
-										<a href={url} target="_blank" rel="noopener noreferrer">
-											{name}
-										</a>
-									</Button>
-								))}
+								{socialLinks.map(({ url, name }) => {
+									const Icon = getSocialIcon(name);
+									return (
+										<Button
+											key={url}
+											asChild
+											variant="outline"
+											className="aspect-square p-0"
+										>
+											<a
+												href={url}
+												target="_blank"
+												rel="noopener noreferrer"
+												aria-label={name}
+											>
+												{Icon && <Icon className="size-5" />}
+											</a>
+										</Button>
+									);
+								})}
 							</AnimatedContainer>
 						</div>
 					</div>
 
-					<div className="flex flex-col gap-4 lg:flex-1">
+					<div className="flex flex-col gap-4 lg:flex-1 order-3 lg:order-2">
 						<div className="grid grid-cols-2 gap-3 lg:grid-cols-3 lg:grid-rows-2 lg:gap-4">
 							<div className="group relative col-span-2 aspect-square overflow-hidden rounded-2xl border border-border bg-card transition-transform duration-300 hover:scale-105 lg:col-span-2 lg:row-span-2 lg:aspect-auto">
 								<Image
@@ -132,6 +146,34 @@ export default async function HeroSection() {
 								/>
 							</div>
 						</div>
+					</div>
+
+					<div className="flex flex-col gap-4 order-4 lg:hidden">
+						<AnimatedContainer>
+							<h2 className="text-foreground text-lg">{t("findMeOnLabel")}</h2>
+						</AnimatedContainer>
+						<AnimatedContainer className="flex flex-row gap-4">
+							{socialLinks.map(({ url, name }) => {
+								const Icon = getSocialIcon(name);
+								return (
+									<Button
+										key={url}
+										asChild
+										variant="outline"
+										className="aspect-square p-0"
+									>
+										<a
+											href={url}
+											target="_blank"
+											rel="noopener noreferrer"
+											aria-label={name}
+										>
+											{Icon && <Icon className="size-5" />}
+										</a>
+									</Button>
+								);
+							})}
+						</AnimatedContainer>
 					</div>
 				</div>
 			</div>

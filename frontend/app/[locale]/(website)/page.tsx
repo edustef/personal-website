@@ -1,18 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import { getCanonicalUrl } from "@/lib/seo";
 import { getLocalizedSettingsMetadata } from "@/lib/seo";
-
-const ContactForm = dynamic(
-	() =>
-		import("@/components/contact-form").then((mod) => ({
-			default: mod.ContactForm,
-		})),
-	{
-		ssr: true,
-	},
-);
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
@@ -22,6 +11,7 @@ import ServicesSection from "@/components/services-section";
 import CaseStudiesSection from "@/components/case-studies-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import HeroSection from "@/components/hero-section";
+import ContactSection from "@/components/contact-section";
 import homeOpengraphEn from "@/assets/images/home-opengraph-en.png";
 import homeOpengraphEs from "@/assets/images/home-opengraph-es.png";
 import homeOpengraphRo from "@/assets/images/home-opengraph-ro.png";
@@ -92,6 +82,15 @@ export default async function Page(props: Props) {
 	const profileT = await getTranslations({ locale, namespace: "profile" });
 	const t = await getTranslations({ locale, namespace: "home" });
 
+	const phone = profileT("phone");
+	const whatsappUrl = phone
+		? `https://wa.me/${phone.replace(/[^0-9]/g, "")}`
+		: undefined;
+
+	const socialLinksRaw = profileT.raw("socialLinks") as
+		| Array<{ name: string; url: string }>
+		| undefined;
+
 	return (
 		<>
 			<Spotlight />
@@ -105,31 +104,14 @@ export default async function Page(props: Props) {
 
 			<TestimonialsSection />
 
-			{profileT("email") && (
-				<section id="contact" className="bg-muted/30 py-24 md:py-32">
-					<div className="mx-auto max-w-6xl px-4">
-						<div className="mb-16 text-center">
-							<p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
-								{t("contact.label")}
-							</p>
-							<h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl">
-								{t("contact.headline")}
-							</h2>
-							<p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-								{t("contact.subtitle")}
-							</p>
-						</div>
-						<div className="flex w-full justify-center">
-							<div className="w-full max-w-lg">
-								<ContactForm recipientEmail={profileT("email")} />
-							</div>
-						</div>
-					</div>
-				</section>
-			)}
+			<ContactSection
+				socialLinks={socialLinksRaw}
+				whatsappUrl={whatsappUrl}
+			/>
+
 			<FloatingContactButton
 				contactMeText={t("contactMe")}
-				contactUrl="https://wa.me/40775378525"
+				contactUrl={whatsappUrl || "https://wa.me/40775378525"}
 			/>
 		</>
 	);

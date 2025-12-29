@@ -248,7 +248,9 @@
     "contact": {
       "label": "Ia legătura",
       "headline": "Să lucrăm împreună",
-      "subtitle": "Ai un proiect în minte? Mi-ar plăcea să aud despre el. Trimite-mi un mesaj și voi răspunde cât mai curând posibil."
+      "subtitle": "Ai un proiect în minte? Mi-ar plăcea să aud despre el. Începe proiectul tău sau contactează-mă direct.",
+      "ctaButton": "Începe proiectul tău",
+      "whatsappLabel": "Contactează-mă pe WhatsApp"
     },
     "seo": {
       "title": "Acasa",
