@@ -19,7 +19,7 @@ export const services: Service[] = [
 		titleKey: "svc-4.title",
 		descriptionKey: "svc-4.description",
 		icon: "rocket",
-		featured: true,
+		featured: false,
 	},
 	{
 		_id: "svc-2",
@@ -47,6 +47,6 @@ export const services: Service[] = [
 		titleKey: "svc-6.title",
 		descriptionKey: "svc-6.description",
 		icon: "headphones",
-		featured: false,
+		featured: true,
 	},
 ];

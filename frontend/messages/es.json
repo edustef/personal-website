@@ -228,7 +228,7 @@
   },
   "home": {
     "headline": "Construido con precisión. Diseñado para crecer.",
-    "tagline": "Soy Eduard Stefan y diseño páginas web para potenciar tu presencia online.",
+    "tagline": "Soy Eduard, un desarrollador web independiente dedicado a los detalles que importan. Ofrezco una asociación directa y eficiente que se enfoca en lo que realmente marca la diferencia: experiencias web de alta calidad construidas para ayudar a tu negocio a escalar.",
     "announcementLabelPrimary": "Blog ",
     "announcementLabelSecondary": "próximamente",
     "resumeButtonLabel": "Ver mi currículum",
@@ -241,6 +241,15 @@
         "variant": "secondary"
       }
     ],
+    "aboutMe": {
+      "headline": "Sobre Mí",
+      "description": "Soy Eduard Stefan, y dedico mi tiempo a construir sitios web que destacan con claridad y velocidad. Prefiero un enfoque tranquilo y enfocado—trabajar uno a uno me permite obsesionarme con los detalles que importan y mantenerme cerca del trabajo que amo. Para mí, no se trata solo de escribir código; se trata de crear algo rápido, intuitivo y genuinamente útil para las personas al otro lado de la pantalla."
+    },
+    "contact": {
+      "label": "Ponerse en contacto",
+      "headline": "Trabajemos juntos",
+      "subtitle": "¿Tienes un proyecto en mente? Me encantaría saber de él. Envíame un mensaje y responderé lo antes posible."
+    },
     "seo": {
       "title": "Casa",
       "description": "Soy Eduard Stefan y desarrollo websites, mobile apps y soluciones de IA."
@@ -363,32 +372,32 @@
     }
   },
   "services": {
-    "label": "Lo que hago",
-    "headline": "Soluciones que generan resultados reales para el negocio",
-    "subtitle": "No solo construyo sitios web—construyo motores de crecimiento. Cada proyecto está diseñado para resolver un problema empresarial específico y entregar resultados medibles.",
+    "label": "Mi Filosofía",
+    "headline": "Sin relleno. Solo resultados.",
+    "subtitle": "Pagas por mis manos en el teclado, no por una oficina elegante o tres niveles de gestores de proyectos. Tienes línea directa con la persona que realmente construye tu sitio, lo que significa que avanzamos más rápido y tu presupuesto rinde más.",
     "svc-1": {
-      "title": "Aplicaciones Web Personalizadas",
-      "description": "Soluciones a medida que resuelven tus desafíos comerciales específicos. Desde herramientas internas hasta plataformas orientadas al cliente, construidas para escalar y rendir."
+      "title": "Apps Web a Medida",
+      "description": "Construidas con precisión. Investigo y paso directo a resolver problemas. Sin informes PDF de 50 páginas, solo soluciones personalizadas hechas para rendir."
     },
     "svc-2": {
       "title": "Soluciones E-commerce",
-      "description": "Tiendas en línea de alta conversión optimizadas para ingresos. Flujos de checkout sin problemas, gestión de inventario y análisis que impulsan el crecimiento."
+      "description": "Sin jerga de marketing vaga. Solo tiendas de alta conversión, flujos de pago fluidos y análisis que impulsan el crecimiento real."
     },
     "svc-3": {
-      "title": "Optimización de Rendimiento",
-      "description": "La velocidad es dinero. Audito, optimizo y transformo sitios web lentos en experiencias ultrarrápidas que mantienen a los usuarios comprometidos."
+      "title": "Tecnología de Alto Rendimiento",
+      "description": "Sin CMS empresariales inflados. Construyo soluciones limpias y rápidas que realmente posees, evitando la trampa del 'relleno tecnológico'."
     },
     "svc-4": {
       "title": "Desarrollo MVP",
-      "description": "Llega al mercado rápido. Ayudo a las startups a validar ideas rápidamente con productos funcionales y ágiles que impresionan a los inversores."
+      "description": "Salta la fase de descubrimiento interminable. Ayudo a startups a validar ideas rápidamente con productos ágiles y funcionales."
     },
     "svc-5": {
       "title": "Implementación UI/UX",
-      "description": "Ejecución perfecta de tus diseños. Cierro la brecha entre la visión del diseño y el producto funcional."
+      "description": "Ejecución cuidadosa. Cierro la brecha entre diseño y código sin el juego del 'teléfono roto'."
     },
     "svc-6": {
-      "title": "Soporte Continuo",
-      "description": "Asociación a largo plazo para mantenimiento, actualizaciones y mejora continua. Tu producto evoluciona a medida que crece tu negocio."
+      "title": "Asociación Directa",
+      "description": "Sin impuesto de intermediarios. Hablas directamente conmigo: el estratega, diseñador y desarrollador. La comunicación es instantánea y precisa."
     }
   },
   "certificates": {

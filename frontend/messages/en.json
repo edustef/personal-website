@@ -228,7 +228,7 @@
   },
   "home": {
     "headline": "Built with precision. Designed for growth.",
-    "tagline": "I am Eduard Stefan and I build websites that help you grow your online presence.",
+    "tagline": "I'm Eduard, a solo developer dedicated to the details that matter. I offer a streamlined, direct partnership that focuses on what actually moves the needle: high-quality web experiences built to help your business scale.",
     "announcementLabelPrimary": "Blog ",
     "announcementLabelSecondary": "coming soon",
     "resumeButtonLabel": "See my resume",
@@ -241,6 +241,15 @@
         "variant": "secondary"
       }
     ],
+    "aboutMe": {
+      "headline": "About Me",
+      "description": "I'm Eduard Stefan, and I spend my time building websites that cut through the noise with clarity and speed. I prefer a quiet, focused approach—working one-on-one allows me to obsess over the details that matter and stay close to the work I love. For me, it's not just about writing code; it's about crafting something fast, intuitive, and genuinely useful for the people on the other side of the screen."
+    },
+    "contact": {
+      "label": "Get in touch",
+      "headline": "Let's work together",
+      "subtitle": "Have a project in mind? I'd love to hear about it. Send me a message and I'll respond as soon as possible."
+    },
     "seo": {
       "title": "Home",
       "description": "I am Eduard Stefan and I build Websites, Mobile Apps and AI solutions."
@@ -363,32 +372,32 @@
     }
   },
   "services": {
-    "label": "What I do",
-    "headline": "Solutions that drive real business results",
-    "subtitle": "I don't just build websites—I build growth engines. Every project is designed to solve a specific business problem and deliver measurable outcomes.",
+    "label": "My Philosophy",
+    "headline": "No fluff. Just results.",
+    "subtitle": "You pay for my hands on the keyboard, not for a fancy office or three layers of project managers. You get a direct line to the person actually building your site—which means we move faster and your budget goes further.",
     "svc-1": {
-      "title": "Custom Web Applications",
-      "description": "Tailored solutions that solve your specific business challenges. From internal tools to customer-facing platforms, built for scale and performance."
+      "title": "Custom Web Apps",
+      "description": "Built with precision. I do the research, then move straight to solving problems. No 50-page PDF reports—just custom solutions built to perform."
     },
     "svc-2": {
       "title": "E-commerce Solutions",
-      "description": "High-converting online stores optimized for revenue. Seamless checkout flows, inventory management, and analytics that drive growth."
+      "description": "No vague marketing speak. Just high-converting stores, seamless checkout flows, and analytics that drive real growth."
     },
     "svc-3": {
-      "title": "Performance Optimization",
-      "description": "Speed is money. I audit, optimize, and transform slow websites into lightning-fast experiences that keep users engaged."
+      "title": "High-Performance Tech",
+      "description": "No bloated enterprise CMS. I build clean, fast solutions that you actually own, avoiding the 'tech fluff' trap."
     },
     "svc-4": {
       "title": "MVP Development",
-      "description": "Get to market fast. I help startups validate ideas quickly with lean, functional products that impress investors."
+      "description": "Skip the endless discovery phase. I help startups validate ideas quickly with lean, functional products."
     },
     "svc-5": {
       "title": "UI/UX Implementation",
-      "description": "Pixel-perfect execution of your designs. I bridge the gap between design vision and working product."
+      "description": "Thoughtful execution. I bridge the gap between design and code without the game of 'telephone'."
     },
     "svc-6": {
-      "title": "Ongoing Support",
-      "description": "Long-term partnership for maintenance, updates, and continuous improvement. Your product evolves as your business grows."
+      "title": "Direct Partnership",
+      "description": "No middleman tax. You talk directly to me—the strategist, designer, and developer. Communication is instant and accurate."
     }
   },
   "certificates": {

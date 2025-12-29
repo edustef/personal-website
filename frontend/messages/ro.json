@@ -228,7 +228,7 @@
   },
   "home": {
     "headline": "Construit cu precizie. Proiectat pentru creștere.",
-    "tagline": "Sunt Eduard Ștefan și construiesc site-uri web care te ajută să-ți crești prezența online.",
+    "tagline": "Sunt Eduard, un dezvoltator web independent dedicat detaliilor care contează. Ofer un parteneriat direct și eficient care se concentrează pe ceea ce face cu adevărat diferența: experiențe web de înaltă calitate construite pentru a ajuta afacerea ta să scaleze.",
     "announcementLabelPrimary": "Blog ",
     "announcementLabelSecondary": "în curând",
     "resumeButtonLabel": "Vezi CV-ul meu",
@@ -241,6 +241,15 @@
         "variant": "secondary"
       }
     ],
+    "aboutMe": {
+      "headline": "Despre Mine",
+      "description": "Sunt Eduard Stefan, și îmi petrec timpul construind site-uri web care se remarcă prin claritate și viteză. Prefer o abordare liniștită și concentrată—lucrul unu la unu îmi permite să mă obsedez cu detaliile care contează și să rămân aproape de munca pe care o iubesc. Pentru mine, nu e vorba doar despre scrierea de cod; e vorba despre crearea a ceva rapid, intuitiv și cu adevărat util pentru oamenii de pe cealaltă parte a ecranului."
+    },
+    "contact": {
+      "label": "Ia legătura",
+      "headline": "Să lucrăm împreună",
+      "subtitle": "Ai un proiect în minte? Mi-ar plăcea să aud despre el. Trimite-mi un mesaj și voi răspunde cât mai curând posibil."
+    },
     "seo": {
       "title": "Acasa",
       "description": "Eu sunt Eduard Ștefan și construiesc website-uri, mobile apps și soluții AI."
@@ -363,32 +372,32 @@
     }
   },
   "services": {
-    "label": "Ce fac",
-    "headline": "Soluții care generează rezultate reale pentru afaceri",
-    "subtitle": "Nu construiesc doar site-uri web—construiesc motoare de creștere. Fiecare proiect este proiectat să rezolve o problemă specifică de afaceri și să ofere rezultate măsurabile.",
+    "label": "Filozofia Mea",
+    "headline": "Fără artificii. Doar rezultate.",
+    "subtitle": "Plătești pentru munca mea efectivă, nu pentru un birou luxos sau trei niveluri de manageri de proiect. Ai linie directă cu persoana care îți construiește site-ul — ceea ce înseamnă că ne mișcăm mai repede și bugetul tău ajunge mai departe.",
     "svc-1": {
       "title": "Aplicații Web Personalizate",
-      "description": "Soluții adaptate care rezolvă provocările specifice ale afacerii tale. De la instrumente interne la platforme orientate către clienți, construite pentru scalare și performanță."
+      "description": "Construite cu precizie. Fac cercetarea, apoi trec direct la rezolvarea problemelor. Fără rapoarte PDF de 50 de pagini — doar soluții personalizate construite pentru performanță."
     },
     "svc-2": {
       "title": "Soluții E-commerce",
-      "description": "Magazine online cu conversie ridicată optimizate pentru venituri. Fluxuri de checkout fără probleme, gestionare de inventar și analiză care stimulează creșterea."
+      "description": "Fără limbaj vag de marketing. Doar magazine cu conversie ridicată, fluxuri de plată fluide și analize care generează creștere reală."
     },
     "svc-3": {
-      "title": "Optimizare Performanță",
-      "description": "Viteza înseamnă bani. Auditez, optimizez și transform site-uri web lente în experiențe ultra-rapide care mențin utilizatorii implicați."
+      "title": "Tehnologie de Înaltă Performanță",
+      "description": "Fără CMS-uri enterprise încărcate. Construiesc soluții curate, rapide, pe care le deții cu adevărat, evitând capcana 'balastului tehnologic'."
     },
     "svc-4": {
       "title": "Dezvoltare MVP",
-      "description": "Ajungi pe piață rapid. Ajut startup-urile să valideze idei rapid cu produse funcționale și agil care impresionează investitorii."
+      "description": "Sari peste faza interminabilă de descoperire. Ajut startup-urile să valideze idei rapid cu produse suple și funcționale."
     },
     "svc-5": {
       "title": "Implementare UI/UX",
-      "description": "Execuție perfectă a design-urilor tale. Fac legătura între viziunea de design și produsul funcțional."
+      "description": "Execuție atentă. Fac legătura între design și cod fără jocul de 'telefonul fără fir'."
     },
     "svc-6": {
-      "title": "Suport Continuu",
-      "description": "Parteneriat pe termen lung pentru întreținere, actualizări și îmbunătățire continuă. Produsul tău evoluează pe măsură ce afacerea ta crește."
+      "title": "Parteneriat Direct",
+      "description": "Fără taxa de intermediar. Vorbești direct cu mine — strategul, designerul și dezvoltatorul. Comunicarea este instantanee și precisă."
     }
   },
   "certificates": {

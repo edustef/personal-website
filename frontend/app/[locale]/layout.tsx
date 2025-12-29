@@ -131,7 +131,7 @@ export default async function LocaleLayout(props: Props) {
 	return (
 		<html
 			lang={params.locale}
-			className={`${cardo.variable} ${dmMono.variable} font-light bg-background text-foreground min-h-screen transition-colors duration-300`}
+			className={`${cardo.variable} ${dmMono.variable} dark font-light bg-background text-foreground min-h-screen transition-colors duration-300`}
 			suppressHydrationWarning
 		>
 			<body className="isolate transition-colors duration-300 ease-in-out">
@@ -156,7 +156,7 @@ export default async function LocaleLayout(props: Props) {
 					<ThemeProvider
 						attribute="class"
 						defaultTheme="dark"
-						enableSystem
+						enableSystem={false}
 						disableTransitionOnChange
 					>
 							<Toaster />

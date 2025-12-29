@@ -4,13 +4,6 @@ import dynamic from "next/dynamic";
 import { getCanonicalUrl } from "@/lib/seo";
 import { getLocalizedSettingsMetadata } from "@/lib/seo";
 
-import {
-	HeroIntro,
-	HeroIntroContent,
-	HeroIntroCtaButtons,
-	HeroIntroSocialLinks,
-} from "@/components/hero-intro";
-
 const ContactForm = dynamic(
 	() =>
 		import("@/components/contact-form").then((mod) => ({
@@ -20,25 +13,19 @@ const ContactForm = dynamic(
 		ssr: true,
 	},
 );
-import { HighlightBadge } from "@/components/ui/highlight-badge";
-import { Button } from "@/components/ui/button";
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
-import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Spotlight } from "@/components/ui/spotlight-new";
-import { Link } from "@/i18n/navigation";
 import ServicesSection from "@/components/services-section";
 import CaseStudiesSection from "@/components/case-studies-section";
 import TestimonialsSection from "@/components/testimonials-section";
+import HeroSection from "@/components/hero-section";
 import homeOpengraphEn from "@/assets/images/home-opengraph-en.png";
 import homeOpengraphEs from "@/assets/images/home-opengraph-es.png";
 import homeOpengraphRo from "@/assets/images/home-opengraph-ro.png";
-import {
-	FloatingContactButton,
-	HERO_CONTACT_BUTTON_ID,
-} from "@/components/contact-button-observer";
+import { FloatingContactButton } from "@/components/contact-button-observer";
 
 type Props = {
 	params: Promise<{ locale: string }>;
@@ -102,94 +89,15 @@ export default async function Page(props: Props) {
 	}
 	setRequestLocale(locale);
 
-	const [t, profileT] = await Promise.all([
-		getTranslations({ locale, namespace: "home" }),
-		getTranslations({ locale, namespace: "profile" }),
-	]);
-
-	const ctaButtons = t.raw("ctaButtons") as Array<{
-		text: string;
-		href: string;
-		variant: string;
-	}>;
-	const socialLinks = profileT.raw("socialLinks") as Array<{
-		name: string;
-		url: string;
-	}>;
+	const profileT = await getTranslations({ locale, namespace: "profile" });
+	const t = await getTranslations({ locale, namespace: "home" });
 
 	return (
 		<>
 			<Spotlight />
-			<div className="relative flex min-h-[calc(100vh-4rem)] flex-col px-4 pt-12 pb-12 md:pt-24">
-				<HeroIntro>
-					<div className="flex flex-col gap-8">
-						<HeroIntroContent>
-							<HighlightBadge>
-								<span>{t("announcementLabelPrimary")}</span>
-								<span className="ml-1.5 font-bold">
-									{t("announcementLabelSecondary")}
-								</span>
-							</HighlightBadge>
-							<h1 className="text-foreground group relative text-balance text-3xl leading-normal md:text-5xl md:leading-tight">
-								{t.rich("headline", {
-									strong: (chunks) => (
-										<strong className="text-primary font-semibold">
-											{chunks}
-										</strong>
-									),
-								})}
-							</h1>
-							<p className="text-muted-foreground max-w-xl text-lg leading-relaxed">
-								{t("tagline")}
-							</p>
-						</HeroIntroContent>
-						<HeroIntroCtaButtons>
-							<Button asChild size="lg" variant="default" id={HERO_CONTACT_BUTTON_ID}>
-								<a
-									href="https://wa.me/40775378525"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									{t("contactMe")}
-								</a>
-							</Button>
-							{ctaButtons.map((button) => (
-								<Button
-									key={button.href}
-									asChild
-									size="lg"
-									variant={
-										button.variant as "default" | "outline" | "secondary"
-									}
-								>
-									<Link
-										href={
-											button.href as "/start-your-project" | "/privacy-policy"
-										}
-									>
-										{button.text}
-									</Link>
-								</Button>
-							))}
-						</HeroIntroCtaButtons>
-					</div>
+			<HeroSection />
 
-					<div className="flex flex-col gap-4">
-						<AnimatedContainer>
-							<h2 className="text-foreground text-lg">{t("findMeOnLabel")}</h2>
-						</AnimatedContainer>
-						<HeroIntroSocialLinks>
-							{socialLinks.map(({ url, name }) => (
-								<Button key={url} asChild variant="outline">
-									<a href={url} target="_blank" rel="noopener noreferrer">
-										{name}
-									</a>
-								</Button>
-							))}
-						</HeroIntroSocialLinks>
-					</div>
-				</HeroIntro>
-			</div>
+			{/* <AboutMeSection /> */}
 
 			<ServicesSection />
 
@@ -198,10 +106,23 @@ export default async function Page(props: Props) {
 			<TestimonialsSection />
 
 			{profileT("email") && (
-				<section id="contact" className="bg-muted/30 px-4 py-24 md:py-32">
-					<div className="mx-auto flex w-full max-w-6xl justify-center">
-						<div className="w-full max-w-lg">
-							<ContactForm recipientEmail={profileT("email")} />
+				<section id="contact" className="bg-muted/30 py-24 md:py-32">
+					<div className="mx-auto max-w-6xl px-4">
+						<div className="mb-16 text-center">
+							<p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
+								{t("contact.label")}
+							</p>
+							<h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl">
+								{t("contact.headline")}
+							</h2>
+							<p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+								{t("contact.subtitle")}
+							</p>
+						</div>
+						<div className="flex w-full justify-center">
+							<div className="w-full max-w-lg">
+								<ContactForm recipientEmail={profileT("email")} />
+							</div>
 						</div>
 					</div>
 				</section>
