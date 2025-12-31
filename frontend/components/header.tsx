@@ -53,7 +53,7 @@ export function Header({ className }: HeaderProps) {
 	return (
 		<header
 			className={cn(
-				"fixed inset-0 z-50 flex h-16 w-full items-center px-4 md:h-20",
+				"fixed inset-0 z-50 flex h-16 w-full items-center md:h-20",
 				className,
 			)}
 		>
@@ -63,7 +63,7 @@ export function Header({ className }: HeaderProps) {
 			>
 				{skipLinkText}
 			</a>
-			<div className="container mx-auto w-full max-w-6xl">
+			<div className="mx-auto w-full max-w-6xl px-4">
 				<div className="flex items-center justify-between gap-5">
 					<Link
 						aria-label={homeButtonLabel}

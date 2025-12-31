@@ -30,8 +30,7 @@ export default async function CertificatesSection({
 
   return (
     <section className="bg-muted/50 py-24">
-      <div className="container">
-        <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-6xl px-4">
           <div className="mb-16 text-center">
             <h2 className="text-foreground mb-4 text-4xl font-bold md:text-5xl">
               Certificates
@@ -94,7 +93,6 @@ export default async function CertificatesSection({
               );
             })}
           </div>
-        </div>
       </div>
     </section>
   );

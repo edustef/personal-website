@@ -1,4 +1,4 @@
-import { PixelatedCanvas } from "@/components/ui/pixelated-canvas";
+import { PixelatedImageTheme } from "@/components/pixelated-image-theme";
 import meTransparent from "@/assets/images/me-transparent.png";
 import { getTranslations, getLocale } from "next-intl/server";
 
@@ -19,15 +19,14 @@ export default async function AboutMeSection() {
 									"radial-gradient(ellipse 50% 50% at center, black 40%, transparent 100%)",
 							}}
 						>
-							<PixelatedCanvas
+							<PixelatedImageTheme
 								src={meTransparent.src}
 								width={400}
 								height={600}
-								cellSize={2}
-								dotScale={0.9}
+								cellSize={1}
+								dotScale={2}
 								shape="square"
-								backgroundColor="#fff"
-								dropoutStrength={0.3}
+								dropoutStrength={0.1}
 								interactive
 								distortionStrength={1}
 								distortionRadius={80}
@@ -36,7 +35,6 @@ export default async function AboutMeSection() {
 								jitterStrength={4}
 								jitterSpeed={4}
 								sampleAverage
-								tintColor="#FFFFFF"
 								tintStrength={0.2}
 							/>
 						</div>

@@ -25,8 +25,7 @@ export default async function ProjectGrid({
 
   return (
     <section className="bg-white py-24">
-      <div className="container">
-        <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-6xl px-4">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-5xl font-bold md:text-6xl">
               <span className="gradient-text">{title}</span>
@@ -141,7 +140,6 @@ export default async function ProjectGrid({
               );
             })}
           </div>
-        </div>
       </div>
     </section>
   );

@@ -30,8 +30,7 @@ export default async function ExperienceTimeline({
 
   return (
     <section className="from-background to-muted/20 bg-linear-to-b py-24">
-      <div className="container">
-        <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-5xl px-4">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-5xl font-bold md:text-6xl">
               <span className="gradient-text">Experience</span>
@@ -149,7 +148,6 @@ export default async function ExperienceTimeline({
               })}
             </div>
           </div>
-        </div>
       </div>
     </section>
   );

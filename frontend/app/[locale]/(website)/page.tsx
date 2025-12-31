@@ -11,6 +11,7 @@ import ServicesSection from "@/components/services-section";
 import CaseStudiesSection from "@/components/case-studies-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import HeroSection from "@/components/hero-section";
+import AboutMeSection from "@/components/about-me-section";
 import ContactSection from "@/components/contact-section";
 import homeOpengraphEn from "@/assets/images/home-opengraph-en.png";
 import homeOpengraphEs from "@/assets/images/home-opengraph-es.png";
@@ -102,7 +103,7 @@ export default async function Page(props: Props) {
 			<Spotlight />
 			<HeroSection />
 
-			{/* <AboutMeSection /> */}
+			<AboutMeSection />
 
 			<ServicesSection />
 
