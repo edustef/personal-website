@@ -10,7 +10,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ConvexClientProvider } from "@/components/convex-client-provider";
 import { getLocalizedSettingsMetadata, getCanonicalUrl } from "@/lib/seo";
 import { NextIntlClientProvider } from "next-intl";
-import { locales, routing } from "@/i18n/routing";
+import { locales } from "@/i18n/routing";
 import {
 	createPersonSchema,
 	createWebSiteSchema,
@@ -34,10 +34,11 @@ export async function generateMetadata(
 		.filter((lang) => lang !== locale);
 
 	const hreflangUrls = locales.map((loc) => {
-		const localePath = loc.id === routing.defaultLocale ? "" : `/${loc.id}`;
 		const url = getCanonicalUrl(loc.id, "");
 		return [loc.id, url];
 	});
+
+	const canonicalUrl = getCanonicalUrl(locale, "");
 
 	return {
 		metadataBase: localized.metadataBase,
@@ -47,6 +48,7 @@ export async function generateMetadata(
 		},
 		description: localized.description,
 		alternates: {
+			canonical: canonicalUrl,
 			languages: Object.fromEntries(hreflangUrls),
 		},
 		openGraph: {
@@ -139,6 +141,7 @@ export default async function LocaleLayout(props: Props) {
 					<Script
 						type="application/ld+json"
 						strategy="afterInteractive"
+						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 						dangerouslySetInnerHTML={{
 							__html: sanitizeJsonLd(personSchema),
 						}}
@@ -147,18 +150,19 @@ export default async function LocaleLayout(props: Props) {
 				<Script
 					type="application/ld+json"
 					strategy="afterInteractive"
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 					dangerouslySetInnerHTML={{
 						__html: sanitizeJsonLd(webSiteSchema),
 					}}
 				/>
 				<NextIntlClientProvider>
 					<ConvexClientProvider>
-					<ThemeProvider
-						attribute="class"
-						defaultTheme="dark"
-						enableSystem={false}
-						disableTransitionOnChange
-					>
+						<ThemeProvider
+							attribute="class"
+							defaultTheme="dark"
+							enableSystem={false}
+							disableTransitionOnChange
+						>
 							<Toaster />
 							{props.children}
 							<SpeedInsights />

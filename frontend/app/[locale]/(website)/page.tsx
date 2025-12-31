@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { getCanonicalUrl } from "@/lib/seo";
 import { getLocalizedSettingsMetadata } from "@/lib/seo";
 import { hasLocale } from "next-intl";
-import { routing } from "@/i18n/routing";
+import { routing, locales } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { Spotlight } from "@/components/ui/spotlight-new";
@@ -41,11 +41,17 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 	const canonicalUrl = getCanonicalUrl(locale, "/");
 	const ogImage = ogImages[locale as keyof typeof ogImages] || ogImages.en;
 
+	const hreflangUrls = locales.map((loc) => {
+		const url = getCanonicalUrl(loc.id, "/");
+		return [loc.id, url];
+	});
+
 	return {
 		title: pageTitle,
 		description: pageDescription,
 		alternates: {
 			canonical: canonicalUrl,
+			languages: Object.fromEntries(hreflangUrls),
 		},
 		openGraph: {
 			type: "website",

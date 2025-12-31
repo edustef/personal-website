@@ -3,9 +3,9 @@ import { HighlightBadge } from "@/components/ui/highlight-badge";
 import { Button } from "@/components/ui/button";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Link } from "@/i18n/navigation";
-import Image from "next/image";
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
 import { getSocialIcon } from "@/lib/social-icons";
+import { HeroImages } from "@/components/hero-images";
 
 export default async function HeroSection() {
 	const locale = await getLocale();
@@ -116,36 +116,8 @@ export default async function HeroSection() {
 						</div>
 					</div>
 
-					<div className="flex flex-col gap-4 lg:flex-1 order-3 lg:order-2">
-						<div className="grid grid-cols-2 gap-3 lg:grid-cols-3 lg:grid-rows-2 lg:gap-4">
-							<div className="group relative col-span-2 aspect-square overflow-hidden rounded-2xl border border-border bg-card transition-transform duration-300 hover:scale-105 lg:col-span-2 lg:row-span-2 lg:aspect-auto">
-								<Image
-									src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop&q=80"
-									alt="Development dashboard and analytics"
-									fill
-									className="object-cover"
-									sizes="(max-width: 1024px) 100vw, 66vw"
-								/>
-							</div>
-							<div className="group relative aspect-square overflow-hidden rounded-2xl border border-border bg-card transition-transform duration-300 hover:scale-105 lg:col-span-1 lg:row-span-1">
-								<Image
-									src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=800&fit=crop&q=80"
-									alt="Code editor with modern IDE"
-									fill
-									className="object-cover"
-									sizes="(max-width: 1024px) 50vw, 33vw"
-								/>
-							</div>
-							<div className="group relative aspect-square overflow-hidden rounded-2xl border border-border bg-card transition-transform duration-300 hover:scale-105 lg:col-span-1 lg:row-span-1">
-								<Image
-									src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=800&fit=crop&q=80"
-									alt="API documentation and development tools"
-									fill
-									className="object-cover"
-									sizes="(max-width: 1024px) 50vw, 33vw"
-								/>
-							</div>
-						</div>
+					<div className="lg:self-stretch flex flex-col gap-4 lg:flex-1 order-3 lg:order-2">
+						<HeroImages />
 					</div>
 
 					<div className="flex flex-col gap-4 order-4 lg:hidden">

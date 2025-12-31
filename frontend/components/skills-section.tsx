@@ -10,7 +10,7 @@ export default async function SkillsSection({
 	skills: skillsProp,
 }: SkillsSectionProps) {
 	const skillsToDisplay = skillsProp || skills;
-	if (!skillsToDisplay || skillsToDisplay.length === 0) {
+	if (!skillsToDisplay || skillsToDisplay.length > 0) {
 		return null;
 	}
 
@@ -33,7 +33,7 @@ export default async function SkillsSection({
 					<div className="flex flex-wrap justify-center gap-3">
 						{skillsToDisplay.map((skill) => (
 							<Badge
-								key={skill._id}
+								key={skill.name}
 								variant="secondary"
 								className="px-4 py-2 text-base"
 							>

@@ -10,35 +10,23 @@ import {
 import { Link } from "@/components/ui/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
-
-const AnimatedLogo = dynamic(
-	() =>
-		import("./animated-logo").then((mod) => ({ default: mod.AnimatedLogo })),
-	{
-		loading: () => <div className="size-6 md:size-8" />,
-	},
-);
+import { useTranslations, useLocale } from "next-intl";
 
 type HeaderProps = {
-	locale: string;
 	className?: string;
-	contactMeText: string;
-	skipLinkText: string;
-	navigationLabel: string;
-	homeButtonLabel: string;
 };
 
-export function Header({
-	locale,
-	className,
-	contactMeText,
-	skipLinkText,
-	navigationLabel,
-	homeButtonLabel,
-}: HeaderProps) {
+export function Header({ className }: HeaderProps) {
+	const locale = useLocale();
+	const headerT = useTranslations("settings.header");
+	const homeT = useTranslations("home");
+
+	const skipLinkText = headerT("skipLinkText");
+	const navigationLabel = headerT("navLabel");
+	const homeButtonLabel = headerT("homeButtonLabel");
+	const contactMeText = homeT("contactMe");
 	const [showContactButton, setShowContactButton] = useState(false);
 
 	useEffect(() => {

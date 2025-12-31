@@ -4,9 +4,8 @@ import type { Metadata } from "next";
 import { getLocalizedSettingsMetadata, getCanonicalUrl } from "@/lib/seo";
 import { hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import { defaultLocale, routing } from "@/i18n/routing";
+import { defaultLocale, LocaleId, routing } from "@/i18n/routing";
 import { ClientProjectInflow } from "@/app/[locale]/(website)/start-your-project/client-project-inflow";
-import { Spotlight } from "@/components/ui/spotlight-new";
 import { getTranslations } from "next-intl/server";
 
 type Props = {
@@ -15,7 +14,7 @@ type Props = {
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
 	const params = await props.params;
-	const locale = params.locale;
+	const locale = params.locale as LocaleId;
 
 	const [localizedSettings, t] = await Promise.all([
 		getLocalizedSettingsMetadata(locale),
