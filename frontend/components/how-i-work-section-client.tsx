@@ -1,0 +1,50 @@
+"use client";
+
+import type React from "react";
+import { Timeline } from "@/components/ui/timeline";
+
+interface TimelineData {
+	title: string;
+	content: React.ReactNode;
+}
+
+interface HowIWorkSectionClientProps {
+	label: string;
+	headline: string;
+	subtitle: string;
+	timelineData: TimelineData[];
+}
+
+export function HowIWorkSectionClient({
+	label,
+	headline,
+	subtitle,
+	timelineData,
+}: HowIWorkSectionClientProps) {
+	return (
+		<section id="how-i-work" className="bg-muted/30 py-24 md:py-32">
+			<div className="mx-auto max-w-6xl px-4">
+				<div className="mb-16 text-center">
+					<p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
+						{label}
+					</p>
+					<h2 className="text-foreground mb-4 text-3xl font-semibold tracking-tight md:text-4xl">
+						<a
+							href="#how-i-work"
+							className="hover:text-primary transition-colors"
+						>
+							{headline}
+						</a>
+					</h2>
+					<p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+						{subtitle}
+					</p>
+				</div>
+
+				<div className="w-full">
+					<Timeline data={timelineData} showHeader={false} />
+				</div>
+			</div>
+		</section>
+	);
+}
