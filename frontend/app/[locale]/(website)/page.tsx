@@ -1,22 +1,23 @@
-import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getCanonicalUrl } from "@/lib/seo";
-import { getLocalizedSettingsMetadata } from "@/lib/seo";
+import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
-import { routing, locales } from "@/i18n/routing";
-import { setRequestLocale } from "next-intl/server";
-import { getTranslations } from "next-intl/server";
-import { Spotlight } from "@/components/ui/spotlight-new";
-import ServicesSection from "@/components/services-section";
-import CaseStudiesSection from "@/components/case-studies-section";
-import TestimonialsSection from "@/components/testimonials-section";
-import HeroSection from "@/components/hero-section";
-import AboutMeSection from "@/components/about-me-section";
-import ContactSection from "@/components/contact-section";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import homeOpengraphEn from "@/assets/images/home-opengraph-en.png";
 import homeOpengraphEs from "@/assets/images/home-opengraph-es.png";
 import homeOpengraphRo from "@/assets/images/home-opengraph-ro.png";
+import AboutMeSection from "@/components/about-me-section";
+import CaseStudiesSection from "@/components/case-studies-section";
 import { FloatingContactButton } from "@/components/contact-button-observer";
+import ContactSection from "@/components/contact-section";
+import HeroSection from "@/components/hero-section";
+import HowIPriceSection from "@/components/how-i-price-section";
+import HowIWorkSection from "@/components/how-i-work-section";
+import ServicesSection from "@/components/services-section";
+import TestimonialsSection from "@/components/testimonials-section";
+import { BackgroundPaperShaders } from "@/components/ui/background-paper-shaders";
+import WorkedWithSection from "@/components/worked-with-section";
+import { locales, routing } from "@/i18n/routing";
+import { getCanonicalUrl, getLocalizedSettingsMetadata } from "@/lib/seo";
 
 type Props = {
 	params: Promise<{ locale: string }>;
@@ -100,14 +101,23 @@ export default async function Page(props: Props) {
 
 	return (
 		<>
-			<Spotlight />
+			{/* <Spotlight /> */}
+			<BackgroundPaperShaders />
 			<HeroSection />
+
+			<WorkedWithSection />
 
 			<ServicesSection />
 
-			<CaseStudiesSection />
+			<HowIWorkSection />
 
-			<TestimonialsSection />
+			<HowIPriceSection />
+
+			<AboutMeSection />
+
+			{/* <CaseStudiesSection /> */}
+
+			{/* <TestimonialsSection /> */}
 
 			<ContactSection socialLinks={socialLinksRaw} whatsappUrl={whatsappUrl} />
 

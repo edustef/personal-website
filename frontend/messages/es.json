@@ -227,13 +227,15 @@
     "text": "@ {currentYear} Eduard Sergiu Stefan. Construido con Next.js."
   },
   "home": {
-    "headline": "Construido con precisión. Diseñado para crecer.",
-    "tagline": "Soy Eduard, un desarrollador web dedicado a los detalles que importan. Ofrezco una asociación directa y eficiente que se enfoca en lo que realmente marca la diferencia: experiencias web de alta calidad construidas para ayudar a tu negocio a escalar.",
+    "headline": "Construido con <strong>precisión</strong>. Diseñado para <strong>crecer</strong>.",
+    "tagline": "Experiencias web de alta calidad construidas para ayudar a tu negocio a escalar. Una asociación directa que destaca con claridad, velocidad y atención a los detalles que importan.",
+    "aboutMeDescription": "Soy Eduard Stefan, y dedico mi tiempo a construir sitios web que destacan con claridad y velocidad. Prefiero un enfoque tranquilo y enfocado—trabajar uno a uno me permite obsesionarme con los detalles que importan y mantenerme cerca del trabajo que amo. Para mí, no se trata solo de escribir código; se trata de crear algo rápido, intuitivo y genuinamente útil para las personas al otro lado de la pantalla.",
     "announcementLabelPrimary": "Blog ",
     "announcementLabelSecondary": "próximamente",
     "resumeButtonLabel": "Ver mi currículum",
     "findMeOnLabel": "Encuéntrame en",
     "contactMe": "Contáctame",
+    "workedWith": "Con qué trabajo",
     "ctaButtons": [
       {
         "text": "Obtén tu oferta",
@@ -249,7 +251,7 @@
       "label": "Ponerse en contacto",
       "headline": "Trabajemos juntos",
       "subtitle": "¿Tienes un proyecto en mente? Me encantaría saber de él. Inicia tu proyecto o contáctame directamente.",
-      "ctaButton": "Inicia tu proyecto",
+      "ctaButton": "Obtén tu oferta",
       "whatsappLabel": "Contáctame en WhatsApp"
     },
     "seo": {
@@ -376,14 +378,14 @@
   "services": {
     "label": "Mi Filosofía",
     "headline": "Sin relleno. Solo resultados.",
-    "subtitle": "Pagas por mis manos en el teclado, no por una oficina elegante o tres niveles de gestores de proyectos. Tienes línea directa con la persona que realmente construye tu sitio, lo que significa que avanzamos más rápido y tu presupuesto rinde más.",
+    "subtitle": "Tienes línea directa con la persona que realmente construye tu sitio, lo que significa que avanzamos más rápido y tu presupuesto rinde más.",
     "svc-1": {
       "title": "Apps Web a Medida",
       "description": "Construidas con precisión. Investigo y paso directo a resolver problemas. Sin informes PDF de 50 páginas, solo soluciones personalizadas hechas para rendir."
     },
-    "svc-2": {
-      "title": "Soluciones E-commerce",
-      "description": "Sin jerga de marketing vaga. Solo tiendas de alta conversión, flujos de pago fluidos y análisis que impulsan el crecimiento real."
+    "svc-7": {
+      "title": "Internacionalización y Multi-Idioma",
+      "description": "Llega a audiencias globales con soporte multi-idioma fluido. Tu sitio web servirá automáticamente contenido en el idioma preferido de tus visitantes, haciendo tu negocio accesible para clientes de todo el mundo."
     },
     "svc-3": {
       "title": "Tecnología de Alto Rendimiento",
@@ -400,6 +402,107 @@
     "svc-6": {
       "title": "Asociación Directa",
       "description": "Sin impuesto de intermediarios. Hablas directamente conmigo: el estratega, diseñador y desarrollador. La comunicación es instantánea y precisa."
+    }
+  },
+  "howIWork": {
+    "label": "Proceso",
+    "headline": "Cómo Trabajo",
+    "subtitle": "Un enfoque directo desde el concepto hasta el lanzamiento y más allá.",
+    "planning": {
+      "title": "Planificación",
+      "description": "Comenzamos con una comprensión clara de tus objetivos. Reúno requisitos, defino el alcance y creo un plan que se alinea con tu cronograma y presupuesto."
+    },
+    "development": {
+      "title": "Desarrollo",
+      "description": "Construyo tu solución usando tecnologías modernas y eficientes. Tendrás acceso a un enlace de vista previa privado para ver el progreso en tiempo real y proporcionar comentarios."
+    },
+    "deployment": {
+      "title": "Despliegue",
+      "description": "Cuando todo está listo, manejo la configuración técnica para poner tu sitio en vivo. Esto incluye configuración de hosting, configuración de dominio y optimización de rendimiento."
+    },
+    "postDeployment": {
+      "title": "Post-Despliegue",
+      "description": "Después del lanzamiento, proporciono capacitación sobre cómo gestionar tu contenido. Las opciones de soporte continuo están disponibles para mantener tu sitio funcionando sin problemas."
+    }
+  },
+  "howIPrice": {
+    "label": "Precios",
+    "headline": "Cómo Calculo los Precios",
+    "subtitle": "Precios transparentes que se adaptan a tus necesidades.",
+    "intro": "La mayoría de los sitios web son lentos, difíciles de editar o se rompen fácilmente. Construyo sitios web modernos diseñados para cargar instantáneamente, posicionarse bien en Google y, lo más importante, permitirte editar el texto y las imágenes tú mismo sin necesidad de llamarme cada vez.",
+    "packages": {
+      "title": "Paquetes de Proyecto",
+      "subtitle": "Selecciona la opción que coincida con el estado actual de tu negocio.",
+      "mostPopular": "Más Popular",
+      "whatYouGet": "Lo que obtienes",
+      "timeline": "Cronograma",
+      "investment": "Inversión"
+    },
+    "launch": {
+      "title": "El Paquete \"Lanzamiento\"",
+      "bestFor": "Ideal para: Startups, Consultores o Lanzamientos de Nuevos Productos.",
+      "description": "Esta es tu tarjeta de presentación digital. Está diseñada para causar una fuerte primera impresión y capturar clientes potenciales.",
+      "features": [
+        "Diseño Personalizado: Una apariencia única que coincide con tu marca (sin plantillas genéricas).",
+        "Perfecto para Móviles: Se ve genial en teléfonos, tabletas y escritorios.",
+        "Edición Fácil: Un panel simple donde puedes cambiar texto e imágenes.",
+        "Listo para Google: Configurado para que los motores de búsqueda te encuentren.",
+        "Optimizado para Velocidad: Carga rápido para que los visitantes no se vayan."
+      ],
+      "timeline": "1–2 Semanas",
+      "investment": "$1,000 – $2,000"
+    },
+    "growth": {
+      "title": "El Paquete \"Crecimiento\"",
+      "bestFor": "Ideal para: Empresas establecidas que necesitan una presencia profesional completa.",
+      "description": "Un sistema de sitio web completo que te ayuda a vender tus servicios y genera confianza con los clientes.",
+      "features": [
+        "Estructura Completa del Sitio: 3–7 páginas (Inicio, Acerca de, Servicios, Contacto, etc.).",
+        "Editor Avanzado: Tienes control total sobre tu contenido, publicaciones de blog y páginas del equipo.",
+        "Generación de Clientes Potenciales: Conectado a tu correo o CRM (por ejemplo, los clientes potenciales van directamente a tu bandeja de entrada).",
+        "Escalable: Construido para que podamos agregar fácilmente nuevas páginas más tarde sin reconstruir todo el sitio.",
+        "Velocidad de Primer Nivel: Optimizado para cumplir con los estrictos requisitos de velocidad de Google."
+      ],
+      "timeline": "2–6 Semanas",
+      "investment": "$3,000 – $8,000"
+    },
+    "custom": {
+      "title": "Soluciones Personalizadas",
+      "bestFor": "Ideal para: Empresas con necesidades específicas y complejas.",
+      "description": "¿Necesitas que los clientes inicien sesión? ¿Necesitas un sistema de reservas complejo o una herramienta interna personalizada? Podemos construir eso.",
+      "features": [
+        "Adaptado a tus requisitos específicos",
+        "Funcionalidad e integraciones complejas",
+        "Autenticación y permisos de usuario personalizados",
+        "Sistemas avanzados de reservas o citas",
+        "Herramientas internas y paneles de control"
+      ],
+      "timeline": "Cronograma Personalizado",
+      "investment": "Cotización Personalizada Requerida"
+    },
+    "addOns": {
+      "title": "Mejoras Opcionales (Complementos)",
+      "subtitle": "Características específicas que podrías necesitar para alcanzar tus objetivos.",
+      "seo": {
+        "title": "Impulso SEO",
+        "benefit": "Profundizo en la configuración técnica para ayudarte a posicionarte mejor en Google.",
+        "price": "$600+"
+      },
+      "store": {
+        "title": "Tienda Online",
+        "benefit": "Capacidad de vender productos y aceptar tarjetas de crédito de forma segura.",
+        "price": "$1,500+"
+      },
+      "multiLanguage": {
+        "title": "Multi-Idioma",
+        "benefit": "Un sitio que funciona en 2+ idiomas (por ejemplo, Inglés y Español).",
+        "price": "$1,000+"
+      },
+      "analytics": {
+        "title": "Analytics Pro",
+        "benefit": "Configuro el seguimiento para que puedas ver exactamente de dónde vienen tus visitantes.",
+        "price": "$300+"
+      }
     }
   },
   "certificates": {

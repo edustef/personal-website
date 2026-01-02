@@ -227,13 +227,15 @@
     "text": "@ {currentYear} Eduard Sergiu Ștefan. Realizat cu Next.js."
   },
   "home": {
-    "headline": "Construit cu precizie. Proiectat pentru creștere.",
-    "tagline": "Sunt Eduard, un dezvoltator web dedicat detaliilor care contează. Ofer un parteneriat direct și eficient care se concentrează pe ceea ce face cu adevărat diferența: experiențe web de înaltă calitate construite pentru a ajuta afacerea ta să scaleze.",
+    "headline": "Construit cu <strong>precizie</strong>. Proiectat pentru <strong>creștere</strong>.",
+    "tagline": "Experiențe web de înaltă calitate construite pentru a ajuta afacerea ta să scaleze. Un parteneriat direct care se remarcă prin claritate, viteză și atenție la detaliile care contează.",
+    "aboutMeDescription": "Sunt Eduard Stefan, și îmi petrec timpul construind site-uri web care se remarcă prin claritate și viteză. Prefer o abordare liniștită și concentrată—lucrul unu la unu îmi permite să mă obsedez cu detaliile care contează și să rămân aproape de munca pe care o iubesc. Pentru mine, nu e vorba doar despre scrierea de cod; e vorba despre crearea a ceva rapid, intuitiv și cu adevărat util pentru oamenii de pe cealaltă parte a ecranului.",
     "announcementLabelPrimary": "Blog ",
     "announcementLabelSecondary": "în curând",
     "resumeButtonLabel": "Vezi CV-ul meu",
     "findMeOnLabel": "Găsește-mă pe",
     "contactMe": "Contactează-mă",
+    "workedWith": "Cu ce lucrez",
     "ctaButtons": [
       {
         "text": "Obține oferta ta",
@@ -249,7 +251,7 @@
       "label": "Ia legătura",
       "headline": "Să lucrăm împreună",
       "subtitle": "Ai un proiect în minte? Mi-ar plăcea să aud despre el. Începe proiectul tău sau contactează-mă direct.",
-      "ctaButton": "Începe proiectul tău",
+      "ctaButton": "Obține oferta ta",
       "whatsappLabel": "Contactează-mă pe WhatsApp"
     },
     "seo": {
@@ -376,14 +378,14 @@
   "services": {
     "label": "Filozofia Mea",
     "headline": "Fără artificii. Doar rezultate.",
-    "subtitle": "Plătești pentru munca mea efectivă, nu pentru un birou luxos sau trei niveluri de manageri de proiect. Ai linie directă cu persoana care îți construiește site-ul — ceea ce înseamnă că ne mișcăm mai repede și bugetul tău ajunge mai departe.",
+    "subtitle": "Ai linie directă cu persoana care îți construiește site-ul — ceea ce înseamnă că ne mișcăm mai repede și bugetul tău ajunge mai departe.",
     "svc-1": {
       "title": "Aplicații Web Personalizate",
       "description": "Construite cu precizie. Fac cercetarea, apoi trec direct la rezolvarea problemelor. Fără rapoarte PDF de 50 de pagini — doar soluții personalizate construite pentru performanță."
     },
-    "svc-2": {
-      "title": "Soluții E-commerce",
-      "description": "Fără limbaj vag de marketing. Doar magazine cu conversie ridicată, fluxuri de plată fluide și analize care generează creștere reală."
+    "svc-7": {
+      "title": "Internaționalizare și Multi-Limbă",
+      "description": "Ajunge la audiențe globale cu suport multi-limbă fluid. Site-ul tău va servi automat conținut în limba preferată a vizitatorilor tăi, făcând afacerea ta accesibilă pentru clienți din întreaga lume."
     },
     "svc-3": {
       "title": "Tehnologie de Înaltă Performanță",
@@ -400,6 +402,107 @@
     "svc-6": {
       "title": "Parteneriat Direct",
       "description": "Fără taxa de intermediar. Vorbești direct cu mine — strategul, designerul și dezvoltatorul. Comunicarea este instantanee și precisă."
+    }
+  },
+  "howIWork": {
+    "label": "Proces",
+    "headline": "Cum Lucrez",
+    "subtitle": "O abordare directă de la concept la lansare și dincolo.",
+    "planning": {
+      "title": "Planificare",
+      "description": "Începem cu o înțelegere clară a obiectivelor tale. Colectez cerințele, definesc scopul și creez un plan care se aliniază cu termenul și bugetul tău."
+    },
+    "development": {
+      "title": "Dezvoltare",
+      "description": "Construiesc soluția ta folosind tehnologii moderne și eficiente. Vei avea acces la un link de previzualizare privat pentru a vedea progresul în timp real și a oferi feedback."
+    },
+    "deployment": {
+      "title": "Deploy",
+      "description": "Când totul este gata, mă ocup de configurarea tehnică pentru a pune site-ul tău live. Aceasta include configurarea hosting-ului, configurarea domeniului și optimizarea performanței."
+    },
+    "postDeployment": {
+      "title": "Post-Deploy",
+      "description": "După lansare, ofer instruire despre cum să îți gestionezi conținutul. Opțiunile de suport continuu sunt disponibile pentru a menține site-ul tău funcționând fără probleme."
+    }
+  },
+  "howIPrice": {
+    "label": "Prețuri",
+    "headline": "Cum Calculez Prețurile",
+    "subtitle": "Prețuri transparente care se adaptează nevoilor tale.",
+    "intro": "Majoritatea site-urilor web sunt lente, greu de editat sau se defectează ușor. Construiesc site-uri web moderne proiectate să se încarce instantaneu, să se claseze bine pe Google și, cel mai important, să îți permită să editezi textul și imaginile singur, fără să trebuiască să mă suni de fiecare dată.",
+    "packages": {
+      "title": "Pachete de Proiect",
+      "subtitle": "Selectează opțiunea care se potrivește stării actuale a afacerii tale.",
+      "mostPopular": "Cel Mai Popular",
+      "whatYouGet": "Ce primești",
+      "timeline": "Cronogramă",
+      "investment": "Investiție"
+    },
+    "launch": {
+      "title": "Pachetul \"Lansare\"",
+      "bestFor": "Ideal pentru: Startups, Consultanți sau Lansări de Produse Noi.",
+      "description": "Aceasta este cartea ta de vizită digitală. Este proiectată pentru a face o primă impresie puternică și pentru a captura clienți potențiali.",
+      "features": [
+        "Design Personalizat: O înfățișare unică care se potrivește brandului tău (fără șabloane generice).",
+        "Perfect pentru Mobil: Arată excelent pe telefoane, tablete și desktop-uri.",
+        "Editare Ușoară: Un panou simplu unde poți schimba textul și imaginile.",
+        "Gata pentru Google: Configurat astfel încât motoarele de căutare să te găsească.",
+        "Optimizat pentru Viteză: Se încarcă rapid astfel încât vizitatorii să nu plece."
+      ],
+      "timeline": "1–2 Săptămâni",
+      "investment": "$1,000 – $2,000"
+    },
+    "growth": {
+      "title": "Pachetul \"Creștere\"",
+      "bestFor": "Ideal pentru: Afaceri stabilite care au nevoie de o prezență profesională completă.",
+      "description": "Un sistem complet de site web care te ajută să îți vinzi serviciile și construiește încredere cu clienții.",
+      "features": [
+        "Structură Completă a Site-ului: 3–7 pagini (Acasă, Despre, Servicii, Contact, etc.).",
+        "Editor Avansat: Ai control complet asupra conținutului, postărilor de blog și paginilor echipei.",
+        "Generare Clienți Potențiali: Conectat la email-ul sau CRM-ul tău (de exemplu, clienții potențiali merg direct în inbox-ul tău).",
+        "Scalabil: Construit astfel încât să putem adăuga cu ușurință pagini noi mai târziu fără a reconstrui întregul site.",
+        "Viteză de Top: Optimizat pentru a trece de cerințele stricte de viteză ale Google."
+      ],
+      "timeline": "2–6 Săptămâni",
+      "investment": "$3,000 – $8,000"
+    },
+    "custom": {
+      "title": "Soluții Personalizate",
+      "bestFor": "Ideal pentru: Afaceri cu nevoi specifice și complexe.",
+      "description": "Ai nevoie ca clienții să se autentifice? Ai nevoie de un sistem complex de rezervări sau de un instrument intern personalizat? Putem construi asta.",
+      "features": [
+        "Adaptat la cerințele tale specifice",
+        "Funcționalitate și integrări complexe",
+        "Autentificare și permisiuni personalizate pentru utilizatori",
+        "Sisteme avansate de rezervări sau programări",
+        "Instrumente interne și panouri de control"
+      ],
+      "timeline": "Cronogramă Personalizată",
+      "investment": "Ofertă Personalizată Necesară"
+    },
+    "addOns": {
+      "title": "Îmbunătățiri Opționale (Suplimente)",
+      "subtitle": "Caracteristici specifice pe care ai putea avea nevoie pentru a-ți atinge obiectivele.",
+      "seo": {
+        "title": "Impuls SEO",
+        "benefit": "Mă adâncesc în setările tehnice pentru a te ajuta să te clasezi mai sus pe Google.",
+        "price": "$600+"
+      },
+      "store": {
+        "title": "Magazin Online",
+        "benefit": "Capacitatea de a vinde produse și de a accepta carduri de credit în siguranță.",
+        "price": "$1,500+"
+      },
+      "multiLanguage": {
+        "title": "Multi-Limbă",
+        "benefit": "Un site care funcționează în 2+ limbi (de exemplu, Engleză și Spaniolă).",
+        "price": "$1,000+"
+      },
+      "analytics": {
+        "title": "Analytics Pro",
+        "benefit": "Configurez urmărirea astfel încât să poți vedea exact de unde vin vizitatorii tăi.",
+        "price": "$300+"
+      }
     }
   },
   "certificates": {

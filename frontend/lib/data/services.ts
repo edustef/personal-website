@@ -22,10 +22,10 @@ export const services: Service[] = [
 		featured: false,
 	},
 	{
-		_id: "svc-2",
-		titleKey: "svc-2.title",
-		descriptionKey: "svc-2.description",
-		icon: "shopping-cart",
+		_id: "svc-7",
+		titleKey: "svc-7.title",
+		descriptionKey: "svc-7.description",
+		icon: "globe",
 		featured: false,
 	},
 	{

@@ -1,8 +1,8 @@
 "use client";
 
-import { PixelatedCanvas } from "@/components/ui/pixelated-canvas";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { PixelatedCanvas } from "@/components/ui/pixelated-canvas";
 
 type PixelatedImageThemeProps = {
 	src: string;
@@ -41,4 +41,3 @@ export function PixelatedImageTheme(props: PixelatedImageThemeProps) {
 		/>
 	);
 }
-

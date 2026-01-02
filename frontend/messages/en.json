@@ -227,13 +227,15 @@
     "text": "@ {currentYear} Eduard Sergiu Stefan. Built with Next.js."
   },
   "home": {
-    "headline": "Built with precision. Designed for growth.",
-    "tagline": "I'm Eduard, a developer dedicated to the details that matter. I offer a streamlined, direct partnership that focuses on what actually moves the needle: high-quality web experiences built to help your business scale.",
+    "headline": "Built with <strong>precision</strong>. Designed for <strong>growth</strong>.",
+    "tagline": "High-quality web experiences built to help your business scale. A direct partnership that cuts through the noise with clarity, speed, and attention to the details that matter.",
+    "aboutMeDescription": "I'm Eduard Stefan, and I spend my time building websites that cut through the noise with clarity and speed. I prefer a quiet, focused approach—working one-on-one allows me to obsess over the details that matter and stay close to the work I love. For me, it's not just about writing code; it's about crafting something fast, intuitive, and genuinely useful for the people on the other side of the screen.",
     "announcementLabelPrimary": "Blog ",
     "announcementLabelSecondary": "coming soon",
     "resumeButtonLabel": "See my resume",
     "findMeOnLabel": "Find me on",
     "contactMe": "Contact me",
+    "workedWith": "What I work with",
     "ctaButtons": [
       {
         "text": "Get your offer",
@@ -249,7 +251,7 @@
       "label": "Get in touch",
       "headline": "Let's work together",
       "subtitle": "Have a project in mind? I'd love to hear about it. Start your project or reach out directly.",
-      "ctaButton": "Start your project",
+      "ctaButton": "Get your offer",
       "whatsappLabel": "Contact me on WhatsApp"
     },
     "seo": {
@@ -376,14 +378,14 @@
   "services": {
     "label": "My Philosophy",
     "headline": "No fluff. Just results.",
-    "subtitle": "You pay for my hands on the keyboard, not for a fancy office or three layers of project managers. You get a direct line to the person actually building your site—which means we move faster and your budget goes further.",
+    "subtitle": "You get a direct line to the person actually building your site—which means we move faster and your budget goes further.",
     "svc-1": {
       "title": "Custom Web Apps",
       "description": "Built with precision. I do the research, then move straight to solving problems. No 50-page PDF reports—just custom solutions built to perform."
     },
-    "svc-2": {
-      "title": "E-commerce Solutions",
-      "description": "No vague marketing speak. Just high-converting stores, seamless checkout flows, and analytics that drive real growth."
+    "svc-7": {
+      "title": "Internationalization & Multi-Language",
+      "description": "Reach global audiences with seamless multi-language support. Your website will automatically serve content in your visitors' preferred language, making your business accessible to customers worldwide."
     },
     "svc-3": {
       "title": "High-Performance Tech",
@@ -400,6 +402,107 @@
     "svc-6": {
       "title": "Direct Partnership",
       "description": "No middleman tax. You talk directly to me—the strategist, designer, and developer. Communication is instant and accurate."
+    }
+  },
+  "howIWork": {
+    "label": "Process",
+    "headline": "How I Work",
+    "subtitle": "A straightforward approach from concept to launch and beyond.",
+    "planning": {
+      "title": "Planning",
+      "description": "We start with a clear understanding of your goals. I gather requirements, define the scope, and create a roadmap that aligns with your timeline and budget."
+    },
+    "development": {
+      "title": "Development",
+      "description": "I build your solution using modern, efficient technologies. You'll have access to a private preview link to see progress in real-time and provide feedback."
+    },
+    "deployment": {
+      "title": "Deployment",
+      "description": "When everything is ready, I handle the technical setup to get your site live. This includes hosting configuration, domain setup, and performance optimization."
+    },
+    "postDeployment": {
+      "title": "Post-Deployment",
+      "description": "After launch, I provide training on how to manage your content. Ongoing support options are available to keep your site running smoothly."
+    }
+  },
+  "howIPrice": {
+    "label": "Pricing",
+    "headline": "How I Price",
+    "subtitle": "Transparent pricing that scales with your needs.",
+    "intro": "Most websites are slow, hard to edit, or break easily. I build modern websites that are designed to load instantly, rank well on Google, and—most importantly—allow you to edit the text and images yourself without needing to call me every time.",
+    "packages": {
+      "title": "Project Packages",
+      "subtitle": "Select the option that matches where your business is today.",
+      "mostPopular": "Most Popular",
+      "whatYouGet": "What you get",
+      "timeline": "Timeline",
+      "investment": "Investment"
+    },
+    "launch": {
+      "title": "The \"Launch\" Package",
+      "bestFor": "Best for: Startups, Consultants, or New Product Launches.",
+      "description": "This is your digital business card. It is designed to make a strong first impression and capture leads.",
+      "features": [
+        "Custom Design: A unique look that matches your brand (no generic templates).",
+        "Mobile Perfect: Looks great on phones, tablets, and desktops.",
+        "Easy Editing: A simple dashboard where you can change text and images.",
+        "Google-Ready: Setup so search engines can find you.",
+        "Speed Optimized: Loads fast so visitors don't leave."
+      ],
+      "timeline": "1–2 Weeks",
+      "investment": "$1,000 – $2,000"
+    },
+    "growth": {
+      "title": "The \"Growth\" Package",
+      "bestFor": "Best for: Established businesses needing a full professional presence.",
+      "description": "A complete website system that helps you sell your services and builds trust with customers.",
+      "features": [
+        "Full Website Structure: 3–7 pages (Home, About, Services, Contact, etc.).",
+        "Advanced Editor: You get full control over your content, blog posts, and team pages.",
+        "Lead Generation: Connected to your email or CRM (e.g., leads go straight to your inbox).",
+        "Scalable: Built so we can easily add new pages later without rebuilding the whole site.",
+        "Top-Tier Speed: Optimized to pass Google's strict speed requirements."
+      ],
+      "timeline": "2–6 Weeks",
+      "investment": "$3,000 – $8,000"
+    },
+    "custom": {
+      "title": "Custom Solutions",
+      "bestFor": "Best for: Businesses with specific, complex needs.",
+      "description": "Do you need customers to log in? Do you need a complex booking system or a custom internal tool? We can build that.",
+      "features": [
+        "Tailored to your specific requirements",
+        "Complex functionality and integrations",
+        "Custom user authentication and permissions",
+        "Advanced booking or reservation systems",
+        "Internal tools and dashboards"
+      ],
+      "timeline": "Custom Timeline",
+      "investment": "Custom Quote Required"
+    },
+    "addOns": {
+      "title": "Optional Upgrades (Add-Ons)",
+      "subtitle": "Specific features you might need to reach your goals.",
+      "seo": {
+        "title": "SEO Boost",
+        "benefit": "I dig deeper into the technical settings to help you rank higher on Google.",
+        "price": "$600+"
+      },
+      "store": {
+        "title": "Online Store",
+        "benefit": "Ability to sell products and accept credit cards securely.",
+        "price": "$1,500+"
+      },
+      "multiLanguage": {
+        "title": "Multi-Language",
+        "benefit": "A site that works in 2+ languages (e.g., English & Spanish).",
+        "price": "$1,000+"
+      },
+      "analytics": {
+        "title": "Analytics Pro",
+        "benefit": "I set up tracking so you can see exactly where your visitors come from.",
+        "price": "$300+"
+      }
     }
   },
   "certificates": {

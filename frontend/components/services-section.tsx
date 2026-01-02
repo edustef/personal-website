@@ -2,21 +2,21 @@ import { services, type Service } from "@/lib/data/services";
 import { getTranslations, getLocale } from "next-intl/server";
 import {
 	Layers,
-	ShoppingCart,
 	Zap,
 	Rocket,
 	Palette,
 	Headphones,
+	Globe,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const iconMap: Record<string, React.ElementType> = {
 	layers: Layers,
-	"shopping-cart": ShoppingCart,
 	zap: Zap,
 	rocket: Rocket,
 	palette: Palette,
 	headphones: Headphones,
+	globe: Globe,
 };
 
 type ServicesSectionProps = {

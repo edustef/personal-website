@@ -26,7 +26,7 @@ export function HeroImages() {
 	return (
 		<div className="lg:h-full grid grid-cols-2 gap-3 lg:grid-cols-3 lg:grid-rows-2 lg:gap-4">
 			<motion.div
-				className="group relative col-span-2 overflow-hidden rounded-2xl border border-border bg-card lg:col-span-2 lg:row-span-2 lg:aspect-auto"
+				className="group relative col-span-2 aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-card lg:col-span-2 lg:row-span-2 lg:aspect-auto"
 				variants={imageVariants}
 				initial="initial"
 				animate="animate"
@@ -44,7 +44,7 @@ export function HeroImages() {
 				/>
 			</motion.div>
 			<motion.div
-				className="group relative overflow-hidden rounded-2xl border border-border bg-card lg:col-span-1 lg:row-span-1"
+				className="group relative aspect-square overflow-hidden rounded-2xl border border-border bg-card lg:col-span-1 lg:row-span-1 lg:aspect-auto"
 				variants={imageVariants}
 				initial="initial"
 				animate="animate"
@@ -62,7 +62,7 @@ export function HeroImages() {
 				/>
 			</motion.div>
 			<motion.div
-				className="group relative overflow-hidden rounded-2xl border border-border bg-card lg:col-span-1 lg:row-span-1"
+				className="group relative aspect-square overflow-hidden rounded-2xl border border-border bg-card lg:col-span-1 lg:row-span-1 lg:aspect-auto"
 				variants={imageVariants}
 				initial="initial"
 				animate="animate"

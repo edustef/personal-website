@@ -1,6 +1,6 @@
-import { PixelatedImageTheme } from "@/components/pixelated-image-theme";
+import Image from "next/image";
+import { getLocale, getTranslations } from "next-intl/server";
 import meTransparent from "@/assets/images/me-transparent.png";
-import { getTranslations, getLocale } from "next-intl/server";
 
 export default async function AboutMeSection() {
 	const locale = await getLocale();
@@ -19,23 +19,11 @@ export default async function AboutMeSection() {
 									"radial-gradient(ellipse 50% 50% at center, black 40%, transparent 100%)",
 							}}
 						>
-							<PixelatedImageTheme
+							<Image
 								src={meTransparent.src}
 								width={400}
 								height={600}
-								cellSize={1}
-								dotScale={2}
-								shape="square"
-								dropoutStrength={0.1}
-								interactive
-								distortionStrength={1}
-								distortionRadius={80}
-								distortionMode="swirl"
-								followSpeed={0.2}
-								jitterStrength={4}
-								jitterSpeed={4}
-								sampleAverage
-								tintStrength={0.2}
+								alt="About me"
 							/>
 						</div>
 					</div>
