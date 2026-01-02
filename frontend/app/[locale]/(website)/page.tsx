@@ -103,18 +103,13 @@ export default async function Page(props: Props) {
 			<Spotlight />
 			<HeroSection />
 
-			<AboutMeSection />
-
 			<ServicesSection />
 
 			<CaseStudiesSection />
 
 			<TestimonialsSection />
 
-			<ContactSection
-				socialLinks={socialLinksRaw}
-				whatsappUrl={whatsappUrl}
-			/>
+			<ContactSection socialLinks={socialLinksRaw} whatsappUrl={whatsappUrl} />
 
 			<FloatingContactButton
 				contactMeText={t("contactMe")}
