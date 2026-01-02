@@ -9,6 +9,7 @@ import AboutMeSection from "@/components/about-me-section";
 import CaseStudiesSection from "@/components/case-studies-section";
 import { FloatingContactButton } from "@/components/contact-button-observer";
 import ContactSection from "@/components/contact-section";
+import FAQSection from "@/components/faq-section";
 import HeroSection from "@/components/hero-section";
 import HowIPriceSection from "@/components/how-i-price-section";
 import HowIWorkSection from "@/components/how-i-work-section";
@@ -118,6 +119,8 @@ export default async function Page(props: Props) {
 			{/* <CaseStudiesSection /> */}
 
 			{/* <TestimonialsSection /> */}
+
+			<FAQSection />
 
 			<ContactSection socialLinks={socialLinksRaw} whatsappUrl={whatsappUrl} />
 

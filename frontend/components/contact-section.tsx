@@ -32,7 +32,12 @@ export default async function ContactSection({
 						{t("contact.label")}
 					</p>
 					<h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl">
-						{t("contact.headline")}
+						<a
+							href="#contact"
+							className="hover:text-primary transition-colors"
+						>
+							{t("contact.headline")}
+						</a>
 					</h2>
 					<p className="text-muted-foreground mx-auto max-w-2xl text-lg">
 						{t("contact.subtitle")}

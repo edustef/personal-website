@@ -529,5 +529,30 @@
     "job-2": {
       "description": "- Worked closely with designers and product managers to bring design into high quality and production-ready features\n- Developed reusable components that integrate with Headless CMS which made independent page building possible.\n- Implemented Storybook into the codebase for better development and having a single source of truth\n- Worked with latest React tools and features (ESNext, React functional components, hooks, Webpack, Vite, etc.)"
     }
+  },
+  "faq": {
+    "label": "FAQ",
+    "headline": "Frequently Asked Questions",
+    "subtitle": "Common questions about my services, process, and how we can work together.",
+    "faq-1": {
+      "question": "How long does a typical project take?",
+      "answer": "Project timelines vary based on scope and complexity. A simple landing page typically takes 1-2 weeks, while a full website with multiple pages can take 2-6 weeks. Custom solutions with complex functionality may take longer. I'll provide a detailed timeline during our initial consultation."
+    },
+    "faq-2": {
+      "question": "Do you work with clients outside your timezone?",
+      "answer": "Yes, I work with clients globally. I'm flexible with communication times and can accommodate different timezones. Most communication happens asynchronously via email and project management tools, with scheduled calls when needed."
+    },
+    "faq-3": {
+      "question": "What happens after the project is completed?",
+      "answer": "After launch, I provide training on how to manage your content through the CMS. I also offer ongoing maintenance and support options to keep your site running smoothly. You'll have full ownership of your code and can choose to maintain it yourself or continue working with me."
+    },
+    "faq-4": {
+      "question": "Can you work with my existing website?",
+      "answer": "Absolutely. I can improve, redesign, or add features to existing websites. Whether you need performance optimization, a fresh design, or new functionality, I can work with your current setup and help take it to the next level."
+    },
+    "faq-5": {
+      "question": "What's included in your pricing packages?",
+      "answer": "Each package includes custom design, mobile responsiveness, content management system access, SEO setup, and performance optimization. Higher-tier packages include more pages, advanced features, and additional integrations. All packages come with training and documentation. See the <link>How I Price</link> section for detailed breakdowns."
+    }
   }
 }

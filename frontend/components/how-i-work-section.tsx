@@ -24,14 +24,19 @@ export default async function HowIWorkSection() {
 	const t = await getTranslations({ locale, namespace: "howIWork" });
 
 	return (
-		<section className="bg-muted/30 py-24 md:py-32">
+		<section id="how-i-work" className="bg-muted/30 py-24 md:py-32">
 			<div className="mx-auto max-w-6xl px-4">
 				<div className="mb-16 text-center">
 					<p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
 						{t("label")}
 					</p>
 					<h2 className="text-foreground mb-4 text-3xl font-semibold tracking-tight md:text-4xl">
-						{t("headline")}
+						<a
+							href="#how-i-work"
+							className="hover:text-primary transition-colors"
+						>
+							{t("headline")}
+						</a>
 					</h2>
 					<p className="text-muted-foreground mx-auto max-w-2xl text-lg">
 						{t("subtitle")}

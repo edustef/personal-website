@@ -38,14 +38,19 @@ export default async function ServicesSection({
 	const otherServices = servicesToDisplay.filter((s) => !s.featured);
 
 	return (
-		<section className="py-24 md:py-32">
+		<section id="services" className="py-24 md:py-32">
 			<div className="mx-auto max-w-6xl px-4">
 				<div className="mb-16 text-center">
 					<p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
 						{t("label")}
 					</p>
 					<h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl">
-						{t("headline")}
+						<a
+							href="#services"
+							className="hover:text-primary transition-colors"
+						>
+							{t("headline")}
+						</a>
 					</h2>
 					<p className="text-muted-foreground mx-auto max-w-2xl text-lg">
 						{t("subtitle")}

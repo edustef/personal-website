@@ -7,7 +7,7 @@ export default async function AboutMeSection() {
 	const t = await getTranslations({ locale, namespace: "home" });
 
 	return (
-		<section className="py-24 md:py-32">
+		<section id="about-me" className="py-24 md:py-32">
 			<div className="mx-auto max-w-6xl px-4">
 				<div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between">
 					<div className="shrink-0">
@@ -29,7 +29,12 @@ export default async function AboutMeSection() {
 					</div>
 					<div className="flex-1 text-center lg:text-left">
 						<h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl">
-							{t("aboutMe.headline")}
+							<a
+								href="#about-me"
+								className="hover:text-primary transition-colors"
+							>
+								{t("aboutMe.headline")}
+							</a>
 						</h2>
 						<p className="text-muted-foreground mb-6 text-lg leading-relaxed">
 							{t("aboutMe.description")}

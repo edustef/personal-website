@@ -529,5 +529,30 @@
     "job-2": {
       "description": "- Am lucrat îndeaproape cu designerii și managerii de produs pentru a transforma designul în funcționalități de înaltă calitate și gata pentru producție\n- Am dezvoltat componente reutilizabile care se integrează cu Headless CMS, ceea ce a făcut posibilă construirea independentă a paginilor\n- Am implementat Storybook în codul sursă pentru o dezvoltare mai bună și pentru a avea o singură sursă de adevăr\n- Am lucrat cu cele mai noi instrumente și funcționalități React (ESNext, componente funcționale React, hooks, Webpack, Vite, etc.)"
     }
+  },
+  "faq": {
+    "label": "Întrebări Frecvente",
+    "headline": "Întrebări Frecvente",
+    "subtitle": "Întrebări comune despre serviciile mele, proces și cum putem lucra împreună.",
+    "faq-1": {
+      "question": "Cât durează un proiect tipic?",
+      "answer": "Termenele proiectului variază în funcție de domeniul de aplicare și complexitate. O pagină de destinație simplă durează de obicei 1-2 săptămâni, în timp ce un site web complet cu mai multe pagini poate dura 2-6 săptămâni. Soluțiile personalizate cu funcționalitate complexă pot dura mai mult. Voi oferi un cronogramă detaliat în timpul consultației noastre inițiale."
+    },
+    "faq-2": {
+      "question": "Lucrezi cu clienți din afara fusului tău orar?",
+      "answer": "Da, lucrez cu clienți din întreaga lume. Sunt flexibil cu orele de comunicare și pot mă adapta la diferite fusuri orare. Majoritatea comunicării are loc asincron prin e-mail și instrumente de management al proiectelor, cu apeluri programate când este necesar."
+    },
+    "faq-3": {
+      "question": "Ce se întâmplă după ce proiectul este finalizat?",
+      "answer": "După lansare, ofer instruire despre cum să îți gestionezi conținutul prin CMS. De asemenea, ofer opțiuni de întreținere și suport continuu pentru a menține site-ul tău funcționând fără probleme. Vei avea proprietatea completă a codului tău și poți alege să îl menții singur sau să continui să lucrezi cu mine."
+    },
+    "faq-4": {
+      "question": "Poți lucra cu site-ul meu existent?",
+      "answer": "Absolut. Pot îmbunătăți, redesigna sau adăuga funcții la site-urile web existente. Fie că ai nevoie de optimizare a performanței, un design nou sau funcționalitate nouă, pot lucra cu configurația ta actuală și te pot ajuta să o duci la următorul nivel."
+    },
+    "faq-5": {
+      "question": "Ce este inclus în pachetele tale de prețuri?",
+      "answer": "Fiecare pachet include design personalizat, responsivitate mobilă, acces la sistemul de management al conținutului, configurare SEO și optimizare a performanței. Pachetele de nivel superior includ mai multe pagini, funcții avansate și integrări suplimentare. Toate pachetele includ instruire și documentație. Consultă secțiunea <link>Cum Prețuiesc</link> pentru detalii complete."
+    }
   }
 }

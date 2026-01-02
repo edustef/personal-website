@@ -529,5 +529,30 @@
     "job-2": {
       "description": "- Trabajé estrechamente con diseñadores y gerentes de producto para convertir el diseño en características de alta calidad y listas para producción\n- Desarrollé componentes reutilizables que se integran con Headless CMS, lo que hizo posible la construcción independiente de páginas\n- Implementé Storybook en el código base para un mejor desarrollo y tener una única fuente de verdad\n- Trabajé con las herramientas y características más recientes de React (ESNext, componentes funcionales de React, hooks, Webpack, Vite, etc.)"
     }
+  },
+  "faq": {
+    "label": "Preguntas Frecuentes",
+    "headline": "Preguntas Frecuentes",
+    "subtitle": "Preguntas comunes sobre mis servicios, proceso y cómo podemos trabajar juntos.",
+    "faq-1": {
+      "question": "¿Cuánto tiempo tarda un proyecto típico?",
+      "answer": "Los plazos del proyecto varían según el alcance y la complejidad. Una página de destino simple generalmente toma 1-2 semanas, mientras que un sitio web completo con múltiples páginas puede tomar 2-6 semanas. Las soluciones personalizadas con funcionalidad compleja pueden tomar más tiempo. Proporcionaré un cronograma detallado durante nuestra consulta inicial."
+    },
+    "faq-2": {
+      "question": "¿Trabajas con clientes fuera de tu zona horaria?",
+      "answer": "Sí, trabajo con clientes de todo el mundo. Soy flexible con los horarios de comunicación y puedo adaptarme a diferentes zonas horarias. La mayor parte de la comunicación ocurre de forma asíncrona por correo electrónico y herramientas de gestión de proyectos, con llamadas programadas cuando sea necesario."
+    },
+    "faq-3": {
+      "question": "¿Qué sucede después de que se completa el proyecto?",
+      "answer": "Después del lanzamiento, proporciono capacitación sobre cómo gestionar tu contenido a través del CMS. También ofrezco opciones de mantenimiento y soporte continuo para mantener tu sitio funcionando sin problemas. Tendrás la propiedad completa de tu código y puedes elegir mantenerlo tú mismo o continuar trabajando conmigo."
+    },
+    "faq-4": {
+      "question": "¿Puedes trabajar con mi sitio web existente?",
+      "answer": "Absolutamente. Puedo mejorar, rediseñar o agregar funciones a sitios web existentes. Ya sea que necesites optimización de rendimiento, un diseño fresco o nueva funcionalidad, puedo trabajar con tu configuración actual y ayudarte a llevarla al siguiente nivel."
+    },
+    "faq-5": {
+      "question": "¿Qué está incluido en tus paquetes de precios?",
+      "answer": "Cada paquete incluye diseño personalizado, responsividad móvil, acceso al sistema de gestión de contenido, configuración de SEO y optimización de rendimiento. Los paquetes de nivel superior incluyen más páginas, funciones avanzadas e integraciones adicionales. Todos los paquetes incluyen capacitación y documentación. Consulta la sección <link>Cómo Precio</link> para ver desgloses detallados."
+    }
   }
 }

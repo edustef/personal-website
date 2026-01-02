@@ -1,0 +1,68 @@
+import { getLocale, getTranslations } from "next-intl/server";
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "@/components/ui/accordion";
+import { type FAQ, faqs } from "@/lib/data/faqs";
+
+type FAQSectionProps = {
+	faqs?: FAQ[];
+};
+
+export default async function FAQSection({ faqs: faqsProp }: FAQSectionProps) {
+	const faqsToDisplay = faqsProp || faqs;
+	if (!faqsToDisplay || faqsToDisplay.length === 0) {
+		return null;
+	}
+
+	const locale = await getLocale();
+	const t = await getTranslations({ locale, namespace: "faq" });
+
+	const sortedFaqs = [...faqsToDisplay].sort((a, b) => a.order - b.order);
+
+	return (
+		<section id="faq" className="py-24 md:py-32">
+			<div className="mx-auto max-w-4xl px-4">
+				<div className="mb-16 text-center">
+					<p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
+						{t("label")}
+					</p>
+					<h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl">
+						<a href="#faq" className="hover:text-primary transition-colors">
+							{t("headline")}
+						</a>
+					</h2>
+					<p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+						{t("subtitle")}
+					</p>
+				</div>
+
+				<Accordion type="single" collapsible className="w-full">
+					{sortedFaqs.map((faq) => (
+						<AccordionItem key={faq._id} value={faq._id}>
+							<AccordionTrigger className="text-left">
+								{t(faq.questionKey)}
+							</AccordionTrigger>
+							<AccordionContent className="text-muted-foreground leading-relaxed">
+								{faq._id === "faq-5"
+									? t.rich(faq.answerKey, {
+											link: (chunks) => (
+												<a
+													href="#how-i-price"
+													className="text-primary hover:underline"
+												>
+													{chunks}
+												</a>
+											),
+										})
+									: t(faq.answerKey)}
+							</AccordionContent>
+						</AccordionItem>
+					))}
+				</Accordion>
+			</div>
+		</section>
+	);
+}
