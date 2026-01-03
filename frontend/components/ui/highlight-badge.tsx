@@ -39,9 +39,7 @@ export function HighlightBadge({
       />
       <div className="bg-secondary/30 text-secondary-foreground relative z-10 flex items-center gap-2 rounded-lg px-5 py-2 transition-colors hover:bg-secondary/40">
         <RocketIcon className="size-4" />
-        <div className="flex flex-row items-center leading-none">
-          {children}
-        </div>
+        <div className="">{children}</div>
       </div>
     </>
   );

@@ -28,7 +28,7 @@ export default async function HeroSection() {
           >
             <HighlightBadge href="https://omnishopplanner.com">
               <span>{t("announcementLabelPrimary")}</span>
-              <span className="ml-1.5 font-bold">
+              <span className="font-bold">
                 {t("announcementLabelSecondary")}
               </span>
             </HighlightBadge>
