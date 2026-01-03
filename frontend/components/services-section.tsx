@@ -1,13 +1,8 @@
-import { services, type Service } from "@/lib/data/services";
-import { getTranslations, getLocale } from "next-intl/server";
-import {
-	Layers,
-	Zap,
-	Rocket,
-	Palette,
-	Headphones,
-	Globe,
-} from "lucide-react";
+import { Globe, Headphones, Layers, Palette, Rocket, Zap } from "lucide-react";
+import { getLocale, getTranslations } from "next-intl/server";
+import { BGPattern } from "@/components/ui/bg-pattern";
+import { Card, CardContent } from "@/components/ui/card";
+import { type Service, services } from "@/lib/data/services";
 import { cn } from "@/lib/utils";
 
 const iconMap: Record<string, React.ElementType> = {
@@ -18,6 +13,19 @@ const iconMap: Record<string, React.ElementType> = {
 	headphones: Headphones,
 	globe: Globe,
 };
+
+const patternVariants: Array<"dots" | "diagonal-stripes" | "grid"> = [
+	"diagonal-stripes",
+	"dots",
+	"grid",
+];
+
+function getPatternForService(
+	index: number,
+): "dots" | "diagonal-stripes" | "grid" {
+	const patternIndex = index % patternVariants.length;
+	return patternVariants[patternIndex];
+}
 
 type ServicesSectionProps = {
 	services?: Service[];
@@ -58,48 +66,57 @@ export default async function ServicesSection({
 				</div>
 
 				<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-					{featuredServices.map((service) => {
+					{featuredServices.map((service, index) => {
 						const Icon = iconMap[service.icon] || Layers;
+						const patternVariant = getPatternForService(index);
 
 						return (
-							<div
+							<Card
 								key={service._id}
 								className={cn(
-									"rounded-2xl border border-border bg-card p-8",
-									"lg:col-span-2 lg:row-span-2",
+									"isolate relative overflow-hidden rounded-2xl bg-card/95 backdrop-blur-sm lg:col-span-2 lg:row-span-2",
 								)}
 							>
-								<div className="bg-primary/10 text-primary mb-6 inline-flex rounded-xl p-3">
-									<Icon className="h-7 w-7" />
-								</div>
-								<h3 className="text-foreground mb-3 text-xl font-semibold">
-									{t(service.titleKey)}
-								</h3>
-								<p className="text-muted-foreground leading-relaxed">
-									{t(service.descriptionKey)}
-								</p>
-							</div>
+								<BGPattern variant={patternVariant} mask="fade-edges" />
+								<CardContent className="relative p-8">
+									<Icon className="size-10 mb-4" />
+									<h3 className="text-foreground mb-3 text-xl font-semibold">
+										{t(service.titleKey)}
+									</h3>
+									<p className="text-muted-foreground leading-relaxed">
+										{t(service.descriptionKey)}
+									</p>
+								</CardContent>
+							</Card>
 						);
 					})}
 
-					{otherServices.map((service) => {
+					{otherServices.map((service, index) => {
 						const Icon = iconMap[service.icon] || Layers;
+						const patternVariant = getPatternForService(
+							featuredServices.length + index,
+						);
 
 						return (
-							<div
+							<Card
 								key={service._id}
-								className="rounded-2xl border border-border bg-card p-6"
+								className="relative overflow-hidden rounded-2xl bg-card/95 backdrop-blur-sm"
 							>
-								<div className="bg-primary/10 text-primary mb-4 inline-flex rounded-lg p-2.5">
-									<Icon className="h-5 w-5" />
-								</div>
-								<h3 className="text-foreground mb-2 text-base font-semibold">
-									{t(service.titleKey)}
-								</h3>
-								<p className="text-muted-foreground text-sm leading-relaxed">
-									{t(service.descriptionKey)}
-								</p>
-							</div>
+								<BGPattern
+									variant={patternVariant}
+									mask="fade-edges"
+									size={20}
+								/>
+								<CardContent className="relative p-6">
+									<Icon className="size-8 mb-4" />
+									<h3 className="text-foreground mb-2 text-base font-semibold">
+										{t(service.titleKey)}
+									</h3>
+									<p className="text-muted-foreground leading-relaxed">
+										{t(service.descriptionKey)}
+									</p>
+								</CardContent>
+							</Card>
 						);
 					})}
 				</div>

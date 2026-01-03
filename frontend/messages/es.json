@@ -244,8 +244,10 @@
       }
     ],
     "aboutMe": {
+      "label": "Quién soy",
       "headline": "Sobre Mí",
-      "description": "Soy Eduard Stefan, y dedico mi tiempo a construir sitios web que destacan con claridad y velocidad. Prefiero un enfoque tranquilo y enfocado—trabajar uno a uno me permite obsesionarme con los detalles que importan y mantenerme cerca del trabajo que amo. Para mí, no se trata solo de escribir código; se trata de crear algo rápido, intuitivo y genuinamente útil para las personas al otro lado de la pantalla."
+      "subtitle": "Conoce a la persona detrás del código",
+      "description": "Soy Eduard Stefan, y dedico mi tiempo a construir sitios web que priorizan la experiencia del usuario y el rendimiento. Prefiero un enfoque reflexivo y enfocado—trabajar uno a uno me permite obsesionarme con los detalles que importan y mantenerme cerca del trabajo que amo. Para mí, no se trata solo de escribir código; se trata de crear algo rápido, intuitivo y genuinamente útil para las personas al otro lado de la pantalla."
     },
     "contact": {
       "label": "Ponerse en contacto",
@@ -378,30 +380,30 @@
   "services": {
     "label": "Mi Filosofía",
     "headline": "Sin relleno. Solo resultados.",
-    "subtitle": "Tienes línea directa con la persona que realmente construye tu sitio, lo que significa que avanzamos más rápido y tu presupuesto rinde más.",
+    "subtitle": "Comunicación directa. Entrega más rápida. Mejor valor.",
     "svc-1": {
       "title": "Apps Web a Medida",
-      "description": "Construidas con precisión. Investigo y paso directo a resolver problemas. Sin informes PDF de 50 páginas, solo soluciones personalizadas hechas para rendir."
+      "description": "Soluciones construidas con precisión adaptadas a tus necesidades. Empiezo con investigación exhaustiva, luego paso directo a resolver problemas—sin fases de descubrimiento largas. Cada solución está diseñada a medida para rendimiento, escalabilidad y tus requisitos empresariales específicos."
     },
     "svc-7": {
       "title": "Internacionalización y Multi-Idioma",
-      "description": "Llega a audiencias globales con soporte multi-idioma fluido. Tu sitio web servirá automáticamente contenido en el idioma preferido de tus visitantes, haciendo tu negocio accesible para clientes de todo el mundo."
+      "description": "Soporte multi-idioma que sirve automáticamente contenido en el idioma preferido de tus visitantes."
     },
     "svc-3": {
       "title": "Tecnología de Alto Rendimiento",
-      "description": "Sin CMS empresariales inflados. Construyo soluciones limpias y rápidas que realmente posees, evitando la trampa del 'relleno tecnológico'."
+      "description": "Soluciones limpias y rápidas que posees. Sin CMS empresariales inflados."
     },
     "svc-4": {
       "title": "Desarrollo MVP",
-      "description": "Salta la fase de descubrimiento interminable. Ayudo a startups a validar ideas rápidamente con productos ágiles y funcionales."
+      "description": "Salta el descubrimiento interminable. Valida ideas rápidamente con productos ágiles y funcionales."
     },
     "svc-5": {
       "title": "Implementación UI/UX",
-      "description": "Ejecución cuidadosa. Cierro la brecha entre diseño y código sin el juego del 'teléfono roto'."
+      "description": "Conecta diseño y código sin problemas. Sin malentendidos."
     },
     "svc-6": {
       "title": "Asociación Directa",
-      "description": "Sin impuesto de intermediarios. Hablas directamente conmigo: el estratega, diseñador y desarrollador. La comunicación es instantánea y precisa."
+      "description": "Trabaja directamente conmigo—el estratega, diseñador y desarrollador. Sin impuesto de intermediarios, sin juego del teléfono roto. Obtienes comunicación instantánea y precisa, y decisiones tomadas en tiempo real. Tu presupuesto rinde más con eficiencia optimizada."
     }
   },
   "howIWork": {
@@ -410,19 +412,51 @@
     "subtitle": "Un enfoque directo desde el concepto hasta el lanzamiento y más allá.",
     "planning": {
       "title": "Planificación",
-      "description": "Comenzamos con una comprensión clara de tus objetivos. Reúno requisitos, defino el alcance y creo un plan que se alinea con tu cronograma y presupuesto."
+      "paragraphs": [
+        "Comenzamos con una comprensión clara de tus objetivos y visión. Esta fase inicial es crucial para establecer la base de un proyecto exitoso. Me tomo el tiempo para entender no solo lo que quieres construir, sino por qué quieres construirlo.",
+        "Durante nuestras sesiones de descubrimiento, reúno requisitos completos, analizo tu audiencia objetivo e identifico características clave que generarán valor. Creo documentación detallada que sirve como nuestro plan durante todo el proceso de desarrollo."
+      ],
+      "bulletPoints": [
+        "Definición de objetivos y recopilación de requisitos",
+        "Alineación de cronograma y presupuesto",
+        "Planificación de arquitectura técnica"
+      ]
     },
     "development": {
       "title": "Desarrollo",
-      "description": "Construyo tu solución usando tecnologías modernas y eficientes. Tendrás acceso a un enlace de vista previa privado para ver el progreso en tiempo real y proporcionar comentarios."
+      "paragraphs": [
+        "Construyo tu solución usando tecnologías modernas y eficientes y mejores prácticas. El proceso de desarrollo es transparente y colaborativo: tendrás acceso a un enlace de vista previa privado donde puedes ver el progreso en tiempo real.",
+        "Sigo un enfoque iterativo, entregando características funcionales de forma incremental. Esto permite retroalimentación temprana y asegura que siempre estemos alineados con tu visión. Las actualizaciones regulares te mantienen informado en cada paso."
+      ],
+      "bulletPoints": [
+        "Acceso de vista previa en tiempo real para comentarios",
+        "Stack tecnológico moderno y mejores prácticas",
+        "Desarrollo iterativo con actualizaciones regulares"
+      ]
     },
     "deployment": {
       "title": "Despliegue",
-      "description": "Cuando todo está listo, manejo la configuración técnica para poner tu sitio en vivo. Esto incluye configuración de hosting, configuración de dominio y optimización de rendimiento."
+      "paragraphs": [
+        "Cuando todo está listo, manejo toda la configuración técnica para poner tu sitio en vivo. Esto incluye configurar la infraestructura de hosting, configurar tu dominio y asegurar que todo esté optimizado para el rendimiento.",
+        "Realizo pruebas exhaustivas en diferentes dispositivos y navegadores, optimizo las velocidades de carga e implemento mejores prácticas de seguridad. Tu sitio será rápido, seguro y listo para manejar tráfico del mundo real desde el primer día."
+      ],
+      "bulletPoints": [
+        "Configuración de hosting y dominio",
+        "Optimización de rendimiento y pruebas",
+        "Implementación y monitoreo de seguridad"
+      ]
     },
     "postDeployment": {
       "title": "Post-Despliegue",
-      "description": "Después del lanzamiento, proporciono capacitación sobre cómo gestionar tu contenido. Las opciones de soporte continuo están disponibles para mantener tu sitio funcionando sin problemas."
+      "paragraphs": [
+        "Después del lanzamiento, proporciono capacitación completa sobre cómo gestionar tu contenido y hacer actualizaciones. Aprenderás a usar tu sistema de gestión de contenido de manera efectiva, para que puedas mantener tu sitio de forma independiente.",
+        "Las opciones de soporte continuo están disponibles para mantener tu sitio funcionando sin problemas. Ya sea que necesites ayuda con actualizaciones, solución de problemas o nuevas características, estoy aquí para asegurar que tu presencia digital continúe creciendo y evolucionando."
+      ],
+      "bulletPoints": [
+        "Capacitación y documentación de gestión de contenido",
+        "Opciones de soporte y mantenimiento continuo",
+        "Actualizaciones y mejoras de características"
+      ]
     }
   },
   "howIPrice": {

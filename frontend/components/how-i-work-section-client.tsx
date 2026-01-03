@@ -4,6 +4,7 @@ import type React from "react";
 import { Timeline } from "@/components/ui/timeline";
 
 interface TimelineData {
+	id?: string;
 	title: string;
 	content: React.ReactNode;
 }

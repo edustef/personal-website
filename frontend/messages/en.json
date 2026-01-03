@@ -244,8 +244,10 @@
       }
     ],
     "aboutMe": {
+      "label": "Who I am",
       "headline": "About Me",
-      "description": "I'm Eduard Stefan, and I spend my time building websites that cut through the noise with clarity and speed. I prefer a quiet, focused approach—working one-on-one allows me to obsess over the details that matter and stay close to the work I love. For me, it's not just about writing code; it's about crafting something fast, intuitive, and genuinely useful for the people on the other side of the screen."
+      "subtitle": "Get to know the person behind the code",
+      "description": "I'm Eduard Stefan, and I spend my time building websites that prioritize user experience and performance. I prefer a thoughtful, focused approach—working one-on-one allows me to obsess over the details that matter and stay close to the work I love. For me, it's not just about writing code; it's about crafting something fast, intuitive, and genuinely useful for the people on the other side of the screen."
     },
     "contact": {
       "label": "Get in touch",
@@ -378,30 +380,30 @@
   "services": {
     "label": "My Philosophy",
     "headline": "No fluff. Just results.",
-    "subtitle": "You get a direct line to the person actually building your site—which means we move faster and your budget goes further.",
+    "subtitle": "Direct communication. Faster delivery. Better value.",
     "svc-1": {
       "title": "Custom Web Apps",
-      "description": "Built with precision. I do the research, then move straight to solving problems. No 50-page PDF reports—just custom solutions built to perform."
+      "description": "Precision-built solutions tailored to your needs. I start with thorough research, then move straight to solving problems—no lengthy discovery phases. Every solution is custom-crafted for performance, scalability, and your specific business requirements."
     },
     "svc-7": {
       "title": "Internationalization & Multi-Language",
-      "description": "Reach global audiences with seamless multi-language support. Your website will automatically serve content in your visitors' preferred language, making your business accessible to customers worldwide."
+      "description": "Multi-language support that automatically serves content in your visitors' preferred language."
     },
     "svc-3": {
       "title": "High-Performance Tech",
-      "description": "No bloated enterprise CMS. I build clean, fast solutions that you actually own, avoiding the 'tech fluff' trap."
+      "description": "Clean, fast solutions you own. No bloated enterprise CMS."
     },
     "svc-4": {
       "title": "MVP Development",
-      "description": "Skip the endless discovery phase. I help startups validate ideas quickly with lean, functional products."
+      "description": "Skip endless discovery. Validate ideas quickly with lean, functional products."
     },
     "svc-5": {
       "title": "UI/UX Implementation",
-      "description": "Thoughtful execution. I bridge the gap between design and code without the game of 'telephone'."
+      "description": "Bridge design and code seamlessly. No miscommunication."
     },
     "svc-6": {
       "title": "Direct Partnership",
-      "description": "No middleman tax. You talk directly to me—the strategist, designer, and developer. Communication is instant and accurate."
+      "description": "Work directly with me—the strategist, designer, and developer. No middleman tax, no game of telephone. You get instant, accurate communication and decisions made in real-time. Your budget goes further with streamlined efficiency."
     }
   },
   "howIWork": {
@@ -410,19 +412,51 @@
     "subtitle": "A straightforward approach from concept to launch and beyond.",
     "planning": {
       "title": "Planning",
-      "description": "We start with a clear understanding of your goals. I gather requirements, define the scope, and create a roadmap that aligns with your timeline and budget."
+      "paragraphs": [
+        "We start with a clear understanding of your goals and vision. This initial phase is crucial for setting the foundation of a successful project. I take time to understand not just what you want to build, but why you want to build it.",
+        "During our discovery sessions, I gather comprehensive requirements, analyze your target audience, and identify key features that will drive value. I create detailed documentation that serves as our roadmap throughout the entire development process."
+      ],
+      "bulletPoints": [
+        "Goal definition and requirement gathering",
+        "Timeline and budget alignment",
+        "Technical architecture planning"
+      ]
     },
     "development": {
       "title": "Development",
-      "description": "I build your solution using modern, efficient technologies. You'll have access to a private preview link to see progress in real-time and provide feedback."
+      "paragraphs": [
+        "I build your solution using modern, efficient technologies and best practices. The development process is transparent and collaborative—you'll have access to a private preview link where you can see progress in real-time.",
+        "I follow an iterative approach, delivering working features incrementally. This allows for early feedback and ensures we're always aligned with your vision. Regular updates keep you informed every step of the way."
+      ],
+      "bulletPoints": [
+        "Real-time preview access for feedback",
+        "Modern tech stack and best practices",
+        "Iterative development with regular updates"
+      ]
     },
     "deployment": {
       "title": "Deployment",
-      "description": "When everything is ready, I handle the technical setup to get your site live. This includes hosting configuration, domain setup, and performance optimization."
+      "paragraphs": [
+        "When everything is ready, I handle all the technical setup to get your site live. This includes configuring hosting infrastructure, setting up your domain, and ensuring everything is optimized for performance.",
+        "I perform thorough testing across different devices and browsers, optimize loading speeds, and implement security best practices. Your site will be fast, secure, and ready to handle real-world traffic from day one."
+      ],
+      "bulletPoints": [
+        "Hosting configuration and domain setup",
+        "Performance optimization and testing",
+        "Security implementation and monitoring"
+      ]
     },
     "postDeployment": {
       "title": "Post-Deployment",
-      "description": "After launch, I provide training on how to manage your content. Ongoing support options are available to keep your site running smoothly."
+      "paragraphs": [
+        "After launch, I provide comprehensive training on how to manage your content and make updates. You'll learn how to use your content management system effectively, so you can maintain your site independently.",
+        "Ongoing support options are available to keep your site running smoothly. Whether you need help with updates, troubleshooting, or new features, I'm here to ensure your digital presence continues to grow and evolve."
+      ],
+      "bulletPoints": [
+        "Content management training and documentation",
+        "Ongoing support and maintenance options",
+        "Feature updates and enhancements"
+      ]
     }
   },
   "howIPrice": {

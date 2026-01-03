@@ -35,7 +35,7 @@ export default async function HeroSection() {
 								),
 							})}
 						</h1>
-						<p className="mx-auto max-w-2xl text-lg leading-relaxed">
+						<p className="text-muted-foreground mx-auto max-w-2xl text-xl leading-relaxed">
 							{t("tagline")}
 						</p>
 					</AnimatedContainer>

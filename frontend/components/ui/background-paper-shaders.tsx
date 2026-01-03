@@ -41,7 +41,8 @@ export function BackgroundPaperShaders() {
 		};
 	}, [mounted]);
 
-	if (!mounted || dimensions.width === 0 || dimensions.height === 0) return null;
+	if (!mounted || dimensions.width === 0 || dimensions.height === 0)
+		return null;
 
 	return (
 		<motion.div
@@ -55,11 +56,11 @@ export function BackgroundPaperShaders() {
 				width={dimensions.width}
 				height={dimensions.height}
 				colors={isDark ? ["#444444", "#000000"] : ["#ffffff", "#aaaaaa"]}
-				distortion={1}
-				swirl={0.2}
+				distortion={0.9}
+				swirl={0.9}
 				grainMixer={0}
 				grainOverlay={0}
-				speed={0.4}
+				speed={0.2}
 				rotation={90}
 			/>
 		</motion.div>

@@ -1,7 +1,7 @@
-import { Link } from "@/i18n/navigation";
-import { Button } from "@/components/ui/button";
-import { getTranslations, getLocale } from "next-intl/server";
 import { MessageCircle } from "lucide-react";
+import { getLocale, getTranslations } from "next-intl/server";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { getSocialIcon } from "@/lib/social-icons";
 
 type SocialLink = {
@@ -32,10 +32,7 @@ export default async function ContactSection({
 						{t("contact.label")}
 					</p>
 					<h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl">
-						<a
-							href="#contact"
-							className="hover:text-primary transition-colors"
-						>
+						<a href="#contact" className="hover:text-primary transition-colors">
 							{t("contact.headline")}
 						</a>
 					</h2>

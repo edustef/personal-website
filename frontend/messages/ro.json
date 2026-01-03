@@ -244,8 +244,10 @@
       }
     ],
     "aboutMe": {
+      "label": "Cine sunt",
       "headline": "Despre Mine",
-      "description": "Sunt Eduard Stefan, și îmi petrec timpul construind site-uri web care se remarcă prin claritate și viteză. Prefer o abordare liniștită și concentrată—lucrul unu la unu îmi permite să mă obsedez cu detaliile care contează și să rămân aproape de munca pe care o iubesc. Pentru mine, nu e vorba doar despre scrierea de cod; e vorba despre crearea a ceva rapid, intuitiv și cu adevărat util pentru oamenii de pe cealaltă parte a ecranului."
+      "subtitle": "Cunoaște persoana din spatele codului",
+      "description": "Sunt Eduard Stefan, și îmi petrec timpul construind site-uri web care prioritizează experiența utilizatorului și performanța. Prefer o abordare gândită și concentrată—lucrul unu la unu îmi permite să mă obsedez cu detaliile care contează și să rămân aproape de munca pe care o iubesc. Pentru mine, nu e vorba doar despre scrierea de cod; e vorba despre crearea a ceva rapid, intuitiv și cu adevărat util pentru oamenii de pe cealaltă parte a ecranului."
     },
     "contact": {
       "label": "Ia legătura",
@@ -378,30 +380,30 @@
   "services": {
     "label": "Filozofia Mea",
     "headline": "Fără artificii. Doar rezultate.",
-    "subtitle": "Ai linie directă cu persoana care îți construiește site-ul — ceea ce înseamnă că ne mișcăm mai repede și bugetul tău ajunge mai departe.",
+    "subtitle": "Comunicare directă. Livrare mai rapidă. Valoare mai bună.",
     "svc-1": {
       "title": "Aplicații Web Personalizate",
-      "description": "Construite cu precizie. Fac cercetarea, apoi trec direct la rezolvarea problemelor. Fără rapoarte PDF de 50 de pagini — doar soluții personalizate construite pentru performanță."
+      "description": "Soluții construite cu precizie, adaptate nevoilor tale. Încep cu o cercetare temeinică, apoi trec direct la rezolvarea problemelor—fără faze lungi de descoperire. Fiecare soluție este creată personalizat pentru performanță, scalabilitate și cerințele specifice ale afacerii tale."
     },
     "svc-7": {
       "title": "Internaționalizare și Multi-Limbă",
-      "description": "Ajunge la audiențe globale cu suport multi-limbă fluid. Site-ul tău va servi automat conținut în limba preferată a vizitatorilor tăi, făcând afacerea ta accesibilă pentru clienți din întreaga lume."
+      "description": "Suport multi-limbă care servește automat conținut în limba preferată a vizitatorilor tăi."
     },
     "svc-3": {
       "title": "Tehnologie de Înaltă Performanță",
-      "description": "Fără CMS-uri enterprise încărcate. Construiesc soluții curate, rapide, pe care le deții cu adevărat, evitând capcana 'balastului tehnologic'."
+      "description": "Soluții curate și rapide pe care le deții. Fără CMS-uri enterprise încărcate."
     },
     "svc-4": {
       "title": "Dezvoltare MVP",
-      "description": "Sari peste faza interminabilă de descoperire. Ajut startup-urile să valideze idei rapid cu produse suple și funcționale."
+      "description": "Sari peste descoperirea interminabilă. Validează idei rapid cu produse suple și funcționale."
     },
     "svc-5": {
       "title": "Implementare UI/UX",
-      "description": "Execuție atentă. Fac legătura între design și cod fără jocul de 'telefonul fără fir'."
+      "description": "Conectează design și cod fără probleme. Fără neînțelegeri."
     },
     "svc-6": {
       "title": "Parteneriat Direct",
-      "description": "Fără taxa de intermediar. Vorbești direct cu mine — strategul, designerul și dezvoltatorul. Comunicarea este instantanee și precisă."
+      "description": "Lucrează direct cu mine—strategul, designerul și dezvoltatorul. Fără taxa de intermediar, fără jocul telefonului fără fir. Obții comunicare instantanee și precisă, și decizii luate în timp real. Bugetul tău ajunge mai departe cu eficiență optimizată."
     }
   },
   "howIWork": {
@@ -410,19 +412,51 @@
     "subtitle": "O abordare directă de la concept la lansare și dincolo.",
     "planning": {
       "title": "Planificare",
-      "description": "Începem cu o înțelegere clară a obiectivelor tale. Colectez cerințele, definesc scopul și creez un plan care se aliniază cu termenul și bugetul tău."
+      "paragraphs": [
+        "Începem cu o înțelegere clară a obiectivelor și viziunii tale. Această fază inițială este crucială pentru stabilirea fundației unui proiect de succes. Îmi iau timpul să înțeleg nu doar ce vrei să construiești, ci și de ce vrei să o construiești.",
+        "În timpul sesiunilor noastre de descoperire, colectez cerințe complete, analizez publicul țintă și identific caracteristici cheie care vor genera valoare. Creez documentație detaliată care servește ca planul nostru pe tot parcursul procesului de dezvoltare."
+      ],
+      "bulletPoints": [
+        "Definirea obiectivelor și colectarea cerințelor",
+        "Alinearea termenului și bugetului",
+        "Planificarea arhitecturii tehnice"
+      ]
     },
     "development": {
       "title": "Dezvoltare",
-      "description": "Construiesc soluția ta folosind tehnologii moderne și eficiente. Vei avea acces la un link de previzualizare privat pentru a vedea progresul în timp real și a oferi feedback."
+      "paragraphs": [
+        "Construiesc soluția ta folosind tehnologii moderne și eficiente și cele mai bune practici. Procesul de dezvoltare este transparent și colaborativ—vei avea acces la un link de previzualizare privat unde poți vedea progresul în timp real.",
+        "Urmez o abordare iterativă, livrând caracteristici funcționale incremental. Acest lucru permite feedback timpuriu și asigură că suntem întotdeauna aliniați cu viziunea ta. Actualizările regulate te țin informat la fiecare pas."
+      ],
+      "bulletPoints": [
+        "Acces de previzualizare în timp real pentru feedback",
+        "Stack tehnologic modern și cele mai bune practici",
+        "Dezvoltare iterativă cu actualizări regulate"
+      ]
     },
     "deployment": {
-      "title": "Deploy",
-      "description": "Când totul este gata, mă ocup de configurarea tehnică pentru a pune site-ul tău live. Aceasta include configurarea hosting-ului, configurarea domeniului și optimizarea performanței."
+      "title": "Lansare",
+      "paragraphs": [
+        "Când totul este gata, mă ocup de toată configurarea tehnică pentru a pune site-ul tău live. Aceasta include configurarea infrastructurii de hosting, configurarea domeniului tău și asigurarea că totul este optimizat pentru performanță.",
+        "Efectuez teste amănunțite pe diferite dispozitive și browsere, optimizez vitezele de încărcare și implementez cele mai bune practici de securitate. Site-ul tău va fi rapid, sigur și gata să gestioneze trafic real din prima zi."
+      ],
+      "bulletPoints": [
+        "Configurarea hosting-ului și domeniului",
+        "Optimizarea performanței și testarea",
+        "Implementarea și monitorizarea securității"
+      ]
     },
     "postDeployment": {
-      "title": "Post-Deploy",
-      "description": "După lansare, ofer instruire despre cum să îți gestionezi conținutul. Opțiunile de suport continuu sunt disponibile pentru a menține site-ul tău funcționând fără probleme."
+      "title": "După Lansare",
+      "paragraphs": [
+        "După lansare, ofer instruire completă despre cum să îți gestionezi conținutul și să faci actualizări. Vei învăța cum să folosești efectiv sistemul tău de gestionare a conținutului, astfel încât să poți menține site-ul în mod independent.",
+        "Opțiunile de suport continuu sunt disponibile pentru a menține site-ul tău funcționând fără probleme. Fie că ai nevoie de ajutor cu actualizări, rezolvarea problemelor sau caracteristici noi, sunt aici pentru a mă asigura că prezența ta digitală continuă să crească și să evolueze."
+      ],
+      "bulletPoints": [
+        "Instruire și documentație pentru gestionarea conținutului",
+        "Opțiuni de suport și întreținere continuă",
+        "Actualizări și îmbunătățiri ale caracteristicilor"
+      ]
     }
   },
   "howIPrice": {
