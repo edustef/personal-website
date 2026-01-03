@@ -16,15 +16,21 @@ type SpotlightProps = {
 };
 
 const lightGradients = {
-  gradientFirst: "radial-gradient(68.54% 68.72% at 55.02% 31.46%, hsla(0, 0%, 50%, .08) 0, hsla(0, 0%, 40%, .04) 50%, hsla(0, 0%, 30%, 0) 80%)",
-  gradientSecond: "radial-gradient(50% 50% at 50% 50%, hsla(0, 0%, 50%, .06) 0, hsla(0, 0%, 40%, .03) 80%, transparent 100%)",
-  gradientThird: "radial-gradient(50% 50% at 50% 50%, hsla(0, 0%, 50%, .05) 0, hsla(0, 0%, 40%, .02) 80%, transparent 100%)",
+  gradientFirst:
+    "radial-gradient(68.54% 68.72% at 55.02% 31.46%, hsla(0, 0%, 50%, .08) 0, hsla(0, 0%, 40%, .04) 50%, hsla(0, 0%, 30%, 0) 80%)",
+  gradientSecond:
+    "radial-gradient(50% 50% at 50% 50%, hsla(0, 0%, 50%, .06) 0, hsla(0, 0%, 40%, .03) 80%, transparent 100%)",
+  gradientThird:
+    "radial-gradient(50% 50% at 50% 50%, hsla(0, 0%, 50%, .05) 0, hsla(0, 0%, 40%, .02) 80%, transparent 100%)",
 };
 
 const darkGradients = {
-  gradientFirst: "radial-gradient(68.54% 68.72% at 55.02% 31.46%, hsla(0, 0%, 100%, .08) 0, hsla(0, 0%, 90%, .04) 50%, hsla(0, 0%, 80%, 0) 80%)",
-  gradientSecond: "radial-gradient(50% 50% at 50% 50%, hsla(0, 0%, 100%, .06) 0, hsla(0, 0%, 90%, .03) 80%, transparent 100%)",
-  gradientThird: "radial-gradient(50% 50% at 50% 50%, hsla(0, 0%, 100%, .05) 0, hsla(0, 0%, 90%, .025) 80%, transparent 100%)",
+  gradientFirst:
+    "radial-gradient(68.54% 68.72% at 55.02% 31.46%, hsla(0, 0%, 100%, .08) 0, hsla(0, 0%, 90%, .04) 50%, hsla(0, 0%, 80%, 0) 80%)",
+  gradientSecond:
+    "radial-gradient(50% 50% at 50% 50%, hsla(0, 0%, 100%, .06) 0, hsla(0, 0%, 90%, .03) 80%, transparent 100%)",
+  gradientThird:
+    "radial-gradient(50% 50% at 50% 50%, hsla(0, 0%, 100%, .05) 0, hsla(0, 0%, 90%, .025) 80%, transparent 100%)",
 };
 
 export const Spotlight = ({
@@ -70,7 +76,7 @@ export const Spotlight = ({
         }}
         transition={{
           duration,
-          repeat: Infinity,
+          repeat: Number.POSITIVE_INFINITY,
           repeatType: "reverse",
           ease: "easeInOut",
         }}
@@ -83,7 +89,7 @@ export const Spotlight = ({
             width: `${width}px`,
             height: `${height}px`,
           }}
-          className={`absolute top-0 left-0`}
+          className="absolute top-0 left-0"
         />
 
         <div
@@ -93,7 +99,7 @@ export const Spotlight = ({
             width: `${smallWidth}px`,
             height: `${height}px`,
           }}
-          className={`absolute top-0 left-0 origin-top-left`}
+          className="absolute top-0 left-0 origin-top-left"
         />
 
         <div
@@ -103,7 +109,7 @@ export const Spotlight = ({
             width: `${smallWidth}px`,
             height: `${height}px`,
           }}
-          className={`absolute top-0 left-0 origin-top-left`}
+          className="absolute top-0 left-0 origin-top-left"
         />
       </motion.div>
 
@@ -113,7 +119,7 @@ export const Spotlight = ({
         }}
         transition={{
           duration,
-          repeat: Infinity,
+          repeat: Number.POSITIVE_INFINITY,
           repeatType: "reverse",
           ease: "easeInOut",
         }}
@@ -126,7 +132,7 @@ export const Spotlight = ({
             width: `${width}px`,
             height: `${height}px`,
           }}
-          className={`absolute top-0 right-0`}
+          className="absolute top-0 right-0"
         />
 
         <div
@@ -136,7 +142,7 @@ export const Spotlight = ({
             width: `${smallWidth}px`,
             height: `${height}px`,
           }}
-          className={`absolute top-0 right-0 origin-top-right`}
+          className="absolute top-0 right-0 origin-top-right"
         />
 
         <div
@@ -146,7 +152,7 @@ export const Spotlight = ({
             width: `${smallWidth}px`,
             height: `${height}px`,
           }}
-          className={`absolute top-0 right-0 origin-top-right`}
+          className="absolute top-0 right-0 origin-top-right"
         />
       </motion.div>
     </motion.div>

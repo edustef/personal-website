@@ -1,4 +1,4 @@
-import { defineMigration, at, set } from "sanity/migrate";
+import { at, defineMigration, set } from "sanity/migrate";
 
 const oldType = "internationalizedArrayCustomBlockValue";
 const newType = "internationalizedArrayBlockContentValue";

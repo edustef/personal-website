@@ -1,6 +1,6 @@
 import { CogIcon } from "@sanity/icons";
-import type { StructureBuilder, StructureResolver } from "sanity/structure";
 import pluralize from "pluralize-esm";
+import type { StructureBuilder, StructureResolver } from "sanity/structure";
 import { singletons } from "../schemaTypes/singletons";
 
 /**
@@ -28,22 +28,22 @@ const createSingletonListItem = (S: StructureBuilder, schema: any) => {
 };
 
 export const structure: StructureResolver = (S: StructureBuilder) => {
-  const nonPageSingletons = singletons.filter(
-    (schema: any) => NON_PAGE_SINGLETONS.includes(schema.name),
+  const nonPageSingletons = singletons.filter((schema: any) =>
+    NON_PAGE_SINGLETONS.includes(schema.name)
   );
   const pageSingletons = singletons.filter((schema: any) =>
-    PAGE_SINGLETONS.includes(schema.name),
+    PAGE_SINGLETONS.includes(schema.name)
   );
 
   return S.list()
     .title("Website Content")
     .items([
       ...nonPageSingletons.map((schema: any) =>
-        createSingletonListItem(S, schema),
+        createSingletonListItem(S, schema)
       ),
       S.divider(),
       ...pageSingletons.map((schema: any) =>
-        createSingletonListItem(S, schema),
+        createSingletonListItem(S, schema)
       ),
       S.divider(),
       ...S.documentTypeListItems()

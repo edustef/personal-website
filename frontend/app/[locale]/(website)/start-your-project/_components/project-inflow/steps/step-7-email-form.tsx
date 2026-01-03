@@ -1,28 +1,28 @@
 "use client";
 
-import { useQuery } from "convex/react";
-import { api } from "@/convex/_generated/api";
-import { Id } from "@/convex/_generated/dataModel";
-import { motion } from "motion/react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
-import * as z from "zod";
-import { StepHeader } from "../step-header";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Field,
   FieldError,
   FieldGroup,
   FieldLabel,
 } from "@/components/ui/field";
-import { Checkbox } from "@/components/ui/checkbox";
-import { useTranslations } from "next-intl";
+import { Input } from "@/components/ui/input";
+import { api } from "@/convex/_generated/api";
+import { Id } from "@/convex/_generated/dataModel";
 import { Link } from "@/i18n/navigation";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useQuery } from "convex/react";
+import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
+import { Controller, useForm } from "react-hook-form";
+import * as z from "zod";
+import { StepHeader } from "../step-header";
 
 const createEmailFormSchema = (
   emailErrorMessage: string,
-  privacyErrorMessage: string,
+  privacyErrorMessage: string
 ) =>
   z.object({
     email: z.email(emailErrorMessage),
@@ -58,7 +58,7 @@ export function Step7EmailForm({
 
   const emailFormSchema = createEmailFormSchema(
     t("step7.email.error"),
-    t("step7.privacyConsent.error"),
+    t("step7.privacyConsent.error")
   );
 
   const emailForm = useForm<EmailFormValues>({
@@ -140,7 +140,11 @@ export function Step7EmailForm({
             name="privacyConsent"
             control={emailForm.control}
             render={({ field, fieldState }) => (
-              <Field className="flex flex-col items-start" orientation="horizontal" data-invalid={fieldState.invalid}>
+              <Field
+                className="flex flex-col items-start"
+                orientation="horizontal"
+                data-invalid={fieldState.invalid}
+              >
                 <div className="flex items-start space-x-2">
                   <Checkbox
                     id="email-form-privacyConsent"

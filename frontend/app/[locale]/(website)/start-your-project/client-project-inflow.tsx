@@ -1,13 +1,13 @@
 "use client";
 
-import { Loader2 } from "lucide-react";
-import { motion } from "motion/react";
-import { toast } from "sonner";
-import { useTranslations } from "next-intl";
 import { useProjectInquiry } from "@/app/[locale]/(website)/start-your-project/use-project-inquiry";
 import { sendProjectInquiryEmail } from "@/lib/actions";
-import { ProgressBar } from "./_components/project-inflow/progress-bar";
+import { Loader2 } from "lucide-react";
+import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
+import { toast } from "sonner";
 import { Navigation } from "./_components/project-inflow/navigation";
+import { ProgressBar } from "./_components/project-inflow/progress-bar";
 import { Step0TechSelection } from "./_components/project-inflow/steps/step-0-tech-selection";
 import { Step1ProjectType } from "./_components/project-inflow/steps/step-1-project-type";
 import { Step2AudiencePurpose } from "./_components/project-inflow/steps/step-2-audience-purpose";
@@ -85,7 +85,7 @@ export function ClientProjectInflow({
           successCriteria: inquiry.successCriteria,
           bookCall: data.bookCall,
         },
-        recipientEmail,
+        recipientEmail
       );
 
       if (!emailResult.success) {

@@ -1,5 +1,5 @@
-import { getCanonicalUrl } from "./seo";
 import { routing } from "@/i18n/routing";
+import { getCanonicalUrl } from "./seo";
 
 export function sanitizeJsonLd(json: object): string {
   return JSON.stringify(json).replace(/</g, "\\u003c");
@@ -70,7 +70,7 @@ export function createPersonSchema(
     socialLinks?: Array<{ url?: string | null }> | null;
     workPreference?: string | null;
   },
-  locale: string,
+  locale: string
 ): PersonSchema {
   const schema: PersonSchema = {
     "@context": "https://schema.org",
@@ -109,7 +109,7 @@ export function createPersonSchema(
 export function createWebSiteSchema(
   name: string,
   description: string | undefined,
-  locale: string,
+  locale: string
 ): WebSiteSchema {
   const url = getCanonicalUrl(locale, "");
 
@@ -139,7 +139,7 @@ export function createArticleSchema(
   authorName: string,
   publisherName: string,
   url: string,
-  locale: string,
+  locale: string
 ): ArticleSchema {
   const schema: ArticleSchema = {
     "@context": "https://schema.org",

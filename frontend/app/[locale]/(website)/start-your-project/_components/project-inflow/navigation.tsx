@@ -1,5 +1,5 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
 
 type NavigationProps = {
@@ -39,4 +39,3 @@ export function Navigation({
     </motion.div>
   );
 }
-

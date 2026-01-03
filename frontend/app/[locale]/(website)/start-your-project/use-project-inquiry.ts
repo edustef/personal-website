@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { useQuery, useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
-import { Id, Doc } from "@/convex/_generated/dataModel";
+import { Doc, Id } from "@/convex/_generated/dataModel";
+import { useMutation, useQuery } from "convex/react";
+import { useEffect, useState } from "react";
 
 const SESSION_STORAGE_KEY = "project_inquiry_session";
 
@@ -11,7 +11,7 @@ export function useProjectInquiry() {
 
   const inquiry = useQuery(
     api.projectInquiries.getInquiry,
-    id ? { _id: id } : "skip",
+    id ? { _id: id } : "skip"
   );
 
   const saveProgress = useMutation(api.projectInquiries.saveProgress);
@@ -56,7 +56,7 @@ export function useProjectInquiry() {
       Doc<"projectInquiries">,
       "projectType" | "features" | "existingResources"
     >,
-    value: string | boolean,
+    value: string | boolean
   ) => {
     if (!id) return;
     await saveProgress({
@@ -70,7 +70,7 @@ export function useProjectInquiry() {
       Doc<"projectInquiries">,
       "projectType" | "features" | "existingResources"
     >,
-    value: string,
+    value: string
   ) => {
     if (!inquiry || !id) return;
     const currentValue = inquiry[field] ?? [];
@@ -108,4 +108,3 @@ export function useProjectInquiry() {
     clearSession,
   };
 }
-

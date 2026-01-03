@@ -2,9 +2,7 @@
   "name": "studio",
   "version": "1.0.0",
   "private": true,
-  "keywords": [
-    "sanity"
-  ],
+  "keywords": ["sanity"],
   "license": "UNLICENSED",
   "main": "package.json",
   "scripts": {
@@ -33,8 +31,6 @@
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
-    "@sanity/eslint-config-studio": "^5.0.2",
-    "@sanity/prettier-config": "^2.0.2",
     "@types/react": "^19.2.7",
     "shadcn": "^3.5.1",
     "typescript": "^5.9.3"

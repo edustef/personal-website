@@ -1,5 +1,5 @@
-import { defineField, defineType } from "sanity";
 import { EyeOpenIcon } from "@sanity/icons";
+import { defineField, defineType } from "sanity";
 
 export const serviceView = defineType({
   name: "serviceView",
@@ -43,4 +43,3 @@ export const serviceView = defineType({
     }),
   ],
 });
-

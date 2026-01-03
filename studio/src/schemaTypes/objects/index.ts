@@ -1,18 +1,18 @@
 import { blockContent } from "./blockContent";
-import { timeline } from "./timeline";
-import { milestone } from "./milestone";
-import { duration } from "./duration";
 import { button } from "./button";
-import { socialLink } from "./socialLink";
-import { link } from "./link";
-import { ogImage } from "./ogImage";
-import { servicePackage } from "./servicePackage";
-import { serviceAddOn } from "./serviceAddOn";
-import { maintenancePlan } from "./maintenancePlan";
-import { processStep } from "./processStep";
-import { serviceView } from "./serviceView";
-import { seo } from "./seo";
+import { duration } from "./duration";
 import { header } from "./header";
+import { link } from "./link";
+import { maintenancePlan } from "./maintenancePlan";
+import { milestone } from "./milestone";
+import { ogImage } from "./ogImage";
+import { processStep } from "./processStep";
+import { seo } from "./seo";
+import { serviceAddOn } from "./serviceAddOn";
+import { servicePackage } from "./servicePackage";
+import { serviceView } from "./serviceView";
+import { socialLink } from "./socialLink";
+import { timeline } from "./timeline";
 
 export const objects = [
   blockContent,

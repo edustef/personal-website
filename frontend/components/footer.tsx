@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
+import { cn } from "@/lib/utils";
 import { getTranslations } from "next-intl/server";
 
 type FooterProps = {
@@ -18,7 +18,7 @@ export async function Footer({ className, locale }: FooterProps) {
     <footer
       className={cn(
         "bg-background text-foreground relative overflow-hidden px-3",
-        className,
+        className
       )}
     >
       <div className="relative py-16">

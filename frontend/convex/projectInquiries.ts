@@ -46,15 +46,15 @@ export const saveProgress = mutation({
         updatedAt: Date.now(),
       });
       return existing._id;
-    } else {
-      const newId = await ctx.db.insert("projectInquiries", {
-        currentStep: updates.currentStep ?? 0,
-        status: updates.status ?? "in_progress",
-        updatedAt: Date.now(),
-        ...updates,
-      });
-      return newId;
     }
+
+    const newId = await ctx.db.insert("projectInquiries", {
+      currentStep: updates.currentStep ?? 0,
+      status: updates.status ?? "in_progress",
+      updatedAt: Date.now(),
+      ...updates,
+    });
+    return newId;
   },
 });
 

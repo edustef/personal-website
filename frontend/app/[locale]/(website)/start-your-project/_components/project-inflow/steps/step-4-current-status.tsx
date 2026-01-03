@@ -1,14 +1,14 @@
 "use client";
 
-import { useQuery } from "convex/react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
+import { useQuery } from "convex/react";
 import { motion } from "motion/react";
-import { StepHeader } from "../step-header";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { useTranslations } from "next-intl";
+import { StepHeader } from "../step-header";
 
 type Step4CurrentStatusProps = {
   inquiryId: Id<"projectInquiries">;
@@ -38,7 +38,8 @@ export function Step4CurrentStatus({
     t("step4.options.justExploring"),
   ];
 
-  const needsImprovement = inquiry.currentStatus === t("step4.options.needsImprovement");
+  const needsImprovement =
+    inquiry.currentStatus === t("step4.options.needsImprovement");
 
   return (
     <motion.div layout className="flex flex-col gap-6">
@@ -68,4 +69,3 @@ export function Step4CurrentStatus({
     </motion.div>
   );
 }
-

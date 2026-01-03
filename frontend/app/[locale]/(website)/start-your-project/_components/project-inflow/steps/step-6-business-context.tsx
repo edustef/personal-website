@@ -1,13 +1,13 @@
 "use client";
 
-import { useQuery } from "convex/react";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
+import { useQuery } from "convex/react";
 import { motion } from "motion/react";
-import { StepHeader } from "../step-header";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { useTranslations } from "next-intl";
+import { StepHeader } from "../step-header";
 
 type Step6BusinessContextProps = {
   inquiryId: Id<"projectInquiries">;
@@ -50,4 +50,3 @@ export function Step6BusinessContext({
     </motion.div>
   );
 }
-

@@ -1,5 +1,5 @@
-import { defineField, defineType } from "sanity";
 import { NumberIcon } from "@sanity/icons";
+import { defineField, defineType } from "sanity";
 
 export const processStep = defineType({
   name: "processStep",
@@ -25,4 +25,3 @@ export const processStep = defineType({
     },
   },
 });
-

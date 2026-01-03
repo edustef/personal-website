@@ -1,5 +1,5 @@
-import { defineField, defineType } from "sanity";
 import { WrenchIcon } from "@sanity/icons";
+import { defineField, defineType } from "sanity";
 
 export const maintenancePlan = defineType({
   name: "maintenancePlan",
@@ -44,4 +44,3 @@ export const maintenancePlan = defineType({
     },
   },
 });
-

@@ -1,7 +1,7 @@
-import { cn } from "@/lib/utils";
 import { Link as NextLink } from "@/i18n/navigation";
-import { buttonVariants } from "./button";
+import { cn } from "@/lib/utils";
 import { VariantProps } from "class-variance-authority";
+import { buttonVariants } from "./button";
 
 export type LinkProps = Omit<React.ComponentProps<typeof NextLink>, "href"> &
   VariantProps<typeof buttonVariants> & {

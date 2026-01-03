@@ -1,5 +1,5 @@
-import { defineField, defineType } from "sanity";
 import { PackageIcon } from "@sanity/icons";
+import { defineField, defineType } from "sanity";
 
 export const servicePackage = defineType({
   name: "servicePackage",

@@ -1,11 +1,11 @@
-import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+import { getCanonicalUrl } from "@/lib/seo";
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
-import { getCanonicalUrl } from "@/lib/seo";
 import { hasLocale } from "next-intl";
-import { routing } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 import { setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -126,7 +126,7 @@ export default async function PrivacyPolicyPage(props: Props) {
           <p className="mb-4">
             {
               t("sections.yourRights.contact").split(
-                "contact@eduardstefan.dev",
+                "contact@eduardstefan.dev"
               )[0]
             }
             <a
@@ -137,7 +137,7 @@ export default async function PrivacyPolicyPage(props: Props) {
             </a>
             {
               t("sections.yourRights.contact").split(
-                "contact@eduardstefan.dev",
+                "contact@eduardstefan.dev"
               )[1]
             }
           </p>

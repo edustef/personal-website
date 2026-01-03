@@ -1,5 +1,5 @@
-import { defineField, defineType } from "sanity";
 import { PlugIcon } from "@sanity/icons";
+import { defineField, defineType } from "sanity";
 
 export const serviceAddOn = defineType({
   name: "serviceAddOn",
@@ -31,4 +31,3 @@ export const serviceAddOn = defineType({
     },
   },
 });
-

@@ -1,6 +1,6 @@
-import { MetadataRoute } from "next";
 import { locales, routing } from "@/i18n/routing";
 import { getBaseUrl } from "@/lib/utils";
+import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = getBaseUrl();
@@ -20,7 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     if (routing.pathnames) {
       for (const [originalPath, localizedPaths] of Object.entries(
-        routing.pathnames,
+        routing.pathnames
       )) {
         const localizedPath =
           localeId === routing.defaultLocale

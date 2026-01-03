@@ -1,10 +1,10 @@
 "use server";
 
-import { headers } from "next/headers";
-import { z } from "zod";
-import { checkRateLimit } from "@vercel/firewall";
-import { Resend } from "resend";
 import { normalizeMessage, sanitizeForHtml } from "@/lib/security";
+import { checkRateLimit } from "@vercel/firewall";
+import { headers } from "next/headers";
+import { Resend } from "resend";
+import { z } from "zod";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -17,7 +17,7 @@ const contactFormSchema = z.object({
     .trim()
     .refine(
       (value) => !/[\r\n]/.test(value),
-      "Please enter a valid email address",
+      "Please enter a valid email address"
     ),
   message: z
     .string()
@@ -48,7 +48,7 @@ export type ContactFormState =
 export async function submitContactForm(
   prevState: ContactFormState | null,
   formData: FormData,
-  recipientEmail: string,
+  recipientEmail: string
 ): Promise<ContactFormState> {
   try {
     const rawData = {
@@ -78,13 +78,13 @@ export async function submitContactForm(
 
     if (!validationResult.success) {
       const errors: { email?: string[]; message?: string[] } = {};
-      validationResult.error.issues.forEach((issue) => {
+      for (const issue of validationResult.error.issues) {
         const field = issue.path[0] as "email" | "message";
         if (!errors[field]) {
           errors[field] = [];
         }
-        errors[field]!.push(issue.message);
-      });
+        errors[field]?.push(issue.message);
+      }
 
       return {
         success: false,
@@ -102,14 +102,13 @@ export async function submitContactForm(
     const safeMessage = sanitizeForHtml(cleanedMessage);
 
     await resend.emails.send({
-        from:
-          process.env.RESEND_FROM_EMAIL ||
-          "Contact Form <onboarding@resend.dev>",
-        to: recipientEmail,
-        replyTo: normalizedEmail,
-        subject: `New contact form submission from ${normalizedEmail}`,
-        text: `You received a new message from your contact form:\n\nFrom: ${normalizedEmail}\n\nMessage:\n${cleanedMessage}`,
-        html: `
+      from:
+        process.env.RESEND_FROM_EMAIL || "Contact Form <onboarding@resend.dev>",
+      to: recipientEmail,
+      replyTo: normalizedEmail,
+      subject: `New contact form submission from ${normalizedEmail}`,
+      text: `You received a new message from your contact form:\n\nFrom: ${normalizedEmail}\n\nMessage:\n${cleanedMessage}`,
+      html: `
           <h2>New Contact Form Submission</h2>
           <p><strong>From:</strong> ${sanitizeForHtml(normalizedEmail)}</p>
           <p><strong>Message:</strong></p>
@@ -157,7 +156,7 @@ export async function sendProjectInquiryEmail(
     successCriteria?: string;
     bookCall?: boolean;
   },
-  recipientEmail?: string,
+  recipientEmail?: string
 ): Promise<{ success: boolean; message?: string }> {
   try {
     const email = recipientEmail || process.env.RESEND_FROM_EMAIL;
@@ -189,7 +188,7 @@ export async function sendProjectInquiryEmail(
       arr && arr.length > 0 ? arr.join(", ") : "Not specified";
 
     const formatText = (text?: string) =>
-      text && text.trim() ? sanitizeForHtml(text.trim()) : "Not provided";
+      text?.trim() ? sanitizeForHtml(text.trim()) : "Not provided";
 
     const emailContent = {
       isTech:
@@ -293,4 +292,3 @@ Book a Call: ${emailContent.bookCall}`;
     };
   }
 }
-

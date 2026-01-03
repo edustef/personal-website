@@ -1,5 +1,5 @@
-import { defineField, defineType } from "sanity";
 import { LinkIcon } from "@sanity/icons";
+import { defineField, defineType } from "sanity";
 
 /**
  * Link schema object. This link object lets the user first select the type of link and then
