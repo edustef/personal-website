@@ -47,7 +47,7 @@ export default async function ServicesSection({
 	const otherServices = servicesToDisplay.filter((s) => !s.featured);
 
 	return (
-		<section id="services" className="overflow-x-hidden py-24 md:py-32">
+		<section id="services" className="overflow-x-hidden py-12 md:py-16">
 			<div className="mx-auto max-w-6xl px-4 sm:px-6">
 				<AnimatedContainer
 					trigger="scroll"

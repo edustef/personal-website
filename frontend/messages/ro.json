@@ -236,6 +236,11 @@
     "findMeOnLabel": "Găsește-mă pe",
     "contactMe": "Contactează-mă",
     "workedWith": "Cu ce lucrez",
+    "tools": {
+      "label": "Tehnologii",
+      "headline": "Instrumente și Tehnologii",
+      "subtitle": "Stack-ul modern pe care îl folosesc pentru a construi experiențe web rapide și scalabile"
+    },
     "ctaButtons": [
       {
         "text": "Obține oferta ta",

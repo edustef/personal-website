@@ -236,6 +236,11 @@
     "findMeOnLabel": "Find me on",
     "contactMe": "Contact me",
     "workedWith": "What I work with",
+    "tools": {
+      "label": "Technologies",
+      "headline": "Tools & Technologies",
+      "subtitle": "The modern stack I use to build fast, scalable web experiences"
+    },
     "ctaButtons": [
       {
         "text": "Get your offer",

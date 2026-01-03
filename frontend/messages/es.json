@@ -236,6 +236,11 @@
     "findMeOnLabel": "Encuéntrame en",
     "contactMe": "Contáctame",
     "workedWith": "Con qué trabajo",
+    "tools": {
+      "label": "Tecnologías",
+      "headline": "Herramientas y Tecnologías",
+      "subtitle": "El stack moderno que uso para construir experiencias web rápidas y escalables"
+    },
     "ctaButtons": [
       {
         "text": "Obtén tu oferta",

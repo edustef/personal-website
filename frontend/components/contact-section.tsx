@@ -26,7 +26,7 @@ export default async function ContactSection({
 	const hasSocialLinks = socialLinks && socialLinks.length > 0;
 
 	return (
-		<section id="contact" className="py-24 md:py-32">
+		<section id="contact" className="py-12 md:py-16">
 			<div className="mx-auto max-w-6xl px-4">
 				<AnimatedContainer
 					trigger="scroll"
@@ -54,12 +54,7 @@ export default async function ContactSection({
 						staggerDelay={0.1}
 						className="w-full sm:w-auto"
 					>
-						<Button
-							asChild
-							size="lg"
-							variant="default"
-							className="w-full"
-						>
+						<Button asChild size="lg" variant="default" className="w-full">
 							<Link href="/start-your-project">{t("contact.ctaButton")}</Link>
 						</Button>
 					</AnimatedContainer>
@@ -72,12 +67,7 @@ export default async function ContactSection({
 							staggerDelay={0.1}
 							className="w-full sm:w-auto"
 						>
-							<Button
-								asChild
-								size="lg"
-								variant="outline"
-								className="w-full"
-							>
+							<Button asChild size="lg" variant="outline" className="w-full">
 								<a
 									href={whatsappUrl}
 									target="_blank"

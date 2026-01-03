@@ -16,7 +16,7 @@ export default async function HeroSection() {
 	}>;
 
 	return (
-		<section className="pt-12 md:pt-16">
+		<section className="py-12 md:py-16">
 			<div className="mx-auto max-w-6xl px-4">
 				<div className="flex flex-col items-center gap-12 text-center">
 					<AnimatedContainer

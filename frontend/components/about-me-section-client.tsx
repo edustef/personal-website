@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef } from "react";
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
+import { useRef } from "react";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 
 type AboutMeSectionClientProps = {
@@ -29,7 +29,7 @@ export function AboutMeSectionClient({
 	const imageY = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
 	return (
-		<section id="about-me" className="py-24 md:py-32" ref={sectionRef}>
+		<section id="about-me" className="py-12 md:py-16" ref={sectionRef}>
 			<div className="mx-auto max-w-6xl px-4">
 				<AnimatedContainer
 					trigger="scroll"
@@ -52,10 +52,7 @@ export function AboutMeSectionClient({
 					</p>
 				</AnimatedContainer>
 				<div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between">
-					<motion.div
-						className="shrink-0"
-						style={{ y: imageY }}
-					>
+					<motion.div className="shrink-0" style={{ y: imageY }}>
 						<div
 							style={{
 								maskImage:
@@ -64,12 +61,7 @@ export function AboutMeSectionClient({
 									"radial-gradient(110% 105% at right top, black 50%, transparent 100%)",
 							}}
 						>
-							<Image
-								src={imageSrc}
-								width={400}
-								height={600}
-								alt="About me"
-							/>
+							<Image src={imageSrc} width={400} height={600} alt="About me" />
 						</div>
 					</motion.div>
 					<AnimatedContainer
@@ -87,4 +79,3 @@ export function AboutMeSectionClient({
 		</section>
 	);
 }
-

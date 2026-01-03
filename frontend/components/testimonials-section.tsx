@@ -1,7 +1,7 @@
-import { testimonials, type Testimonial } from "@/lib/data/testimonials";
-import { getTranslations, getLocale } from "next-intl/server";
 import { Quote } from "lucide-react";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Card, CardContent } from "@/components/ui/card";
+import { type Testimonial, testimonials } from "@/lib/data/testimonials";
 import { cn } from "@/lib/utils";
 
 type TestimonialsSectionProps = {
@@ -20,7 +20,7 @@ export default async function TestimonialsSection({
 	const t = await getTranslations({ locale, namespace: "testimonials" });
 
 	return (
-		<section className="py-24 md:py-32">
+		<section className="py-12 md:py-16">
 			<div className="mx-auto max-w-6xl px-4">
 				<div className="mb-16 text-center">
 					<p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
@@ -41,10 +41,7 @@ export default async function TestimonialsSection({
 						return (
 							<Card
 								key={testimonial._id}
-								className={cn(
-									"rounded-2xl",
-									isLarge && "md:col-span-2",
-								)}
+								className={cn("rounded-2xl", isLarge && "md:col-span-2")}
 							>
 								<CardContent className="p-6 md:p-8">
 									<Quote className="text-primary/20 mb-4 h-8 w-8" />

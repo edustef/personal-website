@@ -14,7 +14,7 @@ import HowIPriceSection from "@/components/how-i-price-section";
 import HowIWorkSection from "@/components/how-i-work-section";
 import ServicesSection from "@/components/services-section";
 import { BackgroundPaperShaders } from "@/components/ui/background-paper-shaders";
-import WorkedWithSection from "@/components/worked-with-section";
+import ToolsSection from "@/components/tools-section";
 import { locales, routing } from "@/i18n/routing";
 import { getCanonicalUrl, getLocalizedSettingsMetadata } from "@/lib/seo";
 
@@ -104,7 +104,7 @@ export default async function Page(props: Props) {
 			<BackgroundPaperShaders />
 			<HeroSection />
 
-			<WorkedWithSection />
+			<ToolsSection />
 
 			<ServicesSection />
 
