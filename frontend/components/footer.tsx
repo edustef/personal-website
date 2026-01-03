@@ -23,7 +23,7 @@ export async function Footer({ className, locale }: FooterProps) {
     >
       <div className="relative py-16">
         <div className="mx-auto flex max-w-5xl flex-col items-center">
-          <div className="mt-12 w-full border-t border-gray-700 pt-8 text-center">
+          <div className="mt-12 w-full pt-8 text-center">
             <p className="text-sm">
               {parts.length > 1 ? (
                 <>

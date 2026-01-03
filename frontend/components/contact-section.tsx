@@ -25,7 +25,7 @@ export default async function ContactSection({
 	const hasSocialLinks = socialLinks && socialLinks.length > 0;
 
 	return (
-		<section id="contact" className="bg-muted/30 py-24 md:py-32">
+		<section id="contact" className="py-24 md:py-32">
 			<div className="mx-auto max-w-6xl px-4">
 				<div className="mb-16 text-center">
 					<p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">

@@ -55,12 +55,12 @@ export function BackgroundPaperShaders() {
 				className="mask-b-from-50% mask-b-to-100%"
 				width={dimensions.width}
 				height={dimensions.height}
-				colors={isDark ? ["#444444", "#000000"] : ["#ffffff", "#aaaaaa"]}
-				distortion={0.9}
+				colors={isDark ? ["#000000", "#333333"] : ["#ffffff", "#cccccc"]}
+				distortion={0.2}
 				swirl={0.9}
 				grainMixer={0}
 				grainOverlay={0}
-				speed={0.2}
+				speed={0.9}
 				rotation={90}
 			/>
 		</motion.div>

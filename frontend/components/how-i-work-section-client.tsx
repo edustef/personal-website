@@ -23,7 +23,7 @@ export function HowIWorkSectionClient({
 	timelineData,
 }: HowIWorkSectionClientProps) {
 	return (
-		<section id="how-i-work" className="bg-muted/30 py-24 md:py-32">
+		<section id="how-i-work" className="py-24 md:py-32">
 			<div className="mx-auto max-w-6xl px-4">
 				<div className="mb-16 text-center">
 					<p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">

@@ -7,7 +7,7 @@ export default async function AboutMeSection() {
 	const t = await getTranslations({ locale, namespace: "home" });
 
 	return (
-		<section id="about-me" className="bg-muted/30 py-24 md:py-32">
+		<section id="about-me" className="py-24 md:py-32">
 			<div className="mx-auto max-w-6xl px-4">
 				<div className="mb-16 text-center">
 					<p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
