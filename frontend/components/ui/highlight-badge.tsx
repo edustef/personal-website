@@ -4,9 +4,17 @@ import { type CommonProps, cn } from "@/lib/utils";
 import { RocketIcon } from "lucide-react";
 import { motion } from "motion/react";
 
-export function HighlightBadge({ children, className }: CommonProps) {
-  return (
-    <div className={cn("relative inline-flex w-fit", className)}>
+type HighlightBadgeProps = CommonProps & {
+  href?: string;
+};
+
+export function HighlightBadge({
+  children,
+  className,
+  href,
+}: HighlightBadgeProps) {
+  const content = (
+    <>
       <motion.span
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 rounded-lg"
@@ -29,12 +37,29 @@ export function HighlightBadge({ children, className }: CommonProps) {
           ease: "linear",
         }}
       />
-      <div className="bg-secondary/30 text-secondary-foreground relative z-10 flex items-center gap-2 rounded-lg px-5 py-2">
+      <div className="bg-secondary/30 text-secondary-foreground relative z-10 flex items-center gap-2 rounded-lg px-5 py-2 transition-colors hover:bg-secondary/40">
         <RocketIcon className="size-4" />
         <div className="flex flex-row items-center leading-none">
           {children}
         </div>
       </div>
-    </div>
+    </>
+  );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn("relative inline-flex w-fit cursor-pointer", className)}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <div className={cn("relative inline-flex w-fit", className)}>{content}</div>
   );
 }

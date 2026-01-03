@@ -55,6 +55,7 @@ export async function generateMetadata(
       type: "website",
       locale,
       alternateLocale,
+      url: canonicalUrl,
       title: localized.title,
       description: localized.description,
       images: localized.ogImage ? [localized.ogImage] : undefined,

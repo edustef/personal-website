@@ -32,12 +32,11 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
   const { locale } = params;
 
-  const [, t] = await Promise.all([
+  const [localized, t] = await Promise.all([
     getLocalizedSettingsMetadata(locale),
     getTranslations({ locale, namespace: "home.seo" }),
   ]);
 
-  const pageTitle = t("title");
   const pageDescription = t("description");
   const canonicalUrl = getCanonicalUrl(locale, "/");
   const ogImage = ogImages[locale as keyof typeof ogImages] || ogImages.en;
@@ -48,7 +47,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   });
 
   return {
-    title: pageTitle,
+    title: localized.title,
     description: pageDescription,
     alternates: {
       canonical: canonicalUrl,
@@ -57,7 +56,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     openGraph: {
       type: "website",
       locale,
-      title: pageTitle,
+      url: canonicalUrl,
+      title: localized.title,
       description: pageDescription,
       images: [
         {
@@ -70,7 +70,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: pageTitle,
+      title: localized.title,
       description: pageDescription,
       images: [ogImage.src],
     },

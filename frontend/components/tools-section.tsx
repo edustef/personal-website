@@ -10,7 +10,6 @@ export default async function ToolsSection() {
     <section id="tools" className="w-full py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedContainer
-          trigger="scroll"
           fadeDirection="up"
           className="mb-12 text-center"
         >

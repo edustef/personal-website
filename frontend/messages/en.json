@@ -230,8 +230,8 @@
     "headline": "Built with <strong>precision</strong>. Designed for <strong>growth</strong>.",
     "tagline": "High-quality web experiences built to help your business scale. A direct partnership that cuts through the noise with clarity, speed, and attention to details.",
     "aboutMeDescription": "I'm Eduard Stefan, and I spend my time building websites that cut through the noise with clarity and speed. I prefer a quiet, focused approach—working one-on-one allows me to obsess over the details that matter and stay close to the work I love. For me, it's not just about writing code; it's about crafting something fast, intuitive, and genuinely useful for the people on the other side of the screen.",
-    "announcementLabelPrimary": "Blog ",
-    "announcementLabelSecondary": "coming soon",
+    "announcementLabelPrimary": "Register for my app ",
+    "announcementLabelSecondary": "waitlist",
     "resumeButtonLabel": "See my resume",
     "findMeOnLabel": "Find me on",
     "contactMe": "Contact me",
@@ -262,8 +262,8 @@
       "whatsappLabel": "Contact me on WhatsApp"
     },
     "seo": {
-      "title": "Home",
-      "description": "I am Eduard Stefan and I build Websites, Mobile Apps and AI solutions."
+      "title": "Eduard Stefan | Home",
+      "description": "Websites built with precision, designed for growth."
     }
   },
   "profile": {
