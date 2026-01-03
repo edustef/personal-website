@@ -16,6 +16,11 @@ export type PersonSchema = {
   image?: string;
   sameAs?: string[];
   url?: string;
+  worksFor?: {
+      "@type": "Organization";
+      name: string;
+  };
+  knowsAbout?: string[];
 };
 
 export type WebSiteSchema = {
@@ -68,7 +73,10 @@ export function createPersonSchema(
     about?: string | null;
     picture?: string | null;
     socialLinks?: Array<{ url?: string | null }> | null;
-    workPreference?: string | null;
+    jobTitle?: string | null;
+    url?: string | null;
+    worksFor?: string | null;
+    knowsAbout?: string[] | null;
   },
   locale: string
 ): PersonSchema {
@@ -95,6 +103,25 @@ export function createPersonSchema(
 
   if (person.picture) {
     schema.image = person.picture;
+  }
+  
+  if (person.jobTitle) {
+    schema.jobTitle = person.jobTitle;
+  }
+
+  if (person.url) {
+    schema.url = person.url;
+  }
+  
+  if (person.worksFor) {
+     schema.worksFor = {
+        "@type": "Organization",
+        name: person.worksFor
+     };
+  }
+  
+  if (person.knowsAbout && person.knowsAbout.length > 0) {
+      schema.knowsAbout = person.knowsAbout;
   }
 
   if (person.socialLinks && person.socialLinks.length > 0) {
@@ -171,6 +198,81 @@ export function createArticleSchema(
 
   if (article._updatedAt) {
     schema.dateModified = article._updatedAt;
+  }
+
+  return schema;
+}
+
+export type FAQPageSchema = {
+  "@context": "https://schema.org";
+  "@type": "FAQPage";
+  mainEntity: {
+    "@type": "Question";
+    name: string;
+    acceptedAnswer: {
+      "@type": "Answer";
+      text: string;
+    };
+  }[];
+  inLanguage?: string;
+};
+
+export function createFAQPageSchema(
+  faqs: Array<{ question: string; answer: string }>,
+  locale: string
+): FAQPageSchema {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+    inLanguage: locale,
+  };
+}
+
+export type ServiceSchema = {
+  "@context": "https://schema.org";
+  "@type": "Service";
+  name: string;
+  description: string;
+  provider: {
+    "@type": "Person";
+    name: string;
+  };
+  areaServed?: string;
+  serviceType?: string;
+  url?: string;
+};
+
+export function createServiceSchema(
+  service: {
+    name: string;
+    description: string;
+    providerName: string;
+    url?: string;
+  },
+): ServiceSchema {
+  const schema: ServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.name,
+    description: service.description,
+    provider: {
+      "@type": "Person",
+      name: service.providerName,
+    },
+    areaServed: "Worldwide",
+    serviceType: "Web Development",
+  };
+
+  if (service.url) {
+    schema.url = service.url;
   }
 
   return schema;

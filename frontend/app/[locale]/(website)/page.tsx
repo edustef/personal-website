@@ -12,11 +12,19 @@ import ServicesSection from "@/components/services-section";
 import ToolsSection from "@/components/tools-section";
 import { BackgroundPaperShaders } from "@/components/ui/background-paper-shaders";
 import { locales, routing } from "@/i18n/routing";
+import { faqs } from "@/lib/data/faqs";
+import { services } from "@/lib/data/services";
 import { getCanonicalUrl, getLocalizedSettingsMetadata } from "@/lib/seo";
+import {
+  createFAQPageSchema,
+  createServiceSchema,
+  sanitizeJsonLd,
+} from "@/lib/structured-data";
 import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -88,6 +96,8 @@ export default async function Page(props: Props) {
 
   const profileT = await getTranslations({ locale, namespace: "profile" });
   const t = await getTranslations({ locale, namespace: "home" });
+  const faqT = await getTranslations({ locale, namespace: "faq" });
+  const servicesT = await getTranslations({ locale, namespace: "services" });
 
   const phone = profileT("phone");
   const whatsappUrl = phone
@@ -98,9 +108,39 @@ export default async function Page(props: Props) {
     | Array<{ name: string; url: string }>
     | undefined;
 
+  // Generate Schemas
+  const faqData = faqs.map((f) => ({
+    question: faqT(f.questionKey),
+    answer: faqT.raw(f.answerKey) as string,
+  }));
+  const faqSchema = createFAQPageSchema(faqData, locale);
+
+  const serviceSchemas = services.map((s) =>
+    createServiceSchema({
+      name: servicesT(s.titleKey),
+      description: servicesT(s.descriptionKey),
+      providerName: profileT("name"),
+      url: getCanonicalUrl(locale, "/#services"),
+    })
+  );
+
   return (
     <>
-      {/* <Spotlight /> */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: Needed for Schema.org JSON-LD
+        dangerouslySetInnerHTML={{ __html: sanitizeJsonLd(faqSchema) }}
+      />
+      {serviceSchemas.map((schema, index) => (
+        <Script
+          key={`service-schema-${index}`}
+          id={`service-schema-${index}`}
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: Needed for Schema.org JSON-LD
+          dangerouslySetInnerHTML={{ __html: sanitizeJsonLd(schema) }}
+        />
+      ))}
       <BackgroundPaperShaders />
       <HeroSection />
 
