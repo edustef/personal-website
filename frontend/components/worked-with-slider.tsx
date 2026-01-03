@@ -70,12 +70,12 @@ export function WorkedWithSlider() {
 	return (
 		<motion.div
 			className="relative h-10 md:h-24  w-full overflow-hidden"
-			initial={{ opacity: 0, y: 20 }}
+			initial={{ opacity: 0, y: 12 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{
-				duration: 0.6,
+				duration: 2.2,
 				delay: 0.3,
-				ease: [0.16, 1, 0.3, 1],
+				ease: [0.25, 1, 0.25, 1],
 			}}
 		>
 			<InfiniteSlider

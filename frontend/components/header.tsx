@@ -11,6 +11,7 @@ import { Link } from "@/components/ui/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
 import { useTranslations, useLocale } from "next-intl";
 
@@ -51,11 +52,18 @@ export function Header({ className }: HeaderProps) {
 	}, []);
 
 	return (
-		<header
+		<motion.header
 			className={cn(
 				"fixed inset-0 z-50 flex h-16 w-full items-center md:h-20",
 				className,
 			)}
+			initial={{ opacity: 0, y: -12 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{
+				duration: 2,
+				delay: 0.1,
+				ease: [0.25, 1, 0.25, 1],
+			}}
 		>
 			<a
 				href="#main-content"
@@ -103,6 +111,6 @@ export function Header({ className }: HeaderProps) {
 					</NavigationMenu>
 				</div>
 			</div>
-		</header>
+		</motion.header>
 	);
 }

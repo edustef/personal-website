@@ -228,7 +228,7 @@
   },
   "home": {
     "headline": "Built with <strong>precision</strong>. Designed for <strong>growth</strong>.",
-    "tagline": "High-quality web experiences built to help your business scale. A direct partnership that cuts through the noise with clarity, speed, and attention to the details that matter.",
+    "tagline": "High-quality web experiences built to help your business scale. A direct partnership that cuts through the noise with clarity, speed, and attention to details.",
     "aboutMeDescription": "I'm Eduard Stefan, and I spend my time building websites that cut through the noise with clarity and speed. I prefer a quiet, focused approach—working one-on-one allows me to obsess over the details that matter and stay close to the work I love. For me, it's not just about writing code; it's about crafting something fast, intuitive, and genuinely useful for the people on the other side of the screen.",
     "announcementLabelPrimary": "Blog ",
     "announcementLabelSecondary": "coming soon",
@@ -247,7 +247,7 @@
       "label": "Who I am",
       "headline": "About Me",
       "subtitle": "Get to know the person behind the code",
-      "description": "I'm Eduard Stefan, and I spend my time building websites that prioritize user experience and performance. I prefer a thoughtful, focused approach—working one-on-one allows me to obsess over the details that matter and stay close to the work I love. For me, it's not just about writing code; it's about crafting something fast, intuitive, and genuinely useful for the people on the other side of the screen."
+      "description": "I'm Eduard Stefan, and I've spent over 4 years building high-performing websites that convert and bring real results for clients. I focus on creating experiences that prioritize user experience and performance. I prefer a thoughtful, focused approach—working one-on-one allows me to obsess over the details that matter and stay close to the work I love. For me, it's not just about writing code; it's about crafting something fast, intuitive, and genuinely useful for the people on the other side of the screen."
     },
     "contact": {
       "label": "Get in touch",
@@ -332,7 +332,7 @@
   "projects": {
     "proj-1": {
       "name": "FinTech Trading Platform",
-      "description": "A comprehensive wealth management platform serving thousands of users globally with real-time portfolio tracking and automated investment strategies.",
+      "description": "A full-featured wealth management platform serving thousands of users globally with real-time portfolio tracking and automated investment strategies.",
       "challenge": "The client needed to scale their legacy trading platform to handle 10x user growth while maintaining sub-second response times.",
       "result": "Delivered a modern, scalable architecture that reduced page load times by 60% and enabled the platform to handle peak trading volumes effortlessly.",
       "duration": "18 months",
@@ -344,7 +344,7 @@
     },
     "proj-2": {
       "name": "E-commerce Conversion Boost",
-      "description": "Complete redesign and optimization of a mid-market e-commerce store struggling with cart abandonment and slow mobile performance.",
+      "description": "Full redesign and optimization of a mid-market e-commerce store struggling with cart abandonment and slow mobile performance.",
       "challenge": "High bounce rates on mobile and a 78% cart abandonment rate were costing the business significant revenue.",
       "result": "Implemented a streamlined checkout flow and optimized mobile experience, resulting in measurable revenue growth within 3 months.",
       "duration": "4 months",
@@ -383,7 +383,7 @@
     "subtitle": "Direct communication. Faster delivery. Better value.",
     "svc-1": {
       "title": "Custom Web Apps",
-      "description": "Precision-built solutions tailored to your needs. I start with thorough research, then move straight to solving problems—no lengthy discovery phases. Every solution is custom-crafted for performance, scalability, and your specific business requirements."
+      "description": "Precision-built solutions tailored to your needs. I start with in-depth research, then move straight to solving problems—no lengthy discovery phases. Every solution is custom-crafted for performance, scalability, and your specific business requirements."
     },
     "svc-7": {
       "title": "Internationalization & Multi-Language",
@@ -414,7 +414,7 @@
       "title": "Planning",
       "paragraphs": [
         "We start with a clear understanding of your goals and vision. This initial phase is crucial for setting the foundation of a successful project. I take time to understand not just what you want to build, but why you want to build it.",
-        "During our discovery sessions, I gather comprehensive requirements, analyze your target audience, and identify key features that will drive value. I create detailed documentation that serves as our roadmap throughout the entire development process."
+        "During our discovery sessions, I gather detailed requirements, analyze your target audience, and identify key features that will drive value. I create detailed documentation that serves as our roadmap throughout the entire development process."
       ],
       "bulletPoints": [
         "Goal definition and requirement gathering",
@@ -438,7 +438,7 @@
       "title": "Deployment",
       "paragraphs": [
         "When everything is ready, I handle all the technical setup to get your site live. This includes configuring hosting infrastructure, setting up your domain, and ensuring everything is optimized for performance.",
-        "I perform thorough testing across different devices and browsers, optimize loading speeds, and implement security best practices. Your site will be fast, secure, and ready to handle real-world traffic from day one."
+        "I perform extensive testing across different devices and browsers, optimize loading speeds, and implement security best practices. Your site will be fast, secure, and ready to handle real-world traffic from day one."
       ],
       "bulletPoints": [
         "Hosting configuration and domain setup",
@@ -449,7 +449,7 @@
     "postDeployment": {
       "title": "Post-Deployment",
       "paragraphs": [
-        "After launch, I provide comprehensive training on how to manage your content and make updates. You'll learn how to use your content management system effectively, so you can maintain your site independently.",
+        "After launch, I provide detailed training on how to manage your content and make updates. You'll learn how to use your content management system effectively, so you can maintain your site independently.",
         "Ongoing support options are available to keep your site running smoothly. Whether you need help with updates, troubleshooting, or new features, I'm here to ensure your digital presence continues to grow and evolve."
       ],
       "bulletPoints": [
@@ -484,12 +484,12 @@
         "Speed Optimized: Loads fast so visitors don't leave."
       ],
       "timeline": "1–2 Weeks",
-      "investment": "$1,000 – $2,000"
+      "investmentAmount": 1000
     },
     "growth": {
       "title": "The \"Growth\" Package",
       "bestFor": "Best for: Established businesses needing a full professional presence.",
-      "description": "A complete website system that helps you sell your services and builds trust with customers.",
+      "description": "A full website system that helps you sell your services and builds trust with customers.",
       "features": [
         "Full Website Structure: 3–7 pages (Home, About, Services, Contact, etc.).",
         "Advanced Editor: You get full control over your content, blog posts, and team pages.",
@@ -497,8 +497,8 @@
         "Scalable: Built so we can easily add new pages later without rebuilding the whole site.",
         "Top-Tier Speed: Optimized to pass Google's strict speed requirements."
       ],
-      "timeline": "2–6 Weeks",
-      "investment": "$3,000 – $8,000"
+      "timeline": "2–4 Weeks",
+      "investmentAmount": 3000
     },
     "custom": {
       "title": "Custom Solutions",
@@ -520,22 +520,22 @@
       "seo": {
         "title": "SEO Boost",
         "benefit": "I dig deeper into the technical settings to help you rank higher on Google.",
-        "price": "$600+"
+        "priceAmount": 600
       },
       "store": {
         "title": "Online Store",
         "benefit": "Ability to sell products and accept credit cards securely.",
-        "price": "$1,500+"
+        "priceAmount": 1500
       },
       "multiLanguage": {
         "title": "Multi-Language",
         "benefit": "A site that works in 2+ languages (e.g., English & Spanish).",
-        "price": "$1,000+"
+        "priceAmount": 500
       },
       "analytics": {
         "title": "Analytics Pro",
         "benefit": "I set up tracking so you can see exactly where your visitors come from.",
-        "price": "$300+"
+        "priceAmount": 300
       }
     }
   },
@@ -570,7 +570,7 @@
     "subtitle": "Common questions about my services, process, and how we can work together.",
     "faq-1": {
       "question": "How long does a typical project take?",
-      "answer": "Project timelines vary based on scope and complexity. A simple landing page typically takes 1-2 weeks, while a full website with multiple pages can take 2-6 weeks. Custom solutions with complex functionality may take longer. I'll provide a detailed timeline during our initial consultation."
+      "answer": "Project timelines vary based on scope and complexity. A simple landing page typically takes 1-2 weeks, while a full website with multiple pages can take 2-4 weeks. Custom solutions with complex functionality may take longer. I'll provide a detailed timeline during our initial consultation."
     },
     "faq-2": {
       "question": "Do you work with clients outside your timezone?",

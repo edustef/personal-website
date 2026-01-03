@@ -92,7 +92,7 @@
       }
     },
     "step5": {
-      "title": "Buget și Cronogramă",
+      "title": "Buget și Termen",
       "description": "Asta mă ajută să înțeleg domeniul de aplicare.",
       "budget": {
         "label": "Interval Buget",
@@ -105,7 +105,7 @@
       },
       "timeline": {
         "label": "Când ai dori să începi?",
-        "placeholder": "Cronogramă",
+        "placeholder": "Termen",
         "asap": "Cât mai curând",
         "oneTwoMonths": "În 1–2 luni",
         "threePlusMonths": "În 3+ luni",
@@ -170,7 +170,7 @@
         "intro": "Colectăm următoarele tipuri de date personale:",
         "items": {
           "email": "Adresă de e-mail (când trimiteți un formular de cerere de proiect)",
-          "projectDetails": "Informații legate de proiect (buget, cronogramă, caracteristici, context de afaceri, etc.)",
+          "projectDetails": "Informații legate de proiect (buget, termen, caracteristici, context de afaceri, etc.)",
           "technicalInfo": "Informații tehnice colectate automat (adresă IP, tip de browser, informații despre dispozitiv) prin serviciul nostru de analiză"
         }
       },
@@ -228,7 +228,7 @@
   },
   "home": {
     "headline": "Construit cu <strong>precizie</strong>. Proiectat pentru <strong>creștere</strong>.",
-    "tagline": "Experiențe web de înaltă calitate construite pentru a ajuta afacerea ta să scaleze. Un parteneriat direct care se remarcă prin claritate, viteză și atenție la detaliile care contează.",
+    "tagline": "Experiențe web de înaltă calitate construite pentru a ajuta afacerea ta să scaleze. Un parteneriat direct care se remarcă prin claritate, viteză și atenție la detalii.",
     "aboutMeDescription": "Sunt Eduard Stefan, și îmi petrec timpul construind site-uri web care se remarcă prin claritate și viteză. Prefer o abordare liniștită și concentrată—lucrul unu la unu îmi permite să mă obsedez cu detaliile care contează și să rămân aproape de munca pe care o iubesc. Pentru mine, nu e vorba doar despre scrierea de cod; e vorba despre crearea a ceva rapid, intuitiv și cu adevărat util pentru oamenii de pe cealaltă parte a ecranului.",
     "announcementLabelPrimary": "Blog ",
     "announcementLabelSecondary": "în curând",
@@ -247,7 +247,7 @@
       "label": "Cine sunt",
       "headline": "Despre Mine",
       "subtitle": "Cunoaște persoana din spatele codului",
-      "description": "Sunt Eduard Stefan, și îmi petrec timpul construind site-uri web care prioritizează experiența utilizatorului și performanța. Prefer o abordare gândită și concentrată—lucrul unu la unu îmi permite să mă obsedez cu detaliile care contează și să rămân aproape de munca pe care o iubesc. Pentru mine, nu e vorba doar despre scrierea de cod; e vorba despre crearea a ceva rapid, intuitiv și cu adevărat util pentru oamenii de pe cealaltă parte a ecranului."
+      "description": "Sunt Eduard Stefan, și am petrecut peste 4 ani construind site-uri web de înaltă performanță care convertesc și aduc rezultate reale pentru clienți. Mă concentrez pe crearea de experiențe care prioritizează experiența utilizatorului și performanța. Prefer o abordare gândită și concentrată—lucrul unu la unu îmi permite să mă obsedez cu detaliile care contează și să rămân aproape de munca pe care o iubesc. Pentru mine, nu e vorba doar despre scrierea de cod; e vorba despre crearea a ceva rapid, intuitiv și cu adevărat util pentru oamenii de pe cealaltă parte a ecranului."
     },
     "contact": {
       "label": "Ia legătura",
@@ -332,7 +332,7 @@
   "projects": {
     "proj-1": {
       "name": "Platformă Trading FinTech",
-      "description": "O platformă cuprinzătoare de gestionare a averii care deservește mii de utilizatori la nivel global cu urmărire în timp real a portofoliului și strategii de investiții automatizate.",
+      "description": "O platformă de gestionare a averii cu toate funcționalitățile care deservește mii de utilizatori la nivel global cu urmărire în timp real a portofoliului și strategii de investiții automatizate.",
       "challenge": "Clientul avea nevoie să extindă platforma sa de trading moștenită pentru a gestiona o creștere de utilizatori de 10 ori mai mare menținând în același timp timpuri de răspuns sub secundă.",
       "result": "Am livrat o arhitectură modernă și scalabilă care a redus timpii de încărcare a paginilor cu 60% și a permis platformei să gestioneze volumele de tranzacționare de vârf fără efort.",
       "duration": "18 luni",
@@ -383,11 +383,11 @@
     "subtitle": "Comunicare directă. Livrare mai rapidă. Valoare mai bună.",
     "svc-1": {
       "title": "Aplicații Web Personalizate",
-      "description": "Soluții construite cu precizie, adaptate nevoilor tale. Încep cu o cercetare temeinică, apoi trec direct la rezolvarea problemelor—fără faze lungi de descoperire. Fiecare soluție este creată personalizat pentru performanță, scalabilitate și cerințele specifice ale afacerii tale."
+      "description": "Soluții construite cu precizie, adaptate nevoilor tale. Încep cu o cercetare în profunzime, apoi trec direct la rezolvarea problemelor—fără faze lungi de descoperire. Fiecare soluție este creată personalizat pentru performanță, scalabilitate și cerințele specifice ale afacerii tale."
     },
     "svc-7": {
-      "title": "Internaționalizare și Multi-Limbă",
-      "description": "Suport multi-limbă care servește automat conținut în limba preferată a vizitatorilor tăi."
+      "title": "Internaționalizare și Suport pentru Limbi Multiple",
+      "description": "Suport pentru mai multe limbi care servește automat conținut în limba preferată a vizitatorilor tăi."
     },
     "svc-3": {
       "title": "Tehnologie de Înaltă Performanță",
@@ -414,7 +414,7 @@
       "title": "Planificare",
       "paragraphs": [
         "Începem cu o înțelegere clară a obiectivelor și viziunii tale. Această fază inițială este crucială pentru stabilirea fundației unui proiect de succes. Îmi iau timpul să înțeleg nu doar ce vrei să construiești, ci și de ce vrei să o construiești.",
-        "În timpul sesiunilor noastre de descoperire, colectez cerințe complete, analizez publicul țintă și identific caracteristici cheie care vor genera valoare. Creez documentație detaliată care servește ca planul nostru pe tot parcursul procesului de dezvoltare."
+        "În timpul sesiunilor noastre de descoperire, colectez cerințe detaliate, analizez publicul țintă și identific caracteristici cheie care vor genera valoare. Creez documentație detaliată care servește ca planul nostru pe tot parcursul procesului de dezvoltare."
       ],
       "bulletPoints": [
         "Definirea obiectivelor și colectarea cerințelor",
@@ -438,7 +438,7 @@
       "title": "Lansare",
       "paragraphs": [
         "Când totul este gata, mă ocup de toată configurarea tehnică pentru a pune site-ul tău live. Aceasta include configurarea infrastructurii de hosting, configurarea domeniului tău și asigurarea că totul este optimizat pentru performanță.",
-        "Efectuez teste amănunțite pe diferite dispozitive și browsere, optimizez vitezele de încărcare și implementez cele mai bune practici de securitate. Site-ul tău va fi rapid, sigur și gata să gestioneze trafic real din prima zi."
+        "Efectuez teste extinse pe diferite dispozitive și browsere, optimizez vitezele de încărcare și implementez cele mai bune practici de securitate. Site-ul tău va fi rapid, sigur și gata să gestioneze trafic real din prima zi."
       ],
       "bulletPoints": [
         "Configurarea hosting-ului și domeniului",
@@ -449,7 +449,7 @@
     "postDeployment": {
       "title": "După Lansare",
       "paragraphs": [
-        "După lansare, ofer instruire completă despre cum să îți gestionezi conținutul și să faci actualizări. Vei învăța cum să folosești efectiv sistemul tău de gestionare a conținutului, astfel încât să poți menține site-ul în mod independent.",
+        "După lansare, ofer instruire detaliată despre cum să îți gestionezi conținutul și să faci actualizări. Vei învăța cum să folosești efectiv sistemul tău de gestionare a conținutului, astfel încât să poți menține site-ul în mod independent.",
         "Opțiunile de suport continuu sunt disponibile pentru a menține site-ul tău funcționând fără probleme. Fie că ai nevoie de ajutor cu actualizări, rezolvarea problemelor sau caracteristici noi, sunt aici pentru a mă asigura că prezența ta digitală continuă să crească și să evolueze."
       ],
       "bulletPoints": [
@@ -469,7 +469,7 @@
       "subtitle": "Selectează opțiunea care se potrivește stării actuale a afacerii tale.",
       "mostPopular": "Cel Mai Popular",
       "whatYouGet": "Ce primești",
-      "timeline": "Cronogramă",
+      "timeline": "Termen",
       "investment": "Investiție"
     },
     "launch": {
@@ -484,21 +484,21 @@
         "Optimizat pentru Viteză: Se încarcă rapid astfel încât vizitatorii să nu plece."
       ],
       "timeline": "1–2 Săptămâni",
-      "investment": "$1,000 – $2,000"
+      "investmentAmount": 1000
     },
     "growth": {
       "title": "Pachetul \"Creștere\"",
-      "bestFor": "Ideal pentru: Afaceri stabilite care au nevoie de o prezență profesională completă.",
-      "description": "Un sistem complet de site web care te ajută să îți vinzi serviciile și construiește încredere cu clienții.",
+      "bestFor": "Ideal pentru: Afaceri stabilite care au nevoie de o prezență profesională totală.",
+      "description": "Un sistem total de site web care te ajută să îți vinzi serviciile și construiește încredere cu clienții.",
       "features": [
-        "Structură Completă a Site-ului: 3–7 pagini (Acasă, Despre, Servicii, Contact, etc.).",
+        "Structură Totală a Site-ului: 3–7 pagini (Acasă, Despre, Servicii, Contact, etc.).",
         "Editor Avansat: Ai control complet asupra conținutului, postărilor de blog și paginilor echipei.",
         "Generare Clienți Potențiali: Conectat la email-ul sau CRM-ul tău (de exemplu, clienții potențiali merg direct în inbox-ul tău).",
         "Scalabil: Construit astfel încât să putem adăuga cu ușurință pagini noi mai târziu fără a reconstrui întregul site.",
         "Viteză de Top: Optimizat pentru a trece de cerințele stricte de viteză ale Google."
       ],
-      "timeline": "2–6 Săptămâni",
-      "investment": "$3,000 – $8,000"
+      "timeline": "2–4 Săptămâni",
+      "investmentAmount": 3000
     },
     "custom": {
       "title": "Soluții Personalizate",
@@ -511,7 +511,7 @@
         "Sisteme avansate de rezervări sau programări",
         "Instrumente interne și panouri de control"
       ],
-      "timeline": "Cronogramă Personalizată",
+      "timeline": "Termen Personalizat",
       "investment": "Ofertă Personalizată Necesară"
     },
     "addOns": {
@@ -520,22 +520,22 @@
       "seo": {
         "title": "Impuls SEO",
         "benefit": "Mă adâncesc în setările tehnice pentru a te ajuta să te clasezi mai sus pe Google.",
-        "price": "$600+"
+        "priceAmount": 600
       },
       "store": {
         "title": "Magazin Online",
         "benefit": "Capacitatea de a vinde produse și de a accepta carduri de credit în siguranță.",
-        "price": "$1,500+"
+        "priceAmount": 1500
       },
       "multiLanguage": {
-        "title": "Multi-Limbă",
+        "title": "Mai Multe Limbi",
         "benefit": "Un site care funcționează în 2+ limbi (de exemplu, Engleză și Spaniolă).",
-        "price": "$1,000+"
+        "priceAmount": 500
       },
       "analytics": {
         "title": "Analytics Pro",
         "benefit": "Configurez urmărirea astfel încât să poți vedea exact de unde vin vizitatorii tăi.",
-        "price": "$300+"
+        "priceAmount": 300
       }
     }
   },
@@ -570,7 +570,7 @@
     "subtitle": "Întrebări comune despre serviciile mele, proces și cum putem lucra împreună.",
     "faq-1": {
       "question": "Cât durează un proiect tipic?",
-      "answer": "Termenele proiectului variază în funcție de domeniul de aplicare și complexitate. O pagină de destinație simplă durează de obicei 1-2 săptămâni, în timp ce un site web complet cu mai multe pagini poate dura 2-6 săptămâni. Soluțiile personalizate cu funcționalitate complexă pot dura mai mult. Voi oferi un cronogramă detaliat în timpul consultației noastre inițiale."
+      "answer": "Termenele proiectului variază în funcție de domeniul de aplicare și complexitate. O pagină de destinație simplă durează de obicei 1-2 săptămâni, în timp ce un site web complet cu mai multe pagini poate dura 2-4 săptămâni. Soluțiile personalizate cu funcționalitate complexă pot dura mai mult. Voi oferi un termen detaliat în timpul consultației noastre inițiale."
     },
     "faq-2": {
       "question": "Lucrezi cu clienți din afara fusului tău orar?",

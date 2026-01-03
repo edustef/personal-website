@@ -54,7 +54,7 @@ export default async function HowIWorkSection() {
 			id: step.key,
 			title: t(`${step.key}.title`),
 			content: (
-				<div key={step.key} className="space-y-6">
+				<div key={step.key} className="text-lg space-y-6">
 					{paragraphs && paragraphs.length > 0 && (
 						<div className="space-y-4">
 							{paragraphs.map((paragraph, idx) => (

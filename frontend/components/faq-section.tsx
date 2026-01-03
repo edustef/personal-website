@@ -5,6 +5,7 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
+import { AnimatedContainer } from "@/components/ui/animated-container";
 import { type FAQ, faqs } from "@/lib/data/faqs";
 
 type FAQSectionProps = {
@@ -25,7 +26,11 @@ export default async function FAQSection({ faqs: faqsProp }: FAQSectionProps) {
 	return (
 		<section id="faq" className="py-24 md:py-32">
 			<div className="mx-auto max-w-4xl px-4">
-				<div className="mb-16 text-center">
+				<AnimatedContainer
+					trigger="scroll"
+					fadeDirection="up"
+					className="mb-16 text-center"
+				>
 					<p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
 						{t("label")}
 					</p>
@@ -37,29 +42,37 @@ export default async function FAQSection({ faqs: faqsProp }: FAQSectionProps) {
 					<p className="text-muted-foreground mx-auto max-w-2xl text-lg">
 						{t("subtitle")}
 					</p>
-				</div>
+				</AnimatedContainer>
 
 				<Accordion type="single" collapsible className="w-full">
-					{sortedFaqs.map((faq) => (
-						<AccordionItem key={faq._id} value={faq._id}>
-							<AccordionTrigger className="text-left">
-								{t(faq.questionKey)}
-							</AccordionTrigger>
-							<AccordionContent className="text-muted-foreground leading-relaxed">
-								{faq._id === "faq-5"
-									? t.rich(faq.answerKey, {
-											link: (chunks) => (
-												<a
-													href="#how-i-price"
-													className="text-primary hover:underline"
-												>
-													{chunks}
-												</a>
-											),
-										})
-									: t(faq.answerKey)}
-							</AccordionContent>
-						</AccordionItem>
+					{sortedFaqs.map((faq, index) => (
+						<AnimatedContainer
+							key={faq._id}
+							trigger="scroll"
+							fadeDirection="up"
+							staggerIndex={index}
+							staggerDelay={0.08}
+						>
+							<AccordionItem value={faq._id}>
+								<AccordionTrigger className="text-left">
+									{t(faq.questionKey)}
+								</AccordionTrigger>
+								<AccordionContent className="text-muted-foreground leading-relaxed">
+									{faq._id === "faq-5"
+										? t.rich(faq.answerKey, {
+												link: (chunks) => (
+													<a
+														href="#how-i-price"
+														className="text-primary hover:underline"
+													>
+														{chunks}
+													</a>
+												),
+											})
+										: t(faq.answerKey)}
+								</AccordionContent>
+							</AccordionItem>
+						</AnimatedContainer>
 					))}
 				</Accordion>
 			</div>

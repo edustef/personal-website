@@ -1,6 +1,7 @@
 "use client";
 
 import type React from "react";
+import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Timeline } from "@/components/ui/timeline";
 
 interface TimelineData {
@@ -25,7 +26,11 @@ export function HowIWorkSectionClient({
 	return (
 		<section id="how-i-work" className="py-24 md:py-32">
 			<div className="mx-auto max-w-6xl px-4">
-				<div className="mb-16 text-center">
+				<AnimatedContainer
+					trigger="scroll"
+					fadeDirection="up"
+					className="mb-16 text-center"
+				>
 					<p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
 						{label}
 					</p>
@@ -40,7 +45,7 @@ export function HowIWorkSectionClient({
 					<p className="text-muted-foreground mx-auto max-w-2xl text-lg">
 						{subtitle}
 					</p>
-				</div>
+				</AnimatedContainer>
 
 				<div className="w-full">
 					<Timeline data={timelineData} showHeader={false} />

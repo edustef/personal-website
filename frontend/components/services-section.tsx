@@ -1,5 +1,6 @@
 import { Globe, Headphones, Layers, Palette, Rocket, Zap } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
+import { AnimatedContainer } from "@/components/ui/animated-container";
 import { BGPattern } from "@/components/ui/bg-pattern";
 import { Card, CardContent } from "@/components/ui/card";
 import { type Service, services } from "@/lib/data/services";
@@ -46,9 +47,13 @@ export default async function ServicesSection({
 	const otherServices = servicesToDisplay.filter((s) => !s.featured);
 
 	return (
-		<section id="services" className="py-24 md:py-32">
-			<div className="mx-auto max-w-6xl px-4">
-				<div className="mb-16 text-center">
+		<section id="services" className="overflow-x-hidden py-24 md:py-32">
+			<div className="mx-auto max-w-6xl px-4 sm:px-6">
+				<AnimatedContainer
+					trigger="scroll"
+					fadeDirection="up"
+					className="mb-16 text-center"
+				>
 					<p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
 						{t("label")}
 					</p>
@@ -63,7 +68,7 @@ export default async function ServicesSection({
 					<p className="text-muted-foreground mx-auto max-w-2xl text-lg">
 						{t("subtitle")}
 					</p>
-				</div>
+				</AnimatedContainer>
 
 				<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
 					{featuredServices.map((service, index) => {
@@ -71,23 +76,27 @@ export default async function ServicesSection({
 						const patternVariant = getPatternForService(index);
 
 						return (
-							<Card
+							<AnimatedContainer
 								key={service._id}
-								className={cn(
-									"isolate relative overflow-hidden rounded-2xl bg-card/95 backdrop-blur-sm lg:col-span-2 lg:row-span-2",
-								)}
+								trigger="scroll"
+								fadeDirection="left"
+								staggerIndex={index}
+								staggerDelay={0.15}
+								className={cn("min-w-0 lg:col-span-2 lg:row-span-2 text-lg")}
 							>
-								<BGPattern variant={patternVariant} mask="fade-edges" />
-								<CardContent className="relative p-8">
-									<Icon className="size-10 mb-4" />
-									<h3 className="text-foreground mb-3 text-xl font-semibold">
-										{t(service.titleKey)}
-									</h3>
-									<p className="text-muted-foreground leading-relaxed">
-										{t(service.descriptionKey)}
-									</p>
-								</CardContent>
-							</Card>
+								<Card className="isolate relative h-full w-full overflow-hidden rounded-2xl bg-card/95 backdrop-blur-sm">
+									<BGPattern variant={patternVariant} mask="fade-edges" />
+									<CardContent className="relative p-8">
+										<Icon className="size-10 mb-4" />
+										<h3 className="text-foreground mb-3 break-words text-xl font-semibold">
+											{t(service.titleKey)}
+										</h3>
+										<p className="text-muted-foreground break-words leading-relaxed">
+											{t(service.descriptionKey)}
+										</p>
+									</CardContent>
+								</Card>
+							</AnimatedContainer>
 						);
 					})}
 
@@ -98,25 +107,31 @@ export default async function ServicesSection({
 						);
 
 						return (
-							<Card
+							<AnimatedContainer
 								key={service._id}
-								className="relative overflow-hidden rounded-2xl bg-card/95 backdrop-blur-sm"
+								trigger="scroll"
+								fadeDirection="up"
+								staggerIndex={featuredServices.length + index}
+								staggerDelay={0.1}
+								className="min-w-0"
 							>
-								<BGPattern
-									variant={patternVariant}
-									mask="fade-edges"
-									size={20}
-								/>
-								<CardContent className="relative p-6">
-									<Icon className="size-8 mb-4" />
-									<h3 className="text-foreground mb-2 text-base font-semibold">
-										{t(service.titleKey)}
-									</h3>
-									<p className="text-muted-foreground leading-relaxed">
-										{t(service.descriptionKey)}
-									</p>
-								</CardContent>
-							</Card>
+								<Card className="relative h-full w-full overflow-hidden rounded-2xl bg-card/95 backdrop-blur-sm">
+									<BGPattern
+										variant={patternVariant}
+										mask="fade-edges"
+										size={20}
+									/>
+									<CardContent className="relative p-6">
+										<Icon className="size-8 mb-4" />
+										<h3 className="text-foreground mb-2 break-words text-base font-semibold">
+											{t(service.titleKey)}
+										</h3>
+										<p className="text-muted-foreground break-words leading-relaxed">
+											{t(service.descriptionKey)}
+										</p>
+									</CardContent>
+								</Card>
+							</AnimatedContainer>
 						);
 					})}
 				</div>

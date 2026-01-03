@@ -19,7 +19,13 @@ export default async function HeroSection() {
 		<section className="pt-12 md:pt-16">
 			<div className="mx-auto max-w-6xl px-4">
 				<div className="flex flex-col items-center gap-12 text-center">
-					<AnimatedContainer className="flex max-w-3xl flex-col gap-4 items-center">
+					<AnimatedContainer
+						className="flex max-w-3xl flex-col gap-4 items-center"
+						duration={2.5}
+						delay={0.1}
+						ease="veryGentle"
+						offset={16}
+					>
 						<HighlightBadge>
 							<span>{t("announcementLabelPrimary")}</span>
 							<span className="ml-1.5 font-bold">
@@ -40,7 +46,13 @@ export default async function HeroSection() {
 						</p>
 					</AnimatedContainer>
 
-					<AnimatedContainer className="flex gap-4">
+					<AnimatedContainer
+						className="flex gap-4"
+						duration={2}
+						delay={0.4}
+						ease="veryGentle"
+						offset={12}
+					>
 						<Button
 							asChild
 							size="lg"

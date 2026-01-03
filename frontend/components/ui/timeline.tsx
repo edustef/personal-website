@@ -1,5 +1,6 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useTheme } from "next-themes";
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
 
@@ -22,9 +23,16 @@ export const Timeline = ({
 	headerDescription,
 	showHeader = true,
 }: TimelineProps) => {
+	const { resolvedTheme } = useTheme();
+	const [mounted, setMounted] = useState(false);
+	const isDark = resolvedTheme === "dark";
 	const ref = useRef<HTMLDivElement>(null);
 	const containerRef = useRef<HTMLDivElement>(null);
 	const [height, setHeight] = useState(0);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
 
 	useEffect(() => {
 		const updateHeight = () => {
@@ -78,8 +86,8 @@ export const Timeline = ({
 						className="flex justify-start not-first:pt-8 not-first:md:pt-16 md:gap-10"
 					>
 						<div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-							<div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-card flex items-center justify-center">
-								<div className="h-4 w-4 rounded-full bg-muted border border-border p-2" />
+							<div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-foreground/5 flex items-center justify-center">
+								<div className="h-4 w-4 rounded-full bg-muted-foreground" />
 							</div>
 							<h3 className="hidden md:block text-xl md:pl-20 md:text-3xl font-bold text-muted-foreground">
 								{item.title}
@@ -98,14 +106,18 @@ export const Timeline = ({
 					style={{
 						height: height + "px",
 					}}
-					className="absolute md:left-8 left-8 top-20 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-0% via-border to-transparent to-99%  mask-[linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
+					className="absolute md:left-8 left-8 top-20 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-0% via-gray-300 dark:via-gray-500 to-transparent to-99%  mask-[linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
 				>
 					<motion.div
 						style={{
 							height: heightTransform,
 							opacity: opacityTransform,
+							filter:
+								mounted && isDark
+									? "drop-shadow(0 0 4px rgb(156 163 175 / 0.3)) drop-shadow(0 0 8px rgb(156 163 175 / 0.15))"
+									: "drop-shadow(0 0 4px rgb(107 114 128 / 0.3)) drop-shadow(0 0 8px rgb(107 114 128 / 0.15))",
 						}}
-						className="absolute inset-x-0 top-0  w-[2px] bg-linear-to-t from-foreground via-muted-foreground to-transparent from-0% via-10% rounded-full"
+						className="absolute inset-x-0 top-0  w-[2px] bg-linear-to-t from-gray-400 dark:from-gray-400 via-gray-300 dark:via-gray-500 to-transparent from-0% via-10% rounded-full"
 					/>
 				</div>
 			</div>

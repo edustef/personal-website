@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useIsMobile } from "@/hooks/use-mobile";
-import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const HERO_CONTACT_BUTTON_ID = "hero-contact-button";
 
@@ -42,7 +42,11 @@ export function FloatingContactButton({
 
 	return (
 		<div className="fixed bottom-6 right-6 z-50 md:hidden">
-			<Button asChild size="icon-lg" variant="default" className="shadow-lg rounded-full">
+			<Button
+				asChild
+				variant="default"
+				className="size-12 shadow-lg rounded-full"
+			>
 				<a
 					href={contactUrl}
 					target="_blank"
@@ -57,4 +61,3 @@ export function FloatingContactButton({
 }
 
 export { HERO_CONTACT_BUTTON_ID };
-

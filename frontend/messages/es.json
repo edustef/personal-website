@@ -228,7 +228,7 @@
   },
   "home": {
     "headline": "Construido con <strong>precisión</strong>. Diseñado para <strong>crecer</strong>.",
-    "tagline": "Experiencias web de alta calidad construidas para ayudar a tu negocio a escalar. Una asociación directa que destaca con claridad, velocidad y atención a los detalles que importan.",
+    "tagline": "Experiencias web de alta calidad construidas para ayudar a tu negocio a escalar. Una asociación directa que destaca con claridad, velocidad y atención a los detalles.",
     "aboutMeDescription": "Soy Eduard Stefan, y dedico mi tiempo a construir sitios web que destacan con claridad y velocidad. Prefiero un enfoque tranquilo y enfocado—trabajar uno a uno me permite obsesionarme con los detalles que importan y mantenerme cerca del trabajo que amo. Para mí, no se trata solo de escribir código; se trata de crear algo rápido, intuitivo y genuinamente útil para las personas al otro lado de la pantalla.",
     "announcementLabelPrimary": "Blog ",
     "announcementLabelSecondary": "próximamente",
@@ -247,7 +247,7 @@
       "label": "Quién soy",
       "headline": "Sobre Mí",
       "subtitle": "Conoce a la persona detrás del código",
-      "description": "Soy Eduard Stefan, y dedico mi tiempo a construir sitios web que priorizan la experiencia del usuario y el rendimiento. Prefiero un enfoque reflexivo y enfocado—trabajar uno a uno me permite obsesionarme con los detalles que importan y mantenerme cerca del trabajo que amo. Para mí, no se trata solo de escribir código; se trata de crear algo rápido, intuitivo y genuinamente útil para las personas al otro lado de la pantalla."
+      "description": "Soy Eduard Stefan, y he pasado más de 4 años construyendo sitios web de alto rendimiento que convierten y generan resultados reales para los clientes. Me enfoco en crear experiencias que priorizan la experiencia del usuario y el rendimiento. Prefiero un enfoque reflexivo y enfocado—trabajar uno a uno me permite obsesionarme con los detalles que importan y mantenerme cerca del trabajo que amo. Para mí, no se trata solo de escribir código; se trata de crear algo rápido, intuitivo y genuinamente útil para las personas al otro lado de la pantalla."
     },
     "contact": {
       "label": "Ponerse en contacto",
@@ -332,7 +332,7 @@
   "projects": {
     "proj-1": {
       "name": "Plataforma de Trading FinTech",
-      "description": "Una plataforma integral de gestión de patrimonio que atiende a miles de usuarios a nivel mundial con seguimiento de cartera en tiempo real y estrategias de inversión automatizadas.",
+      "description": "Una plataforma de gestión de patrimonio con todas las funciones que atiende a miles de usuarios a nivel mundial con seguimiento de cartera en tiempo real y estrategias de inversión automatizadas.",
       "challenge": "El cliente necesitaba escalar su plataforma de trading heredada para manejar un crecimiento de usuarios 10 veces mayor mientras mantenía tiempos de respuesta inferiores a un segundo.",
       "result": "Entregamos una arquitectura moderna y escalable que redujo los tiempos de carga de página en un 60% y permitió que la plataforma manejara volúmenes de trading pico sin esfuerzo.",
       "duration": "18 meses",
@@ -383,7 +383,7 @@
     "subtitle": "Comunicación directa. Entrega más rápida. Mejor valor.",
     "svc-1": {
       "title": "Apps Web a Medida",
-      "description": "Soluciones construidas con precisión adaptadas a tus necesidades. Empiezo con investigación exhaustiva, luego paso directo a resolver problemas—sin fases de descubrimiento largas. Cada solución está diseñada a medida para rendimiento, escalabilidad y tus requisitos empresariales específicos."
+      "description": "Soluciones construidas con precisión adaptadas a tus necesidades. Empiezo con investigación en profundidad, luego paso directo a resolver problemas—sin fases de descubrimiento largas. Cada solución está diseñada a medida para rendimiento, escalabilidad y tus requisitos empresariales específicos."
     },
     "svc-7": {
       "title": "Internacionalización y Multi-Idioma",
@@ -414,7 +414,7 @@
       "title": "Planificación",
       "paragraphs": [
         "Comenzamos con una comprensión clara de tus objetivos y visión. Esta fase inicial es crucial para establecer la base de un proyecto exitoso. Me tomo el tiempo para entender no solo lo que quieres construir, sino por qué quieres construirlo.",
-        "Durante nuestras sesiones de descubrimiento, reúno requisitos completos, analizo tu audiencia objetivo e identifico características clave que generarán valor. Creo documentación detallada que sirve como nuestro plan durante todo el proceso de desarrollo."
+        "Durante nuestras sesiones de descubrimiento, reúno requisitos detallados, analizo tu audiencia objetivo e identifico características clave que generarán valor. Creo documentación detallada que sirve como nuestro plan durante todo el proceso de desarrollo."
       ],
       "bulletPoints": [
         "Definición de objetivos y recopilación de requisitos",
@@ -438,7 +438,7 @@
       "title": "Despliegue",
       "paragraphs": [
         "Cuando todo está listo, manejo toda la configuración técnica para poner tu sitio en vivo. Esto incluye configurar la infraestructura de hosting, configurar tu dominio y asegurar que todo esté optimizado para el rendimiento.",
-        "Realizo pruebas exhaustivas en diferentes dispositivos y navegadores, optimizo las velocidades de carga e implemento mejores prácticas de seguridad. Tu sitio será rápido, seguro y listo para manejar tráfico del mundo real desde el primer día."
+        "Realizo pruebas extensivas en diferentes dispositivos y navegadores, optimizo las velocidades de carga e implemento mejores prácticas de seguridad. Tu sitio será rápido, seguro y listo para manejar tráfico del mundo real desde el primer día."
       ],
       "bulletPoints": [
         "Configuración de hosting y dominio",
@@ -449,7 +449,7 @@
     "postDeployment": {
       "title": "Post-Despliegue",
       "paragraphs": [
-        "Después del lanzamiento, proporciono capacitación completa sobre cómo gestionar tu contenido y hacer actualizaciones. Aprenderás a usar tu sistema de gestión de contenido de manera efectiva, para que puedas mantener tu sitio de forma independiente.",
+        "Después del lanzamiento, proporciono capacitación detallada sobre cómo gestionar tu contenido y hacer actualizaciones. Aprenderás a usar tu sistema de gestión de contenido de manera efectiva, para que puedas mantener tu sitio de forma independiente.",
         "Las opciones de soporte continuo están disponibles para mantener tu sitio funcionando sin problemas. Ya sea que necesites ayuda con actualizaciones, solución de problemas o nuevas características, estoy aquí para asegurar que tu presencia digital continúe creciendo y evolucionando."
       ],
       "bulletPoints": [
@@ -484,21 +484,21 @@
         "Optimizado para Velocidad: Carga rápido para que los visitantes no se vayan."
       ],
       "timeline": "1–2 Semanas",
-      "investment": "$1,000 – $2,000"
+      "investmentAmount": 1000
     },
     "growth": {
       "title": "El Paquete \"Crecimiento\"",
-      "bestFor": "Ideal para: Empresas establecidas que necesitan una presencia profesional completa.",
-      "description": "Un sistema de sitio web completo que te ayuda a vender tus servicios y genera confianza con los clientes.",
+      "bestFor": "Ideal para: Empresas establecidas que necesitan una presencia profesional total.",
+      "description": "Un sistema de sitio web total que te ayuda a vender tus servicios y genera confianza con los clientes.",
       "features": [
-        "Estructura Completa del Sitio: 3–7 páginas (Inicio, Acerca de, Servicios, Contacto, etc.).",
+        "Estructura Total del Sitio: 3–7 páginas (Inicio, Acerca de, Servicios, Contacto, etc.).",
         "Editor Avanzado: Tienes control total sobre tu contenido, publicaciones de blog y páginas del equipo.",
         "Generación de Clientes Potenciales: Conectado a tu correo o CRM (por ejemplo, los clientes potenciales van directamente a tu bandeja de entrada).",
         "Escalable: Construido para que podamos agregar fácilmente nuevas páginas más tarde sin reconstruir todo el sitio.",
         "Velocidad de Primer Nivel: Optimizado para cumplir con los estrictos requisitos de velocidad de Google."
       ],
-      "timeline": "2–6 Semanas",
-      "investment": "$3,000 – $8,000"
+      "timeline": "2–4 Semanas",
+      "investmentAmount": 3000
     },
     "custom": {
       "title": "Soluciones Personalizadas",
@@ -520,22 +520,22 @@
       "seo": {
         "title": "Impulso SEO",
         "benefit": "Profundizo en la configuración técnica para ayudarte a posicionarte mejor en Google.",
-        "price": "$600+"
+        "priceAmount": 600
       },
       "store": {
         "title": "Tienda Online",
         "benefit": "Capacidad de vender productos y aceptar tarjetas de crédito de forma segura.",
-        "price": "$1,500+"
+        "priceAmount": 1500
       },
       "multiLanguage": {
         "title": "Multi-Idioma",
         "benefit": "Un sitio que funciona en 2+ idiomas (por ejemplo, Inglés y Español).",
-        "price": "$1,000+"
+        "priceAmount": 500
       },
       "analytics": {
         "title": "Analytics Pro",
         "benefit": "Configuro el seguimiento para que puedas ver exactamente de dónde vienen tus visitantes.",
-        "price": "$300+"
+        "priceAmount": 300
       }
     }
   },
@@ -570,7 +570,7 @@
     "subtitle": "Preguntas comunes sobre mis servicios, proceso y cómo podemos trabajar juntos.",
     "faq-1": {
       "question": "¿Cuánto tiempo tarda un proyecto típico?",
-      "answer": "Los plazos del proyecto varían según el alcance y la complejidad. Una página de destino simple generalmente toma 1-2 semanas, mientras que un sitio web completo con múltiples páginas puede tomar 2-6 semanas. Las soluciones personalizadas con funcionalidad compleja pueden tomar más tiempo. Proporcionaré un cronograma detallado durante nuestra consulta inicial."
+      "answer": "Los plazos del proyecto varían según el alcance y la complejidad. Una página de destino simple generalmente toma 1-2 semanas, mientras que un sitio web completo con múltiples páginas puede tomar 2-4 semanas. Las soluciones personalizadas con funcionalidad compleja pueden tomar más tiempo. Proporcionaré un cronograma detallado durante nuestra consulta inicial."
     },
     "faq-2": {
       "question": "¿Trabajas con clientes fuera de tu zona horaria?",

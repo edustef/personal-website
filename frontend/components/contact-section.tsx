@@ -1,5 +1,6 @@
 import { MessageCircle } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
+import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { getSocialIcon } from "@/lib/social-icons";
@@ -27,7 +28,11 @@ export default async function ContactSection({
 	return (
 		<section id="contact" className="py-24 md:py-32">
 			<div className="mx-auto max-w-6xl px-4">
-				<div className="mb-16 text-center">
+				<AnimatedContainer
+					trigger="scroll"
+					fadeDirection="up"
+					className="mb-16 text-center"
+				>
 					<p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
 						{t("contact.label")}
 					</p>
@@ -39,39 +44,61 @@ export default async function ContactSection({
 					<p className="text-muted-foreground mx-auto max-w-2xl text-lg">
 						{t("contact.subtitle")}
 					</p>
-				</div>
+				</AnimatedContainer>
 
 				<div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-					<Button
-						asChild
-						size="lg"
-						variant="default"
+					<AnimatedContainer
+						trigger="scroll"
+						fadeDirection="up"
+						staggerIndex={0}
+						staggerDelay={0.1}
 						className="w-full sm:w-auto"
 					>
-						<Link href="/start-your-project">{t("contact.ctaButton")}</Link>
-					</Button>
-
-					{hasWhatsApp && (
 						<Button
 							asChild
 							size="lg"
-							variant="outline"
+							variant="default"
+							className="w-full"
+						>
+							<Link href="/start-your-project">{t("contact.ctaButton")}</Link>
+						</Button>
+					</AnimatedContainer>
+
+					{hasWhatsApp && (
+						<AnimatedContainer
+							trigger="scroll"
+							fadeDirection="up"
+							staggerIndex={1}
+							staggerDelay={0.1}
 							className="w-full sm:w-auto"
 						>
-							<a
-								href={whatsappUrl}
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label={t("contact.whatsappLabel")}
+							<Button
+								asChild
+								size="lg"
+								variant="outline"
+								className="w-full"
 							>
-								<MessageCircle className="size-5" />
-								WhatsApp
-							</a>
-						</Button>
+								<a
+									href={whatsappUrl}
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label={t("contact.whatsappLabel")}
+								>
+									<MessageCircle className="size-5" />
+									WhatsApp
+								</a>
+							</Button>
+						</AnimatedContainer>
 					)}
 
 					{hasSocialLinks && (
-						<div className="flex gap-2">
+						<AnimatedContainer
+							trigger="scroll"
+							fadeDirection="up"
+							staggerIndex={2}
+							staggerDelay={0.1}
+							className="flex gap-2"
+						>
 							{socialLinks.map((link) => {
 								const Icon = getSocialIcon(link.name);
 								return (
@@ -93,7 +120,7 @@ export default async function ContactSection({
 									</Button>
 								);
 							})}
-						</div>
+						</AnimatedContainer>
 					)}
 				</div>
 			</div>
