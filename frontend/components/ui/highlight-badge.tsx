@@ -37,7 +37,7 @@ export function HighlightBadge({
           ease: "linear",
         }}
       />
-      <div className="bg-secondary/30 text-secondary-foreground relative z-10 flex items-center gap-2 rounded-lg px-5 py-2 transition-colors hover:bg-secondary/40">
+      <div className=" text-secondary-foreground relative z-10 flex items-center gap-3 rounded-lg px-5 py-2 transition-colors hover:bg-secondary/40">
         <RocketIcon className="size-4" />
         <div className="">{children}</div>
       </div>

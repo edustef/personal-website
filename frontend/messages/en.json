@@ -230,8 +230,7 @@
     "headline": "Built with <strong>precision</strong>. Designed for <strong>growth</strong>.",
     "tagline": "High-quality web experiences built to help your business scale. A direct partnership that cuts through the noise with clarity, speed, and attention to details.",
     "aboutMeDescription": "I'm Eduard Stefan, and I spend my time building websites that cut through the noise with clarity and speed. I prefer a quiet, focused approach—working one-on-one allows me to obsess over the details that matter and stay close to the work I love. For me, it's not just about writing code; it's about crafting something fast, intuitive, and genuinely useful for the people on the other side of the screen.",
-    "announcementLabelPrimary": "Join waitlist for my ",
-    "announcementLabelSecondary": "new app",
+    "announcementLabel": "Join waitlist for my <strong>new app</strong>",
     "resumeButtonLabel": "See my resume",
     "findMeOnLabel": "Find me on",
     "contactMe": "Contact me",
@@ -418,49 +417,45 @@
     "planning": {
       "title": "Planning",
       "paragraphs": [
-        "We start with a clear understanding of your goals and vision. This initial phase is crucial for setting the foundation of a successful project. I take time to understand not just what you want to build, but why you want to build it.",
-        "During our discovery sessions, I gather detailed requirements, analyze your target audience, and identify key features that will drive value. I create detailed documentation that serves as our roadmap throughout the entire development process."
+        "I learn about your project—what you want to build and why—then figure out the best approach. I'll create a clear plan so we both know exactly what we're working toward and when."
       ],
       "bulletPoints": [
-        "Goal definition and requirement gathering",
-        "Timeline and budget alignment",
-        "Technical architecture planning"
+        "Understanding your project and goals",
+        "Agreeing on timeline and budget",
+        "Planning the approach"
       ]
     },
     "development": {
       "title": "Development",
       "paragraphs": [
-        "I build your solution using modern, efficient technologies and best practices. The development process is transparent and collaborative—you'll have access to a private preview link where you can see progress in real-time.",
-        "I follow an iterative approach, delivering working features incrementally. This allows for early feedback and ensures we're always aligned with your vision. Regular updates keep you informed every step of the way."
+        "I build your site with attention to detail and quality. You'll get a preview link to see everything as it comes together, so you can give feedback and I can make adjustments as we go."
       ],
       "bulletPoints": [
-        "Real-time preview access for feedback",
-        "Modern tech stack and best practices",
-        "Iterative development with regular updates"
+        "Preview link to see progress in real-time",
+        "Quality-focused development",
+        "Regular updates and quick iterations"
       ]
     },
     "deployment": {
       "title": "Deployment",
       "paragraphs": [
-        "When everything is ready, I handle all the technical setup to get your site live. This includes configuring hosting infrastructure, setting up your domain, and ensuring everything is optimized for performance.",
-        "I perform extensive testing across different devices and browsers, optimize loading speeds, and implement security best practices. Your site will be fast, secure, and ready to handle real-world traffic from day one."
+        "I handle everything needed to get your site live—setting up hosting, connecting your domain, ensuring it's fast and secure, and testing that it works perfectly across all devices."
       ],
       "bulletPoints": [
-        "Hosting configuration and domain setup",
-        "Performance optimization and testing",
-        "Security implementation and monitoring"
+        "Hosting and domain setup",
+        "Speed and performance optimization",
+        "Security and cross-device testing"
       ]
     },
     "postDeployment": {
       "title": "Post-Deployment",
       "paragraphs": [
-        "After launch, I provide detailed training on how to manage your content and make updates. You'll learn how to use your content management system effectively, so you can maintain your site independently.",
-        "Ongoing support options are available to keep your site running smoothly. Whether you need help with updates, troubleshooting, or new features, I'm here to ensure your digital presence continues to grow and evolve."
+        "Once your site is live, I'll show you how to update content yourself. I'm also available for ongoing support—whether you need help with changes, fixes, or want to add new features."
       ],
       "bulletPoints": [
-        "Content management training and documentation",
-        "Ongoing support and maintenance options",
-        "Feature updates and enhancements"
+        "Training on how to update content",
+        "Ongoing support when you need it",
+        "Adding new features and improvements"
       ]
     }
   },
@@ -475,7 +470,9 @@
       "mostPopular": "Most Popular",
       "whatYouGet": "What you get",
       "timeline": "Timeline",
-      "investment": "Investment"
+      "investment": "Investment",
+      "showMore": "Show more",
+      "showLess": "Show less"
     },
     "launch": {
       "title": "The \"Launch\" Package",
@@ -486,7 +483,8 @@
         "Mobile Perfect: Looks great on phones, tablets, and desktops.",
         "Easy Editing: A simple dashboard where you can change text and images.",
         "Google-Ready: Setup so search engines can find you.",
-        "Speed Optimized: Loads fast so visitors don't leave."
+        "Speed Optimized: Loads fast so visitors don't leave.",
+        "Simple Analytics: Basic page views tracking to see how many visitors you get."
       ],
       "timeline": "1–2 Weeks",
       "investmentAmount": 1000
@@ -500,7 +498,10 @@
         "Advanced Editor: You get full control over your content, blog posts, and team pages.",
         "Lead Generation: Connected to your email or CRM (e.g., leads go straight to your inbox).",
         "Scalable: Built so we can easily add new pages later without rebuilding the whole site.",
-        "Top-Tier Speed: Optimized to pass Google's strict speed requirements."
+        "Top-Tier Speed: Optimized to pass Google's strict speed requirements.",
+        "Multi-Language Setup: Localization included and configured from the start (ready for 2+ languages).",
+        "Basic Booking System: Simple appointment or reservation functionality built in.",
+        "Analytics Integration: Full tracking setup to understand where your visitors come from and what they do."
       ],
       "timeline": "2–4 Weeks",
       "investmentAmount": 3000

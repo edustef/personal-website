@@ -1,7 +1,10 @@
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import {
+  PackageCard,
+  PackageCardsProvider,
+} from "./how-i-price-section-client";
 import { cn } from "@/lib/utils";
-import { Check, Clock, Euro } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 
 const packages = ["launch", "growth", "custom"] as const;
@@ -46,101 +49,42 @@ export default async function HowIPriceSection() {
         </AnimatedContainer>
 
         <div className="mb-16">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-            {packages.map((pkg, index) => {
-              const isPopular = pkg === "growth";
-              const features = t.raw(`${pkg}.features`) as string[];
+          <PackageCardsProvider>
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+              {packages.map((pkg, index) => {
+                const isPopular = pkg === "growth";
+                const features = t.raw(`${pkg}.features`) as string[];
 
-              return (
-                <AnimatedContainer
-                  key={pkg}
-                  trigger="scroll"
-                  fadeDirection="up"
-                  staggerIndex={index}
-                  staggerDelay={0.12}
-                  className={cn(isPopular && "lg:scale-105")}
-                >
-                  <Card
-                    className={cn(
-                      "relative flex h-full flex-col rounded-2xl",
-                      isPopular && "border-primary/50"
-                    )}
+                return (
+                  <AnimatedContainer
+                    key={pkg}
+                    trigger="scroll"
+                    fadeDirection="up"
+                    staggerIndex={index}
+                    staggerDelay={0.12}
+                    className={cn(isPopular && "lg:scale-105")}
                   >
-                    {isPopular && (
-                      <div className="bg-primary text-primary-foreground absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-sm font-medium">
-                        {t("packages.mostPopular")}
-                      </div>
-                    )}
-                    <CardContent className="p-6">
-                      <div className="mb-4">
-                        <h4 className="text-foreground mb-2 text-xl font-semibold">
-                          {t(`${pkg}.title`)}
-                        </h4>
-                        <p className="text-muted-foreground mb-3">
-                          {t(`${pkg}.bestFor`)}
-                        </p>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {t(`${pkg}.description`)}
-                        </p>
-                      </div>
-
-                      <div className="mb-6 space-y-3">
-                        <p className="text-foreground font-medium">
-                          {t("packages.whatYouGet")}:
-                        </p>
-                        <ul className="space-y-2">
-                          {features.map((feature) => (
-                            <li
-                              key={`${pkg}-${feature}`}
-                              className="text-muted-foreground flex items-start gap-2"
-                            >
-                              <Check className="text-primary mt-1 h-4 w-4 shrink-0" />
-                              <span>{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </CardContent>
-
-                    <CardFooter className="mt-auto border-t pt-6">
-                      <div className="grid w-full grid-cols-1 gap-4">
-                        <div className="flex items-center gap-3">
-                          <div className="text-primary flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
-                            <Clock className="h-5 w-5" />
-                          </div>
-                          <div className="flex-1">
-                            <p className="text-muted-foreground text-xs uppercase tracking-wide">
-                              {t("packages.timeline")}
-                            </p>
-                            <p className="text-foreground text-sm font-semibold">
-                              {t(`${pkg}.timeline`)}
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <div className="text-primary flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
-                            <Euro className="h-5 w-5" />
-                          </div>
-                          <div className="flex-1">
-                            <p className="text-muted-foreground text-xs uppercase tracking-wide">
-                              {t("packages.investment")}
-                            </p>
-                            <p className="text-foreground text-lg font-bold">
-                              {pkg === "custom"
-                                ? t(`${pkg}.investment`)
-                                : formatPrice(
-                                    t.raw(`${pkg}.investmentAmount`) as number
-                                  )}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </CardFooter>
-                  </Card>
-                </AnimatedContainer>
-              );
-            })}
-          </div>
+                    <PackageCard
+                      pkg={pkg}
+                      isPopular={isPopular}
+                      title={t(`${pkg}.title`)}
+                      bestFor={t(`${pkg}.bestFor`)}
+                      description={t(`${pkg}.description`)}
+                      features={features}
+                      timeline={t(`${pkg}.timeline`)}
+                      investment={
+                        pkg === "custom"
+                          ? t(`${pkg}.investment`)
+                          : formatPrice(
+                              t.raw(`${pkg}.investmentAmount`) as number
+                            )
+                      }
+                    />
+                  </AnimatedContainer>
+                );
+              })}
+            </div>
+          </PackageCardsProvider>
         </div>
 
         <AnimatedContainer

@@ -26,11 +26,15 @@ export default async function HeroSection() {
             ease="veryGentle"
             offset={16}
           >
-            <HighlightBadge href="https://omnishopplanner.com">
-              <span>{t("announcementLabelPrimary")}</span>
-              <span className="font-bold">
-                {t("announcementLabelSecondary")}
-              </span>
+            <HighlightBadge
+              className="text-left text-sm"
+              href="https://omnishopplanner.com"
+            >
+              {t.rich("announcementLabel", {
+                strong: (chunks) => (
+                  <strong className="font-bold">{chunks}</strong>
+                ),
+              })}
             </HighlightBadge>
             <h1 className="text-foreground group relative text-balance text-3xl leading-normal md:text-5xl md:leading-tight">
               {t.rich("headline", {

@@ -230,8 +230,7 @@
     "headline": "Construit cu <strong>precizie</strong>. Proiectat pentru <strong>creștere</strong>.",
     "tagline": "Experiențe web de înaltă calitate construite pentru a ajuta afacerea ta să scaleze. Un parteneriat direct care se remarcă prin claritate, viteză și atenție la detalii.",
     "aboutMeDescription": "Sunt Eduard Stefan, și îmi petrec timpul construind site-uri web care se remarcă prin claritate și viteză. Prefer o abordare liniștită și concentrată—lucrul unu la unu îmi permite să mă obsedez cu detaliile care contează și să rămân aproape de munca pe care o iubesc. Pentru mine, nu e vorba doar despre scrierea de cod; e vorba despre crearea a ceva rapid, intuitiv și cu adevărat util pentru oamenii de pe cealaltă parte a ecranului.",
-    "announcementLabelPrimary": "Lista de așteptare ",
-    "announcementLabelSecondary": "aplicație nouă",
+    "announcementLabel": "Înregistrează-te pentru <strong>aplicația mea nouă</strong>",
     "resumeButtonLabel": "Vezi CV-ul meu",
     "findMeOnLabel": "Găsește-mă pe",
     "contactMe": "Contactează-mă",
@@ -418,49 +417,45 @@
     "planning": {
       "title": "Planificare",
       "paragraphs": [
-        "Începem cu o înțelegere clară a obiectivelor și viziunii tale. Această fază inițială este crucială pentru stabilirea fundației unui proiect de succes. Îmi iau timpul să înțeleg nu doar ce vrei să construiești, ci și de ce vrei să o construiești.",
-        "În timpul sesiunilor noastre de descoperire, colectez cerințe detaliate, analizez publicul țintă și identific caracteristici cheie care vor genera valoare. Creez documentație detaliată care servește ca planul nostru pe tot parcursul procesului de dezvoltare."
+        "Aflu despre proiectul tău—ce vrei să construiești și de ce—apoi găsesc cea mai bună modalitate de a-l construi. Voi crea un plan clar astfel încât amândoi să știm exact către ce lucrăm și când."
       ],
       "bulletPoints": [
-        "Definirea obiectivelor și colectarea cerințelor",
-        "Alinearea termenului și bugetului",
-        "Planificarea arhitecturii tehnice"
+        "Înțelegerea proiectului și obiectivelor tale",
+        "Acordul asupra termenului și bugetului",
+        "Planificarea abordării"
       ]
     },
     "development": {
       "title": "Dezvoltare",
       "paragraphs": [
-        "Construiesc soluția ta folosind tehnologii moderne și eficiente și cele mai bune practici. Procesul de dezvoltare este transparent și colaborativ—vei avea acces la un link de previzualizare privat unde poți vedea progresul în timp real.",
-        "Urmez o abordare iterativă, livrând caracteristici funcționale incremental. Acest lucru permite feedback timpuriu și asigură că suntem întotdeauna aliniați cu viziunea ta. Actualizările regulate te țin informat la fiecare pas."
+        "Construiesc site-ul tău cu atenție la detalii și calitate. Vei primi un link de previzualizare pentru a vedea totul pe măsură ce se construiește, astfel încât să poți oferi feedback și eu pot face ajustări pe parcurs."
       ],
       "bulletPoints": [
-        "Acces de previzualizare în timp real pentru feedback",
-        "Stack tehnologic modern și cele mai bune practici",
-        "Dezvoltare iterativă cu actualizări regulate"
+        "Link de previzualizare pentru a vedea progresul în timp real",
+        "Dezvoltare concentrată pe calitate",
+        "Actualizări regulate și iterații rapide"
       ]
     },
     "deployment": {
       "title": "Lansare",
       "paragraphs": [
-        "Când totul este gata, mă ocup de toată configurarea tehnică pentru a pune site-ul tău live. Aceasta include configurarea infrastructurii de hosting, configurarea domeniului tău și asigurarea că totul este optimizat pentru performanță.",
-        "Efectuez teste extinse pe diferite dispozitive și browsere, optimizez vitezele de încărcare și implementez cele mai bune practici de securitate. Site-ul tău va fi rapid, sigur și gata să gestioneze trafic real din prima zi."
+        "Mă ocup de tot ce e necesar pentru a pune site-ul tău online—configurarea hosting-ului, conectarea domeniului, asigurarea că e rapid și sigur, și testarea că funcționează perfect pe toate dispozitivele."
       ],
       "bulletPoints": [
         "Configurarea hosting-ului și domeniului",
-        "Optimizarea performanței și testarea",
-        "Implementarea și monitorizarea securității"
+        "Optimizarea vitezei și performanței",
+        "Securitate și teste pe diferite dispozitive"
       ]
     },
     "postDeployment": {
       "title": "După Lansare",
       "paragraphs": [
-        "După lansare, ofer instruire detaliată despre cum să îți gestionezi conținutul și să faci actualizări. Vei învăța cum să folosești efectiv sistemul tău de gestionare a conținutului, astfel încât să poți menține site-ul în mod independent.",
-        "Opțiunile de suport continuu sunt disponibile pentru a menține site-ul tău funcționând fără probleme. Fie că ai nevoie de ajutor cu actualizări, rezolvarea problemelor sau caracteristici noi, sunt aici pentru a mă asigura că prezența ta digitală continuă să crească și să evolueze."
+        "Odată ce site-ul tău e live, îți voi arăta cum să actualizezi conținutul singur. Sunt de asemenea disponibil pentru suport continuu—fie că ai nevoie de ajutor cu modificări, corecții sau vrei să adaugi funcții noi."
       ],
       "bulletPoints": [
-        "Instruire și documentație pentru gestionarea conținutului",
-        "Opțiuni de suport și întreținere continuă",
-        "Actualizări și îmbunătățiri ale caracteristicilor"
+        "Instruire despre cum să actualizezi conținutul",
+        "Suport continuu când ai nevoie",
+        "Adăugarea de funcții și îmbunătățiri noi"
       ]
     }
   },
@@ -475,7 +470,9 @@
       "mostPopular": "Cel Mai Popular",
       "whatYouGet": "Ce primești",
       "timeline": "Termen",
-      "investment": "Investiție"
+      "investment": "Investiție",
+      "showMore": "Afișează mai mult",
+      "showLess": "Afișează mai puțin"
     },
     "launch": {
       "title": "Pachetul \"Lansare\"",
@@ -486,7 +483,8 @@
         "Perfect pentru Mobil: Arată excelent pe telefoane, tablete și desktop-uri.",
         "Editare Ușoară: Un panou simplu unde poți schimba textul și imaginile.",
         "Gata pentru Google: Configurat astfel încât motoarele de căutare să te găsească.",
-        "Optimizat pentru Viteză: Se încarcă rapid astfel încât vizitatorii să nu plece."
+        "Optimizat pentru Viteză: Se încarcă rapid astfel încât vizitatorii să nu plece.",
+        "Analitici Simple: Urmărire de bază a vizualizărilor paginii pentru a vedea câți vizitatori primești."
       ],
       "timeline": "1–2 Săptămâni",
       "investmentAmount": 1000
@@ -500,7 +498,10 @@
         "Editor Avansat: Ai control complet asupra conținutului, postărilor de blog și paginilor echipei.",
         "Generare Clienți Potențiali: Conectat la email-ul sau CRM-ul tău (de exemplu, clienții potențiali merg direct în inbox-ul tău).",
         "Scalabil: Construit astfel încât să putem adăuga cu ușurință pagini noi mai târziu fără a reconstrui întregul site.",
-        "Viteză de Top: Optimizat pentru a trece de cerințele stricte de viteză ale Google."
+        "Viteză de Top: Optimizat pentru a trece de cerințele stricte de viteză ale Google.",
+        "Configurare Multi-Limba: Localizare inclusă și configurată de la început (gata pentru 2+ limbi).",
+        "Sistem de Rezervări de Bază: Funcționalitate simplă de programări sau rezervări integrată.",
+        "Integrare Analitici: Configurare completă de urmărire pentru a înțelege de unde vin vizitatorii tăi și ce fac."
       ],
       "timeline": "2–4 Săptămâni",
       "investmentAmount": 3000

@@ -230,8 +230,7 @@
     "headline": "Construido con <strong>precisión</strong>. Diseñado para <strong>crecer</strong>.",
     "tagline": "Experiencias web de alta calidad construidas para ayudar a tu negocio a escalar. Una asociación directa que destaca con claridad, velocidad y atención a los detalles.",
     "aboutMeDescription": "Soy Eduard Stefan, y dedico mi tiempo a construir sitios web que destacan con claridad y velocidad. Prefiero un enfoque tranquilo y enfocado—trabajar uno a uno me permite obsesionarme con los detalles que importan y mantenerme cerca del trabajo que amo. Para mí, no se trata solo de escribir código; se trata de crear algo rápido, intuitivo y genuinamente útil para las personas al otro lado de la pantalla.",
-    "announcementLabelPrimary": "Lista de espera ",
-    "announcementLabelSecondary": "app nueva",
+    "announcementLabel": "Únete a la lista de espera para mi <strong>nueva app</strong>",
     "resumeButtonLabel": "Ver mi currículum",
     "findMeOnLabel": "Encuéntrame en",
     "contactMe": "Contáctame",
@@ -418,49 +417,45 @@
     "planning": {
       "title": "Planificación",
       "paragraphs": [
-        "Comenzamos con una comprensión clara de tus objetivos y visión. Esta fase inicial es crucial para establecer la base de un proyecto exitoso. Me tomo el tiempo para entender no solo lo que quieres construir, sino por qué quieres construirlo.",
-        "Durante nuestras sesiones de descubrimiento, reúno requisitos detallados, analizo tu audiencia objetivo e identifico características clave que generarán valor. Creo documentación detallada que sirve como nuestro plan durante todo el proceso de desarrollo."
+        "Aprendo sobre tu proyecto—qué quieres construir y por qué—luego decido la mejor forma de hacerlo. Crearé un plan claro para que ambos sepamos exactamente hacia dónde vamos y cuándo."
       ],
       "bulletPoints": [
-        "Definición de objetivos y recopilación de requisitos",
-        "Alineación de cronograma y presupuesto",
-        "Planificación de arquitectura técnica"
+        "Entender tu proyecto y objetivos",
+        "Acordar cronograma y presupuesto",
+        "Planear el enfoque"
       ]
     },
     "development": {
       "title": "Desarrollo",
       "paragraphs": [
-        "Construyo tu solución usando tecnologías modernas y eficientes y mejores prácticas. El proceso de desarrollo es transparente y colaborativo: tendrás acceso a un enlace de vista previa privado donde puedes ver el progreso en tiempo real.",
-        "Sigo un enfoque iterativo, entregando características funcionales de forma incremental. Esto permite retroalimentación temprana y asegura que siempre estemos alineados con tu visión. Las actualizaciones regulares te mantienen informado en cada paso."
+        "Construyo tu sitio con atención al detalle y la calidad. Obtendrás un enlace de vista previa para ver todo mientras se construye, así puedes darme comentarios y yo puedo hacer ajustes sobre la marcha."
       ],
       "bulletPoints": [
-        "Acceso de vista previa en tiempo real para comentarios",
-        "Stack tecnológico moderno y mejores prácticas",
-        "Desarrollo iterativo con actualizaciones regulares"
+        "Enlace de vista previa para ver el progreso en tiempo real",
+        "Desarrollo enfocado en la calidad",
+        "Actualizaciones regulares e iteraciones rápidas"
       ]
     },
     "deployment": {
       "title": "Despliegue",
       "paragraphs": [
-        "Cuando todo está listo, manejo toda la configuración técnica para poner tu sitio en vivo. Esto incluye configurar la infraestructura de hosting, configurar tu dominio y asegurar que todo esté optimizado para el rendimiento.",
-        "Realizo pruebas extensivas en diferentes dispositivos y navegadores, optimizo las velocidades de carga e implemento mejores prácticas de seguridad. Tu sitio será rápido, seguro y listo para manejar tráfico del mundo real desde el primer día."
+        "Me encargo de todo lo necesario para poner tu sitio en línea—configurar el hosting, conectar tu dominio, asegurarme de que sea rápido y seguro, y probar que funcione perfectamente en todos los dispositivos."
       ],
       "bulletPoints": [
         "Configuración de hosting y dominio",
-        "Optimización de rendimiento y pruebas",
-        "Implementación y monitoreo de seguridad"
+        "Optimización de velocidad y rendimiento",
+        "Seguridad y pruebas en diferentes dispositivos"
       ]
     },
     "postDeployment": {
       "title": "Post-Despliegue",
       "paragraphs": [
-        "Después del lanzamiento, proporciono capacitación detallada sobre cómo gestionar tu contenido y hacer actualizaciones. Aprenderás a usar tu sistema de gestión de contenido de manera efectiva, para que puedas mantener tu sitio de forma independiente.",
-        "Las opciones de soporte continuo están disponibles para mantener tu sitio funcionando sin problemas. Ya sea que necesites ayuda con actualizaciones, solución de problemas o nuevas características, estoy aquí para asegurar que tu presencia digital continúe creciendo y evolucionando."
+        "Una vez que tu sitio esté en vivo, te mostraré cómo actualizar el contenido tú mismo. También estoy disponible para soporte continuo—ya sea que necesites ayuda con cambios, correcciones o quieras agregar nuevas características."
       ],
       "bulletPoints": [
-        "Capacitación y documentación de gestión de contenido",
-        "Opciones de soporte y mantenimiento continuo",
-        "Actualizaciones y mejoras de características"
+        "Capacitación sobre cómo actualizar contenido",
+        "Soporte continuo cuando lo necesites",
+        "Agregar nuevas características y mejoras"
       ]
     }
   },
@@ -475,7 +470,9 @@
       "mostPopular": "Más Popular",
       "whatYouGet": "Lo que obtienes",
       "timeline": "Cronograma",
-      "investment": "Inversión"
+      "investment": "Inversión",
+      "showMore": "Ver más",
+      "showLess": "Ver menos"
     },
     "launch": {
       "title": "El Paquete \"Lanzamiento\"",
@@ -486,7 +483,8 @@
         "Perfecto para Móviles: Se ve genial en teléfonos, tabletas y escritorios.",
         "Edición Fácil: Un panel simple donde puedes cambiar texto e imágenes.",
         "Listo para Google: Configurado para que los motores de búsqueda te encuentren.",
-        "Optimizado para Velocidad: Carga rápido para que los visitantes no se vayan."
+        "Optimizado para Velocidad: Carga rápido para que los visitantes no se vayan.",
+        "Analíticas Simples: Seguimiento básico de visitas a la página para ver cuántos visitantes recibes."
       ],
       "timeline": "1–2 Semanas",
       "investmentAmount": 1000
@@ -500,7 +498,10 @@
         "Editor Avanzado: Tienes control total sobre tu contenido, publicaciones de blog y páginas del equipo.",
         "Generación de Clientes Potenciales: Conectado a tu correo o CRM (por ejemplo, los clientes potenciales van directamente a tu bandeja de entrada).",
         "Escalable: Construido para que podamos agregar fácilmente nuevas páginas más tarde sin reconstruir todo el sitio.",
-        "Velocidad de Primer Nivel: Optimizado para cumplir con los estrictos requisitos de velocidad de Google."
+        "Velocidad de Primer Nivel: Optimizado para cumplir con los estrictos requisitos de velocidad de Google.",
+        "Configuración Multiidioma: Localización incluida y configurada desde el inicio (listo para 2+ idiomas).",
+        "Sistema de Reservas Básico: Funcionalidad simple de citas o reservas integrada.",
+        "Integración de Analíticas: Configuración completa de seguimiento para entender de dónde vienen tus visitantes y qué hacen."
       ],
       "timeline": "2–4 Semanas",
       "investmentAmount": 3000
