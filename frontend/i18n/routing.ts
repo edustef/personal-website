@@ -3,7 +3,7 @@ import { defineRouting } from "next-intl/routing";
 export const locales = [
   { id: "en", title: "English" },
   { id: "ro", title: "Română" },
-  // { id: "es", title: "Español" },
+  { id: "es", title: "Español" },
 ] as const;
 
 export type LocaleId = (typeof locales)[number]["id"];
@@ -17,11 +17,11 @@ export const routing = defineRouting({
   pathnames: {
     "/start-your-project": {
       ro: "/incepe-proiectul-tau",
-      // es: "/inicia-tu-proyecto",
+      es: "/inicia-tu-proyecto",
     },
     "/privacy-policy": {
       ro: "/politica-de-confidențialitate",
-      // es: "/política-de-privacidad",
+      es: "/política-de-privacidad",
     },
   },
 });
