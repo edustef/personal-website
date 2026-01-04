@@ -9,7 +9,7 @@ import { Toaster } from "sonner";
 import { ConvexClientProvider } from "@/components/convex-client-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { locales } from "@/i18n/routing";
-import { getCanonicalUrl, getLocalizedSettingsMetadata } from "@/lib/seo";
+import { getLocalizedSettingsMetadata } from "@/lib/seo";
 import {
   createPersonSchema,
   createWebSiteSchema,
@@ -29,16 +29,6 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { locale } = await props.params;
   const localized = await getLocalizedSettingsMetadata(locale);
-  const alternateLocale = locales
-    .map((lang) => lang.id)
-    .filter((lang) => lang !== locale);
-
-  const hreflangUrls = locales.map((loc) => {
-    const url = getCanonicalUrl(loc.id, "");
-    return [loc.id, url];
-  });
-
-  const canonicalUrl = getCanonicalUrl(locale, "");
 
   return {
     metadataBase: localized.metadataBase,
@@ -47,15 +37,9 @@ export async function generateMetadata(
       default: localized.title,
     },
     description: localized.description,
-    alternates: {
-      canonical: canonicalUrl,
-      languages: Object.fromEntries(hreflangUrls),
-    },
     openGraph: {
       type: "website",
       locale,
-      alternateLocale,
-      url: canonicalUrl,
       title: localized.title,
       description: localized.description,
       images: localized.ogImage ? [localized.ogImage] : undefined,

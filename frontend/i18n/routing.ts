@@ -13,14 +13,15 @@ export const defaultLocale = "en" satisfies LocaleId;
 export const routing = defineRouting({
   defaultLocale: "en",
   locales: locales.map((locale) => locale.id),
-
+  alternateLinks: false,
   pathnames: {
+    "/": "/",
     "/start-your-project": {
-      ro: "/incepe-proiectul-tau",
+      ro: "/începe-proiectul-tău",
       es: "/inicia-tu-proyecto",
     },
     "/privacy-policy": {
-      ro: "/politica-de-confidențialitate",
+      ro: "/politică-de-confidențialitate",
       es: "/política-de-privacidad",
     },
   },

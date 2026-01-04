@@ -1,5 +1,4 @@
 import { routing } from "@/i18n/routing";
-import { getCanonicalUrl } from "@/lib/seo";
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { hasLocale } from "next-intl";
@@ -16,14 +15,9 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const { locale } = params;
   const t = await getTranslations({ locale, namespace: "privacyPolicy" });
 
-  const canonicalUrl = getCanonicalUrl(locale, "/privacy-policy");
-
   return {
     title: t("title"),
     description: t("description"),
-    alternates: {
-      canonical: canonicalUrl,
-    },
   };
 }
 

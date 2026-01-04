@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 import { ClientProjectInflow } from "@/app/[locale]/(website)/start-your-project/client-project-inflow";
 import { LocaleId, defaultLocale, routing } from "@/i18n/routing";
-import { getCanonicalUrl, getLocalizedSettingsMetadata } from "@/lib/seo";
+import { getLocalizedSettingsMetadata } from "@/lib/seo";
 import { hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
@@ -22,19 +22,9 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   ]);
 
   const title = t("title");
-  const localizedPath =
-    locale === defaultLocale
-      ? "/start-your-project"
-      : routing.pathnames?.["/start-your-project"]?.[locale] ||
-        "/start-your-project";
-  const canonicalUrl = getCanonicalUrl(locale, localizedPath);
-
   return {
     title: `${title} | ${localizedSettings.title}`,
     description: localizedSettings.description,
-    alternates: {
-      canonical: canonicalUrl,
-    },
   };
 }
 

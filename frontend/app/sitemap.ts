@@ -1,42 +1,37 @@
-import { locales, routing } from "@/i18n/routing";
+import { getPathname } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 import { getBaseUrl } from "@/lib/utils";
 import { MetadataRoute } from "next";
+import { Locale } from "next-intl";
+
+const host = getBaseUrl();
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = getBaseUrl();
+  return [
+    // Static pages
+    ...getEntries("/"),
+    ...getEntries("/start-your-project"),
+    ...getEntries("/privacy-policy"),
+  ];
+}
 
-  const sitemap: MetadataRoute.Sitemap = [];
+type Href = Parameters<typeof getPathname>[0]["href"];
 
-  for (const locale of locales) {
-    const localeId = locale.id;
-    const localePath = localeId === routing.defaultLocale ? "" : `/${localeId}`;
+function getEntries(href: Href) {
+  return routing.locales.map((locale) => ({
+    url: getUrl(href, locale),
+    alternates: {
+      languages: {
+        ...Object.fromEntries(
+          routing.locales.map((cur) => [cur, getUrl(href, cur)])
+        ),
+        "x-default": host + (href === "/" ? "" : href),
+      },
+    },
+  }));
+}
 
-    sitemap.push({
-      url: `${baseUrl}${localePath}`,
-      lastModified: new Date(),
-      priority: 1,
-      changeFrequency: "monthly",
-    });
-
-    if (routing.pathnames) {
-      for (const [originalPath, localizedPaths] of Object.entries(
-        routing.pathnames
-      )) {
-        const localizedPath =
-          localeId === routing.defaultLocale
-            ? originalPath
-            : localizedPaths && localeId in localizedPaths
-              ? localizedPaths[localeId as keyof typeof localizedPaths]
-              : originalPath;
-        sitemap.push({
-          url: `${baseUrl}${localePath}${localizedPath}`,
-          lastModified: new Date(),
-          priority: 0.9,
-          changeFrequency: "monthly",
-        });
-      }
-    }
-  }
-
-  return sitemap;
+function getUrl(href: Href, locale: Locale) {
+  const pathname = getPathname({ locale, href });
+  return host + pathname;
 }

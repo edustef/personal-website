@@ -46,25 +46,14 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   ]);
 
   const pageDescription = t("description");
-  const canonicalUrl = getCanonicalUrl(locale, "/");
   const ogImage = ogImages[locale as keyof typeof ogImages] || ogImages.en;
-
-  const hreflangUrls = locales.map((loc) => {
-    const url = getCanonicalUrl(loc.id, "/");
-    return [loc.id, url];
-  });
 
   return {
     title: localized.title,
     description: pageDescription,
-    alternates: {
-      canonical: canonicalUrl,
-      languages: Object.fromEntries(hreflangUrls),
-    },
     openGraph: {
       type: "website",
       locale,
-      url: canonicalUrl,
       title: localized.title,
       description: pageDescription,
       images: [
