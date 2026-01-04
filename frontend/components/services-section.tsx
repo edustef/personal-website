@@ -84,14 +84,14 @@ export default async function ServicesSection({
                 staggerDelay={0.15}
                 className={cn("min-w-0 lg:col-span-2 lg:row-span-2 text-lg")}
               >
-                <Card className="isolate relative h-full w-full overflow-hidden rounded-2xl bg-card/95 backdrop-blur-sm">
+                <Card className="isolate relative h-full w-full overflow-hidden rounded-2xl">
                   <BGPattern variant={patternVariant} mask="fade-edges" />
                   <CardContent className="relative p-8">
                     <Icon className="size-10 mb-4" />
                     <h3 className="text-foreground mb-3 break-words text-xl font-semibold">
                       {t(service.titleKey)}
                     </h3>
-                    <p className="text-muted-foreground break-words leading-relaxed">
+                    <p className="text-muted-foreground text-lg break-words leading-relaxed">
                       {t(service.descriptionKey)}
                     </p>
                   </CardContent>
@@ -115,7 +115,7 @@ export default async function ServicesSection({
                 staggerDelay={0.1}
                 className="min-w-0"
               >
-                <Card className="relative h-full w-full overflow-hidden rounded-2xl bg-card/95 backdrop-blur-sm">
+                <Card className="relative h-full w-full overflow-hidden rounded-2xl">
                   <BGPattern
                     variant={patternVariant}
                     mask="fade-edges"
@@ -123,10 +123,10 @@ export default async function ServicesSection({
                   />
                   <CardContent className="relative p-6">
                     <Icon className="size-8 mb-4" />
-                    <h3 className="text-foreground mb-2 break-words text-base font-semibold">
+                    <h3 className="text-foreground mb-2 break-words text-xl md:text-base font-semibold">
                       {t(service.titleKey)}
                     </h3>
-                    <p className="text-muted-foreground break-words leading-relaxed">
+                    <p className="text-muted-foreground break-words text-lg leading-relaxed">
                       {t(service.descriptionKey)}
                     </p>
                   </CardContent>
