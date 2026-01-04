@@ -224,7 +224,13 @@
   },
   "footer": {
     "privacyPolicy": "Politica de Confidențialitate",
-    "text": "@ {currentYear} Eduard Sergiu Ștefan. Realizat cu Next.js."
+    "text": "@ {currentYear} Eduard Sergiu Ștefan. Realizat cu Next.js.",
+    "menu": {
+      "title": "Meniu",
+      "services": "Servicii",
+      "pricing": "Prețuri",
+      "blog": "Blog"
+    }
   },
   "home": {
     "headline": "Construit cu <strong>precizie</strong>. Proiectat pentru <strong>creștere</strong>.",
@@ -297,7 +303,15 @@
       },
       "homeButtonLabel": "Acasa",
       "navLabel": "Navigatie principala",
-      "skipLinkText": "Sari la continutul principal"
+      "skipLinkText": "Sari la continutul principal",
+      "menuLabel": "Meniu",
+      "nav": {
+        "services": "Servicii",
+        "pricing": "Prețuri",
+        "blog": "Blog",
+        "servicesSlug": "servicii",
+        "pricingSlug": "preturi"
+      }
     },
     "seo": {
       "title": "Eduard Stefan | Website-uri construite cu precizie",

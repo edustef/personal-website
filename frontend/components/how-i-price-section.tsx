@@ -30,8 +30,14 @@ export default async function HowIPriceSection() {
     return `${formatter.format(amount)}+`;
   };
 
+  const headerT = await getTranslations({
+    locale,
+    namespace: "settings.header",
+  });
+  const pricingSlug = headerT("nav.pricingSlug");
+
   return (
-    <section id="how-i-price" className="py-12 md:py-16">
+    <section id={pricingSlug} className="py-12 md:py-16">
       <div className="mx-auto max-w-6xl md:px-4">
         <AnimatedContainer
           trigger="scroll"
@@ -43,7 +49,7 @@ export default async function HowIPriceSection() {
           </p>
           <h2 className="text-foreground mb-4 text-3xl font-semibold tracking-tight md:text-4xl text-balance">
             <a
-              href="#how-i-price"
+              href={`#${pricingSlug}`}
               className="hover:text-primary transition-colors"
             >
               {t("headline")}

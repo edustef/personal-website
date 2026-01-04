@@ -224,7 +224,13 @@
   },
   "footer": {
     "privacyPolicy": "Política de Privacidad",
-    "text": "@ {currentYear} Eduard Sergiu Stefan. Construido con Next.js."
+    "text": "@ {currentYear} Eduard Sergiu Stefan. Construido con Next.js.",
+    "menu": {
+      "title": "Menú",
+      "services": "Servicios",
+      "pricing": "Precios",
+      "blog": "Blog"
+    }
   },
   "home": {
     "headline": "Construido con <strong>precisión</strong>. Diseñado para <strong>crecer</strong>.",
@@ -297,7 +303,15 @@
       },
       "homeButtonLabel": "Casa",
       "navLabel": "Navegacion principal",
-      "skipLinkText": "Saltar al contenido principal"
+      "skipLinkText": "Saltar al contenido principal",
+      "menuLabel": "Menú",
+      "nav": {
+        "services": "Servicios",
+        "pricing": "Precios",
+        "blog": "Blog",
+        "servicesSlug": "servicios",
+        "pricingSlug": "precios"
+      }
     },
     "seo": {
       "title": "Eduard Stefan | Sitios web construidos con precisión",

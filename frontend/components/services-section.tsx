@@ -52,8 +52,14 @@ export default async function ServicesSection({
   const featuredServices = servicesToDisplay.filter((s) => s.featured);
   const otherServices = servicesToDisplay.filter((s) => !s.featured);
 
+  const headerT = await getTranslations({
+    locale,
+    namespace: "settings.header",
+  });
+  const servicesSlug = headerT("nav.servicesSlug");
+
   return (
-    <section id="services" className="overflow-x-hidden py-12 md:py-16">
+    <section id={servicesSlug} className="overflow-x-hidden py-12 md:py-16">
       <div className="mx-auto max-w-6xl md:px-6">
         <AnimatedContainer
           trigger="scroll"
@@ -65,7 +71,7 @@ export default async function ServicesSection({
           </p>
           <h2 className="text-foreground mb-1 text-3xl tracking-tight md:text-4xl text-balance">
             <a
-              href="#services"
+              href={`#${servicesSlug}`}
               className="hover:text-primary transition-colors"
             >
               {t("headline")}

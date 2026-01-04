@@ -8,9 +8,19 @@ import { Link } from "@/components/ui/link";
 import {
   NavigationMenu,
   NavigationMenuItem,
+  NavigationMenuLink,
   NavigationMenuList,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { Menu } from "lucide-react";
 import { motion } from "motion/react";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
@@ -28,7 +38,16 @@ export function Header({ className }: HeaderProps) {
   const navigationLabel = headerT("navLabel");
   const homeButtonLabel = headerT("homeButtonLabel");
   const contactMeText = homeT("contactMe");
+  const menuLabel = headerT("menuLabel");
+
+  const servicesText = headerT("nav.services");
+  const pricingText = headerT("nav.pricing");
+  const blogText = headerT("nav.blog");
+  const servicesSlug = headerT("nav.servicesSlug");
+  const pricingSlug = headerT("nav.pricingSlug");
+
   const [showContactButton, setShowContactButton] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const heroButton = document.getElementById(HERO_CONTACT_BUTTON_ID);
@@ -75,40 +94,110 @@ export function Header({ className }: HeaderProps) {
         <div className="flex items-center justify-between gap-5">
           <Link
             aria-label={homeButtonLabel}
-            className="group flex items-center gap-2 p-0 text-xl font-bold"
+            className="group flex items-center gap-2 p-0 text-xl font-bold shrink-0"
             href="/"
           >
             Eduard Stefan
           </Link>
 
-          <NavigationMenu aria-label={navigationLabel}>
-            <NavigationMenuList className="gap-4 md:gap-6">
-              <NavigationMenuItem
-                className={cn(
-                  "hidden md:block transition-opacity duration-200",
-                  showContactButton
-                    ? "opacity-100"
-                    : "pointer-events-none opacity-0"
-                )}
-              >
-                <Button asChild variant="default">
-                  <a
-                    href="https://wa.me/40775378525"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {contactMeText}
-                  </a>
-                </Button>
+          {/* Desktop Navigation */}
+          <NavigationMenu
+            aria-label={navigationLabel}
+            className="hidden md:flex ml-auto"
+          >
+            <NavigationMenuList className="gap-1">
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link href={`#${servicesSlug}`}>{servicesText}</Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <ModeToggle />
+                <NavigationMenuLink asChild>
+                  <Link href={`#${pricingSlug}`}>{pricingText}</Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <LanguageToggle currentLocale={locale} />
+                <NavigationMenuLink asChild>
+                  <Link href="/blog">{blogText}</Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
+
+          <div className="flex items-center gap-2 md:gap-4">
+            <div
+              className={cn(
+                "hidden md:block transition-opacity duration-200",
+                showContactButton
+                  ? "opacity-100"
+                  : "pointer-events-none opacity-0"
+              )}
+            >
+              <Button asChild variant="default" size="sm">
+                <a
+                  href="https://wa.me/40775378525"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {contactMeText}
+                </a>
+              </Button>
+            </div>
+            <ModeToggle />
+            <LanguageToggle currentLocale={locale} />
+
+            {/* Mobile Menu Trigger */}
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Menu className="size-6" />
+                  <span className="sr-only">{menuLabel}</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <SheetHeader className="text-left mb-8">
+                  <SheetTitle className="text-xl font-bold">
+                    Eduard Stefan
+                  </SheetTitle>
+                </SheetHeader>
+                <nav className="flex flex-col gap-4">
+                  <Link
+                    href={`#${servicesSlug}`}
+                    className="text-lg font-medium hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {servicesText}
+                  </Link>
+                  <Link
+                    href={`#${pricingSlug}`}
+                    className="text-lg font-medium hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {pricingText}
+                  </Link>
+                  <Link
+                    href="/blog"
+                    className="text-lg font-medium hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {blogText}
+                  </Link>
+                  <div className="mt-4 pt-4 border-t">
+                    <Button asChild className="w-full">
+                      <a
+                        href="https://wa.me/40775378525"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {contactMeText}
+                      </a>
+                    </Button>
+                  </div>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </motion.header>
