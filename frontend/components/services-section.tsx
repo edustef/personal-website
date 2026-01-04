@@ -145,7 +145,7 @@ export default async function ServicesSection({
 
         {/* Mobile Carousel */}
         <div className="md:hidden">
-          <Carousel className="w-full">
+          <Carousel className="w-full" aria-label={t("headline")}>
             <CarouselContent className="-ml-4 px-4 pb-4">
               {[...featuredServices, ...otherServices].map((service, index) => {
                 const Icon = iconMap[service.icon] || Layers;

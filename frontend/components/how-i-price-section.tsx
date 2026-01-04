@@ -136,7 +136,7 @@ export default async function HowIPriceSection() {
 
         {/* Mobile Carousel */}
         <div className="md:hidden">
-          <Carousel className="w-full">
+          <Carousel className="w-full" aria-label={t("addOns.title")}>
             <CarouselContent className="-ml-4 px-4 pb-4">
               {addOns.map((addOn, index) => (
                 <CarouselItem
