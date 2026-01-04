@@ -29,7 +29,11 @@ export function AboutMeSectionClient({
   const imageY = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
   return (
-    <section id="about-me" className="relative py-12 md:py-16" ref={sectionRef}>
+    <section
+      id="about-me"
+      className="scroll-mt-24 relative py-12 md:py-16"
+      ref={sectionRef}
+    >
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedContainer
           trigger="scroll"

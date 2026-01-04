@@ -59,7 +59,10 @@ export default async function ServicesSection({
   const servicesSlug = headerT("nav.servicesSlug");
 
   return (
-    <section id={servicesSlug} className="overflow-x-hidden py-12 md:py-16">
+    <section
+      id={servicesSlug}
+      className="scroll-mt-24 overflow-x-hidden py-12 md:py-16"
+    >
       <div className="mx-auto max-w-6xl md:px-6">
         <AnimatedContainer
           trigger="scroll"

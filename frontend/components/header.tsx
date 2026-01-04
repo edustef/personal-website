@@ -91,7 +91,7 @@ export function Header({ className }: HeaderProps) {
         {skipLinkText}
       </a>
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-        <div className="flex items-center justify-between gap-5">
+        <div className="flex items-center gap-10">
           <Link
             aria-label={homeButtonLabel}
             className="group flex items-center gap-2 p-0 text-xl font-bold shrink-0"
@@ -103,28 +103,43 @@ export function Header({ className }: HeaderProps) {
           {/* Desktop Navigation */}
           <NavigationMenu
             aria-label={navigationLabel}
-            className="hidden md:flex ml-auto"
+            className="hidden md:flex"
           >
-            <NavigationMenuList className="gap-1">
+            <NavigationMenuList className="gap-2">
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href={`#${servicesSlug}`}>{servicesText}</Link>
+                  <Link
+                    href={`#${servicesSlug}`}
+                    className="font-medium transition-colors hover:text-primary"
+                  >
+                    {servicesText}
+                  </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href={`#${pricingSlug}`}>{pricingText}</Link>
+                  <Link
+                    href={`#${pricingSlug}`}
+                    className="font-medium transition-colors hover:text-primary"
+                  >
+                    {pricingText}
+                  </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/blog">{blogText}</Link>
+                  <Link
+                    href="/blog"
+                    className="font-medium transition-colors hover:text-primary"
+                  >
+                    {blogText}
+                  </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
 
-          <div className="flex items-center gap-2 md:gap-4">
+          <div className="flex items-center gap-2 md:gap-4 ml-auto">
             <div
               className={cn(
                 "hidden md:block transition-opacity duration-200",

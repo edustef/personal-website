@@ -26,7 +26,7 @@ export default async function ContactSection({
   const hasSocialLinks = socialLinks && socialLinks.length > 0;
 
   return (
-    <section id="contact" className="py-12 md:py-16">
+    <section id="contact" className="scroll-mt-24 py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedContainer
           trigger="scroll"

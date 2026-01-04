@@ -24,7 +24,7 @@ export default async function FAQSection({ faqs: faqsProp }: FAQSectionProps) {
   const sortedFaqs = [...faqsToDisplay].sort((a, b) => a.order - b.order);
 
   return (
-    <section id="faq" className="py-12 md:py-16">
+    <section id="faq" className="scroll-mt-24 py-12 md:py-16">
       <div className="mx-auto max-w-4xl px-4">
         <AnimatedContainer
           trigger="scroll"
