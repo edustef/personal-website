@@ -52,7 +52,7 @@ export function CardOption({
         <div className="space-y-1">
           <h3
             className={cn(
-              "leading-none font-medium",
+              "leading-none font-medium text-balance",
               size === "sm" || compact ? "text-sm" : ""
             )}
           >
@@ -61,7 +61,7 @@ export function CardOption({
           {description && (
             <p
               className={cn(
-                "text-muted-foreground",
+                "text-muted-foreground text-pretty",
                 size === "sm" ? "text-xs" : "text-sm"
               )}
             >

@@ -84,11 +84,13 @@ export function PackageCard({
       )}
       <CardContent className="p-6">
         <div className="mb-4">
-          <h3 className="text-foreground mb-2 text-xl font-semibold">
+          <h3 className="text-foreground mb-2 text-xl font-semibold text-balance">
             {title}
           </h3>
-          <p className="text-muted-foreground mb-3 text-sm">{bestFor}</p>
-          <p className="text-muted-foreground text-sm leading-relaxed">
+          <p className="text-muted-foreground mb-3 text-sm text-pretty">
+            {bestFor}
+          </p>
+          <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
             {description}
           </p>
         </div>

@@ -39,7 +39,7 @@ export function AboutMeSectionClient({
           <p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
             {label}
           </p>
-          <h2 className="text-foreground mb-4 text-3xl font-semibold tracking-tight md:text-4xl">
+          <h2 className="text-foreground mb-4 text-3xl font-semibold tracking-tight md:text-4xl text-balance">
             <a
               href="#about-me"
               className="hover:text-primary transition-colors"
@@ -47,7 +47,7 @@ export function AboutMeSectionClient({
               {headline}
             </a>
           </h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg text-pretty">
             {subtitle}
           </p>
         </AnimatedContainer>
@@ -70,7 +70,7 @@ export function AboutMeSectionClient({
             delay={0.2}
             className="flex-1 text-left"
           >
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-muted-foreground text-lg leading-relaxed text-pretty">
               {description}
             </p>
           </AnimatedContainer>

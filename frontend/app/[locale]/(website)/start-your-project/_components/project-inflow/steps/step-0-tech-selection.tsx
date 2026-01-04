@@ -25,8 +25,10 @@ export function Step0TechSelection({
 
   return (
     <motion.div layout className="flex flex-col gap-6">
-      <h2 className="text-2xl font-bold">{t("step0.title")}</h2>
-      <p className="text-muted-foreground">{t("step0.description")}</p>
+      <h2 className="text-2xl font-bold text-balance">{t("step0.title")}</h2>
+      <p className="text-muted-foreground text-pretty">
+        {t("step0.description")}
+      </p>
       <fieldset className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <legend className="sr-only">{t("step0.title")}</legend>
         <CardOption

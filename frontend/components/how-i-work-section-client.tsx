@@ -35,7 +35,7 @@ export function HowIWorkSectionClient({
           <p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
             {label}
           </p>
-          <h2 className="text-foreground mb-4 text-3xl font-semibold tracking-tight md:text-4xl">
+          <h2 className="text-foreground mb-4 text-3xl font-semibold tracking-tight md:text-4xl text-balance">
             <a
               href="#how-i-work"
               className="hover:text-primary transition-colors"
@@ -43,7 +43,7 @@ export function HowIWorkSectionClient({
               {headline}
             </a>
           </h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg text-pretty">
             {subtitle}
           </p>
         </AnimatedContainer>

@@ -41,7 +41,7 @@ export default async function HowIPriceSection() {
           <p className="text-primary mb-3 font-medium uppercase tracking-wider">
             {t("label")}
           </p>
-          <h2 className="text-foreground mb-4 text-3xl font-semibold tracking-tight md:text-4xl">
+          <h2 className="text-foreground mb-4 text-3xl font-semibold tracking-tight md:text-4xl text-balance">
             <a
               href="#how-i-price"
               className="hover:text-primary transition-colors"
@@ -49,7 +49,7 @@ export default async function HowIPriceSection() {
               {t("headline")}
             </a>
           </h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg text-pretty">
             {t("subtitle")}
           </p>
         </AnimatedContainer>
@@ -98,10 +98,12 @@ export default async function HowIPriceSection() {
           fadeDirection="up"
           className="flex flex-col items-center px-4"
         >
-          <h3 className="text-foreground mb-4 text-2xl font-semibold">
+          <h3 className="text-foreground mb-4 text-2xl font-semibold text-balance">
             {t("addOns.title")}
           </h3>
-          <p className="text-muted-foreground mb-8">{t("addOns.subtitle")}</p>
+          <p className="text-muted-foreground mb-8 text-pretty">
+            {t("addOns.subtitle")}
+          </p>
         </AnimatedContainer>
 
         <div className="hidden md:grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -115,10 +117,10 @@ export default async function HowIPriceSection() {
             >
               <Card className="h-full rounded-xl">
                 <CardContent className="p-5">
-                  <h4 className="text-foreground text-xl mb-2 font-semibold">
+                  <h4 className="text-foreground text-xl mb-2 font-semibold text-balance">
                     {t(`addOns.${addOn}.title`)}
                   </h4>
-                  <p className="text-muted-foreground mb-3 leading-relaxed">
+                  <p className="text-muted-foreground mb-3 leading-relaxed text-pretty">
                     {t(`addOns.${addOn}.benefit`)}
                   </p>
                 </CardContent>
@@ -149,10 +151,10 @@ export default async function HowIPriceSection() {
                   <div className="h-full">
                     <Card className="h-full rounded-xl">
                       <CardContent className="p-5">
-                        <h4 className="text-foreground text-xl mb-2 font-semibold">
+                        <h4 className="text-foreground text-xl mb-2 font-semibold text-balance">
                           {t(`addOns.${addOn}.title`)}
                         </h4>
-                        <p className="text-muted-foreground mb-3 leading-relaxed">
+                        <p className="text-muted-foreground mb-3 leading-relaxed text-pretty">
                           {t(`addOns.${addOn}.benefit`)}
                         </p>
                       </CardContent>

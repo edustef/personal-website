@@ -34,12 +34,12 @@ export default async function FAQSection({ faqs: faqsProp }: FAQSectionProps) {
           <p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
             {t("label")}
           </p>
-          <h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl">
+          <h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl text-balance">
             <a href="#faq" className="hover:text-primary transition-colors">
               {t("headline")}
             </a>
           </h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg text-pretty">
             {t("subtitle")}
           </p>
         </AnimatedContainer>
@@ -54,10 +54,10 @@ export default async function FAQSection({ faqs: faqsProp }: FAQSectionProps) {
               staggerDelay={0.08}
             >
               <AccordionItem value={faq._id}>
-                <AccordionTrigger className="text-left">
+                <AccordionTrigger className="text-left text-balance">
                   {t(faq.questionKey)}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">
+                <AccordionContent className="text-muted-foreground leading-relaxed text-pretty">
                   {faq._id === "faq-5"
                     ? t.rich(faq.answerKey, {
                         link: (chunks) => (

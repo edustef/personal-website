@@ -11,14 +11,14 @@ export const services: Service[] = [
     _id: "svc-1",
     titleKey: "svc-1.title",
     descriptionKey: "svc-1.description",
-    icon: "layers",
+    icon: "rocket",
     featured: true,
   },
   {
     _id: "svc-4",
     titleKey: "svc-4.title",
     descriptionKey: "svc-4.description",
-    icon: "rocket",
+    icon: "zap",
     featured: false,
   },
   {
@@ -32,7 +32,7 @@ export const services: Service[] = [
     _id: "svc-3",
     titleKey: "svc-3.title",
     descriptionKey: "svc-3.description",
-    icon: "zap",
+    icon: "layers",
     featured: false,
   },
   {

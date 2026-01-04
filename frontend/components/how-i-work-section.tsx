@@ -60,7 +60,7 @@ export default async function HowIWorkSection() {
               {paragraphs.map((paragraph, idx) => (
                 <p
                   key={`${step.key}-paragraph-${idx}`}
-                  className="text-foreground font-normal leading-relaxed"
+                  className="text-foreground font-normal leading-relaxed text-pretty"
                 >
                   {paragraph}
                 </p>
@@ -81,7 +81,7 @@ export default async function HowIWorkSection() {
                     <div className="text-primary mt-0.5 flex size-6 shrink-0 items-center justify-center rounded">
                       <BulletIcon className="size-5" />
                     </div>
-                    <span className="leading-relaxed">{point}</span>
+                    <span className="leading-relaxed text-pretty">{point}</span>
                   </li>
                 );
               })}

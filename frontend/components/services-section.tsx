@@ -58,12 +58,12 @@ export default async function ServicesSection({
         <AnimatedContainer
           trigger="scroll"
           fadeDirection="up"
-          className="mb-16 text-center"
+          className="mb-16 text-center px-4"
         >
           <p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
             {t("label")}
           </p>
-          <h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl">
+          <h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl text-balance">
             <a
               href="#services"
               className="hover:text-primary transition-colors"
@@ -71,7 +71,7 @@ export default async function ServicesSection({
               {t("headline")}
             </a>
           </h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg text-pretty">
             {t("subtitle")}
           </p>
         </AnimatedContainer>
@@ -95,10 +95,10 @@ export default async function ServicesSection({
                   <BGPattern variant={patternVariant} mask="fade-edges" />
                   <CardContent className="relative p-8">
                     <Icon className="size-10 mb-4" />
-                    <h3 className="text-foreground mb-3 break-words text-xl font-semibold">
+                    <h3 className="text-foreground mb-3 break-words text-xl font-semibold text-balance">
                       {t(service.titleKey)}
                     </h3>
-                    <p className="text-muted-foreground text-lg break-words leading-relaxed">
+                    <p className="text-muted-foreground text-lg break-words leading-relaxed text-pretty">
                       {t(service.descriptionKey)}
                     </p>
                   </CardContent>
@@ -122,7 +122,7 @@ export default async function ServicesSection({
                 staggerDelay={0.1}
                 className="min-w-0"
               >
-                <Card className="relative h-full w-full overflow-hidden rounded-2xl">
+                <Card className="isolate relative h-full w-full overflow-hidden rounded-2xl">
                   <BGPattern
                     variant={patternVariant}
                     mask="fade-edges"
@@ -130,10 +130,10 @@ export default async function ServicesSection({
                   />
                   <CardContent className="relative p-6">
                     <Icon className="size-8 mb-4" />
-                    <h3 className="text-foreground mb-2 break-words text-xl md:text-base font-semibold">
+                    <h3 className="text-foreground mb-2 break-words text-xl md:text-base font-semibold text-balance">
                       {t(service.titleKey)}
                     </h3>
-                    <p className="text-muted-foreground break-words text-lg leading-relaxed">
+                    <p className="text-muted-foreground break-words text-lg leading-relaxed text-pretty">
                       {t(service.descriptionKey)}
                     </p>
                   </CardContent>
@@ -160,7 +160,7 @@ export default async function ServicesSection({
                     )}
                   >
                     <div className="h-full">
-                      <Card className="relative h-full w-full overflow-hidden rounded-2xl">
+                      <Card className="isolate relative h-full w-full overflow-hidden rounded-2xl">
                         <BGPattern
                           variant={patternVariant}
                           mask="fade-edges"
@@ -168,10 +168,10 @@ export default async function ServicesSection({
                         />
                         <CardContent className="relative p-6 flex flex-col h-full">
                           <Icon className="size-8 mb-4 shrink-0" />
-                          <h3 className="text-foreground mb-2 break-words text-xl font-semibold">
+                          <h3 className="text-foreground mb-2 break-words text-xl font-semibold text-balance">
                             {t(service.titleKey)}
                           </h3>
-                          <p className="text-muted-foreground break-words text-lg leading-relaxed flex-grow">
+                          <p className="text-muted-foreground break-words text-lg leading-relaxed flex-grow text-pretty">
                             {t(service.descriptionKey)}
                           </p>
                         </CardContent>

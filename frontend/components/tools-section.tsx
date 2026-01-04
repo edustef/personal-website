@@ -9,19 +9,16 @@ export default async function ToolsSection() {
   return (
     <section id="tools" className="w-full py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-4">
-        <AnimatedContainer
-          fadeDirection="up"
-          className="mb-12 text-center"
-        >
+        <AnimatedContainer fadeDirection="up" className="mb-12 text-center">
           <p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
             {t("tools.label")}
           </p>
-          <h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl">
+          <h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl text-balance">
             <a href="#tools" className="hover:text-primary transition-colors">
               {t("tools.headline")}
             </a>
           </h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg text-pretty">
             {t("tools.subtitle")}
           </p>
         </AnimatedContainer>

@@ -6,8 +6,12 @@ type StepHeaderProps = {
 export function StepHeader({ title, description }: StepHeaderProps) {
   return (
     <div className="space-y-2">
-      <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
-      {description && <p className="text-muted-foreground">{description}</p>}
+      <h2 className="text-2xl font-semibold tracking-tight text-balance">
+        {title}
+      </h2>
+      {description && (
+        <p className="text-muted-foreground text-pretty">{description}</p>
+      )}
     </div>
   );
 }

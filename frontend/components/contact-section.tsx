@@ -36,12 +36,12 @@ export default async function ContactSection({
           <p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
             {t("contact.label")}
           </p>
-          <h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl">
+          <h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl text-balance">
             <a href="#contact" className="hover:text-primary transition-colors">
               {t("contact.headline")}
             </a>
           </h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg text-pretty">
             {t("contact.subtitle")}
           </p>
         </AnimatedContainer>
