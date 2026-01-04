@@ -228,8 +228,8 @@
   },
   "home": {
     "headline": "Construido con <strong>precisión</strong>. Diseñado para <strong>crecer</strong>.",
-    "tagline": "Experiencias web de alta calidad construidas con precisión para ayudar a tu negocio a escalar. Una asociación directa centrada en la artesanía, la experiencia del usuario y el rendimiento.",
-    "aboutMeDescription": "Soy Eduard Stefan y construyo sitios web de alta calidad que priorizan la artesanía de primer nivel y la experiencia del usuario. Me enfoco en crear productos digitales que conviertan y aporten un valor real, manteniendo siempre la velocidad y el rendimiento al más alto nivel. Trabajar uno a uno me permite obsesionarme con los detalles que más importan para tu negocio.",
+    "tagline": "Experiencias web de alta calidad construidas con precisión para ayudar a tu negocio a escalar. Una asociación directa centrada en maximizar tu crecimiento digital.",
+    "aboutMeDescription": "Soy Eduard Stefan y construyo sitios web de alta calidad que priorizan los estándares de alta calidad y la experiencia del usuario. Me enfoco en crear productos digitales que conviertan y aporten un valor real, ayudando a que tu negocio crezca de forma digital. Trabajar uno a uno me permite obsesionarme con los detalles que más importan para tu negocio.",
     "announcementLabel": "Únete a la lista de espera para mi <strong>nueva app</strong>",
     "resumeButtonLabel": "Ver mi currículum",
     "findMeOnLabel": "Encuéntrame en",
@@ -251,12 +251,12 @@
       "label": "Quién soy",
       "headline": "Sobre Mí",
       "subtitle": "Conoce a la persona detrás del código",
-      "description": "Soy Eduard Stefan, y llevo más de 4 años construyendo sitios web de alta calidad que convierten y generan resultados reales para los clientes. Me enfoco en crear experiencias que priorizan una experiencia de usuario de primera y la artesanía. Prefiero un enfoque reflexivo y centrado—trabajar uno a uno me permite obsesionarme con los detalles que importan y mantenerme cerca del trabajo que amo. Para mí, no se trata solo de escribir código; se trata de crear algo de alta calidad, intuitivo y genuinamente útil para las personas al otro lado de la pantalla."
+      "description": "Soy Eduard Stefan, y llevo más de 4 años construyendo sitios web de alta calidad que convierten y generan resultados reales para los clientes. Me enfoco en crear experiencias que priorizan una experiencia de usuario de primera y la atención al detalle. Prefiero un enfoque reflexivo y centrado—trabajar uno a uno me permite obsesionarme con los detalles que importan y mantenerme cerca del trabajo que amo. Para mí, no se trata solo de escribir código; se trata de crear algo de alta calidad, intuitivo y genuinamente útil para las personas al otro lado de la pantalla."
     },
     "contact": {
       "label": "Ponerse en contacto",
       "headline": "Trabajemos juntos",
-      "subtitle": "¿Tienes un proyecto en mente? Me encantaría saber de él. Inicia tu proyecto o contáctame directamente.",
+      "subtitle": "¿Tienes un proyecto en mente? Me encantaría saber de él. Obtén tu oferta o contáctame directamente.",
       "ctaButton": "Obtén tu oferta",
       "whatsappLabel": "Contáctame en WhatsApp"
     },
@@ -305,7 +305,7 @@
     }
   },
   "skills": {
-    "headline": "Sitios web <strong>construidos para rendir</strong>, no solo existir.",
+    "headline": "Sitios web <strong>construidos para ser vistos</strong>, no solo existir.",
     "subtitle": "Tecnologías con las que trabajo"
   },
   "caseStudies": {
@@ -394,12 +394,12 @@
       "description": "Conéctate con clientes de todo el mundo hablando su idioma. Tu sitio se adapta automáticamente a cada visitante, generando confianza y ayudándote a expandirte a nuevos mercados sin esfuerzo."
     },
     "svc-3": {
-      "title": "Tecnología de Alto Rendimiento",
-      "description": "Toma la propiedad total de un sitio ultrarrápido. Obtienes una configuración ligera y de alto rendimiento que te ahorra tiempo y garantiza que tus visitantes no tengan que esperar."
+      "title": "Soluciones Ultra-Rápidas",
+      "description": "El rendimiento no es un extra—viene integrado por defecto. Obtienes una configuración ultra rápida y optimizada donde la velocidad es una característica no negociable, garantizando que tus visitantes no tengan que esperar."
     },
     "svc-4": {
-      "title": "Optimización SEO y Velocidad",
-      "description": "Aparece ante las personas adecuadas y mantén su interés. Optimizo cada línea de código para asegurar que tu sitio posicione mejor y cargue instantáneamente, convirtiendo visitantes en clientes."
+      "title": "Crecimiento Digital y Velocidad",
+      "description": "Aparece ante las personas adecuadas y mantén su interés. Optimizo cada línea de código para asegurar que tu sitio crezca de forma digital y cargue instantáneamente, convirtiendo visitantes en clientes."
     },
     "svc-5": {
       "title": "Implementación UI/UX",

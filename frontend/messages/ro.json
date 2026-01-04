@@ -228,8 +228,8 @@
   },
   "home": {
     "headline": "Construit cu <strong>precizie</strong>. Proiectat pentru <strong>creștere</strong>.",
-    "tagline": "Experiențe web de înaltă calitate construite cu precizie pentru a ajuta afacerea ta să scaleze. Un parteneriat direct axat pe calitate, experiența utilizatorului și performanță.",
-    "aboutMeDescription": "Sunt Eduard Stefan și construiesc site-uri web de înaltă calitate care prioritizează calitatea execuției și experiența utilizatorului. Mă concentrez pe crearea de produse digitale care convertesc și aduc valoare reală, menținând în același timp viteză și performanță de top. Lucrul unu-la-unu îmi permite să mă ocup în detaliu de aspectele care contează cel mai mult pentru afacerea ta.",
+    "tagline": "Experiențe web de înaltă calitate construite cu precizie pentru a ajuta afacerea ta să scaleze. Un parteneriat direct axat pe maximizarea creșterii tale digitale.",
+    "aboutMeDescription": "Sunt Eduard Stefan și construiesc site-uri web de înaltă calitate care prioritizează atenția la detalii și experiența utilizatorului. Mă concentrez pe crearea de produse digitale care convertesc și aduc valoare reală, ajutându-ți afacerea să crească digital. Lucrul unu-la-unu îmi permite să mă ocup în detaliu de aspectele care contează cel mai mult pentru afacerea ta.",
     "announcementLabel": "Înregistrează-te pentru <strong>aplicația mea nouă</strong>",
     "resumeButtonLabel": "Vezi CV-ul meu",
     "findMeOnLabel": "Găsește-mă pe",
@@ -251,12 +251,12 @@
       "label": "Cine sunt",
       "headline": "Despre Mine",
       "subtitle": "Cunoaște persoana din spatele codului",
-      "description": "Sunt Eduard Stefan și de peste 4 ani construiesc site-uri web de înaltă calitate care convertesc și aduc rezultate reale pentru clienți. Mă concentrez pe crearea de experiențe care prioritizează o experiență de utilizator premium și calitatea execuției. Prefer o abordare atentă și concentrată—lucrul unu-la-unu îmi permite să mă obsedez de detaliile care contează și să rămân aproape de munca pe care o iubesc. Pentru mine, nu este vorba doar despre scrierea de cod; este vorba despre crearea a ceva de înaltă calitate, intuitiv și cu adevărat util pentru oamenii de pe cealaltă parte a ecranului."
+      "description": "Sunt Eduard Stefan și de peste 4 ani construiesc site-uri web de înaltă calitate care convertesc și aduc rezultate reale pentru clienți. Mă concentrez pe crearea de experiențe care prioritizează o experiență de utilizator premium și standardele ridicate. Prefer o abordare atentă și concentrată—lucrul unu-la-unu îmi permite să mă obsedez de detaliile care contează și să rămân aproape de munca pe care o iubesc. Pentru mine, nu este vorba doar despre scrierea de cod; este vorba despre crearea a ceva de înaltă calitate, intuitiv și cu adevărat util pentru oamenii de pe cealaltă parte a ecranului."
     },
     "contact": {
       "label": "Ia legătura",
       "headline": "Să lucrăm împreună",
-      "subtitle": "Ai un proiect în minte? Mi-ar plăcea să aud despre el. Începe proiectul tău sau contactează-mă direct.",
+      "subtitle": "Ai un proiect în minte? Mi-ar plăcea să aud despre el. Obține oferta ta sau contactează-mă direct.",
       "ctaButton": "Obține oferta ta",
       "whatsappLabel": "Contactează-mă pe WhatsApp"
     },
@@ -305,7 +305,7 @@
     }
   },
   "skills": {
-    "headline": "Site-uri web <strong>construite să performeze</strong>, nu doar să existe.",
+    "headline": "Site-uri web <strong>construite să fie găsite</strong>, nu doar să existe.",
     "subtitle": "Tehnologii cu care lucrez"
   },
   "caseStudies": {
@@ -394,12 +394,12 @@
       "description": "Conectează-te cu clienți din toată lumea vorbind pe limba lor. Site-ul tău se adaptează automat fiecărui vizitator, oferind încredere și ajutându-te să te extinzi global fără efort."
     },
     "svc-3": {
-      "title": "Tehnologie de Înaltă Performanță",
-      "description": "Preia controlul total asupra unui site ultra-rapid. Primești o soluție optimizată care îți economisește timpul și garantează că vizitatorii tăi nu vor fi nevoiți să aștepte."
+      "title": "Soluții Ultra-Rapide",
+      "description": "Performanța nu este un supliment—este integrată implicit. Primești o soluție ultra-rapidă și optimizată unde viteza este o caracteristică nenegociabilă, garantând că vizitatorii tăi nu vor fi nevoiți să aștepte."
     },
     "svc-4": {
-      "title": "Optimizare SEO și Viteză",
-      "description": "Fii găsit de cine contează și păstrează-le atenția. Optimizez fiecare linie de cod pentru ca site-ul tău să apară mai sus în căutări și să se încarce instantaneu, transformând vizitatorii în clienți."
+      "title": "Creștere Digitală și Viteză",
+      "description": "Fii găsit de cine contează și păstrează-le atenția. Optimizez fiecare linie de cod pentru ca site-ul tău să crească digital și să se încarce instantaneu, transformând vizitatorii în clienți."
     },
     "svc-5": {
       "title": "Implementare UI/UX",

@@ -18,16 +18,16 @@ export default async function HeroSection() {
   return (
     <section className="py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="flex flex-col items-center gap-12 text-center">
+        <div className="flex flex-col items-center gap-10 text-center">
           <AnimatedContainer
-            className="flex max-w-3xl flex-col gap-4 items-center"
+            className="flex max-w-3xl flex-col items-center"
             duration={2.5}
             delay={0.1}
             ease="veryGentle"
             offset={16}
           >
             <HighlightBadge
-              className="text-left text-sm"
+              className="text-left text-sm md:text-base"
               href="https://omnishopplanner.com"
             >
               {t.rich("announcementLabel", {
@@ -36,7 +36,7 @@ export default async function HeroSection() {
                 ),
               })}
             </HighlightBadge>
-            <h1 className="text-foreground group relative text-balance text-3xl leading-normal md:text-5xl md:leading-tight">
+            <h1 className="mt-8 text-foreground group relative text-balance text-4xl md:text-6xl leading-tight">
               {t.rich("headline", {
                 strong: (chunks) => (
                   <strong className="text-primary font-semibold">
@@ -45,7 +45,7 @@ export default async function HeroSection() {
                 ),
               })}
             </h1>
-            <p className="text-muted-foreground mx-auto max-w-2xl text-xl leading-relaxed text-pretty">
+            <p className="mt-4 text-muted-foreground mx-auto max-w-2xl text-lg md:text-xl leading-relaxed text-pretty">
               {t("tagline")}
             </p>
           </AnimatedContainer>

@@ -133,9 +133,9 @@ export default async function Page(props: Props) {
       <BackgroundPaperShaders />
       <HeroSection />
 
-      <ToolsSection />
-
       <ServicesSection />
+
+      <ToolsSection />
 
       <HowIWorkSection />
 

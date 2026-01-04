@@ -228,8 +228,8 @@
   },
   "home": {
     "headline": "Built with <strong>precision</strong>. Designed for <strong>growth</strong>.",
-    "tagline": "High-quality web experiences built with precision to help your business scale. A direct partnership focusing on craftsmanship, user experience, and performance.",
-    "aboutMeDescription": "I'm Eduard Stefan, and I build high-quality websites that prioritize premium craftsmanship and user experience. I focus on creating digital products that convert and deliver real value, while maintaining top-tier speed and performance. Working one-on-one allows me to obsess over the details that matter most to your business.",
+    "tagline": "High-quality web experiences built with precision to help your business scale. A direct partnership focusing on maximizing your digital growth.",
+    "aboutMeDescription": "I'm Eduard Stefan, and I build high-quality websites that prioritize high standards and user experience. I focus on creating digital products that convert and deliver real value, helping your business grow digitally. Working one-on-one allows me to obsess over the details that matter most to your business.",
     "announcementLabel": "Join waitlist for my <strong>new app</strong>",
     "resumeButtonLabel": "See my resume",
     "findMeOnLabel": "Find me on",
@@ -251,12 +251,12 @@
       "label": "Who I am",
       "headline": "About Me",
       "subtitle": "Get to know the person behind the code",
-      "description": "I'm Eduard Stefan, and I've spent over 4 years building high-quality websites that convert and bring real results for clients. I focus on creating experiences that prioritize premium user experience and craftsmanship. I prefer a thoughtful, focused approach—working one-on-one allows me to obsess over the details that matter and stay close to the work I love. For me, it's not just about writing code; it's about crafting something high-quality, intuitive, and genuinely useful for the people on the other side of the screen."
+      "description": "I'm Eduard Stefan, and I've spent over 4 years building high-quality websites that convert and bring real results for clients. I focus on creating experiences that prioritize premium user experience and attention to detail. I prefer a thoughtful, focused approach—working one-on-one allows me to obsess over the details that matter and stay close to the work I love. For me, it's not just about writing code; it's about building something high-quality, intuitive, and genuinely useful for the people on the other side of the screen."
     },
     "contact": {
       "label": "Get in touch",
       "headline": "Let's work together",
-      "subtitle": "Have a project in mind? I'd love to hear about it. Start your project or reach out directly.",
+      "subtitle": "Have a project in mind? I'd love to hear about it. Get your offer or reach out directly.",
       "ctaButton": "Get your offer",
       "whatsappLabel": "Contact me on WhatsApp"
     },
@@ -305,7 +305,7 @@
     }
   },
   "skills": {
-    "headline": "Websites <strong>built to perform</strong>, not just exist.",
+    "headline": "Websites <strong>built to be seen</strong>, not just exist.",
     "subtitle": "Technologies I work with"
   },
   "caseStudies": {
@@ -387,19 +387,19 @@
     "subtitle": "Direct communication. Faster delivery. Better value.",
     "svc-1": {
       "title": "High-Quality Web Solutions",
-      "description": "Get a custom solution built with a focus on craftsmanship and your business goals. We move fast, creating a first draft immediately so we can iterate together toward a premium app that scales with you."
+      "description": "Get a custom solution built with a focus on excellence and your business goals. We move fast, creating a first draft immediately so we can iterate together toward a premium app that scales with you."
     },
     "svc-7": {
       "title": "Internationalization & Multi-Language",
       "description": "Connect with customers worldwide by speaking their language. Your site automatically adapts to every visitor, building trust and helping you expand into new markets effortlessly."
     },
     "svc-3": {
-      "title": "High-Performance Tech",
-      "description": "Take full ownership of a lightning-fast site. You get a lightweight, high-performance setup that saves you time and ensures your visitors aren't kept waiting."
+      "title": "Lightning-Fast Solutions",
+      "description": "Performance isn't an add-on—it's built-in by default. You get a lightning-fast, optimized setup where speed is a non-negotiable feature, ensuring your visitors never have to wait."
     },
     "svc-4": {
-      "title": "SEO & Speed Optimization",
-      "description": "Get found by the right people and keep them there. I optimize every line of code to ensure your site ranks higher and loads instantly, turning visitors into customers."
+      "title": "Digital Growth & Speed",
+      "description": "Get found by the right people and keep them there. I optimize every line of code to ensure your site grows digitally and loads instantly, turning visitors into customers."
     },
     "svc-5": {
       "title": "UI/UX Implementation",

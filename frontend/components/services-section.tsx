@@ -58,12 +58,12 @@ export default async function ServicesSection({
         <AnimatedContainer
           trigger="scroll"
           fadeDirection="up"
-          className="mb-16 text-center px-4"
+          className="mb-12 md:mb-16 text-center px-4"
         >
           <p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
             {t("label")}
           </p>
-          <h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl text-balance">
+          <h2 className="text-foreground mb-1 text-3xl tracking-tight md:text-4xl text-balance">
             <a
               href="#services"
               className="hover:text-primary transition-colors"
