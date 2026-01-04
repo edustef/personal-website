@@ -96,7 +96,7 @@ export default async function HowIPriceSection() {
         <AnimatedContainer
           trigger="scroll"
           fadeDirection="up"
-          className="flex flex-col items-center px-4"
+          className="text-center flex flex-col items-center px-4"
         >
           <h3 className="text-foreground mb-4 text-2xl font-semibold text-balance">
             {t("addOns.title")}
