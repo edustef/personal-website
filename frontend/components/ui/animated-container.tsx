@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import type * as React from "react";
 
 const easeCurves = {
@@ -50,7 +50,7 @@ export function AnimatedContainer({
   trigger = "load",
   staggerIndex = 0,
   staggerDelay = 0.1,
-  viewportMargin = "-80px",
+  viewportMargin = "0px",
   once = true,
   offset: customOffset,
   ...props

@@ -25,7 +25,7 @@ export function HowIWorkSectionClient({
   timelineData,
 }: HowIWorkSectionClientProps) {
   return (
-    <section id="how-i-work" className="py-12 md:py-16">
+    <section id="how-i-work" className="relative py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedContainer
           trigger="scroll"
@@ -48,7 +48,7 @@ export function HowIWorkSectionClient({
           </p>
         </AnimatedContainer>
 
-        <div className="w-full">
+        <div className="relative w-full">
           <Timeline data={timelineData} showHeader={false} />
         </div>
       </div>

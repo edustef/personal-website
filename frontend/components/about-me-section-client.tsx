@@ -1,8 +1,8 @@
 "use client";
 
 import { AnimatedContainer } from "@/components/ui/animated-container";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
+import { motion, useScroll, useTransform } from "motion/react";
+import Image, { type StaticImageData } from "next/image";
 import { useRef } from "react";
 
 type AboutMeSectionClientProps = {
@@ -10,7 +10,7 @@ type AboutMeSectionClientProps = {
   headline: string;
   subtitle: string;
   description: string;
-  imageSrc: string;
+  image: StaticImageData;
 };
 
 export function AboutMeSectionClient({
@@ -18,7 +18,7 @@ export function AboutMeSectionClient({
   headline,
   subtitle,
   description,
-  imageSrc,
+  image,
 }: AboutMeSectionClientProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -29,7 +29,7 @@ export function AboutMeSectionClient({
   const imageY = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
   return (
-    <section id="about-me" className="py-12 md:py-16" ref={sectionRef}>
+    <section id="about-me" className="relative py-12 md:py-16" ref={sectionRef}>
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedContainer
           trigger="scroll"
@@ -52,18 +52,28 @@ export function AboutMeSectionClient({
           </p>
         </AnimatedContainer>
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between">
-          <motion.div className="shrink-0" style={{ y: imageY }}>
-            <div
-              style={{
-                maskImage:
-                  "radial-gradient(110% 105% at right top, black 50%, transparent 100%)",
-                WebkitMaskImage:
-                  "radial-gradient(110% 105% at right top, black 50%, transparent 100%)",
-              }}
-            >
-              <Image src={imageSrc} width={400} height={600} alt="About me" />
-            </div>
-          </motion.div>
+          <AnimatedContainer
+            trigger="scroll"
+            fadeDirection="left"
+            className="shrink-0"
+          >
+            <motion.div style={{ y: imageY }}>
+              <div
+                style={{
+                  maskImage:
+                    "radial-gradient(110% 105% at right top, black 50%, transparent 100%)",
+                  WebkitMaskImage:
+                    "radial-gradient(110% 105% at right top, black 50%, transparent 100%)",
+                }}
+              >
+                <Image
+                  src={image}
+                  alt="About me"
+                  className="w-full max-w-[400px] h-auto"
+                />
+              </div>
+            </motion.div>
+          </AnimatedContainer>
           <AnimatedContainer
             trigger="scroll"
             fadeDirection="right"

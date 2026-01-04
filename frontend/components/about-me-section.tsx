@@ -12,7 +12,7 @@ export default async function AboutMeSection() {
       headline={t("aboutMe.headline")}
       subtitle={t("aboutMe.subtitle")}
       description={t("aboutMe.description")}
-      imageSrc={meTransparent.src}
+      image={meTransparent}
     />
   );
 }

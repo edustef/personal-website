@@ -94,7 +94,13 @@ export function ToolsSlider() {
                 tool.classNames
               )}
             >
-              <Image src={src} alt={tool.name} width={228} height={128} />
+              <Image
+                src={src}
+                alt={tool.name}
+                width={228}
+                height={128}
+                style={{ height: "auto" }}
+              />
             </div>
           );
         })}
