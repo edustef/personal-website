@@ -66,6 +66,17 @@ export async function generateMetadata(
       description: localized.description,
       images: localized.ogImage ? [localized.ogImage.url] : undefined,
     },
+    icons: {
+      icon: [
+        { url: "/icon-48x48.png", sizes: "48x48", type: "image/png" },
+        { url: "/icon-96x96.png", sizes: "96x96", type: "image/png" },
+        { url: "/icon-144x144.png", sizes: "144x144", type: "image/png" },
+      ],
+      apple: [
+        { url: "/icon-144x144.png", sizes: "144x144", type: "image/png" },
+      ],
+    },
+    manifest: "/manifest.json",
   };
 }
 
@@ -102,9 +113,10 @@ export default async function LocaleLayout(props: Props) {
 
   setRequestLocale(params.locale);
 
-  const [localizedSettings, profileT] = await Promise.all([
+  const [localizedSettings, profileT, settingsT] = await Promise.all([
     getLocalizedSettingsMetadata(params.locale),
     getTranslations({ locale: params.locale, namespace: "profile" }),
+    getTranslations({ locale: params.locale, namespace: "settings" }),
   ]);
 
   const socialLinks = profileT.raw("socialLinks") as Array<{
@@ -125,7 +137,7 @@ export default async function LocaleLayout(props: Props) {
   );
 
   const webSiteSchema = createWebSiteSchema(
-    localizedSettings.title,
+    settingsT("title"),
     localizedSettings.description,
     params.locale
   );
