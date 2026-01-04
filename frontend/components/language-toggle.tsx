@@ -54,7 +54,7 @@ export function LanguageToggle({
     scrollPositionRef.current = window.scrollY;
     sessionStorage.setItem("scrollPosition", String(scrollPositionRef.current));
 
-    router.push(pathname, { locale: localeId });
+    router.push(pathname as any, { locale: localeId });
   };
 
   return (

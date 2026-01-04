@@ -608,5 +608,12 @@
       "question": "What's included in your pricing packages?",
       "answer": "Each package includes custom design, mobile responsiveness, content management system access, SEO setup, and performance optimization. Higher-tier packages include more pages, advanced features, and additional integrations. All packages come with training and documentation. See the <link>How I Price</link> section for detailed breakdowns."
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Thoughts on web development, design, and digital growth.",
+    "readMore": "Read more",
+    "backToBlog": "Back to blog",
+    "publishedOn": "Published on {date}"
   }
 }

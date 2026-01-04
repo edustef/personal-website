@@ -608,5 +608,12 @@
       "question": "Ce este inclus în pachetele tale de prețuri?",
       "answer": "Fiecare pachet include design personalizat, responsivitate mobilă, acces la sistemul de management al conținutului, configurare SEO și optimizare a performanței. Pachetele de nivel superior includ mai multe pagini, funcții avansate și integrări suplimentare. Toate pachetele includ instruire și documentație. Consultă secțiunea <link>Cum Prețuiesc</link> pentru detalii complete."
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Gânduri despre dezvoltarea web, design și creștere digitală.",
+    "readMore": "Citește mai mult",
+    "backToBlog": "Înapoi la blog",
+    "publishedOn": "Publicat pe {date}"
   }
 }

@@ -11,7 +11,7 @@ export type LocaleId = (typeof locales)[number]["id"];
 export const defaultLocale = "en" satisfies LocaleId;
 
 export const routing = defineRouting({
-  defaultLocale: "en",
+  defaultLocale,
   locales: locales.map((locale) => locale.id),
   alternateLinks: false,
   pathnames: {
@@ -24,5 +24,11 @@ export const routing = defineRouting({
       ro: "/politică-de-confidențialitate",
       es: "/política-de-privacidad",
     },
+    "/blog": {
+      en: "/blog",
+      ro: "/blog",
+      es: "/blog",
+    },
+    "/blog/[slug]": "/blog/[slug]",
   },
 });

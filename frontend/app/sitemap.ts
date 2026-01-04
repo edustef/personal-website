@@ -1,5 +1,6 @@
 import { getPathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { getAllPostsWithTranslations } from "@/lib/blog";
 import { getBaseUrl } from "@/lib/utils";
 import { MetadataRoute } from "next";
 import { Locale } from "next-intl";
@@ -7,12 +8,34 @@ import { Locale } from "next-intl";
 const host = getBaseUrl();
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  return [
+  const staticPages = [
     // Static pages
     ...getEntries("/"),
     ...getEntries("/start-your-project"),
     ...getEntries("/privacy-policy"),
+    ...getEntries("/blog"),
   ];
+
+  const posts = await getAllPostsWithTranslations();
+  const blogPosts = posts.map((post) => ({
+    url: getUrl(
+      { pathname: "/blog/[slug]", params: { slug: post.slug } },
+      post.locale as Locale
+    ),
+    alternates: {
+      languages: Object.fromEntries(
+        post.translations.map((t) => [
+          t.locale,
+          getUrl(
+            { pathname: "/blog/[slug]", params: { slug: t.slug } },
+            t.locale as Locale
+          ),
+        ])
+      ),
+    },
+  }));
+
+  return [...staticPages, ...blogPosts];
 }
 
 type Href = Parameters<typeof getPathname>[0]["href"];

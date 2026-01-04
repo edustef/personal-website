@@ -608,5 +608,12 @@
       "question": "¿Qué está incluido en tus paquetes de precios?",
       "answer": "Cada paquete incluye diseño personalizado, responsividad móvil, acceso al sistema de gestión de contenido, configuración de SEO y optimización de rendimiento. Los paquetes de nivel superior incluyen más páginas, funciones avanzadas e integraciones adicionales. Todos los paquetes incluyen capacitación y documentación. Consulta la sección <link>Cómo Precio</link> para ver desgloses detallados."
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Reflexiones sobre desarrollo web, diseño y crecimiento digital.",
+    "readMore": "Leer más",
+    "backToBlog": "Volver al blog",
+    "publishedOn": "Publicado el {date}"
   }
 }
