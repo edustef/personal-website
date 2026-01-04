@@ -252,20 +252,24 @@ function CarouselDots({ className, ...props }: React.ComponentProps<"div">) {
   const { selectedIndex, scrollSnaps, onDotClick } = useCarousel();
 
   return (
-    <div className={cn("flex justify-center gap-2", className)} {...props}>
+    <div className={cn("flex justify-center", className)} {...props}>
       {scrollSnaps.map((_, index) => (
         <button
           key={index}
           type="button"
-          className={cn(
-            "h-2 w-2 rounded-full transition-all",
-            index === selectedIndex
-              ? "bg-primary w-4"
-              : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
-          )}
+          className="group flex h-10 w-10 shrink-0 items-center justify-center -mx-2"
           onClick={() => onDotClick(index)}
           aria-label={`Go to slide ${index + 1}`}
-        />
+        >
+          <div
+            className={cn(
+              "h-2.5 w-2.5 rounded-full transition-all",
+              index === selectedIndex
+                ? "bg-primary w-5"
+                : "bg-muted-foreground/30 group-hover:bg-muted-foreground/50"
+            )}
+          />
+        </button>
       ))}
     </div>
   );
