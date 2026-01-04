@@ -120,7 +120,6 @@ export default async function LocaleLayout(props: Props) {
       about: profileT("about"),
       picture: null,
       socialLinks: socialLinks.map((link) => ({ url: link.url })),
-      workPreference: profileT("workPreference"),
     },
     params.locale
   );

@@ -84,9 +84,9 @@ export function PackageCard({
       )}
       <CardContent className="p-6">
         <div className="mb-4">
-          <h4 className="text-foreground mb-2 text-xl font-semibold">
+          <h3 className="text-foreground mb-2 text-xl font-semibold">
             {title}
-          </h4>
+          </h3>
           <p className="text-muted-foreground mb-3 text-sm">{bestFor}</p>
           <p className="text-muted-foreground text-sm leading-relaxed">
             {description}
@@ -155,9 +155,7 @@ export function PackageCard({
               <p className="text-muted-foreground text-xs uppercase tracking-wide">
                 {t("packages.investment")}
               </p>
-              <p className="text-foreground text-lg font-bold">
-                {investment}
-              </p>
+              <p className="text-foreground text-lg font-bold">{investment}</p>
             </div>
           </div>
         </div>
@@ -165,4 +163,3 @@ export function PackageCard({
     </Card>
   );
 }
-

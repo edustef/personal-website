@@ -71,7 +71,7 @@ export function Header({ className }: HeaderProps) {
       >
         {skipLinkText}
       </a>
-      <div className="mx-auto w-full max-w-6xl px-4">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
         <div className="flex items-center justify-between gap-5">
           <Link
             aria-label={homeButtonLabel}
