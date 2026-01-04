@@ -1,6 +1,12 @@
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { BGPattern } from "@/components/ui/bg-pattern";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselDots,
+  CarouselItem,
+} from "@/components/ui/carousel";
 import { type Service, services } from "@/lib/data/services";
 import { cn } from "@/lib/utils";
 import { Globe, Headphones, Layers, Palette, Rocket, Zap } from "lucide-react";
@@ -48,7 +54,7 @@ export default async function ServicesSection({
 
   return (
     <section id="services" className="overflow-x-hidden py-12 md:py-16">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-6xl md:px-6">
         <AnimatedContainer
           trigger="scroll"
           fadeDirection="up"
@@ -70,7 +76,8 @@ export default async function ServicesSection({
           </p>
         </AnimatedContainer>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {/* Desktop Grid */}
+        <div className="hidden md:grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {featuredServices.map((service, index) => {
             const Icon = iconMap[service.icon] || Layers;
             const patternVariant = getPatternForService(index);
@@ -134,6 +141,50 @@ export default async function ServicesSection({
               </AnimatedContainer>
             );
           })}
+        </div>
+
+        {/* Mobile Carousel */}
+        <div className="md:hidden">
+          <Carousel className="w-full">
+            <CarouselContent className="-ml-4 px-4 pb-4">
+              {[...featuredServices, ...otherServices].map((service, index) => {
+                const Icon = iconMap[service.icon] || Layers;
+                const patternVariant = getPatternForService(index);
+
+                return (
+                  <CarouselItem
+                    key={service._id}
+                    className={cn(
+                      "pl-4 basis-[85%]",
+                      index === servicesToDisplay.length - 1 && "mr-4"
+                    )}
+                  >
+                    <div className="h-full">
+                      <Card className="relative h-full w-full overflow-hidden rounded-2xl">
+                        <BGPattern
+                          variant={patternVariant}
+                          mask="fade-edges"
+                          size={20}
+                        />
+                        <CardContent className="relative p-6 flex flex-col h-full">
+                          <Icon className="size-8 mb-4 shrink-0" />
+                          <h3 className="text-foreground mb-2 break-words text-xl font-semibold">
+                            {t(service.titleKey)}
+                          </h3>
+                          <p className="text-muted-foreground break-words text-lg leading-relaxed flex-grow">
+                            {t(service.descriptionKey)}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+            <div className="mt-6">
+              <CarouselDots />
+            </div>
+          </Carousel>
         </div>
       </div>
     </section>

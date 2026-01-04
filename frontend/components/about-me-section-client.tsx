@@ -68,7 +68,7 @@ export function AboutMeSectionClient({
             trigger="scroll"
             fadeDirection="right"
             delay={0.2}
-            className="flex-1 text-center lg:text-left"
+            className="flex-1 text-left"
           >
             <p className="text-muted-foreground text-lg leading-relaxed">
               {description}

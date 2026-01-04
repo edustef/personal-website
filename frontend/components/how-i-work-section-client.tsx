@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatedContainer } from "@/components/ui/animated-container";
+
 import { Timeline } from "@/components/ui/timeline";
 import type React from "react";
 

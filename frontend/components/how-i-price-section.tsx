@@ -1,11 +1,17 @@
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import {
+  Carousel,
+  CarouselContent,
+  CarouselDots,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
+import { getLocale, getTranslations } from "next-intl/server";
+import {
   PackageCard,
   PackageCardsProvider,
 } from "./how-i-price-section-client";
-import { cn } from "@/lib/utils";
-import { getLocale, getTranslations } from "next-intl/server";
 
 const packages = ["launch", "growth", "custom"] as const;
 const addOns = ["seo", "store", "multiLanguage", "analytics"] as const;
@@ -26,11 +32,11 @@ export default async function HowIPriceSection() {
 
   return (
     <section id="how-i-price" className="py-12 md:py-16">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-6xl md:px-4">
         <AnimatedContainer
           trigger="scroll"
           fadeDirection="up"
-          className="mb-16 text-center"
+          className="mb-16 text-center px-4"
         >
           <p className="text-primary mb-3 font-medium uppercase tracking-wider">
             {t("label")}
@@ -48,7 +54,7 @@ export default async function HowIPriceSection() {
           </p>
         </AnimatedContainer>
 
-        <div className="mb-16">
+        <div className="mb-16 px-4">
           <PackageCardsProvider>
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
               {packages.map((pkg, index) => {
@@ -90,7 +96,7 @@ export default async function HowIPriceSection() {
         <AnimatedContainer
           trigger="scroll"
           fadeDirection="up"
-          className="flex flex-col items-center"
+          className="flex flex-col items-center px-4"
         >
           <h3 className="text-foreground mb-4 text-2xl font-semibold">
             {t("addOns.title")}
@@ -98,7 +104,7 @@ export default async function HowIPriceSection() {
           <p className="text-muted-foreground mb-8">{t("addOns.subtitle")}</p>
         </AnimatedContainer>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="hidden md:grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {addOns.map((addOn, index) => (
             <AnimatedContainer
               key={addOn}
@@ -126,6 +132,46 @@ export default async function HowIPriceSection() {
               </Card>
             </AnimatedContainer>
           ))}
+        </div>
+
+        {/* Mobile Carousel */}
+        <div className="md:hidden">
+          <Carousel className="w-full">
+            <CarouselContent className="-ml-4 px-4 pb-4">
+              {addOns.map((addOn, index) => (
+                <CarouselItem
+                  key={addOn}
+                  className={cn(
+                    "pl-4 basis-[85%]",
+                    index === addOns.length - 1 && "mr-4"
+                  )}
+                >
+                  <div className="h-full">
+                    <Card className="h-full rounded-xl">
+                      <CardContent className="p-5">
+                        <h4 className="text-foreground text-xl mb-2 font-semibold">
+                          {t(`addOns.${addOn}.title`)}
+                        </h4>
+                        <p className="text-muted-foreground mb-3 leading-relaxed">
+                          {t(`addOns.${addOn}.benefit`)}
+                        </p>
+                      </CardContent>
+                      <CardFooter className="mt-auto pt-6">
+                        <p className="text-primary text-lg font-semibold">
+                          {formatPrice(
+                            t.raw(`addOns.${addOn}.priceAmount`) as number
+                          )}
+                        </p>
+                      </CardFooter>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="mt-6">
+              <CarouselDots />
+            </div>
+          </Carousel>
         </div>
       </div>
     </section>
