@@ -30,32 +30,12 @@ export async function Footer({ className, locale }: FooterProps) {
     >
       <div className="mx-auto max-w-6xl py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="flex flex-col gap-6">
-            <Link
-              href="/"
-              className="text-xl font-bold hover:text-primary transition-colors"
-            >
-              Eduard Stefan
-            </Link>
-            <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
-              {parts.length > 1 ? (
-                <>
-                  {parts[0]}
-                  <time dateTime={currentYear.toString()}>{currentYear}</time>
-                  {parts[1]}
-                </>
-              ) : (
-                footerText
-              )}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col gap-4">
               <h3 className="font-semibold text-foreground">
                 {t("menu.title")}
               </h3>
-              <nav className="flex flex-col gap-3">
+              <nav className="flex flex-col items-start gap-3">
                 <Link
                   href={`/#${servicesSlug}`}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -77,7 +57,7 @@ export async function Footer({ className, locale }: FooterProps) {
               </nav>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col items-start gap-4">
               <h3 className="font-semibold text-foreground">Legal</h3>
               <nav className="flex flex-col gap-3">
                 <Link
@@ -90,6 +70,17 @@ export async function Footer({ className, locale }: FooterProps) {
             </div>
           </div>
         </div>
+        <p className="mt-12 text-sm text-muted-foreground max-w-xs leading-relaxed">
+          {parts.length > 1 ? (
+            <>
+              {parts[0]}
+              <time dateTime={currentYear.toString()}>{currentYear}</time>
+              {parts[1]}
+            </>
+          ) : (
+            footerText
+          )}
+        </p>
       </div>
     </footer>
   );
