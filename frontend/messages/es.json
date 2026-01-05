@@ -614,6 +614,13 @@
     "description": "Reflexiones sobre desarrollo web, diseño y crecimiento digital.",
     "readMore": "Leer más",
     "backToBlog": "Volver al blog",
-    "publishedOn": "Publicado el {date}"
+    "publishedOn": "Publicado el {date}",
+    "searchPlaceholder": "Buscar artículos...",
+    "filterByTag": "Filtrar por etiqueta",
+    "allTags": "Todos los temas",
+    "minRead": "{minutes} min de lectura",
+    "noResults": "No se encontraron artículos",
+    "noResultsDescription": "Intenta ajustar tu búsqueda o filtro para encontrar lo que buscas.",
+    "clearFilters": "Limpiar filtros"
   }
 }

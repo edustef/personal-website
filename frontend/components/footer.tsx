@@ -57,13 +57,13 @@ export async function Footer({ className, locale }: FooterProps) {
               </h3>
               <nav className="flex flex-col gap-3">
                 <Link
-                  href={`#${servicesSlug}`}
+                  href={`/#${servicesSlug}`}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   {t("menu.services")}
                 </Link>
                 <Link
-                  href={`#${pricingSlug}`}
+                  href={`/#${pricingSlug}`}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   {t("menu.pricing")}

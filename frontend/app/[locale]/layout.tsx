@@ -8,6 +8,7 @@ import { Toaster } from "sonner";
 
 import { ConvexClientProvider } from "@/components/convex-client-provider";
 import { ThemeProvider } from "@/components/theme-provider";
+import { NuqsProvider } from "@/components/nuqs-provider";
 import { locales } from "@/i18n/routing";
 import { getLocalizedSettingsMetadata } from "@/lib/seo";
 import {
@@ -159,9 +160,11 @@ export default async function LocaleLayout(props: Props) {
               enableSystem={false}
               disableTransitionOnChange
             >
-              <Toaster />
-              {props.children}
-              <SpeedInsights />
+              <NuqsProvider>
+                <Toaster />
+                {props.children}
+                <SpeedInsights />
+              </NuqsProvider>
             </ThemeProvider>
           </ConvexClientProvider>
         </NextIntlClientProvider>

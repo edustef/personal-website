@@ -614,6 +614,13 @@
     "description": "Thoughts on web development, design, and digital growth.",
     "readMore": "Read more",
     "backToBlog": "Back to blog",
-    "publishedOn": "Published on {date}"
+    "publishedOn": "Published on {date}",
+    "searchPlaceholder": "Search articles...",
+    "filterByTag": "Filter by tag",
+    "allTags": "All topics",
+    "minRead": "{minutes} min read",
+    "noResults": "No articles found",
+    "noResultsDescription": "Try adjusting your search or filter to find what you're looking for.",
+    "clearFilters": "Clear filters"
   }
 }

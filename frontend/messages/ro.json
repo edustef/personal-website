@@ -614,6 +614,13 @@
     "description": "Gânduri despre dezvoltarea web, design și creștere digitală.",
     "readMore": "Citește mai mult",
     "backToBlog": "Înapoi la blog",
-    "publishedOn": "Publicat pe {date}"
+    "publishedOn": "Publicat pe {date}",
+    "searchPlaceholder": "Caută articole...",
+    "filterByTag": "Filtrează după etichetă",
+    "allTags": "Toate subiectele",
+    "minRead": "{minutes} min de citit",
+    "noResults": "Nu s-au găsit articole",
+    "noResultsDescription": "Încearcă să ajustezi căutarea sau filtrul pentru a găsi ceea ce cauți.",
+    "clearFilters": "Șterge filtrele"
   }
 }

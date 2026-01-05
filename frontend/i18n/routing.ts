@@ -24,11 +24,7 @@ export const routing = defineRouting({
       ro: "/politică-de-confidențialitate",
       es: "/política-de-privacidad",
     },
-    "/blog": {
-      en: "/blog",
-      ro: "/blog",
-      es: "/blog",
-    },
+    "/blog": "/blog",
     "/blog/[slug]": "/blog/[slug]",
   },
 });

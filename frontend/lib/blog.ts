@@ -4,6 +4,13 @@ import matter from "gray-matter";
 
 const BLOG_DIR = path.join(process.cwd(), "content/blog");
 
+// Calculate reading time in minutes
+function calculateReadTime(content: string): number {
+  const wordsPerMinute = 200;
+  const wordCount = content.trim().split(/\s+/).length;
+  return Math.ceil(wordCount / wordsPerMinute);
+}
+
 export type BlogPost = {
   id: string; // Cross-locale mapping ID
   slug: string; // Localized slug
@@ -12,6 +19,10 @@ export type BlogPost = {
   date: string;
   content: string;
   locale: string;
+  tags?: string[];
+  coverImage?: string;
+  author?: string;
+  readTime?: number; // in minutes
 };
 
 export async function getBlogPosts(locale: string): Promise<BlogPost[]> {
@@ -38,6 +49,10 @@ export async function getBlogPosts(locale: string): Promise<BlogPost[]> {
         date: data.date,
         content,
         locale,
+        tags: data.tags || [],
+        coverImage: data.coverImage,
+        author: data.author,
+        readTime: calculateReadTime(content),
       };
     });
 
@@ -67,6 +82,10 @@ export async function getBlogPost(
     date: data.date,
     content,
     locale,
+    tags: data.tags || [],
+    coverImage: data.coverImage,
+    author: data.author,
+    readTime: calculateReadTime(content),
   };
 }
 

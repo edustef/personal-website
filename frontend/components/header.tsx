@@ -23,6 +23,7 @@ import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
 import { motion } from "motion/react";
 import { useLocale, useTranslations } from "next-intl";
+import { usePathname } from "@/i18n/navigation";
 import { useEffect, useState } from "react";
 
 type HeaderProps = {
@@ -31,6 +32,7 @@ type HeaderProps = {
 
 export function Header({ className }: HeaderProps) {
   const locale = useLocale();
+  const pathname = usePathname();
   const headerT = useTranslations("settings.header");
   const homeT = useTranslations("home");
 
@@ -45,6 +47,10 @@ export function Header({ className }: HeaderProps) {
   const blogText = headerT("nav.blog");
   const servicesSlug = headerT("nav.servicesSlug");
   const pricingSlug = headerT("nav.pricingSlug");
+
+  const isHomePage = pathname === "/";
+  const servicesHref = isHomePage ? `#${servicesSlug}` : `/#${servicesSlug}`;
+  const pricingHref = isHomePage ? `#${pricingSlug}` : `/#${pricingSlug}`;
 
   const [showContactButton, setShowContactButton] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -109,7 +115,7 @@ export function Header({ className }: HeaderProps) {
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <Link
-                    href={`#${servicesSlug}`}
+                    href={servicesHref}
                     className="font-medium transition-colors hover:text-primary"
                   >
                     {servicesText}
@@ -119,7 +125,7 @@ export function Header({ className }: HeaderProps) {
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <Link
-                    href={`#${pricingSlug}`}
+                    href={pricingHref}
                     className="font-medium transition-colors hover:text-primary"
                   >
                     {pricingText}
@@ -177,14 +183,14 @@ export function Header({ className }: HeaderProps) {
                 </SheetHeader>
                 <nav className="flex flex-col gap-4">
                   <Link
-                    href={`#${servicesSlug}`}
+                    href={servicesHref}
                     className="text-lg font-medium hover:text-primary transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {servicesText}
                   </Link>
                   <Link
-                    href={`#${pricingSlug}`}
+                    href={pricingHref}
                     className="text-lg font-medium hover:text-primary transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
