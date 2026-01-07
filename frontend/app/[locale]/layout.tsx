@@ -7,7 +7,6 @@ import { notFound } from "next/navigation";
 import { Toaster } from "sonner";
 
 import { ConvexClientProvider } from "@/components/convex-client-provider";
-import { NuqsProvider } from "@/components/nuqs-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { locales } from "@/i18n/routing";
 import { getLocalizedSettingsMetadata } from "@/lib/seo";
@@ -160,11 +159,9 @@ export default async function LocaleLayout(props: Props) {
               enableSystem
               disableTransitionOnChange
             >
-              <NuqsProvider>
-                <Toaster />
-                {props.children}
-                <SpeedInsights />
-              </NuqsProvider>
+              <Toaster />
+              {props.children}
+              <SpeedInsights />
             </ThemeProvider>
           </ConvexClientProvider>
         </NextIntlClientProvider>

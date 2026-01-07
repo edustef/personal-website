@@ -4,19 +4,12 @@ import { Link } from "@/components/ui/link";
 import type { BlogPost } from "@/lib/blog";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useQueryState } from "nuqs";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 export default function BlogClient({ posts }: { posts: BlogPost[] }) {
   const t = useTranslations("blog");
-  const [searchQuery, setSearchQuery] = useQueryState("search", {
-    defaultValue: "",
-    shallow: false,
-  });
-  const [selectedTag, setSelectedTag] = useQueryState("tag", {
-    defaultValue: "",
-    shallow: false,
-  });
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedTag, setSelectedTag] = useState("");
 
   // Get all unique tags from posts
   const allTags = useMemo(() => {
@@ -46,9 +39,9 @@ export default function BlogClient({ posts }: { posts: BlogPost[] }) {
     });
   }, [posts, searchQuery, selectedTag]);
 
-  const handleClearFilters = async () => {
-    await setSearchQuery("");
-    await setSelectedTag("");
+  const handleClearFilters = () => {
+    setSearchQuery("");
+    setSelectedTag("");
   };
 
   const hasActiveFilters = !!searchQuery || !!selectedTag;
