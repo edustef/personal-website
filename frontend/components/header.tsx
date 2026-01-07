@@ -63,6 +63,7 @@ export function Header({ className }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentHash, setCurrentHash] = useState("");
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const heroButton = document.getElementById(HERO_CONTACT_BUTTON_ID);
@@ -91,7 +92,14 @@ export function Header({ className }: HeaderProps) {
     };
 
     const handleHashChange = () => {
-      setCurrentHash(window.location.hash);
+      const hash = window.location.hash;
+      setCurrentHash(hash);
+      if (hash) {
+        const sectionId = hash.slice(1);
+        if (sectionId === servicesSlug || sectionId === pricingSlug) {
+          setActiveSection(sectionId);
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -103,7 +111,40 @@ export function Header({ className }: HeaderProps) {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("hashchange", handleHashChange);
     };
-  }, []);
+  }, [servicesSlug, pricingSlug]);
+
+  useEffect(() => {
+    if (!isHomePage) return;
+
+    const servicesElement = document.getElementById(servicesSlug);
+    const pricingElement = document.getElementById(pricingSlug);
+
+    if (!servicesElement || !pricingElement) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            if (id === servicesSlug || id === pricingSlug) {
+              setActiveSection(id);
+            }
+          }
+        }
+      },
+      {
+        rootMargin: "-20% 0px -60% 0px",
+        threshold: 0,
+      }
+    );
+
+    observer.observe(servicesElement);
+    observer.observe(pricingElement);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [isHomePage, servicesSlug, pricingSlug]);
 
   const getNavHref = (item: (typeof navItems)[number]) => {
     if ("href" in item && item.href) return item.href;
@@ -120,10 +161,16 @@ export function Header({ className }: HeaderProps) {
   const isActive = (item: (typeof navItems)[number]) => {
     if ("href" in item && item.href) return pathname.startsWith(item.href);
     if (item.key === "services") {
-      return isHomePage && currentHash === `#${servicesSlug}`;
+      return (
+        isHomePage &&
+        (currentHash === `#${servicesSlug}` || activeSection === servicesSlug)
+      );
     }
     if (item.key === "pricing") {
-      return isHomePage && currentHash === `#${pricingSlug}`;
+      return (
+        isHomePage &&
+        (currentHash === `#${pricingSlug}` || activeSection === pricingSlug)
+      );
     }
     return false;
   };
@@ -348,17 +395,29 @@ export function Header({ className }: HeaderProps) {
                           <Link
                             href={href}
                             className={cn(
-                              "group relative flex items-center px-4 py-3 text-lg font-medium rounded-md transition-all duration-200",
-                              "hover:bg-accent hover:text-accent-foreground",
-                              active && "bg-accent text-accent-foreground"
+                              "group relative flex items-center px-4 py-2 text-lg font-medium rounded-md transition-colors duration-300",
+                              "hover:text-primary",
+                              active && "text-primary"
                             )}
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
                             <span className="relative z-10">{text}</span>
+                            <motion.span
+                              className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary origin-left"
+                              initial={{ scaleX: active ? 1 : 0 }}
+                              animate={{ scaleX: active ? 1 : 0 }}
+                              whileHover={{ scaleX: 1 }}
+                              transition={{
+                                duration: 0.3,
+                                ease: [0.25, 1, 0.25, 1],
+                              }}
+                            />
                             {active && (
                               <motion.div
-                                className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full"
+                                className="absolute inset-0 rounded-md bg-primary/5 -z-10"
                                 layoutId="activeMobileNavItem"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
                                 transition={{
                                   type: "spring",
                                   stiffness: 380,
