@@ -184,12 +184,11 @@ export function Header({ className }: HeaderProps) {
           : "bg-transparent",
         className
       )}
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{
-        duration: 0.8,
-        delay: 0.1,
-        ease: [0.25, 1, 0.25, 1],
+        duration: 0.4,
+        ease: [0.4, 0, 0.2, 1],
       }}
     >
       <a
@@ -235,49 +234,39 @@ export function Header({ className }: HeaderProps) {
                 return (
                   <NavigationMenuItem key={item.key}>
                     <NavigationMenuLink asChild>
-                      <motion.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{
-                          duration: 0.5,
-                          delay: 0.2 + index * 0.1,
-                          ease: [0.25, 1, 0.25, 1],
-                        }}
+                      <Link
+                        href={href}
+                        className={cn(
+                          "group relative px-4 py-2 text-sm font-medium transition-colors duration-300",
+                          "hover:text-primary",
+                          active && "text-primary"
+                        )}
                       >
-                        <Link
-                          href={href}
-                          className={cn(
-                            "group relative px-4 py-2 text-sm font-medium transition-colors duration-300",
-                            "hover:text-primary",
-                            active && "text-primary"
-                          )}
-                        >
-                          <span className="relative z-10">{text}</span>
-                          <motion.span
-                            className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary origin-left"
-                            initial={{ scaleX: active ? 1 : 0 }}
-                            animate={{ scaleX: active ? 1 : 0 }}
-                            whileHover={{ scaleX: 1 }}
+                        <span className="relative z-10">{text}</span>
+                        <motion.span
+                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary origin-left"
+                          initial={{ scaleX: active ? 1 : 0 }}
+                          animate={{ scaleX: active ? 1 : 0 }}
+                          whileHover={{ scaleX: 1 }}
+                          transition={{
+                            duration: 0.3,
+                            ease: [0.25, 1, 0.25, 1],
+                          }}
+                        />
+                        {active && (
+                          <motion.div
+                            className="absolute inset-0 rounded-md bg-primary/5 -z-10"
+                            layoutId="activeNavItem"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
                             transition={{
-                              duration: 0.3,
-                              ease: [0.25, 1, 0.25, 1],
+                              type: "spring",
+                              stiffness: 380,
+                              damping: 30,
                             }}
                           />
-                          {active && (
-                            <motion.div
-                              className="absolute inset-0 rounded-md bg-primary/5 -z-10"
-                              layoutId="activeNavItem"
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: 1 }}
-                              transition={{
-                                type: "spring",
-                                stiffness: 380,
-                                damping: 30,
-                              }}
-                            />
-                          )}
-                        </Link>
-                      </motion.div>
+                        )}
+                      </Link>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 );
