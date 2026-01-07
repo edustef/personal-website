@@ -6,8 +6,8 @@ import { useTheme } from "next-themes";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 export function BackgroundPaperShaders() {
-  const theme = useTheme();
-  const isDark = theme.resolvedTheme === "dark";
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
   const containerRef = useRef<HTMLDivElement>(null);
   const resizeObserverRef = useRef<ResizeObserver | null>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });

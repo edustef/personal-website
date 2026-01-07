@@ -57,15 +57,14 @@ const tools = [
 ];
 
 export function ToolsSlider() {
-  const { theme, resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const currentTheme = resolvedTheme || theme || "dark";
-  const isDark = mounted ? currentTheme === "dark" : true;
+  const isDark = mounted ? resolvedTheme === "dark" : true;
 
   return (
     <motion.div

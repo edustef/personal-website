@@ -51,7 +51,7 @@ export const Spotlight = ({
     setMounted(true);
   }, []);
 
-  const isDark = mounted && (resolvedTheme === "dark" || theme === "dark");
+  const isDark = mounted && resolvedTheme === "dark";
   const gradients = isDark ? darkGradients : lightGradients;
 
   const finalGradientFirst = gradientFirst || gradients.gradientFirst;

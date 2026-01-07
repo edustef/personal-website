@@ -7,8 +7,8 @@ import { notFound } from "next/navigation";
 import { Toaster } from "sonner";
 
 import { ConvexClientProvider } from "@/components/convex-client-provider";
-import { ThemeProvider } from "@/components/theme-provider";
 import { NuqsProvider } from "@/components/nuqs-provider";
+import { ThemeProvider } from "@/components/theme-provider";
 import { locales } from "@/i18n/routing";
 import { getLocalizedSettingsMetadata } from "@/lib/seo";
 import {
@@ -130,7 +130,7 @@ export default async function LocaleLayout(props: Props) {
   return (
     <html
       lang={params.locale}
-      className={`${cardo.variable} ${dmMono.variable} dark font-light bg-background text-foreground min-h-screen transition-colors duration-300`}
+      className={`${cardo.variable} ${dmMono.variable} font-light bg-background text-foreground min-h-screen transition-colors duration-300`}
       suppressHydrationWarning
     >
       <body className="isolate transition-colors duration-300 ease-in-out">
@@ -157,7 +157,7 @@ export default async function LocaleLayout(props: Props) {
             <ThemeProvider
               attribute="class"
               defaultTheme="dark"
-              enableSystem={false}
+              enableSystem
               disableTransitionOnChange
             >
               <NuqsProvider>
