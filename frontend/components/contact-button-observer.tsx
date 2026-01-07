@@ -1,8 +1,9 @@
 "use client";
 
+import whatsappLogo from "@/assets/images/whatsapp-logo.png";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { MessageCircle } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const HERO_CONTACT_BUTTON_ID = "hero-contact-button";
@@ -14,6 +15,7 @@ export function FloatingContactButton({
   contactMeText: string;
   contactUrl: string;
 }) {
+  
   const [showContactButton, setShowContactButton] = useState(false);
   const isMobile = useIsMobile();
 
@@ -45,7 +47,7 @@ export function FloatingContactButton({
       <Button
         asChild
         variant="default"
-        className="size-12 shadow-lg rounded-full"
+        className="size-12 shadow-lg rounded-full bg-[#25d366]"
       >
         <a
           href={contactUrl}
@@ -53,7 +55,12 @@ export function FloatingContactButton({
           rel="noopener noreferrer"
           aria-label={contactMeText}
         >
-          <MessageCircle className="size-6" />
+          <Image
+            fill
+            src={whatsappLogo}
+            alt="WhatsApp"
+            className="object-cover p-3"
+          />
         </a>
       </Button>
     </div>

@@ -2,8 +2,9 @@ import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { getSocialIcon } from "@/lib/social-icons";
-import { MessageCircle } from "lucide-react";
+import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
+import whatsappLogo from "@/assets/images/whatsapp-logo.png";
 
 type SocialLink = {
   name: string;
@@ -67,14 +68,25 @@ export default async function ContactSection({
               staggerDelay={0.1}
               className="w-full sm:w-auto"
             >
-              <Button asChild size="lg" variant="outline" className="w-full">
+              <Button
+                asChild
+                size="lg"
+                variant="default"
+                className="w-full bg-[#25d366] text-white hover:bg-[#25d366]/90"
+              >
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={t("contact.whatsappLabel")}
                 >
-                  <MessageCircle className="size-5" />
+                  <Image
+                    src={whatsappLogo}
+                    alt="WhatsApp"
+                    width={20}
+                    height={20}
+                    className="size-5"
+                  />
                   WhatsApp
                 </a>
               </Button>

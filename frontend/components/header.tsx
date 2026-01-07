@@ -208,6 +208,12 @@ export function Header({ className }: HeaderProps) {
               aria-label={homeButtonLabel}
               className="group relative flex items-center gap-2 p-0 text-xl font-bold shrink-0 transition-colors hover:text-primary"
               href="/"
+              onClick={(e) => {
+                if (isHomePage && isScrolled) {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
             >
               <span className="relative">
                 Eduard Stefan
