@@ -130,9 +130,14 @@ export async function getAllPostsWithTranslations(): Promise<
   return result;
 }
 
-export async function getAllPostSlugs(): Promise<
-  { slug: string; locale: string }[]
-> {
+export async function getAllPostSlugs() {
   const posts = await getAllPostsWithTranslations();
-  return posts.map((p) => ({ slug: p.slug, locale: p.locale }));
+  return posts.map((p) => ({
+    slug: p.slug,
+    locale: p.locale,
+    translations: p.translations.map((t) => ({
+      locale: t.locale,
+      slug: t.slug,
+    })),
+  }));
 }

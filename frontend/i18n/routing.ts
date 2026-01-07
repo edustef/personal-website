@@ -13,6 +13,7 @@ export const defaultLocale = "en" satisfies LocaleId;
 export const routing = defineRouting({
   defaultLocale,
   locales: locales.map((locale) => locale.id),
+  localePrefix: "always",
   alternateLinks: false,
   pathnames: {
     "/": "/",

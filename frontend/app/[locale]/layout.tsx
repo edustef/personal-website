@@ -9,7 +9,7 @@ import { Toaster } from "sonner";
 import { ConvexClientProvider } from "@/components/convex-client-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { locales } from "@/i18n/routing";
-import { getLocalizedSettingsMetadata } from "@/lib/seo";
+import { getCanonicalUrl, getLocalizedSettingsMetadata } from "@/lib/seo";
 import {
   createPersonSchema,
   createWebSiteSchema,
@@ -37,6 +37,9 @@ export async function generateMetadata(
       default: localized.title,
     },
     description: localized.description,
+    alternates: {
+      canonical: getCanonicalUrl(locale, "/"),
+    },
     openGraph: {
       type: "website",
       locale,
@@ -128,6 +131,7 @@ export default async function LocaleLayout(props: Props) {
 
   return (
     <html
+      data-scroll-behavior="smooth"
       lang={params.locale}
       className={`${cardo.variable} ${dmMono.variable} font-light bg-background text-foreground min-h-screen transition-colors duration-300`}
       suppressHydrationWarning

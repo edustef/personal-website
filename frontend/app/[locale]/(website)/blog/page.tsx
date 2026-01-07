@@ -1,4 +1,5 @@
 import { getBlogPosts } from "@/lib/blog";
+import { getCanonicalUrl } from "@/lib/seo";
 import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
 import BlogClient from "./blog-client";
@@ -12,12 +13,15 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
+    alternates: {
+      canonical: getCanonicalUrl(locale, "/blog"),
+    },
   };
 }
 
 function BlogLoadingFallback() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-6xl px-4 py-12 md:py-16 sm:px-6 lg:px-8">
       <div className="space-y-4 text-center">
         <div className="h-12 w-48 mx-auto bg-muted animate-pulse rounded" />
         <div className="h-6 w-96 mx-auto bg-muted animate-pulse rounded" />

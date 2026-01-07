@@ -10,6 +10,8 @@ export type CommonProps = {
   children: React.ReactNode;
 };
 
+export const productionHost = "https://eduardstefan.dev";
+
 export function getBaseUrl(): string {
   if (
     process.env.NODE_ENV === "development" &&
@@ -18,5 +20,5 @@ export function getBaseUrl(): string {
     return process.env.NEXT_PUBLIC_SITE_URL;
   }
 
-  return "https://eduardstefan.dev";
+  return productionHost;
 }

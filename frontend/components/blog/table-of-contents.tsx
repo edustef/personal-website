@@ -1,6 +1,12 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { motion } from "framer-motion";
+import { ArrowUp, List, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface Heading {
@@ -56,6 +62,27 @@ export function TableOfContents() {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToHeading = (id: string) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const headerHeight = window.innerWidth >= 768 ? 80 : 64;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headerHeight - 16;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   if (headings.length === 0) return null;
 
   return (
@@ -65,7 +92,7 @@ export function TableOfContents() {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="hidden xl:block fixed right-8 top-32 w-64 max-h-[calc(100vh-12rem)] overflow-y-auto"
+        className="hidden xl:block fixed right-8 top-32 w-64 max-h-[calc(100vh-12rem)] overflow-y-auto z-[100]"
       >
         <div className="rounded-lg border bg-card p-4">
           <h3 className="text-sm font-semibold text-foreground mb-3">
@@ -73,6 +100,16 @@ export function TableOfContents() {
           </h3>
           <nav>
             <ul className="space-y-2 text-sm">
+              <li>
+                <button
+                  type="button"
+                  onClick={scrollToTop}
+                  className="flex w-full items-center gap-2 py-1 text-left text-muted-foreground transition-colors hover:text-primary"
+                >
+                  <ArrowUp className="size-4" />
+                  Go to top
+                </button>
+              </li>
               {headings.map((heading) => (
                 <li
                   key={heading.id}
@@ -82,10 +119,7 @@ export function TableOfContents() {
                     href={`#${heading.id}`}
                     onClick={(e) => {
                       e.preventDefault();
-                      document.getElementById(heading.id)?.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                      });
+                      scrollToHeading(heading.id);
                     }}
                     className={`block py-1 transition-colors hover:text-primary ${
                       activeId === heading.id
@@ -103,83 +137,80 @@ export function TableOfContents() {
       </motion.aside>
 
       {/* Mobile - Floating Button */}
-      <div className="xl:hidden fixed bottom-6 right-6 z-40">
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: 10, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 10, scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-              className="mb-3 max-h-96 overflow-y-auto rounded-lg border bg-card p-4 shadow-lg"
+      <Popover open={isOpen} onOpenChange={setIsOpen}>
+        <div className="xl:hidden fixed bottom-6 right-6 z-[100]">
+          <PopoverTrigger asChild>
+            <motion.button
+              type="button"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="flex size-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-colors hover:bg-primary/90"
+              aria-label="Toggle table of contents"
             >
-              <h3 className="text-sm font-semibold text-foreground mb-3">
-                On this page
-              </h3>
-              <nav>
-                <ul className="space-y-2 text-sm">
-                  {headings.map((heading) => (
-                    <li
-                      key={heading.id}
-                      style={{ paddingLeft: `${(heading.level - 2) * 12}px` }}
-                    >
-                      <a
-                        href={`#${heading.id}`}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setIsOpen(false);
-                          document.getElementById(heading.id)?.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start",
-                          });
-                        }}
-                        className={`block py-1 transition-colors hover:text-primary ${
-                          activeId === heading.id
-                            ? "text-primary font-medium"
-                            : "text-muted-foreground"
-                        }`}
-                      >
-                        {heading.text}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        <button
-          type="button"
-          onClick={() => setIsOpen(!isOpen)}
-          className="flex size-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-all hover:bg-primary/90"
-          aria-label="Toggle table of contents"
-        >
-          <svg
-            className="size-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
+              <motion.div
+                animate={{ rotate: isOpen ? 90 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                {isOpen ? (
+                  <X className="size-6" />
+                ) : (
+                  <List className="size-6" />
+                )}
+              </motion.div>
+            </motion.button>
+          </PopoverTrigger>
+          <PopoverContent
+            side="top"
+            align="end"
+            sideOffset={12}
+            className="w-72 max-h-96 overflow-y-auto bg-card p-4"
           >
-            {isOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
-      </div>
+            <h3 className="text-sm font-semibold text-foreground mb-3">
+              On this page
+            </h3>
+            <nav>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsOpen(false);
+                      setTimeout(() => scrollToTop(), 100);
+                    }}
+                    className="flex w-full items-center gap-2 py-1 text-left text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    <ArrowUp className="size-4" />
+                    Go to top
+                  </button>
+                </li>
+                {headings.map((heading) => (
+                  <li
+                    key={heading.id}
+                    style={{ paddingLeft: `${(heading.level - 2) * 12}px` }}
+                  >
+                    <a
+                      href={`#${heading.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsOpen(false);
+                        setTimeout(() => scrollToHeading(heading.id), 100);
+                      }}
+                      className={`block py-1 transition-colors hover:text-primary ${
+                        activeId === heading.id
+                          ? "text-primary font-medium"
+                          : "text-muted-foreground"
+                      }`}
+                    >
+                      {heading.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </PopoverContent>
+        </div>
+      </Popover>
     </>
   );
 }

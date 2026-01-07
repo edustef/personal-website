@@ -204,4 +204,8 @@ body {
   html.header-scrolled header {
     @apply bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300;
   }
+  
+  header {
+    @apply transition-all duration-300;
+  }
 }

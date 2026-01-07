@@ -24,7 +24,7 @@ export async function Footer({ className, locale }: FooterProps) {
   return (
     <footer
       className={cn(
-        "bg-background text-foreground relative overflow-hidden px-4 md:px-6 border-t",
+        "bg-background text-foreground overflow-hidden px-4 md:px-6 border-t",
         className
       )}
     >

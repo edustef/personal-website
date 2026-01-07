@@ -1,6 +1,7 @@
 import { getAllPostSlugs, getBlogPost } from "@/lib/blog";
-import { getTranslations } from "next-intl/server";
+import { getCanonicalUrl } from "@/lib/seo";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import BlogPostClient from "./blog-post-client";
 
@@ -19,6 +20,9 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
+    alternates: {
+      canonical: getCanonicalUrl(locale, `/blog/${slug}`),
+    },
   };
 }
 
@@ -42,7 +46,14 @@ export default async function BlogPostPage({
     notFound();
   }
 
+  const profileT = await getTranslations({ locale, namespace: "profile" });
+  const socialLinksRaw = profileT.raw("socialLinks") as
+    | Array<{ name: string; url: string }>
+    | undefined;
+
   const content = <MDXRemote source={post.content} />;
 
-  return <BlogPostClient post={post} content={content} />;
+  return (
+    <BlogPostClient post={post} content={content} socialLinks={socialLinksRaw} />
+  );
 }
