@@ -55,7 +55,7 @@ export function AboutMeSectionClient({
             {subtitle}
           </p>
         </AnimatedContainer>
-        <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-col items-center lg:gap-12 lg:flex-row lg:items-start lg:justify-between">
           <AnimatedContainer
             trigger="scroll"
             fadeDirection="left"
@@ -64,16 +64,17 @@ export function AboutMeSectionClient({
             <motion.div style={{ y: imageY }}>
               <div
                 style={{
+                  // filter: 'grayscale(100%)',
                   maskImage:
-                    "radial-gradient(110% 105% at right top, black 50%, transparent 100%)",
+                    "radial-gradient(60% 80% at top, black 20%, transparent 100%)",
                   WebkitMaskImage:
-                    "radial-gradient(110% 105% at right top, black 50%, transparent 100%)",
+                    "radial-gradient(110% 105% at top, black 50%, transparent 100%)",
                 }}
               >
                 <Image
                   src={image}
                   alt="About me"
-                  className="w-full max-w-[400px] h-auto"
+                  className="w-full max-w-[400px] aspect-3/4 object-cover object-top md:max-w-[500px] h-auto grayscale-100 contrast-120"
                 />
               </div>
             </motion.div>
@@ -84,7 +85,7 @@ export function AboutMeSectionClient({
             delay={0.2}
             className="flex-1 text-left"
           >
-            <p className="text-muted-foreground text-lg leading-relaxed text-pretty">
+            <p className="lg:mt-24 text-muted-foreground text-lg leading-relaxed text-pretty">
               {description}
             </p>
           </AnimatedContainer>
