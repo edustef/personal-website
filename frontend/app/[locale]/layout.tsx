@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { Toaster } from "sonner";
 
 import { ConvexClientProvider } from "@/components/convex-client-provider";
+import { FacebookPixel } from "@/components/facebook-pixel";
 import { ThemeProvider } from "@/components/theme-provider";
 import { locales } from "@/i18n/routing";
 import { getCanonicalUrl, getLocalizedSettingsMetadata } from "@/lib/seo";
@@ -164,6 +165,7 @@ export default async function LocaleLayout(props: Props) {
               disableTransitionOnChange
             >
               <Toaster />
+              <FacebookPixel />
               {props.children}
               <SpeedInsights />
             </ThemeProvider>
