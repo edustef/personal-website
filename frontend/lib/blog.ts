@@ -141,3 +141,12 @@ export async function getAllPostSlugs() {
     })),
   }));
 }
+
+export async function getPostTranslations(slug: string, locale: string) {
+  const posts = await getAllPostsWithTranslations();
+  const post = posts.find((p) => p.slug === slug && p.locale === locale);
+  if (!post) {
+    return [];
+  }
+  return post.translations;
+}

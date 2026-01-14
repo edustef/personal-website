@@ -9,11 +9,15 @@ import { notFound } from "next/navigation";
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
+  languageToggle?: React.ReactNode;
 };
 
 export default async function WebsiteLayout(props: Props) {
   const params = await props.params;
   const { locale } = params;
+
+  console.log(props.languageToggle);
+
 
   if (!hasLocale(routing.locales, locale)) {
     notFound();
@@ -24,7 +28,7 @@ export default async function WebsiteLayout(props: Props) {
     <>
       <div className="relative isolate flex min-h-screen flex-col">
         <ScrollAwareHeader />
-        <Header />
+        <Header languageToggle={props.languageToggle} />
         <main
           id="main-content"
           className="mt-16 flex flex-1 flex-col justify-center"

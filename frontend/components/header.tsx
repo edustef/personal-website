@@ -29,6 +29,7 @@ import { useEffect, useState } from "react";
 
 type HeaderProps = {
   className?: string;
+  languageToggle?: React.ReactNode;
 };
 
 const navItems = [
@@ -37,7 +38,7 @@ const navItems = [
   { key: "blog", href: "/blog" },
 ] as const;
 
-export function Header({ className }: HeaderProps) {
+export function Header({ className, languageToggle }: HeaderProps) {
   const locale = useLocale();
   const pathname = usePathname();
   const headerT = useTranslations("settings.header");
@@ -56,8 +57,6 @@ export function Header({ className }: HeaderProps) {
   const pricingSlug = headerT("nav.pricingSlug");
 
   const isHomePage = pathname === "/";
-  const servicesHref = isHomePage ? `#${servicesSlug}` : `/#${servicesSlug}`;
-  const pricingHref = isHomePage ? `#${pricingSlug}` : `/#${pricingSlug}`;
 
   const [showContactButton, setShowContactButton] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -208,12 +207,6 @@ export function Header({ className }: HeaderProps) {
               aria-label={homeButtonLabel}
               className="group relative flex items-center gap-2 p-0 text-xl font-bold shrink-0 transition-colors hover:text-primary"
               href="/"
-              onClick={(e) => {
-                if (isHomePage && isScrolled) {
-                  e.preventDefault();
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }
-              }}
             >
               <span className="relative">
                 Eduard Stefan
@@ -316,7 +309,7 @@ export function Header({ className }: HeaderProps) {
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
             >
-              <LanguageToggle currentLocale={locale} />
+              {languageToggle}
             </motion.div>
 
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
