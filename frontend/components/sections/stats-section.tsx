@@ -19,8 +19,8 @@ export default async function StatsSection() {
       labelKey: t("metrics.investors.label"),
     },
     {
-      value: t("metrics.processingTimeReduction.value"),
-      labelKey: t("metrics.processingTimeReduction.label"),
+      value: t("metrics.avgConversionLift.value"),
+      labelKey: t("metrics.avgConversionLift.label"),
     },
   ];
 

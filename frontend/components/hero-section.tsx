@@ -28,7 +28,7 @@ export default async function HeroSection() {
           >
             <HighlightBadge
               className="text-left text-sm md:text-base"
-              href="https://omnishopplanner.com"
+              href="#roi-calculator"
             >
               {t.rich("announcementLabel", {
                 strong: (chunks) => (

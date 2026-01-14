@@ -14,7 +14,7 @@ import {
 } from "./how-i-price-section-client";
 
 const packages = ["launch", "growth", "custom"] as const;
-const addOns = ["seo", "store", "multiLanguage", "analytics"] as const;
+const addOns = ["seo", "analytics", "store", "multiLanguage"] as const;
 
 export default async function HowIPriceSection() {
   const locale = await getLocale();

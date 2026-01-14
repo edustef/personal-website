@@ -233,10 +233,10 @@
     }
   },
   "home": {
-    "headline": "Built with <strong>precision</strong>. Designed for <strong>growth</strong>.",
-    "tagline": "High-quality web experiences built to help your business scale. A direct partnership focusing on maximizing your digital growth.",
-    "aboutMeDescription": "I'm Eduard Stefan, and I build high-quality websites that prioritize high standards and user experience. I focus on creating digital products that convert and deliver real value, helping your business grow digitally. Working one-on-one allows me to obsess over the details that matter most to your business.",
-    "announcementLabel": "Join waitlist for my <strong>new app</strong>",
+    "headline": "The Full Stack of <strong>Digital Growth</strong>.",
+    "tagline": "Scaling traffic, engineering high-performance foundations, and maximizing conversion. Digital products designed to pay for themselves.",
+    "aboutMeDescription": "I'm Eduard Stefan, and I build high-quality websites that prioritize revenue and user experience. I focus on creating digital products that convert and deliver real value, helping your business grow digitally. Working one-on-one allows me to obsess over the details that matter most to your bottom line.",
+    "announcementLabel": "Calculate your <strong>potential revenue</strong>",
     "resumeButtonLabel": "See my resume",
     "findMeOnLabel": "Find me on",
     "contactMe": "Contact me",
@@ -248,7 +248,7 @@
     },
     "ctaButtons": [
       {
-        "text": "Get your offer",
+        "text": "Start a Project",
         "href": "/start-your-project",
         "variant": "secondary"
       }
@@ -257,18 +257,18 @@
       "label": "Who I am",
       "headline": "About Me",
       "subtitle": "Get to know the person behind the code",
-      "description": "I'm Eduard Stefan, and I've spent over 4 years building high-quality websites that convert and bring real results for clients. I focus on creating experiences that prioritize premium user experience and attention to detail. I prefer a thoughtful, focused approach—working one-on-one allows me to obsess over the details that matter and stay close to the work I love. For me, it's not just about writing code; it's about building something high-quality, intuitive, and genuinely useful for the people on the other side of the screen."
+      "description": "I'm Eduard Stefan, a developer who understands that a website is an investment, not just a digital business card. I combine technical expertise with SEO and CRO strategies to build sites that don't just look good—they actually work. My goal is simple: to help you get more traffic and turn that traffic into real business. I work one-on-one with you to ensure every detail contributes to your growth."
     },
     "contact": {
       "label": "Get in touch",
       "headline": "Let's work together",
-      "subtitle": "Have a project in mind? I'd love to hear about it. Get your offer or reach out directly.",
+      "subtitle": "Ready to turn your website into a growth engine? Let's chat.",
       "ctaButton": "Get your offer",
       "whatsappLabel": "Contact me on WhatsApp"
     },
     "seo": {
-      "title": "Eduard Stefan | Websites built with precision",
-      "description": "A direct partnership focused on maximizing your digital growth."
+      "title": "Eduard Stefan | Web Development + SEO + CRO",
+      "description": "I build high-performance websites optimized for traffic and conversion."
     }
   },
   "profile": {
@@ -350,9 +350,9 @@
   "projects": {
     "proj-1": {
       "name": "FinTech Trading Platform",
-      "description": "A full-featured wealth management platform serving thousands of users globally with real-time portfolio tracking and automated investment strategies.",
-      "challenge": "The client needed to scale their legacy trading platform to handle 10x user growth while maintaining sub-second response times.",
-      "result": "Delivered a modern, scalable architecture that reduced page load times by 60% and enabled the platform to handle peak trading volumes effortlessly.",
+      "description": "A full-featured wealth management platform optimization.",
+      "challenge": "Client faced scalability issues and slow load times as user base grew 10x.",
+      "result": "Architected a scalable solution reducing load time by 60%, directly supporting the volume needed for their IPO.",
       "duration": "18 months",
       "metrics": {
         "loadTimeReduction": "Load Time Reduction",
@@ -361,10 +361,10 @@
       }
     },
     "proj-2": {
-      "name": "E-commerce Conversion Boost",
-      "description": "Full redesign and optimization of a mid-market e-commerce store struggling with cart abandonment and slow mobile performance.",
-      "challenge": "High bounce rates on mobile and a 78% cart abandonment rate were costing the business significant revenue.",
-      "result": "Implemented a streamlined checkout flow and optimized mobile experience, resulting in measurable revenue growth within 3 months.",
+      "name": "E-commerce Revenue Lift",
+      "description": "Redesign and CRO optimization for a mid-market retailer.",
+      "challenge": "High cart abandonment (78%) and poor mobile experience were bleeding revenue.",
+      "result": "Implemented sticky footer & streamlined checkout. Lifted sales by 22% ($50k/mo increase) in first quarter.",
       "duration": "4 months",
       "metrics": {
         "conversionIncrease": "Conversion Increase",
@@ -373,21 +373,21 @@
       }
     },
     "proj-3": {
-      "name": "SaaS Dashboard Rebuild",
-      "description": "Transformed a cluttered analytics dashboard into an intuitive interface that users actually love to use.",
-      "challenge": "Customer support tickets related to UI confusion were overwhelming the team, and user retention was declining.",
-      "result": "Redesigned the entire UX with a focus on clarity and efficiency. Support tickets dropped significantly and user satisfaction scores improved.",
+      "name": "SaaS Retention Dashboard",
+      "description": "UX overhaul for a customer analytics tool.",
+      "challenge": "Users were churning due to a confusing, cluttered interface.",
+      "result": "Redesigned workflow based on user behavior analysis. Support tickets dropped 40%, retention increased by 15%.",
       "duration": "6 months",
       "metrics": {
-        "supportTickets": "Support Tickets",
-        "userSatisfaction": "User Satisfaction"
+        "supportTickets": "Support Tickets Drop",
+        "userSatisfaction": "Retention Uplift"
       }
     },
     "proj-4": {
-      "name": "Startup MVP Launch",
-      "description": "Took an idea from napkin sketch to launched product in record time, helping founders validate their market hypothesis.",
-      "challenge": "The founders had limited runway and needed to get to market fast to secure their next funding round.",
-      "result": "Delivered a fully functional MVP in 8 weeks that impressed investors and secured seed funding for the startup.",
+      "name": "Startup MVP Validation",
+      "description": "Rapid MVP development for a tech startup.",
+      "challenge": "Founders needed to validate market hypothesis before funding ran out.",
+      "result": "Delivered functional MVP in 8 weeks, enabling them to secure seed funding.",
       "duration": "8 weeks",
       "metrics": {
         "timeToMarket": "Time to Market",
@@ -396,80 +396,80 @@
     }
   },
   "services": {
-    "label": "My Philosophy",
-    "headline": "No fluff. Just results.",
-    "subtitle": "Direct communication. Faster delivery. Better value.",
-    "svc-1": {
-      "title": "High-Quality Web Solutions",
-      "description": "Get a custom solution built with a focus on excellence and your business goals. We move fast, creating a first draft immediately so we can iterate together toward a premium app that scales with you."
-    },
-    "svc-7": {
-      "title": "Internationalization & Multi-Language",
-      "description": "Connect with customers worldwide by speaking their language. Your site automatically adapts to every visitor, building trust and helping you expand into new markets effortlessly."
-    },
-    "svc-3": {
-      "title": "Lightning-Fast Solutions",
-      "description": "Performance isn't an add-on—it's built-in by default. You get a lightning-fast, optimized setup where speed is a non-negotiable feature, ensuring your visitors never have to wait."
-    },
-    "svc-4": {
-      "title": "Digital Growth & Speed",
-      "description": "Get found by the right people and keep them there. I optimize every line of code to ensure your site grows digitally and loads instantly, turning visitors into customers."
-    },
-    "svc-5": {
-      "title": "UI/UX Implementation",
-      "description": "Give your users an experience they’ll actually enjoy. I bridge the gap between design and code to ensure your vision results in a site that feels premium and converts."
-    },
+    "label": "What I Do",
+    "headline": "Your Digital Growth Partner",
+    "subtitle": "Everything goes hand in hand. SEO brings the right people, and optimized design ensures they stick around.",
     "svc-6": {
       "title": "Direct Partnership",
-      "description": "Maximize your budget with a direct line of communication. You work one-on-one with me for instant communication and faster decisions that keep your project moving toward success."
+      "description": "No middlemen. You work directly with me, which means clear communication, faster updates, and a partner who cares about your success."
+    },
+    "svc-1": {
+      "title": "SEO-First Development",
+      "description": "I build websites that Google loves. Clean code, perfect structure, and fast performance to help you rank higher and get noticed."
+    },
+    "svc-7": {
+      "title": "Global Reach",
+      "description": "Expand your audience with seamless multi-language support. Speak your customers' language and build trust worldwide."
+    },
+    "svc-3": {
+      "title": "Blazing Fast Speed",
+      "description": "Speed is a feature. I ensure your site loads instantly, keeping visitors happy and reducing the chance they'll bounce."
+    },
+    "svc-4": {
+      "title": "Conversion/CRO Focus",
+      "description": "Traffic is great, but customers are better. I design user flows that guide visitors naturally toward taking action."
+    },
+    "svc-5": {
+      "title": "User Experience Design",
+      "description": "Simple, intuitive, and beautiful. I create interfaces that are easy to use and leave a lasting positive impression."
     }
   },
   "howIWork": {
     "label": "Process",
     "headline": "How I Work",
-    "subtitle": "A straightforward approach from concept to launch and beyond.",
+    "subtitle": "A simple, transparent process focused on results.",
     "planning": {
-      "title": "Planning",
+      "title": "Discovery & Strategy",
       "paragraphs": [
-        "I learn about your project—what you want to build and why—then figure out the best approach. I'll create a clear plan so we both know exactly what we're working toward and when."
+        "First, we dig into your goals. I want to understand who your customers are and what you want to achieve. We'll map out a plan that covers both the tech and the marketing angles."
       ],
       "bulletPoints": [
-        "Understanding your project and goals",
-        "Agreeing on timeline and budget",
-        "Planning the approach"
+        "Understanding your audience",
+        "Defining clear goals",
+        "SEO & Content strategy"
       ]
     },
     "development": {
-      "title": "Development",
+      "title": "Design & Build",
       "paragraphs": [
-        "I build your site with attention to detail and quality. You'll get a preview link to see everything as it comes together, so you can give feedback and I can make adjustments as we go."
+        "This is where the magic happens. I build your site with clean code and a design that converts. You'll see progress along the way and we'll tweak things until they feel just right."
       ],
       "bulletPoints": [
-        "Preview link to see progress in real-time",
-        "Quality-focused development",
-        "Regular updates and quick iterations"
+        "Conversion-focused design",
+        "Clean, SEO-friendly code",
+        "Regular progress updates"
       ]
     },
     "deployment": {
-      "title": "Deployment",
+      "title": "Launch & Verify",
       "paragraphs": [
-        "I handle everything needed to get your site live—setting up hosting, connecting your domain, ensuring it's fast and secure, and testing that it works perfectly across all devices."
+        "We go live. I handle all the technical setup—hosting, domain, security. I also make sure all your tracking (analytics, pixels) is working perfectly so we can measure success."
       ],
       "bulletPoints": [
-        "Hosting and domain setup",
-        "Speed and performance optimization",
-        "Security and cross-device testing"
+        "Smooth, secure launch",
+        "Analytics & tracking setup",
+        "Performance testing"
       ]
     },
     "postDeployment": {
-      "title": "Post-Deployment",
+      "title": "Optimize & Grow",
       "paragraphs": [
-        "Once your site is live, I'll show you how to update content yourself. I'm also available for ongoing support—whether you need help with changes, fixes, or want to add new features."
+        "Launching is just the start. I show you how to manage your content, and we can keep working together to analyze data and improve your conversion rates over time."
       ],
       "bulletPoints": [
-        "Training on how to update content",
-        "Ongoing support when you need it",
-        "Adding new features and improvements"
+        "CMS training for you",
+        "Data-driven optimizations",
+        "Ongoing growth support"
       ]
     }
   },
@@ -477,9 +477,9 @@
     "label": "Pricing",
     "headline": "How I Price",
     "subtitle": "Transparent pricing that scales with your needs.",
-    "intro": "Most websites are slow, hard to edit, or break easily. I build modern websites that are designed to load instantly, rank well on Google, and—most importantly—allow you to edit the text and images yourself without needing to call me every time.",
+    "intro": "Most websites are pretty, but they don't do much. I build sites that are designed to rank on Google and convert visitors into customers. Plus, you'll be able to edit everything yourself.",
     "packages": {
-      "title": "Project Packages",
+      "title": "Engagement Models",
       "subtitle": "Select the option that matches where your business is today.",
       "mostPopular": "Most Popular",
       "whatYouGet": "What you get",
@@ -489,41 +489,38 @@
       "showLess": "Show less"
     },
     "launch": {
-      "title": "The \"Launch\" Package",
-      "bestFor": "Best for: Startups, Consultants, or New Product Launches.",
-      "description": "This is your digital business card. It is designed to make a strong first impression and capture leads.",
+      "title": "The 'Launch' Package",
+      "bestFor": "Best for: Businesses looking for a professional, high-performance base to scale.",
+      "description": "A complete, high-converting website build. A solid foundation for your digital presence.",
       "features": [
-        "Custom Design: A unique look that matches your brand (no generic templates).",
-        "Mobile Perfect: Looks great on phones, tablets, and desktops.",
-        "Easy Editing: A simple dashboard where you can change text and images.",
-        "Google-Ready: Setup so search engines can find you.",
-        "Speed Optimized: Loads fast so visitors don't leave.",
-        "Simple Analytics: Basic page views tracking to see how many visitors you get."
+        "Strategic Design: Focused on conversion and user flow.",
+        "Technical SEO: Structure that Google loves.",
+        "Speed Optimization: Sub-second load times.",
+        "Mobile First: Perfect experience on all devices.",
+        "Direct Partnership: Direct collaboration with me."
       ],
-      "timeline": "2–3 working days",
-      "investmentAmount": 600
+      "timeline": "1\u20132 weeks",
+      "investmentAmount": 800
     },
     "growth": {
-      "title": "The \"Growth\" Package",
-      "bestFor": "Best for: Established businesses needing a full professional presence.",
-      "description": "A full website system that helps you sell your services and builds trust with customers.",
+      "title": "The 'Growth' Package",
+      "bestFor": "Best for: Businesses looking for an extended solution and ongoing collaboration.",
+      "description": "I collaborate with your team to build an extended version of the 'Launch' plan with advanced capabilities.",
       "features": [
-        "Full Website Structure: 3–7 pages (Home, About, Services, Contact, etc.).",
-        "Advanced Editor: You get full control over your content, blog posts, and pages.",
-        "Lead Generation: Connected to your email or CRM (e.g., leads go straight to your inbox).",
-        "Scalable: Built so we can easily add new pages later without rebuilding the whole site.",
-        "Top-Tier Speed: Optimized to pass Google's strict speed requirements.",
-        "Multi-Language Setup: Localization included and configured from the start (ready for 2+ languages).",
-        "Basic Booking System: Simple appointment or reservation functionality built in.",
-        "Analytics Integration: Full tracking setup to understand where your visitors come from and what they do."
+        "Everything in 'Launch' + these and more:",
+        "CMS Integration: You own and edit your content.",
+        "Localisation Setup: Ready for global markets from the start.",
+        "Theming & Branding: Deep visual customization.",
+        "Advanced Analytics: Full tracking setup to understand visitor behavior.",
+        "Lead Generation: Connected to your email or CRM."
       ],
-      "timeline": "4 days to one week",
-      "investmentAmount": 1500
+      "timeline": "2\u20133 weeks",
+      "investmentAmount": 1600
     },
     "custom": {
       "title": "Custom Solutions",
       "bestFor": "Best for: Businesses with specific, complex needs.",
-      "description": "Do you need customers to log in? Do you need a complex booking system or a custom internal tool? We can build that.",
+      "description": "Need a complex web app, SaaS platform, or internal tool? Let's build a solution tailored to your exact requirements.",
       "features": [
         "Tailored to your specific requirements",
         "Complex functionality and integrations",
@@ -535,29 +532,51 @@
       "investment": "Custom Quote Required"
     },
     "addOns": {
-      "title": "Optional Upgrades (Add-Ons)",
-      "subtitle": "Specific features you might need to reach your goals.",
+      "title": "Strategy Add-Ons",
+      "subtitle": "Specific upgrades to accelerate your results.",
       "seo": {
-        "title": "SEO Boost",
-        "benefit": "I dig deeper into the technical settings to help you rank higher on Google.",
+        "title": "SEO Sprint",
+        "benefit": "Deep dive technical audit to fix ranking blockers.",
         "priceAmount": 600
       },
       "store": {
-        "title": "Online Store",
-        "benefit": "Ability to sell products and accept credit cards securely.",
-        "priceAmount": 1500
+        "title": "E-commerce Engine",
+        "benefit": "Full shop setup with cart, checkout, and payments.",
+        "priceAmount": 1400
       },
       "multiLanguage": {
-        "title": "Multi-Language",
-        "benefit": "A site that works in 2+ languages (e.g., English & Spanish).",
+        "title": "Global Reach",
+        "benefit": "Localization for 2+ languages to expand your market.",
         "priceAmount": 500
       },
       "analytics": {
-        "title": "Analytics Pro",
-        "benefit": "I set up tracking so you can see exactly where your visitors come from.",
-        "priceAmount": 300
+        "title": "Deep Dive Analytics",
+        "benefit": "Custom funnel reports and advanced tracking setup.",
+        "priceAmount": 800
       }
     }
+  },
+  "roiCalculator": {
+    "label": "Revenue Simulator",
+    "headline": "How much money are you leaving on the table?",
+    "subtitle": "Calculate your potential growth.",
+    "description": "Small improvements in conversion rate can lead to massive gains in revenue. Use this calculator to see the potential impact of optimizing your site.",
+    "yourMetrics": "Your Metrics",
+    "metricsDescription": "Enter your current website numbers",
+    "monthlyVisitors": "Monthly Visitors",
+    "conversionRate": "Conversion Rate (%)",
+    "avgOrderValue": "Average Order Value",
+    "projectedImprovement": "Projected Improvement",
+    "upliftDescription": "Conservative estimates for professional CRO range from 0.5% to 2.0% uplift.",
+    "potentialReturns": "Potential Returns",
+    "potentialDescription": "What a +{uplift}% lift could mean for your business",
+    "extraYearlyRevenue": "Extra Yearly Revenue",
+    "monthlyGrowth": "Monthly Growth",
+    "projectedAnnual": "Projected Annual",
+    "currentMonthlyRevenue": "Current Monthly Revenue:",
+    "projectedMonthlyRevenue": "Projected Monthly Revenue:",
+    "chartCurrent": "Current Revenue",
+    "chartProjected": "Projected Revenue"
   },
   "certificates": {
     "cert-1": {
@@ -644,9 +663,9 @@
         "value": "3",
         "label": "Languages Spoken"
       },
-      "processingTimeReduction": {
-        "value": "30%",
-        "label": "Processing Time Reduction"
+      "avgConversionLift": {
+        "value": "15%+",
+        "label": "Avg. Conversion Lift"
       }
     }
   }

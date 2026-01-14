@@ -236,7 +236,7 @@
     "headline": "Construido con <strong>precisión</strong>. Diseñado para <strong>crecer</strong>.",
     "tagline": "Experiencias web de alta calidad construidas para ayudar a tu negocio a escalar. Una asociación directa centrada en maximizar tu crecimiento digital.",
     "aboutMeDescription": "Soy Eduard Stefan y construyo sitios web de alta calidad que priorizan los estándares de alta calidad y la experiencia del usuario. Me enfoco en crear productos digitales que conviertan y aporten un valor real, ayudando a que tu negocio crezca de forma digital. Trabajar uno a uno me permite obsesionarme con los detalles que más importan para tu negocio.",
-    "announcementLabel": "Únete a la lista de espera para mi <strong>nueva app</strong>",
+    "announcementLabel": "Calcula tus <strong>ingresos potenciales</strong>",
     "resumeButtonLabel": "Ver mi currículum",
     "findMeOnLabel": "Encuéntrame en",
     "contactMe": "Contáctame",
@@ -257,18 +257,18 @@
       "label": "Quién soy",
       "headline": "Sobre Mí",
       "subtitle": "Conoce a la persona detrás del código",
-      "description": "Soy Eduard Stefan, y llevo más de 4 años construyendo sitios web de alta calidad que convierten y generan resultados reales para los clientes. Me enfoco en crear experiencias que priorizan una experiencia de usuario de primera y la atención al detalle. Prefiero un enfoque reflexivo y centrado—trabajar uno a uno me permite obsesionarme con los detalles que importan y mantenerme cerca del trabajo que amo. Para mí, no se trata solo de escribir código; se trata de crear algo de alta calidad, intuitivo y genuinamente útil para las personas al otro lado de la pantalla."
+      "description": "Soy Eduard Stefan, un desarrollador que entiende que un sitio web es una inversión, no solo una tarjeta de visita digital. Combino experiencia técnica con estrategias de SEO y CRO para construir sitios que no solo se ven bien, sino que funcionan de verdad. Mi objetivo es simple: ayudarte a obtener más tráfico y convertir ese tráfico en negocios reales. Trabajo uno a uno contigo para asegurar que cada detalle contribuya a tu crecimiento."
     },
     "contact": {
       "label": "Ponerse en contacto",
       "headline": "Trabajemos juntos",
-      "subtitle": "¿Tienes un proyecto en mente? Me encantaría saber de él. Obtén tu oferta o contáctame directamente.",
+      "subtitle": "¿Listo para convertir tu sitio web en un motor de crecimiento? Hablemos.",
       "ctaButton": "Obtén tu oferta",
       "whatsappLabel": "Contáctame en WhatsApp"
     },
     "seo": {
-      "title": "Eduard Stefan | Sitios web construidos con precisión",
-      "description": "Una asociación directa centrada en maximizar tu crecimiento digital."
+      "title": "Eduard Stefan | Desarrollo Web + SEO + CRO",
+      "description": "Construyo sitios web de alto rendimiento optimizados para tráfico y conversión."
     }
   },
   "profile": {
@@ -396,80 +396,80 @@
     }
   },
   "services": {
-    "label": "Mi Filosofía",
-    "headline": "Sin relleno. Solo resultados.",
-    "subtitle": "Comunicación directa. Entrega más rápida. Mejor valor.",
-    "svc-1": {
-      "title": "Soluciones Web de Alta Calidad",
-      "description": "Obtén una solución a medida construida con un enfoque en la excelencia y tus objetivos comerciales. Trabajamos rápido, creando un primer borrador de inmediato para que podamos iterar juntos hacia una aplicación premium que crezca contigo."
-    },
-    "svc-7": {
-      "title": "Internacionalización y Multi-Idioma",
-      "description": "Conéctate con clientes de todo el mundo hablando su idioma. Tu sitio se adapta automáticamente a cada visitante, generando confianza y ayudándote a expandirte a nuevos mercados sin esfuerzo."
-    },
-    "svc-3": {
-      "title": "Soluciones Ultra-Rápidas",
-      "description": "El rendimiento no es un extra—viene integrado por defecto. Obtienes una configuración ultra rápida y optimizada donde la velocidad es una característica no negociable, garantizando que tus visitantes no tengan que esperar."
-    },
-    "svc-4": {
-      "title": "Crecimiento Digital y Velocidad",
-      "description": "Aparece ante las personas adecuadas y mantén su interés. Optimizo cada línea de código para asegurar que tu sitio crezca de forma digital y cargue instantáneamente, convirtiendo visitantes en clientes."
-    },
-    "svc-5": {
-      "title": "Implementación UI/UX",
-      "description": "Ofrece a tus usuarios una experiencia que realmente disfruten. Conecto el diseño y el código para asegurar que tu visión resulte en un sitio que se sienta premium y convierta."
-    },
+    "label": "Lo Que Hago",
+    "headline": "Tu Socio de Crecimiento Digital",
+    "subtitle": "Todo va de la mano. El SEO trae a las personas adecuadas y el diseño optimizado asegura que se queden.",
     "svc-6": {
       "title": "Asociación Directa",
-      "description": "Maximiza tu presupuesto con una línea directa de comunicación. Trabajas uno a uno conmigo para una comunicación instantánea y decisiones más rápidas que mantienen tu proyecto avanzando hacia el éxito."
+      "description": "Sin intermediarios. Trabajas directamente conmigo, lo que significa comunicación clara, actualizaciones más rápidas y un socio que se preocupa por tu éxito."
+    },
+    "svc-1": {
+      "title": "Desarrollo SEO-First",
+      "description": "Construyo sitios que a Google le encantan. Código limpio, estructura perfecta y rendimiento rápido para ayudarte a posicionarte mejor."
+    },
+    "svc-7": {
+      "title": "Alcance Global",
+      "description": "Expande tu audiencia con soporte multiidioma fluido. Habla el idioma de tus clientes y genera confianza en todo el mundo."
+    },
+    "svc-3": {
+      "title": "Velocidad Ultra-Rápida",
+      "description": "La velocidad es una característica. Me aseguro de que tu sitio cargue instantáneamente, manteniendo a los visitantes felices y reduciendo el rebote."
+    },
+    "svc-4": {
+      "title": "Enfoque en Conversión/CRO",
+      "description": "El tráfico es bueno, pero los clientes son mejores. Diseño flujos que guían a los visitantes naturalmente hacia la acción."
+    },
+    "svc-5": {
+      "title": "Diseño de Experiencia de Usuario",
+      "description": "Simple, intuitivo y hermoso. Creo interfaces que son fáciles de usar y dejan una impresión positiva duradera."
     }
   },
   "howIWork": {
     "label": "Proceso",
     "headline": "Cómo Trabajo",
-    "subtitle": "Un enfoque directo desde el concepto hasta el lanzamiento y más allá.",
+    "subtitle": "Un proceso simple y transparente enfocado en resultados.",
     "planning": {
-      "title": "Planificación",
+      "title": "Descubrimiento y Estrategia",
       "paragraphs": [
-        "Aprendo sobre tu proyecto—qué quieres construir y por qué—luego decido la mejor forma de hacerlo. Crearé un plan claro para que ambos sepamos exactamente hacia dónde vamos y cuándo."
+        "Primero, profundizamos en tus objetivos. Quiero entender quiénes son tus clientes y qué quieres lograr. Crearemos un plan que cubra tanto la tecnología como el marketing."
       ],
       "bulletPoints": [
-        "Entender tu proyecto y objetivos",
-        "Acordar cronograma y presupuesto",
-        "Planear el enfoque"
+        "Entender a tu audiencia",
+        "Definir objetivos claros",
+        "Estrategia de SEO y Contenido"
       ]
     },
     "development": {
-      "title": "Desarrollo",
+      "title": "Diseño y Construcción",
       "paragraphs": [
-        "Construyo tu sitio con atención al detalle y la calidad. Obtendrás un enlace de vista previa para ver todo mientras se construye, así puedes darme comentarios y yo puedo hacer ajustes sobre la marcha."
+        "Aquí es donde ocurre la magia. Construyo tu sitio con código limpio y un diseño que convierte. Verás el progreso en el camino y ajustaremos las cosas hasta que se sientan perfectas."
       ],
       "bulletPoints": [
-        "Enlace de vista previa para ver el progreso en tiempo real",
-        "Desarrollo enfocado en la calidad",
-        "Actualizaciones regulares e iteraciones rápidas"
+        "Diseño enfocado en conversión",
+        "Código limpio y amigable con SEO",
+        "Actualizaciones regulares de progreso"
       ]
     },
     "deployment": {
-      "title": "Despliegue",
+      "title": "Lanzamiento y Verificación",
       "paragraphs": [
-        "Me encargo de todo lo necesario para poner tu sitio en línea—configurar el hosting, conectar tu dominio, asegurarme de que sea rápido y seguro, y probar que funcione perfectamente en todos los dispositivos."
+        "Salimos en vivo. Me encargo de toda la configuración técnica—hosting, dominio, seguridad. También me aseguro de que todo tu seguimiento (analytics, píxeles) funcione perfectamente para medir el éxito."
       ],
       "bulletPoints": [
-        "Configuración de hosting y dominio",
-        "Optimización de velocidad y rendimiento",
-        "Seguridad y pruebas en diferentes dispositivos"
+        "Lanzamiento fluido y seguro",
+        "Configuración de Analytics y seguimiento",
+        "Pruebas de rendimiento"
       ]
     },
     "postDeployment": {
-      "title": "Post-Despliegue",
+      "title": "Optimización y Crecimiento",
       "paragraphs": [
-        "Una vez que tu sitio esté en vivo, te mostraré cómo actualizar el contenido tú mismo. También estoy disponible para soporte continuo—ya sea que necesites ayuda con cambios, correcciones o quieras agregar nuevas características."
+        "El lanzamiento es solo el comienzo. Te muestro cómo gestionar tu contenido y podemos seguir trabajando juntos para analizar datos y mejorar tus tasas de conversión con el tiempo."
       ],
       "bulletPoints": [
-        "Capacitación sobre cómo actualizar contenido",
-        "Soporte continuo cuando lo necesites",
-        "Agregar nuevas características y mejoras"
+        "Capacitación en CMS para ti",
+        "Optimizaciones basadas en datos",
+        "Soporte continuo para el crecimiento"
       ]
     }
   },
@@ -477,7 +477,7 @@
     "label": "Precios",
     "headline": "Cómo Calculo los Precios",
     "subtitle": "Precios transparentes que se adaptan a tus necesidades.",
-    "intro": "La mayoría de los sitios web son lentos, difíciles de editar o se rompen fácilmente. Construyo sitios web modernos diseñados para cargar instantáneamente, posicionarse bien en Google y, lo más importante, permitirte editar el texto y las imágenes tú mismo sin necesidad de llamarme cada vez.",
+    "intro": "La mayoría de los sitios web son bonitos, pero no hacen mucho. Construyo sitios diseñados para posicionarse en Google y convertir visitantes en clientes. Además, podrás editar todo tú mismo.",
     "packages": {
       "title": "Paquetes de Proyecto",
       "subtitle": "Selecciona la opción que coincida con el estado actual de tu negocio.",
@@ -489,36 +489,33 @@
       "showLess": "Ver menos"
     },
     "launch": {
-      "title": "El Paquete \"Lanzamiento\"",
-      "bestFor": "Ideal para: Startups, Consultores o Lanzamientos de Nuevos Productos.",
-      "description": "Esta es tu tarjeta de presentación digital. Está diseñada para causar una fuerte primera impresión y capturar clientes potenciales.",
+      "title": "El Paquete 'Launch'",
+      "bestFor": "Ideal para: Empresas que buscan una base profesional y de alto rendimiento para escalar.",
+      "description": "Una construcción de sitio web completa y de alta conversión. Una base sólida para tu presencia digital.",
       "features": [
-        "Diseño Personalizado: Una apariencia única que coincide con tu marca (sin plantillas genéricas).",
-        "Perfecto para Móviles: Se ve genial en teléfonos, tabletas y escritorios.",
-        "Edición Fácil: Un panel simple donde puedes cambiar texto e imágenes.",
-        "Listo para Google: Configurado para que los motores de búsqueda te encuentren.",
-        "Optimizado para Velocidad: Carga rápido para que los visitantes no se vayan.",
-        "Analíticas Simples: Seguimiento básico de visitas a la página para ver cuántos visitantes recibes."
+        "Diseño Estratégico: Centrado en la conversión y el flujo de usuarios.",
+        "SEO Técnico: Estructura que a Google le encanta.",
+        "Optimización de Velocidad: Tiempos de carga inferiores a un segundo.",
+        "Perfecto para Móviles: Se ve genial en todos los dispositivos.",
+        "Asociación Directa: Colaboración directa conmigo."
       ],
-      "timeline": "2–3 días laborables",
-      "investmentAmount": 600
+      "timeline": "1\u20132 semanas",
+      "investmentAmount": 800
     },
     "growth": {
-      "title": "El Paquete \"Crecimiento\"",
-      "bestFor": "Ideal para: Empresas establecidas que necesitan una presencia profesional total.",
-      "description": "Un sistema de sitio web total que te ayuda a vender tus servicios y genera confianza con los clientes.",
+      "title": "El Paquete 'Growth'",
+      "bestFor": "Ideal para: Empresas que buscan una solución ampliada y colaboración continua.",
+      "description": "Colaboro con tu equipo para construir una versión ampliada del plan 'Launch' con capacidades avanzadas.",
       "features": [
-        "Estructura Total del Sitio: 3–7 páginas (Inicio, Acerca de, Servicios, Contacto, etc.).",
-        "Editor Avanzado: Tienes control total sobre tu contenido, publicaciones de blog y páginas.",
-        "Generación de Clientes Potenciales: Conectado a tu correo o CRM (por ejemplo, los clientes potenciales van directamente a tu bandeja de entrada).",
-        "Escalable: Construido para que podamos agregar fácilmente nuevas páginas más tarde sin reconstruir todo el sitio.",
-        "Velocidad de Primer Nivel: Optimizado para cumplir con los estrictos requisitos de velocidad de Google.",
-        "Configuración Multiidioma: Localización incluida y configurada desde el inicio (listo para 2+ idiomas).",
-        "Sistema de Reservas Básico: Funcionalidad simple de citas o reservas integrada.",
-        "Integración de Analíticas: Configuración completa de seguimiento para entender de dónde vienen tus visitantes y qué hacen."
+        "Todo en 'Launch' + esto y más:",
+        "Integración de CMS: Eres el dueño y editas tu contenido.",
+        "Configuración de Localización: Listo pentru mercados globales desde el inicio.",
+        "Theming y Branding: Personalización visual profunda.",
+        "Analíticas Avanzadas: Configuración completa de seguimiento para entender el comportamiento de los visitantes.",
+        "Generación de Clientes Potenciales: Conectado a tu correo o CRM."
       ],
-      "timeline": "4 días a una semana",
-      "investmentAmount": 1500
+      "timeline": "2\u20133 semanas",
+      "investmentAmount": 1600
     },
     "custom": {
       "title": "Soluciones Personalizadas",
@@ -545,7 +542,7 @@
       "store": {
         "title": "Tienda Online",
         "benefit": "Capacidad de vender productos y aceptar tarjetas de crédito de forma segura.",
-        "priceAmount": 1500
+        "priceAmount": 1400
       },
       "multiLanguage": {
         "title": "Multi-Idioma",
@@ -555,9 +552,31 @@
       "analytics": {
         "title": "Analytics Pro",
         "benefit": "Configuro el seguimiento para que puedas ver exactamente de dónde vienen tus visitantes.",
-        "priceAmount": 300
+        "priceAmount": 800
       }
     }
+  },
+  "roiCalculator": {
+    "label": "Simulador de Ingresos",
+    "headline": "¿Cuánto dinero estás dejando sobre la mesa?",
+    "subtitle": "Calcula tu crecimiento potencial.",
+    "description": "Pequeñas mejoras en la tasa de conversión pueden generar grandes aumentos en los ingresos. Usa esta calculadora para ver el impacto potencial de optimizar tu sitio.",
+    "yourMetrics": "Tus Métricas",
+    "metricsDescription": "Ingresa los números actuales de tu sitio web",
+    "monthlyVisitors": "Visitantes Mensuales",
+    "conversionRate": "Tasa de Conversión (%)",
+    "avgOrderValue": "Valor Promedio de Pedido",
+    "projectedImprovement": "Mejora Proyectada",
+    "upliftDescription": "Las estimaciones conservadoras para CRO profesional oscilan entre un aumento del 0,5% y el 2,0%.",
+    "potentialReturns": "Retornos Potenciales",
+    "potentialDescription": "Lo que un aumento del +{uplift}% podría significar para tu negocio",
+    "extraYearlyRevenue": "Ingresos Anuales Extra",
+    "monthlyGrowth": "Crecimiento Mensual",
+    "projectedAnnual": "Anual Proyectado",
+    "currentMonthlyRevenue": "Ingresos Mensuales Actuales:",
+    "projectedMonthlyRevenue": "Ingresos Mensuales Proyectados:",
+    "chartCurrent": "Ingresos Actuales",
+    "chartProjected": "Ingresos Proyectados"
   },
   "certificates": {
     "cert-1": {
@@ -644,9 +663,9 @@
         "value": "3",
         "label": "Idiomas Hablados"
       },
-      "processingTimeReduction": {
-        "value": "30%",
-        "label": "Reducción de Tiempo de Procesamiento"
+      "avgConversionLift": {
+        "value": "15%+",
+        "label": "Aumento Medio de Conversión"
       }
     }
   }

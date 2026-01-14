@@ -8,6 +8,7 @@ import AboutMeSection from "@/components/sections/about-me-section";
 import ContactSection from "@/components/sections/contact-section";
 import HowIPriceSection from "@/components/sections/how-i-price-section";
 import HowIWorkSection from "@/components/sections/how-i-work-section";
+import RoiCalculatorSection from "@/components/sections/roi-calculator-section";
 import ServicesSection from "@/components/sections/services-section";
 import StatsSection from "@/components/sections/stats-section";
 import ToolsSection from "@/components/sections/tools-section";
@@ -51,7 +52,6 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const ogImage = ogImages[locale as keyof typeof ogImages] || ogImages.en;
 
   return {
-    title: localized.title,
     description: pageDescription,
     alternates: {
       canonical: getPathname({ locale, href: "/" }),
@@ -137,6 +137,8 @@ export default async function Page(props: Props) {
       ))}
       <BackgroundPaperShaders />
       <HeroSection />
+
+      <RoiCalculatorSection />
 
       {/* <StatsSection /> */}
 

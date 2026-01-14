@@ -27,7 +27,7 @@ export function StatsSectionClient({
         <AnimatedContainer
           trigger="scroll"
           fadeDirection="up"
-          className="mb-12 text-center"
+          className="mb-16 text-center"
         >
           <p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
             {label}

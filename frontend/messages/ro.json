@@ -233,10 +233,10 @@
     }
   },
   "home": {
-    "headline": "Construit cu <strong>precizie</strong>. Proiectat pentru <strong>creștere</strong>.",
-    "tagline": "Experiențe web de înaltă calitate construite pentru a ajuta afacerea ta să scaleze. Un parteneriat direct axat pe maximizarea creșterii tale digitale.",
+    "headline": "Întregul stack pentru <strong>creștere digitală</strong>.",
+    "tagline": "Scalăm traficul, construim fundații de înaltă performanță și maximizăm conversia. Produse digitale concepute să se plătească singure.",
     "aboutMeDescription": "Sunt Eduard Stefan și construiesc site-uri web de înaltă calitate care prioritizează atenția la detalii și experiența utilizatorului. Mă concentrez pe crearea de produse digitale care convertesc și aduc valoare reală, ajutându-ți afacerea să crească digital. Lucrul unu-la-unu îmi permite să mă ocup în detaliu de aspectele care contează cel mai mult pentru afacerea ta.",
-    "announcementLabel": "Înregistrează-te pentru <strong>aplicația mea nouă</strong>",
+    "announcementLabel": "Calculează-ți <strong>venitul potențial</strong>",
     "resumeButtonLabel": "Vezi CV-ul meu",
     "findMeOnLabel": "Găsește-mă pe",
     "contactMe": "Contactează-mă",
@@ -257,18 +257,18 @@
       "label": "Cine sunt",
       "headline": "Despre Mine",
       "subtitle": "Cunoaște persoana din spatele codului",
-      "description": "Sunt Eduard Stefan și de peste 4 ani construiesc site-uri web de înaltă calitate care convertesc și aduc rezultate reale pentru clienți. Mă concentrez pe crearea de experiențe care prioritizează o experiență de utilizator premium și standardele ridicate. Prefer o abordare atentă și concentrată—lucrul unu-la-unu îmi permite să mă obsedez de detaliile care contează și să rămân aproape de munca pe care o iubesc. Pentru mine, nu este vorba doar despre scrierea de cod; este vorba despre crearea a ceva de înaltă calitate, intuitiv și cu adevărat util pentru oamenii de pe cealaltă parte a ecranului."
+      "description": "Sunt Eduard Stefan, un dezvoltator care înțelege că un site web este o investiție, nu doar o carte de vizită digitală. Îmbin expertiza tehnică cu strategii SEO și CRO pentru a construi site-uri care nu doar arată bine—ci funcționează cu adevărat. Scopul meu este simplu: să te ajut să obții mai mult trafic și să transformi acel trafic în afaceri reale. Lucrez unu-la-unu cu tine pentru a mă asigura că fiecare detaliu contribuie la creșterea ta."
     },
     "contact": {
       "label": "Ia legătura",
       "headline": "Să lucrăm împreună",
-      "subtitle": "Ai un proiect în minte? Mi-ar plăcea să aud despre el. Obține oferta ta sau contactează-mă direct.",
+      "subtitle": "Ești gata să îți transformi site-ul într-un motor de creștere? Hai să vorbim.",
       "ctaButton": "Obține oferta ta",
       "whatsappLabel": "Contactează-mă pe WhatsApp"
     },
     "seo": {
-      "title": "Eduard Stefan | Website-uri construite cu precizie",
-      "description": "Un parteneriat direct axat pe maximizarea creșterii tale digitale."
+      "title": "Eduard Stefan | Dezvoltare Web + SEO + CRO",
+      "description": "Construiesc site-uri de înaltă performanță optimizate pentru trafic și conversie."
     }
   },
   "profile": {
@@ -396,80 +396,80 @@
     }
   },
   "services": {
-    "label": "Filozofia Mea",
-    "headline": "Fără artificii. Doar rezultate.",
-    "subtitle": "Comunicare directă. Livrare mai rapidă. Valoare mai bună.",
-    "svc-1": {
-      "title": "Soluții Web de Înaltă Calitate",
-      "description": "Obține o soluție personalizată, construită cu accent pe calitate și pe obiectivele tale de business. Ne mișcăm rapid, creând un prim draft imediat pentru a itera împreună spre o aplicație premium care scalează cu tine."
-    },
-    "svc-7": {
-      "title": "Internaționalizare și Suport pentru Limbi Multiple",
-      "description": "Conectează-te cu clienți din toată lumea vorbind pe limba lor. Site-ul tău se adaptează automat fiecărui vizitator, oferind încredere și ajutându-te să te extinzi global fără efort."
-    },
-    "svc-3": {
-      "title": "Soluții Ultra-Rapide",
-      "description": "Performanța nu este un supliment—este integrată implicit. Primești o soluție ultra-rapidă și optimizată unde viteza este o caracteristică nenegociabilă, garantând că vizitatorii tăi nu vor fi nevoiți să aștepte."
-    },
-    "svc-4": {
-      "title": "Creștere Digitală și Viteză",
-      "description": "Fii găsit de cine contează și păstrează-le atenția. Optimizez fiecare linie de cod pentru ca site-ul tău să crească digital și să se încarce instantaneu, transformând vizitatorii în clienți."
-    },
-    "svc-5": {
-      "title": "Implementare UI/UX",
-      "description": "Oferă vizitatorilor tăi o experiență pe care o vor iubi cu adevărat. Fac legătura între design și cod pentru a mă asigura că viziunea ta se transformă într-un site premium care convertește."
-    },
+    "label": "Ce Fac Eu",
+    "headline": "Partenerul Tău de Creștere Digitală",
+    "subtitle": "Totul merge mână în mână. SEO aduce oamenii potriviți, iar designul optimizat se asigură că rămân.",
     "svc-6": {
       "title": "Parteneriat Direct",
-      "description": "Maximizează-ți bugetul printr-o linie directă de comunicare. Lucrezi unu-la-unu cu mine pentru decizii rapide și comunicare instantanee, păstrând proiectul tău pe drumul spre succes."
+      "description": "Fără intermediari. Lucrezi direct cu mine, ceea ce înseamnă comunicare clară, actualizări mai rapide și un partener căruia îi pasă de succesul tău."
+    },
+    "svc-1": {
+      "title": "Dezvoltare SEO-First",
+      "description": "Construiesc site-uri pe care Google le iubește. Cod curat, structură perfectă și performanță rapidă pentru a te ajuta să te clasezi mai sus."
+    },
+    "svc-7": {
+      "title": "Acoperire Globală",
+      "description": "Extinde-ți audiența cu suport multi-limbă fără probleme. Vorbește pe limba clienților tăi și construiește încredere la nivel global."
+    },
+    "svc-3": {
+      "title": "Viteză Ultra-Rapidă",
+      "description": "Viteza este o funcționalitate. Mă asigur că site-ul tău se încarcă instantaneu, menținând vizitatorii fericiți și reducând rata de abandon."
+    },
+    "svc-4": {
+      "title": "Focus pe Conversie/CRO",
+      "description": "Traficul e bun, dar clienții sunt mai buni. Proiectez fluxuri care ghidează vizitatorii în mod natural către acțiune."
+    },
+    "svc-5": {
+      "title": "Design UX",
+      "description": "Simplu, intuitiv și frumos. Creez interfețe care sunt ușor de folosit și lasă o impresie pozitivă de durată."
     }
   },
   "howIWork": {
     "label": "Proces",
     "headline": "Cum Lucrez",
-    "subtitle": "O abordare directă de la concept la lansare și dincolo.",
+    "subtitle": "Un proces simplu și transparent, concentrat pe rezultate.",
     "planning": {
-      "title": "Planificare",
+      "title": "Descoperire & Strategie",
       "paragraphs": [
-        "Aflu despre proiectul tău—ce vrei să construiești și de ce—apoi găsesc cea mai bună modalitate de a-l construi. Voi crea un plan clar astfel încât amândoi să știm exact către ce lucrăm și când."
+        "Mai întâi, aprofundăm obiectivele tale. Vreau să înțeleg cine sunt clienții tăi și ce vrei să obții. Vom stabili un plan care acoperă atât partea tehnică, cât și cea de marketing."
       ],
       "bulletPoints": [
-        "Înțelegerea proiectului și obiectivelor tale",
-        "Acordul asupra termenului și bugetului",
-        "Planificarea abordării"
+        "Înțelegerea audienței tale",
+        "Definirea obiectivelor clare",
+        "Strategie SEO & Conținut"
       ]
     },
     "development": {
-      "title": "Dezvoltare",
+      "title": "Design & Construcție",
       "paragraphs": [
-        "Construiesc site-ul tău cu atenție la detalii și calitate. Vei primi un link de previzualizare pentru a vedea totul pe măsură ce se construiește, astfel încât să poți oferi feedback și eu pot face ajustări pe parcurs."
+        "Aici se întâmplă magia. Construiesc site-ul tău cu cod curat și un design care convertește. Vei vedea progresul pe parcurs și vom ajusta lucrurile până când se simt exact cum trebuie."
       ],
       "bulletPoints": [
-        "Link de previzualizare pentru a vedea progresul în timp real",
-        "Dezvoltare concentrată pe calitate",
-        "Actualizări regulate și iterații rapide"
+        "Design axat pe conversie",
+        "Cod curat, prietenos cu SEO",
+        "Actualizări regulate de progres"
       ]
     },
     "deployment": {
-      "title": "Lansare",
+      "title": "Lansare & Verificare",
       "paragraphs": [
-        "Mă ocup de tot ce e necesar pentru a pune site-ul tău online—configurarea hosting-ului, conectarea domeniului, asigurarea că e rapid și sigur, și testarea că funcționează perfect pe toate dispozitivele."
+        "Lansăm. Mă ocup de toată configurarea tehnică—hosting, domeniu, securitate. De asemenea, mă asigur că toate sistemele de urmărire (analytics, pixel) funcționează perfect pentru a putea măsura succesul."
       ],
       "bulletPoints": [
-        "Configurarea hosting-ului și domeniului",
-        "Optimizarea vitezei și performanței",
-        "Securitate și teste pe diferite dispozitive"
+        "Lansare lină și sigură",
+        "Configurare Analytics & tracking",
+        "Testare de performanță"
       ]
     },
     "postDeployment": {
-      "title": "După Lansare",
+      "title": "Optimizare & Creștere",
       "paragraphs": [
-        "Odată ce site-ul tău e live, îți voi arăta cum să actualizezi conținutul singur. Sunt de asemenea disponibil pentru suport continuu—fie că ai nevoie de ajutor cu modificări, corecții sau vrei să adaugi funcții noi."
+        "Lansarea e doar începutul. Îți arăt cum să gestionezi conținutul și putem continua să lucrăm împreună pentru a analiza datele și a îmbunătăți ratele de conversie în timp."
       ],
       "bulletPoints": [
-        "Instruire despre cum să actualizezi conținutul",
-        "Suport continuu când ai nevoie",
-        "Adăugarea de funcții și îmbunătățiri noi"
+        "Instruire CMS pentru tine",
+        "Optimizări bazate pe date",
+        "Suport continuu pentru creștere"
       ]
     }
   },
@@ -477,7 +477,7 @@
     "label": "Prețuri",
     "headline": "Cum Calculez Prețurile",
     "subtitle": "Prețuri transparente care se adaptează nevoilor tale.",
-    "intro": "Majoritatea site-urilor web sunt lente, greu de editat sau se defectează ușor. Construiesc site-uri web moderne proiectate să se încarce instantaneu, să se claseze bine pe Google și, cel mai important, să îți permită să editezi textul și imaginile singur, fără să trebuiască să mă suni de fiecare dată.",
+    "intro": "Majoritatea site-urilor sunt frumoase, dar nu fac mare lucru. Eu construiesc site-uri concepute să se claseze pe Google și să transforme vizitatorii în clienți. În plus, vei putea edita totul singur.",
     "packages": {
       "title": "Pachete de Proiect",
       "subtitle": "Selectează opțiunea care se potrivește stării actuale a afacerii tale.",
@@ -489,36 +489,33 @@
       "showLess": "Afișează mai puțin"
     },
     "launch": {
-      "title": "Pachetul \"Lansare\"",
-      "bestFor": "Ideal pentru: Startups, Consultanți sau Lansări de Produse Noi.",
-      "description": "Aceasta este cartea ta de vizită digitală. Este proiectată pentru a face o primă impresie puternică și pentru a captura clienți potențiali.",
+      "title": "Pachetul 'Launch'",
+      "bestFor": "Ideal pentru: Afaceri care caută o bază profesională, de înaltă performanță pentru a scala.",
+      "description": "O construcție completă de site web cu conversie ridicată. O fundație solidă pentru prezența ta digitală.",
       "features": [
-        "Design Personalizat: O înfățișare unică care se potrivește brandului tău (fără șabloane generice).",
-        "Perfect pentru Mobil: Arată excelent pe telefoane, tablete și desktop-uri.",
-        "Editare Ușoară: Un panou simplu unde poți schimba textul și imaginile.",
-        "Gata pentru Google: Configurat astfel încât motoarele de căutare să te găsească.",
-        "Optimizat pentru Viteză: Se încarcă rapid astfel încât vizitatorii să nu plece.",
-        "Analitici Simple: Urmărire de bază a vizualizărilor paginii pentru a vedea câți vizitatori primești."
+        "Design Strategic: Focusat pe conversie și fluxul utilizatorului.",
+        "SEO Tehnic: Structură pe care Google o iubește.",
+        "Optimizarea Vitezei: Timpi de încărcare sub o secundă.",
+        "Perfect pentru Mobil: Arată excelent pe toate dispozitivele.",
+        "Parteneriat Direct: Colaborare directă cu mine."
       ],
-      "timeline": "2–3 zile lucrătoare",
-      "investmentAmount": 600
+      "timeline": "1\u20132 săptămâni",
+      "investmentAmount": 800
     },
     "growth": {
-      "title": "Pachetul \"Creștere\"",
-      "bestFor": "Ideal pentru: Afaceri stabilite care au nevoie de o prezență profesională totală.",
-      "description": "Un sistem total de site web care te ajută să îți vinzi serviciile și construiește încredere cu clienții.",
+      "title": "Pachetul 'Growth'",
+      "bestFor": "Ideal pentru: Afaceri care caută o soluție extinsă și colaborare continuă.",
+      "description": "Colaborez cu echipa ta pentru a construi o versiune extinsă a planului 'Launch' cu capabilități avansate.",
       "features": [
-        "Structură Totală a Site-ului: 3–7 pagini (Acasă, Despre, Servicii, Contact, etc.).",
-        "Editor Avansat: Ai control complet asupra conținutului, postărilor de blog și paginilor.",
-        "Generare Clienți Potențiali: Conectat la email-ul sau CRM-ul tău (de exemplu, clienții potențiali merg direct în inbox-ul tău).",
-        "Scalabil: Construit astfel încât să putem adăuga cu ușurință pagini noi mai târziu fără a reconstrui întregul site.",
-        "Viteză de Top: Optimizat pentru a trece de cerințele stricte de viteză ale Google.",
-        "Configurare Multi-Limba: Localizare inclusă și configurată de la început (gata pentru 2+ limbi).",
-        "Sistem de Rezervări de Bază: Funcționalitate simplă de programări sau rezervări integrată.",
-        "Integrare Analitici: Configurare completă de urmărire pentru a înțelege de unde vin vizitatorii tăi și ce fac."
+        "Tot ce este în 'Launch' + acestea și mai multe:",
+        "Integrare CMS: Tu deții și editezi conținutul.",
+        "Configurare Localizare: Gata pentru piețele globale de la început.",
+        "Themeing și Branding: Personalizare vizuală profundă.",
+        "Analitici Avansate: Configurare completă de urmărire pentru a înțelege comportamentul vizitatorilor.",
+        "Generare Clienți Potențiali: Conectat la email-ul sau CRM-ul tău."
       ],
-      "timeline": "4 zile la o săptămână",
-      "investmentAmount": 1500
+      "timeline": "2\u20133 săptămâni",
+      "investmentAmount": 1600
     },
     "custom": {
       "title": "Soluții Personalizate",
@@ -545,7 +542,7 @@
       "store": {
         "title": "Magazin Online",
         "benefit": "Capacitatea de a vinde produse și de a accepta carduri de credit în siguranță.",
-        "priceAmount": 1500
+        "priceAmount": 1400
       },
       "multiLanguage": {
         "title": "Mai Multe Limbi",
@@ -555,9 +552,31 @@
       "analytics": {
         "title": "Analytics Pro",
         "benefit": "Configurez urmărirea astfel încât să poți vedea exact de unde vin vizitatorii tăi.",
-        "priceAmount": 300
+        "priceAmount": 800
       }
     }
+  },
+  "roiCalculator": {
+    "label": "Simularea Veniturilor",
+    "headline": "Câți bani lași pe masă?",
+    "subtitle": "Calculează-ți creșterea potențială.",
+    "description": "Mici îmbunătățiri ale ratei de conversie pot duce la câștiguri masive de venituri. Folosește acest calculator pentru a vedea impactul potențial al optimizării site-ului tău.",
+    "yourMetrics": "Metricile Tale",
+    "metricsDescription": "Introdu cifrele actuale ale site-ului tău",
+    "monthlyVisitors": "Vizitatori Lunari",
+    "conversionRate": "Rata de Conversie (%)",
+    "avgOrderValue": "Valoarea Medie a Comenzii",
+    "projectedImprovement": "Îmbunătățire Proiectată",
+    "upliftDescription": "Estimările conservatoare pentru CRO profesional variază între 0,5% și 2,0% creștere.",
+    "potentialReturns": "Câștiguri Potențiale",
+    "potentialDescription": "Ce ar putea însemna o creștere de +{uplift}% pentru afacerea ta",
+    "extraYearlyRevenue": "Venit Anual Extra",
+    "monthlyGrowth": "Creștere Lunară",
+    "projectedAnnual": "Anual Proiectat",
+    "currentMonthlyRevenue": "Venit Lunar Actual:",
+    "projectedMonthlyRevenue": "Venit Lunar Proiectat:",
+    "chartCurrent": "Venit Actual",
+    "chartProjected": "Venit Proiectat"
   },
   "certificates": {
     "cert-1": {
@@ -644,9 +663,9 @@
         "value": "3",
         "label": "Limbi Vorbite"
       },
-      "processingTimeReduction": {
-        "value": "30%",
-        "label": "Reducere Timp Procesare"
+      "avgConversionLift": {
+        "value": "15%+",
+        "label": "Creșterea Medie a Conversiei"
       }
     }
   }

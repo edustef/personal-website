@@ -1,7 +1,7 @@
 "use client";
 
 import { type CommonProps, cn } from "@/lib/utils";
-import { RocketIcon } from "lucide-react";
+import { Calculator } from "lucide-react";
 import { motion } from "motion/react";
 
 type HighlightBadgeProps = CommonProps & {
@@ -38,18 +38,19 @@ export function HighlightBadge({
         }}
       />
       <div className=" text-secondary-foreground relative z-10 flex items-center gap-3 rounded-lg px-5 py-2 transition-colors hover:bg-secondary/40">
-        <RocketIcon className="size-4" />
+        <Calculator className="size-4" />
         <div className="">{children}</div>
       </div>
     </>
   );
 
   if (href) {
+    const isExternal = href.startsWith("http");
     return (
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
         className={cn("relative inline-flex w-fit cursor-pointer", className)}
       >
         {content}

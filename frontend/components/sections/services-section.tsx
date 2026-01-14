@@ -72,7 +72,7 @@ export default async function ServicesSection({
           <p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
             {t("label")}
           </p>
-          <h2 className="text-foreground mb-1 text-3xl tracking-tight md:text-4xl text-balance">
+          <h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl text-balance">
             <a
               href={`#${servicesSlug}`}
               className="hover:text-primary transition-colors"
