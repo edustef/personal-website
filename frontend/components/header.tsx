@@ -3,7 +3,7 @@
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
 import { LanguageToggle } from "@/components/language-toggle";
 import { ModeToggle } from "@/components/theme-toggle";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Link } from "@/components/ui/link";
 import {
   NavigationMenu,
@@ -314,37 +314,39 @@ export function Header({ className, languageToggle }: HeaderProps) {
 
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <motion.div
+                <motion.button
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" }),
+                    "md:hidden"
+                  )}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button variant="ghost" size="icon" className="md:hidden">
-                    <AnimatePresence mode="wait" initial={false}>
-                      {isMobileMenuOpen ? (
-                        <motion.div
-                          key="close"
-                          initial={{ rotate: -90, opacity: 0 }}
-                          animate={{ rotate: 0, opacity: 1 }}
-                          exit={{ rotate: 90, opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <X className="size-6" />
-                        </motion.div>
-                      ) : (
-                        <motion.div
-                          key="menu"
-                          initial={{ rotate: 90, opacity: 0 }}
-                          animate={{ rotate: 0, opacity: 1 }}
-                          exit={{ rotate: -90, opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <Menu className="size-6" />
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                    <span className="sr-only">{menuLabel}</span>
-                  </Button>
-                </motion.div>
+                  <AnimatePresence mode="wait" initial={false}>
+                    {isMobileMenuOpen ? (
+                      <motion.div
+                        key="close"
+                        initial={{ rotate: -90, opacity: 0 }}
+                        animate={{ rotate: 0, opacity: 1 }}
+                        exit={{ rotate: 90, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <X className="size-6" />
+                      </motion.div>
+                    ) : (
+                      <motion.div
+                        key="menu"
+                        initial={{ rotate: 90, opacity: 0 }}
+                        animate={{ rotate: 0, opacity: 1 }}
+                        exit={{ rotate: -90, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Menu className="size-6" />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                  <span className="sr-only">{menuLabel}</span>
+                </motion.button>
               </SheetTrigger>
               <SheetContent
                 side="right"
