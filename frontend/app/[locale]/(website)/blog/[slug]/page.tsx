@@ -1,7 +1,7 @@
 import { getAllPostSlugs, getBlogPost } from "@/lib/blog";
 import { getCanonicalUrl } from "@/lib/seo";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import { getTranslations } from "next-intl/server";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 import BlogPostClient from "./blog-post-client";
 
@@ -54,6 +54,10 @@ export default async function BlogPostPage({
   const content = <MDXRemote source={post.content} />;
 
   return (
-    <BlogPostClient post={post} content={content} socialLinks={socialLinksRaw} />
+    <BlogPostClient
+      post={post}
+      content={content}
+      socialLinks={socialLinksRaw}
+    />
   );
 }

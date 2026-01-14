@@ -45,13 +45,19 @@ export async function generateMetadata(
     openGraph: {
       type: "website",
       locale,
-      title: localized.title,
+      title: {
+        template: `%s | ${localized.title}`,
+        default: localized.title,
+      },
       description: localized.description,
       images: localized.ogImage ? [localized.ogImage] : undefined,
     },
     twitter: {
       card: localized.ogImage ? "summary_large_image" : "summary",
-      title: localized.title,
+      title: {
+        template: `%s | ${localized.title}`,
+        default: localized.title,
+      },
       description: localized.description,
       images: localized.ogImage ? [localized.ogImage.url] : undefined,
     },

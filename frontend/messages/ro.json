@@ -239,7 +239,7 @@
     "announcementLabel": "Înregistrează-te pentru <strong>aplicația mea nouă</strong>",
     "resumeButtonLabel": "Vezi CV-ul meu",
     "findMeOnLabel": "Găsește-mă pe",
-    "contactMe": "Contactează-mă",
+    "contactMe": "Hai să vorbim despre creștere",
     "workedWith": "Cu ce lucrez",
     "tools": {
       "label": "Tehnologii",
@@ -248,7 +248,7 @@
     },
     "ctaButtons": [
       {
-        "text": "Obține oferta ta",
+        "text": "Începe proiectul tău",
         "href": "/start-your-project",
         "variant": "secondary"
       }
@@ -262,8 +262,8 @@
     "contact": {
       "label": "Ia legătura",
       "headline": "Să lucrăm împreună",
-      "subtitle": "Ai un proiect în minte? Mi-ar plăcea să aud despre el. Obține oferta ta sau contactează-mă direct.",
-      "ctaButton": "Obține oferta ta",
+      "subtitle": "Ai un proiect în minte? Mi-ar plăcea să aud despre el. Începe proiectul tău sau contactează-mă direct.",
+      "ctaButton": "Începe proiectul tău",
       "whatsappLabel": "Contactează-mă pe WhatsApp"
     },
     "seo": {
@@ -298,7 +298,7 @@
     "description": "Site-uri construite cu precizie, concepute pentru creștere.",
     "header": {
       "cta": {
-        "text": "Obține oferta ta",
+        "text": "Începe proiectul tău",
         "href": "/start-your-project"
       },
       "homeButtonLabel": "Acasa",

@@ -40,8 +40,21 @@ function getLocaleFromCountry(country: string | null): string | null {
   );
 }
 
+const pathRedirects: Record<string, string> = {
+  "/ro/începe-proiectul-tău": "/ro/incepe-proiectul-tau",
+  "/ro/politică-de-confidențialitate": "/ro/politica-de-confidentialitate",
+  "/es/política-de-privacidad": "/es/politica-de-privacidad",
+};
+
 export default function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+
+  // Handle redirects for old accented paths
+  if (pathRedirects[pathname]) {
+    const url = request.nextUrl.clone();
+    url.pathname = pathRedirects[pathname];
+    return NextResponse.redirect(url, 308);
+  }
 
   const hasLocale = routing.locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`

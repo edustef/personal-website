@@ -239,7 +239,7 @@
     "announcementLabel": "Join waitlist for my <strong>new app</strong>",
     "resumeButtonLabel": "See my resume",
     "findMeOnLabel": "Find me on",
-    "contactMe": "Contact me",
+    "contactMe": "Let's talk growth",
     "workedWith": "What I work with",
     "tools": {
       "label": "Technologies",
@@ -248,7 +248,7 @@
     },
     "ctaButtons": [
       {
-        "text": "Get your offer",
+        "text": "Start your project",
         "href": "/start-your-project",
         "variant": "secondary"
       }
@@ -262,12 +262,12 @@
     "contact": {
       "label": "Get in touch",
       "headline": "Let's work together",
-      "subtitle": "Have a project in mind? I'd love to hear about it. Get your offer or reach out directly.",
-      "ctaButton": "Get your offer",
+      "subtitle": "Have a project in mind? I'd love to hear about it. Start your project or reach out directly.",
+      "ctaButton": "Start your project",
       "whatsappLabel": "Contact me on WhatsApp"
     },
     "seo": {
-      "title": "Eduard Stefan | Websites built with precision",
+      "title": "Websites built for growth",
       "description": "A direct partnership focused on maximizing your digital growth."
     }
   },
@@ -298,7 +298,7 @@
     "description": "Websites built with precision, designed for growth.",
     "header": {
       "cta": {
-        "text": "Get your offer",
+        "text": "Start your project",
         "href": "/start-your-project"
       },
       "homeButtonLabel": "Home",
@@ -314,7 +314,7 @@
       }
     },
     "seo": {
-      "title": "Eduard Stefan | Websites built with precision",
+      "title": "Eduard Stefan",
       "description": "A direct partnership focused on maximizing your digital growth."
     }
   },

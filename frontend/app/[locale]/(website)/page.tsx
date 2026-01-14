@@ -42,38 +42,34 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
   const { locale } = params;
 
-  const [localized, t] = await Promise.all([
-    getLocalizedSettingsMetadata(locale),
-    getTranslations({ locale, namespace: "home.seo" }),
-  ]);
+  const t = await getTranslations({ locale, namespace: "home.seo" });
 
-  const pageDescription = t("description");
   const ogImage = ogImages[locale as keyof typeof ogImages] || ogImages.en;
 
   return {
-    title: localized.title,
-    description: pageDescription,
+    title: t("title"),
+    description: t("description"),
     alternates: {
       canonical: getPathname({ locale, href: "/" }),
     },
     openGraph: {
       type: "website",
       locale,
-      title: localized.title,
-      description: pageDescription,
+      title: t("title"),
+      description: t("description"),
       images: [
         {
           url: ogImage.src,
           width: ogImage.width,
           height: ogImage.height,
-          alt: pageDescription,
+          alt: t("description"),
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: localized.title,
-      description: pageDescription,
+      title: t("title"),
+      description: t("description"),
       images: [ogImage.src],
     },
   };
