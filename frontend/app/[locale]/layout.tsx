@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { Toaster } from "sonner";
 
 import { ConvexClientProvider } from "@/components/convex-client-provider";
+import { CookieBanner } from "@/components/cookie-banner";
 import { FacebookPixel } from "@/components/facebook-pixel";
 import { ThemeProvider } from "@/components/theme-provider";
 import { locales } from "@/i18n/routing";
@@ -166,6 +167,7 @@ export default async function LocaleLayout(props: Props) {
             >
               <Toaster />
               <FacebookPixel />
+              <CookieBanner />
               {props.children}
               <SpeedInsights />
             </ThemeProvider>

@@ -1,32 +1,54 @@
 "use client";
 
-import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
-import { Suspense, useEffect } from "react";
+import posthog from "posthog-js";
+import { Suspense, useEffect, useState } from "react";
+import { COOKIE_CONSENT_EVENT } from "./cookie-banner";
 
 const FB_PIXEL_ID = "1797213360812301";
 
 declare global {
   interface Window {
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
     fbq: any;
   }
 }
 
 const FacebookPixelInstance = () => {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const [hasConsent, setHasConsent] = useState<boolean>(false);
 
   useEffect(() => {
-    if (typeof window.fbq !== "undefined") {
+    // Initial check
+    const checkConsent = () => {
+      const consent = posthog.has_opted_in_capturing();
+      setHasConsent(consent);
+    };
+
+    checkConsent();
+
+    // Listen for updates from CookieBanner
+    const handleUpdate = () => {
+      checkConsent();
+    };
+
+    window.addEventListener(COOKIE_CONSENT_EVENT, handleUpdate);
+    return () => window.removeEventListener(COOKIE_CONSENT_EVENT, handleUpdate);
+  }, []);
+
+  useEffect(() => {
+    if (hasConsent && typeof window.fbq !== "undefined") {
       window.fbq("track", "PageView");
     }
-  }, [pathname, searchParams]);
+  }, [hasConsent]);
+
+  if (!hasConsent) return null;
 
   return (
     <>
       <Script
         id="fb-pixel"
         strategy="afterInteractive"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
         dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)

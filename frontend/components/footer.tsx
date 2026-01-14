@@ -1,6 +1,7 @@
 import { Link } from "@/components/ui/link";
 import { cn } from "@/lib/utils";
 import { getTranslations } from "next-intl/server";
+import { ManageCookiesButton } from "./manage-cookies-button";
 
 type FooterProps = {
   className?: string;
@@ -66,6 +67,7 @@ export async function Footer({ className, locale }: FooterProps) {
                 >
                   {t("privacyPolicy")}
                 </Link>
+                <ManageCookiesButton>Manage Cookies</ManageCookiesButton>
               </nav>
             </div>
           </div>

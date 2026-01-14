@@ -9,6 +9,7 @@ import ContactSection from "@/components/sections/contact-section";
 import HowIPriceSection from "@/components/sections/how-i-price-section";
 import HowIWorkSection from "@/components/sections/how-i-work-section";
 import ServicesSection from "@/components/sections/services-section";
+import StatsSection from "@/components/sections/stats-section";
 import ToolsSection from "@/components/sections/tools-section";
 import { BackgroundPaperShaders } from "@/components/ui/background-paper-shaders";
 import { getPathname } from "@/i18n/navigation";
@@ -136,6 +137,8 @@ export default async function Page(props: Props) {
       ))}
       <BackgroundPaperShaders />
       <HeroSection />
+
+      {/* <StatsSection /> */}
 
       <ServicesSection />
 

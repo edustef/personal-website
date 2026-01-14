@@ -622,5 +622,32 @@
     "noResults": "No articles found",
     "noResultsDescription": "Try adjusting your search or filter to find what you're looking for.",
     "clearFilters": "Clear filters"
+  },
+  "stats": {
+    "label": "By The Numbers",
+    "headline": "Results That Speak",
+    "subtitle": "Real metrics from real projects. Here's what I've helped achieve.",
+    "metrics": {
+      "yearsExperience": {
+        "value": "4+",
+        "label": "Years of Experience"
+      },
+      "fundsRaised": {
+        "value": "$40M+",
+        "label": "Funds Raised"
+      },
+      "investors": {
+        "value": "30K+",
+        "label": "Investors Reached"
+      },
+      "languages": {
+        "value": "3",
+        "label": "Languages Spoken"
+      },
+      "processingTimeReduction": {
+        "value": "30%",
+        "label": "Processing Time Reduction"
+      }
+    }
   }
 }
