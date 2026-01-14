@@ -71,22 +71,6 @@ export default async function HeroSection() {
                 {t("contactMe")}
               </a>
             </Button>
-            {ctaButtons.map((button) => (
-              <Button
-                key={button.href}
-                asChild
-                size="lg"
-                variant={button.variant as "default" | "outline" | "secondary"}
-              >
-                <Link
-                  href={
-                    button.href as "/start-your-project" | "/privacy-policy"
-                  }
-                >
-                  {button.text}
-                </Link>
-              </Button>
-            ))}
           </AnimatedContainer>
         </div>
       </div>

@@ -27,7 +27,6 @@ export default async function WebsiteLayout(props: Props) {
   return (
     <>
       <div className="relative isolate flex min-h-screen flex-col">
-        <ScrollAwareHeader />
         <Header languageToggle={props.languageToggle} />
         <main
           id="main-content"

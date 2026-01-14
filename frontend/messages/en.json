@@ -239,7 +239,7 @@
     "announcementLabel": "Join waitlist for my <strong>new app</strong>",
     "resumeButtonLabel": "See my resume",
     "findMeOnLabel": "Find me on",
-    "contactMe": "Let's talk",
+    "contactMe": "Let's plan it",
     "workedWith": "What I work with",
     "tools": {
       "label": "Technologies",
@@ -248,7 +248,7 @@
     },
     "ctaButtons": [
       {
-        "text": "Start your project",
+        "text": "Get your offer",
         "href": "/start-your-project",
         "variant": "secondary"
       }
@@ -263,7 +263,7 @@
       "label": "Get in touch",
       "headline": "Let's work together",
       "subtitle": "Have a project in mind? I'd love to hear about it. Start your project or reach out directly.",
-      "ctaButton": "Start your project",
+      "ctaButton": "Get your offer",
       "whatsappLabel": "Contact me on WhatsApp"
     },
     "seo": {
@@ -298,7 +298,7 @@
     "description": "Websites built with precision, designed for growth.",
     "header": {
       "cta": {
-        "text": "Start your project",
+        "text": "Get your offer",
         "href": "/start-your-project"
       },
       "homeButtonLabel": "Home",

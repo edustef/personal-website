@@ -24,7 +24,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { motion } from "motion/react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 type HeaderProps = {
@@ -39,7 +39,6 @@ const navItems = [
 ] as const;
 
 export function Header({ className, languageToggle }: HeaderProps) {
-  const locale = useLocale();
   const pathname = usePathname();
   const headerT = useTranslations("settings.header");
   const homeT = useTranslations("home");
