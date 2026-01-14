@@ -257,12 +257,12 @@
       "label": "Who I am",
       "headline": "About Me",
       "subtitle": "Get to know the person behind the code",
-      "description": "I'm Eduard Stefan, a developer who understands that a website is an investment, not just a digital business card. I combine technical expertise with SEO and CRO strategies to build sites that don't just look good—they actually work. My goal is simple: to help you get more traffic and turn that traffic into real business. I work one-on-one with you to ensure every detail contributes to your growth."
+      "description": "I'm Eduard Stefan, a developer who understands that a website is an investment, not just a digital business card. I combine technical expertise with SEO and CRO strategies to build sites that don't just look good—they actually work. My goal is simple: to help you get more traffic and turn that traffic into real business. I work one-on-one with you to ensure every detail contributes to your success."
     },
     "contact": {
       "label": "Get in touch",
       "headline": "Let's work together",
-      "subtitle": "Ready to turn your website into a growth engine? Let's chat.",
+      "subtitle": "Ready to turn your website into a conversion engine? Let's chat.",
       "ctaButton": "Get your offer",
       "whatsappLabel": "Contact me on WhatsApp"
     },
@@ -295,7 +295,7 @@
   },
   "settings": {
     "title": "Eduard Stefan",
-    "description": "Websites built with precision, designed for growth.",
+    "description": "Websites built with precision, designed for conversion.",
     "header": {
       "cta": {
         "text": "Get your offer",
@@ -315,7 +315,7 @@
     },
     "seo": {
       "title": "Eduard Stefan | Websites built with precision",
-      "description": "A direct partnership focused on maximizing your digital growth."
+      "description": "A direct partnership focused on maximizing your digital success."
     }
   },
   "skills": {
@@ -397,29 +397,29 @@
   },
   "services": {
     "label": "What I Do",
-    "headline": "Your Digital Growth Partner",
+    "headline": "Your Partner in Traffic & Conversion",
     "subtitle": "Everything goes hand in hand. SEO brings the right people, and optimized design ensures they stick around.",
-    "svc-6": {
+    "svc-1": {
       "title": "Direct Partnership",
       "description": "No middlemen. You work directly with me, which means clear communication, faster updates, and a partner who cares about your success."
     },
-    "svc-1": {
+    "svc-2": {
       "title": "SEO-First Development",
       "description": "I build websites that Google loves. Clean code, perfect structure, and fast performance to help you rank higher and get noticed."
     },
-    "svc-7": {
+    "svc-3": {
       "title": "Global Reach",
       "description": "Expand your audience with seamless multi-language support. Speak your customers' language and build trust worldwide."
     },
-    "svc-3": {
+    "svc-4": {
       "title": "Blazing Fast Speed",
       "description": "Speed is a feature. I ensure your site loads instantly, keeping visitors happy and reducing the chance they'll bounce."
     },
-    "svc-4": {
+    "svc-5": {
       "title": "Conversion/CRO Focus",
       "description": "Traffic is great, but customers are better. I design user flows that guide visitors naturally toward taking action."
     },
-    "svc-5": {
+    "svc-6": {
       "title": "User Experience Design",
       "description": "Simple, intuitive, and beautiful. I create interfaces that are easy to use and leave a lasting positive impression."
     }
@@ -462,14 +462,14 @@
       ]
     },
     "postDeployment": {
-      "title": "Optimize & Grow",
+      "title": "Optimize & Scale",
       "paragraphs": [
         "Launching is just the start. I show you how to manage your content, and we can keep working together to analyze data and improve your conversion rates over time."
       ],
       "bulletPoints": [
         "CMS training for you",
         "Data-driven optimizations",
-        "Ongoing growth support"
+        "Ongoing project support"
       ]
     }
   },
@@ -630,7 +630,7 @@
   },
   "blog": {
     "title": "Blog",
-    "description": "Thoughts on web development, design, and digital growth.",
+    "description": "Thoughts on web development, design, and digital performance.",
     "readMore": "Read more",
     "backToBlog": "Back to blog",
     "publishedOn": "Published on {date}",

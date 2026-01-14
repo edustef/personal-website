@@ -233,7 +233,7 @@
     }
   },
   "home": {
-    "headline": "Întregul stack pentru <strong>creștere digitală</strong>.",
+    "headline": "Întregul stack pentru <strong>succes digital</strong>.",
     "tagline": "Scalăm traficul, construim fundații de înaltă performanță și maximizăm conversia. Produse digitale concepute să se plătească singure.",
     "aboutMeDescription": "Sunt Eduard Stefan și construiesc site-uri web de înaltă calitate care prioritizează atenția la detalii și experiența utilizatorului. Mă concentrez pe crearea de produse digitale care convertesc și aduc valoare reală, ajutându-ți afacerea să crească digital. Lucrul unu-la-unu îmi permite să mă ocup în detaliu de aspectele care contează cel mai mult pentru afacerea ta.",
     "announcementLabel": "Calculează-ți <strong>venitul potențial</strong>",
@@ -257,12 +257,12 @@
       "label": "Cine sunt",
       "headline": "Despre Mine",
       "subtitle": "Cunoaște persoana din spatele codului",
-      "description": "Sunt Eduard Stefan, un dezvoltator care înțelege că un site web este o investiție, nu doar o carte de vizită digitală. Îmbin expertiza tehnică cu strategii SEO și CRO pentru a construi site-uri care nu doar arată bine—ci funcționează cu adevărat. Scopul meu este simplu: să te ajut să obții mai mult trafic și să transformi acel trafic în afaceri reale. Lucrez unu-la-unu cu tine pentru a mă asigura că fiecare detaliu contribuie la creșterea ta."
+      "description": "Sunt Eduard Stefan, un dezvoltator care înțelege că un site web este o investiție, nu doar o carte de vizită digitală. Îmbin expertiza tehnică cu strategii SEO și CRO pentru a construi site-uri care nu doar arată bine—ci funcționează cu adevărat. Scopul meu este simplu: să te ajut să obții mai mult trafic și să transformi acel trafic în afaceri reale. Lucrez unu-la-unu cu tine pentru a mă asigura că fiecare detaliu contribuie la succesul tău."
     },
     "contact": {
       "label": "Ia legătura",
       "headline": "Să lucrăm împreună",
-      "subtitle": "Ești gata să îți transformi site-ul într-un motor de creștere? Hai să vorbim.",
+      "subtitle": "Ești gata să îți transformi site-ul într-un motor de conversie? Hai să vorbim.",
       "ctaButton": "Obține oferta ta",
       "whatsappLabel": "Contactează-mă pe WhatsApp"
     },
@@ -295,7 +295,7 @@
   },
   "settings": {
     "title": "Eduard Stefan",
-    "description": "Site-uri construite cu precizie, concepute pentru creștere.",
+    "description": "Site-uri construite cu precizie, concepute pentru conversie.",
     "header": {
       "cta": {
         "text": "Obține oferta ta",
@@ -315,7 +315,7 @@
     },
     "seo": {
       "title": "Eduard Stefan | Website-uri construite cu precizie",
-      "description": "Un parteneriat direct axat pe maximizarea creșterii tale digitale."
+      "description": "Un parteneriat direct axat pe maximizarea succesului tău digital."
     }
   },
   "skills": {
@@ -397,7 +397,7 @@
   },
   "services": {
     "label": "Ce Fac Eu",
-    "headline": "Partenerul Tău de Creștere Digitală",
+    "headline": "Partenerul tău pentru trafic și conversii",
     "subtitle": "Totul merge mână în mână. SEO aduce oamenii potriviți, iar designul optimizat se asigură că rămân.",
     "svc-6": {
       "title": "Parteneriat Direct",
@@ -462,14 +462,14 @@
       ]
     },
     "postDeployment": {
-      "title": "Optimizare & Creștere",
+      "title": "Optimizare și Extindere",
       "paragraphs": [
         "Lansarea e doar începutul. Îți arăt cum să gestionezi conținutul și putem continua să lucrăm împreună pentru a analiza datele și a îmbunătăți ratele de conversie în timp."
       ],
       "bulletPoints": [
         "Instruire CMS pentru tine",
         "Optimizări bazate pe date",
-        "Suport continuu pentru creștere"
+        "Suport continuu pentru proiect"
       ]
     }
   },
@@ -630,7 +630,7 @@
   },
   "blog": {
     "title": "Blog",
-    "description": "Gânduri despre dezvoltarea web, design și creștere digitală.",
+    "description": "Gânduri despre dezvoltarea web, design și performanță digitală.",
     "readMore": "Citește mai mult",
     "backToBlog": "Înapoi la blog",
     "publishedOn": "Publicat pe {date}",

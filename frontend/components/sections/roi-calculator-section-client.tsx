@@ -196,7 +196,7 @@ export function RoiCalculatorSectionClient({
                       <Users className="w-4 h-4 text-primary" />
                       {monthlyVisitors}
                     </span>
-                    <span className="font-mono bg-muted px-2 py-1 rounded text-sm">
+                    <span className="font-mono bg-muted px-2 py-1 rounded-md text-sm">
                       {formatNumber(visitors)}
                     </span>
                   </div>
@@ -217,7 +217,7 @@ export function RoiCalculatorSectionClient({
                       <Percent className="w-4 h-4 text-primary" />
                       {conversionRateLabel}
                     </span>
-                    <span className="font-mono bg-muted px-2 py-1 rounded text-sm">
+                    <span className="font-mono bg-muted px-2 py-1 rounded-md text-sm">
                       {conversionRate.toFixed(1)}%
                     </span>
                   </div>
@@ -238,7 +238,7 @@ export function RoiCalculatorSectionClient({
                       <Euro className="w-4 h-4 text-primary" />
                       {avgOrderValue}
                     </span>
-                    <span className="font-mono bg-muted px-2 py-1 rounded text-sm">
+                    <span className="font-mono bg-muted px-2 py-1 rounded-md text-sm">
                       {formatCurrency(orderValue)}
                     </span>
                   </div>
@@ -260,7 +260,7 @@ export function RoiCalculatorSectionClient({
                         <TrendingUp className="w-4 h-4" />
                         {projectedImprovement}
                       </span>
-                      <span className="font-mono bg-primary/10 text-primary px-2 py-1 rounded text-sm font-bold">
+                      <span className="font-mono bg-primary/10 text-primary px-2 py-1 rounded-md text-sm font-bold">
                         +{uplift.toFixed(1)}%
                       </span>
                     </div>
