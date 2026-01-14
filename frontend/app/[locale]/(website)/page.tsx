@@ -140,11 +140,11 @@ export default async function Page(props: Props) {
 
       <ToolsSection />
 
+      <AboutMeSection />
+
       <HowIWorkSection />
 
       <HowIPriceSection />
-
-      <AboutMeSection />
 
       {/* <CaseStudiesSection /> */}
 

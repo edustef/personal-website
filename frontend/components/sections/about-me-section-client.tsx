@@ -31,7 +31,7 @@ export function AboutMeSectionClient({
   return (
     <section
       id="about-me"
-      className="scroll-mt-24 relative py-12 md:py-16"
+      className="scroll-mt-12 relative py-12 md:py-16"
       ref={sectionRef}
     >
       <div className="mx-auto max-w-6xl px-4">

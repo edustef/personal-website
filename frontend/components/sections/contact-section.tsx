@@ -1,10 +1,10 @@
+import whatsappLogo from "@/assets/images/whatsapp-logo.png";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { getSocialIcon } from "@/lib/social-icons";
-import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
-import whatsappLogo from "@/assets/images/whatsapp-logo.png";
+import Image from "next/image";
 
 type SocialLink = {
   name: string;
@@ -27,7 +27,7 @@ export default async function ContactSection({
   const hasSocialLinks = socialLinks && socialLinks.length > 0;
 
   return (
-    <section id="contact" className="scroll-mt-24 py-12 md:py-16">
+    <section id="contact" className="scroll-mt-12 py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedContainer
           trigger="scroll"

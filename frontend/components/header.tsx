@@ -203,6 +203,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
             transition={{ duration: 0.2 }}
           >
             <Link
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               aria-label={homeButtonLabel}
               className="group relative flex items-center gap-2 p-0 text-xl font-bold shrink-0 transition-colors hover:text-primary"
               href="/"

@@ -61,7 +61,7 @@ export default async function ServicesSection({
   return (
     <section
       id={servicesSlug}
-      className="scroll-mt-24 overflow-x-hidden py-12 md:py-16"
+      className="scroll-mt-12 overflow-x-hidden py-12 md:py-16"
     >
       <div className="mx-auto max-w-6xl md:px-6">
         <AnimatedContainer

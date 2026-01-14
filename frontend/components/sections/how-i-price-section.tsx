@@ -37,7 +37,7 @@ export default async function HowIPriceSection() {
   const pricingSlug = headerT("nav.pricingSlug");
 
   return (
-    <section id={pricingSlug} className="scroll-mt-24 py-12 md:py-16">
+    <section id={pricingSlug} className="scroll-mt-12 py-12 md:py-16">
       <div className="mx-auto max-w-6xl md:px-4">
         <AnimatedContainer
           trigger="scroll"

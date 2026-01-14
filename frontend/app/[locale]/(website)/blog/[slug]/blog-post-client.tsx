@@ -4,6 +4,7 @@ import { TableOfContents } from "@/components/blog/table-of-contents";
 import { Button } from "@/components/ui/button";
 import { CopyButton } from "@/components/ui/copy-button";
 import { Link } from "@/components/ui/link";
+import { useReadingProgress } from "@/hooks/use-reading-progress";
 import type { BlogPost } from "@/lib/blog";
 import { getSocialIcon } from "@/lib/social-icons";
 import { motion } from "framer-motion";
@@ -28,25 +29,12 @@ export default function BlogPostClient({
   socialLinks,
 }: BlogPostClientProps) {
   const t = useTranslations("blog");
-  const [readingProgress, setReadingProgress] = useState(0);
+  const readingProgress = useReadingProgress("article");
   const [currentUrl, setCurrentUrl] = useState("");
   const hasSocialLinks = socialLinks && socialLinks.length > 0;
 
   useEffect(() => {
     setCurrentUrl(window.location.href);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollTop = window.scrollY;
-      const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
-      setReadingProgress(Math.min(progress, 100));
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleShare = async (platform: string) => {

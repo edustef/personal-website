@@ -62,20 +62,6 @@ export function TableOfContents() {
     return () => observer.disconnect();
   }, []);
 
-  const scrollToHeading = (id: string) => {
-    const element = document.getElementById(id);
-    if (!element) return;
-
-    const headerHeight = window.innerWidth >= 768 ? 80 : 64;
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.scrollY - headerHeight - 16;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
-  };
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -117,10 +103,6 @@ export function TableOfContents() {
                 >
                   <a
                     href={`#${heading.id}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToHeading(heading.id);
-                    }}
                     className={`block py-1 transition-colors hover:text-primary ${
                       activeId === heading.id
                         ? "text-primary font-medium"
@@ -191,10 +173,8 @@ export function TableOfContents() {
                   >
                     <a
                       href={`#${heading.id}`}
-                      onClick={(e) => {
-                        e.preventDefault();
+                      onClick={() => {
                         setIsOpen(false);
-                        setTimeout(() => scrollToHeading(heading.id), 100);
                       }}
                       className={`block py-1 transition-colors hover:text-primary ${
                         activeId === heading.id

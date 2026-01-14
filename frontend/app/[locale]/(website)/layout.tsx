@@ -18,7 +18,6 @@ export default async function WebsiteLayout(props: Props) {
 
   console.log(props.languageToggle);
 
-
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
@@ -26,7 +25,7 @@ export default async function WebsiteLayout(props: Props) {
 
   return (
     <>
-      <div className="relative isolate flex min-h-screen flex-col">
+      <div className="relative isolate flex flex-col">
         <Header languageToggle={props.languageToggle} />
         <main
           id="main-content"
