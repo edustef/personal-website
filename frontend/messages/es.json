@@ -233,7 +233,7 @@
     }
   },
   "home": {
-    "headline": "La Pila Completa de <strong>Crecimiento Digital</strong>.",
+    "headline": "El stack completo para <strong>éxito digital</strong>.",
     "tagline": "Escalando tráfico, construyendo bases de alto rendimiento y maximizando la conversión. Productos digitales diseñados para pagarse solos.",
     "aboutMeDescription": "Soy Eduard Stefan y construyo sitios web de alta calidad que priorizan los ingresos y la experiencia del usuario. Me enfoco en crear productos digitales que conviertan y aporten un valor real, ayudando a que tu negocio crezca digitalmente. Trabajar uno a uno me permite obsesionarme con los detalles que más importan para tu resultado final.",
     "announcementLabel": "Calcula tus <strong>ingresos potenciales</strong>",
@@ -575,7 +575,11 @@
     "projectedMonthlyRevenue": "Ingresos Mensuales Proyectados:",
     "chartCurrent": "Ingresos Actuales",
     "chartProjected": "Ingresos Proyectados",
-    "disclaimer": "Este es un simulador solo con fines ilustrativos. Los resultados reales pueden variar según numerosos factores, incluyendo condiciones del mercado, calidad de implementación y variables específicas del negocio. Estas proyecciones son estimaciones y no deben considerarse como garantías."
+    "disclaimer": "Este es un simulador solo con fines ilustrativos. Los resultados reales pueden variar según numerosos factores, incluyendo condiciones del mercado, calidad de implementación y variables específicas del negocio. Estas proyecciones son estimaciones y no deben considerarse como garantías.",
+    "seo": {
+      "title": "Calculadora ROI | Calcula tu Crecimiento Potencial de Ingresos",
+      "description": "Calcula cuánto dinero estás dejando sobre la mesa. Usa esta calculadora para ver el impacto potencial de la optimización de la tasa de conversión en tu negocio."
+    }
   },
   "certificates": {
     "cert-1": {

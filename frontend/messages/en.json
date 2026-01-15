@@ -233,7 +233,7 @@
     }
   },
   "home": {
-    "headline": "The Full Stack of <strong>Digital Growth</strong>.",
+    "headline": "The entire stack for <strong>digital success</strong>.",
     "tagline": "Scaling traffic, engineering high-performance foundations, and maximizing conversion. Digital products designed to pay for themselves.",
     "aboutMeDescription": "I'm Eduard Stefan, and I build high-quality websites that prioritize revenue and user experience. I focus on creating digital products that convert and deliver real value, helping your business grow digitally. Working one-on-one allows me to obsess over the details that matter most to your bottom line.",
     "announcementLabel": "Calculate your <strong>potential revenue</strong>",
@@ -575,7 +575,11 @@
     "projectedMonthlyRevenue": "Projected Monthly Revenue:",
     "chartCurrent": "Current Revenue",
     "chartProjected": "Projected Revenue",
-    "disclaimer": "This is a simulator for illustrative purposes only. Actual results may vary based on numerous factors including market conditions, implementation quality, and business-specific variables. These projections are estimates and should not be considered as guarantees."
+    "disclaimer": "This is a simulator for illustrative purposes only. Actual results may vary based on numerous factors including market conditions, implementation quality, and business-specific variables. These projections are estimates and should not be considered as guarantees.",
+    "seo": {
+      "title": "ROI Calculator | Calculate Your Potential Revenue Growth",
+      "description": "Calculate how much revenue you're leaving on the table. Use this calculator to see the potential impact of conversion rate optimization on your business."
+    }
   },
   "certificates": {
     "cert-1": {

@@ -234,7 +234,7 @@
   },
   "home": {
     "headline": "Întregul stack pentru <strong>succes digital</strong>.",
-    "tagline": "Scalăm traficul, construim fundații de înaltă performanță și maximizăm conversia. Produse digitale concepute să se plătească singure.",
+    "tagline": "Scal traficul, construiesc fundații de înaltă performanță și maximizez conversia. Produse digitale concepute să se plătească singure.",
     "aboutMeDescription": "Sunt Eduard Stefan și construiesc site-uri web de înaltă calitate care prioritizează atenția la detalii și experiența utilizatorului. Mă concentrez pe crearea de produse digitale care convertesc și aduc valoare reală, ajutându-ți afacerea să crească digital. Lucrul unu-la-unu îmi permite să mă ocup în detaliu de aspectele care contează cel mai mult pentru afacerea ta.",
     "announcementLabel": "Calculează-ți <strong>venitul potențial</strong>",
     "resumeButtonLabel": "Vezi CV-ul meu",
@@ -575,7 +575,11 @@
     "projectedMonthlyRevenue": "Venit Lunar Proiectat:",
     "chartCurrent": "Venit Actual",
     "chartProjected": "Venit Proiectat",
-    "disclaimer": "Acesta este un simulator doar în scopuri ilustrative. Rezultatele reale pot varia în funcție de numeroși factori, inclusiv condițiile pieței, calitatea implementării și variabilele specifice afacerii. Aceste proiecții sunt estimări și nu trebuie considerate garanții."
+    "disclaimer": "Acesta este un simulator doar în scopuri ilustrative. Rezultatele reale pot varia în funcție de numeroși factori, inclusiv condițiile pieței, calitatea implementării și variabilele specifice afacerii. Aceste proiecții sunt estimări și nu trebuie considerate garanții.",
+    "seo": {
+      "title": "Calculator ROI | Calculează-ți Creșterea Potențială a Veniturilor",
+      "description": "Calculează câți bani lași pe masă. Folosește acest calculator pentru a vedea impactul potențial al optimizării ratei de conversie asupra afacerii tale."
+    }
   },
   "certificates": {
     "cert-1": {
