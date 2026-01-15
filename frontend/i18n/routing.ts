@@ -17,6 +17,10 @@ export const routing = defineRouting({
   alternateLinks: false,
   pathnames: {
     "/": "/",
+    "/roi-calculator": {
+      ro: "/calculator-roi",
+      es: "/calculadora-roi",
+    },
     "/start-your-project": {
       ro: "/incepe-proiectul-tau",
       es: "/inicia-tu-proyecto",
