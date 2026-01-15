@@ -233,9 +233,9 @@
     }
   },
   "home": {
-    "headline": "Construido con <strong>precisión</strong>. Diseñado para <strong>crecer</strong>.",
-    "tagline": "Experiencias web de alta calidad construidas para ayudar a tu negocio a escalar. Una asociación directa centrada en maximizar tu crecimiento digital.",
-    "aboutMeDescription": "Soy Eduard Stefan y construyo sitios web de alta calidad que priorizan los estándares de alta calidad y la experiencia del usuario. Me enfoco en crear productos digitales que conviertan y aporten un valor real, ayudando a que tu negocio crezca de forma digital. Trabajar uno a uno me permite obsesionarme con los detalles que más importan para tu negocio.",
+    "headline": "La Pila Completa de <strong>Crecimiento Digital</strong>.",
+    "tagline": "Escalando tráfico, construyendo bases de alto rendimiento y maximizando la conversión. Productos digitales diseñados para pagarse solos.",
+    "aboutMeDescription": "Soy Eduard Stefan y construyo sitios web de alta calidad que priorizan los ingresos y la experiencia del usuario. Me enfoco en crear productos digitales que conviertan y aporten un valor real, ayudando a que tu negocio crezca digitalmente. Trabajar uno a uno me permite obsesionarme con los detalles que más importan para tu resultado final.",
     "announcementLabel": "Calcula tus <strong>ingresos potenciales</strong>",
     "resumeButtonLabel": "Ver mi currículum",
     "findMeOnLabel": "Encuéntrame en",
@@ -477,7 +477,7 @@
     "subtitle": "Precios transparentes que se adaptan a tus necesidades.",
     "intro": "La mayoría de los sitios web son bonitos, pero no hacen mucho. Construyo sitios diseñados para posicionarse en Google y convertir visitantes en clientes. Además, podrás editar todo tú mismo.",
     "packages": {
-      "title": "Paquetes de Proyecto",
+      "title": "Modelos de Compromiso",
       "subtitle": "Selecciona la opción que coincida con el estado actual de tu negocio.",
       "mostPopular": "Más Popular",
       "whatYouGet": "Lo que obtienes",
@@ -494,7 +494,7 @@
         "Diseño Estratégico: Centrado en la conversión y el flujo de usuarios.",
         "SEO Técnico: Estructura que a Google le encanta.",
         "Optimización de Velocidad: Tiempos de carga inferiores a un segundo.",
-        "Perfecto para Móviles: Se ve genial en todos los dispositivos.",
+        "Mobile First: Experiencia perfecta en todos los dispositivos.",
         "Asociación Directa: Colaboración directa conmigo."
       ],
       "timeline": "2–3 días laborables",
@@ -507,18 +507,18 @@
       "features": [
         "Todo en 'Launch' + esto y más:",
         "Integración de CMS: Eres el dueño y editas tu contenido.",
-        "Configuración de Localización: Listo pentru mercados globales desde el inicio.",
+        "Configuración de Localización: Listo para mercados globales desde el inicio.",
         "Theming y Branding: Personalización visual profunda.",
         "Analíticas Avanzadas: Configuración completa de seguimiento para entender el comportamiento de los visitantes.",
         "Generación de Clientes Potenciales: Conectado a tu correo o CRM."
       ],
-      "timeline": "2\u20133 semanas",
+      "timeline": "1-2 semanas",
       "investmentAmount": 1600
     },
     "custom": {
       "title": "Soluciones Personalizadas",
       "bestFor": "Ideal para: Empresas con necesidades específicas y complejas.",
-      "description": "¿Necesitas que los clientes inicien sesión? ¿Necesitas un sistema de reservas complejo o una herramienta interna personalizada? Podemos construir eso.",
+      "description": "¿Necesitas una aplicación web compleja, una plataforma SaaS o una herramienta interna? Construyamos una solución adaptada a tus requisitos exactos.",
       "features": [
         "Adaptado a tus requisitos específicos",
         "Funcionalidad e integraciones complejas",
@@ -533,23 +533,23 @@
       "title": "Servicios Independientes",
       "subtitle": "Mejora cualquier sitio web—lo haya construido yo o no.",
       "seo": {
-        "title": "Impulso SEO",
-        "benefit": "Profundizo en la configuración técnica para ayudarte a posicionarte mejor en Google.",
+        "title": "Sprint SEO",
+        "benefit": "Auditoría técnica profunda para corregir bloqueadores de posicionamiento.",
         "priceAmount": 600
       },
       "store": {
-        "title": "Tienda Online",
-        "benefit": "Capacidad de vender productos y aceptar tarjetas de crédito de forma segura.",
+        "title": "Motor de E-commerce",
+        "benefit": "Configuración completa de tienda con carrito, checkout y pagos.",
         "priceAmount": 1400
       },
       "multiLanguage": {
-        "title": "Multi-Idioma",
-        "benefit": "Un sitio que funciona en 2+ idiomas (por ejemplo, Inglés y Español).",
+        "title": "Alcance Global",
+        "benefit": "Localización para 2+ idiomas para expandir tu mercado.",
         "priceAmount": 500
       },
       "analytics": {
-        "title": "Analytics Pro",
-        "benefit": "Configuro el seguimiento para que puedas ver exactamente de dónde vienen tus visitantes.",
+        "title": "Analytics Profundo",
+        "benefit": "Informes de embudo personalizados y configuración avanzada de seguimiento.",
         "priceAmount": 800
       }
     }
