@@ -1,8 +1,10 @@
 "use client";
 
+import { Link } from "@/i18n/navigation";
 import { type CommonProps, cn } from "@/lib/utils";
 import { Calculator } from "lucide-react";
 import { motion } from "motion/react";
+import type React from "react";
 
 type HighlightBadgeProps = CommonProps & {
   href?: string;
@@ -45,16 +47,13 @@ export function HighlightBadge({
   );
 
   if (href) {
-    const isExternal = href.startsWith("http");
     return (
-      <a
-        href={href}
-        target={isExternal ? "_blank" : undefined}
-        rel={isExternal ? "noopener noreferrer" : undefined}
+      <Link
+        href={href as React.ComponentProps<typeof Link>["href"]}
         className={cn("relative inline-flex w-fit cursor-pointer", className)}
       >
         {content}
-      </a>
+      </Link>
     );
   }
 
