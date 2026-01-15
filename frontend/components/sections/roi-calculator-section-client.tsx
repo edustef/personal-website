@@ -153,7 +153,7 @@ export function RoiCalculatorSectionClient({
       id="roi-calculator"
       className="scroll-mt-24 relative py-12 md:py-16 min-h-screen"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 overflow-x-hidden overflow-y-visible">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <AnimatedContainer
           trigger="scroll"
           fadeDirection="up"
@@ -285,8 +285,10 @@ export function RoiCalculatorSectionClient({
             className="lg:col-span-3"
           >
             <Card className="h-full bg-card border-muted dark:bg-zinc-950 dark:text-white dark:border-zinc-800 overflow-hidden relative shadow-2xl flex flex-col w-full min-w-0">
-              <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-primary/10 blur-3xl opacity-50 dark:bg-primary/20" />
-              <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 rounded-full bg-blue-500/5 blur-3xl opacity-50 dark:bg-blue-500/10" />
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-primary/10 blur-3xl opacity-50 dark:bg-primary/20" />
+                <div className="absolute -bottom-16 -left-16 w-64 h-64 rounded-full bg-blue-500/5 blur-3xl opacity-50 dark:bg-blue-500/10" />
+              </div>
 
               <CardHeader className="relative z-10 pb-6">
                 <div className="flex flex-col gap-5 md:gap-6">
@@ -294,7 +296,9 @@ export function RoiCalculatorSectionClient({
                     <div className="flex-1 min-w-0 space-y-2">
                       <CardTitle className="flex items-center gap-2 text-xl md:text-xl lg:text-2xl">
                         <Calculator className="w-5 h-5 md:w-5 md:h-5 text-primary shrink-0" />
-                        <span className="wrap-break-word">{potentialReturns}</span>
+                        <span className="wrap-break-word">
+                          {potentialReturns}
+                        </span>
                       </CardTitle>
                       <CardDescription className="text-sm sm:text-base wrap-break-word leading-relaxed">
                         {potentialDescription.replace(
@@ -335,7 +339,7 @@ export function RoiCalculatorSectionClient({
                   </div>
                 </div>
 
-                <div className="flex-1 min-h-[250px] w-full mt-4 overflow-x-auto overflow-y-hidden">
+                <div className="flex-1 min-h-[250px] w-full mt-4">
                   <ChartContainer
                     config={chartConfig}
                     className="h-full w-full min-w-[280px]"
@@ -442,9 +446,7 @@ export function RoiCalculatorSectionClient({
           className="mt-12 text-center"
         >
           <div className="bg-muted/30 dark:bg-zinc-900/50 border border-muted dark:border-zinc-800 rounded-lg p-4 max-w-2xl mx-auto">
-            <p className="text-sm text-muted-foreground italic">
-              {disclaimer}
-            </p>
+            <p className="text-sm text-muted-foreground italic">{disclaimer}</p>
           </div>
         </AnimatedContainer>
       </div>
