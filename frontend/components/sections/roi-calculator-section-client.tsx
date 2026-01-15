@@ -153,7 +153,7 @@ export function RoiCalculatorSectionClient({
       id="roi-calculator"
       className="scroll-mt-24 relative py-12 md:py-16 min-h-screen"
     >
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 overflow-x-hidden">
         <AnimatedContainer
           trigger="scroll"
           fadeDirection="up"
@@ -175,7 +175,7 @@ export function RoiCalculatorSectionClient({
           )}
         </AnimatedContainer>
 
-        <div className="grid gap-8 lg:grid-cols-5">
+        <div className="grid gap-6 md:gap-8 lg:grid-cols-5">
           <AnimatedContainer
             trigger="scroll"
             fadeDirection="left"
@@ -188,12 +188,12 @@ export function RoiCalculatorSectionClient({
               </CardHeader>
               <CardContent className="space-y-8">
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium flex items-center gap-2">
-                      <Users className="w-4 h-4 text-primary" />
-                      {monthlyVisitors}
+                  <div className="flex justify-between items-center gap-2">
+                    <span className="text-sm font-medium flex items-center gap-2 min-w-0">
+                      <Users className="w-4 h-4 text-primary shrink-0" />
+                      <span className="truncate">{monthlyVisitors}</span>
                     </span>
-                    <span className="font-mono bg-muted px-2 py-1 rounded-md text-sm">
+                    <span className="font-mono bg-muted px-2 py-1 rounded-md text-sm shrink-0">
                       {formatNumber(visitors)}
                     </span>
                   </div>
@@ -209,12 +209,12 @@ export function RoiCalculatorSectionClient({
                 </div>
 
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium flex items-center gap-2">
-                      <Percent className="w-4 h-4 text-primary" />
-                      {conversionRateLabel}
+                  <div className="flex justify-between items-center gap-2">
+                    <span className="text-sm font-medium flex items-center gap-2 min-w-0">
+                      <Percent className="w-4 h-4 text-primary shrink-0" />
+                      <span className="truncate">{conversionRateLabel}</span>
                     </span>
-                    <span className="font-mono bg-muted px-2 py-1 rounded-md text-sm">
+                    <span className="font-mono bg-muted px-2 py-1 rounded-md text-sm shrink-0">
                       {conversionRate.toFixed(1)}%
                     </span>
                   </div>
@@ -230,12 +230,12 @@ export function RoiCalculatorSectionClient({
                 </div>
 
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium flex items-center gap-2">
-                      <Euro className="w-4 h-4 text-primary" />
-                      {avgOrderValue}
+                  <div className="flex justify-between items-center gap-2">
+                    <span className="text-sm font-medium flex items-center gap-2 min-w-0">
+                      <Euro className="w-4 h-4 text-primary shrink-0" />
+                      <span className="truncate">{avgOrderValue}</span>
                     </span>
-                    <span className="font-mono bg-muted px-2 py-1 rounded-md text-sm">
+                    <span className="font-mono bg-muted px-2 py-1 rounded-md text-sm shrink-0">
                       {formatCurrency(orderValue)}
                     </span>
                   </div>
@@ -252,12 +252,12 @@ export function RoiCalculatorSectionClient({
 
                 <div className="pt-4 border-t">
                   <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium flex items-center gap-2 text-primary">
-                        <TrendingUp className="w-4 h-4" />
-                        {projectedImprovement}
+                    <div className="flex justify-between items-center gap-2">
+                      <span className="text-sm font-medium flex items-center gap-2 text-primary min-w-0">
+                        <TrendingUp className="w-4 h-4 shrink-0" />
+                        <span className="truncate">{projectedImprovement}</span>
                       </span>
-                      <span className="font-mono bg-primary/10 text-primary px-2 py-1 rounded-md text-sm font-bold">
+                      <span className="font-mono bg-primary/10 text-primary px-2 py-1 rounded-md text-sm font-bold shrink-0">
                         +{uplift.toFixed(1)}%
                       </span>
                     </div>
@@ -284,64 +284,66 @@ export function RoiCalculatorSectionClient({
             fadeDirection="right"
             className="lg:col-span-3"
           >
-            <Card className="h-full bg-card border-muted dark:bg-zinc-950 dark:text-white dark:border-zinc-800 overflow-hidden relative shadow-2xl flex flex-col">
+            <Card className="h-full bg-card border-muted dark:bg-zinc-950 dark:text-white dark:border-zinc-800 overflow-hidden relative shadow-2xl flex flex-col w-full min-w-0">
               <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-primary/10 blur-3xl opacity-50 dark:bg-primary/20" />
               <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 rounded-full bg-blue-500/5 blur-3xl opacity-50 dark:bg-blue-500/10" />
 
-              <CardHeader className="relative z-10">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <CardTitle className="flex items-center gap-2 text-2xl">
-                      <Calculator className="w-6 h-6 text-primary" />
-                      {potentialReturns}
-                    </CardTitle>
-                    <CardDescription>
-                      {potentialDescription.replace(
-                        "{uplift}",
-                        uplift.toString()
-                      )}
-                    </CardDescription>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                      {extraYearlyRevenue}
-                    </p>
-                    <p className="text-2xl font-bold text-primary">
-                      +{formatCurrency(yearlyUplift)}
-                    </p>
+              <CardHeader className="relative z-10 pb-6">
+                <div className="flex flex-col gap-5 md:gap-6">
+                  <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                    <div className="flex-1 min-w-0 space-y-2">
+                      <CardTitle className="flex items-center gap-2 text-xl md:text-xl lg:text-2xl">
+                        <Calculator className="w-5 h-5 md:w-5 md:h-5 text-primary shrink-0" />
+                        <span className="wrap-break-word">{potentialReturns}</span>
+                      </CardTitle>
+                      <CardDescription className="text-sm sm:text-base wrap-break-word leading-relaxed">
+                        {potentialDescription.replace(
+                          "{uplift}",
+                          uplift.toString()
+                        )}
+                      </CardDescription>
+                    </div>
+                    <div className="text-left md:text-right shrink-0 pt-2 md:pt-1">
+                      <p className="text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wider mb-1.5">
+                        {extraYearlyRevenue}
+                      </p>
+                      <p className="text-xl md:text-2xl lg:text-2xl font-bold text-primary leading-tight">
+                        +{formatCurrency(yearlyUplift)}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </CardHeader>
 
-              <CardContent className="space-y-8 relative z-10 flex-1 flex flex-col">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-muted/30 dark:bg-zinc-900/50 border border-muted dark:border-zinc-800 p-4 rounded-xl">
-                    <p className="text-xs font-medium text-muted-foreground mb-1 uppercase tracking-wider">
+              <CardContent className="space-y-6 md:space-y-8 relative z-10 flex-1 flex flex-col">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  <div className="bg-muted/30 dark:bg-zinc-900/50 border border-muted dark:border-zinc-800 p-3 sm:p-4 rounded-xl min-w-0 w-full overflow-hidden">
+                    <p className="text-[10px] sm:text-xs font-medium text-muted-foreground mb-2.5 uppercase tracking-wider">
                       {monthlyGrowth}
                     </p>
-                    <div className="text-2xl md:text-3xl font-bold tracking-tight">
+                    <div className="text-sm sm:text-base md:text-lg font-bold tracking-tight leading-tight wrap-break-word">
                       +{formatCurrency(monthlyUplift)}
                     </div>
                   </div>
-                  <div className="bg-muted/30 dark:bg-zinc-900/50 border border-muted dark:border-zinc-800 p-4 rounded-xl">
-                    <p className="text-xs font-medium text-muted-foreground mb-1 uppercase tracking-wider">
+                  <div className="bg-muted/30 dark:bg-zinc-900/50 border border-muted dark:border-zinc-800 p-3 sm:p-4 rounded-xl min-w-0 w-full overflow-hidden">
+                    <p className="text-[10px] sm:text-xs font-medium text-muted-foreground mb-2.5 uppercase tracking-wider">
                       {projectedAnnual}
                     </p>
-                    <div className="text-2xl md:text-3xl font-bold tracking-tight">
+                    <div className="text-sm sm:text-base md:text-lg font-bold tracking-tight leading-tight wrap-break-word">
                       {formatCurrency(projectedRevenue * 12)}
                     </div>
                   </div>
                 </div>
 
-                <div className="flex-1 min-h-[250px] w-full mt-4">
+                <div className="flex-1 min-h-[250px] w-full mt-4 overflow-x-auto">
                   <ChartContainer
                     config={chartConfig}
-                    className="h-full w-full"
+                    className="h-full w-full min-w-[280px]"
                   >
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart
                         data={chartData}
-                        margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+                        margin={{ top: 20, right: 10, left: 10, bottom: 5 }}
                       >
                         <CartesianGrid
                           strokeDasharray="3 3"
@@ -366,7 +368,7 @@ export function RoiCalculatorSectionClient({
                             fontSize: 10,
                           }}
                           tickFormatter={formatShortCurrency}
-                          width={40}
+                          width={35}
                           domain={[0, "dataMax + 5000"]}
                         />
                         <ChartTooltip
@@ -399,25 +401,25 @@ export function RoiCalculatorSectionClient({
                 </div>
 
                 <div className="pt-6 border-t border-muted dark:border-zinc-800">
-                  <div className="flex items-center justify-between text-sm">
+                  <div className="flex items-center justify-between text-xs sm:text-sm gap-2">
                     <span className="text-muted-foreground">
                       {currentMonthlyRevenue}
                     </span>
-                    <span className="font-mono">
+                    <span className="font-mono shrink-0">
                       {formatCurrency(currentRevenue)}
                     </span>
                   </div>
-                  <div className="flex items-center justify-between text-sm mt-3">
+                  <div className="flex items-center justify-between text-xs sm:text-sm mt-3 gap-2">
                     <span className="text-muted-foreground">
                       {projectedMonthlyRevenue}
                     </span>
-                    <div className="flex items-center gap-2">
-                      <span className="font-mono font-bold text-lg">
+                    <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                      <span className="font-mono font-bold text-sm sm:text-base md:text-lg">
                         {formatCurrency(projectedRevenue)}
                       </span>
                       <Badge
                         variant="outline"
-                        className="text-[10px] h-5 border-primary/50 text-primary bg-primary/10"
+                        className="text-[10px] h-5 border-primary/50 text-primary bg-primary/10 shrink-0"
                       >
                         +
                         {(

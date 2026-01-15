@@ -56,29 +56,29 @@ export function AboutMeSectionClient({
           </p>
         </AnimatedContainer>
         <div className="flex flex-col items-center lg:gap-12 lg:flex-row lg:items-start lg:justify-between">
-          <AnimatedContainer
-            trigger="scroll"
-            fadeDirection="left"
-            className="shrink-0"
-          >
-            <motion.div style={{ y: imageY }}>
-              <div
-                style={{
-                  // filter: 'grayscale(100%)',
-                  maskImage:
-                    "radial-gradient(60% 80% at top, black 20%, transparent 100%)",
-                  WebkitMaskImage:
-                    "radial-gradient(70% 90% at top, black 20%, transparent 100%)",
-                }}
-              >
-                <Image
-                  src={image}
-                  alt="About me"
-                  className="w-full max-w-[400px] aspect-3/4 object-cover object-top md:max-w-[500px] h-auto grayscale-100 contrast-120"
-                />
-              </div>
-            </motion.div>
-          </AnimatedContainer>
+          <div className="shrink-0 overflow-hidden">
+            <AnimatedContainer
+              trigger="scroll"
+              fadeDirection="left"
+            >
+              <motion.div style={{ y: imageY }}>
+                <div
+                  style={{
+                    maskImage:
+                      "radial-gradient(60% 80% at top, black 20%, transparent 100%)",
+                    WebkitMaskImage:
+                      "radial-gradient(70% 90% at top, black 20%, transparent 100%)",
+                  }}
+                >
+                  <Image
+                    src={image}
+                    alt="About me"
+                    className="w-full max-w-[400px] aspect-3/4 object-cover object-top md:max-w-[500px] h-auto grayscale-100 contrast-120"
+                  />
+                </div>
+              </motion.div>
+            </AnimatedContainer>
+          </div>
           <AnimatedContainer
             trigger="scroll"
             fadeDirection="right"
