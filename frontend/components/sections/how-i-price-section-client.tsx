@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { Check, ChevronDown, ChevronUp, Clock, Euro } from "lucide-react";
+import { Check, ChevronDown, ChevronUp, Clock } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { createContext, useContext, useState } from "react";
 
@@ -50,6 +50,7 @@ type PackageCardProps = {
   features: string[];
   timeline: string;
   investment: string;
+  whatsappUrl: string;
 };
 
 export function PackageCard({
@@ -61,6 +62,7 @@ export function PackageCard({
   features,
   timeline,
   investment,
+  whatsappUrl,
 }: PackageCardProps) {
   const t = useTranslations("howIPrice");
   const { isExpanded, toggleExpanded } = useExpand();
@@ -136,7 +138,7 @@ export function PackageCard({
         </CardContent>
 
         <CardFooter className="mt-auto border-t pt-6">
-          <div className="grid w-full grid-cols-1 gap-4">
+          <div className="w-full space-y-4">
             <div className="flex items-center gap-3">
               <div className="text-primary flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
                 <Clock className="h-5 w-5" />
@@ -150,17 +152,15 @@ export function PackageCard({
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="text-primary flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
-                <Euro className="h-5 w-5" />
-              </div>
-              <div className="flex-1">
-                <p className="text-muted-foreground text-xs uppercase tracking-wide">
-                  {t("packages.investment")}
-                </p>
-                <p className="text-foreground text-lg font-bold">{investment}</p>
-              </div>
-            </div>
+            <Button asChild variant="default" className="w-full" size="lg">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("packages.getQuote")}
+              </a>
+            </Button>
           </div>
         </CardFooter>
       </div>

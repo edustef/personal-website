@@ -233,7 +233,7 @@
     }
   },
   "home": {
-    "headline": "The entire stack for <strong>digital success</strong>.",
+    "headline": "The full stack for <strong>digital success</strong>.",
     "tagline": "Scaling traffic, engineering high-performance foundations, and maximizing conversion. Web solutions designed to pay for themselves.",
     "aboutMeDescription": "I'm Eduard Stefan, and I build high-quality websites that prioritize revenue and user experience. I focus on creating web solutions that convert and deliver real value, helping your business grow digitally. Working one-on-one allows me to obsess over the details that matter most to your bottom line.",
     "announcementLabel": "Calculate your <strong>potential revenue</strong>",
@@ -270,7 +270,7 @@
   "profile": {
     "name": "Eduard Sergiu Stefan",
     "email": "contact@eduardstefan.dev",
-    "phone": "+40770378214",
+    "phone": "+40775378525",
     "about": "About me",
     "location": "Oradea, Romania",
     "workPreference": "Remote",
@@ -484,7 +484,8 @@
       "timeline": "Timeline",
       "investment": "Investment",
       "showMore": "Show more",
-      "showLess": "Show less"
+      "showLess": "Show less",
+      "getQuote": "Get your quote"
     },
     "launch": {
       "title": "The 'Launch' Package",
@@ -551,7 +552,8 @@
         "title": "Deep Dive Analytics",
         "benefit": "Custom funnel reports and advanced tracking setup.",
         "priceAmount": 800
-      }
+      },
+      "contactForPricing": "Contact for pricing"
     }
   },
   "roiCalculator": {

@@ -19,22 +19,18 @@ const addOns = ["seo", "analytics", "store", "multiLanguage"] as const;
 export default async function HowIPriceSection() {
   const locale = await getLocale();
   const t = await getTranslations({ locale, namespace: "howIPrice" });
-
-  const formatPrice = (amount: number): string => {
-    const formatter = new Intl.NumberFormat(locale, {
-      style: "currency",
-      currency: "EUR",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    });
-    return `${formatter.format(amount)}+`;
-  };
+  const profileT = await getTranslations({ locale, namespace: "profile" });
 
   const headerT = await getTranslations({
     locale,
     namespace: "settings.header",
   });
   const pricingSlug = headerT("nav.pricingSlug");
+
+  const phone = profileT("phone");
+  const whatsappUrl = phone
+    ? `https://wa.me/${phone.replace(/[^0-9]/g, "")}`
+    : "https://wa.me/40770378214";
 
   return (
     <section id={pricingSlug} className="scroll-mt-12 py-12 md:py-16">
@@ -84,13 +80,8 @@ export default async function HowIPriceSection() {
                       description={t(`${pkg}.description`)}
                       features={features}
                       timeline={t(`${pkg}.timeline`)}
-                      investment={
-                        pkg === "custom"
-                          ? t(`${pkg}.investment`)
-                          : formatPrice(
-                              t.raw(`${pkg}.investmentAmount`) as number
-                            )
-                      }
+                      investment=""
+                      whatsappUrl={whatsappUrl}
                     />
                   </AnimatedContainer>
                 );
@@ -131,11 +122,14 @@ export default async function HowIPriceSection() {
                   </p>
                 </CardContent>
                 <CardFooter className="mt-auto pt-6">
-                  <p className="text-primary text-lg font-semibold">
-                    {formatPrice(
-                      t.raw(`addOns.${addOn}.priceAmount`) as number
-                    )}
-                  </p>
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary text-sm text-left w-full transition-colors"
+                  >
+                    {t("addOns.contactForPricing")}
+                  </a>
                 </CardFooter>
               </Card>
             </AnimatedContainer>
@@ -165,11 +159,14 @@ export default async function HowIPriceSection() {
                         </p>
                       </CardContent>
                       <CardFooter className="mt-auto pt-6">
-                        <p className="text-primary text-lg font-semibold">
-                          {formatPrice(
-                            t.raw(`addOns.${addOn}.priceAmount`) as number
-                          )}
-                        </p>
+                        <a
+                          href={whatsappUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary text-sm text-left w-full transition-colors"
+                        >
+                          {t("addOns.contactForPricing")}
+                        </a>
                       </CardFooter>
                     </Card>
                   </div>

@@ -153,7 +153,7 @@ export function RoiCalculatorSectionClient({
       id="roi-calculator"
       className="scroll-mt-24 relative py-12 md:py-16 min-h-screen"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 overflow-x-hidden">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 overflow-x-hidden overflow-y-visible">
         <AnimatedContainer
           trigger="scroll"
           fadeDirection="up"
@@ -335,7 +335,7 @@ export function RoiCalculatorSectionClient({
                   </div>
                 </div>
 
-                <div className="flex-1 min-h-[250px] w-full mt-4 overflow-x-auto">
+                <div className="flex-1 min-h-[250px] w-full mt-4 overflow-x-auto overflow-y-hidden">
                   <ChartContainer
                     config={chartConfig}
                     className="h-full w-full min-w-[280px]"

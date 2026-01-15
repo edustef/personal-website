@@ -270,7 +270,7 @@
   "profile": {
     "name": "Eduard Sergiu Stefan",
     "email": "contact@eduardstefan.dev",
-    "phone": "+40770378214",
+    "phone": "+40775378525",
     "about": "Sobre me",
     "location": "Oradea, Rumanía",
     "workPreference": "Teletrabajo",
@@ -484,7 +484,8 @@
       "timeline": "Cronograma",
       "investment": "Inversión",
       "showMore": "Ver más",
-      "showLess": "Ver menos"
+      "showLess": "Ver menos",
+      "getQuote": "Obtén tu oferta"
     },
     "launch": {
       "title": "El Paquete 'Launch'",
@@ -551,7 +552,8 @@
         "title": "Analytics Profundo",
         "benefit": "Informes de embudo personalizados y configuración avanzada de seguimiento.",
         "priceAmount": 800
-      }
+      },
+      "contactForPricing": "Contacta para precios"
     }
   },
   "roiCalculator": {

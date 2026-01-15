@@ -233,7 +233,7 @@
     }
   },
   "home": {
-    "headline": "Întregul stack pentru <strong>succes digital</strong>.",
+    "headline": "Stack-ul complet pentru <strong>succes digital</strong>.",
     "tagline": "Scalez traficul, construiesc fundații de înaltă performanță și maximizez conversia. Soluții web concepute să se plătească singure.",
     "aboutMeDescription": "Sunt Eduard Stefan și construiesc site-uri web de înaltă calitate care prioritizează atenția la detalii și experiența utilizatorului. Mă concentrez pe crearea de soluții web care convertesc și aduc valoare reală, ajutându-ți afacerea să crească digital. Lucrul unu-la-unu îmi permite să mă ocup în detaliu de aspectele care contează cel mai mult pentru afacerea ta.",
     "announcementLabel": "Calculează-ți <strong>venitul potențial</strong>",
@@ -270,7 +270,7 @@
   "profile": {
     "name": "Eduard Sergiu Stefan",
     "email": "contact@eduardstefan.dev",
-    "phone": "+40770378214",
+    "phone": "+40775378525",
     "about": "Despre mine",
     "location": "Oradea, România",
     "workPreference": "Remote",
@@ -484,7 +484,8 @@
       "timeline": "Termen",
       "investment": "Investiție",
       "showMore": "Afișează mai mult",
-      "showLess": "Afișează mai puțin"
+      "showLess": "Afișează mai puțin",
+      "getQuote": "Obține oferta ta"
     },
     "launch": {
       "title": "Pachetul 'Launch'",
@@ -551,7 +552,8 @@
         "title": "Analytics Pro",
         "benefit": "Configurez urmărirea astfel încât să poți vedea exact de unde vin vizitatorii tăi.",
         "priceAmount": 800
-      }
+      },
+      "contactForPricing": "Contactează pentru prețuri"
     }
   },
   "roiCalculator": {
