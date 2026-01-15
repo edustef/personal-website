@@ -24,6 +24,8 @@ export function CookieBanner() {
 
     const handleShowBanner = () => {
       setIsVisible(true);
+      setIsExpanded(false);
+      setTrackingConsent(posthog.has_opted_in_capturing());
     };
 
     const checkConsent = () => {
@@ -32,6 +34,9 @@ export function CookieBanner() {
       const hasExplicitChoice = localStorage.getItem(COOKIE_CONSENT_KEY);
       if (!hasExplicitChoice) {
         setIsVisible(true);
+        setIsExpanded(false);
+      } else {
+        setTrackingConsent(posthog.has_opted_in_capturing());
       }
     };
 
@@ -163,10 +168,7 @@ export function CookieBanner() {
                     <>
                       <Button
                         variant="outline"
-                        onClick={() => {
-                          setIsExpanded(true);
-                          setTrackingConsent(true);
-                        }}
+                        onClick={() => setIsExpanded(true)}
                         className="border-border text-foreground hover:bg-muted"
                       >
                         Manage cookies settings
