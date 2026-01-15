@@ -34,8 +34,8 @@ type HeaderProps = {
 
 const navItems = [
   { key: "services", slugKey: "servicesSlug" },
-  { key: "pricing", slugKey: "pricingSlug" },
   { key: "howIWork", slugKey: "howIWorkSlug" },
+  { key: "pricing", slugKey: "pricingSlug" },
   { key: "blog", href: "/blog" },
 ] as const;
 
@@ -97,7 +97,11 @@ export function Header({ className, languageToggle }: HeaderProps) {
       setCurrentHash(hash);
       if (hash) {
         const sectionId = hash.slice(1);
-        if (sectionId === servicesSlug || sectionId === pricingSlug || sectionId === howIWorkSlug) {
+        if (
+          sectionId === servicesSlug ||
+          sectionId === pricingSlug ||
+          sectionId === howIWorkSlug
+        ) {
           setActiveSection(sectionId);
         }
       }
@@ -128,7 +132,11 @@ export function Header({ className, languageToggle }: HeaderProps) {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             const id = entry.target.id;
-            if (id === servicesSlug || id === pricingSlug || id === howIWorkSlug) {
+            if (
+              id === servicesSlug ||
+              id === pricingSlug ||
+              id === howIWorkSlug
+            ) {
               setActiveSection(id);
             }
           }
