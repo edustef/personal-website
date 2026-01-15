@@ -24,6 +24,7 @@ type BGPatternProps = React.ComponentProps<"div"> & {
   mask?: BGMaskType;
   size?: number;
   fill?: string;
+  opacity?: number;
 };
 
 const maskClasses: Record<BGMaskType, string> = {
@@ -71,6 +72,7 @@ const BGPattern = ({
   mask = "none",
   size = 24,
   fill = "var(--border)",
+  opacity,
   className,
   style,
   ...props
@@ -90,6 +92,7 @@ const BGPattern = ({
           "--pattern-fill": fill,
           backgroundImage,
           backgroundSize: bgSize,
+          opacity: opacity !== undefined ? opacity : 1,
           ...style,
         } as React.CSSProperties
       }

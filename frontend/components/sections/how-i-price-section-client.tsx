@@ -73,95 +73,97 @@ export function PackageCard({
   return (
     <Card
       className={cn(
-        "relative flex h-full flex-col rounded-2xl",
+        "relative flex h-full flex-col rounded-2xl border-muted bg-background/50 backdrop-blur-sm shadow-lg",
         isPopular && "border-primary/50"
       )}
     >
-      {isPopular && (
-        <div className="bg-primary text-primary-foreground absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-sm font-medium">
-          {t("packages.mostPopular")}
-        </div>
-      )}
-      <CardContent className="p-6">
-        <div className="mb-4">
-          <h3 className="text-foreground mb-2 text-xl font-semibold text-balance">
-            {title}
-          </h3>
-          <p className="text-muted-foreground mb-3 text-sm text-pretty">
-            {bestFor}
-          </p>
-          <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
-            {description}
-          </p>
-        </div>
-
-        <div className="mb-6 space-y-3">
-          <p className="text-foreground text-sm font-medium">
-            {t("packages.whatYouGet")}:
-          </p>
-          <ul className="space-y-2">
-            {visibleFeatures.map((feature) => (
-              <li
-                key={`${pkg}-${feature}`}
-                className="text-muted-foreground flex items-start gap-2 text-sm"
-              >
-                <Check className="text-primary mt-0.5 h-4 w-4 shrink-0" />
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {hasMoreFeatures && (
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={toggleExpanded}
-            className="w-full"
-          >
-            {isExpanded ? (
-              <>
-                {t("packages.showLess")}
-                <ChevronUp className="ml-2 h-4 w-4" />
-              </>
-            ) : (
-              <>
-                {t("packages.showMore")}
-                <ChevronDown className="ml-2 h-4 w-4" />
-              </>
-            )}
-          </Button>
+      <div className="overflow-hidden rounded-2xl h-full flex flex-col">
+        {isPopular && (
+          <div className="bg-primary text-primary-foreground absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-sm font-medium z-10 whitespace-nowrap">
+            {t("packages.mostPopular")}
+          </div>
         )}
-      </CardContent>
+        <CardContent className="p-6">
+          <div className="mb-4">
+            <h3 className="text-foreground mb-2 text-xl font-semibold text-balance">
+              {title}
+            </h3>
+            <p className="text-muted-foreground mb-3 text-sm text-pretty">
+              {bestFor}
+            </p>
+            <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
+              {description}
+            </p>
+          </div>
 
-      <CardFooter className="mt-auto border-t pt-6">
-        <div className="grid w-full grid-cols-1 gap-4">
-          <div className="flex items-center gap-3">
-            <div className="text-primary flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
-              <Clock className="h-5 w-5" />
+          <div className="mb-6 space-y-3">
+            <p className="text-foreground text-sm font-medium">
+              {t("packages.whatYouGet")}:
+            </p>
+            <ul className="space-y-2">
+              {visibleFeatures.map((feature) => (
+                <li
+                  key={`${pkg}-${feature}`}
+                  className="text-muted-foreground flex items-start gap-2 text-sm"
+                >
+                  <Check className="text-primary mt-0.5 h-4 w-4 shrink-0" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {hasMoreFeatures && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleExpanded}
+              className="w-full"
+            >
+              {isExpanded ? (
+                <>
+                  {t("packages.showLess")}
+                  <ChevronUp className="ml-2 h-4 w-4" />
+                </>
+              ) : (
+                <>
+                  {t("packages.showMore")}
+                  <ChevronDown className="ml-2 h-4 w-4" />
+                </>
+              )}
+            </Button>
+          )}
+        </CardContent>
+
+        <CardFooter className="mt-auto border-t pt-6">
+          <div className="grid w-full grid-cols-1 gap-4">
+            <div className="flex items-center gap-3">
+              <div className="text-primary flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                <Clock className="h-5 w-5" />
+              </div>
+              <div className="flex-1">
+                <p className="text-muted-foreground text-xs uppercase tracking-wide">
+                  {t("packages.timeline")}
+                </p>
+                <p className="text-foreground text-sm font-semibold">
+                  {timeline}
+                </p>
+              </div>
             </div>
-            <div className="flex-1">
-              <p className="text-muted-foreground text-xs uppercase tracking-wide">
-                {t("packages.timeline")}
-              </p>
-              <p className="text-foreground text-sm font-semibold">
-                {timeline}
-              </p>
+            <div className="flex items-center gap-3">
+              <div className="text-primary flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                <Euro className="h-5 w-5" />
+              </div>
+              <div className="flex-1">
+                <p className="text-muted-foreground text-xs uppercase tracking-wide">
+                  {t("packages.investment")}
+                </p>
+                <p className="text-foreground text-lg font-bold">{investment}</p>
+              </div>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="text-primary flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
-              <Euro className="h-5 w-5" />
-            </div>
-            <div className="flex-1">
-              <p className="text-muted-foreground text-xs uppercase tracking-wide">
-                {t("packages.investment")}
-              </p>
-              <p className="text-foreground text-lg font-bold">{investment}</p>
-            </div>
-          </div>
-        </div>
-      </CardFooter>
+        </CardFooter>
+      </div>
     </Card>
   );
 }

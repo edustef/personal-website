@@ -25,7 +25,7 @@ export function HowIWorkSectionClient({
   timelineData,
 }: HowIWorkSectionClientProps) {
   return (
-    <section id="how-i-work" className="scroll-mt-24 relative py-12 md:py-16">
+    <section id="how-i-work" className="scroll-mt-12 relative py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedContainer
           trigger="scroll"

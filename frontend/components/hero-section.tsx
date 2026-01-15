@@ -28,7 +28,7 @@ export default async function HeroSection() {
           >
             <HighlightBadge
               className="text-left text-sm md:text-base"
-              href="#roi-calculator"
+              href="/roi-calculator"
             >
               {t.rich("announcementLabel", {
                 strong: (chunks) => (
@@ -71,22 +71,6 @@ export default async function HeroSection() {
                 {t("contactMe")}
               </a>
             </Button>
-            {ctaButtons.map((button) => (
-              <Button
-                key={button.href}
-                asChild
-                size="lg"
-                variant={button.variant as "default" | "outline" | "secondary"}
-              >
-                <Link
-                  href={
-                    button.href as "/start-your-project" | "/privacy-policy"
-                  }
-                >
-                  {button.text}
-                </Link>
-              </Button>
-            ))}
           </AnimatedContainer>
         </div>
       </div>

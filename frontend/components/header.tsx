@@ -3,7 +3,7 @@
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
 import { LanguageToggle } from "@/components/language-toggle";
 import { ModeToggle } from "@/components/theme-toggle";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Link } from "@/components/ui/link";
 import {
   NavigationMenu,
@@ -24,21 +24,22 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { motion } from "motion/react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 type HeaderProps = {
   className?: string;
+  languageToggle?: React.ReactNode;
 };
 
 const navItems = [
   { key: "services", slugKey: "servicesSlug" },
   { key: "pricing", slugKey: "pricingSlug" },
+  { key: "howIWork", slugKey: "howIWorkSlug" },
   { key: "blog", href: "/blog" },
 ] as const;
 
-export function Header({ className }: HeaderProps) {
-  const locale = useLocale();
+export function Header({ className, languageToggle }: HeaderProps) {
   const pathname = usePathname();
   const headerT = useTranslations("settings.header");
   const homeT = useTranslations("home");
@@ -51,13 +52,13 @@ export function Header({ className }: HeaderProps) {
 
   const servicesText = headerT("nav.services");
   const pricingText = headerT("nav.pricing");
+  const howIWorkText = headerT("nav.howIWork");
   const blogText = headerT("nav.blog");
   const servicesSlug = headerT("nav.servicesSlug");
   const pricingSlug = headerT("nav.pricingSlug");
+  const howIWorkSlug = headerT("nav.howIWorkSlug");
 
   const isHomePage = pathname === "/";
-  const servicesHref = isHomePage ? `#${servicesSlug}` : `/#${servicesSlug}`;
-  const pricingHref = isHomePage ? `#${pricingSlug}` : `/#${pricingSlug}`;
 
   const [showContactButton, setShowContactButton] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -96,7 +97,7 @@ export function Header({ className }: HeaderProps) {
       setCurrentHash(hash);
       if (hash) {
         const sectionId = hash.slice(1);
-        if (sectionId === servicesSlug || sectionId === pricingSlug) {
+        if (sectionId === servicesSlug || sectionId === pricingSlug || sectionId === howIWorkSlug) {
           setActiveSection(sectionId);
         }
       }
@@ -111,22 +112,23 @@ export function Header({ className }: HeaderProps) {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("hashchange", handleHashChange);
     };
-  }, [servicesSlug, pricingSlug]);
+  }, [servicesSlug, pricingSlug, howIWorkSlug]);
 
   useEffect(() => {
     if (!isHomePage) return;
 
     const servicesElement = document.getElementById(servicesSlug);
     const pricingElement = document.getElementById(pricingSlug);
+    const howIWorkElement = document.getElementById(howIWorkSlug);
 
-    if (!servicesElement || !pricingElement) return;
+    if (!servicesElement || !pricingElement || !howIWorkElement) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             const id = entry.target.id;
-            if (id === servicesSlug || id === pricingSlug) {
+            if (id === servicesSlug || id === pricingSlug || id === howIWorkSlug) {
               setActiveSection(id);
             }
           }
@@ -140,21 +142,27 @@ export function Header({ className }: HeaderProps) {
 
     observer.observe(servicesElement);
     observer.observe(pricingElement);
+    observer.observe(howIWorkElement);
 
     return () => {
       observer.disconnect();
     };
-  }, [isHomePage, servicesSlug, pricingSlug]);
+  }, [isHomePage, servicesSlug, pricingSlug, howIWorkSlug]);
 
   const getNavHref = (item: (typeof navItems)[number]) => {
     if ("href" in item && item.href) return item.href;
-    const slug = item.key === "services" ? servicesSlug : pricingSlug;
+    let slug: string;
+    if (item.key === "services") slug = servicesSlug;
+    else if (item.key === "pricing") slug = pricingSlug;
+    else if (item.key === "howIWork") slug = howIWorkSlug;
+    else slug = "";
     return isHomePage ? `#${slug}` : `/#${slug}`;
   };
 
   const getNavText = (item: (typeof navItems)[number]) => {
     if (item.key === "services") return servicesText;
     if (item.key === "pricing") return pricingText;
+    if (item.key === "howIWork") return howIWorkText;
     return blogText;
   };
 
@@ -170,6 +178,12 @@ export function Header({ className }: HeaderProps) {
       return (
         isHomePage &&
         (currentHash === `#${pricingSlug}` || activeSection === pricingSlug)
+      );
+    }
+    if (item.key === "howIWork") {
+      return (
+        isHomePage &&
+        (currentHash === `#${howIWorkSlug}` || activeSection === howIWorkSlug)
       );
     }
     return false;
@@ -205,15 +219,10 @@ export function Header({ className }: HeaderProps) {
             transition={{ duration: 0.2 }}
           >
             <Link
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               aria-label={homeButtonLabel}
               className="group relative flex items-center gap-2 p-0 text-xl font-bold shrink-0 transition-colors hover:text-primary"
               href="/"
-              onClick={(e) => {
-                if (isHomePage && isScrolled) {
-                  e.preventDefault();
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }
-              }}
             >
               <span className="relative">
                 Eduard Stefan
@@ -316,42 +325,44 @@ export function Header({ className }: HeaderProps) {
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
             >
-              <LanguageToggle currentLocale={locale} />
+              {languageToggle}
             </motion.div>
 
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <motion.div
+                <motion.button
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" }),
+                    "md:hidden"
+                  )}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button variant="ghost" size="icon" className="md:hidden">
-                    <AnimatePresence mode="wait" initial={false}>
-                      {isMobileMenuOpen ? (
-                        <motion.div
-                          key="close"
-                          initial={{ rotate: -90, opacity: 0 }}
-                          animate={{ rotate: 0, opacity: 1 }}
-                          exit={{ rotate: 90, opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <X className="size-6" />
-                        </motion.div>
-                      ) : (
-                        <motion.div
-                          key="menu"
-                          initial={{ rotate: 90, opacity: 0 }}
-                          animate={{ rotate: 0, opacity: 1 }}
-                          exit={{ rotate: -90, opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <Menu className="size-6" />
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                    <span className="sr-only">{menuLabel}</span>
-                  </Button>
-                </motion.div>
+                  <AnimatePresence mode="wait" initial={false}>
+                    {isMobileMenuOpen ? (
+                      <motion.div
+                        key="close"
+                        initial={{ rotate: -90, opacity: 0 }}
+                        animate={{ rotate: 0, opacity: 1 }}
+                        exit={{ rotate: 90, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <X className="size-6" />
+                      </motion.div>
+                    ) : (
+                      <motion.div
+                        key="menu"
+                        initial={{ rotate: 90, opacity: 0 }}
+                        animate={{ rotate: 0, opacity: 1 }}
+                        exit={{ rotate: -90, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Menu className="size-6" />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                  <span className="sr-only">{menuLabel}</span>
+                </motion.button>
               </SheetTrigger>
               <SheetContent
                 side="right"

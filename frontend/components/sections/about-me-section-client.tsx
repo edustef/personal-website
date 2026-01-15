@@ -68,7 +68,7 @@ export function AboutMeSectionClient({
                   maskImage:
                     "radial-gradient(60% 80% at top, black 20%, transparent 100%)",
                   WebkitMaskImage:
-                    "radial-gradient(110% 105% at top, black 50%, transparent 100%)",
+                    "radial-gradient(70% 90% at top, black 20%, transparent 100%)",
                 }}
               >
                 <Image

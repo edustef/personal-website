@@ -47,7 +47,7 @@ export default async function CertificatesSection({
               : null;
 
             return (
-              <Card key={certificate._id} className="flex flex-col">
+              <Card key={certificate._id} className="flex flex-col border-muted bg-background/50 backdrop-blur-sm overflow-hidden shadow-lg">
                 <CardHeader>
                   <div className="flex items-start gap-3">
                     <Award className="text-primary mt-1 h-6 w-6 shrink-0" />

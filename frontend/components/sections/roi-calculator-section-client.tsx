@@ -51,6 +51,7 @@ type RoiCalculatorSectionClientProps = {
   projectedMonthlyRevenue: string;
   chartCurrent: string;
   chartProjected: string;
+  disclaimer: string;
 };
 
 export function RoiCalculatorSectionClient({
@@ -75,6 +76,7 @@ export function RoiCalculatorSectionClient({
   projectedMonthlyRevenue,
   chartCurrent,
   chartProjected,
+  disclaimer,
 }: RoiCalculatorSectionClientProps) {
   const [visitors, setVisitors] = useState(10000);
   const [conversionRate, setConversionRate] = useState(1.5);
@@ -149,7 +151,7 @@ export function RoiCalculatorSectionClient({
   return (
     <section
       id="roi-calculator"
-      className="scroll-mt-24 relative py-12 md:py-16"
+      className="scroll-mt-24 relative py-12 md:py-16 min-h-screen"
     >
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedContainer
@@ -161,12 +163,7 @@ export function RoiCalculatorSectionClient({
             {label}
           </p>
           <h2 className="text-foreground mb-4 text-3xl font-semibold tracking-tight md:text-4xl text-balance">
-            <a
-              href="#roi-calculator"
-              className="hover:text-primary transition-colors"
-            >
-              {headline}
-            </a>
+            {headline}
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg text-pretty">
             {subtitle}
@@ -436,6 +433,18 @@ export function RoiCalculatorSectionClient({
             </Card>
           </AnimatedContainer>
         </div>
+
+        <AnimatedContainer
+          trigger="scroll"
+          fadeDirection="up"
+          className="mt-12 text-center"
+        >
+          <div className="bg-muted/30 dark:bg-zinc-900/50 border border-muted dark:border-zinc-800 rounded-lg p-4 max-w-2xl mx-auto">
+            <p className="text-sm text-muted-foreground italic">
+              {disclaimer}
+            </p>
+          </div>
+        </AnimatedContainer>
       </div>
     </section>
   );

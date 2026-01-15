@@ -9,6 +9,7 @@ import { Toaster } from "sonner";
 import { ConvexClientProvider } from "@/components/convex-client-provider";
 import { CookieBanner } from "@/components/cookie-banner";
 import { FacebookPixel } from "@/components/facebook-pixel";
+import { ScrollRestoration } from "@/components/scroll-restoration";
 import { ThemeProvider } from "@/components/theme-provider";
 import { locales } from "@/i18n/routing";
 import { getCanonicalUrl, getLocalizedSettingsMetadata } from "@/lib/seo";
@@ -45,13 +46,19 @@ export async function generateMetadata(
     openGraph: {
       type: "website",
       locale,
-      title: localized.title,
+      title: {
+        template: `%s | ${localized.title}`,
+        default: localized.title,
+      },
       description: localized.description,
       images: localized.ogImage ? [localized.ogImage] : undefined,
     },
     twitter: {
       card: localized.ogImage ? "summary_large_image" : "summary",
-      title: localized.title,
+      title: {
+        template: `%s | ${localized.title}`,
+        default: localized.title,
+      },
       description: localized.description,
       images: localized.ogImage ? [localized.ogImage.url] : undefined,
     },
@@ -135,7 +142,7 @@ export default async function LocaleLayout(props: Props) {
     <html
       data-scroll-behavior="smooth"
       lang={params.locale}
-      className={`${cardo.variable} ${dmMono.variable} font-light bg-background text-foreground min-h-screen transition-colors duration-300`}
+      className={`${cardo.variable} ${dmMono.variable} font-light bg-background text-foreground transition-colors duration-300`}
       suppressHydrationWarning
     >
       <body className="isolate transition-colors duration-300 ease-in-out">
@@ -165,6 +172,7 @@ export default async function LocaleLayout(props: Props) {
               enableSystem
               disableTransitionOnChange
             >
+              <ScrollRestoration />
               <Toaster />
               <FacebookPixel />
               <CookieBanner />

@@ -239,7 +239,7 @@
     "announcementLabel": "Calculează-ți <strong>venitul potențial</strong>",
     "resumeButtonLabel": "Vezi CV-ul meu",
     "findMeOnLabel": "Găsește-mă pe",
-    "contactMe": "Contactează-mă",
+    "contactMe": "Să vorbim despre soluții",
     "workedWith": "Cu ce lucrez",
     "tools": {
       "label": "Tehnologii",
@@ -262,13 +262,9 @@
     "contact": {
       "label": "Ia legătura",
       "headline": "Să lucrăm împreună",
-      "subtitle": "Ești gata să îți transformi site-ul într-un motor de conversie? Hai să vorbim.",
+      "subtitle": "Gata să transformi site-ul tău într-un motor de conversie? Să vorbim.",
       "ctaButton": "Obține oferta ta",
       "whatsappLabel": "Contactează-mă pe WhatsApp"
-    },
-    "seo": {
-      "title": "Eduard Stefan | Dezvoltare Web + SEO + CRO",
-      "description": "Construiesc site-uri de înaltă performanță optimizate pentru trafic și conversie."
     }
   },
   "profile": {
@@ -308,14 +304,16 @@
       "nav": {
         "services": "Servicii",
         "pricing": "Prețuri",
+        "howIWork": "Cum Lucrez",
         "blog": "Blog",
         "servicesSlug": "servicii",
-        "pricingSlug": "preturi"
+        "pricingSlug": "preturi",
+        "howIWorkSlug": "how-i-work"
       }
     },
     "seo": {
-      "title": "Eduard Stefan | Website-uri construite cu precizie",
-      "description": "Un parteneriat direct axat pe maximizarea succesului tău digital."
+      "title": "Eduard Stefan",
+      "description": "Un parteneriat direct axat pe maximizarea creșterii tale digitale."
     }
   },
   "skills": {
@@ -399,27 +397,27 @@
     "label": "Ce Fac Eu",
     "headline": "Partenerul tău pentru trafic și conversii",
     "subtitle": "Totul merge mână în mână. SEO aduce oamenii potriviți, iar designul optimizat se asigură că rămân.",
-    "svc-6": {
+    "svc-1": {
       "title": "Parteneriat Direct",
       "description": "Fără intermediari. Lucrezi direct cu mine, ceea ce înseamnă comunicare clară, actualizări mai rapide și un partener căruia îi pasă de succesul tău."
     },
-    "svc-1": {
+    "svc-2": {
       "title": "Dezvoltare SEO-First",
       "description": "Construiesc site-uri pe care Google le iubește. Cod curat, structură perfectă și performanță rapidă pentru a te ajuta să te clasezi mai sus."
     },
-    "svc-7": {
+    "svc-3": {
       "title": "Acoperire Globală",
       "description": "Extinde-ți audiența cu suport multi-limbă fără probleme. Vorbește pe limba clienților tăi și construiește încredere la nivel global."
     },
-    "svc-3": {
+    "svc-4": {
       "title": "Viteză Ultra-Rapidă",
       "description": "Viteza este o funcționalitate. Mă asigur că site-ul tău se încarcă instantaneu, menținând vizitatorii fericiți și reducând rata de abandon."
     },
-    "svc-4": {
+    "svc-5": {
       "title": "Focus pe Conversie/CRO",
       "description": "Traficul e bun, dar clienții sunt mai buni. Proiectez fluxuri care ghidează vizitatorii în mod natural către acțiune."
     },
-    "svc-5": {
+    "svc-6": {
       "title": "Design UX",
       "description": "Simplu, intuitiv și frumos. Creez interfețe care sunt ușor de folosit și lasă o impresie pozitivă de durată."
     }
@@ -499,7 +497,7 @@
         "Perfect pentru Mobil: Arată excelent pe toate dispozitivele.",
         "Parteneriat Direct: Colaborare directă cu mine."
       ],
-      "timeline": "1\u20132 săptămâni",
+      "timeline": "2–3 zile lucrătoare",
       "investmentAmount": 800
     },
     "growth": {
@@ -532,8 +530,8 @@
       "investment": "Ofertă Personalizată Necesară"
     },
     "addOns": {
-      "title": "Îmbunătățiri Opționale (Suplimente)",
-      "subtitle": "Caracteristici specifice pe care ai putea avea nevoie pentru a-ți atinge obiectivele.",
+      "title": "Servicii Independente",
+      "subtitle": "Îmbunătățește orice site—construit de mine sau nu.",
       "seo": {
         "title": "Impuls SEO",
         "benefit": "Mă adâncesc în setările tehnice pentru a te ajuta să te clasezi mai sus pe Google.",
@@ -576,7 +574,8 @@
     "currentMonthlyRevenue": "Venit Lunar Actual:",
     "projectedMonthlyRevenue": "Venit Lunar Proiectat:",
     "chartCurrent": "Venit Actual",
-    "chartProjected": "Venit Proiectat"
+    "chartProjected": "Venit Proiectat",
+    "disclaimer": "Acesta este un simulator doar în scopuri ilustrative. Rezultatele reale pot varia în funcție de numeroși factori, inclusiv condițiile pieței, calitatea implementării și variabilele specifice afacerii. Aceste proiecții sunt estimări și nu trebuie considerate garanții."
   },
   "certificates": {
     "cert-1": {

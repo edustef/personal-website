@@ -4,17 +4,18 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { AnimatePresence, motion } from "framer-motion";
-import { X } from "lucide-react";
 import posthog from "posthog-js";
 import { useEffect, useState } from "react";
 
 export const COOKIE_CONSENT_EVENT = "cookie-consent-updated";
 export const SHOW_COOKIE_BANNER_EVENT = "show-cookie-banner";
+const COOKIE_CONSENT_KEY = "cookie-consent-choice-made";
 
 export function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [trackingConsent, setTrackingConsent] = useState(false);
+
   useEffect(() => {
     const handleUpdate = (e: Event) => {
       const customEvent = e as CustomEvent<{ tracking: boolean }>;
@@ -23,53 +24,28 @@ export function CookieBanner() {
 
     const handleShowBanner = () => {
       setIsVisible(true);
+      setIsExpanded(false);
+      setTrackingConsent(posthog.has_opted_in_capturing());
     };
 
-    let checkInterval: NodeJS.Timeout | null = null;
-    let timeout: NodeJS.Timeout | null = null;
-
-    const initCheck = () => {
+    const checkConsent = () => {
       if (typeof window === "undefined") return;
 
-      const attemptCheck = () => {
-        try {
-          const hasConsent = posthog.has_opted_in_capturing();
-          const hasOptedOut = posthog.has_opted_out_capturing();
-
-          if (hasConsent || hasOptedOut) {
-            if (checkInterval) clearInterval(checkInterval);
-            if (timeout) clearTimeout(timeout);
-            return;
-          }
-
-          setIsVisible(true);
-          if (checkInterval) clearInterval(checkInterval);
-          if (timeout) clearTimeout(timeout);
-        } catch (error) {
-          setIsVisible(true);
-          if (checkInterval) clearInterval(checkInterval);
-          if (timeout) clearTimeout(timeout);
-        }
-      };
-
-      attemptCheck();
-
-      checkInterval = setInterval(attemptCheck, 100);
-
-      timeout = setTimeout(() => {
-        if (checkInterval) clearInterval(checkInterval);
-        attemptCheck();
-      }, 2000);
+      const hasExplicitChoice = localStorage.getItem(COOKIE_CONSENT_KEY);
+      if (!hasExplicitChoice) {
+        setIsVisible(true);
+        setIsExpanded(false);
+      } else {
+        setTrackingConsent(posthog.has_opted_in_capturing());
+      }
     };
 
-    initCheck();
+    checkConsent();
 
     window.addEventListener(COOKIE_CONSENT_EVENT, handleUpdate);
     window.addEventListener(SHOW_COOKIE_BANNER_EVENT, handleShowBanner);
 
     return () => {
-      if (checkInterval) clearInterval(checkInterval);
-      if (timeout) clearTimeout(timeout);
       window.removeEventListener(COOKIE_CONSENT_EVENT, handleUpdate);
       window.removeEventListener(SHOW_COOKIE_BANNER_EVENT, handleShowBanner);
     };
@@ -77,6 +53,7 @@ export function CookieBanner() {
 
   const handleAcceptAll = () => {
     posthog.opt_in_capturing();
+    localStorage.setItem(COOKIE_CONSENT_KEY, "true");
     window.dispatchEvent(
       new CustomEvent(COOKIE_CONSENT_EVENT, { detail: { tracking: true } })
     );
@@ -89,6 +66,7 @@ export function CookieBanner() {
     } else {
       posthog.opt_out_capturing();
     }
+    localStorage.setItem(COOKIE_CONSENT_KEY, "true");
     window.dispatchEvent(
       new CustomEvent(COOKIE_CONSENT_EVENT, {
         detail: { tracking: trackingConsent },
@@ -190,11 +168,8 @@ export function CookieBanner() {
                     <>
                       <Button
                         variant="outline"
-                        onClick={() => {
-                          setIsExpanded(true);
-                          setTrackingConsent(true);
-                        }}
-                        className="border-secondary text-secondary hover:bg-secondary/10"
+                        onClick={() => setIsExpanded(true)}
+                        className="border-border text-foreground hover:bg-muted"
                       >
                         Manage cookies settings
                       </Button>
@@ -210,7 +185,7 @@ export function CookieBanner() {
                       <Button
                         variant="outline"
                         onClick={() => setIsExpanded(false)}
-                        className="border-secondary text-secondary hover:bg-secondary/10"
+                        className="border-border text-foreground hover:bg-muted"
                       >
                         Close cookies settings
                       </Button>

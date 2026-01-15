@@ -239,7 +239,7 @@
     "announcementLabel": "Calcula tus <strong>ingresos potenciales</strong>",
     "resumeButtonLabel": "Ver mi currículum",
     "findMeOnLabel": "Encuéntrame en",
-    "contactMe": "Contáctame",
+    "contactMe": "Hablemos de Soluciones",
     "workedWith": "Con qué trabajo",
     "tools": {
       "label": "Tecnologías",
@@ -265,10 +265,6 @@
       "subtitle": "¿Listo para convertir tu sitio web en un motor de crecimiento? Hablemos.",
       "ctaButton": "Obtén tu oferta",
       "whatsappLabel": "Contáctame en WhatsApp"
-    },
-    "seo": {
-      "title": "Eduard Stefan | Desarrollo Web + SEO + CRO",
-      "description": "Construyo sitios web de alto rendimiento optimizados para tráfico y conversión."
     }
   },
   "profile": {
@@ -308,13 +304,15 @@
       "nav": {
         "services": "Servicios",
         "pricing": "Precios",
+        "howIWork": "Cómo Trabajo",
         "blog": "Blog",
         "servicesSlug": "servicios",
-        "pricingSlug": "precios"
+        "pricingSlug": "precios",
+        "howIWorkSlug": "how-i-work"
       }
     },
     "seo": {
-      "title": "Eduard Stefan | Sitios web construidos con precisión",
+      "title": "Eduard Stefan",
       "description": "Una asociación directa centrada en maximizar tu crecimiento digital."
     }
   },
@@ -399,27 +397,27 @@
     "label": "Lo Que Hago",
     "headline": "Tu Socio de Crecimiento Digital",
     "subtitle": "Todo va de la mano. El SEO trae a las personas adecuadas y el diseño optimizado asegura que se queden.",
-    "svc-6": {
+    "svc-1": {
       "title": "Asociación Directa",
       "description": "Sin intermediarios. Trabajas directamente conmigo, lo que significa comunicación clara, actualizaciones más rápidas y un socio que se preocupa por tu éxito."
     },
-    "svc-1": {
+    "svc-2": {
       "title": "Desarrollo SEO-First",
       "description": "Construyo sitios que a Google le encantan. Código limpio, estructura perfecta y rendimiento rápido para ayudarte a posicionarte mejor."
     },
-    "svc-7": {
+    "svc-3": {
       "title": "Alcance Global",
       "description": "Expande tu audiencia con soporte multiidioma fluido. Habla el idioma de tus clientes y genera confianza en todo el mundo."
     },
-    "svc-3": {
+    "svc-4": {
       "title": "Velocidad Ultra-Rápida",
       "description": "La velocidad es una característica. Me aseguro de que tu sitio cargue instantáneamente, manteniendo a los visitantes felices y reduciendo el rebote."
     },
-    "svc-4": {
+    "svc-5": {
       "title": "Enfoque en Conversión/CRO",
       "description": "El tráfico es bueno, pero los clientes son mejores. Diseño flujos que guían a los visitantes naturalmente hacia la acción."
     },
-    "svc-5": {
+    "svc-6": {
       "title": "Diseño de Experiencia de Usuario",
       "description": "Simple, intuitivo y hermoso. Creo interfaces que son fáciles de usar y dejan una impresión positiva duradera."
     }
@@ -499,7 +497,7 @@
         "Perfecto para Móviles: Se ve genial en todos los dispositivos.",
         "Asociación Directa: Colaboración directa conmigo."
       ],
-      "timeline": "1\u20132 semanas",
+      "timeline": "2–3 días laborables",
       "investmentAmount": 800
     },
     "growth": {
@@ -532,8 +530,8 @@
       "investment": "Cotización Personalizada Requerida"
     },
     "addOns": {
-      "title": "Mejoras Opcionales (Complementos)",
-      "subtitle": "Características específicas que podrías necesitar para alcanzar tus objetivos.",
+      "title": "Servicios Independientes",
+      "subtitle": "Mejora cualquier sitio web—lo haya construido yo o no.",
       "seo": {
         "title": "Impulso SEO",
         "benefit": "Profundizo en la configuración técnica para ayudarte a posicionarte mejor en Google.",
@@ -576,7 +574,8 @@
     "currentMonthlyRevenue": "Ingresos Mensuales Actuales:",
     "projectedMonthlyRevenue": "Ingresos Mensuales Proyectados:",
     "chartCurrent": "Ingresos Actuales",
-    "chartProjected": "Ingresos Proyectados"
+    "chartProjected": "Ingresos Proyectados",
+    "disclaimer": "Este es un simulador solo con fines ilustrativos. Los resultados reales pueden variar según numerosos factores, incluyendo condiciones del mercado, calidad de implementación y variables específicas del negocio. Estas proyecciones son estimaciones y no deben considerarse como garantías."
   },
   "certificates": {
     "cert-1": {

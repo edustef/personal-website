@@ -37,7 +37,7 @@ export default async function HowIPriceSection() {
   const pricingSlug = headerT("nav.pricingSlug");
 
   return (
-    <section id={pricingSlug} className="scroll-mt-24 py-12 md:py-16">
+    <section id={pricingSlug} className="scroll-mt-12 py-12 md:py-16">
       <div className="mx-auto max-w-6xl md:px-4">
         <AnimatedContainer
           trigger="scroll"
@@ -74,7 +74,7 @@ export default async function HowIPriceSection() {
                     fadeDirection="up"
                     staggerIndex={index}
                     staggerDelay={0.12}
-                    className={cn(isPopular && "lg:scale-105")}
+                    className={cn(isPopular && "lg:scale-105", "overflow-visible")}
                   >
                     <PackageCard
                       pkg={pkg}
@@ -121,7 +121,7 @@ export default async function HowIPriceSection() {
               staggerIndex={index}
               staggerDelay={0.08}
             >
-              <Card className="h-full rounded-xl">
+              <Card className="h-full rounded-xl border-muted bg-background/50 backdrop-blur-sm overflow-hidden shadow-lg">
                 <CardContent className="p-5">
                   <h4 className="text-foreground text-xl mb-2 font-semibold text-balance">
                     {t(`addOns.${addOn}.title`)}
@@ -155,7 +155,7 @@ export default async function HowIPriceSection() {
                   )}
                 >
                   <div className="h-full">
-                    <Card className="h-full rounded-xl">
+                    <Card className="h-full rounded-xl border-muted bg-background/50 backdrop-blur-sm overflow-hidden shadow-lg">
                       <CardContent className="p-5">
                         <h4 className="text-foreground text-xl mb-2 font-semibold text-balance">
                           {t(`addOns.${addOn}.title`)}

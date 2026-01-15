@@ -61,7 +61,7 @@ export default async function ServicesSection({
   return (
     <section
       id={servicesSlug}
-      className="scroll-mt-24 overflow-x-hidden py-12 md:py-16"
+      className="scroll-mt-12 overflow-x-hidden py-12 md:py-16"
     >
       <div className="mx-auto max-w-6xl md:px-6">
         <AnimatedContainer
@@ -100,8 +100,8 @@ export default async function ServicesSection({
                 staggerDelay={0.15}
                 className={cn("min-w-0 lg:col-span-2 lg:row-span-2 text-lg")}
               >
-                <Card className="isolate relative h-full w-full overflow-hidden rounded-2xl">
-                  <BGPattern variant={patternVariant} mask="fade-edges" />
+                <Card className="isolate relative h-full w-full overflow-hidden rounded-2xl border-muted bg-background/50 backdrop-blur-sm">
+                  <BGPattern variant={patternVariant} mask="fade-edges" opacity={0.25} />
                   <CardContent className="relative p-8">
                     <Icon className="size-10 mb-4" />
                     <h3 className="text-foreground mb-3 break-words text-xl font-semibold text-balance">
@@ -131,11 +131,12 @@ export default async function ServicesSection({
                 staggerDelay={0.1}
                 className="min-w-0"
               >
-                <Card className="isolate relative h-full w-full overflow-hidden rounded-2xl">
+                <Card className="isolate relative h-full w-full overflow-hidden rounded-2xl border-muted bg-background/50 backdrop-blur-sm">
                   <BGPattern
                     variant={patternVariant}
                     mask="fade-edges"
                     size={20}
+                    opacity={0.25}
                   />
                   <CardContent className="relative p-6">
                     <Icon className="size-8 mb-4" />
@@ -169,11 +170,12 @@ export default async function ServicesSection({
                     )}
                   >
                     <div className="h-full">
-                      <Card className="isolate relative h-full w-full overflow-hidden rounded-2xl">
+                      <Card className="isolate relative h-full w-full overflow-hidden rounded-2xl border-muted bg-background/50 backdrop-blur-sm">
                         <BGPattern
                           variant={patternVariant}
                           mask="fade-edges"
                           size={20}
+                          opacity={0.25}
                         />
                         <CardContent className="relative p-6 flex flex-col h-full">
                           <Icon className="size-8 mb-4 shrink-0" />

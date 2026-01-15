@@ -60,7 +60,7 @@ export async function Footer({ className, locale }: FooterProps) {
 
             <div className="flex flex-col items-start gap-4">
               <h3 className="font-semibold text-foreground">Legal</h3>
-              <nav className="flex flex-col gap-3">
+              <nav className="flex flex-col items-start gap-3">
                 <Link
                   href="/privacy-policy"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"

@@ -4,58 +4,29 @@ import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
+  DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { locales } from "@/i18n/routing";
-import { useEffect, useRef } from "react";
+import { useLocale } from "next-intl";
 
 export function LanguageToggle({
-  currentLocale,
+  hrefs,
   className,
 }: {
-  currentLocale: string;
+  hrefs?: { locale: string; href: string }[];
   className?: string;
 }) {
+  const locale = useLocale();
   const pathname = usePathname();
-  const router = useRouter();
-  const scrollPositionRef = useRef<number>(0);
-
-  useEffect(() => {
-    const savedScroll = sessionStorage.getItem("scrollPosition");
-    if (savedScroll) {
-      const scrollY = Number.parseInt(savedScroll, 10);
-      sessionStorage.removeItem("scrollPosition");
-
-      const restoreScroll = () => {
-        window.scrollTo({
-          top: scrollY,
-          behavior: "auto",
-        });
-      };
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(restoreScroll);
-      });
-
-      setTimeout(restoreScroll, 100);
-    }
-  }, []);
 
   const currentLocaleTitle =
-    locales.find((locale) => locale.id === currentLocale)?.title ||
-    currentLocale.toUpperCase();
+    locales.find((l) => l.id === locale)?.title || locale.toUpperCase();
 
-  const handleLanguageChange = (localeId: string) => {
-    if (localeId === currentLocale) return;
-
-    scrollPositionRef.current = window.scrollY;
-    sessionStorage.setItem("scrollPosition", String(scrollPositionRef.current));
-
-    router.push(pathname as any, { locale: localeId });
-  };
+  if (!hrefs) {
+    hrefs = locales.map((l) => ({ locale: l.id, href: pathname }));
+  }
 
   return (
     <DropdownMenu>
@@ -65,17 +36,22 @@ export function LanguageToggle({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuRadioGroup value={currentLocale}>
-          {locales.map(({ id, title }) => (
-            <DropdownMenuRadioItem
-              key={id}
-              value={id}
-              onSelect={() => handleLanguageChange(id)}
-            >
-              {title}
-            </DropdownMenuRadioItem>
-          ))}
-        </DropdownMenuRadioGroup>
+        {locales.map(({ id, title }) => (
+          <DropdownMenuItem key={id} asChild>
+            {hrefs?.find((href) => href.locale === id) ? (
+              <Link
+                href={hrefs.find((href) => href.locale === id)?.href as "/"}
+                locale={id}
+              >
+                {title}
+              </Link>
+            ) : (
+              <Button variant="link" asChild disabled>
+                {title}
+              </Button>
+            )}
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );

@@ -1,6 +1,3 @@
-import homeOpengraphEn from "@/assets/images/home-opengraph-en.png";
-import homeOpengraphEs from "@/assets/images/home-opengraph-es.png";
-import homeOpengraphRo from "@/assets/images/home-opengraph-ro.png";
 import { FloatingContactButton } from "@/components/contact-button-observer";
 import FAQSection from "@/components/faq-section";
 import HeroSection from "@/components/hero-section";
@@ -8,15 +5,14 @@ import AboutMeSection from "@/components/sections/about-me-section";
 import ContactSection from "@/components/sections/contact-section";
 import HowIPriceSection from "@/components/sections/how-i-price-section";
 import HowIWorkSection from "@/components/sections/how-i-work-section";
-import RoiCalculatorSection from "@/components/sections/roi-calculator-section";
 import ServicesSection from "@/components/sections/services-section";
 import ToolsSection from "@/components/sections/tools-section";
 import { BackgroundPaperShaders } from "@/components/ui/background-paper-shaders";
 import { getPathname } from "@/i18n/navigation";
-import { locales, routing } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
 import { faqs } from "@/lib/data/faqs";
 import { services } from "@/lib/data/services";
-import { getCanonicalUrl, getLocalizedSettingsMetadata } from "@/lib/seo";
+import { getCanonicalUrl } from "@/lib/seo";
 import {
   createFAQPageSchema,
   createServiceSchema,
@@ -32,48 +28,15 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
-const ogImages = {
-  en: homeOpengraphEn,
-  es: homeOpengraphEs,
-  ro: homeOpengraphRo,
-};
-
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
   const { locale } = params;
 
-  const [localized, t] = await Promise.all([
-    getLocalizedSettingsMetadata(locale),
-    getTranslations({ locale, namespace: "home.seo" }),
-  ]);
-
-  const pageDescription = t("description");
-  const ogImage = ogImages[locale as keyof typeof ogImages] || ogImages.en;
+  const t = await getTranslations({ locale, namespace: "home.seo" });
 
   return {
-    description: pageDescription,
     alternates: {
       canonical: getPathname({ locale, href: "/" }),
-    },
-    openGraph: {
-      type: "website",
-      locale,
-      title: localized.title,
-      description: pageDescription,
-      images: [
-        {
-          url: ogImage.src,
-          width: ogImage.width,
-          height: ogImage.height,
-          alt: pageDescription,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: localized.title,
-      description: pageDescription,
-      images: [ogImage.src],
     },
   };
 }
@@ -141,11 +104,11 @@ export default async function Page(props: Props) {
 
       <ToolsSection />
 
-      <RoiCalculatorSection />
-
       <AboutMeSection />
 
       <HowIWorkSection />
+
+      {/* <CaseStudiesSection /> */}
 
       <HowIPriceSection />
 

@@ -239,7 +239,7 @@
     "announcementLabel": "Calculate your <strong>potential revenue</strong>",
     "resumeButtonLabel": "See my resume",
     "findMeOnLabel": "Find me on",
-    "contactMe": "Contact me",
+    "contactMe": "Let's Talk Solutions",
     "workedWith": "What I work with",
     "tools": {
       "label": "Technologies",
@@ -265,10 +265,6 @@
       "subtitle": "Ready to turn your website into a conversion engine? Let's chat.",
       "ctaButton": "Get your offer",
       "whatsappLabel": "Contact me on WhatsApp"
-    },
-    "seo": {
-      "title": "Eduard Stefan | Web Development + SEO + CRO",
-      "description": "I build high-performance websites optimized for traffic and conversion."
     }
   },
   "profile": {
@@ -295,7 +291,7 @@
   },
   "settings": {
     "title": "Eduard Stefan",
-    "description": "Websites built with precision, designed for conversion.",
+    "description": "Websites built with precision, designed for growth.",
     "header": {
       "cta": {
         "text": "Get your offer",
@@ -308,14 +304,16 @@
       "nav": {
         "services": "Services",
         "pricing": "Pricing",
+        "howIWork": "How I Work",
         "blog": "Blog",
         "servicesSlug": "services",
-        "pricingSlug": "pricing"
+        "pricingSlug": "pricing",
+        "howIWorkSlug": "how-i-work"
       }
     },
     "seo": {
-      "title": "Eduard Stefan | Websites built with precision",
-      "description": "A direct partnership focused on maximizing your digital success."
+      "title": "Eduard Stefan | Web Engineering",
+      "description": "A direct partnership focused on maximizing your digital growth."
     }
   },
   "skills": {
@@ -499,7 +497,7 @@
         "Mobile First: Perfect experience on all devices.",
         "Direct Partnership: Direct collaboration with me."
       ],
-      "timeline": "1\u20132 weeks",
+      "timeline": "2-3 working days",
       "investmentAmount": 800
     },
     "growth": {
@@ -514,7 +512,7 @@
         "Advanced Analytics: Full tracking setup to understand visitor behavior.",
         "Lead Generation: Connected to your email or CRM."
       ],
-      "timeline": "2\u20133 weeks",
+      "timeline": "1-2 weeks",
       "investmentAmount": 1600
     },
     "custom": {
@@ -532,8 +530,8 @@
       "investment": "Custom Quote Required"
     },
     "addOns": {
-      "title": "Strategy Add-Ons",
-      "subtitle": "Specific upgrades to accelerate your results.",
+      "title": "Standalone Services",
+      "subtitle": "Enhance any website—whether I built it or not.",
       "seo": {
         "title": "SEO Sprint",
         "benefit": "Deep dive technical audit to fix ranking blockers.",
@@ -576,7 +574,8 @@
     "currentMonthlyRevenue": "Current Monthly Revenue:",
     "projectedMonthlyRevenue": "Projected Monthly Revenue:",
     "chartCurrent": "Current Revenue",
-    "chartProjected": "Projected Revenue"
+    "chartProjected": "Projected Revenue",
+    "disclaimer": "This is a simulator for illustrative purposes only. Actual results may vary based on numerous factors including market conditions, implementation quality, and business-specific variables. These projections are estimates and should not be considered as guarantees."
   },
   "certificates": {
     "cert-1": {

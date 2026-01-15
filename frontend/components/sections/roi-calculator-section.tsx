@@ -28,6 +28,7 @@ export default async function RoiCalculatorSection() {
       projectedMonthlyRevenue={t("projectedMonthlyRevenue")}
       chartCurrent={t("chartCurrent")}
       chartProjected={t("chartProjected")}
+      disclaimer={t("disclaimer")}
     />
   );
 }

@@ -18,12 +18,12 @@ export const routing = defineRouting({
   pathnames: {
     "/": "/",
     "/start-your-project": {
-      ro: "/începe-proiectul-tău",
+      ro: "/incepe-proiectul-tau",
       es: "/inicia-tu-proyecto",
     },
     "/privacy-policy": {
-      ro: "/politică-de-confidențialitate",
-      es: "/política-de-privacidad",
+      ro: "/politica-de-confidentialitate",
+      es: "/politica-de-privacidad",
     },
     "/blog": "/blog",
     "/blog/[slug]": "/blog/[slug]",

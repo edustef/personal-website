@@ -41,7 +41,7 @@ export default async function TestimonialsSection({
             return (
               <Card
                 key={testimonial._id}
-                className={cn("rounded-2xl", isLarge && "md:col-span-2")}
+                className={cn("rounded-2xl border-muted bg-background/50 backdrop-blur-sm overflow-hidden shadow-lg", isLarge && "md:col-span-2")}
               >
                 <CardContent className="p-6 md:p-8">
                   <Quote className="text-primary/20 mb-4 h-8 w-8" />
