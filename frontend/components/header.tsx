@@ -20,6 +20,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { usePathname } from "@/i18n/navigation";
+import { trackContactEvent } from "@/lib/tracking";
 import { cn } from "@/lib/utils";
 import { AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -312,6 +313,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
                       href="https://wa.me/40775378525"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={trackContactEvent}
                     >
                       {contactMeText}
                     </a>

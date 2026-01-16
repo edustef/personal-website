@@ -2,6 +2,7 @@
 
 import whatsappLogo from "@/assets/images/whatsapp-logo.png";
 import { Button } from "@/components/ui/button";
+import { trackContactEvent } from "@/lib/tracking";
 import { useIsMobile } from "@/hooks/use-mobile";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -54,6 +55,7 @@ export function FloatingContactButton({
           target="_blank"
           rel="noopener noreferrer"
           aria-label={contactMeText}
+          onClick={trackContactEvent}
         >
           <Image
             fill

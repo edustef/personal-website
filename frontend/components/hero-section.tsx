@@ -1,4 +1,5 @@
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
+import { HeroContactButton } from "@/components/hero-contact-button";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Button } from "@/components/ui/button";
 import { HighlightBadge } from "@/components/ui/highlight-badge";
@@ -63,13 +64,9 @@ export default async function HeroSection() {
               variant="default"
               id={HERO_CONTACT_BUTTON_ID}
             >
-              <a
-                href="https://wa.me/40775378525"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <HeroContactButton href="https://wa.me/40775378525">
                 {t("contactMe")}
-              </a>
+              </HeroContactButton>
             </Button>
           </AnimatedContainer>
         </div>

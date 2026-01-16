@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { type ContactFormState, submitContactForm } from "@/lib/actions";
+import { trackContactEvent } from "@/lib/tracking";
 import Form from "next/form";
 
 type ContactFormProps = {
@@ -42,6 +43,7 @@ export function ContactForm({ recipientEmail }: ContactFormProps) {
     if (!state) return;
 
     if (state.success) {
+      trackContactEvent();
       toast.success(
         state.message || "Your message has been sent successfully!"
       );

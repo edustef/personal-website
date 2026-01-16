@@ -1,7 +1,10 @@
 import whatsappLogo from "@/assets/images/whatsapp-logo.png";
+import {
+  ContactSectionAnchorButton,
+  ContactSectionLinkButton,
+} from "@/components/contact-section-button";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Button } from "@/components/ui/button";
-import { Link } from "@/i18n/navigation";
 import { getSocialIcon } from "@/lib/social-icons";
 import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
@@ -56,7 +59,9 @@ export default async function ContactSection({
             className="w-full sm:w-auto"
           >
             <Button asChild size="lg" variant="default" className="w-full">
-              <Link href="/start-your-project">{t("contact.ctaButton")}</Link>
+              <ContactSectionLinkButton href="/start-your-project">
+                {t("contact.ctaButton")}
+              </ContactSectionLinkButton>
             </Button>
           </AnimatedContainer>
 
@@ -74,11 +79,9 @@ export default async function ContactSection({
                 variant="default"
                 className="w-full bg-[#25d366] text-white hover:bg-[#25d366]/90"
               >
-                <a
+                <ContactSectionAnchorButton
                   href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={t("contact.whatsappLabel")}
+                  ariaLabel={t("contact.whatsappLabel")}
                 >
                   <Image
                     src={whatsappLogo}
@@ -88,7 +91,7 @@ export default async function ContactSection({
                     className="size-5"
                   />
                   WhatsApp
-                </a>
+                </ContactSectionAnchorButton>
               </Button>
             </AnimatedContainer>
           )}
