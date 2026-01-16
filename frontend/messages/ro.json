@@ -474,15 +474,13 @@
   "howIPrice": {
     "label": "Prețuri",
     "headline": "Cum Calculez Prețurile",
-    "subtitle": "Prețuri transparente care se adaptează nevoilor tale.",
+    "subtitle": "Prețuri care se adaptează nevoilor tale.",
     "intro": "Majoritatea site-urilor sunt frumoase, dar nu fac mare lucru. Eu construiesc site-uri concepute să se claseze pe Google și să transforme vizitatorii în clienți. În plus, vei putea edita totul singur.",
     "packages": {
       "title": "Pachete de Proiect",
       "subtitle": "Selectează opțiunea care se potrivește stării actuale a afacerii tale.",
       "mostPopular": "Cel Mai Popular",
       "whatYouGet": "Ce primești",
-      "timeline": "Termen",
-      "investment": "Investiție",
       "showMore": "Afișează mai mult",
       "showLess": "Afișează mai puțin",
       "getQuote": "Obține oferta ta"
@@ -492,14 +490,12 @@
       "bestFor": "Ideal pentru: Afaceri care caută o bază profesională, de înaltă performanță pentru a scala.",
       "description": "O construcție completă de site web cu conversie ridicată. O fundație solidă pentru prezența ta digitală.",
       "features": [
+        "Themeing și Branding: Personalizare vizuală profundă.",
         "Design Strategic: Focusat pe conversie și fluxul utilizatorului.",
         "SEO Tehnic: Structură pe care Google o iubește.",
         "Optimizarea Vitezei: Timpi de încărcare sub o secundă.",
-        "Perfect pentru Mobil: Arată excelent pe toate dispozitivele.",
-        "Parteneriat Direct: Colaborare directă cu mine."
-      ],
-      "timeline": "2-3 zile",
-      "investmentAmount": 800
+        "Perfect pentru Mobil: Arată excelent pe toate dispozitivele."
+      ]
     },
     "growth": {
       "title": "Pachetul 'Growth'",
@@ -509,12 +505,9 @@
         "Tot ce este în 'Launch' + acestea și mai multe:",
         "Integrare CMS: Tu deții și editezi conținutul.",
         "Configurare Localizare: Gata pentru piețele globale de la început.",
-        "Themeing și Branding: Personalizare vizuală profundă.",
         "Analitici Avansate: Configurare completă de urmărire pentru a înțelege comportamentul vizitatorilor.",
         "Generare Clienți Potențiali: Conectat la email-ul sau CRM-ul tău."
-      ],
-      "timeline": "1-2 săptămâni",
-      "investmentAmount": 1600
+      ]
     },
     "custom": {
       "title": "Soluții Personalizate",
@@ -526,34 +519,27 @@
         "Autentificare și permisiuni personalizate pentru utilizatori",
         "Sisteme avansate de rezervări sau programări",
         "Instrumente interne și panouri de control"
-      ],
-      "timeline": "Termen Personalizat",
-      "investment": "Ofertă Personalizată Necesară"
+      ]
     },
     "addOns": {
       "title": "Servicii Independente",
       "subtitle": "Îmbunătățește orice site—construit de mine sau nu.",
       "seo": {
         "title": "Impuls SEO",
-        "benefit": "Mă adâncesc în setările tehnice pentru a te ajuta să te clasezi mai sus pe Google.",
-        "priceAmount": 600
+        "benefit": "Mă adâncesc în setările tehnice pentru a te ajuta să te clasezi mai sus pe Google."
       },
       "store": {
         "title": "Magazin Online",
-        "benefit": "Capacitatea de a vinde produse și de a accepta carduri de credit în siguranță.",
-        "priceAmount": 1400
+        "benefit": "Capacitatea de a vinde produse și de a accepta carduri de credit în siguranță."
       },
       "multiLanguage": {
         "title": "Mai Multe Limbi",
-        "benefit": "Un site care funcționează în 2+ limbi (de exemplu, Engleză și Spaniolă).",
-        "priceAmount": 500
+        "benefit": "Un site care funcționează în 2+ limbi (de exemplu, Engleză și Spaniolă)."
       },
       "analytics": {
         "title": "Analytics Pro",
-        "benefit": "Configurez urmărirea astfel încât să poți vedea exact de unde vin vizitatorii tăi.",
-        "priceAmount": 800
-      },
-      "contactForPricing": "Contactează pentru prețuri"
+        "benefit": "Configurez urmărirea astfel încât să poți vedea exact de unde vin vizitatorii tăi."
+      }
     }
   },
   "roiCalculator": {

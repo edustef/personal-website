@@ -474,15 +474,13 @@
   "howIPrice": {
     "label": "Precios",
     "headline": "Cómo Calculo los Precios",
-    "subtitle": "Precios transparentes que se adaptan a tus necesidades.",
+    "subtitle": "Precios que se adaptan a tus necesidades.",
     "intro": "La mayoría de los sitios web son bonitos, pero no hacen mucho. Construyo sitios diseñados para posicionarse en Google y convertir visitantes en clientes. Además, podrás editar todo tú mismo.",
     "packages": {
       "title": "Modelos de Compromiso",
       "subtitle": "Selecciona la opción que coincida con el estado actual de tu negocio.",
       "mostPopular": "Más Popular",
       "whatYouGet": "Lo que obtienes",
-      "timeline": "Cronograma",
-      "investment": "Inversión",
       "showMore": "Ver más",
       "showLess": "Ver menos",
       "getQuote": "Obtén tu oferta"
@@ -492,14 +490,12 @@
       "bestFor": "Ideal para: Empresas que buscan una base profesional y de alto rendimiento para escalar.",
       "description": "Una construcción de sitio web completa y de alta conversión. Una base sólida para tu presencia digital.",
       "features": [
+        "Theming y Branding: Personalización visual profunda.",
         "Diseño Estratégico: Centrado en la conversión y el flujo de usuarios.",
         "SEO Técnico: Estructura que a Google le encanta.",
         "Optimización de Velocidad: Tiempos de carga inferiores a un segundo.",
-        "Mobile First: Experiencia perfecta en todos los dispositivos.",
-        "Asociación Directa: Colaboración directa conmigo."
-      ],
-      "timeline": "2-3 días",
-      "investmentAmount": 800
+        "Mobile First: Experiencia perfecta en todos los dispositivos."
+      ]
     },
     "growth": {
       "title": "El Paquete 'Growth'",
@@ -509,12 +505,9 @@
         "Todo en 'Launch' + esto y más:",
         "Integración de CMS: Eres el dueño y editas tu contenido.",
         "Configuración de Localización: Listo para mercados globales desde el inicio.",
-        "Theming y Branding: Personalización visual profunda.",
         "Analíticas Avanzadas: Configuración completa de seguimiento para entender el comportamiento de los visitantes.",
         "Generación de Clientes Potenciales: Conectado a tu correo o CRM."
-      ],
-      "timeline": "1-2 semanas",
-      "investmentAmount": 1600
+      ]
     },
     "custom": {
       "title": "Soluciones Personalizadas",
@@ -526,34 +519,27 @@
         "Autenticación y permisos de usuario personalizados",
         "Sistemas avanzados de reservas o citas",
         "Herramientas internas y paneles de control"
-      ],
-      "timeline": "Cronograma Personalizado",
-      "investment": "Cotización Personalizada Requerida"
+      ]
     },
     "addOns": {
       "title": "Servicios Independientes",
       "subtitle": "Mejora cualquier sitio web—lo haya construido yo o no.",
       "seo": {
         "title": "Sprint SEO",
-        "benefit": "Auditoría técnica profunda para corregir bloqueadores de posicionamiento.",
-        "priceAmount": 600
+        "benefit": "Auditoría técnica profunda para corregir bloqueadores de posicionamiento."
       },
       "store": {
         "title": "Motor de E-commerce",
-        "benefit": "Configuración completa de tienda con carrito, checkout y pagos.",
-        "priceAmount": 1400
+        "benefit": "Configuración completa de tienda con carrito, checkout y pagos."
       },
       "multiLanguage": {
         "title": "Alcance Global",
-        "benefit": "Localización para 2+ idiomas para expandir tu mercado.",
-        "priceAmount": 500
+        "benefit": "Localización para 2+ idiomas para expandir tu mercado."
       },
       "analytics": {
         "title": "Analytics Profundo",
-        "benefit": "Informes de embudo personalizados y configuración avanzada de seguimiento.",
-        "priceAmount": 800
-      },
-      "contactForPricing": "Contacta para precios"
+        "benefit": "Informes de embudo personalizados y configuración avanzada de seguimiento."
+      }
     }
   },
   "roiCalculator": {

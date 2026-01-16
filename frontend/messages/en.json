@@ -474,15 +474,13 @@
   "howIPrice": {
     "label": "Pricing",
     "headline": "How I Price",
-    "subtitle": "Transparent pricing that scales with your needs.",
+    "subtitle": "Pricing that scales with your needs.",
     "intro": "Most websites are pretty, but they don't do much. I build sites that are designed to rank on Google and convert visitors into customers. Plus, you'll be able to edit everything yourself.",
     "packages": {
       "title": "Engagement Models",
       "subtitle": "Select the option that matches where your business is today.",
       "mostPopular": "Most Popular",
       "whatYouGet": "What you get",
-      "timeline": "Timeline",
-      "investment": "Investment",
       "showMore": "Show more",
       "showLess": "Show less",
       "getQuote": "Get your quote"
@@ -492,14 +490,12 @@
       "bestFor": "Best for: Businesses looking for a professional, high-performance base to scale.",
       "description": "A complete, high-converting website build. A solid foundation for your digital presence.",
       "features": [
+        "Theming & Branding: Deep visual customization.",
         "Strategic Design: Focused on conversion and user flow.",
         "Technical SEO: Structure that Google loves.",
         "Speed Optimization: Sub-second load times.",
-        "Mobile First: Perfect experience on all devices.",
-        "Direct Partnership: Direct collaboration with me."
-      ],
-      "timeline": "2-3 days",
-      "investmentAmount": 800
+        "Mobile First: Perfect experience on all devices."
+      ]
     },
     "growth": {
       "title": "The 'Growth' Package",
@@ -509,12 +505,9 @@
         "Everything in 'Launch' + these and more:",
         "CMS Integration: You own and edit your content.",
         "Localisation Setup: Ready for global markets from the start.",
-        "Theming & Branding: Deep visual customization.",
         "Advanced Analytics: Full tracking setup to understand visitor behavior.",
         "Lead Generation: Connected to your email or CRM."
-      ],
-      "timeline": "1-2 weeks",
-      "investmentAmount": 1600
+      ]
     },
     "custom": {
       "title": "Custom Solutions",
@@ -526,34 +519,27 @@
         "Custom user authentication and permissions",
         "Advanced booking or reservation systems",
         "Internal tools and dashboards"
-      ],
-      "timeline": "Custom Timeline",
-      "investment": "Custom Quote Required"
+      ]
     },
     "addOns": {
       "title": "Standalone Services",
       "subtitle": "Enhance any website—whether I built it or not.",
       "seo": {
         "title": "SEO Sprint",
-        "benefit": "Deep dive technical audit to fix ranking blockers.",
-        "priceAmount": 600
+        "benefit": "Deep dive technical audit to fix ranking blockers."
       },
       "store": {
         "title": "E-commerce Engine",
-        "benefit": "Full shop setup with cart, checkout, and payments.",
-        "priceAmount": 1400
+        "benefit": "Full shop setup with cart, checkout, and payments."
       },
       "multiLanguage": {
         "title": "Global Reach",
-        "benefit": "Localization for 2+ languages to expand your market.",
-        "priceAmount": 500
+        "benefit": "Localization for 2+ languages to expand your market."
       },
       "analytics": {
         "title": "Deep Dive Analytics",
-        "benefit": "Custom funnel reports and advanced tracking setup.",
-        "priceAmount": 800
-      },
-      "contactForPricing": "Contact for pricing"
+        "benefit": "Custom funnel reports and advanced tracking setup."
+      }
     }
   },
   "roiCalculator": {
