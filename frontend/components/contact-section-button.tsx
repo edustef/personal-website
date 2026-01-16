@@ -1,10 +1,10 @@
 "use client";
 
-import { Link } from "@/i18n/navigation";
+import { Link, getPathname } from "@/i18n/navigation";
 import { trackContactEvent } from "@/lib/tracking";
 
 type ContactSectionLinkButtonProps = {
-  href: string;
+  href: Parameters<typeof getPathname>[0]["href"];
   children: React.ReactNode;
 };
 
