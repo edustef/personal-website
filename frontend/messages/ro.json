@@ -473,8 +473,8 @@
   },
   "howIPrice": {
     "label": "Prețuri",
-    "headline": "Cum Calculez Prețurile",
-    "subtitle": "Prețuri care se adaptează nevoilor tale.",
+    "headline": "Prețuri care se adaptează nevoilor tale",
+    "subtitle": "Alege pachetul care se potrivește stării afacerii tale.",
     "intro": "Majoritatea site-urilor sunt frumoase, dar nu fac mare lucru. Eu construiesc site-uri concepute să se claseze pe Google și să transforme vizitatorii în clienți. În plus, vei putea edita totul singur.",
     "packages": {
       "title": "Pachete de Proiect",
@@ -483,12 +483,14 @@
       "whatYouGet": "Ce primești",
       "showMore": "Afișează mai mult",
       "showLess": "Afișează mai puțin",
-      "getQuote": "Obține oferta ta"
+      "getQuote": "Obține oferta ta",
+      "timeline": "Termen"
     },
     "launch": {
       "title": "Pachetul 'Launch'",
       "bestFor": "Ideal pentru: Afaceri care caută o bază profesională, de înaltă performanță pentru a scala.",
       "description": "O construcție completă de site web cu conversie ridicată. O fundație solidă pentru prezența ta digitală.",
+      "timeline": "2-3 zile",
       "features": [
         "Themeing și Branding: Personalizare vizuală profundă.",
         "Design Strategic: Focusat pe conversie și fluxul utilizatorului.",
@@ -501,6 +503,7 @@
       "title": "Pachetul 'Growth'",
       "bestFor": "Ideal pentru: Afaceri care caută o soluție extinsă și colaborare continuă.",
       "description": "Colaborez cu echipa ta pentru a construi o versiune extinsă a planului 'Launch' cu capabilități avansate.",
+      "timeline": "1-2 săptămâni",
       "features": [
         "Tot ce este în 'Launch' + acestea și mai multe:",
         "Integrare CMS: Tu deții și editezi conținutul.",
@@ -513,6 +516,7 @@
       "title": "Soluții Personalizate",
       "bestFor": "Ideal pentru: Afaceri cu nevoi specifice și complexe.",
       "description": "Ai nevoie ca clienții să se autentifice? Ai nevoie de un sistem complex de rezervări sau de un instrument intern personalizat? Putem construi asta.",
+      "timeline": "Variază în funcție de complexitate",
       "features": [
         "Adaptat la cerințele tale specifice",
         "Funcționalitate și integrări complexe",
@@ -539,7 +543,8 @@
       "analytics": {
         "title": "Analytics Pro",
         "benefit": "Configurez urmărirea astfel încât să poți vedea exact de unde vin vizitatorii tăi."
-      }
+      },
+      "contactForPricing": "Contactează pentru prețuri"
     }
   },
   "roiCalculator": {

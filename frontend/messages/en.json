@@ -473,8 +473,8 @@
   },
   "howIPrice": {
     "label": "Pricing",
-    "headline": "How I Price",
-    "subtitle": "Pricing that scales with your needs.",
+    "headline": "Pricing that scales with your needs",
+    "subtitle": "Choose the package that fits your business stage.",
     "intro": "Most websites are pretty, but they don't do much. I build sites that are designed to rank on Google and convert visitors into customers. Plus, you'll be able to edit everything yourself.",
     "packages": {
       "title": "Engagement Models",
@@ -483,12 +483,14 @@
       "whatYouGet": "What you get",
       "showMore": "Show more",
       "showLess": "Show less",
-      "getQuote": "Get your quote"
+      "getQuote": "Get your quote",
+      "timeline": "Timeline"
     },
     "launch": {
       "title": "The 'Launch' Package",
       "bestFor": "Best for: Businesses looking for a professional, high-performance base to scale.",
       "description": "A complete, high-converting website build. A solid foundation for your digital presence.",
+      "timeline": "2-3 days",
       "features": [
         "Theming & Branding: Deep visual customization.",
         "Strategic Design: Focused on conversion and user flow.",
@@ -501,6 +503,7 @@
       "title": "The 'Growth' Package",
       "bestFor": "Best for: Businesses looking for an extended solution and ongoing collaboration.",
       "description": "I collaborate with your team to build an extended version of the 'Launch' plan with advanced capabilities.",
+      "timeline": "1-2 weeks",
       "features": [
         "Everything in 'Launch' + these and more:",
         "CMS Integration: You own and edit your content.",
@@ -513,6 +516,7 @@
       "title": "Custom Solutions",
       "bestFor": "Best for: Businesses with specific, complex needs.",
       "description": "Need a complex web app, SaaS platform, or internal tool? Let's build a solution tailored to your exact requirements.",
+      "timeline": "Varies based on complexity",
       "features": [
         "Tailored to your specific requirements",
         "Complex functionality and integrations",
@@ -539,7 +543,8 @@
       "analytics": {
         "title": "Deep Dive Analytics",
         "benefit": "Custom funnel reports and advanced tracking setup."
-      }
+      },
+      "contactForPricing": "Contact for pricing"
     }
   },
   "roiCalculator": {

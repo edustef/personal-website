@@ -473,8 +473,8 @@
   },
   "howIPrice": {
     "label": "Precios",
-    "headline": "Cómo Calculo los Precios",
-    "subtitle": "Precios que se adaptan a tus necesidades.",
+    "headline": "Precios que se adaptan a tus necesidades",
+    "subtitle": "Elige el paquete que se ajuste a la etapa de tu negocio.",
     "intro": "La mayoría de los sitios web son bonitos, pero no hacen mucho. Construyo sitios diseñados para posicionarse en Google y convertir visitantes en clientes. Además, podrás editar todo tú mismo.",
     "packages": {
       "title": "Modelos de Compromiso",
@@ -483,12 +483,14 @@
       "whatYouGet": "Lo que obtienes",
       "showMore": "Ver más",
       "showLess": "Ver menos",
-      "getQuote": "Obtén tu oferta"
+      "getQuote": "Obtén tu oferta",
+      "timeline": "Cronograma"
     },
     "launch": {
       "title": "El Paquete 'Launch'",
       "bestFor": "Ideal para: Empresas que buscan una base profesional y de alto rendimiento para escalar.",
       "description": "Una construcción de sitio web completa y de alta conversión. Una base sólida para tu presencia digital.",
+      "timeline": "2-3 días",
       "features": [
         "Theming y Branding: Personalización visual profunda.",
         "Diseño Estratégico: Centrado en la conversión y el flujo de usuarios.",
@@ -501,6 +503,7 @@
       "title": "El Paquete 'Growth'",
       "bestFor": "Ideal para: Empresas que buscan una solución ampliada y colaboración continua.",
       "description": "Colaboro con tu equipo para construir una versión ampliada del plan 'Launch' con capacidades avanzadas.",
+      "timeline": "1-2 semanas",
       "features": [
         "Todo en 'Launch' + esto y más:",
         "Integración de CMS: Eres el dueño y editas tu contenido.",
@@ -513,6 +516,7 @@
       "title": "Soluciones Personalizadas",
       "bestFor": "Ideal para: Empresas con necesidades específicas y complejas.",
       "description": "¿Necesitas una aplicación web compleja, una plataforma SaaS o una herramienta interna? Construyamos una solución adaptada a tus requisitos exactos.",
+      "timeline": "Varía según la complejidad",
       "features": [
         "Adaptado a tus requisitos específicos",
         "Funcionalidad e integraciones complejas",
@@ -539,7 +543,8 @@
       "analytics": {
         "title": "Analytics Profundo",
         "benefit": "Informes de embudo personalizados y configuración avanzada de seguimiento."
-      }
+      },
+      "contactForPricing": "Contacta para precios"
     }
   },
   "roiCalculator": {
