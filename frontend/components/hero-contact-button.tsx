@@ -2,18 +2,28 @@
 
 import { trackContactEvent } from "@/lib/tracking";
 
-type HeroContactButtonProps = {
+type HeroContactButtonProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
-  children: React.ReactNode;
 };
 
-export function HeroContactButton({ href, children }: HeroContactButtonProps) {
+export function HeroContactButton({
+  href,
+  children,
+  onClick,
+  ...props
+}: HeroContactButtonProps) {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    trackContactEvent();
+    onClick?.(e);
+  };
+
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={trackContactEvent}
+      onClick={handleClick}
+      {...props}
     >
       {children}
     </a>
