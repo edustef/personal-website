@@ -5,7 +5,7 @@ import posthog from "posthog-js";
 import { Suspense, useEffect, useState } from "react";
 import { COOKIE_CONSENT_EVENT } from "./cookie-banner";
 
-const FB_PIXEL_ID = "754666767159801";
+const FB_PIXEL_ID = "1797213360812301";
 
 declare global {
   interface Window {
