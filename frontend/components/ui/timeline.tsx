@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useTheme } from "next-themes";
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
-import { throttle } from "lodash";
+import { throttle } from "throttle-debounce";
 
 interface TimelineEntry {
   id?: string;
@@ -55,7 +55,7 @@ export const Timeline = ({
       window.removeEventListener("resize", throttledUpdateHeight, { passive: true });
       throttledUpdateHeight.cancel(); // Clean up throttle
     };
-  });
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
