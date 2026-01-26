@@ -11,6 +11,7 @@ import { CookieBanner } from "@/components/cookie-banner";
 import { FacebookPixel } from "@/components/facebook-pixel";
 import { ScrollRestoration } from "@/components/scroll-restoration";
 import { ThemeProvider } from "@/components/theme-provider";
+import { MobileProvider } from "@/contexts/mobile-context";
 import { locales } from "@/i18n/routing";
 import { getCanonicalUrl, getLocalizedSettingsMetadata } from "@/lib/seo";
 import {
@@ -164,23 +165,25 @@ export default async function LocaleLayout(props: Props) {
             __html: sanitizeJsonLd(webSiteSchema),
           }}
         />
-        <NextIntlClientProvider>
-          <ConvexClientProvider>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="dark"
-              enableSystem
-              disableTransitionOnChange
-            >
-              <ScrollRestoration />
-              <Toaster />
-              <FacebookPixel />
-              <CookieBanner />
-              {props.children}
-              <SpeedInsights />
-            </ThemeProvider>
-          </ConvexClientProvider>
-        </NextIntlClientProvider>
+        <MobileProvider>
+          <NextIntlClientProvider>
+            <ConvexClientProvider>
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="dark"
+                enableSystem
+                disableTransitionOnChange
+              >
+                <ScrollRestoration />
+                <Toaster />
+                <FacebookPixel />
+                <CookieBanner />
+                {props.children}
+                <SpeedInsights />
+              </ThemeProvider>
+            </ConvexClientProvider>
+          </NextIntlClientProvider>
+        </MobileProvider>
       </body>
     </html>
   );
