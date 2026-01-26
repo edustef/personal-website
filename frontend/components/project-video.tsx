@@ -49,7 +49,7 @@ export function ProjectVideo({
           }
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.9 }
     );
 
     observer.observe(container);
@@ -74,7 +74,6 @@ export function ProjectVideo({
         muted
         loop
         playsInline
-        autoPlay
         preload="metadata"
         poster={coverImage.src}
         onLoadedData={() => setIsLoaded(true)}
