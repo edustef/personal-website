@@ -29,27 +29,46 @@ export function ProjectVideo({
 
   useEffect(() => {
     const container = containerRef.current;
-    const desktopVideo = desktopVideoRef.current;
-    const mobileVideo = mobileVideoRef.current;
+    const desktopVid = desktopVideoRef.current;
+    const mobileVid = mobileVideoRef.current;
+
+    // Ensure muted attribute is set (required for autoplay on mobile)
+    if (desktopVid) desktopVid.muted = true;
+    if (mobileVid) mobileVid.muted = true;
 
     if (!container) return;
+
+    const playVideos = () => {
+      desktopVid?.play().catch(() => {});
+      mobileVid?.play().catch(() => {});
+    };
+
+    const pauseVideos = () => {
+      desktopVid?.pause();
+      mobileVid?.pause();
+    };
 
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            desktopVideo?.play().catch(() => {});
-            mobileVideo?.play().catch(() => {});
+            playVideos();
           } else {
-            desktopVideo?.pause();
-            mobileVideo?.pause();
+            pauseVideos();
           }
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     observer.observe(container);
+
+    // Also try to play on mount if already visible
+    const rect = container.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (isVisible) {
+      playVideos();
+    }
 
     return () => observer.disconnect();
   }, []);
@@ -72,7 +91,8 @@ export function ProjectVideo({
           muted
           loop
           playsInline
-          preload="metadata"
+          autoPlay
+          preload="auto"
           poster={desktopImage.src}
           onLoadedData={() => setIsLoaded(true)}
           className={cn(
@@ -100,7 +120,8 @@ export function ProjectVideo({
           muted
           loop
           playsInline
-          preload="metadata"
+          autoPlay
+          preload="auto"
           poster={mobileImage.src}
           onLoadedData={() => setIsLoaded(true)}
           className={cn(
