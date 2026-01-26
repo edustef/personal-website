@@ -5,6 +5,13 @@ import type { StaticImageData } from "next/image";
 import { getProjectImages } from "./portfolio-images";
 
 const PORTFOLIO_DIR = path.join(process.cwd(), "content/portfolio");
+const MEDIA_URL = process.env.NEXT_PUBLIC_MEDIA_URL || "";
+
+function getMediaUrl(filename: string): string {
+  if (!filename) return "";
+  if (filename.startsWith("http")) return filename;
+  return `${MEDIA_URL}/${filename}`;
+}
 
 export type ProjectStatus = "live" | "coming-soon";
 
@@ -56,8 +63,8 @@ export async function getPortfolioProjects(locale: string): Promise<Project[]> {
         status: data.status || "live",
         liveUrl: data.liveUrl,
         images: getProjectImages(projectId),
-        desktopVideo: data.desktopVideo,
-        mobileVideo: data.mobileVideo,
+        desktopVideo: getMediaUrl(data.desktopVideo),
+        mobileVideo: getMediaUrl(data.mobileVideo),
         techStack: data.techStack || [],
         date: data.date,
         content,
@@ -93,8 +100,8 @@ export async function getPortfolioProject(
     status: data.status || "live",
     liveUrl: data.liveUrl,
     images: getProjectImages(projectId),
-    desktopVideo: data.desktopVideo,
-    mobileVideo: data.mobileVideo,
+    desktopVideo: getMediaUrl(data.desktopVideo),
+    mobileVideo: getMediaUrl(data.mobileVideo),
     techStack: data.techStack || [],
     date: data.date,
     content,
