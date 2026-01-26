@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useTheme } from "next-themes";
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
+import { throttle } from "lodash";
 
 interface TimelineEntry {
   id?: string;
@@ -42,12 +43,17 @@ export const Timeline = ({
       }
     };
 
+    // Throttle resize to max once per 100ms
+    const throttledUpdateHeight = throttle(updateHeight, 100);
+
     updateHeight();
     const timeoutId = setTimeout(updateHeight, 0);
-    window.addEventListener("resize", updateHeight, { passive: true });
+    window.addEventListener("resize", throttledUpdateHeight, { passive: true });
+
     return () => {
       clearTimeout(timeoutId);
-      window.removeEventListener("resize", updateHeight, { passive: true });
+      window.removeEventListener("resize", throttledUpdateHeight);
+      throttledUpdateHeight.cancel(); // Clean up throttle
     };
   });
 
