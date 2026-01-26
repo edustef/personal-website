@@ -48,11 +48,11 @@ export const Timeline = ({
 
     updateHeight();
     const timeoutId = setTimeout(updateHeight, 0);
-    window.addEventListener("resize", throttledUpdateHeight);
+    window.addEventListener("resize", throttledUpdateHeight, { passive: true });
 
     return () => {
       clearTimeout(timeoutId);
-      window.removeEventListener("resize", throttledUpdateHeight);
+      window.removeEventListener("resize", throttledUpdateHeight, { passive: true });
       (throttledUpdateHeight as { cancel: () => void }).cancel(); // Clean up throttle
     };
   }, []);
