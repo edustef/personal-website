@@ -22,14 +22,15 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "0px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="h-full"
     >
       <Link
         href={`/portfolio/${project.slug}`}
-        className="group block rounded-2xl overflow-hidden bg-muted/50 border border-muted"
+        className="group flex flex-col h-full rounded-2xl overflow-hidden bg-muted/50 border border-muted"
       >
-        {/* Video/Image Container with fade mask */}
+        {/* Video/Image Container with fade mask - portrait on mobile, landscape on desktop */}
         <div
-          className="relative aspect-[16/10] overflow-hidden bg-muted"
+          className="relative aspect-[4/5] md:aspect-[16/10] overflow-hidden bg-muted"
           style={{
             maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
             WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
@@ -63,14 +64,14 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
 
         {/* Content Below Image */}
-        <div className="p-6">
+        <div className="p-6 flex flex-col flex-grow">
           <p className="text-sm font-medium text-primary mb-2">
             {project.category}
           </p>
           <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
             {project.title}
           </h3>
-          <p className="text-muted-foreground text-sm md:text-base line-clamp-2">
+          <p className="text-muted-foreground text-sm md:text-base line-clamp-2 mt-auto">
             {project.description}
           </p>
         </div>

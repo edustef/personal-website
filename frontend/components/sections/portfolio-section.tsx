@@ -50,16 +50,18 @@ export default async function PortfolioSection() {
         {/* Mobile Carousel */}
         <div className="md:hidden">
           <Carousel className="w-full" aria-label={t("headline")}>
-            <CarouselContent className="-ml-4 px-4 pb-4">
+            <CarouselContent className="-ml-4 px-4 pb-4 items-stretch">
               {projects.map((project, index) => (
                 <CarouselItem
                   key={project.id}
                   className={cn(
-                    "pl-4 basis-[85%]",
+                    "pl-4 basis-[85%] h-auto",
                     index === projects.length - 1 && "mr-4"
                   )}
                 >
-                  <ProjectCard project={project} index={index} />
+                  <div className="h-full">
+                    <ProjectCard project={project} index={index} />
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
