@@ -47,7 +47,7 @@ export const Timeline = ({
     window.addEventListener("resize", updateHeight, { passive: true });
     return () => {
       clearTimeout(timeoutId);
-      window.removeEventListener("resize", updateHeight);
+      window.removeEventListener("resize", updateHeight, { passive: true });
     };
   });
 
