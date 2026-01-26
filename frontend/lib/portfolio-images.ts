@@ -18,11 +18,7 @@ export const projectImages: Record<string, ProjectImages> = {
     desktop: barbershopDesktop,
     mobile: barbershopMobile,
   },
-  omnishoppingapp: {
-    // Reuse citadella images as placeholder for coming-soon project
-    desktop: citadellaDesktop,
-    mobile: citadellaMobile,
-  },
+  // omnishoppingapp has no images yet (coming-soon project)
 };
 
 export function getProjectImages(projectId: string): ProjectImages | null {

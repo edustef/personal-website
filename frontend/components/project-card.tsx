@@ -25,11 +25,11 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
     >
       <Link
         href={`/portfolio/${project.slug}`}
-        className="group block relative rounded-2xl overflow-hidden bg-muted/50 border border-muted"
+        className="group block rounded-2xl overflow-hidden bg-muted/50 border border-muted"
       >
         {/* Video/Image Container */}
-        <div className="relative aspect-[16/10] overflow-hidden">
-          {project.images && (
+        <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+          {project.images ? (
             <ProjectVideo
               desktopVideo={project.desktopVideo}
               mobileVideo={project.mobileVideo}
@@ -38,7 +38,16 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               title={project.title}
               className="absolute inset-0 transition-transform duration-500 group-hover:scale-[1.02]"
             />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-4xl font-bold text-muted-foreground/20">
+                {project.title.charAt(0)}
+              </span>
+            </div>
           )}
+
+          {/* Bottom fade mask */}
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-muted/50 to-transparent" />
 
           {/* Coming Soon Badge */}
           {project.status === "coming-soon" && (
@@ -48,22 +57,19 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               </Badge>
             </div>
           )}
+        </div>
 
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-
-          {/* Content Overlay */}
-          <div className="absolute bottom-0 left-0 right-0 p-6">
-            <p className="text-sm font-medium text-primary mb-2">
-              {project.category}
-            </p>
-            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2">
-              {project.title}
-            </h3>
-            <p className="text-muted-foreground text-sm md:text-base line-clamp-2">
-              {project.description}
-            </p>
-          </div>
+        {/* Content Below Image */}
+        <div className="p-6">
+          <p className="text-sm font-medium text-primary mb-2">
+            {project.category}
+          </p>
+          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+            {project.title}
+          </h3>
+          <p className="text-muted-foreground text-sm md:text-base line-clamp-2">
+            {project.description}
+          </p>
         </div>
       </Link>
     </motion.div>
