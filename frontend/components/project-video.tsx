@@ -46,7 +46,7 @@ export function ProjectVideo({
           }
         }
       },
-      { threshold: 0.9 }
+      { threshold: 0.5 }
     );
 
     observer.observe(container);
