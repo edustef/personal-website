@@ -27,8 +27,14 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         href={`/portfolio/${project.slug}`}
         className="group block rounded-2xl overflow-hidden bg-muted/50 border border-muted"
       >
-        {/* Video/Image Container */}
-        <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+        {/* Video/Image Container with fade mask */}
+        <div
+          className="relative aspect-[16/10] overflow-hidden bg-muted"
+          style={{
+            maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
+          }}
+        >
           {project.images ? (
             <ProjectVideo
               desktopVideo={project.desktopVideo}
@@ -45,9 +51,6 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               </span>
             </div>
           )}
-
-          {/* Bottom fade mask */}
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-muted via-muted/60 to-transparent" />
 
           {/* Coming Soon Badge */}
           {project.status === "coming-soon" && (
