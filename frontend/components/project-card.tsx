@@ -26,16 +26,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
     >
       <Link
         href={`/portfolio/${project.slug}`}
-        className="group flex flex-col h-full rounded-2xl overflow-hidden bg-muted/50 border border-muted"
+        className="group block h-full rounded-2xl overflow-hidden bg-muted"
       >
-        {/* Video/Image Container with fade mask - portrait on mobile, landscape on desktop */}
-        <div
-          className="relative aspect-[4/5] md:aspect-[16/10] overflow-hidden bg-muted"
-          style={{
-            maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
-          }}
-        >
+        <div className="relative aspect-[4/5] md:aspect-[4/5] overflow-hidden">
+          {/* Video/Image */}
           {project.images ? (
             <ProjectVideo
               desktopVideo={project.desktopVideo}
@@ -46,34 +40,34 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               className="absolute inset-0 transition-transform duration-500 group-hover:scale-[1.02]"
             />
           ) : (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-4xl font-bold text-muted-foreground/20">
+            <div className="absolute inset-0 flex items-center justify-center bg-muted">
+              <span className="text-6xl font-bold text-muted-foreground/20">
                 {project.title.charAt(0)}
               </span>
             </div>
           )}
 
+          {/* Top gradient for text readability */}
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/60 to-transparent z-10" />
+
+          {/* Text overlay at top */}
+          <div className="absolute top-0 left-0 right-0 p-6 z-20">
+            <p className="text-sm font-medium text-white/80 mb-1">
+              {project.category}
+            </p>
+            <h3 className="text-xl md:text-2xl font-semibold text-white">
+              {project.title}
+            </h3>
+          </div>
+
           {/* Coming Soon Badge */}
           {project.status === "coming-soon" && (
-            <div className="absolute top-4 right-4 z-10">
-              <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm">
+            <div className="absolute bottom-4 right-4 z-20">
+              <Badge variant="secondary" className="bg-white/20 text-white backdrop-blur-sm border-0">
                 {t("comingSoon")}
               </Badge>
             </div>
           )}
-        </div>
-
-        {/* Content Below Image */}
-        <div className="p-6 flex flex-col flex-grow">
-          <p className="text-sm font-medium text-primary mb-2">
-            {project.category}
-          </p>
-          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-            {project.title}
-          </h3>
-          <p className="text-muted-foreground text-sm md:text-base line-clamp-2 mt-auto">
-            {project.description}
-          </p>
         </div>
       </Link>
     </motion.div>
