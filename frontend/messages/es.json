@@ -638,6 +638,22 @@
     "noResultsDescription": "Intenta ajustar tu búsqueda o filtro para encontrar lo que buscas.",
     "clearFilters": "Limpiar filtros"
   },
+  "portfolio": {
+    "label": "Portafolio",
+    "headline": "Trabajos Destacados",
+    "subtitle": "Proyectos reales, resultados reales. Descubre cómo ayudo a las empresas a tener éxito en línea.",
+    "viewProject": "Ver Proyecto",
+    "viewLive": "Ver Sitio en Vivo",
+    "comingSoon": "Próximamente",
+    "techStack": "Tecnologías",
+    "backToPortfolio": "Volver al Portafolio",
+    "nextProject": "Siguiente Proyecto",
+    "previousProject": "Proyecto Anterior",
+    "challenge": "El Desafío",
+    "solution": "La Solución",
+    "features": "Características Principales",
+    "results": "Resultados"
+  },
   "stats": {
     "label": "En Números",
     "headline": "Resultados Que Hablan",

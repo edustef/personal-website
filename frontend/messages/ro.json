@@ -638,6 +638,22 @@
     "noResultsDescription": "Încearcă să ajustezi căutarea sau filtrul pentru a găsi ceea ce cauți.",
     "clearFilters": "Șterge filtrele"
   },
+  "portfolio": {
+    "label": "Portofoliu",
+    "headline": "Lucrări Recente",
+    "subtitle": "Proiecte reale, rezultate reale. Vezi cum ajut afacerile să reușească online.",
+    "viewProject": "Vezi Proiectul",
+    "viewLive": "Vezi Site-ul Live",
+    "comingSoon": "În Curând",
+    "techStack": "Tehnologii",
+    "backToPortfolio": "Înapoi la Portofoliu",
+    "nextProject": "Proiectul Următor",
+    "previousProject": "Proiectul Anterior",
+    "challenge": "Provocarea",
+    "solution": "Soluția",
+    "features": "Caracteristici Cheie",
+    "results": "Rezultate"
+  },
   "stats": {
     "label": "În Cifre",
     "headline": "Rezultate Care Vorbesc",

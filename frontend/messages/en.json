@@ -638,6 +638,22 @@
     "noResultsDescription": "Try adjusting your search or filter to find what you're looking for.",
     "clearFilters": "Clear filters"
   },
+  "portfolio": {
+    "label": "Portfolio",
+    "headline": "Featured Work",
+    "subtitle": "Real projects, real results. See how I help businesses succeed online.",
+    "viewProject": "View Project",
+    "viewLive": "View Live Site",
+    "comingSoon": "Coming Soon",
+    "techStack": "Tech Stack",
+    "backToPortfolio": "Back to Portfolio",
+    "nextProject": "Next Project",
+    "previousProject": "Previous Project",
+    "challenge": "The Challenge",
+    "solution": "The Solution",
+    "features": "Key Features",
+    "results": "Results"
+  },
   "stats": {
     "label": "By The Numbers",
     "headline": "Results That Speak",
