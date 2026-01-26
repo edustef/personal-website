@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function useReadingProgress(selector: string = "article") {
+export function useReadingProgress(selector = "article") {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export function useReadingProgress(selector: string = "article") {
         bottom: window.innerHeight,
         height: window.innerHeight,
       };
-      
+
       const windowHeight = rootBounds.height;
       const elementHeight = rect.height;
       const elementTop = rect.top;
@@ -45,7 +45,7 @@ export function useReadingProgress(selector: string = "article") {
     const observerOptions: IntersectionObserverInit = {
       root: null,
       rootMargin: "0px",
-      threshold: Array.from({ length: 101 }, (_, i) => i / 100),
+      threshold: Array.from({ length: 20 }, (_, i) => i / 19), // 0, 0.05, 0.1, ..., 1.0
     };
 
     const observer = new IntersectionObserver((entries) => {
