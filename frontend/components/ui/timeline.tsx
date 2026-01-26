@@ -44,7 +44,7 @@ export const Timeline = ({
 
     updateHeight();
     const timeoutId = setTimeout(updateHeight, 0);
-    window.addEventListener("resize", updateHeight);
+    window.addEventListener("resize", updateHeight, { passive: true });
     return () => {
       clearTimeout(timeoutId);
       window.removeEventListener("resize", updateHeight);
