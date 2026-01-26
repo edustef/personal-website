@@ -29,13 +29,16 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       >
         {/* Video/Image Container */}
         <div className="relative aspect-[16/10] overflow-hidden">
-          <ProjectVideo
-            desktopVideo={project.desktopVideo}
-            mobileVideo={project.mobileVideo}
-            coverImage={project.coverImage}
-            title={project.title}
-            className="absolute inset-0 transition-transform duration-500 group-hover:scale-[1.02]"
-          />
+          {project.images && (
+            <ProjectVideo
+              desktopVideo={project.desktopVideo}
+              mobileVideo={project.mobileVideo}
+              desktopImage={project.images.desktop}
+              mobileImage={project.images.mobile}
+              title={project.title}
+              className="absolute inset-0 transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+          )}
 
           {/* Coming Soon Badge */}
           {project.status === "coming-soon" && (

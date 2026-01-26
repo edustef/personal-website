@@ -2,12 +2,15 @@
 
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
+import type { StaticImageData } from "next/image";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 type ProjectVideoProps = {
   desktopVideo: string;
   mobileVideo: string;
-  coverImage: string;
+  desktopImage: StaticImageData;
+  mobileImage: StaticImageData;
   title: string;
   className?: string;
 };
@@ -15,7 +18,8 @@ type ProjectVideoProps = {
 export function ProjectVideo({
   desktopVideo,
   mobileVideo,
-  coverImage,
+  desktopImage,
+  mobileImage,
   title,
   className,
 }: ProjectVideoProps) {
@@ -25,6 +29,7 @@ export function ProjectVideo({
   const [isLoaded, setIsLoaded] = useState(false);
 
   const videoSrc = isMobile ? mobileVideo : desktopVideo;
+  const coverImage = isMobile ? mobileImage : desktopImage;
 
   useEffect(() => {
     const video = videoRef.current;
@@ -56,10 +61,12 @@ export function ProjectVideo({
     <div ref={containerRef} className={cn("relative overflow-hidden", className)}>
       {/* Fallback image shown until video loads */}
       {!isLoaded && (
-        <img
+        <Image
           src={coverImage}
           alt={title}
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          className="object-cover"
+          priority
         />
       )}
       <video
@@ -69,7 +76,7 @@ export function ProjectVideo({
         playsInline
         autoPlay
         preload="metadata"
-        poster={coverImage}
+        poster={coverImage.src}
         onLoadedData={() => setIsLoaded(true)}
         className={cn(
           "w-full h-full object-cover transition-opacity duration-300",

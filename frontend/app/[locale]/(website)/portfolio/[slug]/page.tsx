@@ -96,13 +96,16 @@ export default async function PortfolioProjectPage({
         {/* Hero Video */}
         <div className="relative rounded-2xl overflow-hidden mb-8">
           <div className="aspect-video">
-            <ProjectVideo
-              desktopVideo={project.desktopVideo}
-              mobileVideo={project.mobileVideo}
-              coverImage={project.coverImage}
-              title={project.title}
-              className="absolute inset-0"
-            />
+            {project.images && (
+              <ProjectVideo
+                desktopVideo={project.desktopVideo}
+                mobileVideo={project.mobileVideo}
+                desktopImage={project.images.desktop}
+                mobileImage={project.images.mobile}
+                title={project.title}
+                className="absolute inset-0"
+              />
+            )}
           </div>
           {project.status === "coming-soon" && (
             <div className="absolute top-4 right-4">

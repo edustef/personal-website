@@ -1,10 +1,17 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import type { StaticImageData } from "next/image";
+import { getProjectImages } from "./portfolio-images";
 
 const PORTFOLIO_DIR = path.join(process.cwd(), "content/portfolio");
 
 export type ProjectStatus = "live" | "coming-soon";
+
+export type ProjectImages = {
+  desktop: StaticImageData;
+  mobile: StaticImageData;
+};
 
 export type Project = {
   id: string;
@@ -14,7 +21,7 @@ export type Project = {
   category: string;
   status: ProjectStatus;
   liveUrl?: string;
-  coverImage: string;
+  images: ProjectImages | null;
   desktopVideo: string;
   mobileVideo: string;
   techStack: string[];
@@ -39,15 +46,16 @@ export async function getPortfolioProjects(locale: string): Promise<Project[]> {
       const fileContent = fs.readFileSync(filePath, "utf8");
       const { data, content } = matter(fileContent);
 
+      const projectId = data.id || file.replace(".mdx", "");
       return {
-        id: data.id || file.replace(".mdx", ""),
+        id: projectId,
         slug: file.replace(".mdx", ""),
         title: data.title,
         description: data.description,
         category: data.category,
         status: data.status || "live",
         liveUrl: data.liveUrl,
-        coverImage: data.coverImage,
+        images: getProjectImages(projectId),
         desktopVideo: data.desktopVideo,
         mobileVideo: data.mobileVideo,
         techStack: data.techStack || [],
@@ -75,15 +83,16 @@ export async function getPortfolioProject(
   const fileContent = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContent);
 
+  const projectId = data.id || slug;
   return {
-    id: data.id || slug,
+    id: projectId,
     slug,
     title: data.title,
     description: data.description,
     category: data.category,
     status: data.status || "live",
     liveUrl: data.liveUrl,
-    coverImage: data.coverImage,
+    images: getProjectImages(projectId),
     desktopVideo: data.desktopVideo,
     mobileVideo: data.mobileVideo,
     techStack: data.techStack || [],
