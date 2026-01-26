@@ -52,7 +52,7 @@ export const Timeline = ({
 
     return () => {
       clearTimeout(timeoutId);
-      window.removeEventListener("resize", throttledUpdateHeight, { passive: true });
+      window.removeEventListener("resize", throttledUpdateHeight);
       (throttledUpdateHeight as { cancel: () => void }).cancel(); // Clean up throttle
     };
   }, []);
