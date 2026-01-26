@@ -31,5 +31,9 @@ export const routing = defineRouting({
     },
     "/blog": "/blog",
     "/blog/[slug]": "/blog/[slug]",
+    "/back-to-00s": {
+      ro: "/inapoi-in-anii-00",
+      es: "/volver-a-los-00",
+    },
   },
 });

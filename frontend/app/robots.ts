@@ -9,6 +9,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: [
+          "/back-to-00s",
+          "/*/back-to-00s",
+          "/*/inapoi-in-anii-00",
+          "/*/volver-a-los-00",
+        ],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
