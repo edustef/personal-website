@@ -44,16 +44,16 @@ export const Timeline = ({
     };
 
     // Throttle resize to max once per 100ms
-    const throttledUpdateHeight = throttle(updateHeight, 100);
+    const throttledUpdateHeight = throttle(100, updateHeight);
 
     updateHeight();
     const timeoutId = setTimeout(updateHeight, 0);
-    window.addEventListener("resize", throttledUpdateHeight, { passive: true });
+    window.addEventListener("resize", throttledUpdateHeight);
 
     return () => {
       clearTimeout(timeoutId);
-      window.removeEventListener("resize", throttledUpdateHeight, { passive: true });
-      throttledUpdateHeight.cancel(); // Clean up throttle
+      window.removeEventListener("resize", throttledUpdateHeight);
+      (throttledUpdateHeight as { cancel: () => void }).cancel(); // Clean up throttle
     };
   }, []);
 
