@@ -16,8 +16,6 @@ export default async function WebsiteLayout(props: Props) {
   const params = await props.params;
   const { locale } = params;
 
-  console.log(props.languageToggle);
-
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
