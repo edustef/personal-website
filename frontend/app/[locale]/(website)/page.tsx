@@ -5,6 +5,7 @@ import AboutMeSection from "@/components/sections/about-me-section";
 import ContactSection from "@/components/sections/contact-section";
 import HowIPriceSection from "@/components/sections/how-i-price-section";
 import HowIWorkSection from "@/components/sections/how-i-work-section";
+import PortfolioSection from "@/components/sections/portfolio-section";
 import ServicesSection from "@/components/sections/services-section";
 import ToolsSection from "@/components/sections/tools-section";
 import { BackgroundPaperShaders } from "@/components/ui/background-paper-shaders";
@@ -103,6 +104,8 @@ export default async function Page(props: Props) {
       <HeroSection />
 
       <ServicesSection />
+
+      <PortfolioSection />
 
       <ToolsSection />
 
