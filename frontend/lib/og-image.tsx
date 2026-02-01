@@ -35,7 +35,11 @@ async function loadAssets() {
   return { bgImageSrc, cardoBold, cardoRegular };
 }
 
-export async function generateOgImage(title: string, siteName = "eduardbme.com") {
+export async function generateOgImage(
+  title: string,
+  cta = "Learn More",
+  siteName = "eduardstefan.dev"
+) {
   const { bgImageSrc, cardoBold, cardoRegular } = await loadAssets();
 
   return new ImageResponse(
@@ -46,8 +50,6 @@ export async function generateOgImage(title: string, siteName = "eduardbme.com")
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
           position: "relative",
         }}
       >
@@ -70,43 +72,57 @@ export async function generateOgImage(title: string, siteName = "eduardbme.com")
           style={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
+            alignItems: "flex-start",
             justifyContent: "center",
-            padding: "60px 80px",
-            textAlign: "center",
+            padding: "80px",
             position: "relative",
             height: "100%",
           }}
         >
+          {/* Site Name */}
+          <div
+            style={{
+              fontSize: 24,
+              fontFamily: "Cardo",
+              fontWeight: 400,
+              color: "#a1a1aa",
+              marginBottom: 24,
+            }}
+          >
+            {siteName}
+          </div>
+
           {/* Title */}
           <div
             style={{
-              fontSize: 60,
+              fontSize: 64,
               fontFamily: "Cardo",
               fontWeight: 700,
               color: "#ffffff",
               lineHeight: 1.2,
-              maxWidth: "1000px",
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
+              maxWidth: "900px",
+              marginBottom: 40,
             }}
           >
             {title}
           </div>
 
-          {/* Site Name */}
+          {/* CTA Button */}
           <div
             style={{
-              position: "absolute",
-              bottom: 60,
-              fontSize: 24,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "16px 32px",
+              backgroundColor: "#ffffff",
+              borderRadius: 8,
+              fontSize: 20,
               fontFamily: "Cardo",
-              fontWeight: 400,
-              color: "#a1a1aa",
+              fontWeight: 700,
+              color: "#0a0a0a",
             }}
           >
-            {siteName}
+            {cta}
           </div>
         </div>
       </div>
