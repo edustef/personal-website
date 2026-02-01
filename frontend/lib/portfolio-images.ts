@@ -2,6 +2,8 @@ import citadellaDesktop from "@/assets/projects/citadella/citadella-desktop.png"
 import citadellaMobile from "@/assets/projects/citadella/citadella-mobile.png";
 import barbershopDesktop from "@/assets/projects/barbershop/barbershop-desktop.png";
 import barbershopMobile from "@/assets/projects/barbershop/barbershop-mobile.png";
+import omniDesktop from "@/assets/projects/omni/omni-shopping-app-desktop.png";
+import omniMobile from "@/assets/projects/omni/omni-shopping-app-mobile.png";
 import type { StaticImageData } from "next/image";
 
 type ProjectImages = {
@@ -18,7 +20,10 @@ export const projectImages: Record<string, ProjectImages> = {
     desktop: barbershopDesktop,
     mobile: barbershopMobile,
   },
-  // omnishoppingapp has no images yet (coming-soon project)
+  omnishoppingapp: {
+    desktop: omniDesktop,
+    mobile: omniMobile,
+  },
 };
 
 export function getProjectImages(projectId: string): ProjectImages | null {
