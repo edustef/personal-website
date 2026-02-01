@@ -1,6 +1,4 @@
 import { ImageResponse } from "next/og";
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
 
 export const OG_SIZE = {
   width: 1200,
@@ -9,12 +7,21 @@ export const OG_SIZE = {
 
 export const OG_CONTENT_TYPE = "image/png";
 
+function getBaseUrl() {
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  return "http://localhost:3000";
+}
+
 async function loadAssets() {
-  // Load background image as base64
-  const bgImageData = await readFile(
-    join(process.cwd(), "assets/images/opengraph-bg.png")
+  const baseUrl = getBaseUrl();
+
+  // Load background image from public folder
+  const bgImageData = await fetch(`${baseUrl}/opengraph-bg.png`).then((res) =>
+    res.arrayBuffer()
   );
-  const bgImageSrc = `data:image/png;base64,${bgImageData.toString("base64")}`;
+  const bgImageSrc = `data:image/png;base64,${Buffer.from(bgImageData).toString("base64")}`;
 
   // Load Cardo font from Google Fonts
   const cardoBold = await fetch(
