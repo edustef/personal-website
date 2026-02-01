@@ -79,19 +79,6 @@ export async function generateOgImage(
             height: "100%",
           }}
         >
-          {/* Site Name */}
-          <div
-            style={{
-              fontSize: 24,
-              fontFamily: "Cardo",
-              fontWeight: 400,
-              color: "#a1a1aa",
-              marginBottom: 24,
-            }}
-          >
-            {siteName}
-          </div>
-
           {/* Title */}
           <div
             style={{
@@ -123,6 +110,21 @@ export async function generateOgImage(
             }}
           >
             {cta}
+          </div>
+
+          {/* Site Name - Bottom Right */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: 80,
+              right: 80,
+              fontSize: 24,
+              fontFamily: "Cardo",
+              fontWeight: 400,
+              color: "#a1a1aa",
+            }}
+          >
+            {siteName}
           </div>
         </div>
       </div>
