@@ -1,41 +1,58 @@
 ---
 id: omnishoppingapp
 title: "OmniShoppingApp"
-description: "Una plataforma de e-commerce de próxima generación que unifica la experiencia de compra a través de múltiples marcas y canales."
-category: "Plataforma E-commerce"
+description: "Una app de generador de recetas y lista de compras con IA que simplifica la planificación de comidas y las compras."
+category: "App Móvil"
 status: coming-soon
 liveUrl: "https://omnishoppingapp.com/"
 desktopVideo: "citadella-desktop-video.mp4"
 mobileVideo: "citadella-mobile-video.mp4"
-techStack: ["Next.js", "React Native", "Node.js", "PostgreSQL", "Stripe"]
+techStack: ["Next.js", "React Native", "Node.js", "PostgreSQL", "OpenAI"]
 date: "2025-01-01"
 ---
 
 ## La Visión
 
-OmniShoppingApp se está construyendo para resolver una frustración común: comprar en múltiples marcas significa manejar múltiples apps, cuentas y procesos de pago. Estamos creando una plataforma unificada que lo reúne todo.
+OmniShoppingApp se está construyendo para resolver una frustración común: planificar comidas y gestionar las compras lleva demasiado tiempo y energía mental. Estamos creando una app inteligente que genera recetas basadas en tus preferencias y crea automáticamente listas de compras organizadas.
 
-Imagina navegar productos de tus marcas favoritas, añadir artículos a un solo carrito y pagar una vez, sin importar de cuántas tiendas diferentes vengan tus artículos.
+Imagina decirle a la app lo que te apetece, tus restricciones dietéticas y para cuántas personas vas a cocinar, y obtener recetas personalizadas con una lista de compras lista para usar organizada por pasillo de tienda.
 
 ## Características Planeadas
 
-**Carrito de Compras Unificado**
-Un carrito para todas las marcas. Añade artículos de múltiples tiendas y completa un solo checkout.
+**Generación de Recetas con IA**
+Describe lo que quieres comer en lenguaje natural. La IA entiende los ingredientes que tienes, necesidades dietéticas, nivel de habilidad culinaria y restricciones de tiempo para sugerir recetas perfectas.
 
-**Búsqueda Inteligente y Descubrimiento**
-Búsqueda potenciada por IA que entiende consultas en lenguaje natural.
+**Listas de Compras Inteligentes**
+Las recetas generan automáticamente listas de compras. Los artículos se organizan por categoría, las cantidades se ajustan según las porciones, y la app recuerda lo que normalmente tienes en casa.
 
-**Recomendaciones Personalizadas**
-Algoritmos de machine learning que aprenden tus preferencias con el tiempo.
+**Calendario de Planificación de Comidas**
+Planifica las comidas de tu semana por adelantado. Arrastra y suelta recetas a diferentes días, y la app consolida todos los ingredientes en una lista de compras eficiente.
 
-**Checkout Sin Fricciones**
-Guarda tus métodos de pago y direcciones de envío una vez. Integración con Apple Pay y Google Pay.
+**Gestión de Despensa**
+Controla lo que tienes en tu cocina. La app sugiere recetas basadas en ingredientes que ya tienes y te alerta cuando los básicos se están agotando.
 
-**Seguimiento de Pedidos en Tiempo Real**
-Rastrea todos tus pedidos de todas las marcas en un solo lugar.
+**Información Nutricional**
+Ve la información nutricional de cada receta y rastrea tu consumo semanal. Establece objetivos de calorías, proteínas u otros macros y obtén sugerencias de recetas que encajen.
+
+## Arquitectura Técnica
+
+**Frontend**
+- Next.js para la aplicación web con renderizado del lado del servidor
+- React Native para apps iOS y Android compartiendo el 80% del código
+- Tailwind CSS para estilos consistentes en todas las plataformas
+
+**Backend**
+- API Node.js con GraphQL para obtención eficiente de datos
+- PostgreSQL para almacenamiento confiable de datos
+- Redis para caché y funciones en tiempo real
+
+**IA e Integraciones**
+- API de OpenAI para generación de recetas en lenguaje natural
+- Modelos ML personalizados para recomendaciones personalizadas
+- Integración de base de datos nutricional para seguimiento preciso de macros
 
 ## Estado Actual
 
-OmniShoppingApp está actualmente en desarrollo activo. Lanzamiento esperado: Q2 2026.
+OmniShoppingApp está actualmente en desarrollo activo. Estamos construyendo el motor central de generación de recetas y refinando la experiencia de lista de compras. Lanzamiento esperado: Q2 2026.
 
 ¿Quieres ser notificado cuando lancemos? Visita [omnishoppingapp.com](https://omnishoppingapp.com/) para unirte a la lista de espera.
