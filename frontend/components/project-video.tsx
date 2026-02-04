@@ -25,7 +25,8 @@ export function ProjectVideo({
   const desktopVideoRef = useRef<HTMLVideoElement>(null);
   const mobileVideoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [desktopLoaded, setDesktopLoaded] = useState(false);
+  const [mobileLoaded, setMobileLoaded] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -39,6 +40,7 @@ export function ProjectVideo({
     if (!container) return;
 
     const playVideos = () => {
+      // Use catch to silently handle AbortError (happens when play/pause race)
       desktopVid?.play().catch(() => {});
       mobileVid?.play().catch(() => {});
     };
@@ -63,13 +65,6 @@ export function ProjectVideo({
 
     observer.observe(container);
 
-    // Also try to play on mount if already visible
-    const rect = container.getBoundingClientRect();
-    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-    if (isVisible) {
-      playVideos();
-    }
-
     return () => observer.disconnect();
   }, []);
 
@@ -77,7 +72,7 @@ export function ProjectVideo({
     <div ref={containerRef} className={cn("relative overflow-hidden", className)}>
       {/* Desktop version */}
       <div className="hidden md:block absolute inset-0">
-        {!isLoaded && (
+        {!desktopLoaded && (
           <Image
             src={desktopImage}
             alt={title}
@@ -88,25 +83,24 @@ export function ProjectVideo({
         )}
         <video
           ref={desktopVideoRef}
+          src={desktopVideo}
           muted
           loop
           playsInline
           autoPlay
           preload="auto"
           poster={desktopImage.src}
-          onLoadedData={() => setIsLoaded(true)}
+          onCanPlay={() => setDesktopLoaded(true)}
           className={cn(
             "w-full h-full object-cover transition-opacity duration-300",
-            isLoaded ? "opacity-100" : "opacity-0"
+            desktopLoaded ? "opacity-100" : "opacity-0"
           )}
-        >
-          <source src={desktopVideo} type="video/mp4" />
-        </video>
+        />
       </div>
 
       {/* Mobile version */}
       <div className="md:hidden absolute inset-0">
-        {!isLoaded && (
+        {!mobileLoaded && (
           <Image
             src={mobileImage}
             alt={title}
@@ -117,20 +111,19 @@ export function ProjectVideo({
         )}
         <video
           ref={mobileVideoRef}
+          src={mobileVideo}
           muted
           loop
           playsInline
           autoPlay
           preload="auto"
           poster={mobileImage.src}
-          onLoadedData={() => setIsLoaded(true)}
+          onCanPlay={() => setMobileLoaded(true)}
           className={cn(
             "w-full h-full object-cover transition-opacity duration-300",
-            isLoaded ? "opacity-100" : "opacity-0"
+            mobileLoaded ? "opacity-100" : "opacity-0"
           )}
-        >
-          <source src={mobileVideo} type="video/mp4" />
-        </video>
+        />
       </div>
     </div>
   );
