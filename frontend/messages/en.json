@@ -641,10 +641,11 @@
   "portfolio": {
     "label": "Portfolio",
     "headline": "Featured Work",
-    "subtitle": "Real projects, real results. See how I help businesses succeed online.",
+    "subtitle": "A selection of projects showcasing my approach to building modern web experiences.",
     "viewProject": "View Project",
     "viewLive": "View Live Site",
     "comingSoon": "Coming Soon",
+    "moreComing": "More coming soon...",
     "techStack": "Tech Stack",
     "backToPortfolio": "Back to Portfolio",
     "nextProject": "Next Project",

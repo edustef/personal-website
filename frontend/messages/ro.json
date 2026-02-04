@@ -641,10 +641,11 @@
   "portfolio": {
     "label": "Portofoliu",
     "headline": "Lucrări Recente",
-    "subtitle": "Proiecte reale, rezultate reale. Vezi cum ajut afacerile să reușească online.",
+    "subtitle": "O selecție de proiecte care demonstrează abordarea mea în crearea experiențelor web moderne.",
     "viewProject": "Vezi Proiectul",
     "viewLive": "Vezi Site-ul Live",
     "comingSoon": "În Curând",
+    "moreComing": "Mai multe în curând...",
     "techStack": "Tehnologii",
     "backToPortfolio": "Înapoi la Portofoliu",
     "nextProject": "Proiectul Următor",

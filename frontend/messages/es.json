@@ -641,10 +641,11 @@
   "portfolio": {
     "label": "Portafolio",
     "headline": "Trabajos Destacados",
-    "subtitle": "Proyectos reales, resultados reales. Descubre cómo ayudo a las empresas a tener éxito en línea.",
+    "subtitle": "Una selección de proyectos que demuestran mi enfoque para crear experiencias web modernas.",
     "viewProject": "Ver Proyecto",
     "viewLive": "Ver Sitio en Vivo",
     "comingSoon": "Próximamente",
+    "moreComing": "Más próximamente...",
     "techStack": "Tecnologías",
     "backToPortfolio": "Volver al Portafolio",
     "nextProject": "Siguiente Proyecto",

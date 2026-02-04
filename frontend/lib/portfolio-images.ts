@@ -4,6 +4,8 @@ import barbershopDesktop from "@/assets/projects/barbershop/barbershop-desktop.p
 import barbershopMobile from "@/assets/projects/barbershop/barbershop-mobile.png";
 import omniDesktop from "@/assets/projects/omni/omni-shopping-app-desktop.png";
 import omniMobile from "@/assets/projects/omni/omni-shopping-app-mobile.png";
+import framebackDesktop from "@/assets/projects/frameback/frameback-desktop.png";
+import framebackMobile from "@/assets/projects/frameback/frameback-mobile.png";
 import type { StaticImageData } from "next/image";
 
 type ProjectImages = {
@@ -23,6 +25,10 @@ export const projectImages: Record<string, ProjectImages> = {
   omnishoppingapp: {
     desktop: omniDesktop,
     mobile: omniMobile,
+  },
+  frameback: {
+    desktop: framebackDesktop,
+    mobile: framebackMobile,
   },
 };
 

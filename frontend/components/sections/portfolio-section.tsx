@@ -9,6 +9,7 @@ import {
 import { getPortfolioProjects } from "@/lib/portfolio";
 import { cn } from "@/lib/utils";
 import { getLocale, getTranslations } from "next-intl/server";
+import { Sparkles } from "lucide-react";
 
 export default async function PortfolioSection() {
   const locale = await getLocale();
@@ -41,10 +42,17 @@ export default async function PortfolioSection() {
         </AnimatedContainer>
 
         {/* Desktop Grid */}
-        <div className="hidden md:grid grid-cols-2 gap-6 px-4 md:px-0">
+        <div className="hidden md:grid grid-cols-3 gap-6 px-4 md:px-0">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
+          {/* Coming Soon Placeholder */}
+          <div className="flex flex-col gap-3 h-full rounded-2xl border-2 border-dashed border-primary/40 items-center justify-center min-h-[300px] bg-primary/5">
+            <Sparkles className="size-8 text-primary" />
+            <span className="text-foreground text-xl font-semibold">
+              {t("moreComing")}
+            </span>
+          </div>
         </div>
 
         {/* Mobile Carousel */}
@@ -54,16 +62,22 @@ export default async function PortfolioSection() {
               {projects.map((project, index) => (
                 <CarouselItem
                   key={project.id}
-                  className={cn(
-                    "pl-4 basis-[85%] h-auto",
-                    index === projects.length - 1 && "mr-4"
-                  )}
+                  className="pl-4 basis-[85%] h-auto"
                 >
                   <div className="h-full">
                     <ProjectCard project={project} index={index} />
                   </div>
                 </CarouselItem>
               ))}
+              {/* Coming Soon Placeholder */}
+              <CarouselItem className="pl-4 basis-[85%] h-auto mr-4">
+                <div className="flex flex-col gap-3 h-full rounded-2xl border-2 border-dashed border-primary/40 items-center justify-center min-h-[400px] bg-primary/5">
+                  <Sparkles className="size-8 text-primary" />
+                  <span className="text-foreground text-xl font-semibold">
+                    {t("moreComing")}
+                  </span>
+                </div>
+              </CarouselItem>
             </CarouselContent>
             <div className="mt-6">
               <CarouselDots />

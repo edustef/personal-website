@@ -40,8 +40,8 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
         {/* Coming Soon Badge */}
         {project.status === "coming-soon" && (
-          <div className="absolute top-4 right-4 z-10">
-            <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm">
+          <div className="absolute top-4 left-4 z-10">
+            <Badge variant="secondary" className="bg-background/90 backdrop-blur-sm border border-border shadow-md">
               {t("comingSoon")}
             </Badge>
           </div>
