@@ -4,6 +4,7 @@ import { ProjectVideo } from "@/components/project-video";
 import { Badge } from "@/components/ui/badge";
 import type { Project } from "@/lib/portfolio";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 type ProjectCardProps = {
@@ -21,7 +22,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
     <>
       {/* Video/Image Container with fade mask - portrait on mobile, landscape on desktop */}
       <div className="relative aspect-[4/5] md:aspect-[16/10] overflow-hidden bg-muted">
-        {project.images ? (
+        {project.images && project.desktopVideo && project.mobileVideo ? (
           <ProjectVideo
             desktopVideo={project.desktopVideo}
             mobileVideo={project.mobileVideo}
@@ -30,6 +31,21 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             title={project.title}
             className="absolute inset-0 transition-transform duration-500 group-hover:scale-[1.02]"
           />
+        ) : project.images ? (
+          <>
+            <Image
+              src={project.images.desktop}
+              alt={project.title}
+              fill
+              className="hidden md:block object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+            <Image
+              src={project.images.mobile}
+              alt={project.title}
+              fill
+              className="md:hidden object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+          </>
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="text-4xl font-bold text-muted-foreground/20">
