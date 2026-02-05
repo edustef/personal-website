@@ -1,8 +1,5 @@
 import whatsappLogo from "@/assets/images/whatsapp-logo.png";
-import {
-  ContactSectionAnchorButton,
-  ContactSectionLinkButton,
-} from "@/components/contact-section-button";
+import { ContactSectionAnchorButton } from "@/components/contact-section-button";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Button } from "@/components/ui/button";
 import { getSocialIcon } from "@/lib/social-icons";
@@ -51,25 +48,11 @@ export default async function ContactSection({
         </AnimatedContainer>
 
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <AnimatedContainer
-            trigger="scroll"
-            fadeDirection="up"
-            staggerIndex={0}
-            staggerDelay={0.1}
-            className="w-full sm:w-auto"
-          >
-            <Button asChild size="lg" variant="default" className="w-full">
-              <ContactSectionLinkButton href="/start-your-project">
-                {t("contact.ctaButton")}
-              </ContactSectionLinkButton>
-            </Button>
-          </AnimatedContainer>
-
           {hasWhatsApp && (
             <AnimatedContainer
               trigger="scroll"
               fadeDirection="up"
-              staggerIndex={1}
+              staggerIndex={0}
               staggerDelay={0.1}
               className="w-full sm:w-auto"
             >
@@ -100,7 +83,7 @@ export default async function ContactSection({
             <AnimatedContainer
               trigger="scroll"
               fadeDirection="up"
-              staggerIndex={2}
+              staggerIndex={1}
               staggerDelay={0.1}
               className="flex gap-2"
             >

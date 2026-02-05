@@ -123,22 +123,6 @@ export default async function PortfolioSection({ whatsappUrl }: PortfolioSection
           </Carousel>
         </div>
 
-        {/* Section CTA */}
-        <AnimatedContainer
-          trigger="scroll"
-          fadeDirection="up"
-          className="mt-12 text-center px-4"
-        >
-          <Button asChild size="lg">
-            <a
-              href={finalWhatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("cta")}
-            </a>
-          </Button>
-        </AnimatedContainer>
       </div>
     </section>
   );
