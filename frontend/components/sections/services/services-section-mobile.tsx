@@ -7,7 +7,6 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
-import type { LucideIcon } from "lucide-react";
 import { ServiceCard } from "./service-card";
 import { MobileTendrilsLayer } from "./mobile-tendrils-layer";
 import { useEffect, useRef, useState } from "react";
@@ -18,7 +17,6 @@ type TranslatedService = {
   title: string;
   description: string;
   patternVariant: "dots" | "diagonal-stripes" | "grid";
-  IconComponent: LucideIcon;
   featured: boolean;
 };
 
@@ -69,7 +67,6 @@ export function ServicesSectionMobileCarousel({
                 <div className="h-full">
                   <ServiceCard
                     icon={service.icon}
-                    IconComponent={service.IconComponent}
                     title={service.title}
                     description={service.description}
                     patternVariant={service.patternVariant}

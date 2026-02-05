@@ -1,19 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { type Service, services } from "@/lib/data/services";
 import { cn } from "@/lib/utils";
-import { Globe, Headphones, Layers, Palette, Rocket, Zap, type LucideIcon } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { ServicesSectionClient, ServiceCard } from "./services";
 import { ServicesSectionMobileCarousel } from "./services/services-section-mobile";
-
-const iconMap: Record<string, LucideIcon> = {
-  layers: Layers,
-  zap: Zap,
-  rocket: Rocket,
-  palette: Palette,
-  headphones: Headphones,
-  globe: Globe,
-};
 
 const patternVariants: Array<"dots" | "diagonal-stripes" | "grid"> = [
   "diagonal-stripes",
@@ -64,7 +54,6 @@ export default async function ServicesSection({
     title: t(service.titleKey),
     description: t(service.descriptionKey),
     patternVariant: getPatternForService(index),
-    IconComponent: iconMap[service.icon] || Layers,
     featured: service.featured,
   }));
 
@@ -105,7 +94,6 @@ export default async function ServicesSection({
               >
                 <ServiceCard
                   icon={service.icon}
-                  IconComponent={service.IconComponent}
                   title={service.title}
                   description={service.description}
                   patternVariant={service.patternVariant}
@@ -120,7 +108,6 @@ export default async function ServicesSection({
               <div key={service._id} className="min-w-0">
                 <ServiceCard
                   icon={service.icon}
-                  IconComponent={service.IconComponent}
                   title={service.title}
                   description={service.description}
                   patternVariant={service.patternVariant}

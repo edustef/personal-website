@@ -4,12 +4,20 @@ import { Card, CardContent } from "@/components/ui/card";
 import { BGPattern } from "@/components/ui/bg-pattern";
 import { FloatingIconShapes } from "@/components/ui/floating-icon-shapes";
 import { cn } from "@/lib/utils";
-import type { LucideIcon } from "lucide-react";
+import { Globe, Headphones, Layers, Palette, Rocket, Zap } from "lucide-react";
 import { useServicesVisibility } from "./services-section-client";
+
+const iconMap: Record<string, React.ElementType> = {
+  layers: Layers,
+  zap: Zap,
+  rocket: Rocket,
+  palette: Palette,
+  headphones: Headphones,
+  globe: Globe,
+};
 
 type ServiceCardProps = {
   icon: string;
-  IconComponent: LucideIcon;
   title: string;
   description: string;
   patternVariant: "dots" | "diagonal-stripes" | "grid";
@@ -20,7 +28,6 @@ type ServiceCardProps = {
 
 export function ServiceCard({
   icon,
-  IconComponent,
   title,
   description,
   patternVariant,
@@ -30,6 +37,7 @@ export function ServiceCard({
 }: ServiceCardProps) {
   const { isVisible: contextVisible } = useServicesVisibility();
   const isVisible = isVisibleProp ?? contextVisible;
+  const IconComponent = iconMap[icon] || Layers;
 
   return (
     <Card className="isolate relative h-full w-full overflow-hidden rounded-2xl border-muted bg-background/50 backdrop-blur-sm">
