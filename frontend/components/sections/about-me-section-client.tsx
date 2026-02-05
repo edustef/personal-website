@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatedContainer } from "@/components/ui/animated-container";
+import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "motion/react";
 import Image, { type StaticImageData } from "next/image";
 import { useRef } from "react";
@@ -11,6 +12,8 @@ type AboutMeSectionClientProps = {
   subtitle: string;
   description: string;
   image: StaticImageData;
+  cta?: string;
+  ctaUrl?: string;
 };
 
 export function AboutMeSectionClient({
@@ -19,6 +22,8 @@ export function AboutMeSectionClient({
   subtitle,
   description,
   image,
+  cta,
+  ctaUrl,
 }: AboutMeSectionClientProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -87,6 +92,15 @@ export function AboutMeSectionClient({
             <p className="lg:mt-24 text-muted-foreground text-lg leading-relaxed text-pretty">
               {description}
             </p>
+            {cta && ctaUrl && (
+              <div className="mt-8">
+                <Button asChild size="lg" variant="outline">
+                  <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
+                    {cta}
+                  </a>
+                </Button>
+              </div>
+            )}
           </AnimatedContainer>
         </div>
       </div>

@@ -239,7 +239,7 @@
     "announcementLabel": "Calculează-ți <strong>venitul potențial</strong>",
     "resumeButtonLabel": "Vezi CV-ul meu",
     "findMeOnLabel": "Găsește-mă pe",
-    "contactMe": "Să vorbim despre soluții",
+    "contactMe": "Obține Apelul Meu Strategic Gratuit",
     "workedWith": "Cu ce lucrez",
     "tools": {
       "label": "Tehnologii",
@@ -257,14 +257,16 @@
       "label": "Cine sunt",
       "headline": "Despre Mine",
       "subtitle": "Cunoaște persoana din spatele codului",
-      "description": "Sunt Eduard Stefan, un dezvoltator care înțelege că un site web este o investiție, nu doar o carte de vizită digitală. Îmbin expertiza tehnică cu strategii SEO și CRO pentru a construi site-uri care nu doar arată bine—ci funcționează cu adevărat. Scopul meu este simplu: să te ajut să obții mai mult trafic și să transformi acel trafic în afaceri reale. Lucrez unu-la-unu cu tine pentru a mă asigura că fiecare detaliu contribuie la succesul tău."
+      "description": "Sunt Eduard Stefan, un dezvoltator care înțelege că un site web este o investiție, nu doar o carte de vizită digitală. Îmbin expertiza tehnică cu strategii SEO și CRO pentru a construi site-uri care nu doar arată bine—ci funcționează cu adevărat. Scopul meu este simplu: să te ajut să obții mai mult trafic și să transformi acel trafic în afaceri reale. Lucrez unu-la-unu cu tine pentru a mă asigura că fiecare detaliu contribuie la succesul tău.",
+      "cta": "Hai să Discutăm Proiectul Tău"
     },
     "contact": {
       "label": "Ia legătura",
-      "headline": "Să lucrăm împreună",
-      "subtitle": "Gata să transformi site-ul tău într-un motor de conversie? Să vorbim.",
-      "ctaButton": "Obține oferta ta",
-      "whatsappLabel": "Contactează-mă pe WhatsApp"
+      "headline": "Hai Să Construim Ceva Care Convertește",
+      "subtitle": "Nu mai lăsa bani pe masă. Programează un apel strategic gratuit pentru a descoperi exact cum să transformi traficul în venituri.",
+      "ctaButton": "Începe Proiectul Meu",
+      "ctaButtonSecondary": "Obține un Răspuns Rapid",
+      "whatsappLabel": "Întrebare rapidă? Scrie-mi pe WhatsApp"
     }
   },
   "profile": {
@@ -294,7 +296,7 @@
     "description": "Site-uri construite cu precizie, concepute pentru conversie.",
     "header": {
       "cta": {
-        "text": "Obține oferta ta",
+        "text": "Obține Estimare Gratuită",
         "href": "/start-your-project"
       },
       "homeButtonLabel": "Acasa",
@@ -397,6 +399,7 @@
     "label": "Ce Fac Eu",
     "headline": "Partenerul tău pentru trafic și conversii",
     "subtitle": "Totul merge mână în mână. SEO aduce oamenii potriviți, iar designul optimizat se asigură că rămân.",
+    "cta": "Vezi Cum Te Pot Ajuta",
     "svc-1": {
       "title": "Parteneriat Direct",
       "description": "Fără intermediari. Lucrezi direct cu mine, ceea ce înseamnă comunicare clară, actualizări mai rapide și un partener căruia îi pasă de succesul tău."
@@ -426,6 +429,7 @@
     "label": "Proces",
     "headline": "Cum Lucrez",
     "subtitle": "Un proces simplu și transparent, concentrat pe rezultate.",
+    "cta": "Începe Procesul",
     "planning": {
       "title": "Descoperire & Strategie",
       "paragraphs": [
@@ -483,7 +487,7 @@
       "whatYouGet": "Ce primești",
       "showMore": "Afișează mai mult",
       "showLess": "Afișează mai puțin",
-      "getQuote": "Obține oferta ta",
+      "getQuote": "Obține Oferta Mea Personalizată",
       "timeline": "Termen"
     },
     "launch": {
@@ -544,7 +548,7 @@
         "title": "Analytics Pro",
         "benefit": "Configurez urmărirea astfel încât să poți vedea exact de unde vin vizitatorii tăi."
       },
-      "contactForPricing": "Contactează pentru prețuri"
+      "contactForPricing": "Obține prețuri →"
     }
   },
   "roiCalculator": {
@@ -603,6 +607,7 @@
     "label": "Întrebări Frecvente",
     "headline": "Întrebări Frecvente",
     "subtitle": "Întrebări comune despre serviciile mele, proces și cum putem lucra împreună.",
+    "cta": "Ai Încă Întrebări? Hai Să Vorbim",
     "faq-1": {
       "question": "Cât durează un proiect tipic?",
       "answer": "Termenele proiectului variază în funcție de domeniul de aplicare și complexitate. Pachetul 'Launch' durează de obicei 2-3 zile, în timp ce pachetul 'Growth' durează 1-2 săptămâni. Soluțiile personalizate cu funcționalitate complexă pot dura mai mult. Voi oferi un termen detaliat în timpul consultației noastre inițiale."
@@ -642,9 +647,13 @@
     "label": "Portofoliu",
     "headline": "Lucrări Recente",
     "subtitle": "O selecție de proiecte care demonstrează abordarea mea în crearea experiențelor web moderne.",
+    "cta": "Vrei Rezultate Similare?",
     "viewProject": "Vezi Proiectul",
     "viewLive": "Vezi Site-ul Live",
     "comingSoon": "În Curând",
+    "comingSoonTitle": "Proiectul Tău?",
+    "comingSoonSubtitle": "Aceasta ar putea fi povestea ta de succes",
+    "comingSoonCta": "Hai Să Vorbim",
     "moreComing": "Mai multe în curând...",
     "techStack": "Tehnologii",
     "backToPortfolio": "Înapoi la Portofoliu",

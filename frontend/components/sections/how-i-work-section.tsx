@@ -45,6 +45,12 @@ const steps = [
 export default async function HowIWorkSection() {
   const locale = await getLocale();
   const t = await getTranslations({ locale, namespace: "howIWork" });
+  const profileT = await getTranslations({ locale, namespace: "profile" });
+
+  const phone = profileT("phone");
+  const whatsappUrl = phone
+    ? `https://wa.me/${phone.replace(/[^0-9]/g, "")}`
+    : "https://wa.me/40775378525";
 
   const timelineData = steps.map((step) => {
     const paragraphs = t.raw(`${step.key}.paragraphs`) as string[];
@@ -98,6 +104,8 @@ export default async function HowIWorkSection() {
       headline={t("headline")}
       subtitle={t("subtitle")}
       timelineData={timelineData}
+      cta={t("cta")}
+      ctaUrl={whatsappUrl}
     />
   );
 }

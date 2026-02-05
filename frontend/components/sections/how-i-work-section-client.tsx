@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatedContainer } from "@/components/ui/animated-container";
-
+import { Button } from "@/components/ui/button";
 import { Timeline } from "@/components/ui/timeline";
 import type React from "react";
 
@@ -16,6 +16,8 @@ interface HowIWorkSectionClientProps {
   headline: string;
   subtitle: string;
   timelineData: TimelineData[];
+  cta?: string;
+  ctaUrl?: string;
 }
 
 export function HowIWorkSectionClient({
@@ -23,6 +25,8 @@ export function HowIWorkSectionClient({
   headline,
   subtitle,
   timelineData,
+  cta,
+  ctaUrl,
 }: HowIWorkSectionClientProps) {
   return (
     <section id="how-i-work" className="scroll-mt-12 relative py-12 md:py-16">
@@ -51,6 +55,20 @@ export function HowIWorkSectionClient({
         <div className="relative w-full">
           <Timeline data={timelineData} showHeader={false} />
         </div>
+
+        {cta && ctaUrl && (
+          <AnimatedContainer
+            trigger="scroll"
+            fadeDirection="up"
+            className="mt-12 text-center"
+          >
+            <Button asChild size="lg">
+              <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
+                {cta}
+              </a>
+            </Button>
+          </AnimatedContainer>
+        )}
       </div>
     </section>
   );

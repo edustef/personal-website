@@ -239,7 +239,7 @@
     "announcementLabel": "Calculate your <strong>potential revenue</strong>",
     "resumeButtonLabel": "See my resume",
     "findMeOnLabel": "Find me on",
-    "contactMe": "Let's Talk Solutions",
+    "contactMe": "Get My Free Strategy Call",
     "workedWith": "What I work with",
     "tools": {
       "label": "Technologies",
@@ -257,14 +257,16 @@
       "label": "Who I am",
       "headline": "About Me",
       "subtitle": "Get to know the person behind the code",
-      "description": "I'm Eduard Stefan, a developer who understands that a website is an investment, not just a digital business card. I combine technical expertise with SEO and CRO strategies to build sites that don't just look good—they actually work. My goal is simple: to help you get more traffic and turn that traffic into real business. I work one-on-one with you to ensure every detail contributes to your success."
+      "description": "I'm Eduard Stefan, a developer who understands that a website is an investment, not just a digital business card. I combine technical expertise with SEO and CRO strategies to build sites that don't just look good—they actually work. My goal is simple: to help you get more traffic and turn that traffic into real business. I work one-on-one with you to ensure every detail contributes to your success.",
+      "cta": "Let's Discuss Your Project"
     },
     "contact": {
       "label": "Get in touch",
-      "headline": "Let's work together",
-      "subtitle": "Ready to turn your website into a conversion engine? Let's chat.",
-      "ctaButton": "Get your offer",
-      "whatsappLabel": "Contact me on WhatsApp"
+      "headline": "Let's Build Something That Converts",
+      "subtitle": "Stop leaving money on the table. Get a free strategy call to discover exactly how to turn your traffic into revenue.",
+      "ctaButton": "Start My Project",
+      "ctaButtonSecondary": "Get a Quick Answer",
+      "whatsappLabel": "Quick question? WhatsApp me"
     }
   },
   "profile": {
@@ -294,7 +296,7 @@
     "description": "Websites built with precision, designed for growth.",
     "header": {
       "cta": {
-        "text": "Get your offer",
+        "text": "Get Free Estimate",
         "href": "/start-your-project"
       },
       "homeButtonLabel": "Home",
@@ -397,6 +399,7 @@
     "label": "What I Do",
     "headline": "Your Partner in Traffic & Conversion",
     "subtitle": "Everything goes hand in hand. SEO brings the right people, and optimized design ensures they stick around.",
+    "cta": "See How I Can Help You",
     "svc-1": {
       "title": "Direct Partnership",
       "description": "No middlemen. You work directly with me, which means clear communication, faster updates, and a partner who cares about your success."
@@ -426,6 +429,7 @@
     "label": "Process",
     "headline": "How I Work",
     "subtitle": "A simple, transparent process focused on results.",
+    "cta": "Start the Process",
     "planning": {
       "title": "Discovery & Strategy",
       "paragraphs": [
@@ -483,7 +487,7 @@
       "whatYouGet": "What you get",
       "showMore": "Show more",
       "showLess": "Show less",
-      "getQuote": "Get your quote",
+      "getQuote": "Get My Custom Quote",
       "timeline": "Timeline"
     },
     "launch": {
@@ -544,7 +548,7 @@
         "title": "Deep Dive Analytics",
         "benefit": "Custom funnel reports and advanced tracking setup."
       },
-      "contactForPricing": "Contact for pricing"
+      "contactForPricing": "Get pricing →"
     }
   },
   "roiCalculator": {
@@ -603,6 +607,7 @@
     "label": "FAQ",
     "headline": "Frequently Asked Questions",
     "subtitle": "Common questions about my services, process, and how we can work together.",
+    "cta": "Still Have Questions? Let's Talk",
     "faq-1": {
       "question": "How long does a typical project take?",
       "answer": "Project timelines vary based on scope and complexity. The 'Launch' package typically takes 2-3 days, while the 'Growth' package takes 1-2 weeks. Custom solutions with complex functionality may take longer. I'll provide a detailed timeline during our initial consultation."
@@ -642,9 +647,13 @@
     "label": "Portfolio",
     "headline": "Featured Work",
     "subtitle": "A selection of projects showcasing my approach to building modern web experiences.",
+    "cta": "Want Similar Results?",
     "viewProject": "View Project",
     "viewLive": "View Live Site",
     "comingSoon": "Coming Soon",
+    "comingSoonTitle": "Your Project?",
+    "comingSoonSubtitle": "This could be your success story",
+    "comingSoonCta": "Let's Talk",
     "moreComing": "More coming soon...",
     "techStack": "Tech Stack",
     "backToPortfolio": "Back to Portfolio",

@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { AnimatedContainer } from "@/components/ui/animated-container";
+import { Button } from "@/components/ui/button";
 import { type FAQ, faqs } from "@/lib/data/faqs";
 import { getLocale, getTranslations } from "next-intl/server";
 
@@ -20,6 +21,12 @@ export default async function FAQSection({ faqs: faqsProp }: FAQSectionProps) {
 
   const locale = await getLocale();
   const t = await getTranslations({ locale, namespace: "faq" });
+  const profileT = await getTranslations({ locale, namespace: "profile" });
+
+  const phone = profileT("phone");
+  const whatsappUrl = phone
+    ? `https://wa.me/${phone.replace(/[^0-9]/g, "")}`
+    : "https://wa.me/40775378525";
 
   const sortedFaqs = [...faqsToDisplay].sort((a, b) => a.order - b.order);
 
@@ -75,6 +82,18 @@ export default async function FAQSection({ faqs: faqsProp }: FAQSectionProps) {
             </AnimatedContainer>
           ))}
         </Accordion>
+
+        <AnimatedContainer
+          trigger="scroll"
+          fadeDirection="up"
+          className="mt-12 text-center"
+        >
+          <Button asChild size="lg" variant="outline">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              {t("cta")}
+            </a>
+          </Button>
+        </AnimatedContainer>
       </div>
     </section>
   );

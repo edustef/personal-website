@@ -1,5 +1,6 @@
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { BGPattern } from "@/components/ui/bg-pattern";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -48,6 +49,7 @@ export default async function ServicesSection({
 
   const locale = await getLocale();
   const t = await getTranslations({ locale, namespace: "services" });
+  const profileT = await getTranslations({ locale, namespace: "profile" });
 
   const featuredServices = servicesToDisplay.filter((s) => s.featured);
   const otherServices = servicesToDisplay.filter((s) => !s.featured);
@@ -57,6 +59,11 @@ export default async function ServicesSection({
     namespace: "settings.header",
   });
   const servicesSlug = headerT("nav.servicesSlug");
+
+  const phone = profileT("phone");
+  const whatsappUrl = phone
+    ? `https://wa.me/${phone.replace(/[^0-9]/g, "")}`
+    : "https://wa.me/40775378525";
 
   return (
     <section
@@ -197,6 +204,19 @@ export default async function ServicesSection({
             </div>
           </Carousel>
         </div>
+
+        {/* Section CTA */}
+        <AnimatedContainer
+          trigger="scroll"
+          fadeDirection="up"
+          className="mt-12 text-center px-4"
+        >
+          <Button asChild size="lg" variant="outline">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              {t("cta")}
+            </a>
+          </Button>
+        </AnimatedContainer>
       </div>
     </section>
   );

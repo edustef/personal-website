@@ -1,4 +1,5 @@
 import { AnimatedContainer } from "@/components/ui/animated-container";
+import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/project-card";
 import {
   Carousel,
@@ -7,14 +8,23 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { getPortfolioProjects } from "@/lib/portfolio";
-import { cn } from "@/lib/utils";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Sparkles } from "lucide-react";
 
-export default async function PortfolioSection() {
+type PortfolioSectionProps = {
+  whatsappUrl?: string;
+};
+
+export default async function PortfolioSection({ whatsappUrl }: PortfolioSectionProps) {
   const locale = await getLocale();
   const projects = await getPortfolioProjects(locale);
   const t = await getTranslations({ locale, namespace: "portfolio" });
+  const profileT = await getTranslations({ locale, namespace: "profile" });
+
+  const phone = profileT("phone");
+  const finalWhatsappUrl = whatsappUrl || (phone
+    ? `https://wa.me/${phone.replace(/[^0-9]/g, "")}`
+    : "https://wa.me/40775378525");
 
   if (!projects || projects.length === 0) {
     return null;
@@ -47,11 +57,25 @@ export default async function PortfolioSection() {
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
           {/* Coming Soon Placeholder */}
-          <div className="flex flex-col gap-3 h-full rounded-2xl border-2 border-dashed border-primary/40 items-center justify-center min-h-[300px] bg-primary/5">
+          <div className="flex flex-col gap-4 h-full rounded-2xl border-2 border-dashed border-primary/40 items-center justify-center min-h-[300px] bg-primary/5 p-6">
             <Sparkles className="size-8 text-primary" />
-            <span className="text-foreground text-xl font-semibold">
-              {t("moreComing")}
-            </span>
+            <div className="text-center">
+              <span className="text-foreground text-xl font-semibold block mb-1">
+                {t("comingSoonTitle")}
+              </span>
+              <span className="text-muted-foreground text-sm">
+                {t("comingSoonSubtitle")}
+              </span>
+            </div>
+            <Button asChild size="sm">
+              <a
+                href={finalWhatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("comingSoonCta")}
+              </a>
+            </Button>
           </div>
         </div>
 
@@ -71,11 +95,25 @@ export default async function PortfolioSection() {
               ))}
               {/* Coming Soon Placeholder */}
               <CarouselItem className="pl-4 basis-[85%] h-auto mr-4">
-                <div className="flex flex-col gap-3 h-full rounded-2xl border-2 border-dashed border-primary/40 items-center justify-center min-h-[400px] bg-primary/5">
+                <div className="flex flex-col gap-4 h-full rounded-2xl border-2 border-dashed border-primary/40 items-center justify-center min-h-[400px] bg-primary/5 p-6">
                   <Sparkles className="size-8 text-primary" />
-                  <span className="text-foreground text-xl font-semibold">
-                    {t("moreComing")}
-                  </span>
+                  <div className="text-center">
+                    <span className="text-foreground text-xl font-semibold block mb-1">
+                      {t("comingSoonTitle")}
+                    </span>
+                    <span className="text-muted-foreground text-sm">
+                      {t("comingSoonSubtitle")}
+                    </span>
+                  </div>
+                  <Button asChild size="sm">
+                    <a
+                      href={finalWhatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {t("comingSoonCta")}
+                    </a>
+                  </Button>
                 </div>
               </CarouselItem>
             </CarouselContent>
@@ -84,6 +122,23 @@ export default async function PortfolioSection() {
             </div>
           </Carousel>
         </div>
+
+        {/* Section CTA */}
+        <AnimatedContainer
+          trigger="scroll"
+          fadeDirection="up"
+          className="mt-12 text-center px-4"
+        >
+          <Button asChild size="lg">
+            <a
+              href={finalWhatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("cta")}
+            </a>
+          </Button>
+        </AnimatedContainer>
       </div>
     </section>
   );

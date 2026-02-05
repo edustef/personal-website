@@ -239,7 +239,7 @@
     "announcementLabel": "Calcula tus <strong>ingresos potenciales</strong>",
     "resumeButtonLabel": "Ver mi currículum",
     "findMeOnLabel": "Encuéntrame en",
-    "contactMe": "Hablemos de Soluciones",
+    "contactMe": "Obtén Mi Llamada Estratégica Gratis",
     "workedWith": "Con qué trabajo",
     "tools": {
       "label": "Tecnologías",
@@ -257,14 +257,16 @@
       "label": "Quién soy",
       "headline": "Sobre Mí",
       "subtitle": "Conoce a la persona detrás del código",
-      "description": "Soy Eduard Stefan, un desarrollador que entiende que un sitio web es una inversión, no solo una tarjeta de visita digital. Combino experiencia técnica con estrategias de SEO y CRO para construir sitios que no solo se ven bien, sino que funcionan de verdad. Mi objetivo es simple: ayudarte a obtener más tráfico y convertir ese tráfico en negocios reales. Trabajo uno a uno contigo para asegurar que cada detalle contribuya a tu crecimiento."
+      "description": "Soy Eduard Stefan, un desarrollador que entiende que un sitio web es una inversión, no solo una tarjeta de visita digital. Combino experiencia técnica con estrategias de SEO y CRO para construir sitios que no solo se ven bien, sino que funcionan de verdad. Mi objetivo es simple: ayudarte a obtener más tráfico y convertir ese tráfico en negocios reales. Trabajo uno a uno contigo para asegurar que cada detalle contribuya a tu crecimiento.",
+      "cta": "Hablemos de Tu Proyecto"
     },
     "contact": {
       "label": "Ponerse en contacto",
-      "headline": "Trabajemos juntos",
-      "subtitle": "¿Listo para convertir tu sitio web en un motor de crecimiento? Hablemos.",
-      "ctaButton": "Obtén tu oferta",
-      "whatsappLabel": "Contáctame en WhatsApp"
+      "headline": "Construyamos Algo Que Convierta",
+      "subtitle": "Deja de perder dinero. Obtén una llamada estratégica gratuita para descubrir exactamente cómo convertir tu tráfico en ingresos.",
+      "ctaButton": "Iniciar Mi Proyecto",
+      "ctaButtonSecondary": "Obtener una Respuesta Rápida",
+      "whatsappLabel": "¿Pregunta rápida? Escríbeme por WhatsApp"
     }
   },
   "profile": {
@@ -294,7 +296,7 @@
     "description": "Sitios web creados con precisión, diseñados para el crecimiento.",
     "header": {
       "cta": {
-        "text": "Obtén tu oferta",
+        "text": "Obtén Presupuesto Gratis",
         "href": "/start-your-project"
       },
       "homeButtonLabel": "Casa",
@@ -397,6 +399,7 @@
     "label": "Lo Que Hago",
     "headline": "Tu Socio de Crecimiento Digital",
     "subtitle": "Todo va de la mano. El SEO trae a las personas adecuadas y el diseño optimizado asegura que se queden.",
+    "cta": "Descubre Cómo Puedo Ayudarte",
     "svc-1": {
       "title": "Asociación Directa",
       "description": "Sin intermediarios. Trabajas directamente conmigo, lo que significa comunicación clara, actualizaciones más rápidas y un socio que se preocupa por tu éxito."
@@ -426,6 +429,7 @@
     "label": "Proceso",
     "headline": "Cómo Trabajo",
     "subtitle": "Un proceso simple y transparente enfocado en resultados.",
+    "cta": "Iniciar el Proceso",
     "planning": {
       "title": "Descubrimiento y Estrategia",
       "paragraphs": [
@@ -483,7 +487,7 @@
       "whatYouGet": "Lo que obtienes",
       "showMore": "Ver más",
       "showLess": "Ver menos",
-      "getQuote": "Obtén tu oferta",
+      "getQuote": "Obtén Mi Presupuesto Personalizado",
       "timeline": "Cronograma"
     },
     "launch": {
@@ -544,7 +548,7 @@
         "title": "Analytics Profundo",
         "benefit": "Informes de embudo personalizados y configuración avanzada de seguimiento."
       },
-      "contactForPricing": "Contacta para precios"
+      "contactForPricing": "Obtener precios →"
     }
   },
   "roiCalculator": {
@@ -603,6 +607,7 @@
     "label": "Preguntas Frecuentes",
     "headline": "Preguntas Frecuentes",
     "subtitle": "Preguntas comunes sobre mis servicios, proceso y cómo podemos trabajar juntos.",
+    "cta": "¿Tienes Más Preguntas? Hablemos",
     "faq-1": {
       "question": "¿Cuánto tiempo tarda un proyecto típico?",
       "answer": "Los plazos del proyecto varían según el alcance y la complejidad. El paquete 'Launch' generalmente toma 2-3 días, mientras que el paquete 'Growth' toma 1-2 semanas. Las soluciones personalizadas con funcionalidad compleja pueden tomar más tiempo. Proporcionaré un cronograma detallado durante nuestra consulta inicial."
@@ -642,9 +647,13 @@
     "label": "Portafolio",
     "headline": "Trabajos Destacados",
     "subtitle": "Una selección de proyectos que demuestran mi enfoque para crear experiencias web modernas.",
+    "cta": "¿Quieres Resultados Similares?",
     "viewProject": "Ver Proyecto",
     "viewLive": "Ver Sitio en Vivo",
     "comingSoon": "Próximamente",
+    "comingSoonTitle": "¿Tu Proyecto?",
+    "comingSoonSubtitle": "Esta podría ser tu historia de éxito",
+    "comingSoonCta": "Hablemos",
     "moreComing": "Más próximamente...",
     "techStack": "Tecnologías",
     "backToPortfolio": "Volver al Portafolio",
