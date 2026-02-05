@@ -5,6 +5,7 @@ import { BGPattern } from "@/components/ui/bg-pattern";
 import { FloatingIconShapes } from "@/components/ui/floating-icon-shapes";
 import { cn } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
+import { useServicesVisibility } from "./services-section-client";
 
 type ServiceCardProps = {
   icon: string;
@@ -12,7 +13,7 @@ type ServiceCardProps = {
   title: string;
   description: string;
   patternVariant: "dots" | "diagonal-stripes" | "grid";
-  isVisible: boolean;
+  isVisible?: boolean;
   delay: number;
   featured?: boolean;
 };
@@ -23,10 +24,13 @@ export function ServiceCard({
   title,
   description,
   patternVariant,
-  isVisible,
+  isVisible: isVisibleProp,
   delay,
   featured = false,
 }: ServiceCardProps) {
+  const { isVisible: contextVisible } = useServicesVisibility();
+  const isVisible = isVisibleProp ?? contextVisible;
+
   return (
     <Card className="isolate relative h-full w-full overflow-hidden rounded-2xl border-muted bg-background/50 backdrop-blur-sm">
       <BGPattern

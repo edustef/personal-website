@@ -1,8 +1,20 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { BlobsLayer } from "./blobs-layer";
 import { TendrilsLayer } from "./tendrils-layer";
+
+type ServicesVisibilityContextType = {
+  isVisible: boolean;
+};
+
+const ServicesVisibilityContext = createContext<ServicesVisibilityContextType>({
+  isVisible: false,
+});
+
+export function useServicesVisibility() {
+  return useContext(ServicesVisibilityContext);
+}
 
 type ServicesSectionClientProps = {
   children: React.ReactNode;
@@ -23,7 +35,7 @@ export function ServicesSectionClient({ children }: ServicesSectionClientProps) 
           observer.disconnect();
         }
       },
-      { threshold: 0.7 }
+      { threshold: 0.3 }
     );
 
     observer.observe(section);
@@ -31,10 +43,14 @@ export function ServicesSectionClient({ children }: ServicesSectionClientProps) 
   }, []);
 
   return (
-    <div ref={sectionRef} className="relative">
-      <BlobsLayer isVisible={isVisible} />
-      <TendrilsLayer isVisible={isVisible} />
-      {children}
-    </div>
+    <ServicesVisibilityContext.Provider value={{ isVisible }}>
+      <div ref={sectionRef} className="relative">
+        <BlobsLayer isVisible={isVisible} />
+        <div className="hidden md:block">
+          <TendrilsLayer isVisible={isVisible} />
+        </div>
+        {children}
+      </div>
+    </ServicesVisibilityContext.Provider>
   );
 }

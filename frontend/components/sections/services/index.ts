@@ -1,4 +1,4 @@
-export { ServicesSectionClient } from "./services-section-client";
+export { ServicesSectionClient, useServicesVisibility } from "./services-section-client";
 export { ServiceCard } from "./service-card";
 export { BlobsLayer } from "./blobs-layer";
 export { TendrilsLayer } from "./tendrils-layer";
