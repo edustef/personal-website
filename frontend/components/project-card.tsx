@@ -4,8 +4,8 @@ import { ProjectVideo } from "@/components/project-video";
 import { Badge } from "@/components/ui/badge";
 import type { Project } from "@/lib/portfolio";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 type ProjectCardProps = {
   project: Project;
@@ -21,7 +21,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   const cardContent = (
     <>
       {/* Video/Image Container with fade mask - portrait on mobile, landscape on desktop */}
-      <div className="relative aspect-[4/5] md:aspect-[16/10] overflow-hidden bg-muted">
+      <div className="relative aspect-4/5 md:aspect-16/10 overflow-hidden bg-muted">
         {project.images && project.desktopVideo && project.mobileVideo ? (
           <ProjectVideo
             desktopVideo={project.desktopVideo}
@@ -57,7 +57,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         {/* Coming Soon Badge */}
         {project.status === "coming-soon" && (
           <div className="absolute top-4 left-4 z-10">
-            <Badge variant="secondary" className="bg-background/90 backdrop-blur-sm border border-border shadow-md">
+            <Badge
+              variant="secondary"
+              className="bg-background/90 backdrop-blur-sm border border-border shadow-md"
+            >
               {t("comingSoon")}
             </Badge>
           </div>
