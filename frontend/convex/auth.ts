@@ -13,9 +13,8 @@ export const sendCode = action({
       expiresAt: Date.now() + 10 * 60 * 1000, // 10 mins
     });
 
-    // TODO: Send email using Resend when ready
+    // TODO: Send email using Resend
     console.log(`Verification code for ${args.email}: ${code}`);
-    return { code };
   },
 });
 
@@ -37,22 +36,6 @@ export const saveCode = internalMutation({
       code: args.code,
       expiresAt: args.expiresAt,
     });
-  },
-});
-
-export const getCode = query({
-  args: { email: v.string() },
-  handler: async (ctx, args) => {
-    const record = await ctx.db
-      .query("verificationCodes")
-      .withIndex("by_email", (q) => q.eq("email", args.email))
-      .order("desc")
-      .first();
-
-    if (!record) return null;
-    if (Date.now() > record.expiresAt) return null;
-
-    return { code: record.code, expiresAt: record.expiresAt };
   },
 });
 

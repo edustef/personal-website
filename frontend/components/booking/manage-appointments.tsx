@@ -52,7 +52,6 @@ export function ManageAppointments() {
   const [otp, setOtp] = React.useState("");
   const [sessionId, setSessionId] = React.useState<string | null>(null);
   const [isLoading, setIsLoading] = React.useState(false);
-  const [mockCode, setMockCode] = React.useState<string | null>(null);
   const [deleteDialogOpen, setDeleteDialogOpen] = React.useState(false);
   const [bookingToDelete, setBookingToDelete] =
     React.useState<Id<"bookings"> | null>(null);
@@ -98,8 +97,7 @@ export function ManageAppointments() {
   const handleSendCode = async () => {
     setIsLoading(true);
     try {
-      const result = await sendCodeAction({ email });
-      setMockCode(result.code);
+      await sendCodeAction({ email });
       setStep("verify");
     } catch {
       toast.error(tErrors("failedToSendCode"));
@@ -144,7 +142,6 @@ export function ManageAppointments() {
     setEmail("");
     setOtp("");
     setSessionId(null);
-    setMockCode(null);
     clearSessionCookie();
   };
 
@@ -241,21 +238,6 @@ export function ManageAppointments() {
                   {t("verify.sentTo", { email })}
                 </p>
               </div>
-
-              {mockCode && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="bg-muted border border-border rounded-md p-3 text-center"
-                >
-                  <p className="text-[10px] text-primary uppercase tracking-wider mb-1">
-                    {t("verify.demoCode")}
-                  </p>
-                  <p className="text-2xl font-mono font-bold text-foreground tracking-[0.3em]">
-                    {mockCode}
-                  </p>
-                </motion.div>
-              )}
 
               <div className="flex justify-center">
                 <InputOTP

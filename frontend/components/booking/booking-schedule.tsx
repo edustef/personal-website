@@ -14,7 +14,6 @@ import {
   Loader2,
   Mail,
   Send,
-  Users,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -58,7 +57,6 @@ export function BookingSchedule() {
   const [otp, setOtp] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
   const [codeSent, setCodeSent] = React.useState(false);
-  const [mockCode, setMockCode] = React.useState<string | null>(null);
   const [sessionId, setSessionId] = React.useState<string | null>(null);
   const [hasValidSession, setHasValidSession] = React.useState(false);
 
@@ -81,11 +79,6 @@ export function BookingSchedule() {
       return fullyBookedDates?.includes(dateStr) ?? false;
     },
     [fullyBookedDates]
-  );
-
-  const codeFromDb = useQuery(
-    api.auth.getCode,
-    codeSent && email ? { email } : "skip"
   );
 
   // Defer cookie reading to after hydration to avoid SSR mismatch
@@ -128,8 +121,7 @@ export function BookingSchedule() {
     if (!email) return;
     setIsLoading(true);
     try {
-      const result = await sendCodeAction({ email });
-      setMockCode(result.code);
+      await sendCodeAction({ email });
       setCodeSent(true);
     } catch {
       toast.error(tErrors("failedToSendCode"));
@@ -137,8 +129,6 @@ export function BookingSchedule() {
       setIsLoading(false);
     }
   };
-
-  const displayCode = mockCode || codeFromDb?.code || null;
 
   const handleVerifyAndBook = async () => {
     setIsLoading(true);
@@ -203,7 +193,6 @@ export function BookingSchedule() {
       if (codeSent) {
         setCodeSent(false);
         setOtp("");
-        setMockCode(null);
       } else {
         setSlot(null);
         setStep("slot");
@@ -388,27 +377,6 @@ export function BookingSchedule() {
               transition={{ duration: 0.2 }}
               className="space-y-4"
             >
-              {availability && availability.activeUsers > 0 && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="flex items-center justify-center gap-2 py-2"
-                >
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-                    </span>
-                    <Users className="h-3.5 w-3.5 text-primary" />
-                    <span className="text-xs text-primary font-medium">
-                      {t("schedule.peopleLooking", {
-                        count: availability.activeUsers,
-                      })}
-                    </span>
-                  </div>
-                </motion.div>
-              )}
-
               <div className="grid grid-cols-2 gap-2">
                 {SLOTS.map((s, i) => (
                   <motion.div
@@ -553,21 +521,6 @@ export function BookingSchedule() {
                       {t("verify.sentTo", { email })}
                     </p>
                   </div>
-
-                  {displayCode && (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      className="bg-muted border border-border rounded-md p-3 text-center"
-                    >
-                      <p className="text-[10px] text-primary uppercase tracking-wider mb-1">
-                        {t("verify.demoCode")}
-                      </p>
-                      <p className="text-2xl font-mono font-bold text-foreground tracking-[0.3em]">
-                        {displayCode}
-                      </p>
-                    </motion.div>
-                  )}
 
                   <div className="flex justify-center">
                     <InputOTP

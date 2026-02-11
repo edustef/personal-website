@@ -21,15 +21,11 @@ export const getAvailability = query({
       .filter((q) => q.eq(q.field("status"), "confirmed"))
       .collect();
 
-    // Random "people looking" for social proof (13-29 range)
-    const activeUsers = Math.floor(Math.random() * 17) + 13;
-
     const confirmedSlots = bookings.map((b) => b.slot);
     const isFullyBooked = confirmedSlots.length >= ALL_SLOTS.length;
 
     return {
       confirmedSlots,
-      activeUsers,
       isFullyBooked,
     };
   },
