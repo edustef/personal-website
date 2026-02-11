@@ -57,11 +57,6 @@ export default async function Page(props: Props) {
   const faqT = await getTranslations({ locale, namespace: "faq" });
   const servicesT = await getTranslations({ locale, namespace: "services" });
 
-  const phone = profileT("phone");
-  const whatsappUrl = phone
-    ? `https://wa.me/${phone.replace(/[^0-9]/g, "")}`
-    : undefined;
-
   const socialLinksRaw = profileT.raw("socialLinks") as
     | Array<{ name: string; url: string }>
     | undefined;
@@ -119,12 +114,9 @@ export default async function Page(props: Props) {
 
       <FAQSection />
 
-      <ContactSection socialLinks={socialLinksRaw} whatsappUrl={whatsappUrl} />
+      <ContactSection socialLinks={socialLinksRaw} />
 
-      <FloatingContactButton
-        contactMeText={t("contactMe")}
-        contactUrl={whatsappUrl || "https://wa.me/40775378525"}
-      />
+      <FloatingContactButton contactMeText={t("scheduleCall")} />
     </>
   );
 }

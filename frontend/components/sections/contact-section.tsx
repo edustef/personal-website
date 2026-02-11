@@ -1,10 +1,9 @@
-import whatsappLogo from "@/assets/images/whatsapp-logo.png";
-import { ContactSectionAnchorButton } from "@/components/contact-section-button";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { getSocialIcon } from "@/lib/social-icons";
+import { Calendar } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
-import Image from "next/image";
 
 type SocialLink = {
   name: string;
@@ -13,17 +12,14 @@ type SocialLink = {
 
 type ContactSectionProps = {
   socialLinks?: SocialLink[];
-  whatsappUrl?: string;
 };
 
 export default async function ContactSection({
   socialLinks,
-  whatsappUrl,
 }: ContactSectionProps) {
   const locale = await getLocale();
   const t = await getTranslations({ locale, namespace: "home" });
 
-  const hasWhatsApp = !!whatsappUrl;
   const hasSocialLinks = socialLinks && socialLinks.length > 0;
 
   return (
@@ -48,36 +44,20 @@ export default async function ContactSection({
         </AnimatedContainer>
 
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          {hasWhatsApp && (
-            <AnimatedContainer
-              trigger="scroll"
-              fadeDirection="up"
-              staggerIndex={0}
-              staggerDelay={0.1}
-              className="w-full sm:w-auto"
-            >
-              <Button
-                asChild
-                size="lg"
-                variant="default"
-                className="w-full bg-[#25d366] text-white hover:bg-[#25d366]/90"
-              >
-                <ContactSectionAnchorButton
-                  href={whatsappUrl}
-                  ariaLabel={t("contact.whatsappLabel")}
-                >
-                  <Image
-                    src={whatsappLogo}
-                    alt="WhatsApp"
-                    width={20}
-                    height={20}
-                    className="size-5"
-                  />
-                  WhatsApp
-                </ContactSectionAnchorButton>
-              </Button>
-            </AnimatedContainer>
-          )}
+          <AnimatedContainer
+            trigger="scroll"
+            fadeDirection="up"
+            staggerIndex={0}
+            staggerDelay={0.1}
+            className="w-full sm:w-auto"
+          >
+            <Button asChild size="lg" variant="default" className="w-full">
+              <Link href="/schedule">
+                <Calendar className="size-5" />
+                {t("scheduleCall")}
+              </Link>
+            </Button>
+          </AnimatedContainer>
 
           {hasSocialLinks && (
             <AnimatedContainer

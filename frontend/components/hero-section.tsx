@@ -1,5 +1,4 @@
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
-import { HeroContactButton } from "@/components/hero-contact-button";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Button } from "@/components/ui/button";
 import { HighlightBadge } from "@/components/ui/highlight-badge";
@@ -9,12 +8,6 @@ import { getLocale, getTranslations } from "next-intl/server";
 export default async function HeroSection() {
   const locale = await getLocale();
   const t = await getTranslations({ locale, namespace: "home" });
-
-  const ctaButtons = t.raw("ctaButtons") as Array<{
-    text: string;
-    href: string;
-    variant: string;
-  }>;
 
   return (
     <section className="py-12 md:py-16">
@@ -52,23 +45,13 @@ export default async function HeroSection() {
           </AnimatedContainer>
 
           <AnimatedContainer
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+            className="flex gap-4"
             duration={2}
             delay={0.4}
             ease="veryGentle"
             offset={12}
           >
-            <Button
-              asChild
-              size="lg"
-              variant="default"
-              id={HERO_CONTACT_BUTTON_ID}
-            >
-              <HeroContactButton href="https://wa.me/40775378525">
-                {t("contactMe")}
-              </HeroContactButton>
-            </Button>
-            <Button asChild size="lg" variant="outline">
+            <Button asChild size="lg" id={HERO_CONTACT_BUTTON_ID}>
               <Link href="/schedule">{t("scheduleCall")}</Link>
             </Button>
           </AnimatedContainer>
