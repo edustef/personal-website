@@ -19,11 +19,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { usePathname } from "@/i18n/navigation";
-import { trackContactEvent } from "@/lib/tracking";
+import { Link as I18nLink, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Calendar, Menu, X } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
@@ -48,7 +47,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
   const skipLinkText = headerT("skipLinkText");
   const navigationLabel = headerT("navLabel");
   const homeButtonLabel = headerT("homeButtonLabel");
-  const contactMeText = homeT("contactMe");
+  const contactMeText = homeT("scheduleCall");
   const menuLabel = headerT("menuLabel");
 
   const servicesText = headerT("nav.services");
@@ -309,14 +308,10 @@ export function Header({ className, languageToggle }: HeaderProps) {
                   className="hidden md:block"
                 >
                   <Button asChild variant="default" size="sm">
-                    <a
-                      href="https://wa.me/40775378525"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={trackContactEvent}
-                    >
+                    <I18nLink href="/schedule">
+                      <Calendar className="size-4" />
                       {contactMeText}
-                    </a>
+                    </I18nLink>
                   </Button>
                 </motion.div>
               )}
@@ -455,14 +450,13 @@ export function Header({ className, languageToggle }: HeaderProps) {
                       className="mt-6 pt-6 border-t"
                     >
                       <Button asChild className="w-full" size="lg">
-                        <a
-                          href="https://wa.me/40775378525"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <I18nLink
+                          href="/schedule"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
+                          <Calendar className="size-5" />
                           {contactMeText}
-                        </a>
+                        </I18nLink>
                       </Button>
                     </motion.div>
                   </nav>

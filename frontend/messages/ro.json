@@ -233,18 +233,20 @@
     }
   },
   "home": {
-    "headline": "Stack-ul complet pentru <strong>succes digital</strong>.",
-    "tagline": "Scalez traficul, construiesc fundații de înaltă performanță și maximizez conversia. Soluții web concepute să se plătească singure.",
-    "aboutMeDescription": "Sunt Eduard Stefan și construiesc site-uri web de înaltă calitate care prioritizează atenția la detalii și experiența utilizatorului. Mă concentrez pe crearea de soluții web care convertesc și aduc valoare reală, ajutându-ți afacerea să crească digital. Lucrul unu-la-unu îmi permite să mă ocup în detaliu de aspectele care contează cel mai mult pentru afacerea ta.",
-    "announcementLabel": "Calculează-ți <strong>venitul potențial</strong>",
+    "headline": "Ideea ta merită o <strong>execuție excelentă</strong>.",
+    "tagline": "De la 'se poate construi asta?' la 'când lansăm?'",
+    "aboutMeDescription": "De la 'se poate construi asta?' la 'când lansăm?'",
+    "announcementLabel": "Înscrie-te pe lista de așteptare <strong>Frameback</strong>",
     "resumeButtonLabel": "Vezi CV-ul meu",
     "findMeOnLabel": "Găsește-mă pe",
     "contactMe": "Obține Apelul Meu Strategic Gratuit",
+    "scheduleCall": "Rezervă Apel de Descoperire",
+    "contactDirectly": "Contactează-mă Direct",
     "workedWith": "Cu ce lucrez",
     "tools": {
       "label": "Tehnologii",
       "headline": "Instrumente și Tehnologii",
-      "subtitle": "Stack-ul modern pe care îl folosesc pentru a construi experiențe web rapide și scalabile"
+      "subtitle": "React, Next.js, TypeScript—și orice e nevoie să livrăm"
     },
     "ctaButtons": [
       {
@@ -256,14 +258,14 @@
     "aboutMe": {
       "label": "Cine sunt",
       "headline": "Despre Mine",
-      "subtitle": "Cunoaște persoana din spatele codului",
-      "description": "Sunt Eduard Stefan, un dezvoltator care înțelege că un site web este o investiție, nu doar o carte de vizită digitală. Îmbin expertiza tehnică cu strategii SEO și CRO pentru a construi site-uri care nu doar arată bine—ci funcționează cu adevărat. Scopul meu este simplu: să te ajut să obții mai mult trafic și să transformi acel trafic în afaceri reale. Lucrez unu-la-unu cu tine pentru a mă asigura că fiecare detaliu contribuie la succesul tău.",
-      "cta": "Hai să Discutăm Proiectul Tău"
+      "subtitle": "4+ ani și fiecare proiect încă mă învață ceva",
+      "description": "Lucrez cel mai bine când brief-ul e ambițios și ideile sunt îndrăznețe. Dă-mi un concept vizual puternic și îmi dau seama cum să-l fac real în browser. Am petrecut ani construind platforme pentru investitori, launchpad-uri cu miză mare și site-uri de marketing unde fiecare micro-interacțiune contează. Sunt obsedat de detalii pentru că detaliile fac lucrurile să se simtă bine.",
+      "cta": "Hai Să Construim Ceva"
     },
     "contact": {
       "label": "Ia legătura",
-      "headline": "Hai Să Construim Ceva Care Convertește",
-      "subtitle": "Nu mai lăsa bani pe masă. Programează un apel strategic gratuit pentru a descoperi exact cum să transformi traficul în venituri.",
+      "headline": "Ai o idee? Hai s-o facem realitate.",
+      "subtitle": "Fie că e un proiect nou, o provocare creativă sau ceva ce nu știi exact cum să construiești—mi-ar plăcea să aud despre asta.",
       "ctaButton": "Începe Proiectul Meu",
       "ctaButtonSecondary": "Obține un Răspuns Rapid",
       "whatsappLabel": "Întrebare rapidă? Scrie-mi pe WhatsApp"
@@ -314,37 +316,37 @@
       }
     },
     "seo": {
-      "title": "Eduard Stefan | Stack-ul Complet pentru Succes Digital.",
-      "description": "Un parteneriat direct axat pe maximizarea creșterii tale digitale."
+      "title": "Eduard Stefan | Dezvoltator Frontend",
+      "description": "Construiesc experiențe web care se simt bine. Idei îndrăznețe binevenite."
     }
   },
   "skills": {
-    "headline": "Site-uri web <strong>construite să fie găsite</strong>, nu doar să existe.",
-    "subtitle": "Tehnologii cu care lucrez"
+    "headline": "Construit cu <strong>uneltele care contează</strong>.",
+    "subtitle": "Stack-ul din spatele muncii"
   },
   "caseStudies": {
     "label": "Lucrări Selectate",
-    "headline": "Rezultate care vorbesc de la sine",
-    "subtitle": "Proiecte reale, rezultate reale. Vezi cum am ajutat afacerile să depășească provocările și să-și atingă obiectivele.",
+    "headline": "Munca Vorbește",
+    "subtitle": "Proiecte reale. Numere reale. Judecă tu.",
     "viewProject": "Vezi studiul de caz",
     "challenge": "Provocare",
     "result": "Rezultat"
   },
   "testimonials": {
-    "label": "Povești de la Clienți",
-    "headline": "De încredere de fondatori și echipe",
-    "subtitle": "Nu mă crede pe cuvânt—ascultă de la oamenii care au lucrat cu mine.",
+    "label": "Ce Spun Oamenii",
+    "headline": "De la oamenii cu care am lucrat",
+    "subtitle": "Nu mă crede doar pe mine.",
     "test-1": {
-      "quote": "Eduard a transformat platforma noastră învechită în ceva ce utilizatorii noștri iubesc cu adevărat. Atenția la detalii și focusul pe performanță au făcut toată diferența. Ratele noastre de conversie vorbesc de la sine."
+      "quote": "I-am dat lui Eduard un fișier Figma și un termen limită. S-a întors cu ceva mai bun decât am proiectat noi. Micro-interacțiunile, performanța—pur și simplu înțelege."
     },
     "test-2": {
-      "quote": "Lucrul cu Eduard a fost un schimbător de joc pentru startup-ul nostru. A livrat MVP-ul nostru în timp record fără să facă compromisuri. Am asigurat runda noastră inițială în mare parte datorită cât de bine lucrat era produsul."
+      "quote": "Majoritatea devs au nevoie să îi ții de mână. Eduard avea nevoie de context. Odată ce a înțeles ce construim și de ce, a mers singur. A livrat totul înainte de termen."
     },
     "test-3": {
-      "quote": "Am lucrat cu mulți dezvoltatori, dar Eduard se remarcă. Nu doar scrie cod—înțelege obiectivele de afaceri și construiește soluții care generează rezultate reale."
+      "quote": "A respins ideile noastre proaste și le-a făcut pe cele bune și mai bune. E rar să găsești un dezvoltator căruia îi pasă de produs, nu doar de cod."
     },
     "test-4": {
-      "quote": "Site-ul nostru de e-commerce pierdea bani din cauza unei experiențe mobile slabe. Munca de optimizare a lui Eduard s-a plătit singură în prima lună. Recomand cu căldură."
+      "quote": "Rata noastră de conversie pe mobil era jenantă. Două săptămâni cu Eduard și e canalul nostru cu cea mai bună performanță. ROI-ul a fost imediat."
     }
   },
   "projects": {
@@ -397,89 +399,89 @@
   },
   "services": {
     "label": "Ce Fac Eu",
-    "headline": "Partenerul tău pentru trafic și conversii",
-    "subtitle": "Totul merge mână în mână. SEO aduce oamenii potriviți, iar designul optimizat se asigură că rămân.",
-    "cta": "Vezi Cum Te Pot Ajuta",
+    "headline": "De la Idee la Realitate",
+    "subtitle": "Preiau proiectele care îi fac pe alți devs să tremure.",
+    "cta": "Hai Să Vorbim Despre Proiectul Tău",
     "svc-1": {
       "title": "Parteneriat Direct",
-      "description": "Fără intermediari. Lucrezi direct cu mine, ceea ce înseamnă comunicare clară, actualizări mai rapide și un partener căruia îi pasă de succesul tău."
+      "description": "Fără agenții, fără manageri de cont. Vorbești cu mine. Înțeleg viziunea ta, iterăm împreună, și construiesc exact ce ai nevoie."
     },
     "svc-2": {
-      "title": "Dezvoltare SEO-First",
-      "description": "Construiesc site-uri pe care Google le iubește. Cod curat, structură perfectă și performanță rapidă pentru a te ajuta să te clasezi mai sus."
+      "title": "Micro-Interacțiuni Care Contează",
+      "description": "Lucrurile mici fac diferența. Stări hover, tranziții, animații—mă ocup de detaliile care fac interfețele să se simtă vii."
     },
     "svc-3": {
-      "title": "Acoperire Globală",
-      "description": "Extinde-ți audiența cu suport multi-limbă fără probleme. Vorbește pe limba clienților tăi și construiește încredere la nivel global."
+      "title": "Performanță Care Convertește",
+      "description": "Site-uri care se încarcă instant și ghidează vizitatorii spre acțiune. Construiesc cu gândire CRO integrată din prima zi."
     },
     "svc-4": {
-      "title": "Viteză Ultra-Rapidă",
-      "description": "Viteza este o funcționalitate. Mă asigur că site-ul tău se încarcă instantaneu, menținând vizitatorii fericiți și reducând rata de abandon."
+      "title": "Construit pentru Scalare",
+      "description": "Arhitectură curată, cod de încredere, fluxuri de utilizator fluide. Fie că sunt 100 de utilizatori sau 100.000—site-ul tău face față."
     },
     "svc-5": {
-      "title": "Focus pe Conversie/CRO",
-      "description": "Traficul e bun, dar clienții sunt mai buni. Proiectez fluxuri care ghidează vizitatorii în mod natural către acțiune."
+      "title": "SEO Care Funcționează",
+      "description": "Structură pe care motoarele de căutare o înțeleg. Fundamente tehnice care te ajută să te clasezi și să fii descoperit."
     },
     "svc-6": {
-      "title": "Design UX",
-      "description": "Simplu, intuitiv și frumos. Creez interfețe care sunt ușor de folosit și lasă o impresie pozitivă de durată."
+      "title": "Pregătit pentru Lume",
+      "description": "Suport multi-limbă de la început. Ajunge la clienți în limba lor, oriunde ar fi."
     }
   },
   "howIWork": {
     "label": "Proces",
     "headline": "Cum Lucrez",
-    "subtitle": "Un proces simplu și transparent, concentrat pe rezultate.",
-    "cta": "Începe Procesul",
+    "subtitle": "Fără surprize. Doar progres clar până lansăm.",
+    "cta": "Hai Să Începem",
     "planning": {
-      "title": "Descoperire & Strategie",
+      "title": "Descoperim Ce Ai Nevoie De Fapt",
       "paragraphs": [
-        "Mai întâi, aprofundăm obiectivele tale. Vreau să înțeleg cine sunt clienții tăi și ce vrei să obții. Vom stabili un plan care acoperă atât partea tehnică, cât și cea de marketing."
+        "Vorbim. Pun întrebări până înțeleg ce încerci să construiești și de ce contează. Apoi decidem domeniul, calendarul și cum arată succesul."
       ],
       "bulletPoints": [
-        "Înțelegerea audienței tale",
-        "Definirea obiectivelor clare",
-        "Strategie SEO & Conținut"
+        "Obiectivele tale, nu presupuneri",
+        "Domeniu care are sens",
+        "Jaloane clare"
       ]
     },
     "development": {
-      "title": "Design & Construcție",
+      "title": "Construiesc. Vezi Progresul.",
       "paragraphs": [
-        "Aici se întâmplă magia. Construiesc site-ul tău cu cod curat și un design care convertește. Vei vedea progresul pe parcurs și vom ajusta lucrurile până când se simt exact cum trebuie."
+        "Nu dispar săptămâni întregi. Vei vedea actualizări regulate, prototipuri funcționale și multe oportunități de a corecta direcția înainte să fim prea adânc."
       ],
       "bulletPoints": [
-        "Design axat pe conversie",
-        "Cod curat, prietenos cu SEO",
-        "Actualizări regulate de progres"
+        "Check-in-uri frecvente",
+        "Demo-uri funcționale, nu slide-uri",
+        "Spațiu pentru iterare"
       ]
     },
     "deployment": {
-      "title": "Lansare & Verificare",
+      "title": "Lansăm Când E Gata",
       "paragraphs": [
-        "Lansăm. Mă ocup de toată configurarea tehnică—hosting, domeniu, securitate. De asemenea, mă asigur că toate sistemele de urmărire (analytics, pixel) funcționează perfect pentru a putea măsura succesul."
+        "Mă ocup de detaliile tehnice—hosting, domeniu, securitate, tracking. Testăm totul, reparăm ce trebuie reparat, apoi lansăm cu încredere."
       ],
       "bulletPoints": [
-        "Lansare lină și sigură",
-        "Configurare Analytics & tracking",
-        "Testare de performanță"
+        "Testat înainte de lansare",
+        "Analytics configurat",
+        "Zero incertitudine"
       ]
     },
     "postDeployment": {
-      "title": "Optimizare și Extindere",
+      "title": "E Al Tău. Sunt Aici Dacă Ai Nevoie.",
       "paragraphs": [
-        "Lansarea e doar începutul. Îți arăt cum să gestionezi conținutul și putem continua să lucrăm împreună pentru a analiza datele și a îmbunătăți ratele de conversie în timp."
+        "Ești proprietar pe tot. Îți arăt cum să actualizezi conținutul singur. Și dacă vrei să continui să îmbunătățești bazat pe date reale, putem face și asta."
       ],
       "bulletPoints": [
-        "Instruire CMS pentru tine",
-        "Optimizări bazate pe date",
-        "Suport continuu pentru proiect"
+        "Proprietate completă",
+        "Instruire inclusă",
+        "Suport continuu disponibil"
       ]
     }
   },
   "howIPrice": {
     "label": "Prețuri",
-    "headline": "Prețuri care se adaptează nevoilor tale",
-    "subtitle": "Alege pachetul care se potrivește stării afacerii tale.",
-    "intro": "Majoritatea site-urilor sunt frumoase, dar nu fac mare lucru. Eu construiesc site-uri concepute să se claseze pe Google și să transforme vizitatorii în clienți. În plus, vei putea edita totul singur.",
+    "headline": "Cât Costă",
+    "subtitle": "Direct. Fără costuri ascunse.",
+    "intro": "Construiesc site-uri care performează—rapide, focusate pe conversie, și ușor de întreținut de tine. Alege domeniul care se potrivește proiectului tău.",
     "packages": {
       "title": "Pachete de Proiect",
       "subtitle": "Selectează opțiunea care se potrivește stării actuale a afacerii tale.",
@@ -553,9 +555,9 @@
   },
   "roiCalculator": {
     "label": "Simularea Veniturilor",
-    "headline": "Câți bani lași pe masă?",
-    "subtitle": "Calculează-ți creșterea potențială.",
-    "description": "Mici îmbunătățiri ale ratei de conversie pot duce la câștiguri masive de venituri. Folosește acest calculator pentru a vedea impactul potențial al optimizării site-ului tău.",
+    "headline": "Cât lasă site-ul tău pe masă?",
+    "subtitle": "Fă calculele.",
+    "description": "O mică creștere a ratei de conversie se acumulează rapid. Introdu numerele tale și vezi ce ar putea face chiar și îmbunătățiri modeste.",
     "yourMetrics": "Metricile Tale",
     "metricsDescription": "Introdu cifrele actuale ale site-ului tău",
     "monthlyVisitors": "Vizitatori Lunari",
@@ -604,10 +606,10 @@
     }
   },
   "faq": {
-    "label": "Întrebări Frecvente",
-    "headline": "Întrebări Frecvente",
-    "subtitle": "Întrebări comune despre serviciile mele, proces și cum putem lucra împreună.",
-    "cta": "Ai Încă Întrebări? Hai Să Vorbim",
+    "label": "FAQ",
+    "headline": "Întrebări Pe Care Le-ai Putea Avea",
+    "subtitle": "Ce întreabă de obicei oamenii înainte să începem.",
+    "cta": "Mai Ai Întrebări? Hai Să Vorbim",
     "faq-1": {
       "question": "Cât durează un proiect tipic?",
       "answer": "Termenele proiectului variază în funcție de domeniul de aplicare și complexitate. Pachetul 'Launch' durează de obicei 2-3 zile, în timp ce pachetul 'Growth' durează 1-2 săptămâni. Soluțiile personalizate cu funcționalitate complexă pot dura mai mult. Voi oferi un termen detaliat în timpul consultației noastre inițiale."
@@ -646,7 +648,7 @@
   "portfolio": {
     "label": "Portofoliu",
     "headline": "Lucrări Recente",
-    "subtitle": "O selecție de proiecte care demonstrează abordarea mea în crearea experiențelor web moderne.",
+    "subtitle": "Idei îndrăznețe binevenite. Sunt suficient de încăpățânat să le construiesc cum trebuie.",
     "cta": "Vrei Rezultate Similare?",
     "viewProject": "Vezi Proiectul",
     "viewLive": "Vezi Site-ul Live",
@@ -666,8 +668,8 @@
   },
   "stats": {
     "label": "În Cifre",
-    "headline": "Rezultate Care Vorbesc",
-    "subtitle": "Metrici reale din proiecte reale. Iată ce am ajutat să realizez.",
+    "headline": "Cifrele",
+    "subtitle": "Din munca pe care am livrat-o.",
     "metrics": {
       "yearsExperience": {
         "value": "4+",
@@ -689,6 +691,76 @@
         "value": "15%+",
         "label": "Creșterea Medie a Conversiei"
       }
+    }
+  },
+  "booking": {
+    "steps": {
+      "date": "Data",
+      "time": "Ora",
+      "confirm": "Confirmă"
+    },
+    "schedule": {
+      "pickDate": "Alege o Dată",
+      "pickTime": "Alege o Oră",
+      "bookingSummary": "Rezumat Rezervare",
+      "date": "Data",
+      "time": "Ora",
+      "backToCalendar": "Înapoi la Calendar",
+      "peopleLooking": "{count, plural, one {# persoană} few {# persoane} other {# persoane}} urmăresc",
+      "manageExisting": "Gestionează rezervările existente",
+      "backToHome": "Înapoi la Pagina Principală"
+    },
+    "verify": {
+      "confirmWithEmail": "Confirmă cu Email",
+      "sendCodeDescription": "Îți vom trimite un cod de verificare",
+      "enterCode": "Introdu Codul",
+      "sentTo": "Trimis la {email}",
+      "demoCode": "Cod Demo",
+      "sendCode": "Trimite Codul",
+      "verify": "Verifică",
+      "confirmBooking": "Confirmă Rezervarea",
+      "continueWith": "Continuă cu {email}",
+      "signedInReady": "Ești autentificat. Gata să confirmi rezervarea?",
+      "useDifferentEmail": "Folosește Alt Email",
+      "changeEmail": "Schimbă Email",
+      "back": "Înapoi"
+    },
+    "confirmed": {
+      "title": "Totul e Gata!",
+      "confirmationSent": "Confirmare trimisă la {email}",
+      "appointment": "Întâlnire de 30 min",
+      "addToCalendar": "Adaugă în Google Calendar",
+      "done": "Gata"
+    },
+    "manage": {
+      "title": "Gestionează Rezervările",
+      "subtitle": "Vezi sau anulează întâlnirile tale existente",
+      "findBookings": "Caută Rezervări",
+      "noBookings": "Nu s-au găsit rezervări active.",
+      "logout": "Deconectare",
+      "cancelBooking": "Anulează Rezervarea",
+      "cancelConfirmation": "Ești sigur că vrei să anulezi această rezervare? Această acțiune nu poate fi anulată.",
+      "keepBooking": "Păstrează Rezervarea"
+    },
+    "calendar": {
+      "monday": "Lun",
+      "tuesday": "Mar",
+      "wednesday": "Mie",
+      "thursday": "Joi",
+      "friday": "Vin",
+      "saturday": "Sâm",
+      "sunday": "Dum"
+    },
+    "errors": {
+      "failedToSendCode": "Eroare la trimiterea codului",
+      "invalidCode": "Cod invalid",
+      "verificationFailed": "Verificare eșuată sau loc ocupat",
+      "bookingFailed": "Rezervare eșuată sau loc ocupat",
+      "failedToCancel": "Eroare la anulare",
+      "slotTaken": "Acea oră este deja rezervată"
+    },
+    "success": {
+      "bookingCancelled": "Rezervare anulată"
     }
   }
 }

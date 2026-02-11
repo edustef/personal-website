@@ -35,5 +35,13 @@ export const routing = defineRouting({
       ro: "/inapoi-in-anii-00",
       es: "/volver-a-los-00",
     },
+    "/schedule": {
+      ro: "/programeaza",
+      es: "/agendar",
+    },
+    "/appointments": {
+      ro: "/programari",
+      es: "/citas",
+    },
   },
 });

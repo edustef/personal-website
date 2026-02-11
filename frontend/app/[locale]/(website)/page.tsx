@@ -9,7 +9,6 @@ import PortfolioSection from "@/components/sections/portfolio-section";
 import ServicesSection from "@/components/sections/services-section";
 import ToolsSection from "@/components/sections/tools-section";
 import { BackgroundPaperShaders } from "@/components/ui/background-paper-shaders";
-import { getWhatsAppUrl } from "@/lib/utils";
 // import { InteractiveNebulaShader } from "@/components/ui/liquid-shader";
 import { getPathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -57,8 +56,6 @@ export default async function Page(props: Props) {
   const t = await getTranslations({ locale, namespace: "home" });
   const faqT = await getTranslations({ locale, namespace: "faq" });
   const servicesT = await getTranslations({ locale, namespace: "services" });
-
-  const whatsappUrl = getWhatsAppUrl(profileT("phone"), undefined);
 
   const socialLinksRaw = profileT.raw("socialLinks") as
     | Array<{ name: string; url: string }>
@@ -117,12 +114,9 @@ export default async function Page(props: Props) {
 
       <FAQSection />
 
-      <ContactSection socialLinks={socialLinksRaw} whatsappUrl={whatsappUrl} />
+      <ContactSection socialLinks={socialLinksRaw} />
 
-      <FloatingContactButton
-        contactMeText={t("contactMe")}
-        contactUrl={whatsappUrl || "https://wa.me/40775378525"}
-      />
+      <FloatingContactButton contactMeText={t("scheduleCall")} />
     </>
   );
 }
