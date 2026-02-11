@@ -259,7 +259,7 @@
       "label": "Quién soy",
       "headline": "Sobre Mí",
       "subtitle": "4+ años y cada proyecto todavía me enseña algo",
-      "description": "Trabajo mejor cuando el brief es ambicioso y las ideas son salvajes. Dame un concepto visual fuerte y descubriré cómo hacerlo real en el navegador. He pasado años construyendo plataformas para inversores, launchpads de alto impacto y sitios de marketing donde cada píxel y micro-interacción importa. Me obsesiono con los detalles porque los detalles son lo que hacen que las cosas se sientan bien.",
+      "description": "Trabajo mejor cuando el brief es ambicioso y las ideas son salvajes. Dame un concepto visual fuerte y descubriré cómo hacerlo real en el navegador. He pasado años construyendo plataformas para inversores, launchpads de alto impacto y sitios de marketing donde cada micro-interacción importa. Me obsesiono con los detalles porque los detalles son lo que hacen que las cosas se sientan bien.",
       "cta": "Construyamos Algo"
     },
     "contact": {
@@ -407,8 +407,8 @@
       "description": "Sin agencias, sin intermediarios. Hablas conmigo. Entiendo tu visión, iteramos juntos, y construyo exactamente lo que necesitas."
     },
     "svc-2": {
-      "title": "Ejecución Pixel-Perfect",
-      "description": "Me obsesiono con los detalles. Cada decisión de espaciado, cada micro-interacción, cada animación—hasta que coincida exactamente con la visión creativa."
+      "title": "Micro-Interacciones Que Importan",
+      "description": "Las pequeñas cosas marcan la diferencia. Estados hover, transiciones, animaciones—cuido los detalles que hacen que las interfaces se sientan vivas."
     },
     "svc-3": {
       "title": "Rendimiento que Convierte",

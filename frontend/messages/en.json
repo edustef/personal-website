@@ -259,7 +259,7 @@
       "label": "Who I am",
       "headline": "About Me",
       "subtitle": "4+ years and every project still teaches me something",
-      "description": "I work best when the brief is ambitious and the ideas are wild. Give me a strong visual concept and I'll figure out how to make it real in the browser. I've spent years building investor-facing platforms, high-stakes launchpads, and marketing sites where every pixel and micro-interaction matters. I obsess over the details because the details are what make things feel right.",
+      "description": "I work best when the brief is ambitious and the ideas are wild. Give me a strong visual concept and I'll figure out how to make it real in the browser. I've spent years building investor-facing platforms, high-stakes launchpads, and marketing sites where every micro-interaction matters. I obsess over the details because the details are what make things feel right.",
       "cta": "Let's Build Something"
     },
     "contact": {
@@ -407,8 +407,8 @@
       "description": "No agencies, no account managers. You talk to me. I understand your vision, we iterate together, and I build exactly what you need."
     },
     "svc-2": {
-      "title": "Pixel-Perfect Execution",
-      "description": "I obsess over the details. Every spacing decision, every micro-interaction, every animation—until it matches the creative vision exactly."
+      "title": "Micro-Interactions That Matter",
+      "description": "The small things make the difference. Hover states, transitions, animations—I sweat the details that make interfaces feel alive."
     },
     "svc-3": {
       "title": "Performance That Converts",
