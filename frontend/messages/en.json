@@ -233,14 +233,15 @@
     }
   },
   "home": {
-    "headline": "The full stack for <strong>digital success</strong>.",
-    "tagline": "Scaling traffic, engineering high-performance foundations, and maximizing conversion. Web solutions designed to pay for themselves.",
-    "aboutMeDescription": "I'm Eduard Stefan, and I build high-quality websites that prioritize revenue and user experience. I focus on creating web solutions that convert and deliver real value, helping your business grow digitally. Working one-on-one allows me to obsess over the details that matter most to your bottom line.",
+    "headline": "Your idea deserves <strong>great execution</strong>.",
+    "tagline": "From 'is this even possible?' to 'when can we launch?'",
+    "aboutMeDescription": "From 'is this even possible?' to 'when can we launch?'",
     "announcementLabel": "Calculate your <strong>potential revenue</strong>",
     "resumeButtonLabel": "See my resume",
     "findMeOnLabel": "Find me on",
     "contactMe": "Get My Free Strategy Call",
-    "scheduleCall": "Schedule a Call",
+    "scheduleCall": "Book Discovery Call",
+    "contactDirectly": "Contact Me Directly",
     "workedWith": "What I work with",
     "tools": {
       "label": "Technologies",
@@ -258,13 +259,13 @@
       "label": "Who I am",
       "headline": "About Me",
       "subtitle": "Get to know the person behind the code",
-      "description": "I'm Eduard Stefan, a developer who understands that a website is an investment, not just a digital business card. I combine technical expertise with SEO and CRO strategies to build sites that don't just look good—they actually work. My goal is simple: to help you get more traffic and turn that traffic into real business. I work one-on-one with you to ensure every detail contributes to your success.",
+      "description": "I'm Eduard Stefan—a developer and creative problem solver. I build things that work beautifully: websites, apps, and digital products that feel as polished as they are functional. I bring SEO and CRO expertise to make sure your work gets seen and converts, but what I really love is tackling interesting challenges and crafting solutions that surprise and delight.",
       "cta": "Let's Discuss Your Project"
     },
     "contact": {
       "label": "Get in touch",
-      "headline": "Let's Build Something That Converts",
-      "subtitle": "Stop leaving money on the table. Get a free strategy call to discover exactly how to turn your traffic into revenue.",
+      "headline": "Got an idea? Let's make it real.",
+      "subtitle": "Whether it's a new project, a creative challenge, or something you're not quite sure how to build—I'd love to hear about it.",
       "ctaButton": "Start My Project",
       "ctaButtonSecondary": "Get a Quick Answer",
       "whatsappLabel": "Quick question? WhatsApp me"
@@ -315,12 +316,12 @@
       }
     },
     "seo": {
-      "title": "Eduard Stefan | The Full Stack for Digital Success.",
-      "description": "A direct partnership focused on maximizing your digital growth."
+      "title": "Eduard Stefan | Web Developer & Creative Problem Solver",
+      "description": "Turning complex ideas into elegant digital experiences. Let's build something remarkable together."
     }
   },
   "skills": {
-    "headline": "Websites <strong>built to be seen</strong>, not just exist.",
+    "headline": "Crafted with <strong>care and precision</strong>.",
     "subtitle": "Technologies I work with"
   },
   "caseStudies": {
@@ -398,8 +399,8 @@
   },
   "services": {
     "label": "What I Do",
-    "headline": "Your Partner in Traffic & Conversion",
-    "subtitle": "Everything goes hand in hand. SEO brings the right people, and optimized design ensures they stick around.",
+    "headline": "From Idea to Reality",
+    "subtitle": "I take the projects that make other devs nervous.",
     "cta": "See How I Can Help You",
     "svc-1": {
       "title": "Direct Partnership",
@@ -647,7 +648,7 @@
   "portfolio": {
     "label": "Portfolio",
     "headline": "Featured Work",
-    "subtitle": "A selection of projects showcasing my approach to building modern web experiences.",
+    "subtitle": "Wild ideas welcome. I'm stubborn enough to build them right.",
     "cta": "Want Similar Results?",
     "viewProject": "View Project",
     "viewLive": "View Live Site",

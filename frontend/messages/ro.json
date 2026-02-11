@@ -233,14 +233,15 @@
     }
   },
   "home": {
-    "headline": "Stack-ul complet pentru <strong>succes digital</strong>.",
-    "tagline": "Scalez traficul, construiesc fundații de înaltă performanță și maximizez conversia. Soluții web concepute să se plătească singure.",
-    "aboutMeDescription": "Sunt Eduard Stefan și construiesc site-uri web de înaltă calitate care prioritizează atenția la detalii și experiența utilizatorului. Mă concentrez pe crearea de soluții web care convertesc și aduc valoare reală, ajutându-ți afacerea să crească digital. Lucrul unu-la-unu îmi permite să mă ocup în detaliu de aspectele care contează cel mai mult pentru afacerea ta.",
+    "headline": "Ideea ta merită o <strong>execuție excelentă</strong>.",
+    "tagline": "De la 'se poate construi asta?' la 'când lansăm?'",
+    "aboutMeDescription": "De la 'se poate construi asta?' la 'când lansăm?'",
     "announcementLabel": "Calculează-ți <strong>venitul potențial</strong>",
     "resumeButtonLabel": "Vezi CV-ul meu",
     "findMeOnLabel": "Găsește-mă pe",
     "contactMe": "Obține Apelul Meu Strategic Gratuit",
-    "scheduleCall": "Programează un Apel",
+    "scheduleCall": "Rezervă Apel de Descoperire",
+    "contactDirectly": "Contactează-mă Direct",
     "workedWith": "Cu ce lucrez",
     "tools": {
       "label": "Tehnologii",
@@ -258,13 +259,13 @@
       "label": "Cine sunt",
       "headline": "Despre Mine",
       "subtitle": "Cunoaște persoana din spatele codului",
-      "description": "Sunt Eduard Stefan, un dezvoltator care înțelege că un site web este o investiție, nu doar o carte de vizită digitală. Îmbin expertiza tehnică cu strategii SEO și CRO pentru a construi site-uri care nu doar arată bine—ci funcționează cu adevărat. Scopul meu este simplu: să te ajut să obții mai mult trafic și să transformi acel trafic în afaceri reale. Lucrez unu-la-unu cu tine pentru a mă asigura că fiecare detaliu contribuie la succesul tău.",
+      "description": "Sunt Eduard Stefan—dezvoltator și rezolvitor creativ de probleme. Construiesc lucruri care funcționează frumos: site-uri web, aplicații și produse digitale care se simt la fel de finisate pe cât sunt de funcționale. Aduc expertiză în SEO și CRO pentru a mă asigura că munca ta este văzută și convertește, dar ceea ce îmi place cu adevărat este să abordez provocări interesante și să creez soluții care surprind și încântă.",
       "cta": "Hai să Discutăm Proiectul Tău"
     },
     "contact": {
       "label": "Ia legătura",
-      "headline": "Hai Să Construim Ceva Care Convertește",
-      "subtitle": "Nu mai lăsa bani pe masă. Programează un apel strategic gratuit pentru a descoperi exact cum să transformi traficul în venituri.",
+      "headline": "Ai o idee? Hai s-o facem realitate.",
+      "subtitle": "Fie că e un proiect nou, o provocare creativă sau ceva ce nu știi exact cum să construiești—mi-ar plăcea să aud despre asta.",
       "ctaButton": "Începe Proiectul Meu",
       "ctaButtonSecondary": "Obține un Răspuns Rapid",
       "whatsappLabel": "Întrebare rapidă? Scrie-mi pe WhatsApp"
@@ -315,12 +316,12 @@
       }
     },
     "seo": {
-      "title": "Eduard Stefan | Stack-ul Complet pentru Succes Digital.",
-      "description": "Un parteneriat direct axat pe maximizarea creșterii tale digitale."
+      "title": "Eduard Stefan | Dezvoltator Web și Rezolvitor Creativ",
+      "description": "Transform idei complexe în experiențe digitale elegante. Hai să construim ceva remarcabil împreună."
     }
   },
   "skills": {
-    "headline": "Site-uri web <strong>construite să fie găsite</strong>, nu doar să existe.",
+    "headline": "Creat cu <strong>grijă și precizie</strong>.",
     "subtitle": "Tehnologii cu care lucrez"
   },
   "caseStudies": {
@@ -398,8 +399,8 @@
   },
   "services": {
     "label": "Ce Fac Eu",
-    "headline": "Partenerul tău pentru trafic și conversii",
-    "subtitle": "Totul merge mână în mână. SEO aduce oamenii potriviți, iar designul optimizat se asigură că rămân.",
+    "headline": "De la Idee la Realitate",
+    "subtitle": "Preiau proiectele care îi fac pe alți devs să tremure.",
     "cta": "Vezi Cum Te Pot Ajuta",
     "svc-1": {
       "title": "Parteneriat Direct",
@@ -647,7 +648,7 @@
   "portfolio": {
     "label": "Portofoliu",
     "headline": "Lucrări Recente",
-    "subtitle": "O selecție de proiecte care demonstrează abordarea mea în crearea experiențelor web moderne.",
+    "subtitle": "Idei îndrăznețe binevenite. Sunt suficient de încăpățânat să le construiesc cum trebuie.",
     "cta": "Vrei Rezultate Similare?",
     "viewProject": "Vezi Proiectul",
     "viewLive": "Vezi Site-ul Live",

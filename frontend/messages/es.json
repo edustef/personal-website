@@ -233,14 +233,15 @@
     }
   },
   "home": {
-    "headline": "El stack completo para <strong>éxito digital</strong>.",
-    "tagline": "Escalando tráfico, construyendo bases de alto rendimiento y maximizando la conversión. Soluciones web diseñadas para pagarse solas.",
-    "aboutMeDescription": "Soy Eduard Stefan y construyo sitios web de alta calidad que priorizan los ingresos y la experiencia del usuario. Me enfoco en crear soluciones web que conviertan y aporten un valor real, ayudando a que tu negocio crezca digitalmente. Trabajar uno a uno me permite obsesionarme con los detalles que más importan para tu resultado final.",
+    "headline": "Tu idea merece una <strong>gran ejecución</strong>.",
+    "tagline": "De '¿esto se puede construir?' a '¿cuándo lanzamos?'",
+    "aboutMeDescription": "De '¿esto se puede construir?' a '¿cuándo lanzamos?'",
     "announcementLabel": "Calcula tus <strong>ingresos potenciales</strong>",
     "resumeButtonLabel": "Ver mi currículum",
     "findMeOnLabel": "Encuéntrame en",
     "contactMe": "Obtén Mi Llamada Estratégica Gratis",
-    "scheduleCall": "Agenda una Llamada",
+    "scheduleCall": "Reserva Llamada de Descubrimiento",
+    "contactDirectly": "Contáctame Directamente",
     "workedWith": "Con qué trabajo",
     "tools": {
       "label": "Tecnologías",
@@ -258,13 +259,13 @@
       "label": "Quién soy",
       "headline": "Sobre Mí",
       "subtitle": "Conoce a la persona detrás del código",
-      "description": "Soy Eduard Stefan, un desarrollador que entiende que un sitio web es una inversión, no solo una tarjeta de visita digital. Combino experiencia técnica con estrategias de SEO y CRO para construir sitios que no solo se ven bien, sino que funcionan de verdad. Mi objetivo es simple: ayudarte a obtener más tráfico y convertir ese tráfico en negocios reales. Trabajo uno a uno contigo para asegurar que cada detalle contribuya a tu crecimiento.",
+      "description": "Soy Eduard Stefan—desarrollador y solucionador creativo de problemas. Construyo cosas que funcionan bellamente: sitios web, apps y productos digitales que se sienten tan pulidos como funcionales. Aporto experiencia en SEO y CRO para asegurar que tu trabajo sea visto y convierta, pero lo que realmente me apasiona es abordar desafíos interesantes y crear soluciones que sorprendan y deleiten.",
       "cta": "Hablemos de Tu Proyecto"
     },
     "contact": {
       "label": "Ponerse en contacto",
-      "headline": "Construyamos Algo Que Convierta",
-      "subtitle": "Deja de perder dinero. Obtén una llamada estratégica gratuita para descubrir exactamente cómo convertir tu tráfico en ingresos.",
+      "headline": "¿Tienes una idea? Hagámosla realidad.",
+      "subtitle": "Ya sea un nuevo proyecto, un desafío creativo o algo que no sabes bien cómo construir—me encantaría escucharlo.",
       "ctaButton": "Iniciar Mi Proyecto",
       "ctaButtonSecondary": "Obtener una Respuesta Rápida",
       "whatsappLabel": "¿Pregunta rápida? Escríbeme por WhatsApp"
@@ -315,12 +316,12 @@
       }
     },
     "seo": {
-      "title": "Eduard Stefan | El Stack Completo para el Éxito Digital.",
-      "description": "Una asociación directa centrada en maximizar tu crecimiento digital."
+      "title": "Eduard Stefan | Desarrollador Web y Solucionador Creativo",
+      "description": "Transformando ideas complejas en experiencias digitales elegantes. Construyamos algo extraordinario juntos."
     }
   },
   "skills": {
-    "headline": "Sitios web <strong>construidos para ser vistos</strong>, no solo existir.",
+    "headline": "Creado con <strong>cuidado y precisión</strong>.",
     "subtitle": "Tecnologías con las que trabajo"
   },
   "caseStudies": {
@@ -398,8 +399,8 @@
   },
   "services": {
     "label": "Lo Que Hago",
-    "headline": "Tu Socio de Crecimiento Digital",
-    "subtitle": "Todo va de la mano. El SEO trae a las personas adecuadas y el diseño optimizado asegura que se queden.",
+    "headline": "De la Idea a la Realidad",
+    "subtitle": "Acepto los proyectos que ponen nerviosos a otros devs.",
     "cta": "Descubre Cómo Puedo Ayudarte",
     "svc-1": {
       "title": "Asociación Directa",
@@ -647,7 +648,7 @@
   "portfolio": {
     "label": "Portafolio",
     "headline": "Trabajos Destacados",
-    "subtitle": "Una selección de proyectos que demuestran mi enfoque para crear experiencias web modernas.",
+    "subtitle": "Ideas locas bienvenidas. Soy lo suficientemente terco para construirlas bien.",
     "cta": "¿Quieres Resultados Similares?",
     "viewProject": "Ver Proyecto",
     "viewLive": "Ver Sitio en Vivo",
