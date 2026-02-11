@@ -690,5 +690,73 @@
         "label": "Creșterea Medie a Conversiei"
       }
     }
+  },
+  "booking": {
+    "steps": {
+      "date": "Data",
+      "time": "Ora",
+      "confirm": "Confirmă"
+    },
+    "schedule": {
+      "pickDate": "Alege o Dată",
+      "pickTime": "Alege o Oră",
+      "bookingSummary": "Rezumat Rezervare",
+      "date": "Data",
+      "time": "Ora",
+      "backToCalendar": "Înapoi la Calendar",
+      "peopleLooking": "{count, plural, one {# persoană} few {# persoane} other {# persoane}} urmăresc"
+    },
+    "verify": {
+      "confirmWithEmail": "Confirmă cu Email",
+      "sendCodeDescription": "Îți vom trimite un cod de verificare",
+      "enterCode": "Introdu Codul",
+      "sentTo": "Trimis la {email}",
+      "demoCode": "Cod Demo",
+      "sendCode": "Trimite Codul",
+      "verify": "Verifică",
+      "confirmBooking": "Confirmă Rezervarea",
+      "continueWith": "Continuă cu {email}",
+      "signedInReady": "Ești autentificat. Gata să confirmi rezervarea?",
+      "useDifferentEmail": "Folosește Alt Email",
+      "changeEmail": "Schimbă Email",
+      "back": "Înapoi"
+    },
+    "confirmed": {
+      "title": "Totul e Gata!",
+      "confirmationSent": "Confirmare trimisă la {email}",
+      "appointment": "Întâlnire de 30 min",
+      "addToCalendar": "Adaugă în Google Calendar",
+      "done": "Gata"
+    },
+    "manage": {
+      "title": "Gestionează Rezervările",
+      "subtitle": "Vezi sau anulează întâlnirile tale existente",
+      "findBookings": "Caută Rezervări",
+      "noBookings": "Nu s-au găsit rezervări active.",
+      "logout": "Deconectare",
+      "cancelBooking": "Anulează Rezervarea",
+      "cancelConfirmation": "Ești sigur că vrei să anulezi această rezervare? Această acțiune nu poate fi anulată.",
+      "keepBooking": "Păstrează Rezervarea"
+    },
+    "calendar": {
+      "monday": "Lun",
+      "tuesday": "Mar",
+      "wednesday": "Mie",
+      "thursday": "Joi",
+      "friday": "Vin",
+      "saturday": "Sâm",
+      "sunday": "Dum"
+    },
+    "errors": {
+      "failedToSendCode": "Eroare la trimiterea codului",
+      "invalidCode": "Cod invalid",
+      "verificationFailed": "Verificare eșuată sau loc ocupat",
+      "bookingFailed": "Rezervare eșuată sau loc ocupat",
+      "failedToCancel": "Eroare la anulare",
+      "slotTaken": "Acea oră este deja rezervată"
+    },
+    "success": {
+      "bookingCancelled": "Rezervare anulată"
+    }
   }
 }

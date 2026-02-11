@@ -690,5 +690,73 @@
         "label": "Avg. Conversion Lift"
       }
     }
+  },
+  "booking": {
+    "steps": {
+      "date": "Date",
+      "time": "Time",
+      "confirm": "Confirm"
+    },
+    "schedule": {
+      "pickDate": "Pick a Date",
+      "pickTime": "Pick a Time",
+      "bookingSummary": "Booking Summary",
+      "date": "Date",
+      "time": "Time",
+      "backToCalendar": "Back to Calendar",
+      "peopleLooking": "{count, plural, one {# person} other {# people}} looking"
+    },
+    "verify": {
+      "confirmWithEmail": "Confirm with Email",
+      "sendCodeDescription": "We'll send you a verification code",
+      "enterCode": "Enter Verification Code",
+      "sentTo": "Sent to {email}",
+      "demoCode": "Demo Code",
+      "sendCode": "Send Code",
+      "verify": "Verify",
+      "confirmBooking": "Confirm Booking",
+      "continueWith": "Continue with {email}",
+      "signedInReady": "You're signed in. Ready to confirm your booking?",
+      "useDifferentEmail": "Use Different Email",
+      "changeEmail": "Change Email",
+      "back": "Back"
+    },
+    "confirmed": {
+      "title": "You're All Set",
+      "confirmationSent": "Confirmation sent to {email}",
+      "appointment": "30 min appointment",
+      "addToCalendar": "Add to Google Calendar",
+      "done": "Done"
+    },
+    "manage": {
+      "title": "Manage Bookings",
+      "subtitle": "View or cancel your existing appointments",
+      "findBookings": "Find Bookings",
+      "noBookings": "No active bookings found.",
+      "logout": "Log out",
+      "cancelBooking": "Cancel Booking",
+      "cancelConfirmation": "Are you sure you want to cancel this booking? This action cannot be undone.",
+      "keepBooking": "Keep Booking"
+    },
+    "calendar": {
+      "monday": "Mon",
+      "tuesday": "Tue",
+      "wednesday": "Wed",
+      "thursday": "Thu",
+      "friday": "Fri",
+      "saturday": "Sat",
+      "sunday": "Sun"
+    },
+    "errors": {
+      "failedToSendCode": "Failed to send code",
+      "invalidCode": "Invalid code",
+      "verificationFailed": "Verification failed or slot taken",
+      "bookingFailed": "Booking failed or slot taken",
+      "failedToCancel": "Failed to cancel",
+      "slotTaken": "That time is already booked"
+    },
+    "success": {
+      "bookingCancelled": "Booking cancelled"
+    }
   }
 }

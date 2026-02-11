@@ -690,5 +690,73 @@
         "label": "Aumento Medio de Conversión"
       }
     }
+  },
+  "booking": {
+    "steps": {
+      "date": "Fecha",
+      "time": "Hora",
+      "confirm": "Confirmar"
+    },
+    "schedule": {
+      "pickDate": "Elige una Fecha",
+      "pickTime": "Elige una Hora",
+      "bookingSummary": "Resumen de Reserva",
+      "date": "Fecha",
+      "time": "Hora",
+      "backToCalendar": "Volver al Calendario",
+      "peopleLooking": "{count, plural, one {# persona} other {# personas}} mirando"
+    },
+    "verify": {
+      "confirmWithEmail": "Confirmar con Email",
+      "sendCodeDescription": "Te enviaremos un código de verificación",
+      "enterCode": "Ingresa el Código",
+      "sentTo": "Enviado a {email}",
+      "demoCode": "Código Demo",
+      "sendCode": "Enviar Código",
+      "verify": "Verificar",
+      "confirmBooking": "Confirmar Reserva",
+      "continueWith": "Continuar con {email}",
+      "signedInReady": "Has iniciado sesión. ¿Listo para confirmar tu reserva?",
+      "useDifferentEmail": "Usar Otro Email",
+      "changeEmail": "Cambiar Email",
+      "back": "Atrás"
+    },
+    "confirmed": {
+      "title": "¡Todo Listo!",
+      "confirmationSent": "Confirmación enviada a {email}",
+      "appointment": "Cita de 30 min",
+      "addToCalendar": "Agregar a Google Calendar",
+      "done": "Listo"
+    },
+    "manage": {
+      "title": "Gestionar Reservas",
+      "subtitle": "Ver o cancelar tus citas existentes",
+      "findBookings": "Buscar Reservas",
+      "noBookings": "No se encontraron reservas activas.",
+      "logout": "Cerrar sesión",
+      "cancelBooking": "Cancelar Reserva",
+      "cancelConfirmation": "¿Estás seguro de que quieres cancelar esta reserva? Esta acción no se puede deshacer.",
+      "keepBooking": "Mantener Reserva"
+    },
+    "calendar": {
+      "monday": "Lun",
+      "tuesday": "Mar",
+      "wednesday": "Mié",
+      "thursday": "Jue",
+      "friday": "Vie",
+      "saturday": "Sáb",
+      "sunday": "Dom"
+    },
+    "errors": {
+      "failedToSendCode": "Error al enviar código",
+      "invalidCode": "Código inválido",
+      "verificationFailed": "Verificación fallida o horario ocupado",
+      "bookingFailed": "Reserva fallida o horario ocupado",
+      "failedToCancel": "Error al cancelar",
+      "slotTaken": "Ese horario ya está reservado"
+    },
+    "success": {
+      "bookingCancelled": "Reserva cancelada"
+    }
   }
 }
