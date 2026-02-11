@@ -41,12 +41,13 @@ export function ManageAppointments() {
   const tErrors = useTranslations("booking.errors");
   const tSuccess = useTranslations("booking.success");
 
-  const sessionCookie = React.useMemo(() => getSessionCookie(), []);
-  const hasSessionCookie = !!sessionCookie;
-
-  const [step, setStep] = React.useState<Step>(
-    hasSessionCookie ? "loading" : "email"
+  // Defer cookie reading to after hydration to avoid SSR mismatch
+  const [sessionCookie, setSessionCookieState] = React.useState<string | null>(
+    null
   );
+  const [isHydrated, setIsHydrated] = React.useState(false);
+
+  const [step, setStep] = React.useState<Step>("loading");
   const [email, setEmail] = React.useState("");
   const [otp, setOtp] = React.useState("");
   const [sessionId, setSessionId] = React.useState<string | null>(null);
@@ -56,12 +57,21 @@ export function ManageAppointments() {
   const [bookingToDelete, setBookingToDelete] =
     React.useState<Id<"bookings"> | null>(null);
 
+  // Read cookie after hydration
+  React.useEffect(() => {
+    const cookie = getSessionCookie();
+    setSessionCookieState(cookie);
+    setIsHydrated(true);
+  }, []);
+
   const sessionValidation = useQuery(
     api.auth.validateSession,
     sessionCookie ? { sessionId: sessionCookie } : "skip"
   );
 
   React.useEffect(() => {
+    if (!isHydrated) return;
+
     if (sessionCookie) {
       if (sessionValidation === undefined) {
         setStep("loading");
@@ -75,7 +85,7 @@ export function ManageAppointments() {
     } else {
       setStep("email");
     }
-  }, [sessionValidation, sessionCookie]);
+  }, [sessionValidation, sessionCookie, isHydrated]);
 
   const myBookings = useQuery(
     api.bookings.getMyBookings,

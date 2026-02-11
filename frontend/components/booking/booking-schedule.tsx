@@ -87,7 +87,15 @@ export function BookingSchedule() {
     codeSent && email ? { email } : "skip"
   );
 
-  const sessionCookie = React.useMemo(() => getSessionCookie(), []);
+  // Defer cookie reading to after hydration to avoid SSR mismatch
+  const [sessionCookie, setSessionCookieState] = React.useState<string | null>(
+    null
+  );
+
+  React.useEffect(() => {
+    setSessionCookieState(getSessionCookie());
+  }, []);
+
   const sessionValidation = useQuery(
     api.auth.validateSession,
     sessionCookie ? { sessionId: sessionCookie } : "skip"
