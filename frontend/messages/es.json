@@ -246,7 +246,7 @@
     "tools": {
       "label": "Tecnologías",
       "headline": "Herramientas y Tecnologías",
-      "subtitle": "El stack moderno que uso para construir experiencias web rápidas y escalables"
+      "subtitle": "React, Next.js, TypeScript—y lo que sea necesario para entregar"
     },
     "ctaButtons": [
       {
@@ -258,9 +258,9 @@
     "aboutMe": {
       "label": "Quién soy",
       "headline": "Sobre Mí",
-      "subtitle": "Conoce a la persona detrás del código",
-      "description": "Soy Eduard Stefan—desarrollador y solucionador creativo de problemas. Construyo cosas que funcionan bellamente: sitios web, apps y productos digitales que se sienten tan pulidos como funcionales. Aporto experiencia en SEO y CRO para asegurar que tu trabajo sea visto y convierta, pero lo que realmente me apasiona es abordar desafíos interesantes y crear soluciones que sorprendan y deleiten.",
-      "cta": "Hablemos de Tu Proyecto"
+      "subtitle": "4+ años y cada proyecto todavía me enseña algo",
+      "description": "Trabajo mejor cuando el brief es ambicioso y las ideas son salvajes. Dame un concepto visual fuerte y descubriré cómo hacerlo real en el navegador. He pasado años construyendo plataformas para inversores, launchpads de alto impacto y sitios de marketing donde cada píxel y micro-interacción importa. Me obsesiono con los detalles porque los detalles son lo que hacen que las cosas se sientan bien.",
+      "cta": "Construyamos Algo"
     },
     "contact": {
       "label": "Ponerse en contacto",
@@ -316,37 +316,37 @@
       }
     },
     "seo": {
-      "title": "Eduard Stefan | Desarrollador Web y Solucionador Creativo",
-      "description": "Transformando ideas complejas en experiencias digitales elegantes. Construyamos algo extraordinario juntos."
+      "title": "Eduard Stefan | Desarrollador Frontend",
+      "description": "Construyo experiencias web que se sienten bien. Ideas salvajes bienvenidas."
     }
   },
   "skills": {
-    "headline": "Creado con <strong>cuidado y precisión</strong>.",
-    "subtitle": "Tecnologías con las que trabajo"
+    "headline": "Construido con las <strong>herramientas que importan</strong>.",
+    "subtitle": "El stack detrás del trabajo"
   },
   "caseStudies": {
     "label": "Trabajos Seleccionados",
-    "headline": "Resultados que hablan por sí solos",
-    "subtitle": "Proyectos reales, resultados reales. Ve cómo he ayudado a empresas a superar desafíos y alcanzar sus objetivos.",
+    "headline": "El Trabajo Habla",
+    "subtitle": "Proyectos reales. Números reales. Juzga tú mismo.",
     "viewProject": "Ver estudio de caso",
     "challenge": "Desafío",
     "result": "Resultado"
   },
   "testimonials": {
-    "label": "Historias de Clientes",
-    "headline": "Confiado por fundadores y equipos",
-    "subtitle": "No me creas solo por mi palabra—escucha a las personas que han trabajado conmigo.",
+    "label": "Lo Que Dicen",
+    "headline": "De las personas con las que he trabajado",
+    "subtitle": "No me creas solo a mí.",
     "test-1": {
-      "quote": "Eduard transformó nuestra plataforma obsoleta en algo que nuestros usuarios realmente aman. La atención al detalle y el enfoque en el rendimiento marcaron la diferencia. Nuestras tasas de conversión hablan por sí solas."
+      "quote": "Le dimos a Eduard un archivo Figma y una fecha límite. Volvió con algo mejor de lo que diseñamos. Las micro-interacciones, el rendimiento—simplemente lo entiende."
     },
     "test-2": {
-      "quote": "Trabajar con Eduard fue un cambio de juego para nuestra startup. Entregó nuestro MVP en tiempo récord sin cortar esquinas. Aseguramos nuestra ronda inicial en gran parte debido a lo pulido que estaba el producto."
+      "quote": "La mayoría de devs necesitan que les lleves de la mano. Eduard necesitaba contexto. Una vez que entendió qué estábamos construyendo y por qué, lo hizo solo. Entregó todo antes de tiempo."
     },
     "test-3": {
-      "quote": "He trabajado con muchos desarrolladores, pero Eduard se destaca. No solo escribe código—entiende los objetivos comerciales y construye soluciones que generan resultados reales."
+      "quote": "Cuestionó nuestras malas ideas e hizo mejores las buenas. Es raro encontrar un desarrollador que se preocupe por el producto, no solo por el código."
     },
     "test-4": {
-      "quote": "Nuestro sitio de comercio electrónico estaba perdiendo dinero debido a una mala experiencia móvil. El trabajo de optimización de Eduard se pagó solo en el primer mes. Altamente recomendado."
+      "quote": "Nuestra tasa de conversión móvil era vergonzosa. Dos semanas con Eduard y es nuestro canal con mejor rendimiento. El ROI fue inmediato."
     }
   },
   "projects": {
@@ -401,87 +401,87 @@
     "label": "Lo Que Hago",
     "headline": "De la Idea a la Realidad",
     "subtitle": "Acepto los proyectos que ponen nerviosos a otros devs.",
-    "cta": "Descubre Cómo Puedo Ayudarte",
+    "cta": "Hablemos de Tu Proyecto",
     "svc-1": {
       "title": "Asociación Directa",
-      "description": "Sin intermediarios. Trabajas directamente conmigo, lo que significa comunicación clara, actualizaciones más rápidas y un socio que se preocupa por tu éxito."
+      "description": "Sin agencias, sin intermediarios. Hablas conmigo. Entiendo tu visión, iteramos juntos, y construyo exactamente lo que necesitas."
     },
     "svc-2": {
-      "title": "Desarrollo SEO-First",
-      "description": "Construyo sitios que a Google le encantan. Código limpio, estructura perfecta y rendimiento rápido para ayudarte a posicionarte mejor."
+      "title": "Ejecución Pixel-Perfect",
+      "description": "Me obsesiono con los detalles. Cada decisión de espaciado, cada micro-interacción, cada animación—hasta que coincida exactamente con la visión creativa."
     },
     "svc-3": {
-      "title": "Alcance Global",
-      "description": "Expande tu audiencia con soporte multiidioma fluido. Habla el idioma de tus clientes y genera confianza en todo el mundo."
+      "title": "Rendimiento que Convierte",
+      "description": "Sitios que cargan instantáneamente y guían a los visitantes hacia la acción. Construyo con pensamiento CRO desde el día uno."
     },
     "svc-4": {
-      "title": "Velocidad Ultra-Rápida",
-      "description": "La velocidad es una característica. Me aseguro de que tu sitio cargue instantáneamente, manteniendo a los visitantes felices y reduciendo el rebote."
+      "title": "Construido para Escalar",
+      "description": "Arquitectura limpia, código confiable, flujos de usuario suaves. Ya sean 100 usuarios o 100,000—tu sitio lo maneja."
     },
     "svc-5": {
-      "title": "Enfoque en Conversión/CRO",
-      "description": "El tráfico es bueno, pero los clientes son mejores. Diseño flujos que guían a los visitantes naturalmente hacia la acción."
+      "title": "SEO que Funciona",
+      "description": "Estructura que los motores de búsqueda entienden. Fundamentos técnicos que te ayudan a posicionarte y ser descubierto."
     },
     "svc-6": {
-      "title": "Diseño de Experiencia de Usuario",
-      "description": "Simple, intuitivo y hermoso. Creo interfaces que son fáciles de usar y dejan una impresión positiva duradera."
+      "title": "Listo para el Mundo",
+      "description": "Soporte multiidioma desde el inicio. Llega a clientes en su idioma, donde sea que estén."
     }
   },
   "howIWork": {
     "label": "Proceso",
     "headline": "Cómo Trabajo",
-    "subtitle": "Un proceso simple y transparente enfocado en resultados.",
-    "cta": "Iniciar el Proceso",
+    "subtitle": "Sin sorpresas. Solo progreso claro hasta que lanzamos.",
+    "cta": "Empecemos",
     "planning": {
-      "title": "Descubrimiento y Estrategia",
+      "title": "Descubrimos lo que Realmente Necesitas",
       "paragraphs": [
-        "Primero, profundizamos en tus objetivos. Quiero entender quiénes son tus clientes y qué quieres lograr. Crearemos un plan que cubra tanto la tecnología como el marketing."
+        "Hablamos. Hago preguntas hasta entender qué estás tratando de construir y por qué importa. Luego decidimos el alcance, el cronograma y cómo se ve el éxito."
       ],
       "bulletPoints": [
-        "Entender a tu audiencia",
-        "Definir objetivos claros",
-        "Estrategia de SEO y Contenido"
+        "Tus objetivos, no suposiciones",
+        "Alcance que tiene sentido",
+        "Hitos claros"
       ]
     },
     "development": {
-      "title": "Diseño y Construcción",
+      "title": "Lo Construyo. Ves el Progreso.",
       "paragraphs": [
-        "Aquí es donde ocurre la magia. Construyo tu sitio con código limpio y un diseño que convierte. Verás el progreso en el camino y ajustaremos las cosas hasta que se sientan perfectas."
+        "No desaparezco por semanas. Verás actualizaciones regulares, prototipos funcionales y muchas oportunidades para corregir el rumbo antes de ir demasiado lejos."
       ],
       "bulletPoints": [
-        "Diseño enfocado en conversión",
-        "Código limpio y amigable con SEO",
-        "Actualizaciones regulares de progreso"
+        "Check-ins frecuentes",
+        "Demos funcionales, no presentaciones",
+        "Espacio para iterar"
       ]
     },
     "deployment": {
-      "title": "Lanzamiento y Verificación",
+      "title": "Lanzamos Cuando Está Listo",
       "paragraphs": [
-        "Salimos en vivo. Me encargo de toda la configuración técnica—hosting, dominio, seguridad. También me aseguro de que todo tu seguimiento (analytics, píxeles) funcione perfectamente para medir el éxito."
+        "Me encargo de los detalles técnicos—hosting, dominio, seguridad, seguimiento. Probamos todo, arreglamos lo que necesita arreglo, y lanzamos con confianza."
       ],
       "bulletPoints": [
-        "Lanzamiento fluido y seguro",
-        "Configuración de Analytics y seguimiento",
-        "Pruebas de rendimiento"
+        "Probado antes del lanzamiento",
+        "Analytics configurado",
+        "Cero incertidumbre"
       ]
     },
     "postDeployment": {
-      "title": "Optimización y Crecimiento",
+      "title": "Es Tuyo. Estoy Aquí Si Me Necesitas.",
       "paragraphs": [
-        "El lanzamiento es solo el comienzo. Te muestro cómo gestionar tu contenido y podemos seguir trabajando juntos para analizar datos y mejorar tus tasas de conversión con el tiempo."
+        "Eres dueño de todo. Te muestro cómo actualizar el contenido tú mismo. Y si quieres seguir mejorando basándote en datos reales, también podemos hacer eso."
       ],
       "bulletPoints": [
-        "Capacitación en CMS para ti",
-        "Optimizaciones basadas en datos",
-        "Soporte continuo para el crecimiento"
+        "Propiedad completa",
+        "Capacitación incluida",
+        "Soporte continuo disponible"
       ]
     }
   },
   "howIPrice": {
     "label": "Precios",
-    "headline": "Precios que se adaptan a tus necesidades",
-    "subtitle": "Elige el paquete que se ajuste a la etapa de tu negocio.",
-    "intro": "La mayoría de los sitios web son bonitos, pero no hacen mucho. Construyo sitios diseñados para posicionarse en Google y convertir visitantes en clientes. Además, podrás editar todo tú mismo.",
+    "headline": "Lo Que Cuesta",
+    "subtitle": "Sin rodeos. Sin costos ocultos.",
+    "intro": "Construyo sitios que funcionan—rápidos, enfocados en conversión, y fáciles de mantener para ti. Elige el alcance que se ajuste a tu proyecto.",
     "packages": {
       "title": "Modelos de Compromiso",
       "subtitle": "Selecciona la opción que coincida con el estado actual de tu negocio.",
@@ -555,9 +555,9 @@
   },
   "roiCalculator": {
     "label": "Simulador de Ingresos",
-    "headline": "¿Cuánto dinero estás dejando sobre la mesa?",
-    "subtitle": "Calcula tu crecimiento potencial.",
-    "description": "Pequeñas mejoras en la tasa de conversión pueden generar grandes aumentos en los ingresos. Usa esta calculadora para ver el impacto potencial de optimizar tu sitio.",
+    "headline": "¿Cuánto está dejando tu sitio sobre la mesa?",
+    "subtitle": "Haz los cálculos.",
+    "description": "Un pequeño aumento en la tasa de conversión se acumula rápido. Ingresa tus números y mira lo que incluso mejoras modestas podrían hacer.",
     "yourMetrics": "Tus Métricas",
     "metricsDescription": "Ingresa los números actuales de tu sitio web",
     "monthlyVisitors": "Visitantes Mensuales",
@@ -606,10 +606,10 @@
     }
   },
   "faq": {
-    "label": "Preguntas Frecuentes",
-    "headline": "Preguntas Frecuentes",
-    "subtitle": "Preguntas comunes sobre mis servicios, proceso y cómo podemos trabajar juntos.",
-    "cta": "¿Tienes Más Preguntas? Hablemos",
+    "label": "FAQ",
+    "headline": "Preguntas que Podrías Tener",
+    "subtitle": "Lo que la gente suele preguntar antes de empezar.",
+    "cta": "¿Más Preguntas? Hablemos",
     "faq-1": {
       "question": "¿Cuánto tiempo tarda un proyecto típico?",
       "answer": "Los plazos del proyecto varían según el alcance y la complejidad. El paquete 'Launch' generalmente toma 2-3 días, mientras que el paquete 'Growth' toma 1-2 semanas. Las soluciones personalizadas con funcionalidad compleja pueden tomar más tiempo. Proporcionaré un cronograma detallado durante nuestra consulta inicial."
@@ -668,8 +668,8 @@
   },
   "stats": {
     "label": "En Números",
-    "headline": "Resultados Que Hablan",
-    "subtitle": "Métricas reales de proyectos reales. Esto es lo que he ayudado a lograr.",
+    "headline": "Los Números",
+    "subtitle": "Del trabajo que he entregado.",
     "metrics": {
       "yearsExperience": {
         "value": "4+",

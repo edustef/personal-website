@@ -246,7 +246,7 @@
     "tools": {
       "label": "Technologies",
       "headline": "Tools & Technologies",
-      "subtitle": "The modern stack I use to build fast, scalable web experiences"
+      "subtitle": "React, Next.js, TypeScript—and whatever it takes to ship"
     },
     "ctaButtons": [
       {
@@ -258,9 +258,9 @@
     "aboutMe": {
       "label": "Who I am",
       "headline": "About Me",
-      "subtitle": "Get to know the person behind the code",
-      "description": "I'm Eduard Stefan—a developer and creative problem solver. I build things that work beautifully: websites, apps, and digital products that feel as polished as they are functional. I bring SEO and CRO expertise to make sure your work gets seen and converts, but what I really love is tackling interesting challenges and crafting solutions that surprise and delight.",
-      "cta": "Let's Discuss Your Project"
+      "subtitle": "4+ years and every project still teaches me something",
+      "description": "I work best when the brief is ambitious and the ideas are wild. Give me a strong visual concept and I'll figure out how to make it real in the browser. I've spent years building investor-facing platforms, high-stakes launchpads, and marketing sites where every pixel and micro-interaction matters. I obsess over the details because the details are what make things feel right.",
+      "cta": "Let's Build Something"
     },
     "contact": {
       "label": "Get in touch",
@@ -316,37 +316,37 @@
       }
     },
     "seo": {
-      "title": "Eduard Stefan | Web Developer & Creative Problem Solver",
-      "description": "Turning complex ideas into elegant digital experiences. Let's build something remarkable together."
+      "title": "Eduard Stefan | Frontend Developer",
+      "description": "I build web experiences that feel right. Wild ideas welcome."
     }
   },
   "skills": {
-    "headline": "Crafted with <strong>care and precision</strong>.",
-    "subtitle": "Technologies I work with"
+    "headline": "Built with the <strong>tools that matter</strong>.",
+    "subtitle": "The stack behind the work"
   },
   "caseStudies": {
     "label": "Selected Work",
-    "headline": "Results that speak for themselves",
-    "subtitle": "Real projects, real outcomes. See how I've helped businesses overcome challenges and achieve their goals.",
+    "headline": "The Work Speaks",
+    "subtitle": "Real projects. Real numbers. Judge for yourself.",
     "viewProject": "View case study",
     "challenge": "Challenge",
     "result": "Result"
   },
   "testimonials": {
-    "label": "Client Stories",
-    "headline": "Trusted by founders and teams",
-    "subtitle": "Don't take my word for it—hear from the people who've worked with me.",
+    "label": "What People Say",
+    "headline": "From the people I've worked with",
+    "subtitle": "Don't take my word for it.",
     "test-1": {
-      "quote": "Eduard transformed our outdated platform into something our users genuinely love. The attention to detail and focus on performance made all the difference. Our conversion rates speak for themselves."
+      "quote": "We gave Eduard a Figma file and a deadline. He came back with something better than we designed. The micro-interactions, the performance—he just gets it."
     },
     "test-2": {
-      "quote": "Working with Eduard was a game-changer for our startup. He delivered our MVP in record time without cutting corners. We secured our seed round largely because of how polished the product was."
+      "quote": "Most devs need hand-holding. Eduard needed context. Once he understood what we were building and why, he ran with it. Shipped the whole thing ahead of schedule."
     },
     "test-3": {
-      "quote": "I've worked with many developers, but Eduard stands out. He doesn't just write code—he understands business objectives and builds solutions that drive real results."
+      "quote": "He pushed back on our bad ideas and made the good ones better. Rare to find a developer who cares about the product, not just the code."
     },
     "test-4": {
-      "quote": "Our e-commerce site was bleeding money due to poor mobile experience. Eduard's optimization work paid for itself within the first month. Highly recommend."
+      "quote": "Our mobile conversion rate was embarrassing. Two weeks with Eduard and it's our best-performing channel. The ROI was immediate."
     }
   },
   "projects": {
@@ -401,87 +401,87 @@
     "label": "What I Do",
     "headline": "From Idea to Reality",
     "subtitle": "I take the projects that make other devs nervous.",
-    "cta": "See How I Can Help You",
+    "cta": "Let's Talk About Your Project",
     "svc-1": {
       "title": "Direct Partnership",
-      "description": "No middlemen. You work directly with me, which means clear communication, faster updates, and a partner who cares about your success."
+      "description": "No agencies, no account managers. You talk to me. I understand your vision, we iterate together, and I build exactly what you need."
     },
     "svc-2": {
-      "title": "SEO-First Development",
-      "description": "I build websites that Google loves. Clean code, perfect structure, and fast performance to help you rank higher and get noticed."
+      "title": "Pixel-Perfect Execution",
+      "description": "I obsess over the details. Every spacing decision, every micro-interaction, every animation—until it matches the creative vision exactly."
     },
     "svc-3": {
-      "title": "Global Reach",
-      "description": "Expand your audience with seamless multi-language support. Speak your customers' language and build trust worldwide."
+      "title": "Performance That Converts",
+      "description": "Sites that load instantly and guide visitors toward action. I build with CRO thinking baked in from day one."
     },
     "svc-4": {
-      "title": "Blazing Fast Speed",
-      "description": "Speed is a feature. I ensure your site loads instantly, keeping visitors happy and reducing the chance they'll bounce."
+      "title": "Built for Scale",
+      "description": "Clean architecture, reliable code, smooth user flows. Whether it's 100 users or 100,000—your site handles it."
     },
     "svc-5": {
-      "title": "Conversion/CRO Focus",
-      "description": "Traffic is great, but customers are better. I design user flows that guide visitors naturally toward taking action."
+      "title": "SEO That Works",
+      "description": "Structure that search engines understand. Technical foundations that help you rank and get discovered."
     },
     "svc-6": {
-      "title": "User Experience Design",
-      "description": "Simple, intuitive, and beautiful. I create interfaces that are easy to use and leave a lasting positive impression."
+      "title": "Global Ready",
+      "description": "Multi-language support from the start. Reach customers in their language, wherever they are."
     }
   },
   "howIWork": {
     "label": "Process",
     "headline": "How I Work",
-    "subtitle": "A simple, transparent process focused on results.",
-    "cta": "Start the Process",
+    "subtitle": "No surprises. Just clear progress until we ship.",
+    "cta": "Let's Get Started",
     "planning": {
-      "title": "Discovery & Strategy",
+      "title": "We Figure Out What You Actually Need",
       "paragraphs": [
-        "First, we dig into your goals. I want to understand who your customers are and what you want to achieve. We'll map out a plan that covers both the tech and the marketing angles."
+        "We talk. I ask questions until I understand what you're trying to build and why it matters. Then we decide on scope, timeline, and what success looks like."
       ],
       "bulletPoints": [
-        "Understanding your audience",
-        "Defining clear goals",
-        "SEO & Content strategy"
+        "Your goals, not assumptions",
+        "Scope that makes sense",
+        "Clear milestones"
       ]
     },
     "development": {
-      "title": "Design & Build",
+      "title": "I Build It. You See Progress.",
       "paragraphs": [
-        "This is where the magic happens. I build your site with clean code and a design that converts. You'll see progress along the way and we'll tweak things until they feel just right."
+        "No disappearing for weeks. You'll see regular updates, working prototypes, and have plenty of chances to course-correct before we're too deep."
       ],
       "bulletPoints": [
-        "Conversion-focused design",
-        "Clean, SEO-friendly code",
-        "Regular progress updates"
+        "Frequent check-ins",
+        "Working demos, not slide decks",
+        "Space to iterate"
       ]
     },
     "deployment": {
-      "title": "Launch & Verify",
+      "title": "We Launch When It's Ready",
       "paragraphs": [
-        "We go live. I handle all the technical setup—hosting, domain, security. I also make sure all your tracking (analytics, pixels) is working perfectly so we can measure success."
+        "I handle the technical details—hosting, domain, security, tracking. We test everything, fix what needs fixing, then go live with confidence."
       ],
       "bulletPoints": [
-        "Smooth, secure launch",
-        "Analytics & tracking setup",
-        "Performance testing"
+        "Battle-tested before launch",
+        "Analytics wired up",
+        "Zero guesswork"
       ]
     },
     "postDeployment": {
-      "title": "Optimize & Scale",
+      "title": "It's Yours. I'm Still Here If You Need Me.",
       "paragraphs": [
-        "Launching is just the start. I show you how to manage your content, and we can keep working together to analyze data and improve your conversion rates over time."
+        "You own everything. I'll show you how to update content yourself. And if you want to keep improving based on real data, we can do that too."
       ],
       "bulletPoints": [
-        "CMS training for you",
-        "Data-driven optimizations",
-        "Ongoing project support"
+        "Full ownership",
+        "Training included",
+        "Ongoing support available"
       ]
     }
   },
   "howIPrice": {
     "label": "Pricing",
-    "headline": "Pricing that scales with your needs",
-    "subtitle": "Choose the package that fits your business stage.",
-    "intro": "Most websites are pretty, but they don't do much. I build sites that are designed to rank on Google and convert visitors into customers. Plus, you'll be able to edit everything yourself.",
+    "headline": "What It Costs",
+    "subtitle": "Straight talk. No hidden fees.",
+    "intro": "I build sites that perform—fast, conversion-focused, and easy for you to maintain. Pick the scope that fits your project.",
     "packages": {
       "title": "Engagement Models",
       "subtitle": "Select the option that matches where your business is today.",
@@ -555,9 +555,9 @@
   },
   "roiCalculator": {
     "label": "Revenue Simulator",
-    "headline": "How much money are you leaving on the table?",
-    "subtitle": "Calculate your potential growth.",
-    "description": "Small improvements in conversion rate can lead to massive gains in revenue. Use this calculator to see the potential impact of optimizing your site.",
+    "headline": "What's your site actually leaving on the table?",
+    "subtitle": "Run the numbers.",
+    "description": "A small bump in conversion rate compounds fast. Plug in your numbers and see what even modest improvements could do.",
     "yourMetrics": "Your Metrics",
     "metricsDescription": "Enter your current website numbers",
     "monthlyVisitors": "Monthly Visitors",
@@ -607,9 +607,9 @@
   },
   "faq": {
     "label": "FAQ",
-    "headline": "Frequently Asked Questions",
-    "subtitle": "Common questions about my services, process, and how we can work together.",
-    "cta": "Still Have Questions? Let's Talk",
+    "headline": "Questions You Might Have",
+    "subtitle": "The stuff people usually ask before we start.",
+    "cta": "Got More Questions? Let's Talk",
     "faq-1": {
       "question": "How long does a typical project take?",
       "answer": "Project timelines vary based on scope and complexity. The 'Launch' package typically takes 2-3 days, while the 'Growth' package takes 1-2 weeks. Custom solutions with complex functionality may take longer. I'll provide a detailed timeline during our initial consultation."
@@ -668,8 +668,8 @@
   },
   "stats": {
     "label": "By The Numbers",
-    "headline": "Results That Speak",
-    "subtitle": "Real metrics from real projects. Here's what I've helped achieve.",
+    "headline": "The Numbers",
+    "subtitle": "From the work I've shipped.",
     "metrics": {
       "yearsExperience": {
         "value": "4+",
