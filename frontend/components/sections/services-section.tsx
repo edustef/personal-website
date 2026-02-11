@@ -1,5 +1,6 @@
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { BGPattern } from "@/components/ui/bg-pattern";
+import { SectionHeader } from "@/components/ui/section-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -8,6 +9,7 @@ import {
   CarouselDots,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { getWhatsAppUrl } from "@/lib/utils";
 import { type Service, services } from "@/lib/data/services";
 import { cn } from "@/lib/utils";
 import { Globe, Headphones, Layers, Palette, Rocket, Zap } from "lucide-react";
@@ -60,10 +62,7 @@ export default async function ServicesSection({
   });
   const servicesSlug = headerT("nav.servicesSlug");
 
-  const phone = profileT("phone");
-  const whatsappUrl = phone
-    ? `https://wa.me/${phone.replace(/[^0-9]/g, "")}`
-    : "https://wa.me/40775378525";
+  const whatsappUrl = getWhatsAppUrl(profileT("phone"));
 
   return (
     <section
@@ -71,26 +70,12 @@ export default async function ServicesSection({
       className="scroll-mt-12 overflow-x-hidden py-12 md:py-16"
     >
       <div className="mx-auto max-w-6xl md:px-6">
-        <AnimatedContainer
-          trigger="scroll"
-          fadeDirection="up"
-          className="mb-12 md:mb-16 text-center px-4"
-        >
-          <p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
-            {t("label")}
-          </p>
-          <h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl text-balance">
-            <a
-              href={`#${servicesSlug}`}
-              className="hover:text-primary transition-colors"
-            >
-              {t("headline")}
-            </a>
-          </h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg text-pretty">
-            {t("subtitle")}
-          </p>
-        </AnimatedContainer>
+        <SectionHeader
+          label={t("label")}
+          headline={t("headline")}
+          subtitle={t("subtitle")}
+          anchorSlug={servicesSlug}
+        />
 
         {/* Desktop Grid */}
         <div className="hidden md:grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">

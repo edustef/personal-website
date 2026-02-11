@@ -2,6 +2,7 @@ import whatsappLogo from "@/assets/images/whatsapp-logo.png";
 import { ContactSectionAnchorButton } from "@/components/contact-section-button";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Button } from "@/components/ui/button";
+import { SectionHeader } from "@/components/ui/section-header";
 import { getSocialIcon } from "@/lib/social-icons";
 import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
@@ -29,23 +30,13 @@ export default async function ContactSection({
   return (
     <section id="contact" className="scroll-mt-12 py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-4">
-        <AnimatedContainer
-          trigger="scroll"
-          fadeDirection="up"
-          className="mb-16 text-center"
-        >
-          <p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
-            {t("contact.label")}
-          </p>
-          <h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl text-balance">
-            <a href="#contact" className="hover:text-primary transition-colors">
-              {t("contact.headline")}
-            </a>
-          </h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg text-pretty">
-            {t("contact.subtitle")}
-          </p>
-        </AnimatedContainer>
+        <SectionHeader
+          label={t("contact.label")}
+          headline={t("contact.headline")}
+          subtitle={t("contact.subtitle")}
+          anchorSlug="contact"
+          className="mb-16 px-0"
+        />
 
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           {hasWhatsApp && (

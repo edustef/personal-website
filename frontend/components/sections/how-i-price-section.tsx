@@ -1,12 +1,13 @@
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { SectionHeader } from "@/components/ui/section-header";
 import {
   Carousel,
   CarouselContent,
   CarouselDots,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { cn } from "@/lib/utils";
+import { cn, getWhatsAppUrl } from "@/lib/utils";
 import { getLocale, getTranslations } from "next-intl/server";
 import {
   PackageCard,
@@ -27,34 +28,18 @@ export default async function HowIPriceSection() {
   });
   const pricingSlug = headerT("nav.pricingSlug");
 
-  const phone = profileT("phone");
-  const whatsappUrl = phone
-    ? `https://wa.me/${phone.replace(/[^0-9]/g, "")}`
-    : "https://wa.me/40770378214";
+  const whatsappUrl = getWhatsAppUrl(profileT("phone"), "40770378214");
 
   return (
     <section id={pricingSlug} className="scroll-mt-12 py-12 md:py-16">
       <div className="mx-auto max-w-6xl md:px-4">
-        <AnimatedContainer
-          trigger="scroll"
-          fadeDirection="up"
-          className="mb-16 text-center px-4"
-        >
-          <p className="text-primary mb-3 font-medium uppercase tracking-wider">
-            {t("label")}
-          </p>
-          <h2 className="text-foreground mb-4 text-3xl font-semibold tracking-tight md:text-4xl text-balance">
-            <a
-              href={`#${pricingSlug}`}
-              className="hover:text-primary transition-colors"
-            >
-              {t("headline")}
-            </a>
-          </h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg text-pretty">
-            {t("subtitle")}
-          </p>
-        </AnimatedContainer>
+        <SectionHeader
+          label={t("label")}
+          headline={t("headline")}
+          subtitle={t("subtitle")}
+          anchorSlug={pricingSlug}
+          className="mb-16"
+        />
 
         <div className="mb-16 px-4">
           <PackageCardsProvider>

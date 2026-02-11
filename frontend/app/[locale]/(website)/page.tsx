@@ -9,6 +9,7 @@ import PortfolioSection from "@/components/sections/portfolio-section";
 import ServicesSection from "@/components/sections/services-section";
 import ToolsSection from "@/components/sections/tools-section";
 import { BackgroundPaperShaders } from "@/components/ui/background-paper-shaders";
+import { getWhatsAppUrl } from "@/lib/utils";
 // import { InteractiveNebulaShader } from "@/components/ui/liquid-shader";
 import { getPathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -57,10 +58,7 @@ export default async function Page(props: Props) {
   const faqT = await getTranslations({ locale, namespace: "faq" });
   const servicesT = await getTranslations({ locale, namespace: "services" });
 
-  const phone = profileT("phone");
-  const whatsappUrl = phone
-    ? `https://wa.me/${phone.replace(/[^0-9]/g, "")}`
-    : undefined;
+  const whatsappUrl = getWhatsAppUrl(profileT("phone"), undefined);
 
   const socialLinksRaw = profileT.raw("socialLinks") as
     | Array<{ name: string; url: string }>

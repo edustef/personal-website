@@ -1,5 +1,5 @@
-import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Button } from "@/components/ui/button";
+import { SectionHeader } from "@/components/ui/section-header";
 import { ProjectCard } from "@/components/project-card";
 import {
   Carousel,
@@ -8,6 +8,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { getPortfolioProjects } from "@/lib/portfolio";
+import { getWhatsAppUrl } from "@/lib/utils";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Sparkles } from "lucide-react";
 
@@ -21,10 +22,7 @@ export default async function PortfolioSection({ whatsappUrl }: PortfolioSection
   const t = await getTranslations({ locale, namespace: "portfolio" });
   const profileT = await getTranslations({ locale, namespace: "profile" });
 
-  const phone = profileT("phone");
-  const finalWhatsappUrl = whatsappUrl || (phone
-    ? `https://wa.me/${phone.replace(/[^0-9]/g, "")}`
-    : "https://wa.me/40775378525");
+  const finalWhatsappUrl = whatsappUrl || getWhatsAppUrl(profileT("phone"));
 
   if (!projects || projects.length === 0) {
     return null;
@@ -33,23 +31,12 @@ export default async function PortfolioSection({ whatsappUrl }: PortfolioSection
   return (
     <section id="portfolio" className="scroll-mt-12 overflow-x-hidden py-12 md:py-16">
       <div className="mx-auto max-w-6xl md:px-6">
-        <AnimatedContainer
-          trigger="scroll"
-          fadeDirection="up"
-          className="mb-12 md:mb-16 text-center px-4"
-        >
-          <p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
-            {t("label")}
-          </p>
-          <h2 className="text-foreground mb-4 text-3xl tracking-tight md:text-4xl text-balance">
-            <a href="#portfolio" className="hover:text-primary transition-colors">
-              {t("headline")}
-            </a>
-          </h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg text-pretty">
-            {t("subtitle")}
-          </p>
-        </AnimatedContainer>
+        <SectionHeader
+          label={t("label")}
+          headline={t("headline")}
+          subtitle={t("subtitle")}
+          anchorSlug="portfolio"
+        />
 
         {/* Desktop Grid */}
         <div className="hidden md:grid grid-cols-3 gap-6 px-4 md:px-0">

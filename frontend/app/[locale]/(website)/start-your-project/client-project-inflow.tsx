@@ -89,7 +89,8 @@ export function ClientProjectInflow({
       );
 
       if (!emailResult.success) {
-        console.error("Failed to send email:", emailResult.message);
+        toast.error(t("messages.submitError"));
+        return;
       }
 
       toast.success(t("messages.submitted"));
