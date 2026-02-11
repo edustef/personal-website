@@ -2,19 +2,22 @@
 
 import { Link } from "@/i18n/navigation";
 import { type CommonProps, cn } from "@/lib/utils";
-import { Calculator } from "lucide-react";
 import { motion } from "motion/react";
 import type React from "react";
 
 type HighlightBadgeProps = CommonProps & {
   href?: string;
+  icon?: React.ReactNode;
 };
 
 export function HighlightBadge({
   children,
   className,
   href,
+  icon,
 }: HighlightBadgeProps) {
+  const isExternal = href?.startsWith("http");
+
   const content = (
     <>
       <motion.span
@@ -39,14 +42,27 @@ export function HighlightBadge({
           ease: "linear",
         }}
       />
-      <div className=" text-secondary-foreground relative z-10 flex items-center gap-3 rounded-lg px-5 py-2 transition-colors hover:bg-secondary/40">
-        <Calculator className="size-4" />
-        <div className="">{children}</div>
+      <div className="text-secondary-foreground relative z-10 flex items-center gap-3 rounded-lg px-5 py-2 transition-colors hover:bg-secondary/40">
+        {icon}
+        <div>{children}</div>
       </div>
     </>
   );
 
   if (href) {
+    if (isExternal) {
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn("relative inline-flex w-fit cursor-pointer", className)}
+        >
+          {content}
+        </a>
+      );
+    }
+
     return (
       <Link
         href={href as React.ComponentProps<typeof Link>["href"]}

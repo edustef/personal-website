@@ -1,7 +1,7 @@
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "lucide-react";
+import { Calendar, Sparkles } from "lucide-react";
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -36,7 +36,8 @@ export default async function HeroSection() {
           >
             <HighlightBadge
               className="text-left text-sm md:text-base"
-              href="/roi-calculator"
+              href="https://frameback.app/waitlist"
+              icon={<Sparkles className="size-4" />}
             >
               {t.rich("announcementLabel", {
                 strong: (chunks) => (
