@@ -41,4 +41,29 @@ export default defineSchema({
     // Meta
     updatedAt: v.number(),
   }),
+
+  // Booking System Tables
+  bookings: defineTable({
+    date: v.string(), // "YYYY-MM-DD"
+    slot: v.string(), // "10:00"
+    userEmail: v.string(),
+    status: v.union(v.literal("confirmed"), v.literal("cancelled")),
+    sessionId: v.optional(v.string()),
+  })
+    .index("by_date", ["date"])
+    .index("by_email", ["userEmail"]),
+
+  verificationCodes: defineTable({
+    email: v.string(),
+    code: v.string(),
+    expiresAt: v.number(),
+  }).index("by_email", ["email"]),
+
+  sessions: defineTable({
+    sessionId: v.string(),
+    email: v.string(),
+    expiresAt: v.number(),
+  })
+    .index("by_sessionId", ["sessionId"])
+    .index("by_email", ["email"]),
 });
