@@ -17,6 +17,7 @@ import {
   Users,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import * as React from "react";
 import { toast } from "sonner";
@@ -358,7 +359,7 @@ export function BookingSchedule() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 20 }}
               transition={{ duration: 0.2 }}
-              className="mt-2"
+              className="mt-2 space-y-6"
             >
               <WeeklyCalendar
                 selected={date}
@@ -366,6 +367,15 @@ export function BookingSchedule() {
                 isDateDisabled={isDateDisabled}
                 onMonthChange={setCalendarMonth}
               />
+              <div className="pt-4 border-t border-border">
+                <Link
+                  href="/appointments"
+                  className="flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <ClipboardCheck className="w-4 h-4" />
+                  {t("schedule.manageExisting")}
+                </Link>
+              </div>
             </motion.div>
           )}
 
@@ -702,6 +712,13 @@ export function BookingSchedule() {
                 >
                   {t("confirmed.done")}
                 </Button>
+                <Link
+                  href="/appointments"
+                  className="flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors pt-2"
+                >
+                  <ClipboardCheck className="w-4 h-4" />
+                  {t("schedule.manageExisting")}
+                </Link>
               </motion.div>
             </motion.div>
           )}

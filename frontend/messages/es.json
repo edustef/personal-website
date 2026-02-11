@@ -704,7 +704,9 @@
       "date": "Fecha",
       "time": "Hora",
       "backToCalendar": "Volver al Calendario",
-      "peopleLooking": "{count, plural, one {# persona} other {# personas}} mirando"
+      "peopleLooking": "{count, plural, one {# persona} other {# personas}} mirando",
+      "manageExisting": "Gestionar reservas existentes",
+      "backToHome": "Volver al Inicio"
     },
     "verify": {
       "confirmWithEmail": "Confirmar con Email",

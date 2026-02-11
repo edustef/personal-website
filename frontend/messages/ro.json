@@ -704,7 +704,9 @@
       "date": "Data",
       "time": "Ora",
       "backToCalendar": "Înapoi la Calendar",
-      "peopleLooking": "{count, plural, one {# persoană} few {# persoane} other {# persoane}} urmăresc"
+      "peopleLooking": "{count, plural, one {# persoană} few {# persoane} other {# persoane}} urmăresc",
+      "manageExisting": "Gestionează rezervările existente",
+      "backToHome": "Înapoi la Pagina Principală"
     },
     "verify": {
       "confirmWithEmail": "Confirmă cu Email",

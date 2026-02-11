@@ -704,7 +704,9 @@
       "date": "Date",
       "time": "Time",
       "backToCalendar": "Back to Calendar",
-      "peopleLooking": "{count, plural, one {# person} other {# people}} looking"
+      "peopleLooking": "{count, plural, one {# person} other {# people}} looking",
+      "manageExisting": "Manage existing bookings",
+      "backToHome": "Back to Home"
     },
     "verify": {
       "confirmWithEmail": "Confirm with Email",
