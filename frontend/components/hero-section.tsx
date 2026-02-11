@@ -52,7 +52,7 @@ export default async function HeroSection() {
           </AnimatedContainer>
 
           <AnimatedContainer
-            className="flex gap-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4"
             duration={2}
             delay={0.4}
             ease="veryGentle"
@@ -67,6 +67,9 @@ export default async function HeroSection() {
               <HeroContactButton href="https://wa.me/40775378525">
                 {t("contactMe")}
               </HeroContactButton>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/schedule">{t("scheduleCall")}</Link>
             </Button>
           </AnimatedContainer>
         </div>
