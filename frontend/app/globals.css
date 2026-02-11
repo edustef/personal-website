@@ -236,3 +236,12 @@ body {
     @apply transition-all duration-300;
   }
 }
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
