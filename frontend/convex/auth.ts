@@ -1,4 +1,5 @@
 import { v } from "convex/values";
+import { Resend } from "resend";
 import { internal } from "./_generated/api";
 import { action, internalMutation, mutation, query } from "./_generated/server";
 
@@ -13,8 +14,20 @@ export const sendCode = action({
       expiresAt: Date.now() + 10 * 60 * 1000, // 10 mins
     });
 
-    // TODO: Send email using Resend
-    console.log(`Verification code for ${args.email}: ${code}`);
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
+    await resend.emails.send({
+      from: process.env.RESEND_FROM_EMAIL || "Booking <onboarding@resend.dev>",
+      to: args.email,
+      subject: "Your verification code",
+      text: `Your verification code is: ${code}\n\nThis code will expire in 10 minutes.`,
+      html: `
+        <h2>Your Verification Code</h2>
+        <p style="font-size: 32px; font-weight: bold; letter-spacing: 4px; margin: 24px 0;">${code}</p>
+        <p>This code will expire in 10 minutes.</p>
+        <p style="color: #666; font-size: 14px;">If you didn't request this code, you can safely ignore this email.</p>
+      `,
+    });
   },
 });
 
