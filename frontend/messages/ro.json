@@ -6,115 +6,115 @@
   },
   "clientProjectInflow": {
     "step0": {
-      "title": "Mai întâi...",
-      "description": "Pentru a adapta întrebările pentru tine, ești tehnic?",
+      "title": "Hai să începem...",
+      "description": "Ca să îți adaptez întrebările, ești tehnic?",
       "technical": {
         "title": "Da, sunt tehnic",
-        "description": "Înțeleg codul, tehnologiile și fluxurile de dezvoltare."
+        "description": "Înțeleg cod, tehnologii și cum funcționează dezvoltarea."
       },
       "nonTechnical": {
         "title": "Nu, nu sunt tehnic",
-        "description": "Mă concentrez pe afaceri/design, am nevoie de tine să te ocupi de partea tehnică."
+        "description": "Mă ocup de business/design, am nevoie să te ocupi tu de partea tehnică."
       }
     },
     "step1": {
       "title": "Ce vrei să creezi sau să îmbunătățești?",
-      "description": "Selectează toate opțiunile care se aplică.",
+      "description": "Selectează tot ce se aplică.",
       "options": {
-        "newWebsite": "Un site web nou",
-        "improveWebsite": "Îmbunătățește/redesign site-ul actual",
+        "newWebsite": "Un site nou",
+        "improveWebsite": "Îmbunătățire/redesign site existent",
         "mobileApp": "O aplicație mobilă (iOS/Android)",
-        "aiFeatures": "Adaugă funcții AI",
-        "performance": "Îmbunătățește performanța/SEO",
+        "aiFeatures": "Funcții AI",
+        "performance": "Performanță/SEO mai bun",
         "maintenance": "Întreținere continuă",
-        "notSure": "Nu sunt sigur încă"
+        "notSure": "Nu știu încă"
       }
     },
     "step2": {
-      "title": "Public Țintă și Scop",
-      "description": "Pentru cine este acest proiect și care este obiectivul principal?",
+      "title": "Public și Scop",
+      "description": "Pentru cine e proiectul și care e obiectivul principal?",
       "audience": {
-        "label": "Pentru cine este proiectul tău?",
+        "label": "Pentru cine e proiectul?",
         "customers": "Clienți",
         "internalTeam": "Echipă internă",
         "community": "Comunitate/utilizatori",
-        "other": "Altul"
+        "other": "Altceva"
       },
       "purpose": {
-        "label": "Care este scopul principal?",
-        "generateLeads": "Generează lead-uri",
-        "sellProducts": "Vinde produse/servicii",
-        "showcasePortfolio": "Prezintă portofoliul",
-        "improveWorkflow": "Îmbunătățește fluxul de lucru",
-        "increaseConversions": "Crește conversiile",
-        "validateIdea": "Validează ideea de aplicație",
-        "other": "Altul"
+        "label": "Care e scopul principal?",
+        "generateLeads": "Generare lead-uri",
+        "sellProducts": "Vânzare produse/servicii",
+        "showcasePortfolio": "Prezentare portofoliu",
+        "improveWorkflow": "Îmbunătățire flux de lucru",
+        "increaseConversions": "Creștere conversii",
+        "validateIdea": "Validare idee de aplicație",
+        "other": "Altceva"
       }
     },
     "step3": {
-      "title": "Ce funcții ai nevoie?",
-      "description": "Selectează funcționalitățile de bază.",
+      "title": "Ce funcționalități ai nevoie?",
+      "description": "Selectează funcțiile de bază.",
       "features": {
-        "landingPage": "Pagină de destinație",
-        "multiPage": "Site web multi-pagină",
+        "landingPage": "Landing page",
+        "multiPage": "Site cu mai multe pagini",
         "blog": "Blog",
-        "booking": "Sistem de rezervare",
+        "booking": "Sistem de rezervări",
         "ecommerce": "E-commerce",
         "apiIntegrations": "Integrări API",
         "headlessCms": "Headless CMS",
-        "customComponents": "Componente personalizate",
+        "customComponents": "Componente custom",
         "authentication": "Autentificare",
         "userProfiles": "Profiluri utilizatori",
         "chatMessaging": "Chat/Mesagerie",
         "pushNotifications": "Notificări push",
-        "mapsGeolocation": "Hărți/Geolocație",
+        "mapsGeolocation": "Hărți/Localizare",
         "payments": "Plăți",
         "aiAssistant": "Asistent AI",
         "customChatbot": "Chatbot personalizat",
-        "automatedWorkflows": "Fluxuri de lucru automate",
-        "dataDashboards": "Tablouri de bord date"
+        "automatedWorkflows": "Automatizări",
+        "dataDashboards": "Dashboard-uri de date"
       }
     },
     "step4": {
       "title": "Ai deja ceva început?",
       "options": {
-        "fromScratch": "Nu, încep de la zero",
-        "needsImprovement": "Da — are nevoie de îmbunătățiri",
+        "fromScratch": "Nu, pornesc de la zero",
+        "needsImprovement": "Da — dar trebuie îmbunătățit",
         "haveDesigns": "Am design-uri",
         "haveBranding": "Am branding",
         "haveBackend": "Am backend/API",
         "haveContent": "Am conținut",
-        "justExploring": "Doar explorez"
+        "justExploring": "Doar mă informez"
       },
       "currentLink": {
-        "label": "Partajează link-ul tău actual (opțional)",
+        "label": "Link-ul site-ului actual (opțional)",
         "placeholder": "https://..."
       }
     },
     "step5": {
       "title": "Buget și Termen",
-      "description": "Asta mă ajută să înțeleg domeniul de aplicare.",
+      "description": "Mă ajută să înțeleg dimensiunea proiectului.",
       "budget": {
-        "label": "Interval Buget",
-        "range1": "€1,000–2,500",
-        "range2": "€2,500–5,000",
-        "range3": "€5,000–10,000",
-        "range4": "€10,000-20,000",
-        "range5": "€20,000+",
+        "label": "Buget Estimat",
+        "range1": "€1.000–2.500",
+        "range2": "€2.500–5.000",
+        "range3": "€5.000–10.000",
+        "range4": "€10.000-20.000",
+        "range5": "€20.000+",
         "dontKnow": "Nu știu încă"
       },
       "timeline": {
-        "label": "Când ai dori să începi?",
+        "label": "Când vrei să începem?",
         "placeholder": "Termen",
-        "asap": "Cât mai curând",
+        "asap": "Cât mai repede",
         "oneTwoMonths": "În 1–2 luni",
         "threePlusMonths": "În 3+ luni",
-        "justExploring": "Doar explorez"
+        "justExploring": "Doar mă informez"
       }
     },
     "step6": {
-      "title": "Spune-mi puțin despre afacerea sau obiectivele tale",
-      "description": "Context opțional pentru a mă ajuta să înțeleg.",
+      "title": "Spune-mi puțin despre afacerea ta",
+      "description": "Context opțional, dar mă ajută să înțeleg mai bine.",
       "businessContext": {
         "placeholder": "Afacerea mea ajută X să facă Y..."
       },
@@ -124,32 +124,32 @@
       }
     },
     "step7": {
-      "title": "Unde ar trebui să îți trimit planul personalizat?",
+      "title": "Unde îți trimit oferta personalizată?",
       "email": {
-        "label": "Adresă Email",
+        "label": "Adresa de Email",
         "placeholder": "tu@exemplu.com",
-        "error": "Te rugăm să introduci o adresă de email validă."
+        "error": "Te rog introdu o adresă de email validă."
       },
       "bookCall": {
-        "label": "Aș dori, de asemenea, să rezerv un apel introductiv de 15 minute."
+        "label": "Vreau și un apel introductiv de 15 minute."
       },
       "privacyConsent": {
-        "label": "Accept procesarea datelor mele personale în conformitate cu",
+        "label": "Accept procesarea datelor în conformitate cu",
         "link": "Politica de Confidențialitate",
-        "error": "Trebuie să accepți Politica de Confidențialitate pentru a trimite acest formulariu."
+        "error": "Trebuie să accepți Politica de Confidențialitate pentru a trimite."
       },
       "submit": {
-        "button": "Obține Estimarea Mea Personalizată",
+        "button": "Trimite și Primește Oferta",
         "submitting": "Se trimite..."
       }
     },
     "navigation": {
       "back": "Înapoi",
-      "next": "Următorul"
+      "next": "Continuă"
     },
     "messages": {
-      "submitted": "Cererea de proiect a fost trimisă! Vom lua legătura în curând.",
-      "submitError": "Trimiterea a eșuat. Te rugăm să încerci din nou."
+      "submitted": "Am primit cererea ta! Revin cu un răspuns în curând.",
+      "submitError": "Ceva n-a mers. Te rog încearcă din nou."
     }
   },
   "privacyPolicy": {
@@ -295,15 +295,15 @@
   },
   "settings": {
     "title": "Eduard Stefan",
-    "description": "Site-uri construite cu precizie, concepute pentru conversie.",
+    "description": "Site-uri care aduc rezultate. Construite cu grijă, gândite pentru conversie.",
     "header": {
       "cta": {
-        "text": "Obține Estimare Gratuită",
+        "text": "Cere Estimare Gratuită",
         "href": "/start-your-project"
       },
-      "homeButtonLabel": "Acasa",
-      "navLabel": "Navigatie principala",
-      "skipLinkText": "Sari la continutul principal",
+      "homeButtonLabel": "Acasă",
+      "navLabel": "Navigație principală",
+      "skipLinkText": "Sari la conținutul principal",
       "menuLabel": "Meniu",
       "nav": {
         "services": "Servicii",
@@ -321,32 +321,32 @@
     }
   },
   "skills": {
-    "headline": "Construit cu <strong>uneltele care contează</strong>.",
-    "subtitle": "Stack-ul din spatele muncii"
+    "headline": "Construit cu <strong>tehnologiile care contează</strong>.",
+    "subtitle": "Ce folosesc pentru a livra"
   },
   "caseStudies": {
-    "label": "Lucrări Selectate",
-    "headline": "Munca Vorbește",
-    "subtitle": "Proiecte reale. Numere reale. Judecă tu.",
+    "label": "Proiecte",
+    "headline": "Munca Vorbește de la Sine",
+    "subtitle": "Proiecte reale. Cifre reale. Judecă singur.",
     "viewProject": "Vezi studiul de caz",
     "challenge": "Provocare",
     "result": "Rezultat"
   },
   "testimonials": {
-    "label": "Ce Spun Oamenii",
-    "headline": "De la oamenii cu care am lucrat",
-    "subtitle": "Nu mă crede doar pe mine.",
+    "label": "Păreri",
+    "headline": "Ce spun cei cu care am lucrat",
+    "subtitle": "Nu trebuie să mă crezi pe cuvânt.",
     "test-1": {
-      "quote": "I-am dat lui Eduard un fișier Figma și un termen limită. S-a întors cu ceva mai bun decât am proiectat noi. Micro-interacțiunile, performanța—pur și simplu înțelege."
+      "quote": "I-am dat lui Eduard un fișier Figma și un deadline. A venit cu ceva mai bun decât am designuit noi. Micro-interacțiunile, performanța—pur și simplu pricepe."
     },
     "test-2": {
-      "quote": "Majoritatea devs au nevoie să îi ții de mână. Eduard avea nevoie de context. Odată ce a înțeles ce construim și de ce, a mers singur. A livrat totul înainte de termen."
+      "quote": "Majoritatea devilor au nevoie să îi ții de mână. Eduard avea nevoie doar de context. Odată ce a înțeles ce construim și de ce, a mers singur. A livrat totul înainte de termen."
     },
     "test-3": {
-      "quote": "A respins ideile noastre proaste și le-a făcut pe cele bune și mai bune. E rar să găsești un dezvoltator căruia îi pasă de produs, nu doar de cod."
+      "quote": "Ne-a respins ideile proaste și le-a făcut pe cele bune și mai bune. E rar să găsești un developer căruia îi pasă de produs, nu doar de cod."
     },
     "test-4": {
-      "quote": "Rata noastră de conversie pe mobil era jenantă. Două săptămâni cu Eduard și e canalul nostru cu cea mai bună performanță. ROI-ul a fost imediat."
+      "quote": "Rata de conversie pe mobil era penibilă. Două săptămâni cu Eduard și acum e canalul nostru cel mai performant. ROI-ul a fost imediat."
     }
   },
   "projects": {
@@ -398,33 +398,33 @@
     }
   },
   "services": {
-    "label": "Ce Fac Eu",
+    "label": "Ce Fac",
     "headline": "De la Idee la Realitate",
-    "subtitle": "Preiau proiectele care îi fac pe alți devs să tremure.",
+    "subtitle": "Preiau proiectele de care alți devs se feresc.",
     "cta": "Hai Să Vorbim Despre Proiectul Tău",
     "svc-1": {
       "title": "Parteneriat Direct",
-      "description": "Fără agenții, fără manageri de cont. Vorbești cu mine. Înțeleg viziunea ta, iterăm împreună, și construiesc exact ce ai nevoie."
+      "description": "Fără agenții, fără manageri de cont. Vorbești cu mine. Înțeleg viziunea ta, iterăm împreună și construiesc exact ce ai nevoie."
     },
     "svc-2": {
       "title": "Micro-Interacțiuni Care Contează",
-      "description": "Lucrurile mici fac diferența. Stări hover, tranziții, animații—mă ocup de detaliile care fac interfețele să se simtă vii."
+      "description": "Lucrurile mici fac diferența. Stări hover, tranziții, animații—mă ocup de detaliile care fac interfețele să pară vii."
     },
     "svc-3": {
       "title": "Performanță Care Convertește",
-      "description": "Site-uri care se încarcă instant și ghidează vizitatorii spre acțiune. Construiesc cu gândire CRO integrată din prima zi."
+      "description": "Site-uri care se încarcă instant și ghidează vizitatorii spre acțiune. Gândesc la conversii din prima zi."
     },
     "svc-4": {
       "title": "Construit pentru Scalare",
-      "description": "Arhitectură curată, cod de încredere, fluxuri de utilizator fluide. Fie că sunt 100 de utilizatori sau 100.000—site-ul tău face față."
+      "description": "Arhitectură curată, cod solid, experiență fluidă pentru utilizatori. Fie că sunt 100 de utilizatori sau 100.000—site-ul tău face față."
     },
     "svc-5": {
       "title": "SEO Care Funcționează",
-      "description": "Structură pe care motoarele de căutare o înțeleg. Fundamente tehnice care te ajută să te clasezi și să fii descoperit."
+      "description": "Structură pe care motoarele de căutare o înțeleg. Fundamente tehnice care te ajută să urci în rezultate și să fii găsit."
     },
     "svc-6": {
-      "title": "Pregătit pentru Lume",
-      "description": "Suport multi-limbă de la început. Ajunge la clienți în limba lor, oriunde ar fi."
+      "title": "Gata pentru Piețe Internaționale",
+      "description": "Suport multi-limbă de la început. Ajungi la clienți în limba lor, oriunde ar fi."
     }
   },
   "howIWork": {
@@ -435,44 +435,44 @@
     "planning": {
       "title": "Descoperim Ce Ai Nevoie De Fapt",
       "paragraphs": [
-        "Vorbim. Pun întrebări până înțeleg ce încerci să construiești și de ce contează. Apoi decidem domeniul, calendarul și cum arată succesul."
+        "Vorbim. Pun întrebări până înțeleg ce încerci să construiești și de ce contează. Apoi decidem scopul, termenele și cum arată succesul."
       ],
       "bulletPoints": [
         "Obiectivele tale, nu presupuneri",
-        "Domeniu care are sens",
-        "Jaloane clare"
+        "Un scop care are sens",
+        "Etape clare"
       ]
     },
     "development": {
-      "title": "Construiesc. Vezi Progresul.",
+      "title": "Construiesc. Tu Vezi Progresul.",
       "paragraphs": [
-        "Nu dispar săptămâni întregi. Vei vedea actualizări regulate, prototipuri funcționale și multe oportunități de a corecta direcția înainte să fim prea adânc."
+        "Nu dispar săptămâni întregi. Vei vedea actualizări regulate, prototipuri funcționale și multe oportunități să corectezi direcția înainte să fim prea avansați."
       ],
       "bulletPoints": [
-        "Check-in-uri frecvente",
+        "Sincronizări frecvente",
         "Demo-uri funcționale, nu slide-uri",
-        "Spațiu pentru iterare"
+        "Loc pentru ajustări"
       ]
     },
     "deployment": {
       "title": "Lansăm Când E Gata",
       "paragraphs": [
-        "Mă ocup de detaliile tehnice—hosting, domeniu, securitate, tracking. Testăm totul, reparăm ce trebuie reparat, apoi lansăm cu încredere."
+        "Mă ocup de detaliile tehnice—hosting, domeniu, securitate, tracking. Testăm totul, rezolvăm ce trebuie, apoi lansăm cu încredere."
       ],
       "bulletPoints": [
         "Testat înainte de lansare",
-        "Analytics configurat",
-        "Zero incertitudine"
+        "Analiză configurată",
+        "Zero semne de întrebare"
       ]
     },
     "postDeployment": {
       "title": "E Al Tău. Sunt Aici Dacă Ai Nevoie.",
       "paragraphs": [
-        "Ești proprietar pe tot. Îți arăt cum să actualizezi conținutul singur. Și dacă vrei să continui să îmbunătățești bazat pe date reale, putem face și asta."
+        "Totul e al tău. Îți arăt cum să actualizezi conținutul singur. Și dacă vrei să continui să îmbunătățești pe baza datelor reale, putem face și asta."
       ],
       "bulletPoints": [
         "Proprietate completă",
-        "Instruire inclusă",
+        "Training inclus",
         "Suport continuu disponibil"
       ]
     }
@@ -480,104 +480,104 @@
   "howIPrice": {
     "label": "Prețuri",
     "headline": "Cât Costă",
-    "subtitle": "Direct. Fără costuri ascunse.",
-    "intro": "Construiesc site-uri care performează—rapide, focusate pe conversie, și ușor de întreținut de tine. Alege domeniul care se potrivește proiectului tău.",
+    "subtitle": "Pe șleau. Fără costuri ascunse.",
+    "intro": "Construiesc site-uri performante—rapide, axate pe conversie și ușor de întreținut. Alege varianta potrivită pentru proiectul tău.",
     "packages": {
-      "title": "Pachete de Proiect",
-      "subtitle": "Selectează opțiunea care se potrivește stării actuale a afacerii tale.",
+      "title": "Pachete",
+      "subtitle": "Alege ce se potrivește afacerii tale.",
       "mostPopular": "Cel Mai Popular",
       "whatYouGet": "Ce primești",
-      "showMore": "Afișează mai mult",
-      "showLess": "Afișează mai puțin",
-      "getQuote": "Obține Oferta Mea Personalizată",
+      "showMore": "Vezi mai mult",
+      "showLess": "Vezi mai puțin",
+      "getQuote": "Cere Oferta Ta Personalizată",
       "timeline": "Termen"
     },
     "launch": {
       "title": "Pachetul 'Launch'",
-      "bestFor": "Ideal pentru: Afaceri care caută o bază profesională, de înaltă performanță pentru a scala.",
-      "description": "O construcție completă de site web cu conversie ridicată. O fundație solidă pentru prezența ta digitală.",
+      "bestFor": "Ideal pentru: Afaceri care vor o bază profesională și performantă pe care să crească.",
+      "description": "Un site complet, gândit să convertească. O fundație solidă pentru prezența ta online.",
       "timeline": "2-3 zile",
       "features": [
-        "Themeing și Branding: Personalizare vizuală profundă.",
-        "Design Strategic: Focusat pe conversie și fluxul utilizatorului.",
-        "SEO Tehnic: Structură pe care Google o iubește.",
-        "Optimizarea Vitezei: Timpi de încărcare sub o secundă.",
-        "Perfect pentru Mobil: Arată excelent pe toate dispozitivele."
+        "Branding vizual: Personalizare la nivel de detaliu.",
+        "Design strategic: Axat pe conversie și experiența utilizatorului.",
+        "SEO tehnic: Structură pe care Google o iubește.",
+        "Viteză optimizată: Încărcare în sub o secundă.",
+        "Perfect pe mobil: Arată excelent pe orice dispozitiv."
       ]
     },
     "growth": {
       "title": "Pachetul 'Growth'",
-      "bestFor": "Ideal pentru: Afaceri care caută o soluție extinsă și colaborare continuă.",
-      "description": "Colaborez cu echipa ta pentru a construi o versiune extinsă a planului 'Launch' cu capabilități avansate.",
+      "bestFor": "Ideal pentru: Afaceri care vor o soluție extinsă și colaborare continuă.",
+      "description": "Colaborez cu echipa ta pentru a construi o versiune extinsă a planului 'Launch', cu funcționalități avansate.",
       "timeline": "1-2 săptămâni",
       "features": [
-        "Tot ce este în 'Launch' + acestea și mai multe:",
+        "Tot din 'Launch', plus:",
         "Integrare CMS: Tu deții și editezi conținutul.",
-        "Configurare Localizare: Gata pentru piețele globale de la început.",
-        "Analitici Avansate: Configurare completă de urmărire pentru a înțelege comportamentul vizitatorilor.",
-        "Generare Clienți Potențiali: Conectat la email-ul sau CRM-ul tău."
+        "Multi-limbă: Gata pentru piețe internaționale din start.",
+        "Analiză avansată: Tracking complet pentru a înțelege comportamentul vizitatorilor.",
+        "Generare de lead-uri: Conectat la email-ul sau CRM-ul tău."
       ]
     },
     "custom": {
       "title": "Soluții Personalizate",
       "bestFor": "Ideal pentru: Afaceri cu nevoi specifice și complexe.",
-      "description": "Ai nevoie ca clienții să se autentifice? Ai nevoie de un sistem complex de rezervări sau de un instrument intern personalizat? Putem construi asta.",
+      "description": "Ai nevoie ca utilizatorii să se logheze? Ai nevoie de un sistem complex de rezervări sau de un instrument intern? Le putem construi.",
       "timeline": "Variază în funcție de complexitate",
       "features": [
-        "Adaptat la cerințele tale specifice",
-        "Funcționalitate și integrări complexe",
-        "Autentificare și permisiuni personalizate pentru utilizatori",
-        "Sisteme avansate de rezervări sau programări",
-        "Instrumente interne și panouri de control"
+        "Adaptat la cerințele tale",
+        "Funcționalități și integrări complexe",
+        "Autentificare și permisiuni pentru utilizatori",
+        "Sisteme avansate de rezervări",
+        "Instrumente interne și dashboard-uri"
       ]
     },
     "addOns": {
-      "title": "Servicii Independente",
-      "subtitle": "Îmbunătățește orice site—construit de mine sau nu.",
+      "title": "Servicii Separate",
+      "subtitle": "Îmbunătățesc orice site—construit de mine sau nu.",
       "seo": {
-        "title": "Impuls SEO",
-        "benefit": "Mă adâncesc în setările tehnice pentru a te ajuta să te clasezi mai sus pe Google."
+        "title": "Audit SEO",
+        "benefit": "Analiză tehnică aprofundată pentru a te ajuta să urci în Google."
       },
       "store": {
         "title": "Magazin Online",
-        "benefit": "Capacitatea de a vinde produse și de a accepta carduri de credit în siguranță."
+        "benefit": "Vinde produse și acceptă plăți cu cardul în siguranță."
       },
       "multiLanguage": {
         "title": "Mai Multe Limbi",
-        "benefit": "Un site care funcționează în 2+ limbi (de exemplu, Engleză și Spaniolă)."
+        "benefit": "Un site care funcționează în 2+ limbi."
       },
       "analytics": {
-        "title": "Analytics Pro",
-        "benefit": "Configurez urmărirea astfel încât să poți vedea exact de unde vin vizitatorii tăi."
+        "title": "Analiză Avansată",
+        "benefit": "Configurez tracking-ul ca să vezi exact de unde vin vizitatorii."
       },
-      "contactForPricing": "Obține prețuri →"
+      "contactForPricing": "Află prețurile →"
     }
   },
   "roiCalculator": {
-    "label": "Simularea Veniturilor",
-    "headline": "Cât lasă site-ul tău pe masă?",
-    "subtitle": "Fă calculele.",
-    "description": "O mică creștere a ratei de conversie se acumulează rapid. Introdu numerele tale și vezi ce ar putea face chiar și îmbunătățiri modeste.",
-    "yourMetrics": "Metricile Tale",
-    "metricsDescription": "Introdu cifrele actuale ale site-ului tău",
+    "label": "Simulator Venituri",
+    "headline": "Câți bani pierzi din cauza site-ului?",
+    "subtitle": "Fă calculul.",
+    "description": "O mică îmbunătățire a ratei de conversie se adună rapid. Introdu cifrele tale și vezi ce impact pot avea chiar și schimbări mici.",
+    "yourMetrics": "Cifrele Tale",
+    "metricsDescription": "Introdu datele actuale ale site-ului tău",
     "monthlyVisitors": "Vizitatori Lunari",
-    "conversionRate": "Rata de Conversie (%)",
-    "avgOrderValue": "Valoarea Medie a Comenzii",
-    "projectedImprovement": "Îmbunătățire Proiectată",
-    "upliftDescription": "Estimările conservatoare pentru CRO profesional variază între 0,5% și 2,0% creștere.",
+    "conversionRate": "Rată de Conversie (%)",
+    "avgOrderValue": "Valoare Medie Comandă",
+    "projectedImprovement": "Îmbunătățire Estimată",
+    "upliftDescription": "Estimările conservatoare pentru optimizare profesională variază între 0,5% și 2,0% creștere.",
     "potentialReturns": "Câștiguri Potențiale",
-    "potentialDescription": "Ce ar putea însemna o creștere de +{uplift}% pentru afacerea ta",
-    "extraYearlyRevenue": "Venit Anual Extra",
+    "potentialDescription": "Ce ar însemna o creștere de +{uplift}% pentru afacerea ta",
+    "extraYearlyRevenue": "Venit Anual în Plus",
     "monthlyGrowth": "Creștere Lunară",
-    "projectedAnnual": "Anual Proiectat",
+    "projectedAnnual": "Proiecție Anuală",
     "currentMonthlyRevenue": "Venit Lunar Actual:",
-    "projectedMonthlyRevenue": "Venit Lunar Proiectat:",
+    "projectedMonthlyRevenue": "Venit Lunar Estimat:",
     "chartCurrent": "Venit Actual",
-    "chartProjected": "Venit Proiectat",
-    "disclaimer": "Acesta este un simulator doar în scopuri ilustrative. Rezultatele reale pot varia în funcție de numeroși factori, inclusiv condițiile pieței, calitatea implementării și variabilele specifice afacerii. Aceste proiecții sunt estimări și nu trebuie considerate garanții.",
+    "chartProjected": "Venit Estimat",
+    "disclaimer": "Acesta e un simulator orientativ. Rezultatele reale pot varia în funcție de mulți factori: piață, calitatea implementării, specificul afacerii. Cifrele sunt estimări, nu garanții.",
     "seo": {
-      "title": "Calculator ROI | Calculează-ți Creșterea Potențială a Veniturilor",
-      "description": "Calculează câți bani lași pe masă. Folosește acest calculator pentru a vedea impactul potențial al optimizării ratei de conversie asupra afacerii tale."
+      "title": "Calculator ROI | Vezi Creșterea Potențială a Veniturilor",
+      "description": "Află câți bani pierzi din cauza site-ului actual. Folosește acest calculator pentru a vedea impactul optimizării conversiilor asupra afacerii tale."
     }
   },
   "certificates": {
@@ -606,70 +606,70 @@
     }
   },
   "faq": {
-    "label": "FAQ",
-    "headline": "Întrebări Pe Care Le-ai Putea Avea",
-    "subtitle": "Ce întreabă de obicei oamenii înainte să începem.",
+    "label": "Întrebări",
+    "headline": "Întrebări Frecvente",
+    "subtitle": "Ce întreabă lumea de obicei înainte să începem.",
     "cta": "Mai Ai Întrebări? Hai Să Vorbim",
     "faq-1": {
       "question": "Cât durează un proiect tipic?",
-      "answer": "Termenele proiectului variază în funcție de domeniul de aplicare și complexitate. Pachetul 'Launch' durează de obicei 2-3 zile, în timp ce pachetul 'Growth' durează 1-2 săptămâni. Soluțiile personalizate cu funcționalitate complexă pot dura mai mult. Voi oferi un termen detaliat în timpul consultației noastre inițiale."
+      "answer": "Depinde de scop și complexitate. Pachetul 'Launch' durează de obicei 2-3 zile, iar 'Growth' 1-2 săptămâni. Soluțiile personalizate pot dura mai mult. Îți dau un termen exact la prima discuție."
     },
     "faq-2": {
-      "question": "Lucrezi cu clienți din afara fusului tău orar?",
-      "answer": "Da, lucrez cu clienți din întreaga lume. Sunt flexibil cu orele de comunicare și pot mă adapta la diferite fusuri orare. Majoritatea comunicării are loc asincron prin e-mail și instrumente de management al proiectelor, cu apeluri programate când este necesar."
+      "question": "Lucrezi cu clienți din alte fusuri orare?",
+      "answer": "Da, lucrez cu clienți din toată lumea. Sunt flexibil cu programul și mă adaptez la diferite fusuri orare. Cea mai mare parte a comunicării e asincronă, prin email și tool-uri de project management, cu apeluri programate când e nevoie."
     },
     "faq-3": {
-      "question": "Ce se întâmplă după ce proiectul este finalizat?",
-      "answer": "După lansare, ofer instruire despre cum să îți gestionezi conținutul prin CMS. De asemenea, ofer opțiuni de întreținere și suport continuu pentru a menține site-ul tău funcționând fără probleme. Vei avea proprietatea completă a codului tău și poți alege să îl menții singur sau să continui să lucrezi cu mine."
+      "question": "Ce se întâmplă după ce terminăm proiectul?",
+      "answer": "După lansare, îți arăt cum să îți gestionezi conținutul prin CMS. Ofer și opțiuni de întreținere și suport continuu. Codul e al tău în totalitate—poți să îl menții singur sau să continuăm să lucrăm împreună."
     },
     "faq-4": {
       "question": "Poți lucra cu site-ul meu existent?",
-      "answer": "Absolut. Pot îmbunătăți, redesigna sau adăuga funcții la site-urile web existente. Fie că ai nevoie de optimizare a performanței, un design nou sau funcționalitate nouă, pot lucra cu configurația ta actuală și te pot ajuta să o duci la următorul nivel."
+      "answer": "Sigur. Pot îmbunătăți, redesigna sau adăuga funcționalități la site-uri existente. Fie că ai nevoie de performanță mai bună, un design nou sau funcții noi, pot lucra cu ce ai și să ducem totul la următorul nivel."
     },
     "faq-5": {
-      "question": "Ce este inclus în pachetele tale de prețuri?",
-      "answer": "Fiecare pachet include design personalizat, responsivitate mobilă, acces la sistemul de management al conținutului, configurare SEO și optimizare a performanței. Pachetele de nivel superior includ mai multe pagini, funcții avansate și integrări suplimentare. Toate pachetele includ instruire și documentație. Consultă secțiunea <link>Cum Prețuiesc</link> pentru detalii complete."
+      "question": "Ce include fiecare pachet?",
+      "answer": "Fiecare pachet include design personalizat, site responsive pe mobil, acces la CMS, configurare SEO și optimizare a performanței. Pachetele mai mari includ mai multe pagini, funcții avansate și integrări extra. Toate vin cu training și documentație. Vezi secțiunea <link>Prețuri</link> pentru detalii."
     }
   },
   "blog": {
     "title": "Blog",
-    "description": "Gânduri despre dezvoltarea web, design și performanță digitală.",
+    "description": "Gânduri despre web development, design și performanță digitală.",
     "readMore": "Citește mai mult",
     "backToBlog": "Înapoi la blog",
     "publishedOn": "Publicat pe {date}",
     "searchPlaceholder": "Caută articole...",
-    "filterByTag": "Filtrează după etichetă",
+    "filterByTag": "Filtrează după subiect",
     "allTags": "Toate subiectele",
-    "minRead": "{minutes} min de citit",
-    "noResults": "Nu s-au găsit articole",
-    "noResultsDescription": "Încearcă să ajustezi căutarea sau filtrul pentru a găsi ceea ce cauți.",
+    "minRead": "{minutes} min",
+    "noResults": "Niciun articol găsit",
+    "noResultsDescription": "Încearcă altă căutare sau alt filtru.",
     "clearFilters": "Șterge filtrele"
   },
   "portfolio": {
     "label": "Portofoliu",
-    "headline": "Lucrări Recente",
-    "subtitle": "Idei îndrăznețe binevenite. Sunt suficient de încăpățânat să le construiesc cum trebuie.",
+    "headline": "Proiecte Recente",
+    "subtitle": "Idei îndrăznețe binevenite. Sunt suficient de încăpățânat să le fac cum trebuie.",
     "cta": "Vrei Rezultate Similare?",
     "viewProject": "Vezi Proiectul",
     "viewLive": "Vezi Site-ul Live",
     "comingSoon": "În Curând",
     "comingSoonTitle": "Proiectul Tău?",
-    "comingSoonSubtitle": "Aceasta ar putea fi povestea ta de succes",
+    "comingSoonSubtitle": "Aici ar putea fi povestea ta de succes",
     "comingSoonCta": "Hai Să Vorbim",
-    "moreComing": "Mai multe în curând...",
+    "moreComing": "Mai vin...",
     "techStack": "Tehnologii",
     "backToPortfolio": "Înapoi la Portofoliu",
-    "nextProject": "Proiectul Următor",
+    "nextProject": "Următorul Proiect",
     "previousProject": "Proiectul Anterior",
     "challenge": "Provocarea",
     "solution": "Soluția",
-    "features": "Caracteristici Cheie",
+    "features": "Funcționalități Cheie",
     "results": "Rezultate"
   },
   "stats": {
-    "label": "În Cifre",
-    "headline": "Cifrele",
-    "subtitle": "Din munca pe care am livrat-o.",
+    "label": "Cifre",
+    "headline": "În Cifre",
+    "subtitle": "Din proiectele livrate.",
     "metrics": {
       "yearsExperience": {
         "value": "4+",
@@ -681,7 +681,7 @@
       },
       "investors": {
         "value": "30K+",
-        "label": "Investitori Atinși"
+        "label": "Investitori Ajunși"
       },
       "languages": {
         "value": "3",
@@ -689,7 +689,7 @@
       },
       "avgConversionLift": {
         "value": "15%+",
-        "label": "Creșterea Medie a Conversiei"
+        "label": "Creștere Medie Conversii"
       }
     }
   },
@@ -702,12 +702,12 @@
     "schedule": {
       "pickDate": "Alege o Dată",
       "pickTime": "Alege o Oră",
-      "bookingSummary": "Rezumat Rezervare",
+      "bookingSummary": "Rezumat Programare",
       "date": "Data",
       "time": "Ora",
       "backToCalendar": "Înapoi la Calendar",
       "peopleLooking": "{count, plural, one {# persoană} few {# persoane} other {# persoane}} urmăresc",
-      "manageExisting": "Gestionează rezervările existente",
+      "manageExisting": "Gestionează programările existente",
       "backToHome": "Înapoi la Pagina Principală"
     },
     "verify": {
@@ -718,9 +718,9 @@
       "demoCode": "Cod Demo",
       "sendCode": "Trimite Codul",
       "verify": "Verifică",
-      "confirmBooking": "Confirmă Rezervarea",
+      "confirmBooking": "Confirmă Programarea",
       "continueWith": "Continuă cu {email}",
-      "signedInReady": "Ești autentificat. Gata să confirmi rezervarea?",
+      "signedInReady": "Ești autentificat. Gata să confirmi programarea?",
       "useDifferentEmail": "Folosește Alt Email",
       "changeEmail": "Schimbă Email",
       "back": "Înapoi"
@@ -733,14 +733,14 @@
       "done": "Gata"
     },
     "manage": {
-      "title": "Gestionează Rezervările",
+      "title": "Gestionează Programările",
       "subtitle": "Vezi sau anulează întâlnirile tale existente",
-      "findBookings": "Caută Rezervări",
-      "noBookings": "Nu s-au găsit rezervări active.",
+      "findBookings": "Caută Programări",
+      "noBookings": "Nu s-au găsit programări active.",
       "logout": "Deconectare",
-      "cancelBooking": "Anulează Rezervarea",
-      "cancelConfirmation": "Ești sigur că vrei să anulezi această rezervare? Această acțiune nu poate fi anulată.",
-      "keepBooking": "Păstrează Rezervarea"
+      "cancelBooking": "Anulează Programarea",
+      "cancelConfirmation": "Ești sigur că vrei să anulezi această programare? Această acțiune nu poate fi anulată.",
+      "keepBooking": "Păstrează Programarea"
     },
     "calendar": {
       "monday": "Lun",
@@ -755,12 +755,12 @@
       "failedToSendCode": "Eroare la trimiterea codului",
       "invalidCode": "Cod invalid",
       "verificationFailed": "Verificare eșuată sau loc ocupat",
-      "bookingFailed": "Rezervare eșuată sau loc ocupat",
+      "bookingFailed": "Programare eșuată sau loc ocupat",
       "failedToCancel": "Eroare la anulare",
-      "slotTaken": "Acea oră este deja rezervată"
+      "slotTaken": "Acea oră este deja programată"
     },
     "success": {
-      "bookingCancelled": "Rezervare anulată"
+      "bookingCancelled": "Programare anulată"
     }
   }
 }
