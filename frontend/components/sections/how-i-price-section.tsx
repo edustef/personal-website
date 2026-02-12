@@ -10,6 +10,8 @@ import {
 import { cn, getWhatsAppUrl } from "@/lib/utils";
 import { getLocale, getTranslations } from "next-intl/server";
 import {
+  AddOnCard,
+  AddOnCardMobile,
   PackageCard,
   PackageCardsProvider,
 } from "./how-i-price-section-client";
@@ -90,14 +92,8 @@ export default async function HowIPriceSection() {
 
         <div className="hidden md:grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {addOns.map((addOn, index) => (
-            <AnimatedContainer
-              key={addOn}
-              trigger="scroll"
-              fadeDirection="up"
-              staggerIndex={index}
-              staggerDelay={0.08}
-            >
-              <Card className="h-full rounded-xl border-muted bg-background/50 backdrop-blur-sm overflow-hidden shadow-lg">
+            <AddOnCard key={addOn} index={index}>
+              <Card className="h-full rounded-xl border-border/30 bg-card/80 backdrop-blur-sm overflow-hidden shadow-lg transition-shadow duration-300 hover:shadow-2xl">
                 <CardContent className="p-5">
                   <h4 className="text-foreground text-xl mb-2 font-semibold text-balance">
                     {t(`addOns.${addOn}.title`)}
@@ -117,7 +113,7 @@ export default async function HowIPriceSection() {
                   </a>
                 </CardFooter>
               </Card>
-            </AnimatedContainer>
+            </AddOnCard>
           ))}
         </div>
 
@@ -133,7 +129,7 @@ export default async function HowIPriceSection() {
                     index === addOns.length - 1 && "mr-4"
                   )}
                 >
-                  <div className="h-full">
+                  <AddOnCardMobile index={index}>
                     <Card className="h-full rounded-xl border-muted bg-background/50 backdrop-blur-sm overflow-hidden shadow-lg">
                       <CardContent className="p-5">
                         <h4 className="text-foreground text-xl mb-2 font-semibold text-balance">
@@ -154,7 +150,7 @@ export default async function HowIPriceSection() {
                         </a>
                       </CardFooter>
                     </Card>
-                  </div>
+                  </AddOnCardMobile>
                 </CarouselItem>
               ))}
             </CarouselContent>

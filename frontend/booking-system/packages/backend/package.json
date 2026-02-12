@@ -1,0 +1,24 @@
+{
+  "name": "@booking-system/backend",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "dev": "convex dev",
+    "dev:setup": "convex dev --configure --until-success"
+  },
+  "dependencies": {
+    "@convex-dev/presence": "^0.3.0",
+    "@convex-dev/rate-limiter": "^0.3.2",
+    "@convex-dev/resend": "^0.2.3",
+    "convex": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@booking-system/config": "workspace:*",
+    "@types/node": "^24.3.0",
+    "typescript": "catalog:"
+  }
+}

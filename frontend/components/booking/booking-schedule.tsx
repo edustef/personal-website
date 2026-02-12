@@ -201,8 +201,8 @@ export function BookingSchedule() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground pt-16 overflow-x-hidden">
-      <div className={cn("mx-auto w-full max-w-lg px-4 pt-6 md:px-12 md:pt-12")}>
+    <div className="min-h-screen bg-background text-foreground pt-8 overflow-x-hidden">
+      <div className={cn("mx-auto w-full max-w-lg px-4 pt-2 md:px-12 md:pt-4")}>
         <AnimatePresence mode="wait">
           {step === "confirmed" && (
             <motion.div
@@ -227,7 +227,7 @@ export function BookingSchedule() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="mb-10"
+              className="mb-6"
             >
               <StepIndicator currentStep={step} />
             </motion.div>
@@ -242,7 +242,7 @@ export function BookingSchedule() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="relative overflow-hidden rounded-md p-3 border border-border mb-8 bg-muted/50"
+              className="relative overflow-hidden rounded-md p-3 border border-border mb-4 bg-muted/50"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent -translate-x-full animate-[shimmer_3s_infinite]" />
               <div className="relative flex items-center justify-between">
@@ -398,9 +398,9 @@ export function BookingSchedule() {
               <Button
                 variant="ghost"
                 onClick={goBack}
-                className="w-full h-12 text-muted-foreground hover:text-primary hover:bg-accent border border-border"
+                className="w-full h-12 text-muted-foreground hover:text-primary hover:bg-accent outline outline-1 outline-border group"
               >
-                <ChevronLeft className="w-4 h-4 mr-2" />
+                <ChevronLeft className="w-4 h-4 mr-2 transition-transform duration-200 group-hover:-translate-x-0.5" />
                 {t("schedule.backToCalendar")}
               </Button>
             </motion.div>
@@ -433,7 +433,7 @@ export function BookingSchedule() {
                   <Button
                     variant="default"
                     size="lg"
-                    className="w-full h-14 font-semibold"
+                    className="w-full h-14 font-semibold group"
                     onClick={handleContinueWithSession}
                     disabled={isLoading}
                   >
@@ -442,7 +442,7 @@ export function BookingSchedule() {
                     ) : (
                       <>
                         {t("verify.confirmBooking")}
-                        <Check className="w-4 h-4 ml-2" />
+                        <Check className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:scale-110" />
                       </>
                     )}
                   </Button>
@@ -454,7 +454,7 @@ export function BookingSchedule() {
                       setEmail("");
                       setSessionId(null);
                     }}
-                    className="w-full h-12 text-muted-foreground hover:text-primary hover:bg-accent border border-border"
+                    className="w-full h-12 text-muted-foreground hover:text-primary hover:bg-accent outline outline-1 outline-border"
                   >
                     {t("verify.useDifferentEmail")}
                   </Button>
@@ -495,14 +495,14 @@ export function BookingSchedule() {
                     size="lg"
                     onClick={handleSendCode}
                     disabled={!email || isLoading}
-                    className="w-full h-14 font-semibold"
+                    className="w-full h-14 font-semibold group"
                   >
                     {isLoading ? (
                       <Loader2 className="w-5 h-5 animate-spin" />
                     ) : (
                       <>
                         {t("verify.sendCode")}
-                        <Send className="w-4 h-4 ml-2" />
+                        <Send className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </>
                     )}
                   </Button>
@@ -536,7 +536,7 @@ export function BookingSchedule() {
                           <InputOTPSlot
                             key={index}
                             index={index}
-                            className="h-14 w-11 rounded-md bg-muted border-border text-foreground text-xl font-mono first:rounded-l-xl last:rounded-r-xl data-[active]:border-primary data-[active]:ring-primary/20"
+                            className="h-14 w-11 rounded-md bg-muted border-0 text-foreground text-xl font-mono first:rounded-l-xl last:rounded-r-xl data-[active]:ring-1 data-[active]:ring-primary/20"
                           />
                         ))}
                       </InputOTPGroup>
@@ -546,14 +546,14 @@ export function BookingSchedule() {
                   <Button
                     onClick={handleVerifyAndBook}
                     disabled={otp.length !== 6 || isLoading}
-                    className="w-full h-14 font-semibold text-base"
+                    className="w-full h-14 font-semibold text-base group"
                   >
                     {isLoading ? (
                       <Loader2 className="w-5 h-5 animate-spin" />
                     ) : (
                       <>
                         {t("verify.confirmBooking")}
-                        <Check className="w-4 h-4 ml-2" />
+                        <Check className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:scale-110" />
                       </>
                     )}
                   </Button>
@@ -563,9 +563,9 @@ export function BookingSchedule() {
               <Button
                 variant="ghost"
                 onClick={goBack}
-                className="w-full h-12 text-muted-foreground hover:text-primary hover:bg-accent border border-border"
+                className="w-full h-12 text-muted-foreground hover:text-primary hover:bg-accent outline outline-1 outline-border group"
               >
-                <ChevronLeft className="w-4 h-4 mr-2" />
+                <ChevronLeft className="w-4 h-4 mr-2 transition-transform duration-200 group-hover:-translate-x-0.5" />
                 {codeSent ? t("verify.changeEmail") : t("verify.back")}
               </Button>
             </motion.div>
@@ -654,9 +654,9 @@ export function BookingSchedule() {
                     window.open(url.toString(), "_blank");
                   }}
                   variant="ghost"
-                  className="w-full h-11 text-muted-foreground hover:text-primary hover:bg-accent border border-border rounded-md"
+                  className="w-full h-11 text-muted-foreground hover:text-primary hover:bg-accent outline outline-1 outline-border rounded-md group"
                 >
-                  <CalendarPlus className="w-4 h-4 mr-2" />
+                  <CalendarPlus className="w-4 h-4 mr-2 transition-transform duration-200 group-hover:scale-110" />
                   {t("confirmed.addToCalendar")}
                 </Button>
                 <Button

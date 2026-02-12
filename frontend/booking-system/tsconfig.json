@@ -1,0 +1,3 @@
+{
+  "extends": "@booking-system/config/tsconfig.base.json"
+}

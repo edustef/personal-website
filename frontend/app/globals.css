@@ -261,3 +261,173 @@ body {
 .animate-caret-blink {
   animation: caret-blink 1.2s ease-in-out infinite;
 }
+
+/* Gradient animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradient-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-20deg);
+  }
+}
+
+@keyframes border-beam {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+/* Animation utility classes */
+.animate-gradient-shift {
+  animation: gradient-shift 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+.animate-gradient-rotate {
+  animation: gradient-rotate 10s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shine {
+  animation: shine 2s ease-in-out infinite;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--muted-foreground) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Noise texture overlay */
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.02;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Mesh gradient backgrounds */
+.mesh-gradient-1 {
+  background:
+    radial-gradient(at 40% 20%, hsla(var(--chart-1) / 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(var(--chart-2) / 0.15) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(var(--chart-3) / 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, hsla(var(--chart-4) / 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(var(--chart-5) / 0.15) 0px, transparent 50%);
+}
+
+.mesh-gradient-2 {
+  background:
+    radial-gradient(at 0% 0%, hsla(var(--primary) / 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(var(--accent) / 0.1) 0px, transparent 50%);
+}
+
+/* Card hover lift effect */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 10px 40px -10px rgba(0, 0, 0, 0.2),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Glow effects */
+.glow-sm {
+  box-shadow: 0 0 20px -5px var(--primary);
+}
+
+.glow-md {
+  box-shadow: 0 0 40px -10px var(--primary);
+}
+
+.glow-lg {
+  box-shadow: 0 0 60px -15px var(--primary);
+}
+
+/* Border gradient utility */
+.border-gradient {
+  position: relative;
+  background: var(--card);
+  border-radius: var(--radius);
+}
+
+.border-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--border) 0%, transparent 50%, var(--border) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}

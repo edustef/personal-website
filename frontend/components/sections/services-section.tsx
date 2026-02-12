@@ -1,8 +1,7 @@
-import { AnimatedContainer } from "@/components/ui/animated-container";
 import { BGPattern } from "@/components/ui/bg-pattern";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -14,6 +13,11 @@ import { type Service, services } from "@/lib/data/services";
 import { cn } from "@/lib/utils";
 import { Globe, Headphones, Layers, Palette, Rocket, Zap } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
+import {
+  ServiceCard,
+  ServiceCardMobile,
+  ServicesCTA,
+} from "./services-section-client";
 
 const iconMap: Record<string, React.ElementType> = {
   layers: Layers,
@@ -36,6 +40,16 @@ function getPatternForService(
   const patternIndex = index % patternVariants.length;
   return patternVariants[patternIndex];
 }
+
+// Define glow colors for variety
+const glowColors = [
+  "217 91% 60%", // Blue
+  "262 83% 58%", // Purple
+  "142 71% 45%", // Green
+  "24 95% 53%",  // Orange
+  "339 90% 51%", // Pink
+  "198 93% 60%", // Cyan
+];
 
 type ServicesSectionProps = {
   services?: Service[];
@@ -82,20 +96,26 @@ export default async function ServicesSection({
           {featuredServices.map((service, index) => {
             const Icon = iconMap[service.icon] || Layers;
             const patternVariant = getPatternForService(index);
+            const glowColor = glowColors[index % glowColors.length];
 
             return (
-              <AnimatedContainer
+              <ServiceCard
                 key={service._id}
-                trigger="scroll"
-                fadeDirection="left"
-                staggerIndex={index}
-                staggerDelay={0.15}
-                className={cn("min-w-0 lg:col-span-2 lg:row-span-2 text-lg")}
+                index={index}
+                featured
+                glowColor={glowColor}
+                className="lg:col-span-2 lg:row-span-2"
               >
-                <Card className="isolate relative h-full w-full overflow-hidden rounded-2xl border-muted bg-background/50 backdrop-blur-sm">
-                  <BGPattern variant={patternVariant} mask="fade-edges" opacity={0.25} />
+                <div className="isolate relative h-full w-full overflow-hidden">
+                  <BGPattern
+                    variant={patternVariant}
+                    mask="fade-edges"
+                    opacity={0.25}
+                  />
                   <CardContent className="relative p-8">
-                    <Icon className="size-10 mb-4" />
+                    <div className="mb-4 inline-flex rounded-xl bg-primary/10 p-3 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
+                      <Icon className="size-8 text-primary transition-transform duration-300 group-hover:rotate-6" />
+                    </div>
                     <h3 className="text-foreground mb-3 break-words text-xl font-semibold text-balance">
                       {t(service.titleKey)}
                     </h3>
@@ -103,8 +123,8 @@ export default async function ServicesSection({
                       {t(service.descriptionKey)}
                     </p>
                   </CardContent>
-                </Card>
-              </AnimatedContainer>
+                </div>
+              </ServiceCard>
             );
           })}
 
@@ -113,17 +133,16 @@ export default async function ServicesSection({
             const patternVariant = getPatternForService(
               featuredServices.length + index
             );
+            const glowColor =
+              glowColors[(featuredServices.length + index) % glowColors.length];
 
             return (
-              <AnimatedContainer
+              <ServiceCard
                 key={service._id}
-                trigger="scroll"
-                fadeDirection="up"
-                staggerIndex={featuredServices.length + index}
-                staggerDelay={0.1}
-                className="min-w-0"
+                index={featuredServices.length + index}
+                glowColor={glowColor}
               >
-                <Card className="isolate relative h-full w-full overflow-hidden rounded-2xl border-muted bg-background/50 backdrop-blur-sm">
+                <div className="isolate relative h-full w-full overflow-hidden">
                   <BGPattern
                     variant={patternVariant}
                     mask="fade-edges"
@@ -131,27 +150,30 @@ export default async function ServicesSection({
                     opacity={0.25}
                   />
                   <CardContent className="relative p-6">
-                    <Icon className="size-8 mb-4" />
+                    <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
+                      <Icon className="size-6 text-primary transition-transform duration-300 group-hover:rotate-6" />
+                    </div>
                     <h3 className="text-foreground mb-2 break-words text-xl md:text-base font-semibold text-balance">
                       {t(service.titleKey)}
                     </h3>
-                    <p className="text-muted-foreground break-words text-lg leading-relaxed text-pretty">
+                    <p className="text-muted-foreground break-words text-lg md:text-base leading-relaxed text-pretty">
                       {t(service.descriptionKey)}
                     </p>
                   </CardContent>
-                </Card>
-              </AnimatedContainer>
+                </div>
+              </ServiceCard>
             );
           })}
         </div>
 
-        {/* Mobile Carousel */}
+        {/* Mobile Carousel with scroll animations */}
         <div className="md:hidden">
           <Carousel className="w-full" aria-label={t("headline")}>
             <CarouselContent className="-ml-4 px-4 pb-4">
               {[...featuredServices, ...otherServices].map((service, index) => {
                 const Icon = iconMap[service.icon] || Layers;
                 const patternVariant = getPatternForService(index);
+                const glowColor = glowColors[index % glowColors.length];
 
                 return (
                   <CarouselItem
@@ -161,25 +183,26 @@ export default async function ServicesSection({
                       index === servicesToDisplay.length - 1 && "mr-4"
                     )}
                   >
-                    <div className="h-full">
-                      <Card className="isolate relative h-full w-full overflow-hidden rounded-2xl border-muted bg-background/50 backdrop-blur-sm">
+                    <ServiceCardMobile
+                      index={index}
+                      glowColor={glowColor}
+                      icon={<Icon className="size-7 text-primary" />}
+                      bgPattern={
                         <BGPattern
                           variant={patternVariant}
                           mask="fade-edges"
                           size={20}
                           opacity={0.25}
                         />
-                        <CardContent className="relative p-6 flex flex-col h-full">
-                          <Icon className="size-8 mb-4 shrink-0" />
-                          <h3 className="text-foreground mb-2 break-words text-xl font-semibold text-balance">
-                            {t(service.titleKey)}
-                          </h3>
-                          <p className="text-muted-foreground break-words text-lg leading-relaxed flex-grow text-pretty">
-                            {t(service.descriptionKey)}
-                          </p>
-                        </CardContent>
-                      </Card>
-                    </div>
+                      }
+                    >
+                      <h3 className="text-foreground mb-2 break-words text-xl font-semibold text-balance">
+                        {t(service.titleKey)}
+                      </h3>
+                      <p className="text-muted-foreground break-words text-lg leading-relaxed flex-grow text-pretty">
+                        {t(service.descriptionKey)}
+                      </p>
+                    </ServiceCardMobile>
                   </CarouselItem>
                 );
               })}
@@ -191,17 +214,7 @@ export default async function ServicesSection({
         </div>
 
         {/* Section CTA */}
-        <AnimatedContainer
-          trigger="scroll"
-          fadeDirection="up"
-          className="mt-12 text-center px-4"
-        >
-          <Button asChild size="lg" variant="outline">
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-              {t("cta")}
-            </a>
-          </Button>
-        </AnimatedContainer>
+        <ServicesCTA whatsappUrl={whatsappUrl} ctaText={t("cta")} />
       </div>
     </section>
   );

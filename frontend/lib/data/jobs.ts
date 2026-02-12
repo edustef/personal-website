@@ -17,7 +17,7 @@ export type Job = {
 export const jobs: Job[] = [
   {
     _id: "7dd627c1-777c-46cd-8321-58170dd47f64",
-    position: "Intern Front-end Developer",
+    position: "Intern Web Developer",
     company: "Cosentino",
     startDate: "2021-04-01",
     endDate: "2021-06-30",
@@ -28,7 +28,7 @@ export const jobs: Job[] = [
   },
   {
     _id: "1a41ec49-04d9-4500-ac41-61cd9ddb98a9",
-    position: "Front-end Developer",
+    position: "Web Developer",
     company: "SwissBorg",
     startDate: "2021-11-17",
     endDate: "2025-09-30",
