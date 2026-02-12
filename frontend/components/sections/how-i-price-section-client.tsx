@@ -96,12 +96,16 @@ export function PackageCard({
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);
 
-  const springConfig = { damping: 25, stiffness: 200 };
-  const rotateX = useSpring(useTransform(mouseY, [0, 1], [3, -3]), springConfig);
-  const rotateY = useSpring(useTransform(mouseX, [0, 1], [-3, 3]), springConfig);
+  // Softer spring for smooth entrance
+  const springConfig = { damping: 30, stiffness: 120 };
+  const rotateX = useSpring(useTransform(mouseY, [0, 1], [2.5, -2.5]), springConfig);
+  const rotateY = useSpring(useTransform(mouseX, [0, 1], [-2.5, 2.5]), springConfig);
 
   const glowX = useSpring(useTransform(mouseX, [0, 1], [0, 100]), springConfig);
   const glowY = useSpring(useTransform(mouseY, [0, 1], [0, 100]), springConfig);
+
+  // Smooth scale on hover
+  const scale = useSpring(isHovered ? 1.015 : 1, { damping: 25, stiffness: 100 });
 
   const cardIndex = pkg === "launch" ? 0 : pkg === "growth" ? 1 : 2;
   const glowColor = glowColors[cardIndex];
@@ -140,9 +144,8 @@ export function PackageCard({
           transformStyle: "preserve-3d",
           rotateX,
           rotateY,
+          scale,
         }}
-        whileHover={{ scale: 1.02 }}
-        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
       >
         {/* Popular badge - outside Card to avoid overflow clipping */}
         {isPopular && (

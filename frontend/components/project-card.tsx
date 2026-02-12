@@ -31,12 +31,16 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);
 
-  const springConfig = { damping: 20, stiffness: 200 };
-  const rotateX = useSpring(useTransform(mouseY, [0, 1], [5, -5]), springConfig);
-  const rotateY = useSpring(useTransform(mouseX, [0, 1], [-5, 5]), springConfig);
+  // Softer spring for smooth entrance
+  const springConfig = { damping: 30, stiffness: 120 };
+  const rotateX = useSpring(useTransform(mouseY, [0, 1], [4, -4]), springConfig);
+  const rotateY = useSpring(useTransform(mouseX, [0, 1], [-4, 4]), springConfig);
 
   const glowX = useSpring(useTransform(mouseX, [0, 1], [0, 100]), springConfig);
   const glowY = useSpring(useTransform(mouseY, [0, 1], [0, 100]), springConfig);
+
+  // Smooth scale on hover
+  const scale = useSpring(isHovered ? 1.015 : 1, { damping: 25, stiffness: 100 });
 
   // Different glow colors per card
   const glowColors = ["217 91% 60%", "262 83% 58%", "142 71% 45%", "339 90% 51%", "24 95% 53%"];
@@ -186,9 +190,8 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           transformStyle: "preserve-3d",
           rotateX,
           rotateY,
+          scale,
         }}
-        whileHover={{ scale: 1.02 }}
-        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
       >
 <CardWrapper
           {...wrapperProps}

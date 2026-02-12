@@ -93,7 +93,7 @@ export function AboutMeSectionClient({
               {description}
             </p>
             {cta && ctaUrl && (
-              <div className="mt-8">
+              <div className="mt-8 flex justify-center lg:justify-start">
                 <Button asChild size="lg" variant="outline">
                   <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
                     {cta}
