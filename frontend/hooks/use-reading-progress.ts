@@ -7,29 +7,26 @@ export function useReadingProgress(selector = "article") {
     const element = document.querySelector(selector);
     if (!element) return;
 
-    const calculateProgress = (entry?: IntersectionObserverEntry) => {
-      const rect = entry?.boundingClientRect ?? element.getBoundingClientRect();
-      const rootBounds = entry?.rootBounds ?? {
-        top: 0,
-        bottom: window.innerHeight,
-        height: window.innerHeight,
-      };
-
-      const windowHeight = rootBounds.height;
+    const calculateProgress = () => {
+      const rect = element.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
       const elementHeight = rect.height;
       const elementTop = rect.top;
       const elementBottom = rect.bottom;
 
+      // Article hasn't started yet
       if (elementTop >= windowHeight) {
-        setProgress(100);
-        return;
-      }
-
-      if (elementBottom <= 0) {
         setProgress(0);
         return;
       }
 
+      // Article is fully scrolled past
+      if (elementBottom <= 0) {
+        setProgress(100);
+        return;
+      }
+
+      // Calculate how much we've scrolled through the article
       const scrolled = Math.max(0, -elementTop);
       const totalScrollable = Math.max(0, elementHeight - windowHeight);
 
@@ -42,31 +39,16 @@ export function useReadingProgress(selector = "article") {
       setProgress(Math.min(Math.max(calculatedProgress, 0), 100));
     };
 
-    const observerOptions: IntersectionObserverInit = {
-      root: null,
-      rootMargin: "0px",
-      threshold: Array.from({ length: 20 }, (_, i) => i / 19), // 0, 0.05, 0.1, ..., 1.0
-    };
+    // Use scroll event for continuous tracking
+    window.addEventListener("scroll", calculateProgress, { passive: true });
+    window.addEventListener("resize", calculateProgress, { passive: true });
 
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        calculateProgress(entry);
-      }
-    }, observerOptions);
-
-    const resizeObserver = new ResizeObserver(() => {
-      calculateProgress();
-    });
-
-    observer.observe(element);
-    resizeObserver.observe(element);
-    resizeObserver.observe(document.documentElement);
-
+    // Initial calculation
     calculateProgress();
 
     return () => {
-      observer.disconnect();
-      resizeObserver.disconnect();
+      window.removeEventListener("scroll", calculateProgress);
+      window.removeEventListener("resize", calculateProgress);
     };
   }, [selector]);
 

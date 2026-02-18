@@ -197,6 +197,7 @@ export default function BlogClient({ posts }: { posts: BlogPost[] }) {
                 >
                   <Link
                     href={`/blog/${post.slug}`}
+                    variant={null}
                     className="whitespace-normal group block h-full overflow-hidden rounded-2xl border bg-card transition-all hover:shadow-lg"
                   >
                     <article className="flex h-full flex-col p-6">
