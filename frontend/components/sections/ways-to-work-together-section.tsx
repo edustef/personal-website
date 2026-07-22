@@ -1,9 +1,10 @@
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeader } from "@/components/ui/section-header";
-import { Link } from "@/i18n/navigation";
-import { ArrowRight, Check } from "lucide-react";
+import { getWhatsAppUrl } from "@/lib/utils";
+import { Check } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 
 export default async function WaysToWorkTogetherSection() {
@@ -19,6 +20,7 @@ export default async function WaysToWorkTogetherSection() {
 
   const sectionSlug = headerT("nav.pricingSlug");
   const includedItems = t.raw("includedItems") as string[];
+  const whatsappUrl = getWhatsAppUrl(undefined);
 
   return (
     <section id={sectionSlug} className="scroll-mt-12 py-12 md:py-16">
@@ -91,10 +93,14 @@ export default async function WaysToWorkTogetherSection() {
 
                   <div className="mt-auto pt-10 md:pt-12">
                     <Button asChild size="lg" className="min-h-12 w-full">
-                      <Link href="/start-your-project">
+                      <a
+                        href={whatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <WhatsAppIcon aria-hidden="true" className="size-4" />
                         {t("cta")}
-                        <ArrowRight aria-hidden="true" className="size-4" />
-                      </Link>
+                      </a>
                     </Button>
                   </div>
                 </div>

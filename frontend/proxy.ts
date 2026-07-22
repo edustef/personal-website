@@ -5,7 +5,6 @@ import { routing } from "./i18n/routing";
 const handleI18nRouting = createMiddleware(routing);
 
 const pathRedirects: Record<string, string> = {
-  "/ro/începe-proiectul-tău": "/ro/incepe-proiectul-tau",
   "/ro/politică-de-confidențialitate": "/ro/politica-de-confidentialitate",
   "/es/política-de-privacidad": "/es/politica-de-privacidad",
 };
