@@ -228,7 +228,7 @@
     "menu": {
       "title": "Menú",
       "services": "Servicios",
-      "pricing": "Precios",
+      "pricing": "Trabajar juntos",
       "blog": "Blog"
     }
   },
@@ -315,11 +315,11 @@
       "menuLabel": "Menú",
       "nav": {
         "services": "Servicios",
-        "pricing": "Precios",
+        "pricing": "Trabajar juntos",
         "howIWork": "Cómo Trabajo",
         "blog": "Blog",
         "servicesSlug": "servicios",
-        "pricingSlug": "precios",
+        "pricingSlug": "trabajar-juntos",
         "howIWorkSlug": "how-i-work"
       }
     },
@@ -485,81 +485,41 @@
       ]
     }
   },
+  "waysToWorkTogether": {
+    "label": "Formas de trabajar juntos",
+    "headline": "Una colaboración enfocada, adaptada a tu equipo.",
+    "subtitle": "El formato depende del problema: un proyecto definido cuando hay que reconstruir el sistema o apoyo integrado cuando tu equipo necesita un ritmo constante.",
+    "engagementTitle": "Empezamos por el cuello de botella de publicación.",
+    "description": "Identificamos qué está frenando al equipo y definimos el trabajo como una implementación, una migración controlada o apoyo integrado junto a tu equipo.",
+    "scopeLabel": "Modalidad",
+    "scopeValue": "Implementación, migración o apoyo integrado",
+    "timelineLabel": "Duración habitual del proyecto",
+    "timelineValue": "3–10 semanas",
+    "timelineNote": "El apoyo integrado continúa con una cadencia acordada.",
+    "includesTitle": "Cada colaboración incluye",
+    "includedItems": [
+      "Mapeo del flujo de trabajo y del contenido",
+      "Esquemas de Sanity y sistema de páginas reutilizable",
+      "Previsualizaciones en vivo, QA y plan de lanzamiento",
+      "Documentación y entrega al equipo"
+    ],
+    "cta": "Hablemos de tu sitio"
+  },
   "howIPrice": {
     "label": "Precios",
     "headline": "Lo que cuesta",
     "subtitle": "Lo ajusto a tu proyecto tras una breve llamada.",
-    "intro": "Construyo sistemas de contenido que los equipos no superan: un Sanity CMS, un sistema de diseño y un sitio de marketing rápido que tu equipo puede gestionar. Elige el modelo que encaje con dónde estás.",
-    "packages": {
-      "title": "Modelos de colaboración",
-      "subtitle": "Elige la opción que coincida con dónde está tu equipo hoy.",
-      "mostPopular": "Más Popular",
-      "whatYouGet": "Lo que obtienes",
-      "showMore": "Ver más",
-      "showLess": "Ver menos",
-      "getQuote": "Obtén Mi Presupuesto Personalizado",
-      "timeline": "Cronograma"
-    },
     "launch": {
       "title": "El Build",
-      "bestFor": "Ideal para: equipos que necesitan un CMS y un sistema de diseño sólidos sobre los que construir.",
-      "description": "Un Sanity CMS, una librería de componentes reutilizables y un sitio de marketing rápido. La base sobre la que tu equipo construye todo lo demás.",
-      "timeline": "3-5 semanas",
-      "features": [
-        "Esquemas de Sanity modelados según tu contenido",
-        "Sistema de diseño mapeado a tu marca",
-        "Bloques de página reutilizables que tu equipo puede combinar",
-        "SEO técnico y Core Web Vitals",
-        "Capacitación de editores y documentación de entrega"
-      ]
+      "bestFor": "Ideal para: equipos que necesitan un CMS y un sistema de diseño sólidos sobre los que construir."
     },
     "growth": {
       "title": "La Migración",
-      "bestFor": "Ideal para: equipos que se mudan de un CMS viejo o enredado.",
-      "description": "Todo lo del Build, más una migración controlada desde tu setup actual, con contenido, redirecciones y revisiones de lanzamiento.",
-      "timeline": "6-10 semanas",
-      "features": [
-        "Todo lo del Build, más:",
-        "Migración de contenido desde WordPress, Contentful o custom",
-        "Mapa de redirecciones y revisiones SEO antes y después del lanzamiento",
-        "Localización para varios idiomas",
-        "Analytics y seguimiento de conversión",
-        "Pase de CRO sobre tus páginas clave"
-      ]
+      "bestFor": "Ideal para: equipos que se mudan de un CMS viejo o enredado."
     },
     "custom": {
       "title": "Partner Integrado",
-      "bestFor": "Ideal para: equipos que quieren que trabaje junto a ellos a lo largo del tiempo.",
-      "description": "Trabajo como parte de tu equipo: extiendo el sistema de diseño, publico páginas y mantengo el sistema sano a medida que crece.",
-      "timeline": "Mensual, continuo",
-      "features": [
-        "Trabajo directo con tus diseñadores y devs",
-        "Componentes y tipos de página nuevos según los necesites",
-        "Rendimiento y SEO bajo control",
-        "Apps complejas, paneles e integraciones",
-        "Un sistema que crece sin desviarse de la marca"
-      ]
-    },
-    "addOns": {
-      "title": "Servicios independientes",
-      "subtitle": "Útiles por sí solos, lo haya construido yo o no.",
-      "seo": {
-        "title": "Migración a Sanity",
-        "benefit": "Migración de contenido, redirecciones y revisiones de lanzamiento incluidas."
-      },
-      "store": {
-        "title": "Sprint de Sistema de Diseño",
-        "benefit": "Extraer una librería de componentes reutilizables de tu sitio actual."
-      },
-      "multiLanguage": {
-        "title": "Localización",
-        "benefit": "Configuración multiidioma con hreflang correcto y slugs localizados."
-      },
-      "analytics": {
-        "title": "Sprint de CRO",
-        "benefit": "Auditar y rehacer páginas clave para subir la conversión."
-      },
-      "contactForPricing": "Obtener precios →"
+      "bestFor": "Ideal para: equipos que quieren que trabaje junto a ellos a lo largo del tiempo."
     }
   },
   "roiCalculator": {
@@ -637,7 +597,7 @@
     },
     "faq-5": {
       "question": "¿Sobre qué construyes el sitio?",
-      "answer": "Sanity para el CMS, Next.js y TypeScript para el front-end, con un sistema de diseño y bloques reutilizables encima. Rápido, sólido en SEO y hecho para escalar. Consulta la sección de <link>precios</link> para ver qué incluye cada modelo."
+      "answer": "Sanity para el CMS, Next.js y TypeScript para el front-end, con un sistema de diseño y bloques reutilizables encima. Rápido, sólido en SEO y hecho para escalar. Consulta <link>las formas de trabajar juntos</link> para ver qué incluye cada colaboración."
     },
     "faq-6": {
       "question": "¿No quedamos atados a Sanity?",
