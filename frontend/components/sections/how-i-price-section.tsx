@@ -1,12 +1,12 @@
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { SectionHeader } from "@/components/ui/section-header";
 import {
   Carousel,
   CarouselContent,
   CarouselDots,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { SectionHeader } from "@/components/ui/section-header";
 import { cn, getWhatsAppUrl } from "@/lib/utils";
 import { getLocale, getTranslations } from "next-intl/server";
 import {
@@ -30,7 +30,7 @@ export default async function HowIPriceSection() {
   });
   const pricingSlug = headerT("nav.pricingSlug");
 
-  const whatsappUrl = getWhatsAppUrl(profileT("phone"), "40770378214");
+  const whatsappUrl = getWhatsAppUrl(profileT("phone"));
 
   return (
     <section id={pricingSlug} className="scroll-mt-12 py-12 md:py-16">
@@ -57,7 +57,10 @@ export default async function HowIPriceSection() {
                     fadeDirection="up"
                     staggerIndex={index}
                     staggerDelay={0.12}
-                    className={cn(isPopular && "lg:scale-105", "overflow-visible")}
+                    className={cn(
+                      isPopular && "lg:scale-105",
+                      "overflow-visible"
+                    )}
                   >
                     <PackageCard
                       pkg={pkg}

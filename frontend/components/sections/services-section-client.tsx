@@ -1,9 +1,16 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { motion, useMotionValue, useSpring, useTransform, useInView } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import type * as React from "react";
-import { useRef, useState, useCallback } from "react";
+import { useCallback, useRef, useState } from "react";
 
 type ServiceCardProps = {
   children: React.ReactNode;
@@ -27,8 +34,14 @@ export function ServiceCard({
   const mouseY = useMotionValue(0.5);
 
   const springConfig = { damping: 30, stiffness: 120 };
-  const rotateX = useSpring(useTransform(mouseY, [0, 1], [2, -2]), springConfig);
-  const rotateY = useSpring(useTransform(mouseX, [0, 1], [-2, 2]), springConfig);
+  const rotateX = useSpring(
+    useTransform(mouseY, [0, 1], [2, -2]),
+    springConfig
+  );
+  const rotateY = useSpring(
+    useTransform(mouseX, [0, 1], [-2, 2]),
+    springConfig
+  );
 
   const glowX = useSpring(useTransform(mouseX, [0, 1], [0, 100]), springConfig);
   const glowY = useSpring(useTransform(mouseY, [0, 1], [0, 100]), springConfig);
@@ -76,7 +89,6 @@ export function ServiceCard({
           rotateX,
           rotateY,
         }}
-        whileHover={{ scale: 1.01 }}
         transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <div
@@ -114,25 +126,6 @@ export function ServiceCard({
             transition={{ duration: 0.3 }}
           />
 
-          {/* Shine sweep */}
-          <motion.div
-            className="pointer-events-none absolute inset-0 rounded-2xl overflow-hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isHovered ? 1 : 0 }}
-          >
-            <motion.div
-              className="absolute inset-0"
-              initial={{ x: "-100%" }}
-              animate={isHovered ? { x: "100%" } : { x: "-100%" }}
-              transition={{ duration: 0.7, ease: "easeInOut" }}
-              style={{
-                background:
-                  "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%)",
-                transform: "skewX(-15deg)",
-              }}
-            />
-          </motion.div>
-
           {/* Content */}
           <div className="relative z-10 h-full">{children}</div>
 
@@ -150,15 +143,6 @@ export function ServiceCard({
               transition={{ duration: 0.4 }}
             />
           )}
-
-          {/* Subtle top highlight */}
-          <div
-            className="pointer-events-none absolute inset-x-0 top-0 h-px rounded-t-2xl"
-            style={{
-              background:
-                "linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent)",
-            }}
-          />
         </div>
       </motion.div>
     </motion.div>
@@ -236,23 +220,6 @@ export function ServiceCardMobile({
             transition={{ duration: 0.3 }}
           />
 
-          {/* Shine sweep when entering view */}
-          <motion.div
-            className="pointer-events-none absolute inset-0 rounded-2xl overflow-hidden"
-            animate={{ opacity: isActive ? 1 : 0 }}
-          >
-            <motion.div
-              className="absolute inset-0"
-              animate={{ x: isActive ? "100%" : "-100%" }}
-              transition={{ duration: 0.7, ease: "easeInOut" }}
-              style={{
-                background:
-                  "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%)",
-                transform: "skewX(-15deg)",
-              }}
-            />
-          </motion.div>
-
           {/* Content */}
           <div className="relative z-10 h-full">
             {bgPattern}
@@ -262,7 +229,9 @@ export function ServiceCardMobile({
                 className="mb-4 inline-flex self-start rounded-lg bg-primary/10 p-2.5"
                 animate={{
                   scale: isActive ? 1.1 : 1,
-                  backgroundColor: isActive ? "hsl(var(--primary) / 0.2)" : "hsl(var(--primary) / 0.1)",
+                  backgroundColor: isActive
+                    ? "hsl(var(--primary) / 0.2)"
+                    : "hsl(var(--primary) / 0.1)",
                 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               >
@@ -276,15 +245,6 @@ export function ServiceCardMobile({
               {children}
             </div>
           </div>
-
-          {/* Subtle top highlight */}
-          <div
-            className="pointer-events-none absolute inset-x-0 top-0 h-px rounded-t-2xl"
-            style={{
-              background:
-                "linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent)",
-            }}
-          />
         </div>
       </motion.div>
     </motion.div>
@@ -297,8 +257,6 @@ type ServicesCTAProps = {
 };
 
 export function ServicesCTA({ whatsappUrl, ctaText }: ServicesCTAProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <motion.div
       className="mt-12 text-center px-4"
@@ -307,57 +265,11 @@ export function ServicesCTA({ whatsappUrl, ctaText }: ServicesCTAProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
     >
-      <motion.a
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={cn(
-          "relative inline-flex items-center justify-center gap-2 overflow-hidden",
-          "h-11 px-8 rounded-xl font-medium",
-          "border-2 border-border bg-transparent",
-          "transition-colors hover:bg-accent/5"
-        )}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-      >
-        {/* Animated border gradient */}
-        <motion.div
-          className="absolute -inset-px rounded-xl pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(90deg, hsl(var(--primary) / 0.5), hsl(var(--primary) / 0.2), hsl(var(--primary) / 0.5))",
-            backgroundSize: "200% 100%",
-          }}
-          animate={{
-            backgroundPosition: isHovered ? ["0% 0%", "200% 0%"] : "0% 0%",
-          }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-        />
-
-        {/* Inner background */}
-        <div className="absolute inset-px rounded-[calc(0.75rem-1px)] bg-background" />
-
-        {/* Shine effect */}
-        <motion.div
-          className="absolute inset-0 pointer-events-none"
-          initial={{ x: "-100%", opacity: 0 }}
-          animate={
-            isHovered
-              ? { x: "100%", opacity: [0, 0.2, 0] }
-              : { x: "-100%", opacity: 0 }
-          }
-          transition={{ duration: 0.6, ease: "easeInOut" }}
-          style={{
-            background:
-              "linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)",
-            transform: "skewX(-20deg)",
-          }}
-        />
-
-        <span className="relative z-10">{ctaText}</span>
-      </motion.a>
+      <Button asChild size="lg" variant="outline">
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+          {ctaText}
+        </a>
+      </Button>
     </motion.div>
   );
 }

@@ -233,24 +233,32 @@
     }
   },
   "home": {
-    "headline": "Ideea ta merită o <strong>execuție excelentă</strong>.",
-    "tagline": "De la 'se poate construi asta?' la 'când lansăm?'",
-    "aboutMeDescription": "De la 'se poate construi asta?' la 'când lansăm?'",
-    "announcementLabel": "Înscrie-te pe lista de așteptare <strong>Frameback</strong>",
+    "headline": "Publică pagini pe brand <strong>la viteza marketingului</strong>.",
+    "tagline": "Construiesc site-uri de marketing pe Sanity, cu un design system adevărat și blocuri reutilizabile. Echipa ta publică pagini noi fără să depindă de programul unui developer.",
+    "aboutMeDescription": "Construiesc sisteme de conținut și site-uri de marketing pe care echipele le pot gestiona singure.",
+    "announcementLabel": "Sanity CMS și design systems pentru <strong>echipe care livrează</strong>",
     "resumeButtonLabel": "Vezi CV-ul meu",
     "findMeOnLabel": "Găsește-mă pe",
-    "contactMe": "Obține Apelul Meu Strategic Gratuit",
-    "scheduleCall": "Rezervă Apel de Descoperire",
-    "contactDirectly": "Contactează-mă Direct",
+    "contactMe": "Scrie-mi",
+    "scheduleCall": "Rezervă un apel",
+    "contactDirectly": "Scrie-mi",
+    "letsChat": "Hai să vorbim",
+    "seeHowIWork": "Vezi cum lucrez",
+    "orBookTime": "Preferi să programezi? Rezervă o oră",
     "workedWith": "Cu ce lucrez",
+    "heroTrust": [
+      "Publici fără să aștepți un dev",
+      "Codul e al tău",
+      "Fără obligații, doar o discuție"
+    ],
     "tools": {
       "label": "Tehnologii",
       "headline": "Instrumente și Tehnologii",
-      "subtitle": "React, Next.js, TypeScript—și orice e nevoie să livrăm"
+      "subtitle": "Sanity, Next.js, TypeScript și orice cere stack-ul tău"
     },
     "ctaButtons": [
       {
-        "text": "Obține oferta ta",
+        "text": "Începe un proiect",
         "href": "/start-your-project",
         "variant": "secondary"
       }
@@ -258,17 +266,17 @@
     "aboutMe": {
       "label": "Cine sunt",
       "headline": "Despre Mine",
-      "subtitle": "4+ ani și fiecare proiect încă mă învață ceva",
-      "description": "Lucrez cel mai bine când brief-ul e ambițios și ideile sunt îndrăznețe. Dă-mi un concept vizual puternic și îmi dau seama cum să-l fac real în browser. Am petrecut ani construind platforme pentru investitori, launchpad-uri cu miză mare și site-uri de marketing unde fiecare micro-interacțiune contează. Sunt obsedat de detalii pentru că detaliile fac lucrurile să se simtă bine.",
-      "cta": "Hai Să Construim Ceva"
+      "subtitle": "Ani de zile construind sisteme de conținut pe care echipele nu le depășesc",
+      "description": "Sunt un dezvoltator front-end care construiește site-uri de marketing și sisteme de conținut pentru companii care au depășit setup-ul vechi. Țin la două lucruri: un CMS pe care echipa ta îl poate gestiona fără mine și un front-end care rămâne rapid și pe brand pe măsură ce crește. Am construit design systems, librării de componente reutilizabile și Sanity Studios pe care echipele de marketing chiar le folosesc cu plăcere. Părțile mai puțin spectaculoase, cum ar fi schemele, migrările și documentația de predare, sunt cele care decid dacă un site mai funcționează peste doi ani. De aceea le tratez cu atenție.",
+      "cta": "Hai să vorbim"
     },
     "contact": {
       "label": "Ia legătura",
-      "headline": "Ai o idee? Hai s-o facem realitate.",
-      "subtitle": "Fie că e un proiect nou, o provocare creativă sau ceva ce nu știi exact cum să construiești—mi-ar plăcea să aud despre asta.",
-      "ctaButton": "Începe Proiectul Meu",
-      "ctaButtonSecondary": "Obține un Răspuns Rapid",
-      "whatsappLabel": "Întrebare rapidă? Scrie-mi pe WhatsApp"
+      "headline": "Site-ul nu scalează? Echipa stă după programatori? Hai să rezolvăm.",
+      "subtitle": "Spune-mi unde te încurcă CMS-ul sau site-ul. Îți spun cum aș rezolva.",
+      "ctaButton": "Începe un proiect",
+      "ctaButtonSecondary": "Pune o întrebare rapidă",
+      "whatsappLabel": "Întrebare rapidă? Scrie-mi"
     }
   },
   "profile": {
@@ -295,10 +303,10 @@
   },
   "settings": {
     "title": "Eduard Stefan",
-    "description": "Site-uri care aduc rezultate. Construite cu grijă, gândite pentru conversie.",
+    "description": "Sanity CMS și design systems pentru echipe care livrează.",
     "header": {
       "cta": {
-        "text": "Cere Estimare Gratuită",
+        "text": "Hai să vorbim",
         "href": "/start-your-project"
       },
       "homeButtonLabel": "Acasă",
@@ -316,8 +324,8 @@
       }
     },
     "seo": {
-      "title": "Eduard Stefan | Dezvoltator Frontend",
-      "description": "Construiesc experiențe web care se simt bine. Idei îndrăznețe binevenite."
+      "title": "Eduard Stefan | Sanity CMS și Design Systems",
+      "description": "Construiesc site-uri de marketing pe Sanity, cu un design system pe care echipa ta îl poate gestiona. Migrări CMS, componente reutilizabile, UX și CRO."
     }
   },
   "skills": {
@@ -398,93 +406,93 @@
     }
   },
   "services": {
-    "label": "Ce Fac",
-    "headline": "De la Idee la Realitate",
-    "subtitle": "Preiau proiectele de care alți devs se feresc.",
-    "cta": "Hai Să Vorbim Despre Proiectul Tău",
+    "label": "Ce fac",
+    "headline": "De la haos în conținut la un sistem care scalează",
+    "subtitle": "Construiesc CMS-ul, design system-ul și front-end-ul. Echipa ta preia de acolo.",
+    "cta": "Hai să vorbim despre stack-ul tău",
     "svc-1": {
-      "title": "Parteneriat Direct",
-      "description": "Fără agenții, fără manageri de cont. Vorbești cu mine. Înțeleg viziunea ta, iterăm împreună și construiesc exact ce ai nevoie."
+      "title": "Gândit să-ți predau controlul",
+      "description": "Nu dispar la lansare. Primești documentație clară, editori instruiți și un sistem pe care echipa ta îl poate gestiona fără mine. Nimic legat de mine, fără cod misterios."
     },
     "svc-2": {
-      "title": "Micro-Interacțiuni Care Contează",
-      "description": "Lucrurile mici fac diferența. Stări hover, tranziții, animații—mă ocup de detaliile care fac interfețele să pară vii."
+      "title": "Un Sanity CMS făcut să dureze",
+      "description": "Scheme pe care editorii tăi chiar le înțeleg. Conținut structurat care nu se strică atunci când site-ul crește. Un Studio pe care echipa ta îl deschide cu plăcere, făcut să scaleze, nu să fie refăcut peste un an."
     },
     "svc-3": {
-      "title": "Performanță Care Convertește",
-      "description": "Site-uri care se încarcă instant și ghidează vizitatorii spre acțiune. Gândesc la conversii din prima zi."
+      "title": "Site-uri de marketing care scalează",
+      "description": "Multi-limbă, rapide și solide pe SEO de la primul commit. Făcute astfel încât a zecea landing să fie la fel de ușor de publicat ca prima."
     },
     "svc-4": {
-      "title": "Construit pentru Scalare",
-      "description": "Arhitectură curată, cod solid, experiență fluidă pentru utilizatori. Fie că sunt 100 de utilizatori sau 100.000—site-ul tău face față."
+      "title": "UX și CRO care convertesc",
+      "description": "Pagini gândite după cum decid oamenii de fapt. Pun gândirea de conversie în layout de la început, nu o lipesc la final."
     },
     "svc-5": {
-      "title": "SEO Care Funcționează",
-      "description": "Structură pe care motoarele de căutare o înțeleg. Fundamente tehnice care te ajută să urci în rezultate și să fii găsit."
+      "title": "Design system și blocuri reutilizabile",
+      "description": "O librărie de componente adevărată, mapată pe brandul tău. Marketingul face pagini noi din blocuri care arată deja bine, așa că nimic nu se abate de la brand."
     },
     "svc-6": {
-      "title": "Gata pentru Piețe Internaționale",
-      "description": "Suport multi-limbă de la început. Ajungi la clienți în limba lor, oriunde ar fi."
+      "title": "Migrări curate",
+      "description": "Te muți de pe WordPress, Contentful sau un morman de pagini hardcodate? Migrez atent conținutul, mapez redirect-urile și urmăresc vizibilitatea în Google pe durata lansării."
     }
   },
   "howIWork": {
     "label": "Proces",
-    "headline": "Cum Lucrez",
-    "subtitle": "Fără surprize. Doar progres clar până lansăm.",
-    "cta": "Hai Să Începem",
+    "headline": "Cum lucrez",
+    "subtitle": "Fără surprize. Progres clar până când echipa ta preia controlul.",
+    "cta": "Hai să începem",
     "planning": {
-      "title": "Descoperim Ce Ai Nevoie De Fapt",
+      "title": "Mapăm conținutul și echipa ta",
       "paragraphs": [
-        "Vorbim. Pun întrebări până înțeleg ce încerci să construiești și de ce contează. Apoi decidem scopul, termenele și cum arată succesul."
+        "Pornim de la cum lucrează echipa ta de fapt. Ce pagini publicați, cine le editează și unde vă încetinește setup-ul actual. Apoi modelăm conținutul și stabilim scopul."
       ],
       "bulletPoints": [
-        "Obiectivele tale, nu presupuneri",
-        "Un scop care are sens",
-        "Etape clare"
+        "Conținut modelat după pagini reale",
+        "Editorii implicați de la început",
+        "Scop și etape clare din start"
       ]
     },
     "development": {
-      "title": "Construiesc. Tu Vezi Progresul.",
+      "title": "Construiesc sistemul. Tu îl vezi prinzând formă.",
       "paragraphs": [
-        "Nu dispar săptămâni întregi. Vei vedea actualizări regulate, prototipuri funcționale și multe oportunități să corectezi direcția înainte să fim prea avansați."
+        "Nu dispar săptămâni întregi. Primești actualizări regulate, preview-uri funcționale în Sanity și loc de ajustat înainte ca ceva să fie bătut în cuie."
       ],
       "bulletPoints": [
         "Sincronizări frecvente",
-        "Demo-uri funcționale, nu slide-uri",
+        "Preview-uri live, nu slide-uri",
         "Loc pentru ajustări"
       ]
     },
     "deployment": {
-      "title": "Lansăm Când E Gata",
+      "title": "Lansăm controlat, cu plan de revenire",
       "paragraphs": [
-        "Mă ocup de detaliile tehnice—hosting, domeniu, securitate, tracking. Testăm totul, rezolvăm ce trebuie, apoi lansăm cu încredere."
+        "Mă ocup de partea tehnică: migrare, redirect-uri, hosting și tracking. Testăm totul, rezolvăm ce trebuie, apoi lansăm cu încredere."
       ],
       "bulletPoints": [
-        "Testat înainte de lansare",
+        "Migrare și redirect-uri rezolvate",
         "Analiză configurată",
-        "Zero semne de întrebare"
+        "Verificări SEO înainte și după lansare"
       ]
     },
     "postDeployment": {
-      "title": "E Al Tău. Sunt Aici Dacă Ai Nevoie.",
+      "title": "Echipa ta îl gestionează. Sunt aici dacă ai nevoie.",
       "paragraphs": [
-        "Totul e al tău. Îți arăt cum să actualizezi conținutul singur. Și dacă vrei să continui să îmbunătățești pe baza datelor reale, putem face și asta."
+        "Totul e al tău. Îți instruiesc editorii și devs, las documentație clară și rămân disponibil pentru ce urmează."
       ],
       "bulletPoints": [
-        "Proprietate completă",
-        "Training inclus",
+        "Codul și conținutul sunt ale tale",
+        "Training și documentație incluse",
         "Suport continuu disponibil"
       ]
     }
   },
   "howIPrice": {
     "label": "Prețuri",
-    "headline": "Cât Costă",
-    "subtitle": "Estimare personalizată, după o discuție scurtă.",
-    "intro": "Construiesc site-uri performante—rapide, axate pe conversie și ușor de întreținut. Alege varianta potrivită pentru proiectul tău.",
+    "headline": "Cât costă",
+    "subtitle": "Le potrivesc pe proiectul tău, după o discuție scurtă.",
+    "intro": "Construiesc sisteme de conținut pe care echipele nu le depășesc: un Sanity CMS, un design system și un site de marketing rapid pe care echipa ta îl poate gestiona. Alege modelul care se potrivește cu unde ești.",
     "packages": {
-      "title": "Pachete",
-      "subtitle": "Alege ce se potrivește afacerii tale.",
+      "title": "Modele de colaborare",
+      "subtitle": "Alege ce se potrivește cu unde e echipa ta acum.",
       "mostPopular": "Cel Mai Popular",
       "whatYouGet": "Ce primești",
       "showMore": "Vezi mai mult",
@@ -493,62 +501,63 @@
       "timeline": "Termen"
     },
     "launch": {
-      "title": "Pachetul 'Launch'",
-      "bestFor": "Ideal pentru: Afaceri care vor o bază profesională și performantă pe care să crească.",
-      "description": "Un site complet, gândit să convertească. O fundație solidă pentru prezența ta online.",
-      "timeline": "2-3 zile",
+      "title": "Build-ul",
+      "bestFor": "Ideal pentru: echipe care au nevoie de un CMS și un design system solide pe care să construiască.",
+      "description": "Un Sanity CMS, o librărie de componente reutilizabile și un site de marketing rapid. Fundația pe care echipa ta construiește tot restul.",
+      "timeline": "3-5 săptămâni",
       "features": [
-        "Branding vizual: Personalizare la nivel de detaliu.",
-        "Design strategic: Axat pe conversie și experiența utilizatorului.",
-        "SEO tehnic: Structură pe care Google o iubește.",
-        "Viteză optimizată: Încărcare în sub o secundă.",
-        "Perfect pe mobil: Arată excelent pe orice dispozitiv."
+        "Scheme Sanity modelate după conținutul tău",
+        "Design system mapat pe brandul tău",
+        "Blocuri de pagină reutilizabile pe care echipa ta le combină",
+        "SEO tehnic și Core Web Vitals",
+        "Training pentru editori și documentație de predare"
       ]
     },
     "growth": {
-      "title": "Pachetul 'Growth'",
-      "bestFor": "Ideal pentru: Afaceri care vor o soluție extinsă și colaborare continuă.",
-      "description": "Colaborez cu echipa ta pentru a construi o versiune extinsă a planului 'Launch', cu funcționalități avansate.",
-      "timeline": "1-2 săptămâni",
+      "title": "Migrarea",
+      "bestFor": "Ideal pentru: echipe care se mută de pe un CMS vechi sau încâlcit.",
+      "description": "Tot din Build, plus o mutare controlată de pe setup-ul actual, cu migrarea conținutului, redirect-uri și verificări la lansare.",
+      "timeline": "6-10 săptămâni",
       "features": [
-        "Tot din 'Launch', plus:",
-        "Integrare CMS: Tu deții și editezi conținutul.",
-        "Multi-limbă: Gata pentru piețe internaționale din start.",
-        "Analiză avansată: Tracking complet pentru a înțelege comportamentul vizitatorilor.",
-        "Generare de lead-uri: Conectat la email-ul sau CRM-ul tău."
+        "Tot din Build, plus:",
+        "Migrare de conținut de pe WordPress, Contentful sau custom",
+        "Hartă de redirect-uri și verificări SEO înainte și după lansare",
+        "Localizare pentru mai multe limbi",
+        "Analiză și tracking de conversie",
+        "Trecere de CRO peste paginile tale cheie"
       ]
     },
     "custom": {
-      "title": "Soluții Personalizate",
-      "bestFor": "Ideal pentru: Afaceri cu nevoi specifice și complexe.",
-      "description": "Ai nevoie ca utilizatorii să se logheze? Ai nevoie de un sistem complex de rezervări sau de un instrument intern? Le putem construi.",
-      "timeline": "Variază în funcție de complexitate",
+      "title": "Partener Integrat",
+      "bestFor": "Ideal pentru: echipe care vor să lucrez alături de ele pe termen lung.",
+      "description": "Lucrez ca parte din echipa ta: extind design system-ul, public pagini și țin sistemul sănătos pe măsură ce crește.",
+      "timeline": "Lunar, continuu",
       "features": [
-        "Adaptat la cerințele tale",
-        "Funcționalități și integrări complexe",
-        "Autentificare și permisiuni pentru utilizatori",
-        "Sisteme avansate de rezervări",
-        "Instrumente interne și dashboard-uri"
+        "Lucru direct cu designerii și devs tăi",
+        "Componente și tipuri noi de pagină când ai nevoie",
+        "Performanță și SEO ținute sub control",
+        "Aplicații complexe, dashboard-uri și integrări",
+        "Un sistem care crește fără să se abată de la brand"
       ]
     },
     "addOns": {
-      "title": "Servicii Separate",
-      "subtitle": "Îmbunătățesc orice site—construit de mine sau nu.",
+      "title": "Servicii separate",
+      "subtitle": "Utile și de sine stătătoare, construit de mine sau nu.",
       "seo": {
-        "title": "Audit SEO",
-        "benefit": "Analiză tehnică aprofundată pentru a te ajuta să urci în Google."
+        "title": "Migrare pe Sanity",
+        "benefit": "Migrarea conținutului, redirect-uri și verificări la lansare incluse."
       },
       "store": {
-        "title": "Magazin Online",
-        "benefit": "Vinde produse și acceptă plăți cu cardul în siguranță."
+        "title": "Sprint Design System",
+        "benefit": "Extrag o librărie de componente reutilizabile din site-ul tău actual."
       },
       "multiLanguage": {
-        "title": "Mai Multe Limbi",
-        "benefit": "Un site care funcționează în 2+ limbi."
+        "title": "Localizare",
+        "benefit": "Configurare multi-limbă cu hreflang corect și slug-uri localizate."
       },
       "analytics": {
-        "title": "Analiză Avansată",
-        "benefit": "Configurez tracking-ul ca să vezi exact de unde vin vizitatorii."
+        "title": "Sprint CRO",
+        "benefit": "Audit și refacerea paginilor cheie ca să crească conversia."
       },
       "contactForPricing": "Află prețurile →"
     }
@@ -607,28 +616,32 @@
   },
   "faq": {
     "label": "Întrebări",
-    "headline": "Întrebări Frecvente",
-    "subtitle": "Ce întreabă lumea de obicei înainte să începem.",
-    "cta": "Mai Ai Întrebări? Hai Să Vorbim",
+    "headline": "Întrebări frecvente",
+    "subtitle": "Ce întreabă echipele de obicei înainte să începem.",
+    "cta": "Mai ai întrebări? Hai să vorbim",
     "faq-1": {
-      "question": "Cât durează un proiect tipic?",
-      "answer": "Depinde de scop și complexitate. Pachetul 'Launch' durează de obicei 2-3 zile, iar 'Growth' 1-2 săptămâni. Soluțiile personalizate pot dura mai mult. Îți dau un termen exact la prima discuție."
+      "question": "Cât durează un proiect?",
+      "answer": "Depinde de scop. Un build de CMS și design system durează de obicei 3-5 săptămâni. O migrare cu un site de marketing complet, 6-10 săptămâni. Îți dau un termen real după o discuție, nu o presupunere."
     },
     "faq-2": {
-      "question": "Lucrezi cu clienți din alte fusuri orare?",
-      "answer": "Da, lucrez cu clienți din toată lumea. Sunt flexibil cu programul și mă adaptez la diferite fusuri orare. Cea mai mare parte a comunicării e asincronă, prin email și tool-uri de project management, cu apeluri programate când e nevoie."
+      "question": "Ne poți migra de pe CMS-ul actual?",
+      "answer": "Da. Te pot muta de pe WordPress, Contentful sau pagini hardcodate pe Sanity. Migrez atent conținutul, mapez redirect-urile și verific performanța în Google înainte și după lansare."
     },
     "faq-3": {
-      "question": "Ce se întâmplă după ce terminăm proiectul?",
-      "answer": "După lansare, îți arăt cum să îți gestionezi conținutul prin CMS. Ofer și opțiuni de întreținere și suport continuu. Codul e al tău în totalitate—poți să îl menții singur sau să continuăm să lucrăm împreună."
+      "question": "Echipa mea va putea gestiona site-ul fără tine?",
+      "answer": "Asta e tot scopul. Modelez CMS-ul după cum lucrează echipa ta, îl documentez și îți instruiesc editorii și devs. Codul și conținutul sunt ale tale, și poți exporta tot oricând."
     },
     "faq-4": {
-      "question": "Poți lucra cu site-ul meu existent?",
-      "answer": "Sigur. Pot îmbunătăți, redesigna sau adăuga funcționalități la site-uri existente. Fie că ai nevoie de performanță mai bună, un design nou sau funcții noi, pot lucra cu ce ai și să ducem totul la următorul nivel."
+      "question": "Lucrezi cu designerii și dezvoltatorii noștri actuali?",
+      "answer": "Da. Mă integrez ușor într-o echipă existentă, respect convențiile voastre și fac o predare curată. Pot duce și un proiect singur, de la cap la coadă, dacă asta ai nevoie."
     },
     "faq-5": {
-      "question": "Ce include fiecare pachet?",
-      "answer": "Fiecare pachet include design personalizat, site responsive pe mobil, acces la CMS, configurare SEO și optimizare a performanței. Pachetele mai mari includ mai multe pagini, funcții avansate și integrări extra. Toate vin cu training și documentație. Vezi secțiunea <link>Prețuri</link> pentru detalii."
+      "question": "Pe ce construiești site-ul?",
+      "answer": "Sanity pentru CMS, Next.js și TypeScript pentru front-end, cu un design system și blocuri reutilizabile deasupra. Rapid, solid pe SEO și făcut să scaleze. Vezi secțiunea <link>Prețuri</link> pentru ce include fiecare model."
+    },
+    "faq-6": {
+      "question": "Nu rămânem blocați pe Sanity?",
+      "answer": "Parțial, și nu mă prefac că nu e așa. CMS-ul în sine e un pariu pe un furnizor. Dar ce contează rămâne al tău: front-end-ul e Next.js standard în repo-ul tău, schemele sunt cod pe care îl deții, iar conținutul se exportă în JSON oricând. Să te muți mai târziu e o opțiune reală, nu o stradă cu sens unic."
     }
   },
   "blog": {

@@ -233,20 +233,28 @@
     }
   },
   "home": {
-    "headline": "Your idea deserves <strong>great execution</strong>.",
-    "tagline": "From 'is this even possible?' to 'when can we launch?'",
-    "aboutMeDescription": "From 'is this even possible?' to 'when can we launch?'",
-    "announcementLabel": "Join the waitlist for <strong>Frameback</strong>",
+    "headline": "Ship on-brand pages <strong>at the speed of marketing</strong>.",
+    "tagline": "I build marketing sites on Sanity, backed by a real design system and reusable blocks. Your team publishes new pages without joining a developer queue.",
+    "aboutMeDescription": "I build content systems and marketing sites that teams can run themselves.",
+    "announcementLabel": "Sanity CMS and design systems for <strong>teams that ship</strong>",
     "resumeButtonLabel": "See my resume",
     "findMeOnLabel": "Find me on",
-    "contactMe": "Get My Free Strategy Call",
-    "scheduleCall": "Book Discovery Call",
-    "contactDirectly": "Contact Me Directly",
+    "contactMe": "Message me",
+    "scheduleCall": "Book a call",
+    "contactDirectly": "Message me",
+    "letsChat": "Let's chat",
+    "seeHowIWork": "See how I work",
+    "orBookTime": "Prefer to schedule? Book a time",
     "workedWith": "What I work with",
+    "heroTrust": [
+      "Publish without a dev queue",
+      "You own the code",
+      "No commitment, just a chat"
+    ],
     "tools": {
       "label": "Technologies",
       "headline": "Tools & Technologies",
-      "subtitle": "React, Next.js, TypeScript—and whatever it takes to ship"
+      "subtitle": "Sanity, Next.js, TypeScript, and whatever your stack needs"
     },
     "ctaButtons": [
       {
@@ -258,17 +266,17 @@
     "aboutMe": {
       "label": "Who I am",
       "headline": "About Me",
-      "subtitle": "4+ years and every project still teaches me something",
-      "description": "I work best when the brief is ambitious and the ideas are wild. Give me a strong visual concept and I'll figure out how to make it real in the browser. I've spent years building investor-facing platforms, high-stakes launchpads, and marketing sites where every micro-interaction matters. I obsess over the details because the details are what make things feel right.",
-      "cta": "Let's Build Something"
+      "subtitle": "Years of building content systems teams don't outgrow",
+      "description": "I'm a front-end engineer who builds marketing sites and content systems for companies that outgrew their old setup. I care about two things: a CMS your team can run without me, and a front-end that stays fast and on-brand as it grows. I've built design systems, reusable component libraries, and Sanity Studios that marketing teams actually like using. The unglamorous parts, like schemas, migrations, and handoff docs, are what decide whether a site still works in two years. So I sweat them.",
+      "cta": "Let's talk"
     },
     "contact": {
       "label": "Get in touch",
-      "headline": "Got an idea? Let's make it real.",
-      "subtitle": "Whether it's a new project, a creative challenge, or something you're not quite sure how to build—I'd love to hear about it.",
-      "ctaButton": "Start My Project",
-      "ctaButtonSecondary": "Get a Quick Answer",
-      "whatsappLabel": "Quick question? WhatsApp me"
+      "headline": "Site can't scale? Team stuck waiting on devs? Let's fix that.",
+      "subtitle": "Tell me where your CMS or site is holding you back. I'll tell you how I'd fix it.",
+      "ctaButton": "Start a project",
+      "ctaButtonSecondary": "Ask a quick question",
+      "whatsappLabel": "Quick question? Message me"
     }
   },
   "profile": {
@@ -295,10 +303,10 @@
   },
   "settings": {
     "title": "Eduard Stefan",
-    "description": "Websites built with precision, designed for growth.",
+    "description": "Sanity CMS and design systems for teams that ship.",
     "header": {
       "cta": {
-        "text": "Get Free Estimate",
+        "text": "Let's chat",
         "href": "/start-your-project"
       },
       "homeButtonLabel": "Home",
@@ -316,8 +324,8 @@
       }
     },
     "seo": {
-      "title": "Eduard Stefan | Frontend Developer",
-      "description": "I build web experiences that feel right. Wild ideas welcome."
+      "title": "Eduard Stefan | Sanity CMS & Design Systems",
+      "description": "I build marketing sites on Sanity with a design system your team can run. CMS migrations, reusable components, UX and CRO."
     }
   },
   "skills": {
@@ -398,93 +406,93 @@
     }
   },
   "services": {
-    "label": "What I Do",
-    "headline": "From Idea to Reality",
-    "subtitle": "I take the projects that make other devs nervous.",
-    "cta": "Let's Talk About Your Project",
+    "label": "What I do",
+    "headline": "From content chaos to a system that scales",
+    "subtitle": "I build the CMS, the design system, and the front-end. Your team takes it from there.",
+    "cta": "Let's talk about your stack",
     "svc-1": {
-      "title": "Direct Partnership",
-      "description": "No agencies, no account managers. You talk to me. I understand your vision, we iterate together, and I build exactly what you need."
+      "title": "Built to hand off",
+      "description": "I don't disappear at launch. You get clear docs, trained editors, and a system your team can run without me. Nothing tied to me, no mystery code."
     },
     "svc-2": {
-      "title": "Micro-Interactions That Matter",
-      "description": "The small things make the difference. Hover states, transitions, animations—I sweat the details that make interfaces feel alive."
+      "title": "A Sanity CMS built to last",
+      "description": "Schemas your editors actually understand. Structured content that won't break when the site grows. A Studio your team likes opening, built to scale instead of getting rebuilt in a year."
     },
     "svc-3": {
-      "title": "Performance That Converts",
-      "description": "Sites that load instantly and guide visitors toward action. I build with CRO thinking baked in from day one."
+      "title": "Marketing sites that scale",
+      "description": "Multi-language, fast, and SEO-solid from the first commit. Built so the tenth landing page is as easy to ship as the first."
     },
     "svc-4": {
-      "title": "Built for Scale",
-      "description": "Clean architecture, reliable code, smooth user flows. Whether it's 100 users or 100,000—your site handles it."
+      "title": "UX and CRO that converts",
+      "description": "Pages built around how people actually decide. I bake conversion thinking into the layout from the start instead of bolting it on later."
     },
     "svc-5": {
-      "title": "SEO That Works",
-      "description": "Structure that search engines understand. Technical foundations that help you rank and get discovered."
+      "title": "Design system and reusable blocks",
+      "description": "A real component library mapped to your brand. Marketing builds new pages from blocks that already look right, so nothing drifts off-brand."
     },
     "svc-6": {
-      "title": "Global Ready",
-      "description": "Multi-language support from the start. Reach customers in their language, wherever they are."
+      "title": "Clean migrations",
+      "description": "Moving off WordPress, Contentful, or a pile of hardcoded pages? I move the content carefully, map the redirects, and monitor search visibility through launch."
     }
   },
   "howIWork": {
     "label": "Process",
-    "headline": "How I Work",
-    "subtitle": "No surprises. Just clear progress until we ship.",
-    "cta": "Let's Get Started",
+    "headline": "How I work",
+    "subtitle": "No surprises. Clear progress until your team owns it.",
+    "cta": "Let's get started",
     "planning": {
-      "title": "We Figure Out What You Actually Need",
+      "title": "We map your content and your team",
       "paragraphs": [
-        "We talk. I ask questions until I understand what you're trying to build and why it matters. Then we decide on scope, timeline, and what success looks like."
+        "We start with how your team actually works. What pages you ship, who edits them, and where the current setup slows you down. Then we model the content and agree on scope."
       ],
       "bulletPoints": [
-        "Your goals, not assumptions",
-        "Scope that makes sense",
-        "Clear milestones"
+        "Content modeled around real pages",
+        "Editors involved early",
+        "Scope and milestones up front"
       ]
     },
     "development": {
-      "title": "I Build It. You See Progress.",
+      "title": "I build the system. You watch it take shape.",
       "paragraphs": [
-        "No disappearing for weeks. You'll see regular updates, working prototypes, and have plenty of chances to course-correct before we're too deep."
+        "No going dark for weeks. You get regular updates, working previews in Sanity, and room to adjust before anything is locked in."
       ],
       "bulletPoints": [
         "Frequent check-ins",
-        "Working demos, not slide decks",
-        "Space to iterate"
+        "Live previews, not slide decks",
+        "Room to iterate"
       ]
     },
     "deployment": {
-      "title": "We Launch When It's Ready",
+      "title": "We launch carefully, with a rollback plan",
       "paragraphs": [
-        "I handle the technical details—hosting, domain, security, tracking. We test everything, fix what needs fixing, then go live with confidence."
+        "I handle the technical side: migration, redirects, hosting, and tracking. We test everything, fix what needs fixing, then go live with confidence."
       ],
       "bulletPoints": [
-        "Battle-tested before launch",
+        "Migration and redirects handled",
         "Analytics wired up",
-        "Zero guesswork"
+        "SEO checks before and after launch"
       ]
     },
     "postDeployment": {
-      "title": "It's Yours. I'm Still Here If You Need Me.",
+      "title": "Your team runs it. I'm here if you need me.",
       "paragraphs": [
-        "You own everything. I'll show you how to update content yourself. And if you want to keep improving based on real data, we can do that too."
+        "You own everything. I train your editors and devs, leave clear docs, and stay available for whatever comes next."
       ],
       "bulletPoints": [
-        "Full ownership",
-        "Training included",
+        "You own the code and content",
+        "Training and docs included",
         "Ongoing support available"
       ]
     }
   },
   "howIPrice": {
     "label": "Pricing",
-    "headline": "What It Costs",
-    "subtitle": "Custom estimate after a quick call.",
-    "intro": "I build sites that perform—fast, conversion-focused, and easy for you to maintain. Pick the scope that fits your project.",
+    "headline": "What it costs",
+    "subtitle": "Scoped to your project after a quick call.",
+    "intro": "I build content systems teams don't outgrow: a Sanity CMS, a design system, and a fast marketing site your team can run. Pick the engagement that fits where you are.",
     "packages": {
-      "title": "Engagement Models",
-      "subtitle": "Select the option that matches where your business is today.",
+      "title": "Engagement models",
+      "subtitle": "Pick the option that matches where your team is today.",
       "mostPopular": "Most Popular",
       "whatYouGet": "What you get",
       "showMore": "Show more",
@@ -493,62 +501,63 @@
       "timeline": "Timeline"
     },
     "launch": {
-      "title": "The 'Launch' Package",
-      "bestFor": "Best for: Businesses looking for a professional, high-performance base to scale.",
-      "description": "A complete, high-converting website build. A solid foundation for your digital presence.",
-      "timeline": "2-3 days",
+      "title": "The Build",
+      "bestFor": "Best for: teams that need a proper CMS and design system to build on.",
+      "description": "A Sanity CMS, a reusable component library, and a fast marketing site. The foundation your team builds everything else on.",
+      "timeline": "3-5 weeks",
       "features": [
-        "Theming & Branding: Deep visual customization.",
-        "Strategic Design: Focused on conversion and user flow.",
-        "Technical SEO: Structure that Google loves.",
-        "Speed Optimization: Sub-second load times.",
-        "Mobile First: Perfect experience on all devices."
+        "Sanity schemas modeled around your content",
+        "Design system mapped to your brand",
+        "Reusable page blocks your team can compose",
+        "Technical SEO and Core Web Vitals",
+        "Editor training and handoff docs"
       ]
     },
     "growth": {
-      "title": "The 'Growth' Package",
-      "bestFor": "Best for: Businesses looking for an extended solution and ongoing collaboration.",
-      "description": "I collaborate with your team to build an extended version of the 'Launch' plan with advanced capabilities.",
-      "timeline": "1-2 weeks",
+      "title": "The Migration",
+      "bestFor": "Best for: teams moving off an old or tangled CMS.",
+      "description": "Everything in The Build, plus a controlled move off your current setup with content migration, redirect mapping, and launch checks.",
+      "timeline": "6-10 weeks",
       "features": [
-        "Everything in 'Launch' + these and more:",
-        "CMS Integration: You own and edit your content.",
-        "Localisation Setup: Ready for global markets from the start.",
-        "Advanced Analytics: Full tracking setup to understand visitor behavior.",
-        "Lead Generation: Connected to your email or CRM."
+        "Everything in The Build, plus:",
+        "Content migration from WordPress, Contentful, or custom",
+        "Redirect map and pre/post-launch SEO checks",
+        "Localization for multiple languages",
+        "Analytics and conversion tracking",
+        "CRO pass on your key pages"
       ]
     },
     "custom": {
-      "title": "Custom Solutions",
-      "bestFor": "Best for: Businesses with specific, complex needs.",
-      "description": "Need a complex web app, SaaS platform, or internal tool? Let's build a solution tailored to your exact requirements.",
-      "timeline": "Varies based on complexity",
+      "title": "Embedded Partner",
+      "bestFor": "Best for: teams that want me working alongside them over time.",
+      "description": "I work as part of your team: extending the design system, shipping pages, and keeping the system healthy as it grows.",
+      "timeline": "Monthly, ongoing",
       "features": [
-        "Tailored to your specific requirements",
-        "Complex functionality and integrations",
-        "Custom user authentication and permissions",
-        "Advanced booking or reservation systems",
-        "Internal tools and dashboards"
+        "Work directly with your designers and devs",
+        "New components and page types as you need them",
+        "Performance and SEO kept in check",
+        "Complex apps, dashboards, and integrations",
+        "A system that grows without drifting off-brand"
       ]
     },
     "addOns": {
-      "title": "Standalone Services",
-      "subtitle": "Enhance any website—whether I built it or not.",
+      "title": "Standalone services",
+      "subtitle": "Useful on their own, whether I built the site or not.",
       "seo": {
-        "title": "SEO Sprint",
-        "benefit": "Deep dive technical audit to fix ranking blockers."
+        "title": "Sanity Migration",
+        "benefit": "Content migration, redirect mapping, and launch checks included."
       },
       "store": {
-        "title": "E-commerce Engine",
-        "benefit": "Full shop setup with cart, checkout, and payments."
+        "title": "Design System Sprint",
+        "benefit": "Extract a reusable component library from your current site."
       },
       "multiLanguage": {
-        "title": "Global Reach",
-        "benefit": "Localization for 2+ languages to expand your market."
+        "title": "Localization",
+        "benefit": "Multi-language setup with proper hreflang and localized slugs."
       },
       "analytics": {
-        "title": "Deep Dive Analytics",
-        "benefit": "Custom funnel reports and advanced tracking setup."
+        "title": "CRO Sprint",
+        "benefit": "Audit and rework key pages to lift conversion."
       },
       "contactForPricing": "Get pricing →"
     }
@@ -607,28 +616,32 @@
   },
   "faq": {
     "label": "FAQ",
-    "headline": "Questions You Might Have",
-    "subtitle": "The stuff people usually ask before we start.",
-    "cta": "Got More Questions? Let's Talk",
+    "headline": "Questions you might have",
+    "subtitle": "The stuff teams usually ask before we start.",
+    "cta": "More questions? Let's talk",
     "faq-1": {
-      "question": "How long does a typical project take?",
-      "answer": "Project timelines vary based on scope and complexity. The 'Launch' package typically takes 2-3 days, while the 'Growth' package takes 1-2 weeks. Custom solutions with complex functionality may take longer. I'll provide a detailed timeline during our initial consultation."
+      "question": "How long does a project take?",
+      "answer": "Depends on scope. A CMS and design-system build usually runs 3-5 weeks. A migration with a full marketing site is 6-10 weeks. I'll give you a real timeline after a call, not a guess."
     },
     "faq-2": {
-      "question": "Do you work with clients outside your timezone?",
-      "answer": "Yes, I work with clients globally. I'm flexible with communication times and can accommodate different timezones. Most communication happens asynchronously via email and project management tools, with scheduled calls when needed."
+      "question": "Can you migrate us off our current CMS?",
+      "answer": "Yes. I can move you from WordPress, Contentful, or hardcoded pages to Sanity. I migrate the content carefully, map redirects, and check search performance before and after launch."
     },
     "faq-3": {
-      "question": "What happens after the project is completed?",
-      "answer": "After launch, I provide training on how to manage your content through the CMS. I also offer ongoing maintenance and support options to keep your site running smoothly. You'll have full ownership of your code and can choose to maintain it yourself or continue working with me."
+      "question": "Will my team be able to manage the site without you?",
+      "answer": "That's the whole point. I model the CMS around how your team works, document it, and train your editors and devs. You own the code and the content, and you can export everything anytime."
     },
     "faq-4": {
-      "question": "Can you work with my existing website?",
-      "answer": "Absolutely. I can improve, redesign, or add features to existing websites. Whether you need performance optimization, a fresh design, or new functionality, I can work with your current setup and help take it to the next level."
+      "question": "Do you work with our existing designers and developers?",
+      "answer": "Yes. I'm comfortable plugging into an existing team, matching your conventions, and handing off cleanly. I can also run a project solo end to end if that's what you need."
     },
     "faq-5": {
-      "question": "What's included in your pricing packages?",
-      "answer": "Each package includes custom design, mobile responsiveness, content management system access, SEO setup, and performance optimization. Higher-tier packages include more pages, advanced features, and additional integrations. All packages come with training and documentation. See the <link>How I Price</link> section for detailed breakdowns."
+      "question": "What do you build the site on?",
+      "answer": "Sanity for the CMS, Next.js and TypeScript for the front-end, with a design system and reusable blocks on top. Fast, SEO-solid, and built to scale. See the <link>pricing</link> section for what each engagement includes."
+    },
+    "faq-6": {
+      "question": "Aren't we locked into Sanity?",
+      "answer": "Partly, and I won't pretend otherwise. The CMS itself is a vendor bet. But the parts that matter stay yours: the front-end is standard Next.js in your repo, the schemas are code you own, and your content exports to JSON anytime. Moving off later is a real option, not a one-way door."
     }
   },
   "blog": {

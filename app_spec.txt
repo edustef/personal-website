@@ -1,4 +1,5 @@
 <project_specification>
+  <!-- Historical specification from the original Sanity prototype. The current website uses local MDX content and does not connect to a Sanity project. -->
   <project_name>Eduard Stefan - Freelance Full-Stack Developer Portfolio</project_name>
 
   <overview>
