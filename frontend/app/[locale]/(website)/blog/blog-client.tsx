@@ -10,6 +10,7 @@ export default function BlogClient({ posts }: { posts: BlogPost[] }) {
   const t = useTranslations("blog");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTag, setSelectedTag] = useState("");
+  const isBlogEmpty = posts.length === 0;
 
   // Get all unique tags from posts
   const allTags = useMemo(() => {
@@ -151,7 +152,7 @@ export default function BlogClient({ posts }: { posts: BlogPost[] }) {
         <AnimatePresence mode="wait">
           {filteredPosts.length === 0 ? (
             <motion.div
-              key="no-results"
+              key={isBlogEmpty ? "empty-blog" : "no-results"}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -169,15 +170,21 @@ export default function BlogClient({ posts }: { posts: BlogPost[] }) {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={1.5}
-                  d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  d={
+                    isBlogEmpty
+                      ? "M6 2h9l5 5v15H6a2 2 0 01-2-2V4a2 2 0 012-2zM14 2v6h6M8 13h8M8 17h5"
+                      : "M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  }
                 />
               </svg>
               <h3 className="mt-4 text-xl font-semibold text-foreground">
-                {t("noResults")}
+                {isBlogEmpty ? t("emptyState") : t("noResults")}
               </h3>
-              <p className="mt-2 text-muted-foreground">
-                {t("noResultsDescription")}
-              </p>
+              {isBlogEmpty ? null : (
+                <p className="mt-2 text-muted-foreground">
+                  {t("noResultsDescription")}
+                </p>
+              )}
             </motion.div>
           ) : (
             <motion.div

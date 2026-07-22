@@ -654,6 +654,7 @@
     "filterByTag": "Filter by tag",
     "allTags": "All topics",
     "minRead": "{minutes} min read",
+    "emptyState": "New articles are coming soon",
     "noResults": "No articles found",
     "noResultsDescription": "Try adjusting your search or filter to find what you're looking for.",
     "clearFilters": "Clear filters"
