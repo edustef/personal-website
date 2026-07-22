@@ -487,23 +487,23 @@
   },
   "waysToWorkTogether": {
     "label": "Formas de trabajar juntos",
-    "headline": "Una colaboración enfocada, adaptada a tu equipo.",
-    "subtitle": "El formato depende del problema: un proyecto definido cuando hay que reconstruir el sistema o apoyo integrado cuando tu equipo necesita un ritmo constante.",
-    "engagementTitle": "Empezamos por el cuello de botella de publicación.",
-    "description": "Identificamos qué está frenando al equipo y definimos el trabajo como una implementación, una migración controlada o apoyo integrado junto a tu equipo.",
-    "scopeLabel": "Modalidad",
-    "scopeValue": "Implementación, migración o apoyo integrado",
-    "timelineLabel": "Duración habitual del proyecto",
+    "headline": "Un proyecto claro, definido según lo que necesita tu sitio.",
+    "subtitle": "Después de una breve llamada, convierto el problema en un plan claro con los entregables, el plazo y el apoyo adecuados.",
+    "engagementTitle": "Construimos lo que tu equipo necesita y dejamos un sistema que pueda gestionar.",
+    "description": "Puede ser un nuevo sitio con Sanity, una migración controlada desde tu CMS actual o mejoras dentro de un sistema existente. El alcance responde al resultado, no a un paquete predefinido.",
+    "scopeLabel": "Tipos de proyecto",
+    "scopeValue": "Nuevos sitios, migraciones de CMS y mejoras del sistema",
+    "timelineLabel": "Plazo habitual",
     "timelineValue": "3–10 semanas",
-    "timelineNote": "El apoyo integrado continúa con una cadencia acordada.",
-    "includesTitle": "Cada colaboración incluye",
+    "timelineNote": "¿Necesitas ayuda continua? El apoyo integrado se define según las prioridades y el ritmo de tu equipo.",
+    "includesTitle": "Un proyecto habitual incluye",
     "includedItems": [
-      "Mapeo del flujo de trabajo y del contenido",
-      "Esquemas de Sanity y sistema de páginas reutilizable",
-      "Previsualizaciones en vivo, QA y plan de lanzamiento",
-      "Documentación y entrega al equipo"
+      "Descubrimiento y mapeo del flujo de trabajo y del contenido",
+      "Modelo de contenido en Sanity y experiencia editorial",
+      "Sistema de páginas reutilizable con previsualizaciones en vivo",
+      "QA, plan de lanzamiento, documentación y entrega"
     ],
-    "cta": "Hablemos de tu sitio"
+    "cta": "Cuéntame sobre tu sitio"
   },
   "howIPrice": {
     "label": "Precios",

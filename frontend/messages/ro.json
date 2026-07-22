@@ -487,23 +487,23 @@
   },
   "waysToWorkTogether": {
     "label": "Moduri de colaborare",
-    "headline": "O colaborare clară, adaptată echipei tale.",
-    "subtitle": "Formatul pornește de la problemă: un proiect bine definit când sistemul trebuie reconstruit sau suport integrat când echipa are nevoie de un ritm constant.",
-    "engagementTitle": "Începem cu blocajul din procesul de publicare.",
-    "description": "Identificăm ce încetinește echipa, apoi stabilim colaborarea ca proiect nou, migrare controlată sau suport integrat alături de echipa ta.",
-    "scopeLabel": "Tip de colaborare",
-    "scopeValue": "Construcție, migrare sau suport integrat",
-    "timelineLabel": "Durata uzuală a unui proiect",
+    "headline": "Un proiect clar, construit în jurul nevoilor site-ului tău.",
+    "subtitle": "După o discuție scurtă, transform problema într-un plan clar, cu livrabilele, durata și suportul potrivite.",
+    "engagementTitle": "Construim ce are nevoie echipa ta. Predăm un sistem pe care îl poate gestiona.",
+    "description": "Poate fi un site nou pe Sanity, o migrare controlată din CMS-ul actual sau îmbunătățiri într-un sistem existent. Proiectul este definit după rezultat, nu după un pachet prestabilit.",
+    "scopeLabel": "Tipuri de proiect",
+    "scopeValue": "Site-uri noi, migrări CMS și îmbunătățiri de sistem",
+    "timelineLabel": "Durata uzuală",
     "timelineValue": "3–10 săptămâni",
-    "timelineNote": "Suportul integrat continuă într-un ritm stabilit împreună.",
-    "includesTitle": "Fiecare colaborare include",
+    "timelineNote": "Ai nevoie de ajutor continuu? Suportul integrat se stabilește în funcție de prioritățile și ritmul echipei tale.",
+    "includesTitle": "Un proiect obișnuit include",
     "includedItems": [
-      "Maparea fluxului de lucru și a conținutului",
-      "Scheme Sanity și un sistem reutilizabil de pagini",
-      "Preview-uri live, QA și plan de lansare",
-      "Documentație și predare către echipă"
+      "Descoperire și maparea fluxului de lucru și a conținutului",
+      "Model de conținut Sanity și experiența editorilor",
+      "Un sistem reutilizabil de pagini cu preview-uri live",
+      "QA, plan de lansare, documentație și predare"
     ],
-    "cta": "Hai să vorbim despre site-ul tău"
+    "cta": "Spune-mi despre site-ul tău"
   },
   "howIPrice": {
     "label": "Prețuri",

@@ -487,23 +487,23 @@
   },
   "waysToWorkTogether": {
     "label": "Ways to work together",
-    "headline": "A focused engagement, shaped around your team.",
-    "subtitle": "The format follows the problem: a defined project when the system needs rebuilding, or embedded support when your team needs steady momentum.",
-    "engagementTitle": "Start with the publishing bottleneck.",
-    "description": "We map what is slowing your team down, then scope the work as a focused build, a controlled migration, or embedded support alongside your team.",
-    "scopeLabel": "Engagement",
-    "scopeValue": "Build, migration, or embedded support",
-    "timelineLabel": "Typical project work",
+    "headline": "One project, scoped around what your site needs.",
+    "subtitle": "After a short call, I turn the problem into a clear plan with the right deliverables, timeline, and support.",
+    "engagementTitle": "Build what your team needs. Leave them with a system they can run.",
+    "description": "That could mean a new Sanity site, a controlled migration from your current CMS, or focused work inside an existing system. The scope follows the outcome, not a preset package.",
+    "scopeLabel": "Project types",
+    "scopeValue": "New sites, CMS migrations, and system improvements",
+    "timelineLabel": "Typical timeline",
     "timelineValue": "3–10 weeks",
-    "timelineNote": "Embedded support runs on a cadence we agree together.",
-    "includesTitle": "Every engagement includes",
+    "timelineNote": "Need ongoing help instead? Embedded support is scoped around your team's priorities and cadence.",
+    "includesTitle": "A typical project includes",
     "includedItems": [
-      "Workflow and content mapping",
-      "Sanity schema and reusable page system",
-      "Live previews, QA, and a launch plan",
-      "Documentation and team handoff"
+      "Discovery, workflow, and content mapping",
+      "Sanity content model and editor experience",
+      "Reusable page system with live previews",
+      "QA, launch planning, documentation, and handoff"
     ],
-    "cta": "Talk about your site"
+    "cta": "Tell me about your site"
   },
   "howIPrice": {
     "label": "Pricing",
