@@ -654,6 +654,7 @@
     "filterByTag": "Filtrar por etiqueta",
     "allTags": "Todos los temas",
     "minRead": "{minutes} min de lectura",
+    "emptyState": "Pronto habrá nuevos artículos",
     "noResults": "No se encontraron artículos",
     "noResultsDescription": "Intenta ajustar tu búsqueda o filtro para encontrar lo que buscas.",
     "clearFilters": "Limpiar filtros"

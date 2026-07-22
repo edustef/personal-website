@@ -654,6 +654,7 @@
     "filterByTag": "Filtrează după subiect",
     "allTags": "Toate subiectele",
     "minRead": "{minutes} min",
+    "emptyState": "Articole noi vor apărea în curând",
     "noResults": "Niciun articol găsit",
     "noResultsDescription": "Încearcă altă căutare sau alt filtru.",
     "clearFilters": "Șterge filtrele"
