@@ -41,6 +41,9 @@ export default async function PrivacyPolicyPage(props: Props) {
       <article className="prose prose-invert max-w-none">
         <h1 className="mb-8 text-2xl font-bold text-balance">{t("title")}</h1>
         <p className="text-muted-foreground mb-8">{t("lastUpdated")}</p>
+        <aside className="mb-10 rounded-xl border border-border bg-muted/40 p-4 text-sm leading-relaxed text-muted-foreground">
+          {t("reviewNotice")}
+        </aside>
 
         <section className="mb-8">
           <h2 className="mb-4 text-xl font-semibold text-balance">

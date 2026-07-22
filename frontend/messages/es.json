@@ -153,78 +153,101 @@
     }
   },
   "privacyPolicy": {
-    "title": "Política de Privacidad",
-    "description": "Nuestra política de privacidad explica cómo recopilamos, usamos y protegemos sus datos personales en cumplimiento del GDPR.",
-    "lastUpdated": "Última actualización: Enero 2025",
+    "title": "Política de privacidad",
+    "description": "Un resumen claro de cómo este sitio gestiona los datos de contacto, el almacenamiento del navegador y las herramientas de analítica y marketing.",
+    "lastUpdated": "Última actualización: julio de 2026",
+    "reviewNotice": "Esta página describe la implementación actual en un lenguaje sencillo. No es asesoramiento jurídico y debe revisarla un profesional de la privacidad antes de considerarla un texto legal definitivo.",
     "sections": {
       "introduction": {
         "title": "Introducción",
-        "content": "Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos sus datos personales cuando utiliza nuestro sitio web y servicios. Estamos comprometidos a proteger su privacidad y garantizar el cumplimiento del Reglamento General de Protección de Datos (GDPR) y otras leyes de protección de datos aplicables."
+        "content": "Esta página explica qué información gestiona el sitio cuando lo visitas, cambias tus preferencias de privacidad o decides ponerte en contacto. No afirma de forma general que el sitio cumpla todos los requisitos legales."
       },
       "dataController": {
-        "title": "Responsable del Tratamiento",
-        "content": "El responsable del tratamiento de sus datos personales es el propietario de este sitio web. Si tiene alguna pregunta sobre esta Política de Privacidad o desea ejercer sus derechos, póngase en contacto con nosotros utilizando la información proporcionada en la sección de Contacto."
+        "title": "Responsable del tratamiento",
+        "content": "Eduard Sergiu Stefan gestiona este sitio y es el contacto para los datos personales descritos aquí. Usa la dirección de la sección Contacto para consultas o solicitudes de privacidad."
       },
       "dataCollected": {
-        "title": "Datos que Recopilamos",
-        "intro": "Recopilamos los siguientes tipos de datos personales:",
+        "title": "Datos que se gestionan",
+        "intro": "El sitio puede gestionar la siguiente información:",
         "items": {
-          "email": "Dirección de correo electrónico (cuando envía un formulario de consulta de proyecto)",
-          "projectDetails": "Información relacionada con el proyecto (presupuesto, cronograma, características, contexto comercial, etc.)",
-          "technicalInfo": "Información técnica recopilada automáticamente (dirección IP, tipo de navegador, información del dispositivo) a través de nuestro servicio de análisis"
+          "email": "Los datos de contacto que decidas facilitar, como tu nombre y correo electrónico",
+          "projectDetails": "La información que decidas compartir sobre tu sitio, equipo o proyecto",
+          "technicalInfo": "Datos técnicos y de uso procesados por los servicios de alojamiento y analítica, que pueden incluir la dirección IP, el navegador, el dispositivo, las páginas vistas y las interacciones"
         }
       },
       "purpose": {
-        "title": "Propósito del Tratamiento",
-        "intro": "Procesamos sus datos personales para los siguientes propósitos:",
+        "title": "Cómo se usa la información",
+        "intro": "La información se usa para lo siguiente:",
         "items": {
-          "communication": "Para comunicarnos con usted respecto a su consulta de proyecto y proporcionar estimaciones de proyecto",
-          "projectEstimate": "Para entender los requisitos de su proyecto y proporcionar recomendaciones personalizadas",
-          "analytics": "Para analizar el uso del sitio web y mejorar nuestros servicios (usando análisis sin cookies)"
+          "communication": "Responder cuando decidas enviar un mensaje o reservar una llamada",
+          "projectEstimate": "Entender el contexto que compartes y preparar una respuesta relevante",
+          "analytics": "Entender el uso del sitio y mejorar la experiencia, con la analítica y el marketing opcionales controlados desde las preferencias de privacidad"
         }
       },
       "legalBasis": {
-        "title": "Base Legal",
-        "content": "Procesamos sus datos personales basándonos en su consentimiento explícito cuando envía el formulario de consulta de proyecto. Para fines de análisis, utilizamos seguimiento sin cookies que no requiere consentimiento ya que utiliza hash preservador de privacidad del lado del servidor."
+        "title": "Preferencias y base jurídica",
+        "content": "Los datos de contacto se usan para responder a una solicitud que decides enviar. PostHog permanece en modo sin cookies cuando rechazas el seguimiento opcional; el seguimiento de PostHog con consentimiento y Meta Pixel solo se ejecutan después de aceptarlos. Las bases jurídicas aplicables y la redacción final deben confirmarse mediante una revisión legal profesional."
       },
       "dataRetention": {
-        "title": "Retención de Datos",
-        "content": "Conservamos sus datos personales solo durante el tiempo necesario para cumplir con los propósitos descritos en esta Política de Privacidad, o según lo requiera la ley. Los datos de consulta de proyecto generalmente se conservan hasta 2 años a menos que solicite su eliminación antes."
+        "title": "Conservación de datos",
+        "content": "El sitio no publica actualmente un plazo fijo y verificado de conservación para cada servicio. Los registros de contacto y la configuración de conservación de los proveedores deben revisarse, documentarse y añadirse aquí antes de considerar definitiva esta política. Puedes solicitar que se elimine tu información."
       },
       "yourRights": {
-        "title": "Sus Derechos",
-        "intro": "Bajo el GDPR, tiene los siguientes derechos con respecto a sus datos personales:",
+        "title": "Tus derechos",
+        "intro": "Según la legislación aplicable, puedes tener derechos como los siguientes:",
         "items": {
-          "access": "Derecho de acceso: Puede solicitar una copia de los datos personales que tenemos sobre usted",
-          "rectification": "Derecho a la rectificación: Puede solicitar la corrección de datos inexactos o incompletos",
-          "erasure": "Derecho al olvido: Puede solicitar la eliminación de sus datos personales",
-          "restriction": "Derecho a la limitación del tratamiento: Puede solicitar que limitemos cómo usamos sus datos",
-          "dataPortability": "Derecho a la portabilidad de datos: Puede solicitar sus datos en un formato estructurado y legible por máquina",
-          "object": "Derecho de oposición: Puede oponerse al tratamiento de sus datos personales"
+          "access": "Acceder a los datos personales que se conservan sobre ti",
+          "rectification": "Corregir datos inexactos o incompletos",
+          "erasure": "Solicitar la eliminación de tus datos personales",
+          "restriction": "Solicitar límites sobre el uso de tus datos",
+          "dataPortability": "Recibir los datos que correspondan en un formato portátil",
+          "object": "Oponerte a determinados usos de tus datos personales"
         },
-        "contact": "Para ejercer cualquiera de estos derechos, póngase en contacto con nosotros en contact@eduardstefan.dev o a través del formulario de contacto en nuestro sitio web."
+        "contact": "Para enviar una solicitud de privacidad, escribe a contact@eduardstefan.dev."
       },
       "analytics": {
-        "title": "Análisis",
-        "content": "Utilizamos PostHog para el análisis del sitio web con seguimiento sin cookies habilitado. Esto significa que no utilizamos cookies ni almacenamiento local para el seguimiento. En su lugar, utilizamos hash preservador de privacidad del lado del servidor que no almacena datos personales en su navegador. Este enfoque cumple con el GDPR sin requerir un banner de consentimiento de cookies."
+        "title": "Almacenamiento, analítica y marketing",
+        "content": "El sitio guarda tu elección de privacidad en el almacenamiento local del navegador. PostHog está configurado para usar el modo sin cookies cuando rechazas el seguimiento opcional. Si lo aceptas, PostHog puede usar el almacenamiento del navegador o cookies, y Meta Pixel puede cargarse para medir visitas y acciones de contacto. Puedes cambiar la elección desde Gestionar cookies en el pie de página. Otras funciones, como el tema o la reserva de citas, también pueden usar el almacenamiento del navegador o una cookie de sesión."
       },
       "dataSecurity": {
-        "title": "Seguridad de Datos",
-        "content": "Implementamos medidas técnicas y organizativas apropiadas para proteger sus datos personales contra acceso no autorizado, alteración, divulgación o destrucción. Sus datos se almacenan de forma segura utilizando cifrado estándar de la industria y controles de acceso."
+        "title": "Seguridad de los datos",
+        "content": "La información se gestiona mediante los servicios de alojamiento, analítica, reservas y comunicación del sitio. El acceso debe limitarse a lo necesario, pero ningún servicio en línea puede prometer una seguridad completa. La configuración de los proveedores y los controles de acceso aún deben comprobarse como parte de la revisión legal."
       },
       "changes": {
-        "title": "Cambios a Esta Política",
-        "content": "Podemos actualizar esta Política de Privacidad de vez en cuando. Le notificaremos cualquier cambio material publicando la nueva Política de Privacidad en esta página y actualizando la fecha de \"Última actualización\"."
+        "title": "Cambios en esta política",
+        "content": "Esta página puede actualizarse cuando cambien los formularios, el almacenamiento, las herramientas de analítica o marketing, o los proveedores del sitio. La fecha de actualización se modificará con los cambios importantes."
       },
       "contact": {
-        "title": "Contáctenos",
-        "content": "Si tiene alguna pregunta sobre esta Política de Privacidad o desea ejercer sus derechos, póngase en contacto con nosotros a través del formulario de contacto en nuestro sitio web o por correo electrónico a contact@eduardstefan.dev. También puede solicitar acceso o eliminación de datos enviándonos un correo electrónico con su solicitud."
+        "title": "Contacto",
+        "content": "Para preguntar sobre esta página o solicitar acceso, corrección o eliminación, escribe a contact@eduardstefan.dev."
       }
     }
   },
+  "cookieBanner": {
+    "title": "Tus preferencias de privacidad",
+    "description": "Este sitio guarda tu elección en el navegador. La analítica y el marketing opcionales solo se activan con tu permiso. Lee la",
+    "privacyLink": "Política de privacidad",
+    "essential": {
+      "title": "Almacenamiento esencial",
+      "description": "Conserva tu elección de privacidad y las preferencias básicas del sitio. No se puede desactivar desde este panel."
+    },
+    "optional": {
+      "title": "Analítica y marketing opcionales",
+      "description": "Permite que PostHog y Meta Pixel midan visitas y acciones de contacto. PostHog usa el modo sin cookies cuando esta opción está desactivada."
+    },
+    "manage": "Gestionar preferencias",
+    "reject": "Rechazar opcionales",
+    "accept": "Aceptar opcionales",
+    "close": "Cerrar preferencias",
+    "save": "Guardar preferencias"
+  },
   "footer": {
-    "privacyPolicy": "Política de Privacidad",
-    "text": "@ {currentYear} Eduard Sergiu Stefan. Construido con Next.js.",
+    "privacyPolicy": "Política de privacidad",
+    "text": "© {currentYear} Eduard Sergiu Stefan. Creado con Next.js.",
+    "legal": {
+      "title": "Información legal",
+      "manageCookies": "Gestionar cookies"
+    },
     "menu": {
       "title": "Menú",
       "services": "Servicios",
@@ -233,8 +256,8 @@
     }
   },
   "home": {
-    "headline": "Publica páginas fieles a tu marca <strong>a la velocidad del marketing</strong>.",
-    "tagline": "Construyo sitios de marketing con Sanity, respaldados por un sistema de diseño de verdad y bloques reutilizables. Tu equipo publica páginas nuevas sin depender del calendario de un desarrollador.",
+    "headline": "Publica páginas fieles a tu marca <strong>al ritmo de tu equipo de marketing</strong>.",
+    "tagline": "Construyo sitios de marketing con Sanity, un sistema de diseño coherente y bloques reutilizables. Tu equipo puede publicar páginas nuevas sin esperar a un desarrollador.",
     "aboutMeDescription": "Construyo sistemas de contenido y sitios de marketing que los equipos pueden gestionar solos.",
     "announcementLabel": "Sanity CMS y sistemas de diseño para <strong>equipos que publican</strong>",
     "resumeButtonLabel": "Ver mi currículum",
@@ -242,19 +265,19 @@
     "contactMe": "Escríbeme",
     "scheduleCall": "Reservar una llamada",
     "contactDirectly": "Escríbeme",
-    "letsChat": "Hablemos",
-    "seeHowIWork": "Mira cómo trabajo",
-    "orBookTime": "¿Prefieres agendar? Reserva una hora",
+    "letsChat": "Hablemos de tu sitio",
+    "seeHowIWork": "Reserva una llamada",
+    "orBookTime": "Reserva una llamada",
     "workedWith": "Con qué trabajo",
     "heroTrust": [
-      "Publica sin esperar a un dev",
+      "Publica sin esperar a un desarrollador",
       "El código es tuyo",
       "Sin compromiso, solo charlamos"
     ],
     "tools": {
       "label": "Tecnologías",
-      "headline": "Herramientas y Tecnologías",
-      "subtitle": "Sanity, Next.js, TypeScript y lo que pida tu stack"
+      "headline": "Herramientas y tecnologías",
+      "subtitle": "Sanity, Next.js, TypeScript y lo que necesite tu proyecto"
     },
     "ctaButtons": [
       {
@@ -265,35 +288,31 @@
     ],
     "aboutMe": {
       "label": "Quién soy",
-      "headline": "Sobre Mí",
-      "subtitle": "Años construyendo sistemas de contenido que los equipos no superan",
-      "description": "Soy un ingeniero front-end que construye sitios de marketing y sistemas de contenido para empresas que se quedaron cortas con su setup anterior. Me importan dos cosas: un CMS que tu equipo pueda gestionar sin mí, y un front-end que siga siendo rápido y fiel a tu marca a medida que crece. He construido sistemas de diseño, librerías de componentes reutilizables y Sanity Studios que a los equipos de marketing les gusta usar. Las partes poco glamurosas, como los esquemas, las migraciones y la documentación de entrega, son las que deciden si un sitio sigue funcionando dos años después. Por eso las cuido.",
-      "cta": "Hablemos"
+      "headline": "Sobre mí",
+      "subtitle": "Sistemas de contenido que los equipos pueden seguir usando a medida que crecen",
+      "description": "Soy ingeniero de interfaces web y construyo sitios de marketing y sistemas de contenido para empresas que han superado su solución actual. Me importan dos cosas: un CMS que tu equipo pueda gestionar sin mí y una interfaz que siga siendo rápida y coherente con tu marca a medida que el sitio crece. He creado sistemas de diseño, bibliotecas de componentes reutilizables y espacios de trabajo de Sanity pensados para equipos de marketing. Las partes menos vistosas —los esquemas, las migraciones y la documentación de entrega— son las que deciden si un sitio sigue funcionando bien dos años después. Por eso las cuido.",
+      "cta": "Hablemos de tu sitio"
     },
     "contact": {
       "label": "Ponerse en contacto",
-      "headline": "¿Tu sitio no escala? ¿Tu equipo depende de los devs? Lo arreglamos.",
+      "headline": "¿Tu sitio ya no da más? ¿Tu equipo espera a los desarrolladores? Hablemos.",
       "subtitle": "Cuéntame dónde te está frenando tu CMS o tu sitio. Te digo cómo lo resolvería.",
-      "ctaButton": "Iniciar un proyecto",
-      "ctaButtonSecondary": "Hacer una pregunta rápida",
-      "whatsappLabel": "¿Pregunta rápida? Escríbeme"
+      "ctaButton": "Hablemos de tu sitio",
+      "ctaButtonSecondary": "Reserva una llamada",
+      "whatsappLabel": "Hablemos de tu sitio"
     }
   },
   "profile": {
     "name": "Eduard Sergiu Stefan",
     "email": "contact@eduardstefan.dev",
     "phone": "+40775378525",
-    "about": "Sobre me",
+    "about": "Sobre mí",
     "location": "Oradea, Rumanía",
     "workPreference": "Teletrabajo",
     "socialLinks": [
       {
         "name": "LinkedIn",
         "url": "https://www.linkedin.com/in/eduard-stefan-089371100/"
-      },
-      {
-        "name": "Instagram",
-        "url": "https://instagram.com"
       },
       {
         "name": "GitHub",
@@ -306,31 +325,31 @@
     "description": "Sanity CMS y sistemas de diseño para equipos que publican.",
     "header": {
       "cta": {
-        "text": "Hablemos",
+        "text": "Hablemos de tu sitio",
         "href": "/start-your-project"
       },
-      "homeButtonLabel": "Casa",
-      "navLabel": "Navegacion principal",
+      "homeButtonLabel": "Inicio",
+      "navLabel": "Navegación principal",
       "skipLinkText": "Saltar al contenido principal",
       "menuLabel": "Menú",
       "nav": {
         "services": "Servicios",
         "pricing": "Precios",
-        "howIWork": "Cómo Trabajo",
+        "howIWork": "Cómo trabajo",
         "blog": "Blog",
         "servicesSlug": "servicios",
         "pricingSlug": "precios",
-        "howIWorkSlug": "how-i-work"
+        "howIWorkSlug": "como-trabajo"
       }
     },
     "seo": {
       "title": "Eduard Stefan | Sanity CMS y Sistemas de Diseño",
-      "description": "Construyo sitios de marketing sobre Sanity con un sistema de diseño que tu equipo puede gestionar. Migraciones de CMS, componentes reutilizables, UX y CRO."
+      "description": "Construyo sitios de marketing con Sanity, modelos de contenido, bloques reutilizables, migraciones controladas y una entrega clara."
     }
   },
   "skills": {
     "headline": "Construido con las <strong>herramientas que importan</strong>.",
-    "subtitle": "El stack detrás del trabajo"
+    "subtitle": "Las herramientas detrás del trabajo"
   },
   "caseStudies": {
     "label": "Trabajos Seleccionados",
@@ -348,7 +367,7 @@
       "quote": "Le dimos a Eduard un archivo Figma y una fecha límite. Volvió con algo mejor de lo que diseñamos. Las micro-interacciones, el rendimiento—simplemente lo entiende."
     },
     "test-2": {
-      "quote": "La mayoría de devs necesitan que les lleves de la mano. Eduard necesitaba contexto. Una vez que entendió qué estábamos construyendo y por qué, lo hizo solo. Entregó todo antes de tiempo."
+      "quote": "La mayoría de los desarrolladores necesitan instrucciones detalladas. Eduard necesitaba contexto. Cuando entendió qué estábamos construyendo y por qué, lo llevó adelante. Entregó todo antes de tiempo."
     },
     "test-3": {
       "quote": "Cuestionó nuestras malas ideas e hizo mejores las buenas. Es raro encontrar un desarrollador que se preocupe por el producto, no solo por el código."
@@ -407,80 +426,72 @@
   },
   "services": {
     "label": "Lo que hago",
-    "headline": "Del caos de contenido a un sistema que escala",
-    "subtitle": "Construyo el CMS, el sistema de diseño y el front-end. Tu equipo sigue desde ahí.",
-    "cta": "Hablemos de tu stack",
+    "headline": "Del caos de contenido a un sistema preparado para crecer",
+    "subtitle": "Conecto los modelos de contenido, los bloques reutilizables, la migración y la entrega en un solo sistema funcional.",
+    "cta": "Hablemos de tu sitio",
     "svc-1": {
-      "title": "Pensado para entregarte el control",
-      "description": "No desaparezco al lanzar. Te dejo documentación clara, editores capacitados y un sistema que tu equipo puede gestionar sin mí. Nada atado a mí, sin código misterioso."
+      "title": "Modelos de contenido basados en procesos reales",
+      "description": "Los esquemas de Sanity parten de las páginas que publica tu equipo, de quién las edita y del recorrido del contenido desde el borrador hasta la publicación. Si el proyecto lo necesita, la localización se incorpora al modelo desde el principio."
     },
     "svc-2": {
-      "title": "Un Sanity CMS hecho para durar",
-      "description": "Esquemas que tus editores entienden de verdad. Contenido estructurado que no se rompe cuando el sitio crece. Un Studio que a tu equipo le gusta abrir, hecho para escalar en lugar de rehacerse en un año."
+      "title": "Bloques reutilizables que mantienen la coherencia de marca",
+      "description": "Una biblioteca de componentes con reglas claras de contenido y composición. Los editores pueden crear páginas con bloques reutilizables, mientras los criterios de experiencia de usuario y conversión forman parte de los patrones."
     },
     "svc-3": {
-      "title": "Sitios de marketing que escalan",
-      "description": "Multiidioma, rápidos y sólidos en SEO desde el primer commit. Hechos para que la décima landing sea tan fácil de publicar como la primera."
+      "title": "Migración y lanzamiento controlados",
+      "description": "El contenido se mapea, migra y comprueba por etapas. Las redirecciones, las pruebas de lanzamiento y un plan de reversión acordado reducen el riesgo sin prometer que el posicionamiento se mantendrá intacto."
     },
     "svc-4": {
-      "title": "UX y CRO que convierten",
-      "description": "Páginas pensadas según cómo decide la gente de verdad. Meto el pensamiento de conversión en el diseño desde el inicio, no lo añado al final."
-    },
-    "svc-5": {
-      "title": "Sistema de diseño y bloques reutilizables",
-      "description": "Una librería de componentes de verdad, mapeada a tu marca. Marketing crea páginas nuevas con bloques que ya se ven bien, así nada se desvía de la marca."
-    },
-    "svc-6": {
-      "title": "Migraciones limpias",
-      "description": "¿Te mudas de WordPress, Contentful o un montón de páginas hardcodeadas? Migro el contenido con cuidado, mapeo las redirecciones y superviso la visibilidad orgánica durante el lanzamiento."
+      "title": "Una entrega que el equipo puede asumir",
+      "description": "Editores y desarrolladores reciben formación, documentación y acceso al código y al contenido que necesitan. Puedo seguir colaborando, pero la solución está pensada para no depender de mí."
     }
   },
   "howIWork": {
     "label": "Proceso",
     "headline": "Cómo trabajo",
     "subtitle": "Sin sorpresas. Progreso claro hasta que tu equipo toma el control.",
-    "cta": "Empecemos",
+    "cta": "Hablemos de tu sitio",
     "planning": {
       "title": "Mapeamos tu contenido y tu equipo",
       "paragraphs": [
-        "Empezamos por cómo trabaja tu equipo de verdad. Qué páginas publicáis, quién las edita y dónde os frena el setup actual. Luego modelamos el contenido y acordamos el alcance."
+        "Empezamos por cómo trabaja tu equipo: qué páginas publica, quién las edita y dónde lo frena la solución actual. Después modelamos el contenido y acordamos el alcance."
       ],
       "bulletPoints": [
         "Contenido modelado según páginas reales",
-        "Editores implicados desde el inicio",
+        "Editores involucrados desde el inicio",
         "Alcance e hitos claros desde el principio"
       ]
     },
     "development": {
       "title": "Construyo el sistema. Tú lo ves tomar forma.",
       "paragraphs": [
-        "No me esfumo por semanas. Recibes actualizaciones regulares, previews funcionando en Sanity y margen para ajustar antes de que nada quede cerrado."
+        "No desaparezco durante semanas. Recibes actualizaciones frecuentes, vistas previas funcionales en Sanity y margen para ajustar antes de cerrar las decisiones."
       ],
       "bulletPoints": [
-        "Check-ins frecuentes",
-        "Previews en vivo, no presentaciones",
+        "Reuniones de seguimiento frecuentes",
+        "Vistas previas funcionales, no presentaciones",
         "Margen para iterar"
       ]
     },
     "deployment": {
       "title": "Lanzamos con cuidado y un plan de vuelta atrás",
       "paragraphs": [
-        "Me encargo de la parte técnica: migración, redirects, hosting y seguimiento. Probamos todo, arreglamos lo que haga falta, y salimos en vivo con confianza."
+        "Me encargo de la parte técnica: migración, redirecciones, alojamiento y medición. Probamos todo, corregimos lo necesario y lanzamos de forma controlada."
       ],
       "bulletPoints": [
-        "Migración y redirects gestionados",
-        "Analytics configurado",
+        "Migración y redirecciones gestionadas",
+        "Herramientas de analítica configuradas",
         "Revisiones SEO antes y después del lanzamiento"
       ]
     },
     "postDeployment": {
       "title": "Tu equipo lo gestiona. Estoy aquí si me necesitas.",
       "paragraphs": [
-        "Eres dueño de todo. Capacito a tus editores y devs, dejo documentación clara y sigo disponible para lo que venga después."
+        "El código y el contenido son tuyos. Formo a tus editores y desarrolladores, dejo documentación clara y sigo disponible para lo que venga después."
       ],
       "bulletPoints": [
         "El código y el contenido son tuyos",
-        "Capacitación y documentación incluidas",
+        "Formación y documentación incluidas",
         "Soporte continuo disponible"
       ]
     }
@@ -618,30 +629,30 @@
     "label": "FAQ",
     "headline": "Preguntas que podrías tener",
     "subtitle": "Lo que los equipos suelen preguntar antes de empezar.",
-    "cta": "¿Más preguntas? Hablemos",
+    "cta": "Hablemos de tu sitio",
     "faq-1": {
       "question": "¿Cuánto tarda un proyecto?",
-      "answer": "Depende del alcance. Un build de CMS y sistema de diseño suele durar 3-5 semanas. Una migración con un sitio de marketing completo, 6-10 semanas. Te doy un plazo real tras una llamada, no una suposición."
+      "answer": "Depende del alcance. Un CMS con sistema de diseño suele requerir entre 3 y 5 semanas. Una migración junto con un sitio de marketing completo suele requerir entre 6 y 10 semanas. Te doy un plazo realista después de una llamada, no una cifra improvisada."
     },
     "faq-2": {
       "question": "¿Puedes migrarnos de nuestro CMS actual?",
-      "answer": "Sí. Puedo migrarte desde WordPress, Contentful o páginas hardcodeadas a Sanity. Migro el contenido con cuidado, mapeo las redirecciones y reviso el rendimiento orgánico antes y después del lanzamiento."
+      "answer": "Sí. Puedo migrarte desde WordPress, Contentful o páginas escritas directamente en el código a Sanity. Migro el contenido con cuidado, preparo las redirecciones y reviso la visibilidad orgánica antes y después del lanzamiento."
     },
     "faq-3": {
       "question": "¿Mi equipo podrá gestionar el sitio sin ti?",
-      "answer": "Ese es justo el objetivo. Modelo el CMS según cómo trabaja tu equipo, lo documento y capacito a tus editores y devs. El código y el contenido son tuyos, y puedes exportar todo cuando quieras."
+      "answer": "Ese es justo el objetivo. Modelo el CMS según cómo trabaja tu equipo, lo documento y formo a tus editores y desarrolladores. El código y el contenido son tuyos, y el contenido se puede exportar cuando lo necesites."
     },
     "faq-4": {
       "question": "¿Trabajas con nuestros diseñadores y desarrolladores actuales?",
-      "answer": "Sí. Me integro bien en un equipo existente, sigo vuestras convenciones y hago una entrega limpia. También puedo llevar un proyecto solo de principio a fin si es lo que necesitas."
+      "answer": "Sí. Me integro bien en un equipo existente, sigo sus convenciones y hago una entrega clara. También puedo llevar un proyecto por mi cuenta de principio a fin si es lo que necesitas."
     },
     "faq-5": {
       "question": "¿Sobre qué construyes el sitio?",
-      "answer": "Sanity para el CMS, Next.js y TypeScript para el front-end, con un sistema de diseño y bloques reutilizables encima. Rápido, sólido en SEO y hecho para escalar. Consulta la sección de <link>precios</link> para ver qué incluye cada modelo."
+      "answer": "Sanity para el CMS, Next.js y TypeScript para el front-end, junto con un sistema de diseño y bloques reutilizables. La implementación busca un buen rendimiento, una base SEO sólida y un crecimiento controlado. Consulta la sección de <link>precios</link> para ver qué incluye cada modelo."
     },
     "faq-6": {
       "question": "¿No quedamos atados a Sanity?",
-      "answer": "En parte, y no voy a fingir lo contrario. El CMS en sí es una apuesta por un proveedor. Pero lo que importa sigue siendo tuyo: el front-end es Next.js estándar en tu repo, los esquemas son código que posees, y tu contenido se exporta a JSON cuando quieras. Cambiar más adelante es una opción real, no un callejón sin salida."
+      "answer": "En parte, y no voy a fingir lo contrario. El CMS implica elegir un proveedor. Pero lo importante sigue siendo tuyo: el front-end es un proyecto estándar de Next.js en tu repositorio, los esquemas son código que posees y el contenido se puede exportar en formato JSON. Migrar más adelante sigue siendo una opción real."
     }
   },
   "blog": {
@@ -662,13 +673,13 @@
     "label": "Portafolio",
     "headline": "Trabajos Destacados",
     "subtitle": "Ideas locas bienvenidas. Soy lo suficientemente terco para construirlas bien.",
-    "cta": "¿Quieres Resultados Similares?",
+    "cta": "Hablemos de tu sitio",
     "viewProject": "Ver Proyecto",
     "viewLive": "Ver Sitio en Vivo",
     "comingSoon": "Próximamente",
     "comingSoonTitle": "¿Tu Proyecto?",
     "comingSoonSubtitle": "Esta podría ser tu historia de éxito",
-    "comingSoonCta": "Hablemos",
+    "comingSoonCta": "Hablemos de tu sitio",
     "moreComing": "Más próximamente...",
     "techStack": "Tecnologías",
     "backToPortfolio": "Volver al Portafolio",

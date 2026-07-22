@@ -1,227 +1,138 @@
-# Eduard Stefan - Content & Brand Summary
+# Eduard Stefan — Canonical Content Brief
 
-> This document is a structured context file designed to be passed to AI tools for generating content ideas, social media posts, blog outlines, ad copy, and other marketing materials.
+> This is the source of truth for website positioning and future marketing copy. Keep it aligned with the live offer. Do not revive claims, packages, metrics, or case-study outcomes from older briefs unless they have been independently verified and approved.
 
----
+## Positioning
 
-## Identity
+Eduard builds Sanity CMS content systems and the design-system-backed marketing sites that use them. The work connects content structure, reusable page blocks, front-end implementation, migration, launch, and handoff so marketing teams can publish without routing every change through a developer.
 
-- **Name:** Eduard Sergiu Stefan
-- **Role:** Full-Stack Web Developer & Digital Growth Partner
-- **Location:** Oradea, Romania (works remotely with global clients)
-- **Email:** contact@eduardstefan.dev
-- **GitHub:** https://github.com/edustef
-- **LinkedIn:** https://www.linkedin.com/in/eduard-stefan-089371100/
-- **Languages Spoken:** 3 (English, Romanian, and one other)
+The focus is not “full-stack development for anyone who needs a website.” It is a specialist offer for teams whose current CMS, page-building process, or design system has become a constraint.
 
----
+## Ideal Client Profile
 
-## Brand Positioning
+Primary clients are established marketing, content, and digital teams that:
 
-**Tagline:** "The full stack for digital success."
+- have outgrown WordPress, Contentful, hardcoded pages, or an inconsistent page builder;
+- rely on developers for routine publishing and campaign changes;
+- need a Sanity implementation or a controlled migration to Sanity;
+- struggle with content models that do not reflect their editorial workflow;
+- see brand and UX drift as more pages and locales are added;
+- want reusable components without giving editors unlimited layout control;
+- need an external specialist who can work with existing designers and developers or lead a focused implementation.
 
-**Core Promise:** Scaling traffic, engineering high-performance foundations, and maximizing conversion. Web solutions designed to pay for themselves.
+The buyer may be a marketing lead, content lead, design-system owner, product or engineering lead, or founder at a company with an active marketing function. The day-to-day users are usually editors, marketers, designers, and developers.
 
-**Unique Selling Proposition:** Eduard is not an agency. He works one-on-one with business owners as a direct partner, combining technical development expertise with SEO and CRO (Conversion Rate Optimization) strategies to build websites that generate revenue, not just look pretty.
+## Problem
 
-**Brand Voice:**
-- Direct, no-nonsense, practical
-- Educational but action-oriented
-- Business/ROI-focused (speaks in terms of revenue, conversions, leads)
-- Uses relatable analogies for non-technical audiences (e.g., "rented land vs owned land" for social media vs websites)
-- Problem-solution format in content
-- Avoids vague corporate jargon; prefers concrete examples and numbers
+The underlying problem is a disconnected content system:
 
----
+- the CMS structure does not match how the team plans and publishes content;
+- each new page becomes a custom development request;
+- reusable blocks exist, but lack clear guardrails or consistent brand behavior;
+- migrations put content integrity, redirects, and search visibility at risk;
+- the implementation is difficult to operate or extend after launch.
 
-## Key Metrics & Achievements
+Avoid reducing the problem to generic “low conversions,” “not enough traffic,” or “your website is outdated.” CRO, SEO, performance, and localization can support the work, but they are not the core offer.
 
-| Metric | Value |
-|--------|-------|
-| Years of Experience | 4+ |
-| Funds Raised (for clients) | $40M+ |
-| Investors Reached | 30K+ |
-| Avg. Conversion Lift | 15%+ |
-| Languages Spoken | 3 |
+## Offer
 
----
+### 1. Content models built around real workflows
 
-## Services Offered
+Sanity schemas and editorial structures are designed around the pages the team publishes, the people who edit them, and the approvals or constraints they need. Localization requirements can be modeled here when relevant.
 
-### Core Services
-1. **Direct Partnership** - No middlemen; clear communication, faster updates, a partner who cares about client success.
-2. **SEO-First Development** - Websites built with clean code, perfect structure, and fast performance to rank higher on Google.
-3. **Global Reach (Multilingual/i18n)** - Multi-language support with proper hreflang, localized slugs, and cultural adaptation.
-4. **Blazing Fast Speed** - Sites that load instantly, reducing bounce rates and improving user satisfaction.
-5. **Conversion/CRO Focus** - User flows designed to guide visitors naturally toward taking action.
-6. **User Experience Design** - Simple, intuitive, and beautiful interfaces that leave lasting positive impressions.
+### 2. Reusable page blocks that stay on brand
 
-### Pricing Packages
-- **Launch Package** (2-3 days): Complete high-converting website build. Includes theming, strategic design, technical SEO, speed optimization, mobile-first approach.
-- **Growth Package** (1-2 weeks): Extended solution with CMS integration, localization, advanced analytics, lead generation connected to email/CRM.
-- **Custom Solutions** (varies): Complex web apps, SaaS platforms, internal tools tailored to specific requirements.
+A design system and reusable front-end components give editors practical page-building options with deliberate guardrails. UX and conversion thinking inform the block design, but no conversion outcome is promised.
 
-### Add-On Services
-- SEO Sprint (technical audit to fix ranking blockers)
-- E-commerce Engine (full shop setup with cart, checkout, payments)
-- Global Reach (localization for 2+ languages)
-- Deep Dive Analytics (custom funnel reports and advanced tracking)
+### 3. Controlled migration and launch
 
----
+Existing content is mapped into the new model, moved in stages, checked, and launched with redirects, testing, and a rollback plan appropriate to the project. Search visibility is monitored; rankings or traffic retention are not guaranteed.
 
-## Tech Stack
+### 4. A handoff the team can own
 
-- **Framework:** Next.js (SSR, ISR, static generation)
-- **Frontend:** React, TypeScript, functional components, hooks
-- **Styling:** Styled Components, CSS Modules
-- **CMS:** Headless CMS integrations
-- **Analytics:** PostHog (cookieless, GDPR-compliant)
-- **State Management:** Redux and modern alternatives
-- **Dev Tools:** Webpack, Vite, Storybook
-- **Other:** API integrations, authentication systems, booking systems, AI features
+The work includes clear documentation, training, and a handoff for editors and developers. Clients own their front-end repository, schema code, and content. Sanity remains a vendor dependency, and that tradeoff should be stated honestly.
 
----
+## Supporting Capabilities
 
-## Target Audience
+Mention these only when they support one of the four pillars:
 
-1. **Small-to-mid business owners** (both technical and non-technical) who want a website that generates leads and revenue
-2. **Startups** needing MVPs built quickly and professionally to secure funding
-3. **Local businesses in Romania** (particularly Oradea) wanting digital presence
-4. **Businesses expanding internationally** that need multilingual websites done right
-5. **E-commerce operators** struggling with cart abandonment and poor mobile experience
-6. **SaaS companies** needing UX overhauls to reduce churn
+- Next.js and TypeScript front-end implementation;
+- design-system and component-library work;
+- multilingual content modeling and localized site delivery;
+- technical SEO foundations, redirect planning, and launch checks;
+- performance, accessibility, UX, and conversion-aware page design;
+- analytics setup and post-launch support.
 
----
+Do not turn these into overlapping standalone service cards.
 
-## Work Process
+## Exclusions
 
-1. **Discovery & Strategy** - Understanding the audience, defining goals, SEO & content strategy
-2. **Design & Build** - Conversion-focused design, clean SEO-friendly code, regular progress updates
-3. **Launch & Verify** - Hosting, domain, security setup, analytics & tracking, performance testing
-4. **Optimize & Scale** - CMS training, data-driven optimizations, ongoing support
+Do not position Eduard as:
 
----
+- a generic full-stack developer for any type of software;
+- a broad small-business digital-growth partner;
+- a general-purpose SEO, CRO, ads, or social-media consultant;
+- an e-commerce, SaaS, or rapid-MVP studio by default;
+- an agency offering fixed “Launch,” “Growth,” or add-on packages;
+- a source of guaranteed conversion, revenue, traffic, ranking, speed, or funding outcomes.
 
-## Case Study Highlights
+Custom applications or adjacent work may be discussed when relevant, but they should not lead the public positioning without a deliberate offer change.
 
-| Project | Challenge | Result |
-|---------|-----------|--------|
-| FinTech Trading Platform | Scalability issues as user base grew 10x | 60% load time reduction, supported IPO volume |
-| E-commerce Revenue Lift | 78% cart abandonment, poor mobile UX | +22% sales ($50k/mo increase) in first quarter |
-| SaaS Retention Dashboard | User churn from confusing interface | -40% support tickets, +15% retention |
-| Startup MVP Validation | Needed to validate before funding ran out | Delivered in 8 weeks, secured seed funding |
+## Approved and Qualified Claims
 
----
+### Approved
 
-## Content Pillars & Blog Topics
+- Eduard builds Sanity CMS implementations, content models, reusable page blocks, design systems, and Next.js/TypeScript front ends.
+- He can plan and carry out migrations, redirect mapping, launch checks, documentation, editor training, and developer handoff.
+- He can work inside an existing design or development team and can lead a focused site implementation end to end.
+- Clients own the front-end code and schema code in their repository, and Sanity content can be exported.
+- The offer is designed to reduce routine dependency on a developer queue; describe this as the goal of the system, not a guaranteed organizational outcome.
 
-### Pillar 1: SEO & Visibility
-- Why websites don't rank on Google
-- Technical SEO problems (alt text, site architecture, Core Web Vitals)
-- Content strategy vs random blogging
-- Clean codebase benefits for SEO (SSR, ISR)
-- Local SEO optimization
+### Use with qualification
 
-### Pillar 2: Conversion & Lead Generation
-- Why small business websites don't get clients
-- CRO fundamentals (conversion rate optimization)
-- CTA placement and messaging strategies
-- Page structure that guides action (Hook > Problem > Solution > Proof > Close)
-- Value proposition clarity above the fold
+- Project timelines are estimates set after discovery. Any typical range must be presented as scope-dependent, never as a deadline guarantee.
+- “SEO-solid,” “fast,” “scalable,” and similar language must be tied to concrete practices such as redirects, structured content, testing, or reusable components.
+- CRO and conversion language may describe design intent or methodology. Do not claim a lift without verified before-and-after data.
+- Localization means the system can support multiple locales. It does not imply that Eduard personally provides professional translation for every language.
+- “Your team can run it” describes the handoff goal and must be backed by agreed training, documentation, and access.
 
-### Pillar 3: UX & Design
-- Information overload and lack of clarity
-- Confusing navigation patterns
-- Visual hierarchy and its impact on conversions
-- Trust signals (testimonials, logos, certifications)
-- Mobile-first UX design
+### Not approved without evidence
 
-### Pillar 4: Websites vs Social Media
-- Digital ownership ("owned land" vs "rented land")
-- Professionalism and credibility through websites
-- Long-term SEO value vs short-lived social posts
-- Website as the central hub; social as outposts
+- `$40M+ raised`, `30K+ investors reached`, `15%+ average conversion lift`, or any similar aggregate metric;
+- invented e-commerce, SaaS, fintech, startup, IPO, revenue, retention, or support-ticket results;
+- unattributed testimonials or case-study outcomes;
+- claims that a client “loved” a tool, that a migration preserved all rankings, or that a system will never need rebuilding;
+- claims of GDPR compliance, “no cookies,” or “no local storage.”
 
-### Pillar 5: International Expansion
-- Translation vs localization (cultural adaptation)
-- Multilingual SEO (hreflang, URL structures)
-- Performance at scale across locales
-- Content management across languages
-- Modern i18n frameworks and best practices
+## Proof Status
 
-### Pillar 6: High-Converting Websites
-- Above-the-fold value proposition
-- Designing for user intent (top/middle/bottom of funnel)
-- Speed + UX + Trust as the conversion formula
-- Iterative testing and refinement
+- The public repository demonstrates the site stack and implementation style, but this website currently stores its marketing copy, portfolio entries, and blog posts locally rather than fetching them from Sanity. Do not claim that this site itself is powered by Sanity.
+- Technology names, deliverables, and process descriptions are acceptable as capability claims when they match the actual engagement.
+- Portfolio metrics, testimonials, client logos, and case-study results must be treated as unverified until a source, client approval, and precise context are recorded.
+- The privacy policy and cookie copy describe the implementation in plain language but still require professional legal review before being treated as final legal text.
 
----
+## Voice
 
-## Key Opinions & Beliefs
+- Write in the first person: direct, calm, practical, and technically credible.
+- Make the work understandable to marketing and content leaders without talking down to developers.
+- Prefer concrete nouns and actions: schemas, blocks, redirects, previews, training, and handoff.
+- Keep one idea per section. Use short sentences and natural language.
+- Be candid about tradeoffs, especially Sanity vendor lock-in.
+- Avoid hype, forced urgency, generic growth language, fabricated specificity, and agency-style promises.
+- Preserve the personal About voice: the unglamorous implementation details are part of the value.
 
-- A website is an investment, not just a digital business card.
-- SEO is not a one-time setup; it's an ongoing process.
-- Speed is a feature, not a luxury.
-- "More pages" does not equal "more traffic" if quality is low.
-- Automated translation kills trust; localization requires human review.
-- Social media is rented land; your website is owned land.
-- Good UX is invisible; bad UX is the reason websites don't convert.
-- Traffic is great, but customers are better.
-- It's often easier to fix a leaky bucket than pour more water into it.
-- A website that looks good is a start; a website that makes money is the goal.
-- You have about 5 seconds to capture a visitor's attention.
-- People don't read websites; they scan them.
+## Calls to Action
 
----
+- **Primary:** “Talk about your site.” This opens a WhatsApp conversation. The surrounding copy should make clear that the next step is a conversation, not an instant quote, audit, or guaranteed project start.
+- **Secondary:** “Book a call.” This opens the scheduling route.
+- Use context-specific labels only when the destination genuinely differs, such as “Read the privacy policy” or “View project.”
+- Localized CTAs should sound native and keep the same intent rather than mirror the English word for word.
 
-## Recurring Frameworks & Analogies
+## Editorial Guardrails
 
-- **Rented Land vs Owned Land:** Social media = rented; website = owned.
-- **Leaky Bucket:** Fix conversion before increasing traffic.
-- **5-Second Rule:** Visitors decide in 5 seconds if they stay.
-- **The Hook-Problem-Solution-Proof-Close:** Ideal page structure.
-- **Outposts vs Headquarters:** Social = outposts; website = HQ.
-- **Digital Brochure vs Lead Machine:** A website should be the latter.
-
----
-
-## Content Style Guidelines
-
-- **Format:** Problem-solution structure with numbered lists and actionable fixes
-- **Tone:** Authoritative but approachable; speaks to business owners, not developers
-- **Length:** Blog posts are mid-length (800-1200 words), scannable with headers and bullets
-- **CTAs within content:** Links to related articles and services naturally woven in
-- **Avoids:** Vague buzzwords, overly technical jargon without explanation, fluff
-- **Uses:** Concrete numbers, checklists, real-world examples, rhetorical questions
-
----
-
-## Social Media Content Angles
-
-Use this section as a starting point for generating post ideas:
-
-1. **Myth-busting:** "SEO is a one-time setup" / "More pages = more traffic" / "Social media replaces websites"
-2. **Quick tips:** Conversion checklists, speed optimization tricks, CTA best practices
-3. **Before/after:** Case study snapshots showing metrics improvement
-4. **Hot takes:** Why pretty websites fail, why agencies add unnecessary overhead
-5. **Educational carousels:** Visual hierarchy, page structure frameworks, SEO basics
-6. **Client pain points:** "Your website takes 5 seconds to load" / "Your CTA says 'Submit'"
-7. **Behind the scenes:** Tech stack choices, development process, working remotely from Romania
-8. **Comparisons:** Custom dev vs template builders, website vs social-only presence
-9. **Statistics/data:** Conversion rates, bounce rates, mobile traffic percentages
-10. **Personal brand:** Direct partnership model, one-on-one collaboration, attention to detail
-
----
-
-## Sample Prompts for AI Content Generation
-
-Use this document as context, then prompt with variations like:
-
-- "Generate 10 LinkedIn post ideas that position Eduard as a CRO expert"
-- "Write 5 Instagram carousel scripts about common website mistakes"
-- "Create a Twitter/X thread about why small businesses need websites in 2026"
-- "Draft a newsletter intro about the ROI of speed optimization"
-- "Generate 3 short-form video scripts (60s) about SEO myths"
-- "Write a case study social post highlighting the e-commerce revenue lift project"
-- "Create 5 'hot take' posts that challenge common web development beliefs"
-- "Generate a week of daily social media posts mixing education and promotion"
+- Do not publish a number unless its source and context are documented.
+- Do not present estimates, simulations, or design intent as measured results.
+- Do not use absolute language such as “always,” “never breaks,” “guaranteed,” or “without any developer.”
+- Keep the four service pillars distinct. CRO and localization remain supporting capabilities.
+- Keep English, Romanian, and Spanish keys in parity. Romanian should read naturally rather than as an English calque; Spanish should use neutral international wording and correct accents.
+- When the offer changes, update this brief first, then reconcile interface copy and translations.

@@ -2,8 +2,9 @@ import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { getWhatsAppUrl } from "@/lib/utils";
-import { Code2, Compass, MessageCircle, Zap } from "lucide-react";
+import { Calendar, Code2, MessageCircle, Zap } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 
 // Icons paired to the heroTrust items, in order:
@@ -68,10 +69,10 @@ export default async function HeroSection() {
               variant="outline"
               className="w-full sm:w-auto"
             >
-              <a href="#how-i-work">
-                <Compass className="size-5" />
+              <Link href="/schedule">
+                <Calendar className="size-5" />
                 {t("seeHowIWork")}
-              </a>
+              </Link>
             </Button>
           </AnimatedContainer>
 

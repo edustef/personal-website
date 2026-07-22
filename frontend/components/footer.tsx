@@ -59,7 +59,9 @@ export async function Footer({ className, locale }: FooterProps) {
             </div>
 
             <div className="flex flex-col items-start gap-4">
-              <h3 className="font-semibold text-foreground">Legal</h3>
+              <h3 className="font-semibold text-foreground">
+                {t("legal.title")}
+              </h3>
               <nav className="flex flex-col items-start gap-3">
                 <Link
                   href="/privacy-policy"
@@ -67,7 +69,9 @@ export async function Footer({ className, locale }: FooterProps) {
                 >
                   {t("privacyPolicy")}
                 </Link>
-                <ManageCookiesButton>Manage Cookies</ManageCookiesButton>
+                <ManageCookiesButton>
+                  {t("legal.manageCookies")}
+                </ManageCookiesButton>
               </nav>
             </div>
           </div>
