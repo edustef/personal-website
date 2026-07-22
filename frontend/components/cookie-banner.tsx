@@ -3,7 +3,9 @@
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { Link } from "@/i18n/navigation";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import posthog from "posthog-js";
 import { useEffect, useState } from "react";
 
@@ -12,6 +14,7 @@ export const SHOW_COOKIE_BANNER_EVENT = "show-cookie-banner";
 const COOKIE_CONSENT_KEY = "cookie-consent-choice-made";
 
 export function CookieBanner() {
+  const t = useTranslations("cookieBanner");
   const [isVisible, setIsVisible] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [trackingConsent, setTrackingConsent] = useState(false);
@@ -60,6 +63,16 @@ export function CookieBanner() {
     setIsVisible(false);
   };
 
+  const handleRejectOptional = () => {
+    posthog.opt_out_capturing();
+    localStorage.setItem(COOKIE_CONSENT_KEY, "true");
+    window.dispatchEvent(
+      new CustomEvent(COOKIE_CONSENT_EVENT, { detail: { tracking: false } })
+    );
+    setTrackingConsent(false);
+    setIsVisible(false);
+  };
+
   const handleSaveSettings = () => {
     if (trackingConsent) {
       posthog.opt_in_capturing();
@@ -94,7 +107,7 @@ export function CookieBanner() {
                 >
                   <div className="flex items-start justify-between">
                     <div className="space-y-4 w-full">
-                      {/* Necessary Cookies */}
+                      {/* Essential storage */}
                       <div className="flex flex-col gap-2">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
@@ -103,19 +116,16 @@ export function CookieBanner() {
                               htmlFor="necessary"
                               className="text-sm font-semibold text-foreground/60"
                             >
-                              Necessary Cookies
+                              {t("essential.title")}
                             </Label>
                           </div>
                         </div>
                         <p className="text-xs text-muted-foreground leading-relaxed">
-                          Necessary cookies enable core functionalities. The
-                          website cannot function properly without these
-                          cookies. They can only be disabled by changing your
-                          browser settings.
+                          {t("essential.description")}
                         </p>
                       </div>
 
-                      {/* Analytics & Marketing */}
+                      {/* Optional analytics and marketing */}
                       <div className="flex flex-col gap-2">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
@@ -129,14 +139,12 @@ export function CookieBanner() {
                               htmlFor="tracking"
                               className="text-sm font-semibold text-primary"
                             >
-                              Analytics & Marketing Cookies
+                              {t("optional.title")}
                             </Label>
                           </div>
                         </div>
                         <p className="text-xs text-muted-foreground leading-relaxed">
-                          Analytics & Marketing cookies help us to improve our
-                          website by collecting and reporting information on how
-                          you use it.
+                          {t("optional.description")}
                         </p>
                       </div>
                     </div>
@@ -147,18 +155,16 @@ export function CookieBanner() {
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div className="space-y-2 max-w-2xl">
                   <h3 className="text-lg font-bold tracking-tight">
-                    This website uses cookies
+                    {t("title")}
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Some cookies are necessary and enable core functionalities
-                    such as security and accessibility. For more information on
-                    how these cookies work please see our{" "}
-                    <a
-                      href="/privacy"
+                    {t("description")}{" "}
+                    <Link
+                      href="/privacy-policy"
                       className="underline underline-offset-4 hover:text-foreground transition-colors"
                     >
-                      Data Protection Policy
-                    </a>
+                      {t("privacyLink")}
+                    </Link>
                     .
                   </p>
                 </div>
@@ -171,13 +177,20 @@ export function CookieBanner() {
                         onClick={() => setIsExpanded(true)}
                         className="border-border text-foreground hover:bg-muted"
                       >
-                        Manage cookies settings
+                        {t("manage")}
+                      </Button>
+                      <Button
+                        variant="outline"
+                        onClick={handleRejectOptional}
+                        className="border-border text-foreground hover:bg-muted"
+                      >
+                        {t("reject")}
                       </Button>
                       <Button
                         onClick={handleAcceptAll}
                         className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8"
                       >
-                        Accept
+                        {t("accept")}
                       </Button>
                     </>
                   ) : (
@@ -187,13 +200,13 @@ export function CookieBanner() {
                         onClick={() => setIsExpanded(false)}
                         className="border-border text-foreground hover:bg-muted"
                       >
-                        Close cookies settings
+                        {t("close")}
                       </Button>
                       <Button
                         onClick={handleSaveSettings}
                         className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8"
                       >
-                        Save changes
+                        {t("save")}
                       </Button>
                     </>
                   )}

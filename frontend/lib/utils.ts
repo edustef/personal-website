@@ -12,7 +12,7 @@ export type CommonProps = {
 
 export const productionHost = "https://eduardstefan.dev";
 
-const DEFAULT_WHATSAPP_NUMBER = "40775378525";
+const DEFAULT_WHATSAPP_NUMBER = "40770378214";
 
 export function getWhatsAppUrl(phone: string | undefined): string;
 export function getWhatsAppUrl(
