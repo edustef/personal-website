@@ -8,46 +8,31 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    _id: "svc-2",
-    titleKey: "svc-2.title",
-    descriptionKey: "svc-2.description",
-    icon: "rocket",
-    featured: true,
-  },
-  {
     _id: "svc-1",
     titleKey: "svc-1.title",
     descriptionKey: "svc-1.description",
-    icon: "headphones",
+    icon: "layers",
     featured: true,
   },
-
+  {
+    _id: "svc-2",
+    titleKey: "svc-2.title",
+    descriptionKey: "svc-2.description",
+    icon: "palette",
+    featured: true,
+  },
   {
     _id: "svc-3",
     titleKey: "svc-3.title",
     descriptionKey: "svc-3.description",
-    icon: "globe",
+    icon: "rocket",
     featured: false,
   },
   {
     _id: "svc-4",
     titleKey: "svc-4.title",
     descriptionKey: "svc-4.description",
-    icon: "zap",
-    featured: false,
-  },
-  {
-    _id: "svc-5",
-    titleKey: "svc-5.title",
-    descriptionKey: "svc-5.description",
-    icon: "layers",
-    featured: false,
-  },
-  {
-    _id: "svc-6",
-    titleKey: "svc-6.title",
-    descriptionKey: "svc-6.description",
-    icon: "palette",
+    icon: "headphones",
     featured: false,
   },
 ];

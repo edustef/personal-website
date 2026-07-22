@@ -154,77 +154,100 @@
   },
   "privacyPolicy": {
     "title": "Privacy Policy",
-    "description": "Our privacy policy explains how we collect, use, and protect your personal data in compliance with GDPR.",
-    "lastUpdated": "Last updated: January 2025",
+    "description": "A plain-language summary of how this site handles contact details, browser storage, analytics, and marketing tools.",
+    "lastUpdated": "Last updated: July 2026",
+    "reviewNotice": "This page describes the current implementation in plain language. It is not legal advice and still needs review by a qualified privacy professional before it is treated as final policy text.",
     "sections": {
       "introduction": {
         "title": "Introduction",
-        "content": "This Privacy Policy explains how we collect, use, and protect your personal data when you use our website and services. We are committed to protecting your privacy and ensuring compliance with the General Data Protection Regulation (GDPR) and other applicable data protection laws."
+        "content": "This page explains what information the site handles when you browse, change privacy settings, or choose to get in touch. It avoids making a blanket compliance claim."
       },
       "dataController": {
         "title": "Data Controller",
-        "content": "The data controller responsible for processing your personal data is the owner of this website. If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us using the information provided in the Contact section."
+        "content": "Eduard Sergiu Stefan operates this website and is the contact for the personal data described here. Use the email address in the Contact section for privacy questions or requests."
       },
       "dataCollected": {
         "title": "Data We Collect",
-        "intro": "We collect the following types of personal data:",
+        "intro": "The site may handle the following information:",
         "items": {
-          "email": "Email address (when you submit a project inquiry form)",
-          "projectDetails": "Project-related information (budget, timeline, features, business context, etc.)",
-          "technicalInfo": "Technical information automatically collected (IP address, browser type, device information) through our analytics service"
+          "email": "Contact details you choose to provide, such as your name and email address",
+          "projectDetails": "Information you choose to share about your site, team, or project",
+          "technicalInfo": "Technical and usage information processed by hosting and analytics tools, which may include IP address, browser, device, pages viewed, and interactions"
         }
       },
       "purpose": {
-        "title": "Purpose of Processing",
-        "intro": "We process your personal data for the following purposes:",
+        "title": "How the Information Is Used",
+        "intro": "Information is used for these purposes:",
         "items": {
-          "communication": "To communicate with you regarding your project inquiry and provide project estimates",
-          "projectEstimate": "To understand your project requirements and provide personalized recommendations",
-          "analytics": "To analyze website usage and improve our services (using cookieless analytics)"
+          "communication": "To reply when you choose to contact or schedule with Eduard",
+          "projectEstimate": "To understand the context you share and prepare a relevant response",
+          "analytics": "To understand site usage and improve the experience, with optional analytics and marketing controlled through the privacy settings"
         }
       },
       "legalBasis": {
-        "title": "Legal Basis",
-        "content": "We process your personal data based on your explicit consent when you submit the project inquiry form. For analytics purposes, we use cookieless tracking that does not require consent as it uses privacy-preserving server-side hashing."
+        "title": "Choices and Legal Basis",
+        "content": "Contact information is used to respond to a request you choose to make. PostHog stays in cookieless mode when optional tracking is declined; opted-in PostHog tracking and Meta Pixel run only after you accept them. The applicable legal bases and final wording must be confirmed during professional legal review."
       },
       "dataRetention": {
         "title": "Data Retention",
-        "content": "We retain your personal data only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, or as required by law. Project inquiry data is typically retained for up to 2 years unless you request deletion earlier."
+        "content": "This site does not currently publish a verified fixed retention period for every service. Contact records and vendor retention settings should be reviewed, documented, and added here before this policy is treated as final. You can ask for your information to be deleted."
       },
       "yourRights": {
         "title": "Your Rights",
-        "intro": "Under GDPR, you have the following rights regarding your personal data:",
+        "intro": "Depending on the law that applies, you may have rights such as:",
         "items": {
-          "access": "Right of access: You can request a copy of the personal data we hold about you",
-          "rectification": "Right to rectification: You can request correction of inaccurate or incomplete data",
-          "erasure": "Right to erasure: You can request deletion of your personal data",
-          "restriction": "Right to restriction of processing: You can request that we limit how we use your data",
-          "dataPortability": "Right to data portability: You can request your data in a structured, machine-readable format",
-          "object": "Right to object: You can object to processing of your personal data"
+          "access": "Accessing the personal data held about you",
+          "rectification": "Correcting inaccurate or incomplete data",
+          "erasure": "Asking for your personal data to be deleted",
+          "restriction": "Asking for limits on how your data is used",
+          "dataPortability": "Receiving eligible data in a portable format",
+          "object": "Objecting to certain uses of your personal data"
         },
-        "contact": "To exercise any of these rights, please contact us at contact@eduardstefan.dev or through the contact form on our website."
+        "contact": "To make a privacy request, email contact@eduardstefan.dev."
       },
       "analytics": {
-        "title": "Analytics",
-        "content": "We use PostHog for website analytics with cookieless tracking enabled. This means we do not use cookies or local storage for tracking. Instead, we use privacy-preserving server-side hashing that does not store personal data in your browser. This approach complies with GDPR without requiring a cookie consent banner."
+        "title": "Browser Storage, Analytics, and Marketing",
+        "content": "The site stores your privacy choice in local storage. PostHog is configured to use cookieless mode when optional tracking is declined. If you accept optional tracking, PostHog may use browser storage or cookies, and Meta Pixel may load to measure visits and contact actions. You can change this choice from Manage cookies in the footer. Other site features, such as theme or scheduling preferences, may also use browser storage or a session cookie."
       },
       "dataSecurity": {
         "title": "Data Security",
-        "content": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. Your data is stored securely using industry-standard encryption and access controls."
+        "content": "Information is handled through the site's hosting, analytics, scheduling, and communication services. Access should be limited to what is needed, but no online service can promise complete security. Vendor configuration and access controls still need to be checked as part of the legal review."
       },
       "changes": {
         "title": "Changes to This Policy",
-        "content": "We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the \"Last updated\" date."
+        "content": "This page may change when the site's forms, storage, analytics, marketing tools, or vendors change. The last-updated date will be revised with material edits."
       },
       "contact": {
-        "title": "Contact Us",
-        "content": "If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us through the contact form on our website or by email at contact@eduardstefan.dev. You can also request data access or deletion by emailing us with your request."
+        "title": "Contact",
+        "content": "For questions about this page, or to request access, correction, or deletion, email contact@eduardstefan.dev."
       }
     }
   },
+  "cookieBanner": {
+    "title": "Your privacy choices",
+    "description": "This site stores your choice in this browser. Optional analytics and marketing run only with your permission. Read the",
+    "privacyLink": "Privacy Policy",
+    "essential": {
+      "title": "Essential storage",
+      "description": "Keeps your privacy choice and basic site preferences. It cannot be switched off in this panel."
+    },
+    "optional": {
+      "title": "Optional analytics and marketing",
+      "description": "Allows PostHog analytics and Meta Pixel to measure visits and contact actions. PostHog uses cookieless mode when this is off."
+    },
+    "manage": "Manage settings",
+    "reject": "Reject optional",
+    "accept": "Accept optional",
+    "close": "Close settings",
+    "save": "Save choices"
+  },
   "footer": {
     "privacyPolicy": "Privacy Policy",
-    "text": "@ {currentYear} Eduard Sergiu Stefan. Built with Next.js.",
+    "text": "© {currentYear} Eduard Sergiu Stefan. Built with Next.js.",
+    "legal": {
+      "title": "Legal",
+      "manageCookies": "Manage cookies"
+    },
     "menu": {
       "title": "Menu",
       "services": "Services",
@@ -242,9 +265,9 @@
     "contactMe": "Message me",
     "scheduleCall": "Book a call",
     "contactDirectly": "Message me",
-    "letsChat": "Let's chat",
-    "seeHowIWork": "See how I work",
-    "orBookTime": "Prefer to schedule? Book a time",
+    "letsChat": "Talk about your site",
+    "seeHowIWork": "Book a call",
+    "orBookTime": "Book a call",
     "workedWith": "What I work with",
     "heroTrust": [
       "Publish without a dev queue",
@@ -266,23 +289,23 @@
     "aboutMe": {
       "label": "Who I am",
       "headline": "About Me",
-      "subtitle": "Years of building content systems teams don't outgrow",
+      "subtitle": "Content systems teams can keep using as they grow",
       "description": "I'm a front-end engineer who builds marketing sites and content systems for companies that outgrew their old setup. I care about two things: a CMS your team can run without me, and a front-end that stays fast and on-brand as it grows. I've built design systems, reusable component libraries, and Sanity Studios that marketing teams actually like using. The unglamorous parts, like schemas, migrations, and handoff docs, are what decide whether a site still works in two years. So I sweat them.",
-      "cta": "Let's talk"
+      "cta": "Talk about your site"
     },
     "contact": {
       "label": "Get in touch",
       "headline": "Site can't scale? Team stuck waiting on devs? Let's fix that.",
       "subtitle": "Tell me where your CMS or site is holding you back. I'll tell you how I'd fix it.",
-      "ctaButton": "Start a project",
-      "ctaButtonSecondary": "Ask a quick question",
-      "whatsappLabel": "Quick question? Message me"
+      "ctaButton": "Talk about your site",
+      "ctaButtonSecondary": "Book a call",
+      "whatsappLabel": "Talk about your site"
     }
   },
   "profile": {
     "name": "Eduard Sergiu Stefan",
     "email": "contact@eduardstefan.dev",
-    "phone": "+40775378525",
+    "phone": "+40770378214",
     "about": "About me",
     "location": "Oradea, Romania",
     "workPreference": "Remote",
@@ -290,10 +313,6 @@
       {
         "name": "LinkedIn",
         "url": "https://www.linkedin.com/in/eduard-stefan-089371100/"
-      },
-      {
-        "name": "Instagram",
-        "url": "https://instagram.com"
       },
       {
         "name": "GitHub",
@@ -306,7 +325,7 @@
     "description": "Sanity CMS and design systems for teams that ship.",
     "header": {
       "cta": {
-        "text": "Let's chat",
+        "text": "Talk about your site",
         "href": "/start-your-project"
       },
       "homeButtonLabel": "Home",
@@ -325,7 +344,7 @@
     },
     "seo": {
       "title": "Eduard Stefan | Sanity CMS & Design Systems",
-      "description": "I build marketing sites on Sanity with a design system your team can run. CMS migrations, reusable components, UX and CRO."
+      "description": "I build marketing sites on Sanity with content models, reusable page blocks, controlled migrations, and a clear handoff."
     }
   },
   "skills": {
@@ -408,38 +427,30 @@
   "services": {
     "label": "What I do",
     "headline": "From content chaos to a system that scales",
-    "subtitle": "I build the CMS, the design system, and the front-end. Your team takes it from there.",
-    "cta": "Let's talk about your stack",
+    "subtitle": "I connect content models, reusable page blocks, migration, and handoff into one working system.",
+    "cta": "Talk about your site",
     "svc-1": {
-      "title": "Built to hand off",
-      "description": "I don't disappear at launch. You get clear docs, trained editors, and a system your team can run without me. Nothing tied to me, no mystery code."
+      "title": "Content models built around real workflows",
+      "description": "Sanity schemas are shaped around the pages your team publishes, who edits them, and how content moves from draft to live. Localization is planned into the model when the project needs it."
     },
     "svc-2": {
-      "title": "A Sanity CMS built to last",
-      "description": "Schemas your editors actually understand. Structured content that won't break when the site grows. A Studio your team likes opening, built to scale instead of getting rebuilt in a year."
+      "title": "Reusable page blocks that stay on brand",
+      "description": "A component library with deliberate layout and content guardrails. Editors can assemble new pages from reusable blocks, with UX and conversion thinking built into the patterns."
     },
     "svc-3": {
-      "title": "Marketing sites that scale",
-      "description": "Multi-language, fast, and SEO-solid from the first commit. Built so the tenth landing page is as easy to ship as the first."
+      "title": "Controlled migration and launch",
+      "description": "Content is mapped, migrated, and checked in stages. Redirects, launch testing, and an agreed rollback plan reduce risk without promising unchanged rankings."
     },
     "svc-4": {
-      "title": "UX and CRO that converts",
-      "description": "Pages built around how people actually decide. I bake conversion thinking into the layout from the start instead of bolting it on later."
-    },
-    "svc-5": {
-      "title": "Design system and reusable blocks",
-      "description": "A real component library mapped to your brand. Marketing builds new pages from blocks that already look right, so nothing drifts off-brand."
-    },
-    "svc-6": {
-      "title": "Clean migrations",
-      "description": "Moving off WordPress, Contentful, or a pile of hardcoded pages? I move the content carefully, map the redirects, and monitor search visibility through launch."
+      "title": "A handoff the team can own",
+      "description": "Editors and developers get training, documentation, and access to the code and content they need. I can stay involved, but the setup is designed not to depend on me."
     }
   },
   "howIWork": {
     "label": "Process",
     "headline": "How I work",
     "subtitle": "No surprises. Clear progress until your team owns it.",
-    "cta": "Let's get started",
+    "cta": "Talk about your site",
     "planning": {
       "title": "We map your content and your team",
       "paragraphs": [
@@ -578,7 +589,7 @@
     "label": "FAQ",
     "headline": "Questions you might have",
     "subtitle": "The stuff teams usually ask before we start.",
-    "cta": "More questions? Let's talk",
+    "cta": "Talk about your site",
     "faq-1": {
       "question": "How long does a project take?",
       "answer": "Depends on scope. A CMS and design-system build usually runs 3-5 weeks. A migration with a full marketing site is 6-10 weeks. I'll give you a real timeline after a call, not a guess."
@@ -623,13 +634,13 @@
     "label": "Portfolio",
     "headline": "Featured Work",
     "subtitle": "Wild ideas welcome. I'm stubborn enough to build them right.",
-    "cta": "Want Similar Results?",
+    "cta": "Talk about your site",
     "viewProject": "View Project",
     "viewLive": "View Live Site",
     "comingSoon": "Coming Soon",
     "comingSoonTitle": "Your Project?",
     "comingSoonSubtitle": "This could be your success story",
-    "comingSoonCta": "Let's Talk",
+    "comingSoonCta": "Talk about your site",
     "moreComing": "More coming soon...",
     "techStack": "Tech Stack",
     "backToPortfolio": "Back to Portfolio",

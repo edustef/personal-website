@@ -153,78 +153,101 @@
     }
   },
   "privacyPolicy": {
-    "title": "Politica de Confidențialitate",
-    "description": "Politica noastră de confidențialitate explică modul în care colectăm, folosim și protejăm datele dvs. personale în conformitate cu GDPR.",
-    "lastUpdated": "Ultima actualizare: Ianuarie 2025",
+    "title": "Politica de confidențialitate",
+    "description": "O explicație clară despre cum gestionează acest site datele de contact, stocarea în browser, instrumentele de analiză și marketing.",
+    "lastUpdated": "Ultima actualizare: iulie 2026",
+    "reviewNotice": "Această pagină descrie implementarea actuală într-un limbaj accesibil. Nu reprezintă consultanță juridică și trebuie verificată de un specialist în protecția datelor înainte de a fi considerată text juridic final.",
     "sections": {
       "introduction": {
         "title": "Introducere",
-        "content": "Această Politică de Confidențialitate explică modul în care colectăm, folosim și protejăm datele dvs. personale când utilizați site-ul nostru web și serviciile. Suntem angajați să vă protejăm confidențialitatea și să asigurăm conformitatea cu Regulamentul General privind Protecția Datelor (GDPR) și alte legi aplicabile privind protecția datelor."
+        "content": "Această pagină explică ce informații gestionează site-ul când îl vizitezi, îți schimbi opțiunile de confidențialitate sau alegi să iei legătura cu Eduard. Nu pretinde în mod general că site-ul respectă toate cerințele legale."
       },
       "dataController": {
-        "title": "Operator de Date",
-        "content": "Operatorul de date responsabil pentru prelucrarea datelor dvs. personale este proprietarul acestui site web. Dacă aveți întrebări despre această Politică de Confidențialitate sau doriți să vă exercitați drepturile, vă rugăm să ne contactați folosind informațiile furnizate în secțiunea Contact."
+        "title": "Operatorul de date",
+        "content": "Eduard Sergiu Stefan administrează acest site și este persoana de contact pentru datele personale descrise aici. Pentru întrebări sau solicitări privind confidențialitatea, folosește adresa din secțiunea Contact."
       },
       "dataCollected": {
-        "title": "Date pe care le Colectăm",
-        "intro": "Colectăm următoarele tipuri de date personale:",
+        "title": "Datele gestionate",
+        "intro": "Site-ul poate gestiona următoarele informații:",
         "items": {
-          "email": "Adresă de e-mail (când trimiteți un formular de cerere de proiect)",
-          "projectDetails": "Informații legate de proiect (buget, termen, caracteristici, context de afaceri, etc.)",
-          "technicalInfo": "Informații tehnice colectate automat (adresă IP, tip de browser, informații despre dispozitiv) prin serviciul nostru de analiză"
+          "email": "Datele de contact pe care alegi să le trimiți, cum ar fi numele și adresa de e-mail",
+          "projectDetails": "Informațiile pe care alegi să le oferi despre site, echipă sau proiect",
+          "technicalInfo": "Date tehnice și de utilizare prelucrate de serviciile de găzduire și analiză, care pot include adresa IP, browserul, dispozitivul, paginile vizitate și interacțiunile"
         }
       },
       "purpose": {
-        "title": "Scopul Prelucrării",
-        "intro": "Prelucrăm datele dvs. personale în următoarele scopuri:",
+        "title": "Cum sunt folosite informațiile",
+        "intro": "Informațiile sunt folosite în următoarele scopuri:",
         "items": {
-          "communication": "Pentru a comunica cu dvs. cu privire la cererea dvs. de proiect și pentru a furniza estimări de proiect",
-          "projectEstimate": "Pentru a înțelege cerințele proiectului dvs. și pentru a furniza recomandări personalizate",
-          "analytics": "Pentru a analiza utilizarea site-ului web și pentru a îmbunătăți serviciile noastre (folosind analiză fără cookie-uri)"
+          "communication": "Pentru a răspunde când alegi să trimiți un mesaj sau să programezi o discuție",
+          "projectEstimate": "Pentru a înțelege contextul oferit de tine și a pregăti un răspuns relevant",
+          "analytics": "Pentru a înțelege cum este folosit site-ul și a îmbunătăți experiența, cu opțiunile de analiză și marketing controlate din setările de confidențialitate"
         }
       },
       "legalBasis": {
-        "title": "Baza Legală",
-        "content": "Prelucrăm datele dvs. personale pe baza consimțământului dvs. explicit când trimiteți formularul de cerere de proiect. În scopuri de analiză, folosim urmărirea fără cookie-uri care nu necesită consimțământ, deoarece folosește hash-uri care păstrează confidențialitatea pe partea serverului."
+        "title": "Opțiuni și temei juridic",
+        "content": "Datele de contact sunt folosite pentru a răspunde unei solicitări pe care alegi să o trimiți. PostHog rămâne în modul fără cookie-uri când refuzi monitorizarea opțională; monitorizarea PostHog cu acord și Meta Pixel rulează doar după acceptare. Temeiurile juridice aplicabile și formularea finală trebuie confirmate în cadrul unei verificări juridice profesioniste."
       },
       "dataRetention": {
-        "title": "Păstrarea Datelor",
-        "content": "Păstrăm datele dvs. personale doar atât timp cât este necesar pentru a îndeplini scopurile descrise în această Politică de Confidențialitate sau conform cerințelor legii. Datele cererii de proiect sunt de obicei păstrate până la 2 ani, cu excepția cazului în care solicitați ștergerea mai devreme."
+        "title": "Păstrarea datelor",
+        "content": "Site-ul nu publică în prezent o perioadă fixă și verificată de păstrare pentru fiecare serviciu. Înregistrările de contact și setările de păstrare ale furnizorilor trebuie verificate, documentate și adăugate aici înainte ca politica să fie considerată finală. Poți solicita ștergerea informațiilor tale."
       },
       "yourRights": {
-        "title": "Drepturile Dvs.",
-        "intro": "Conform GDPR, aveți următoarele drepturi cu privire la datele dvs. personale:",
+        "title": "Drepturile tale",
+        "intro": "În funcție de legea aplicabilă, poți avea drepturi precum:",
         "items": {
-          "access": "Dreptul de acces: Puteți solicita o copie a datelor personale pe care le deținem despre dvs.",
-          "rectification": "Dreptul la rectificare: Puteți solicita corectarea datelor inexacte sau incomplete",
-          "erasure": "Dreptul la ștergere: Puteți solicita ștergerea datelor dvs. personale",
-          "restriction": "Dreptul la restricționarea prelucrării: Puteți solicita să limităm modul în care folosim datele dvs.",
-          "dataPortability": "Dreptul la portabilitatea datelor: Puteți solicita datele dvs. într-un format structurat, ușor de citit de mașină",
-          "object": "Dreptul de opoziție: Vă puteți opune prelucrării datelor dvs. personale"
+          "access": "Accesul la datele personale păstrate despre tine",
+          "rectification": "Corectarea datelor inexacte sau incomplete",
+          "erasure": "Ștergerea datelor tale personale",
+          "restriction": "Limitarea modului în care sunt folosite datele tale",
+          "dataPortability": "Primirea datelor eligibile într-un format portabil",
+          "object": "Opoziția față de anumite utilizări ale datelor tale personale"
         },
-        "contact": "Pentru a exercita oricare dintre aceste drepturi, vă rugăm să ne contactați la contact@eduardstefan.dev sau prin formularul de contact de pe site-ul nostru web."
+        "contact": "Pentru o solicitare privind confidențialitatea, scrie la contact@eduardstefan.dev."
       },
       "analytics": {
-        "title": "Analiză",
-        "content": "Folosim PostHog pentru analiza site-ului web cu urmărire fără cookie-uri activată. Aceasta înseamnă că nu folosim cookie-uri sau stocare locală pentru urmărire. În schimb, folosim hash-uri care păstrează confidențialitatea pe partea serverului care nu stochează date personale în browser-ul dvs. Această abordare este conformă cu GDPR fără a necesita un banner de consimțământ pentru cookie-uri."
+        "title": "Stocare în browser, analiză și marketing",
+        "content": "Site-ul salvează în stocarea locală a browserului opțiunea ta de confidențialitate. PostHog este configurat să folosească modul fără cookie-uri când refuzi monitorizarea opțională. Dacă o accepți, PostHog poate folosi stocarea browserului sau cookie-uri, iar Meta Pixel poate fi încărcat pentru a măsura vizitele și acțiunile de contact. Poți schimba alegerea din opțiunea Gestionează cookie-urile din subsol. Alte funcții, precum tema sau programarea, pot folosi stocarea browserului ori un cookie de sesiune."
       },
       "dataSecurity": {
-        "title": "Securitatea Datelor",
-        "content": "Implementăm măsuri tehnice și organizatorice adecvate pentru a vă proteja datele personale împotriva accesului neautorizat, alterării, dezvăluirii sau distrugerii. Datele dvs. sunt stocate în siguranță folosind criptare standard din industrie și controale de acces."
+        "title": "Securitatea datelor",
+        "content": "Informațiile sunt gestionate prin serviciile de găzduire, analiză, programare și comunicare ale site-ului. Accesul ar trebui limitat la ceea ce este necesar, însă niciun serviciu online nu poate promite securitate completă. Configurarea furnizorilor și drepturile de acces trebuie verificate în cadrul reviziei juridice."
       },
       "changes": {
-        "title": "Modificări la Această Politică",
-        "content": "Putem actualiza această Politică de Confidențialitate din când în când. Vă vom notifica despre orice modificări materiale prin publicarea noii Politici de Confidențialitate pe această pagină și actualizarea datei \"Ultima actualizare\"."
+        "title": "Modificări ale politicii",
+        "content": "Această pagină poate fi actualizată când se schimbă formularele, stocarea, instrumentele de analiză sau marketing ori furnizorii site-ului. Data ultimei actualizări va fi schimbată odată cu modificările importante."
       },
       "contact": {
-        "title": "Contactați-ne",
-        "content": "Dacă aveți întrebări despre această Politică de Confidențialitate sau doriți să vă exercitați drepturile, vă rugăm să ne contactați prin formularul de contact de pe site-ul nostru web sau prin e-mail la contact@eduardstefan.dev. De asemenea, puteți solicita accesul sau ștergerea datelor trimitându-ne un e-mail cu solicitarea dvs."
+        "title": "Contact",
+        "content": "Pentru întrebări despre această pagină sau pentru a solicita accesul, corectarea ori ștergerea datelor, scrie la contact@eduardstefan.dev."
       }
     }
   },
+  "cookieBanner": {
+    "title": "Opțiunile tale de confidențialitate",
+    "description": "Site-ul salvează alegerea în acest browser. Analiza și marketingul opțional rulează doar cu acordul tău. Citește",
+    "privacyLink": "Politica de confidențialitate",
+    "essential": {
+      "title": "Stocare esențială",
+      "description": "Păstrează alegerea de confidențialitate și preferințele de bază ale site-ului. Nu poate fi dezactivată din acest panou."
+    },
+    "optional": {
+      "title": "Analiză și marketing opțional",
+      "description": "Permite PostHog și Meta Pixel să măsoare vizitele și acțiunile de contact. Când opțiunea este dezactivată, PostHog folosește modul fără cookie-uri."
+    },
+    "manage": "Gestionează setările",
+    "reject": "Refuză opționalele",
+    "accept": "Acceptă opționalele",
+    "close": "Închide setările",
+    "save": "Salvează opțiunile"
+  },
   "footer": {
-    "privacyPolicy": "Politica de Confidențialitate",
-    "text": "@ {currentYear} Eduard Sergiu Ștefan. Realizat cu Next.js.",
+    "privacyPolicy": "Politica de confidențialitate",
+    "text": "© {currentYear} Eduard Sergiu Ștefan. Realizat cu Next.js.",
+    "legal": {
+      "title": "Informații legale",
+      "manageCookies": "Gestionează cookie-urile"
+    },
     "menu": {
       "title": "Meniu",
       "services": "Servicii",
@@ -233,28 +256,28 @@
     }
   },
   "home": {
-    "headline": "Publică pagini pe brand <strong>la viteza marketingului</strong>.",
-    "tagline": "Construiesc site-uri de marketing pe Sanity, cu un design system adevărat și blocuri reutilizabile. Echipa ta publică pagini noi fără să depindă de programul unui developer.",
+    "headline": "Publică pagini aliniate cu brandul <strong>în ritmul echipei de marketing</strong>.",
+    "tagline": "Construiesc site-uri de marketing pe Sanity, cu un sistem de design coerent și blocuri reutilizabile. Echipa ta poate publica pagini noi fără să aștepte după dezvoltatori.",
     "aboutMeDescription": "Construiesc sisteme de conținut și site-uri de marketing pe care echipele le pot gestiona singure.",
-    "announcementLabel": "Sanity CMS și design systems pentru <strong>echipe care livrează</strong>",
+    "announcementLabel": "CMS-uri Sanity și sisteme de design pentru <strong>echipe care publică des</strong>",
     "resumeButtonLabel": "Vezi CV-ul meu",
     "findMeOnLabel": "Găsește-mă pe",
     "contactMe": "Scrie-mi",
-    "scheduleCall": "Rezervă un apel",
+    "scheduleCall": "Programează o discuție",
     "contactDirectly": "Scrie-mi",
-    "letsChat": "Hai să vorbim",
-    "seeHowIWork": "Vezi cum lucrez",
-    "orBookTime": "Preferi să programezi? Rezervă o oră",
+    "letsChat": "Hai să vorbim despre site-ul tău",
+    "seeHowIWork": "Programează o discuție",
+    "orBookTime": "Programează o discuție",
     "workedWith": "Cu ce lucrez",
     "heroTrust": [
-      "Publici fără să aștepți un dev",
+      "Publici fără să aștepți după dezvoltatori",
       "Codul e al tău",
       "Fără obligații, doar o discuție"
     ],
     "tools": {
       "label": "Tehnologii",
-      "headline": "Instrumente și Tehnologii",
-      "subtitle": "Sanity, Next.js, TypeScript și orice cere stack-ul tău"
+      "headline": "Instrumente și tehnologii",
+      "subtitle": "Sanity, Next.js, TypeScript și ce mai cere proiectul tău"
     },
     "ctaButtons": [
       {
@@ -265,24 +288,24 @@
     ],
     "aboutMe": {
       "label": "Cine sunt",
-      "headline": "Despre Mine",
-      "subtitle": "Ani de zile construind sisteme de conținut pe care echipele nu le depășesc",
-      "description": "Sunt un dezvoltator front-end care construiește site-uri de marketing și sisteme de conținut pentru companii care au depășit setup-ul vechi. Țin la două lucruri: un CMS pe care echipa ta îl poate gestiona fără mine și un front-end care rămâne rapid și pe brand pe măsură ce crește. Am construit design systems, librării de componente reutilizabile și Sanity Studios pe care echipele de marketing chiar le folosesc cu plăcere. Părțile mai puțin spectaculoase, cum ar fi schemele, migrările și documentația de predare, sunt cele care decid dacă un site mai funcționează peste doi ani. De aceea le tratez cu atenție.",
-      "cta": "Hai să vorbim"
+      "headline": "Despre mine",
+      "subtitle": "Sisteme de conținut pe care echipele le pot folosi și când cresc",
+      "description": "Sunt dezvoltator de interfețe web și construiesc site-uri de marketing și sisteme de conținut pentru companii care și-au depășit soluția actuală. Mă preocupă două lucruri: un CMS pe care echipa ta îl poate gestiona fără mine și o interfață care rămâne rapidă și coerentă cu brandul pe măsură ce site-ul crește. Am construit sisteme de design, biblioteci de componente reutilizabile și spații de lucru Sanity gândite pentru echipele de marketing. Părțile mai puțin spectaculoase — schemele, migrările și documentația de predare — sunt cele care decid dacă un site va funcționa bine și peste doi ani. De aceea le tratez cu atenție.",
+      "cta": "Hai să vorbim despre site-ul tău"
     },
     "contact": {
       "label": "Ia legătura",
-      "headline": "Site-ul nu scalează? Echipa stă după programatori? Hai să rezolvăm.",
+      "headline": "Site-ul nu mai ține pasul? Echipa așteaptă după dezvoltatori? Hai să rezolvăm.",
       "subtitle": "Spune-mi unde te încurcă CMS-ul sau site-ul. Îți spun cum aș rezolva.",
-      "ctaButton": "Începe un proiect",
-      "ctaButtonSecondary": "Pune o întrebare rapidă",
-      "whatsappLabel": "Întrebare rapidă? Scrie-mi"
+      "ctaButton": "Hai să vorbim despre site-ul tău",
+      "ctaButtonSecondary": "Programează o discuție",
+      "whatsappLabel": "Hai să vorbim despre site-ul tău"
     }
   },
   "profile": {
     "name": "Eduard Sergiu Stefan",
     "email": "contact@eduardstefan.dev",
-    "phone": "+40775378525",
+    "phone": "+40770378214",
     "about": "Despre mine",
     "location": "Oradea, România",
     "workPreference": "Remote",
@@ -292,10 +315,6 @@
         "url": "https://www.linkedin.com/in/eduard-stefan-089371100/"
       },
       {
-        "name": "Instagram",
-        "url": "https://instagram.com"
-      },
-      {
         "name": "GitHub",
         "url": "https://github.com/edustef"
       }
@@ -303,10 +322,10 @@
   },
   "settings": {
     "title": "Eduard Stefan",
-    "description": "Sanity CMS și design systems pentru echipe care livrează.",
+    "description": "CMS-uri Sanity și sisteme de design pentru echipe care publică.",
     "header": {
       "cta": {
-        "text": "Hai să vorbim",
+        "text": "Hai să vorbim despre site-ul tău",
         "href": "/start-your-project"
       },
       "homeButtonLabel": "Acasă",
@@ -320,12 +339,12 @@
         "blog": "Blog",
         "servicesSlug": "servicii",
         "pricingSlug": "colaborare",
-        "howIWorkSlug": "how-i-work"
+        "howIWorkSlug": "cum-lucrez"
       }
     },
     "seo": {
-      "title": "Eduard Stefan | Sanity CMS și Design Systems",
-      "description": "Construiesc site-uri de marketing pe Sanity, cu un design system pe care echipa ta îl poate gestiona. Migrări CMS, componente reutilizabile, UX și CRO."
+      "title": "Eduard Stefan | CMS Sanity și sisteme de design",
+      "description": "Construiesc site-uri de marketing pe Sanity, cu modele de conținut, blocuri reutilizabile, migrări controlate și o predare clară."
     }
   },
   "skills": {
@@ -351,7 +370,7 @@
       "quote": "Majoritatea devilor au nevoie să îi ții de mână. Eduard avea nevoie doar de context. Odată ce a înțeles ce construim și de ce, a mers singur. A livrat totul înainte de termen."
     },
     "test-3": {
-      "quote": "Ne-a respins ideile proaste și le-a făcut pe cele bune și mai bune. E rar să găsești un developer căruia îi pasă de produs, nu doar de cod."
+      "quote": "Ne-a respins ideile proaste și le-a făcut pe cele bune și mai bune. E rar să găsești un dezvoltator căruia îi pasă de produs, nu doar de cod."
     },
     "test-4": {
       "quote": "Rata de conversie pe mobil era penibilă. Două săptămâni cu Eduard și acum e canalul nostru cel mai performant. ROI-ul a fost imediat."
@@ -407,76 +426,68 @@
   },
   "services": {
     "label": "Ce fac",
-    "headline": "De la haos în conținut la un sistem care scalează",
-    "subtitle": "Construiesc CMS-ul, design system-ul și front-end-ul. Echipa ta preia de acolo.",
-    "cta": "Hai să vorbim despre stack-ul tău",
+    "headline": "De la haos în conținut la un sistem pregătit să crească",
+    "subtitle": "Leg modelele de conținut, blocurile reutilizabile, migrarea și predarea într-un singur sistem funcțional.",
+    "cta": "Hai să vorbim despre site-ul tău",
     "svc-1": {
-      "title": "Gândit să-ți predau controlul",
-      "description": "Nu dispar la lansare. Primești documentație clară, editori instruiți și un sistem pe care echipa ta îl poate gestiona fără mine. Nimic legat de mine, fără cod misterios."
+      "title": "Modele de conținut construite după fluxuri reale",
+      "description": "Schemele Sanity pornesc de la paginile publicate de echipa ta, oamenii care le editează și drumul conținutului de la schiță la publicare. Dacă proiectul o cere, localizarea este inclusă în model de la început."
     },
     "svc-2": {
-      "title": "Un Sanity CMS făcut să dureze",
-      "description": "Scheme pe care editorii tăi chiar le înțeleg. Conținut structurat care nu se strică atunci când site-ul crește. Un Studio pe care echipa ta îl deschide cu plăcere, făcut să scaleze, nu să fie refăcut peste un an."
+      "title": "Blocuri reutilizabile care păstrează coerența brandului",
+      "description": "O bibliotecă de componente cu reguli clare pentru conținut și așezare în pagină. Editorii pot compune pagini noi din blocuri reutilizabile, iar principiile de UX și conversie sunt integrate în aceste tipare."
     },
     "svc-3": {
-      "title": "Site-uri de marketing care scalează",
-      "description": "Multi-limbă, rapide și solide pe SEO de la primul commit. Făcute astfel încât a zecea landing să fie la fel de ușor de publicat ca prima."
+      "title": "Migrare și lansare controlate",
+      "description": "Conținutul este inventariat, migrat și verificat în etape. Redirecționările, testele de lansare și un plan de revenire agreat reduc riscul, fără promisiuni că pozițiile în motoarele de căutare vor rămâne neschimbate."
     },
     "svc-4": {
-      "title": "UX și CRO care convertesc",
-      "description": "Pagini gândite după cum decid oamenii de fapt. Pun gândirea de conversie în layout de la început, nu o lipesc la final."
-    },
-    "svc-5": {
-      "title": "Design system și blocuri reutilizabile",
-      "description": "O librărie de componente adevărată, mapată pe brandul tău. Marketingul face pagini noi din blocuri care arată deja bine, așa că nimic nu se abate de la brand."
-    },
-    "svc-6": {
-      "title": "Migrări curate",
-      "description": "Te muți de pe WordPress, Contentful sau un morman de pagini hardcodate? Migrez atent conținutul, mapez redirect-urile și urmăresc vizibilitatea în Google pe durata lansării."
+      "title": "O predare pe care echipa o poate prelua",
+      "description": "Editorii și dezvoltatorii primesc instruire, documentație și acces la codul și conținutul de care au nevoie. Pot rămâne implicat, dar soluția este gândită să nu depindă de mine."
     }
   },
   "howIWork": {
     "label": "Proces",
     "headline": "Cum lucrez",
     "subtitle": "Fără surprize. Progres clar până când echipa ta preia controlul.",
-    "cta": "Hai să începem",
+    "cta": "Hai să vorbim despre site-ul tău",
     "planning": {
       "title": "Mapăm conținutul și echipa ta",
       "paragraphs": [
-        "Pornim de la cum lucrează echipa ta de fapt. Ce pagini publicați, cine le editează și unde vă încetinește setup-ul actual. Apoi modelăm conținutul și stabilim scopul."
+        "Pornim de la modul în care lucrează echipa ta: ce pagini publicați, cine le editează și unde vă încetinește soluția actuală. Apoi modelăm conținutul și stabilim aria proiectului."
       ],
       "bulletPoints": [
         "Conținut modelat după pagini reale",
         "Editorii implicați de la început",
-        "Scop și etape clare din start"
+        "Arie și etape clare de la început"
       ]
     },
     "development": {
       "title": "Construiesc sistemul. Tu îl vezi prinzând formă.",
       "paragraphs": [
-        "Nu dispar săptămâni întregi. Primești actualizări regulate, preview-uri funcționale în Sanity și loc de ajustat înainte ca ceva să fie bătut în cuie."
+        "Nu dispar cu săptămânile. Primești actualizări regulate, previzualizări funcționale în Sanity și timp pentru ajustări înainte ca deciziile să fie definitive."
       ],
       "bulletPoints": [
         "Sincronizări frecvente",
-        "Preview-uri live, nu slide-uri",
-        "Loc pentru ajustări"
+        "Previzualizări funcționale, nu prezentări",
+        "Timp pentru ajustări"
       ]
     },
     "deployment": {
       "title": "Lansăm controlat, cu plan de revenire",
       "paragraphs": [
-        "Mă ocup de partea tehnică: migrare, redirect-uri, hosting și tracking. Testăm totul, rezolvăm ce trebuie, apoi lansăm cu încredere."
+        "Mă ocup de partea tehnică: migrare, redirecționări, găzduire și monitorizare. Testăm totul, rezolvăm ce trebuie, apoi lansăm controlat."
       ],
       "bulletPoints": [
-        "Migrare și redirect-uri rezolvate",
-        "Analiză configurată",
+        "Migrare și redirecționări gestionate",
+        "Instrumente de analiză configurate",
         "Verificări SEO înainte și după lansare"
       ]
     },
     "postDeployment": {
       "title": "Echipa ta îl gestionează. Sunt aici dacă ai nevoie.",
       "paragraphs": [
-        "Totul e al tău. Îți instruiesc editorii și devs, las documentație clară și rămân disponibil pentru ce urmează."
+        "Codul și conținutul sunt ale tale. Îți instruiesc editorii și dezvoltatorii, las documentație clară și rămân disponibil pentru ce urmează."
       ],
       "bulletPoints": [
         "Codul și conținutul sunt ale tale",
@@ -578,18 +589,18 @@
     "label": "Întrebări",
     "headline": "Întrebări frecvente",
     "subtitle": "Ce întreabă echipele de obicei înainte să începem.",
-    "cta": "Mai ai întrebări? Hai să vorbim",
+    "cta": "Hai să vorbim despre site-ul tău",
     "faq-1": {
       "question": "Cât durează un proiect?",
-      "answer": "Depinde de scop. Un build de CMS și design system durează de obicei 3-5 săptămâni. O migrare cu un site de marketing complet, 6-10 săptămâni. Îți dau un termen real după o discuție, nu o presupunere."
+      "answer": "Depinde de aria proiectului. Un CMS și un sistem de design durează de obicei 3-5 săptămâni. O migrare împreună cu un site de marketing complet durează 6-10 săptămâni. Îți dau un termen realist după o discuție, nu o estimare făcută în grabă."
     },
     "faq-2": {
       "question": "Ne poți migra de pe CMS-ul actual?",
-      "answer": "Da. Te pot muta de pe WordPress, Contentful sau pagini hardcodate pe Sanity. Migrez atent conținutul, mapez redirect-urile și verific performanța în Google înainte și după lansare."
+      "answer": "Da. Te pot muta de pe WordPress, Contentful sau pagini scrise direct în cod pe Sanity. Migrez atent conținutul, stabilesc redirecționările și verific vizibilitatea în motoarele de căutare înainte și după lansare."
     },
     "faq-3": {
       "question": "Echipa mea va putea gestiona site-ul fără tine?",
-      "answer": "Asta e tot scopul. Modelez CMS-ul după cum lucrează echipa ta, îl documentez și îți instruiesc editorii și devs. Codul și conținutul sunt ale tale, și poți exporta tot oricând."
+      "answer": "Acesta este scopul. Modelez CMS-ul după modul în care lucrează echipa ta, îl documentez și îți instruiesc editorii și dezvoltatorii. Codul și conținutul sunt ale tale, iar conținutul poate fi exportat oricând."
     },
     "faq-4": {
       "question": "Lucrezi cu designerii și dezvoltatorii noștri actuali?",
@@ -597,11 +608,11 @@
     },
     "faq-5": {
       "question": "Pe ce construiești site-ul?",
-      "answer": "Sanity pentru CMS, Next.js și TypeScript pentru front-end, cu un design system și blocuri reutilizabile deasupra. Rapid, solid pe SEO și făcut să scaleze. Vezi <link>modurile de colaborare</link> pentru ce include fiecare proiect."
+      "answer": "Sanity pentru CMS, Next.js și TypeScript pentru front-end, plus un sistem de design și blocuri reutilizabile. Implementarea urmărește performanța, o bază SEO solidă și extinderea controlată. Vezi <link>modurile de colaborare</link> pentru ce include fiecare proiect."
     },
     "faq-6": {
       "question": "Nu rămânem blocați pe Sanity?",
-      "answer": "Parțial, și nu mă prefac că nu e așa. CMS-ul în sine e un pariu pe un furnizor. Dar ce contează rămâne al tău: front-end-ul e Next.js standard în repo-ul tău, schemele sunt cod pe care îl deții, iar conținutul se exportă în JSON oricând. Să te muți mai târziu e o opțiune reală, nu o stradă cu sens unic."
+      "answer": "Parțial, și nu pretind contrariul. CMS-ul este o alegere de furnizor. Dar elementele importante rămân ale tale: front-end-ul este un proiect Next.js standard în depozitul tău de cod, schemele sunt cod pe care îl deții, iar conținutul poate fi exportat în format JSON. O migrare ulterioară rămâne o opțiune reală."
     }
   },
   "blog": {
@@ -623,13 +634,13 @@
     "label": "Portofoliu",
     "headline": "Proiecte Recente",
     "subtitle": "Idei îndrăznețe binevenite. Sunt suficient de încăpățânat să le fac cum trebuie.",
-    "cta": "Vrei Rezultate Similare?",
+    "cta": "Hai să vorbim despre site-ul tău",
     "viewProject": "Vezi Proiectul",
     "viewLive": "Vezi Site-ul Live",
     "comingSoon": "În Curând",
     "comingSoonTitle": "Proiectul Tău?",
     "comingSoonSubtitle": "Aici ar putea fi povestea ta de succes",
-    "comingSoonCta": "Hai Să Vorbim",
+    "comingSoonCta": "Hai să vorbim despre site-ul tău",
     "moreComing": "Mai vin...",
     "techStack": "Tehnologii",
     "backToPortfolio": "Înapoi la Portofoliu",
