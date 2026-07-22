@@ -228,7 +228,7 @@
     "menu": {
       "title": "Menu",
       "services": "Services",
-      "pricing": "Pricing",
+      "pricing": "Work together",
       "blog": "Blog"
     }
   },
@@ -315,11 +315,11 @@
       "menuLabel": "Menu",
       "nav": {
         "services": "Services",
-        "pricing": "Pricing",
+        "pricing": "Work together",
         "howIWork": "How I Work",
         "blog": "Blog",
         "servicesSlug": "services",
-        "pricingSlug": "pricing",
+        "pricingSlug": "ways-to-work-together",
         "howIWorkSlug": "how-i-work"
       }
     },
@@ -485,81 +485,41 @@
       ]
     }
   },
+  "waysToWorkTogether": {
+    "label": "Ways to work together",
+    "headline": "One project, scoped around what your site needs.",
+    "subtitle": "After a short call, I turn the problem into a clear plan with the right deliverables, timeline, and support.",
+    "engagementTitle": "Build what your team needs. Leave them with a system they can run.",
+    "description": "That could mean a new Sanity site, a controlled migration from your current CMS, or focused work inside an existing system. The scope follows the outcome, not a preset package.",
+    "scopeLabel": "Project types",
+    "scopeValue": "New sites, CMS migrations, and system improvements",
+    "timelineLabel": "Typical timeline",
+    "timelineValue": "3–10 weeks",
+    "timelineNote": "Need ongoing help instead? Embedded support is scoped around your team's priorities and cadence.",
+    "includesTitle": "A typical project includes",
+    "includedItems": [
+      "Discovery, workflow, and content mapping",
+      "Sanity content model and editor experience",
+      "Reusable page system with live previews",
+      "QA, launch planning, documentation, and handoff"
+    ],
+    "cta": "Tell me about your site"
+  },
   "howIPrice": {
     "label": "Pricing",
     "headline": "What it costs",
     "subtitle": "Scoped to your project after a quick call.",
-    "intro": "I build content systems teams don't outgrow: a Sanity CMS, a design system, and a fast marketing site your team can run. Pick the engagement that fits where you are.",
-    "packages": {
-      "title": "Engagement models",
-      "subtitle": "Pick the option that matches where your team is today.",
-      "mostPopular": "Most Popular",
-      "whatYouGet": "What you get",
-      "showMore": "Show more",
-      "showLess": "Show less",
-      "getQuote": "Get My Custom Quote",
-      "timeline": "Timeline"
-    },
     "launch": {
       "title": "The Build",
-      "bestFor": "Best for: teams that need a proper CMS and design system to build on.",
-      "description": "A Sanity CMS, a reusable component library, and a fast marketing site. The foundation your team builds everything else on.",
-      "timeline": "3-5 weeks",
-      "features": [
-        "Sanity schemas modeled around your content",
-        "Design system mapped to your brand",
-        "Reusable page blocks your team can compose",
-        "Technical SEO and Core Web Vitals",
-        "Editor training and handoff docs"
-      ]
+      "bestFor": "Best for: teams that need a proper CMS and design system to build on."
     },
     "growth": {
       "title": "The Migration",
-      "bestFor": "Best for: teams moving off an old or tangled CMS.",
-      "description": "Everything in The Build, plus a controlled move off your current setup with content migration, redirect mapping, and launch checks.",
-      "timeline": "6-10 weeks",
-      "features": [
-        "Everything in The Build, plus:",
-        "Content migration from WordPress, Contentful, or custom",
-        "Redirect map and pre/post-launch SEO checks",
-        "Localization for multiple languages",
-        "Analytics and conversion tracking",
-        "CRO pass on your key pages"
-      ]
+      "bestFor": "Best for: teams moving off an old or tangled CMS."
     },
     "custom": {
       "title": "Embedded Partner",
-      "bestFor": "Best for: teams that want me working alongside them over time.",
-      "description": "I work as part of your team: extending the design system, shipping pages, and keeping the system healthy as it grows.",
-      "timeline": "Monthly, ongoing",
-      "features": [
-        "Work directly with your designers and devs",
-        "New components and page types as you need them",
-        "Performance and SEO kept in check",
-        "Complex apps, dashboards, and integrations",
-        "A system that grows without drifting off-brand"
-      ]
-    },
-    "addOns": {
-      "title": "Standalone services",
-      "subtitle": "Useful on their own, whether I built the site or not.",
-      "seo": {
-        "title": "Sanity Migration",
-        "benefit": "Content migration, redirect mapping, and launch checks included."
-      },
-      "store": {
-        "title": "Design System Sprint",
-        "benefit": "Extract a reusable component library from your current site."
-      },
-      "multiLanguage": {
-        "title": "Localization",
-        "benefit": "Multi-language setup with proper hreflang and localized slugs."
-      },
-      "analytics": {
-        "title": "CRO Sprint",
-        "benefit": "Audit and rework key pages to lift conversion."
-      },
-      "contactForPricing": "Get pricing →"
+      "bestFor": "Best for: teams that want me working alongside them over time."
     }
   },
   "roiCalculator": {
@@ -637,7 +597,7 @@
     },
     "faq-5": {
       "question": "What do you build the site on?",
-      "answer": "Sanity for the CMS, Next.js and TypeScript for the front-end, with a design system and reusable blocks on top. Fast, SEO-solid, and built to scale. See the <link>pricing</link> section for what each engagement includes."
+      "answer": "Sanity for the CMS, Next.js and TypeScript for the front-end, with a design system and reusable blocks on top. Fast, SEO-solid, and built to scale. See <link>ways to work together</link> for what every engagement includes."
     },
     "faq-6": {
       "question": "Aren't we locked into Sanity?",

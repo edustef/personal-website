@@ -24,8 +24,13 @@ export default async function FAQSection({ faqs: faqsProp }: FAQSectionProps) {
   const locale = await getLocale();
   const t = await getTranslations({ locale, namespace: "faq" });
   const profileT = await getTranslations({ locale, namespace: "profile" });
+  const headerT = await getTranslations({
+    locale,
+    namespace: "settings.header",
+  });
 
   const whatsappUrl = getWhatsAppUrl(profileT("phone"));
+  const waysToWorkTogetherSlug = headerT("nav.pricingSlug");
 
   const sortedFaqs = [...faqsToDisplay].sort((a, b) => a.order - b.order);
 
@@ -58,7 +63,7 @@ export default async function FAQSection({ faqs: faqsProp }: FAQSectionProps) {
                     ? t.rich(faq.answerKey, {
                         link: (chunks) => (
                           <a
-                            href="#how-i-price"
+                            href={`#${waysToWorkTogetherSlug}`}
                             className="text-primary hover:underline"
                           >
                             {chunks}
