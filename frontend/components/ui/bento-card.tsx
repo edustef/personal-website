@@ -11,7 +11,6 @@ type BentoCardProps = {
   glowColor?: string;
   enableTilt?: boolean;
   enableGlow?: boolean;
-  enableShine?: boolean;
   featured?: boolean;
 };
 
@@ -21,7 +20,6 @@ export function BentoCard({
   glowColor = "hsl(var(--primary))",
   enableTilt = true,
   enableGlow = true,
-  enableShine = true,
   featured = false,
 }: BentoCardProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -31,8 +29,14 @@ export function BentoCard({
   const mouseY = useMotionValue(0);
 
   const springConfig = { damping: 25, stiffness: 150 };
-  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [8, -8]), springConfig);
-  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-8, 8]), springConfig);
+  const rotateX = useSpring(
+    useTransform(mouseY, [-0.5, 0.5], [8, -8]),
+    springConfig
+  );
+  const rotateY = useSpring(
+    useTransform(mouseX, [-0.5, 0.5], [-8, 8]),
+    springConfig
+  );
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current || !enableTilt) return;
@@ -68,7 +72,6 @@ export function BentoCard({
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
-      whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
     >
       {/* Animated gradient border */}
@@ -83,7 +86,11 @@ export function BentoCard({
             ? { backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"] }
             : {}
         }
-        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        transition={{
+          duration: 3,
+          repeat: Number.POSITIVE_INFINITY,
+          ease: "linear",
+        }}
       />
 
       {/* Inner card with inset for border effect */}
@@ -95,20 +102,6 @@ export function BentoCard({
           className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-500 group-hover:opacity-100"
           style={{
             background: `radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), ${glowColor}15, transparent 40%)`,
-          }}
-        />
-      )}
-
-      {/* Shine effect */}
-      {enableShine && (
-        <motion.div
-          className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100"
-          initial={{ x: "-100%", opacity: 0 }}
-          animate={isHovered ? { x: "100%", opacity: [0, 0.5, 0] } : { x: "-100%", opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          style={{
-            background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)",
-            transform: "skewX(-20deg)",
           }}
         />
       )}

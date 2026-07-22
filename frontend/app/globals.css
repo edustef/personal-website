@@ -216,8 +216,10 @@
   --radius: var(----radius);
 }
 
+html,
 body {
   letter-spacing: var(--tracking-normal);
+  overflow-x: clip;
 }
 
 @layer base {
@@ -231,7 +233,7 @@ body {
   html.header-scrolled header {
     @apply bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300;
   }
-  
+
   header {
     @apply transition-all duration-300;
   }
@@ -264,7 +266,8 @@ body {
 
 /* Gradient animations */
 @keyframes gradient-shift {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {
@@ -282,7 +285,8 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.4;
     transform: scale(1);
   }
@@ -293,7 +297,8 @@ body {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -343,7 +348,11 @@ body {
 
 /* Gradient text utility */
 .gradient-text {
-  background: linear-gradient(135deg, var(--foreground) 0%, var(--muted-foreground) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--foreground) 0%,
+    var(--muted-foreground) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -373,30 +382,44 @@ body {
 
 /* Mesh gradient backgrounds */
 .mesh-gradient-1 {
-  background:
-    radial-gradient(at 40% 20%, hsla(var(--chart-1) / 0.15) 0px, transparent 50%),
+  background: radial-gradient(
+      at 40% 20%,
+      hsla(var(--chart-1) / 0.15) 0px,
+      transparent 50%
+    ),
     radial-gradient(at 80% 0%, hsla(var(--chart-2) / 0.15) 0px, transparent 50%),
     radial-gradient(at 0% 50%, hsla(var(--chart-3) / 0.1) 0px, transparent 50%),
     radial-gradient(at 80% 50%, hsla(var(--chart-4) / 0.1) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, hsla(var(--chart-5) / 0.15) 0px, transparent 50%);
+    radial-gradient(
+      at 0% 100%,
+      hsla(var(--chart-5) / 0.15) 0px,
+      transparent 50%
+    );
 }
 
 .mesh-gradient-2 {
-  background:
-    radial-gradient(at 0% 0%, hsla(var(--primary) / 0.1) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, hsla(var(--accent) / 0.1) 0px, transparent 50%);
+  background: radial-gradient(
+      at 0% 0%,
+      hsla(var(--primary) / 0.1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 100% 100%,
+      hsla(var(--accent) / 0.1) 0px,
+      transparent 50%
+    );
 }
 
 /* Card hover lift effect */
 .hover-lift {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s
+    cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow:
-    0 10px 40px -10px rgba(0, 0, 0, 0.2),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.2), 0 4px 6px -2px
+    rgba(0, 0, 0, 0.05);
 }
 
 /* Glow effects */
@@ -425,9 +448,29 @@ body {
   inset: 0;
   padding: 1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, var(--border) 0%, transparent 50%, var(--border) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--border) 0%,
+    transparent 50%,
+    var(--border) 100%
+  );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

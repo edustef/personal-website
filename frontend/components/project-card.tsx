@@ -3,10 +3,16 @@
 import { ProjectVideo } from "@/components/project-video";
 import { Badge } from "@/components/ui/badge";
 import type { Project } from "@/lib/portfolio";
-import { motion, useMotionValue, useSpring, useTransform, useInView } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useRef, useState, useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type ProjectCardProps = {
   project: Project;
@@ -21,7 +27,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
   // Detect touch devices (no hover capability)
   useEffect(() => {
-    setIsTouchDevice(window.matchMedia('(hover: none)').matches);
+    setIsTouchDevice(window.matchMedia("(hover: none)").matches);
   }, []);
 
   // For mobile: trigger "hover" effects when card is centered in viewport
@@ -33,17 +39,32 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
   // Softer spring for smooth entrance
   const springConfig = { damping: 30, stiffness: 120 };
-  const rotateX = useSpring(useTransform(mouseY, [0, 1], [4, -4]), springConfig);
-  const rotateY = useSpring(useTransform(mouseX, [0, 1], [-4, 4]), springConfig);
+  const rotateX = useSpring(
+    useTransform(mouseY, [0, 1], [4, -4]),
+    springConfig
+  );
+  const rotateY = useSpring(
+    useTransform(mouseX, [0, 1], [-4, 4]),
+    springConfig
+  );
 
   const glowX = useSpring(useTransform(mouseX, [0, 1], [0, 100]), springConfig);
   const glowY = useSpring(useTransform(mouseY, [0, 1], [0, 100]), springConfig);
 
   // Smooth scale on hover
-  const scale = useSpring(isHovered ? 1.015 : 1, { damping: 25, stiffness: 100 });
+  const scale = useSpring(isHovered ? 1.015 : 1, {
+    damping: 25,
+    stiffness: 100,
+  });
 
   // Different glow colors per card
-  const glowColors = ["217 91% 60%", "262 83% 58%", "142 71% 45%", "339 90% 51%", "24 95% 53%"];
+  const glowColors = [
+    "217 91% 60%",
+    "262 83% 58%",
+    "142 71% 45%",
+    "339 90% 51%",
+    "24 95% 53%",
+  ];
   const glowColor = glowColors[index % glowColors.length];
 
   const handleMouseMove = useCallback(
@@ -122,7 +143,8 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         <motion.div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: `linear-gradient(to top, hsl(var(--card)) 0%, transparent 50%)`,
+            background:
+              "linear-gradient(to top, hsl(var(--card)) 0%, transparent 50%)",
           }}
           animate={{
             opacity: isActive ? 0.9 : 0.7,
@@ -135,9 +157,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       <div className="p-6 flex flex-col flex-grow relative">
         {/* Category with animated underline */}
         <div className="relative inline-flex mb-2 self-start">
-          <p className="text-sm font-medium text-primary">
-            {project.category}
-          </p>
+          <p className="text-sm font-medium text-primary">{project.category}</p>
           <motion.div
             className="absolute -bottom-0.5 left-0 h-px bg-primary"
             initial={{ width: 0 }}
@@ -193,7 +213,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           scale,
         }}
       >
-<CardWrapper
+        <CardWrapper
           {...wrapperProps}
           className="relative flex flex-col h-full rounded-2xl overflow-hidden bg-card/80 border border-border/30 backdrop-blur-sm transition-all duration-500 hover:shadow-2xl"
         >
@@ -223,27 +243,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             }}
           />
 
-          {/* Shine sweep effect */}
-          <motion.div
-            className="pointer-events-none absolute inset-0 rounded-2xl overflow-hidden z-20"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isActive ? 1 : 0 }}
-          >
-            <motion.div
-              className="absolute inset-0"
-              initial={{ x: "-100%" }}
-              animate={isActive ? { x: "100%" } : { x: "-100%" }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-              style={{
-                background:
-                  "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%)",
-                transform: "skewX(-15deg)",
-              }}
-            />
-          </motion.div>
-
           {/* Card content */}
-          <div className="relative z-10 flex flex-col h-full">{cardContent}</div>
+          <div className="relative z-10 flex flex-col h-full">
+            {cardContent}
+          </div>
         </CardWrapper>
       </motion.div>
     </motion.div>

@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import type * as React from "react";
-import { useRef, useState, useCallback } from "react";
+import { useCallback, useRef, useState } from "react";
 
 type InteractiveCardProps = {
   className?: string;
@@ -11,7 +11,6 @@ type InteractiveCardProps = {
   glowColor?: string;
   enableTilt?: boolean;
   enableGlow?: boolean;
-  enableShine?: boolean;
   featured?: boolean;
   index?: number;
 };
@@ -22,7 +21,6 @@ export function InteractiveCard({
   glowColor = "var(--primary)",
   enableTilt = true,
   enableGlow = true,
-  enableShine = true,
   featured = false,
   index = 0,
 }: InteractiveCardProps) {
@@ -42,14 +40,8 @@ export function InteractiveCard({
     springConfig
   );
 
-  const glowX = useSpring(
-    useTransform(mouseX, [0, 1], [0, 100]),
-    springConfig
-  );
-  const glowY = useSpring(
-    useTransform(mouseY, [0, 1], [0, 100]),
-    springConfig
-  );
+  const glowX = useSpring(useTransform(mouseX, [0, 1], [0, 100]), springConfig);
+  const glowY = useSpring(useTransform(mouseY, [0, 1], [0, 100]), springConfig);
 
   const handleMouseMove = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
@@ -74,10 +66,7 @@ export function InteractiveCard({
   return (
     <motion.div
       ref={ref}
-      className={cn(
-        "group relative h-full",
-        className
-      )}
+      className={cn("group relative h-full", className)}
       style={{
         transformStyle: "preserve-3d",
         perspective: "1000px",
@@ -101,7 +90,6 @@ export function InteractiveCard({
           rotateX: enableTilt ? rotateX : 0,
           rotateY: enableTilt ? rotateY : 0,
         }}
-        whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
       >
         {/* Card container */}
@@ -136,25 +124,6 @@ export function InteractiveCard({
                     `radial-gradient(400px circle at ${x}% ${y}%, hsl(${glowColor} / 0.15), transparent 50%)`
                 ),
                 opacity: isHovered ? 1 : 0,
-              }}
-            />
-          )}
-
-          {/* Shine sweep effect */}
-          {enableShine && (
-            <motion.div
-              className="pointer-events-none absolute inset-0 rounded-2xl"
-              initial={{ x: "-100%", opacity: 0 }}
-              animate={
-                isHovered
-                  ? { x: "100%", opacity: [0, 0.15, 0] }
-                  : { x: "-100%", opacity: 0 }
-              }
-              transition={{ duration: 0.7, ease: "easeInOut" }}
-              style={{
-                background:
-                  "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%)",
-                transform: "skewX(-15deg)",
               }}
             />
           )}

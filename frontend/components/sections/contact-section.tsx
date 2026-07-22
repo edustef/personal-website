@@ -1,8 +1,10 @@
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Button } from "@/components/ui/button";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Link } from "@/i18n/navigation";
 import { getSocialIcon } from "@/lib/social-icons";
+import { getWhatsAppUrl } from "@/lib/utils";
 import { Calendar } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 
@@ -19,7 +21,11 @@ export default async function ContactSection({
   socialLinks,
 }: ContactSectionProps) {
   const locale = await getLocale();
-  const t = await getTranslations({ locale, namespace: "home" });
+  const [t, profileT] = await Promise.all([
+    getTranslations({ locale, namespace: "home" }),
+    getTranslations({ locale, namespace: "profile" }),
+  ]);
+  const whatsappUrl = getWhatsAppUrl(profileT("phone"));
 
   const hasSocialLinks = socialLinks && socialLinks.length > 0;
 
@@ -34,7 +40,7 @@ export default async function ContactSection({
           className="mb-16 px-0"
         />
 
-        <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <div className="flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center">
           <AnimatedContainer
             trigger="scroll"
             fadeDirection="up"
@@ -43,9 +49,24 @@ export default async function ContactSection({
             className="w-full sm:w-auto"
           >
             <Button asChild size="lg" variant="default" className="w-full">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <WhatsAppIcon className="size-5" />
+                {t("letsChat")}
+              </a>
+            </Button>
+          </AnimatedContainer>
+
+          <AnimatedContainer
+            trigger="scroll"
+            fadeDirection="up"
+            staggerIndex={1}
+            staggerDelay={0.1}
+            className="w-full sm:w-auto"
+          >
+            <Button asChild size="lg" variant="outline" className="w-full">
               <Link href="/schedule">
                 <Calendar className="size-5" />
-                {t("scheduleCall")}
+                {t("orBookTime")}
               </Link>
             </Button>
           </AnimatedContainer>
@@ -54,7 +75,7 @@ export default async function ContactSection({
             <AnimatedContainer
               trigger="scroll"
               fadeDirection="up"
-              staggerIndex={1}
+              staggerIndex={2}
               staggerDelay={0.1}
               className="flex gap-2"
             >
