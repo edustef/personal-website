@@ -3,10 +3,23 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { motion, useMotionValue, useSpring, useTransform, useInView } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import { Check, ChevronDown, ChevronUp, Clock } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { createContext, useContext, useState, useRef, useCallback, useEffect } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 type ExpandContextType = {
   isExpanded: boolean;
@@ -86,7 +99,7 @@ export function PackageCard({
 
   // Detect touch devices (no hover capability)
   useEffect(() => {
-    setIsTouchDevice(window.matchMedia('(hover: none)').matches);
+    setIsTouchDevice(window.matchMedia("(hover: none)").matches);
   }, []);
 
   // For mobile: trigger "hover" effects when card is centered in viewport
@@ -98,14 +111,23 @@ export function PackageCard({
 
   // Softer spring for smooth entrance
   const springConfig = { damping: 30, stiffness: 120 };
-  const rotateX = useSpring(useTransform(mouseY, [0, 1], [2.5, -2.5]), springConfig);
-  const rotateY = useSpring(useTransform(mouseX, [0, 1], [-2.5, 2.5]), springConfig);
+  const rotateX = useSpring(
+    useTransform(mouseY, [0, 1], [2.5, -2.5]),
+    springConfig
+  );
+  const rotateY = useSpring(
+    useTransform(mouseX, [0, 1], [-2.5, 2.5]),
+    springConfig
+  );
 
   const glowX = useSpring(useTransform(mouseX, [0, 1], [0, 100]), springConfig);
   const glowY = useSpring(useTransform(mouseY, [0, 1], [0, 100]), springConfig);
 
   // Smooth scale on hover
-  const scale = useSpring(isHovered ? 1.015 : 1, { damping: 25, stiffness: 100 });
+  const scale = useSpring(isHovered ? 1.015 : 1, {
+    damping: 25,
+    stiffness: 100,
+  });
 
   const cardIndex = pkg === "launch" ? 0 : pkg === "growth" ? 1 : 2;
   const glowColor = glowColors[cardIndex];
@@ -198,25 +220,6 @@ export function PackageCard({
             transition={{ duration: 0.3 }}
           />
 
-          {/* Shine sweep effect */}
-          <motion.div
-            className="pointer-events-none absolute inset-0 rounded-2xl overflow-hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isActive ? 1 : 0 }}
-          >
-            <motion.div
-              className="absolute inset-0"
-              initial={{ x: "-100%" }}
-              animate={isActive ? { x: "100%" } : { x: "-100%" }}
-              transition={{ duration: 0.7, ease: "easeInOut" }}
-              style={{
-                background:
-                  "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%)",
-                transform: "skewX(-15deg)",
-              }}
-            />
-          </motion.div>
-
           {/* Card content */}
           <div className="relative z-10 overflow-hidden rounded-2xl h-full flex flex-col">
             <CardContent className="p-6">
@@ -251,7 +254,11 @@ export function PackageCard({
                     >
                       <motion.div
                         whileHover={{ scale: 1.2, rotate: 10 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 17,
+                        }}
                       >
                         <Check className="text-primary mt-0.5 h-4 w-4 shrink-0" />
                       </motion.div>
@@ -274,7 +281,11 @@ export function PackageCard({
                         {t("packages.showLess")}
                         <motion.span
                           animate={{ y: [0, -2, 0] }}
-                          transition={{ duration: 0.4, repeat: Infinity, repeatDelay: 1 }}
+                          transition={{
+                            duration: 0.4,
+                            repeat: Number.POSITIVE_INFINITY,
+                            repeatDelay: 1,
+                          }}
                         >
                           <ChevronUp className="ml-2 h-4 w-4" />
                         </motion.span>
@@ -284,7 +295,11 @@ export function PackageCard({
                         {t("packages.showMore")}
                         <motion.span
                           animate={{ y: [0, 2, 0] }}
-                          transition={{ duration: 0.4, repeat: Infinity, repeatDelay: 1 }}
+                          transition={{
+                            duration: 0.4,
+                            repeat: Number.POSITIVE_INFINITY,
+                            repeatDelay: 1,
+                          }}
                         >
                           <ChevronDown className="ml-2 h-4 w-4" />
                         </motion.span>
@@ -331,7 +346,11 @@ export function PackageCard({
               animate={{
                 opacity: [0.3, 0.7, 0.3],
               }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              transition={{
+                duration: 2,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+              }}
             />
           )}
         </Card>
@@ -347,7 +366,11 @@ type InteractiveButtonProps = {
   children: React.ReactNode;
 };
 
-function InteractiveButton({ href, isPopular, children }: InteractiveButtonProps) {
+function InteractiveButton({
+  href,
+  isPopular,
+  children,
+}: InteractiveButtonProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -412,7 +435,12 @@ export function AddOnCardMobile({ children, index }: AddOnCardMobileProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isActive = useInView(ref, { amount: 0.6 });
 
-  const glowColors = ["198 93% 60%", "24 95% 53%", "339 90% 51%", "142 71% 45%"];
+  const glowColors = [
+    "198 93% 60%",
+    "24 95% 53%",
+    "339 90% 51%",
+    "142 71% 45%",
+  ];
   const glowColor = glowColors[index % glowColors.length];
 
   return (
@@ -468,23 +496,6 @@ export function AddOnCardMobile({ children, index }: AddOnCardMobileProps) {
             transition={{ duration: 0.3 }}
           />
 
-          {/* Shine sweep when entering view */}
-          <motion.div
-            className="pointer-events-none absolute inset-0 rounded-xl overflow-hidden"
-            animate={{ opacity: isActive ? 1 : 0 }}
-          >
-            <motion.div
-              className="absolute inset-0"
-              animate={{ x: isActive ? "100%" : "-100%" }}
-              transition={{ duration: 0.7, ease: "easeInOut" }}
-              style={{
-                background:
-                  "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%)",
-                transform: "skewX(-15deg)",
-              }}
-            />
-          </motion.div>
-
           {/* Content */}
           <div className="relative z-10 h-full">{children}</div>
 
@@ -519,7 +530,12 @@ export function AddOnCard({ children, index }: AddOnCardProps) {
   const glowX = useSpring(useTransform(mouseX, [0, 1], [0, 100]), springConfig);
   const glowY = useSpring(useTransform(mouseY, [0, 1], [0, 100]), springConfig);
 
-  const glowColors = ["198 93% 60%", "24 95% 53%", "339 90% 51%", "142 71% 45%"];
+  const glowColors = [
+    "198 93% 60%",
+    "24 95% 53%",
+    "339 90% 51%",
+    "142 71% 45%",
+  ];
   const glowColor = glowColors[index % glowColors.length];
 
   const handleMouseMove = useCallback(

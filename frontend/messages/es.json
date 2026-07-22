@@ -233,24 +233,32 @@
     }
   },
   "home": {
-    "headline": "Tu idea merece una <strong>gran ejecución</strong>.",
-    "tagline": "De '¿esto se puede construir?' a '¿cuándo lanzamos?'",
-    "aboutMeDescription": "De '¿esto se puede construir?' a '¿cuándo lanzamos?'",
-    "announcementLabel": "Únete a la lista de espera de <strong>Frameback</strong>",
+    "headline": "Publica páginas fieles a tu marca <strong>a la velocidad del marketing</strong>.",
+    "tagline": "Construido sobre Sanity, con un sistema de diseño de verdad y bloques reutilizables. Tu equipo publica páginas nuevas sin depender del calendario de un desarrollador.",
+    "aboutMeDescription": "Construyo sistemas de contenido y sitios de marketing que los equipos pueden gestionar solos.",
+    "announcementLabel": "Sanity CMS y sistemas de diseño para <strong>equipos que publican</strong>",
     "resumeButtonLabel": "Ver mi currículum",
     "findMeOnLabel": "Encuéntrame en",
-    "contactMe": "Obtén Mi Llamada Estratégica Gratis",
-    "scheduleCall": "Reserva Llamada de Descubrimiento",
-    "contactDirectly": "Contáctame Directamente",
+    "contactMe": "Escríbeme",
+    "scheduleCall": "Reservar una llamada",
+    "contactDirectly": "Escríbeme",
+    "letsChat": "Hablemos",
+    "seeHowIWork": "Mira cómo trabajo",
+    "orBookTime": "¿Prefieres agendar? Reserva una hora",
     "workedWith": "Con qué trabajo",
+    "heroTrust": [
+      "Publica sin esperar a un dev",
+      "El código es tuyo",
+      "Sin compromiso, solo charlamos"
+    ],
     "tools": {
       "label": "Tecnologías",
       "headline": "Herramientas y Tecnologías",
-      "subtitle": "React, Next.js, TypeScript—y lo que sea necesario para entregar"
+      "subtitle": "Sanity, Next.js, TypeScript y lo que pida tu stack"
     },
     "ctaButtons": [
       {
-        "text": "Obtén tu oferta",
+        "text": "Iniciar un proyecto",
         "href": "/start-your-project",
         "variant": "secondary"
       }
@@ -258,17 +266,17 @@
     "aboutMe": {
       "label": "Quién soy",
       "headline": "Sobre Mí",
-      "subtitle": "4+ años y cada proyecto todavía me enseña algo",
-      "description": "Trabajo mejor cuando el brief es ambicioso y las ideas son salvajes. Dame un concepto visual fuerte y descubriré cómo hacerlo real en el navegador. He pasado años construyendo plataformas para inversores, launchpads de alto impacto y sitios de marketing donde cada micro-interacción importa. Me obsesiono con los detalles porque los detalles son lo que hacen que las cosas se sientan bien.",
-      "cta": "Construyamos Algo"
+      "subtitle": "Años construyendo sistemas de contenido que los equipos no superan",
+      "description": "Soy un ingeniero front-end que construye sitios de marketing y sistemas de contenido para empresas que se quedaron cortas con su setup anterior. Me importan dos cosas: un CMS que tu equipo pueda gestionar sin mí, y un front-end que siga siendo rápido y fiel a tu marca a medida que crece. He construido sistemas de diseño, librerías de componentes reutilizables y Sanity Studios que a los equipos de marketing les gusta usar. Las partes poco glamurosas, como los esquemas, las migraciones y la documentación de entrega, son las que deciden si un sitio sigue funcionando dos años después. Por eso las cuido.",
+      "cta": "Hablemos"
     },
     "contact": {
       "label": "Ponerse en contacto",
-      "headline": "¿Tienes una idea? Hagámosla realidad.",
-      "subtitle": "Ya sea un nuevo proyecto, un desafío creativo o algo que no sabes bien cómo construir—me encantaría escucharlo.",
-      "ctaButton": "Iniciar Mi Proyecto",
-      "ctaButtonSecondary": "Obtener una Respuesta Rápida",
-      "whatsappLabel": "¿Pregunta rápida? Escríbeme por WhatsApp"
+      "headline": "¿Tu sitio no escala? ¿Tu equipo depende de los devs? Lo arreglamos.",
+      "subtitle": "Cuéntame dónde te está frenando tu CMS o tu sitio. Te digo cómo lo resolvería.",
+      "ctaButton": "Iniciar un proyecto",
+      "ctaButtonSecondary": "Hacer una pregunta rápida",
+      "whatsappLabel": "¿Pregunta rápida? Escríbeme"
     }
   },
   "profile": {
@@ -295,10 +303,10 @@
   },
   "settings": {
     "title": "Eduard Stefan",
-    "description": "Sitios web creados con precisión, diseñados para el crecimiento.",
+    "description": "Sanity CMS y sistemas de diseño para equipos que publican.",
     "header": {
       "cta": {
-        "text": "Obtén Presupuesto Gratis",
+        "text": "Hablemos",
         "href": "/start-your-project"
       },
       "homeButtonLabel": "Casa",
@@ -316,8 +324,8 @@
       }
     },
     "seo": {
-      "title": "Eduard Stefan | Desarrollador Frontend",
-      "description": "Construyo experiencias web que se sienten bien. Ideas salvajes bienvenidas."
+      "title": "Eduard Stefan | Sanity CMS y Sistemas de Diseño",
+      "description": "Construyo sitios de marketing sobre Sanity con un sistema de diseño que tu equipo puede gestionar. Migraciones de CMS, componentes reutilizables, UX y CRO."
     }
   },
   "skills": {
@@ -398,93 +406,93 @@
     }
   },
   "services": {
-    "label": "Lo Que Hago",
-    "headline": "De la Idea a la Realidad",
-    "subtitle": "Acepto los proyectos que ponen nerviosos a otros devs.",
-    "cta": "Hablemos de Tu Proyecto",
+    "label": "Lo que hago",
+    "headline": "Del caos de contenido a un sistema que escala",
+    "subtitle": "Construyo el CMS, el sistema de diseño y el front-end. Tu equipo sigue desde ahí.",
+    "cta": "Hablemos de tu stack",
     "svc-1": {
-      "title": "Asociación Directa",
-      "description": "Sin agencias, sin intermediarios. Hablas conmigo. Entiendo tu visión, iteramos juntos, y construyo exactamente lo que necesitas."
+      "title": "Pensado para entregarte el control",
+      "description": "No desaparezco al lanzar. Te dejo documentación clara, editores capacitados y un sistema que tu equipo puede gestionar sin mí. Nada atado a mí, sin código misterioso."
     },
     "svc-2": {
-      "title": "Micro-Interacciones Que Importan",
-      "description": "Las pequeñas cosas marcan la diferencia. Estados hover, transiciones, animaciones—cuido los detalles que hacen que las interfaces se sientan vivas."
+      "title": "Un Sanity CMS hecho para durar",
+      "description": "Esquemas que tus editores entienden de verdad. Contenido estructurado que no se rompe cuando el sitio crece. Un Studio que a tu equipo le gusta abrir, hecho para escalar en lugar de rehacerse en un año."
     },
     "svc-3": {
-      "title": "Rendimiento que Convierte",
-      "description": "Sitios que cargan instantáneamente y guían a los visitantes hacia la acción. Construyo con pensamiento CRO desde el día uno."
+      "title": "Sitios de marketing que escalan",
+      "description": "Multiidioma, rápidos y sólidos en SEO desde el primer commit. Hechos para que la décima landing sea tan fácil de publicar como la primera."
     },
     "svc-4": {
-      "title": "Construido para Escalar",
-      "description": "Arquitectura limpia, código confiable, flujos de usuario suaves. Ya sean 100 usuarios o 100,000—tu sitio lo maneja."
+      "title": "UX y CRO que convierten",
+      "description": "Páginas pensadas según cómo decide la gente de verdad. Meto el pensamiento de conversión en el diseño desde el inicio, no lo añado al final."
     },
     "svc-5": {
-      "title": "SEO que Funciona",
-      "description": "Estructura que los motores de búsqueda entienden. Fundamentos técnicos que te ayudan a posicionarte y ser descubierto."
+      "title": "Sistema de diseño y bloques reutilizables",
+      "description": "Una librería de componentes de verdad, mapeada a tu marca. Marketing crea páginas nuevas con bloques que ya se ven bien, así nada se desvía de la marca."
     },
     "svc-6": {
-      "title": "Listo para el Mundo",
-      "description": "Soporte multiidioma desde el inicio. Llega a clientes en su idioma, donde sea que estén."
+      "title": "Migraciones limpias",
+      "description": "¿Te mudas de WordPress, Contentful o un montón de páginas hardcodeadas? Migro el contenido con cuidado, mapeo las redirecciones y superviso la visibilidad orgánica durante el lanzamiento."
     }
   },
   "howIWork": {
     "label": "Proceso",
-    "headline": "Cómo Trabajo",
-    "subtitle": "Sin sorpresas. Solo progreso claro hasta que lanzamos.",
+    "headline": "Cómo trabajo",
+    "subtitle": "Sin sorpresas. Progreso claro hasta que tu equipo toma el control.",
     "cta": "Empecemos",
     "planning": {
-      "title": "Descubrimos lo que Realmente Necesitas",
+      "title": "Mapeamos tu contenido y tu equipo",
       "paragraphs": [
-        "Hablamos. Hago preguntas hasta entender qué estás tratando de construir y por qué importa. Luego decidimos el alcance, el cronograma y cómo se ve el éxito."
+        "Empezamos por cómo trabaja tu equipo de verdad. Qué páginas publicáis, quién las edita y dónde os frena el setup actual. Luego modelamos el contenido y acordamos el alcance."
       ],
       "bulletPoints": [
-        "Tus objetivos, no suposiciones",
-        "Alcance que tiene sentido",
-        "Hitos claros"
+        "Contenido modelado según páginas reales",
+        "Editores implicados desde el inicio",
+        "Alcance e hitos claros desde el principio"
       ]
     },
     "development": {
-      "title": "Lo Construyo. Ves el Progreso.",
+      "title": "Construyo el sistema. Tú lo ves tomar forma.",
       "paragraphs": [
-        "No desaparezco por semanas. Verás actualizaciones regulares, prototipos funcionales y muchas oportunidades para corregir el rumbo antes de ir demasiado lejos."
+        "No me esfumo por semanas. Recibes actualizaciones regulares, previews funcionando en Sanity y margen para ajustar antes de que nada quede cerrado."
       ],
       "bulletPoints": [
         "Check-ins frecuentes",
-        "Demos funcionales, no presentaciones",
-        "Espacio para iterar"
+        "Previews en vivo, no presentaciones",
+        "Margen para iterar"
       ]
     },
     "deployment": {
-      "title": "Lanzamos Cuando Está Listo",
+      "title": "Lanzamos con cuidado y un plan de vuelta atrás",
       "paragraphs": [
-        "Me encargo de los detalles técnicos—hosting, dominio, seguridad, seguimiento. Probamos todo, arreglamos lo que necesita arreglo, y lanzamos con confianza."
+        "Me encargo de la parte técnica: migración, redirects, hosting y seguimiento. Probamos todo, arreglamos lo que haga falta, y salimos en vivo con confianza."
       ],
       "bulletPoints": [
-        "Probado antes del lanzamiento",
+        "Migración y redirects gestionados",
         "Analytics configurado",
-        "Cero incertidumbre"
+        "Revisiones SEO antes y después del lanzamiento"
       ]
     },
     "postDeployment": {
-      "title": "Es Tuyo. Estoy Aquí Si Me Necesitas.",
+      "title": "Tu equipo lo gestiona. Estoy aquí si me necesitas.",
       "paragraphs": [
-        "Eres dueño de todo. Te muestro cómo actualizar el contenido tú mismo. Y si quieres seguir mejorando basándote en datos reales, también podemos hacer eso."
+        "Eres dueño de todo. Capacito a tus editores y devs, dejo documentación clara y sigo disponible para lo que venga después."
       ],
       "bulletPoints": [
-        "Propiedad completa",
-        "Capacitación incluida",
+        "El código y el contenido son tuyos",
+        "Capacitación y documentación incluidas",
         "Soporte continuo disponible"
       ]
     }
   },
   "howIPrice": {
     "label": "Precios",
-    "headline": "Lo Que Cuesta",
-    "subtitle": "Estimación personalizada tras una breve llamada.",
-    "intro": "Construyo sitios que funcionan—rápidos, enfocados en conversión, y fáciles de mantener para ti. Elige el alcance que se ajuste a tu proyecto.",
+    "headline": "Lo que cuesta",
+    "subtitle": "Lo ajusto a tu proyecto tras una breve llamada.",
+    "intro": "Construyo sistemas de contenido que los equipos no superan: un Sanity CMS, un sistema de diseño y un sitio de marketing rápido que tu equipo puede gestionar. Elige el modelo que encaje con dónde estás.",
     "packages": {
-      "title": "Modelos de Compromiso",
-      "subtitle": "Selecciona la opción que coincida con el estado actual de tu negocio.",
+      "title": "Modelos de colaboración",
+      "subtitle": "Elige la opción que coincida con dónde está tu equipo hoy.",
       "mostPopular": "Más Popular",
       "whatYouGet": "Lo que obtienes",
       "showMore": "Ver más",
@@ -493,62 +501,63 @@
       "timeline": "Cronograma"
     },
     "launch": {
-      "title": "El Paquete 'Launch'",
-      "bestFor": "Ideal para: Empresas que buscan una base profesional y de alto rendimiento para escalar.",
-      "description": "Una construcción de sitio web completa y de alta conversión. Una base sólida para tu presencia digital.",
-      "timeline": "2-3 días",
+      "title": "El Build",
+      "bestFor": "Ideal para: equipos que necesitan un CMS y un sistema de diseño sólidos sobre los que construir.",
+      "description": "Un Sanity CMS, una librería de componentes reutilizables y un sitio de marketing rápido. La base sobre la que tu equipo construye todo lo demás.",
+      "timeline": "3-5 semanas",
       "features": [
-        "Theming y Branding: Personalización visual profunda.",
-        "Diseño Estratégico: Centrado en la conversión y el flujo de usuarios.",
-        "SEO Técnico: Estructura que a Google le encanta.",
-        "Optimización de Velocidad: Tiempos de carga inferiores a un segundo.",
-        "Mobile First: Experiencia perfecta en todos los dispositivos."
+        "Esquemas de Sanity modelados según tu contenido",
+        "Sistema de diseño mapeado a tu marca",
+        "Bloques de página reutilizables que tu equipo puede combinar",
+        "SEO técnico y Core Web Vitals",
+        "Capacitación de editores y documentación de entrega"
       ]
     },
     "growth": {
-      "title": "El Paquete 'Growth'",
-      "bestFor": "Ideal para: Empresas que buscan una solución ampliada y colaboración continua.",
-      "description": "Colaboro con tu equipo para construir una versión ampliada del plan 'Launch' con capacidades avanzadas.",
-      "timeline": "1-2 semanas",
+      "title": "La Migración",
+      "bestFor": "Ideal para: equipos que se mudan de un CMS viejo o enredado.",
+      "description": "Todo lo del Build, más una migración controlada desde tu setup actual, con contenido, redirecciones y revisiones de lanzamiento.",
+      "timeline": "6-10 semanas",
       "features": [
-        "Todo en 'Launch' + esto y más:",
-        "Integración de CMS: Eres el dueño y editas tu contenido.",
-        "Configuración de Localización: Listo para mercados globales desde el inicio.",
-        "Analíticas Avanzadas: Configuración completa de seguimiento para entender el comportamiento de los visitantes.",
-        "Generación de Clientes Potenciales: Conectado a tu correo o CRM."
+        "Todo lo del Build, más:",
+        "Migración de contenido desde WordPress, Contentful o custom",
+        "Mapa de redirecciones y revisiones SEO antes y después del lanzamiento",
+        "Localización para varios idiomas",
+        "Analytics y seguimiento de conversión",
+        "Pase de CRO sobre tus páginas clave"
       ]
     },
     "custom": {
-      "title": "Soluciones Personalizadas",
-      "bestFor": "Ideal para: Empresas con necesidades específicas y complejas.",
-      "description": "¿Necesitas una aplicación web compleja, una plataforma SaaS o una herramienta interna? Construyamos una solución adaptada a tus requisitos exactos.",
-      "timeline": "Varía según la complejidad",
+      "title": "Partner Integrado",
+      "bestFor": "Ideal para: equipos que quieren que trabaje junto a ellos a lo largo del tiempo.",
+      "description": "Trabajo como parte de tu equipo: extiendo el sistema de diseño, publico páginas y mantengo el sistema sano a medida que crece.",
+      "timeline": "Mensual, continuo",
       "features": [
-        "Adaptado a tus requisitos específicos",
-        "Funcionalidad e integraciones complejas",
-        "Autenticación y permisos de usuario personalizados",
-        "Sistemas avanzados de reservas o citas",
-        "Herramientas internas y paneles de control"
+        "Trabajo directo con tus diseñadores y devs",
+        "Componentes y tipos de página nuevos según los necesites",
+        "Rendimiento y SEO bajo control",
+        "Apps complejas, paneles e integraciones",
+        "Un sistema que crece sin desviarse de la marca"
       ]
     },
     "addOns": {
-      "title": "Servicios Independientes",
-      "subtitle": "Mejora cualquier sitio web—lo haya construido yo o no.",
+      "title": "Servicios independientes",
+      "subtitle": "Útiles por sí solos, lo haya construido yo o no.",
       "seo": {
-        "title": "Sprint SEO",
-        "benefit": "Auditoría técnica profunda para corregir bloqueadores de posicionamiento."
+        "title": "Migración a Sanity",
+        "benefit": "Migración de contenido, redirecciones y revisiones de lanzamiento incluidas."
       },
       "store": {
-        "title": "Motor de E-commerce",
-        "benefit": "Configuración completa de tienda con carrito, checkout y pagos."
+        "title": "Sprint de Sistema de Diseño",
+        "benefit": "Extraer una librería de componentes reutilizables de tu sitio actual."
       },
       "multiLanguage": {
-        "title": "Alcance Global",
-        "benefit": "Localización para 2+ idiomas para expandir tu mercado."
+        "title": "Localización",
+        "benefit": "Configuración multiidioma con hreflang correcto y slugs localizados."
       },
       "analytics": {
-        "title": "Analytics Profundo",
-        "benefit": "Informes de embudo personalizados y configuración avanzada de seguimiento."
+        "title": "Sprint de CRO",
+        "benefit": "Auditar y rehacer páginas clave para subir la conversión."
       },
       "contactForPricing": "Obtener precios →"
     }
@@ -607,28 +616,32 @@
   },
   "faq": {
     "label": "FAQ",
-    "headline": "Preguntas que Podrías Tener",
-    "subtitle": "Lo que la gente suele preguntar antes de empezar.",
-    "cta": "¿Más Preguntas? Hablemos",
+    "headline": "Preguntas que podrías tener",
+    "subtitle": "Lo que los equipos suelen preguntar antes de empezar.",
+    "cta": "¿Más preguntas? Hablemos",
     "faq-1": {
-      "question": "¿Cuánto tiempo tarda un proyecto típico?",
-      "answer": "Los plazos del proyecto varían según el alcance y la complejidad. El paquete 'Launch' generalmente toma 2-3 días, mientras que el paquete 'Growth' toma 1-2 semanas. Las soluciones personalizadas con funcionalidad compleja pueden tomar más tiempo. Proporcionaré un cronograma detallado durante nuestra consulta inicial."
+      "question": "¿Cuánto tarda un proyecto?",
+      "answer": "Depende del alcance. Un build de CMS y sistema de diseño suele durar 3-5 semanas. Una migración con un sitio de marketing completo, 6-10 semanas. Te doy un plazo real tras una llamada, no una suposición."
     },
     "faq-2": {
-      "question": "¿Trabajas con clientes fuera de tu zona horaria?",
-      "answer": "Sí, trabajo con clientes de todo el mundo. Soy flexible con los horarios de comunicación y puedo adaptarme a diferentes zonas horarias. La mayor parte de la comunicación ocurre de forma asíncrona por correo electrónico y herramientas de gestión de proyectos, con llamadas programadas cuando sea necesario."
+      "question": "¿Puedes migrarnos de nuestro CMS actual?",
+      "answer": "Sí. Puedo migrarte desde WordPress, Contentful o páginas hardcodeadas a Sanity. Migro el contenido con cuidado, mapeo las redirecciones y reviso el rendimiento orgánico antes y después del lanzamiento."
     },
     "faq-3": {
-      "question": "¿Qué sucede después de que se completa el proyecto?",
-      "answer": "Después del lanzamiento, proporciono capacitación sobre cómo gestionar tu contenido a través del CMS. También ofrezco opciones de mantenimiento y soporte continuo para mantener tu sitio funcionando sin problemas. Tendrás la propiedad completa de tu código y puedes elegir mantenerlo tú mismo o continuar trabajando conmigo."
+      "question": "¿Mi equipo podrá gestionar el sitio sin ti?",
+      "answer": "Ese es justo el objetivo. Modelo el CMS según cómo trabaja tu equipo, lo documento y capacito a tus editores y devs. El código y el contenido son tuyos, y puedes exportar todo cuando quieras."
     },
     "faq-4": {
-      "question": "¿Puedes trabajar con mi sitio web existente?",
-      "answer": "Absolutamente. Puedo mejorar, rediseñar o agregar funciones a sitios web existentes. Ya sea que necesites optimización de rendimiento, un diseño fresco o nueva funcionalidad, puedo trabajar con tu configuración actual y ayudarte a llevarla al siguiente nivel."
+      "question": "¿Trabajas con nuestros diseñadores y desarrolladores actuales?",
+      "answer": "Sí. Me integro bien en un equipo existente, sigo vuestras convenciones y hago una entrega limpia. También puedo llevar un proyecto solo de principio a fin si es lo que necesitas."
     },
     "faq-5": {
-      "question": "¿Qué está incluido en tus paquetes de precios?",
-      "answer": "Cada paquete incluye diseño personalizado, responsividad móvil, acceso al sistema de gestión de contenido, configuración de SEO y optimización de rendimiento. Los paquetes de nivel superior incluyen más páginas, funciones avanzadas e integraciones adicionales. Todos los paquetes incluyen capacitación y documentación. Consulta la sección <link>Cómo Precio</link> para ver desgloses detallados."
+      "question": "¿Sobre qué construyes el sitio?",
+      "answer": "Sanity para el CMS, Next.js y TypeScript para el front-end, con un sistema de diseño y bloques reutilizables encima. Rápido, sólido en SEO y hecho para escalar. Consulta la sección de <link>precios</link> para ver qué incluye cada modelo."
+    },
+    "faq-6": {
+      "question": "¿No quedamos atados a Sanity?",
+      "answer": "En parte, y no voy a fingir lo contrario. El CMS en sí es una apuesta por un proveedor. Pero lo que importa sigue siendo tuyo: el front-end es Next.js estándar en tu repo, los esquemas son código que posees, y tu contenido se exporta a JSON cuando quieras. Cambiar más adelante es una opción real, no un callejón sin salida."
     }
   },
   "blog": {

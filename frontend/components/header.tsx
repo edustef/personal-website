@@ -1,7 +1,7 @@
 "use client";
 
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
-import { LanguageToggle } from "@/components/language-toggle";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { ModeToggle } from "@/components/theme-toggle";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Link } from "@/components/ui/link";
@@ -19,10 +19,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Link as I18nLink, usePathname } from "@/i18n/navigation";
-import { cn } from "@/lib/utils";
+import { usePathname } from "@/i18n/navigation";
+import { cn, getWhatsAppUrl } from "@/lib/utils";
 import { AnimatePresence } from "framer-motion";
-import { Calendar, Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
@@ -33,22 +33,22 @@ type HeaderProps = {
 };
 
 const navItems = [
-  { key: "services", slugKey: "servicesSlug" },
-  { key: "howIWork", slugKey: "howIWorkSlug" },
-  { key: "pricing", slugKey: "pricingSlug" },
+  { key: "services" },
+  { key: "howIWork" },
+  { key: "pricing" },
   { key: "blog", href: "/blog" },
 ] as const;
 
 export function Header({ className, languageToggle }: HeaderProps) {
   const pathname = usePathname();
   const headerT = useTranslations("settings.header");
-  const homeT = useTranslations("home");
 
   const skipLinkText = headerT("skipLinkText");
   const navigationLabel = headerT("navLabel");
   const homeButtonLabel = headerT("homeButtonLabel");
-  const contactMeText = homeT("scheduleCall");
+  const contactMeText = headerT("cta.text");
   const menuLabel = headerT("menuLabel");
+  const whatsappUrl = getWhatsAppUrl(undefined);
 
   const servicesText = headerT("nav.services");
   const pricingText = headerT("nav.pricing");
@@ -255,10 +255,10 @@ export function Header({ className, languageToggle }: HeaderProps) {
 
           <NavigationMenu
             aria-label={navigationLabel}
-            className="hidden md:flex flex-1"
+            className="hidden flex-1 md:flex"
           >
             <NavigationMenuList className="gap-1">
-              {navItems.map((item, index) => {
+              {navItems.map((item) => {
                 const href = getNavHref(item);
                 const text = getNavText(item);
                 const active = isActive(item);
@@ -317,16 +317,21 @@ export function Header({ className, languageToggle }: HeaderProps) {
                   className="hidden md:block"
                 >
                   <Button asChild variant="default" size="sm">
-                    <I18nLink href="/schedule">
-                      <Calendar className="size-4" />
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <WhatsAppIcon className="size-4" />
                       {contactMeText}
-                    </I18nLink>
+                    </a>
                   </Button>
                 </motion.div>
               )}
             </AnimatePresence>
 
             <motion.div
+              className="hidden md:block"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
@@ -335,6 +340,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
             </motion.div>
 
             <motion.div
+              className="hidden md:block"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
@@ -344,132 +350,75 @@ export function Header({ className, languageToggle }: HeaderProps) {
 
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <motion.button
+                <button
+                  type="button"
                   className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" }),
+                    buttonVariants({ variant: "outline", size: "icon" }),
                     "md:hidden"
                   )}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  aria-label={menuLabel}
                 >
-                  <AnimatePresence mode="wait" initial={false}>
-                    {isMobileMenuOpen ? (
-                      <motion.div
-                        key="close"
-                        initial={{ rotate: -90, opacity: 0 }}
-                        animate={{ rotate: 0, opacity: 1 }}
-                        exit={{ rotate: 90, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <X className="size-6" />
-                      </motion.div>
-                    ) : (
-                      <motion.div
-                        key="menu"
-                        initial={{ rotate: 90, opacity: 0 }}
-                        animate={{ rotate: 0, opacity: 1 }}
-                        exit={{ rotate: -90, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <Menu className="size-6" />
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                  <span className="sr-only">{menuLabel}</span>
-                </motion.button>
+                  <Menu className="size-5" />
+                </button>
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="w-[300px] sm:w-[400px] overflow-y-auto"
+                className="w-full max-w-sm overflow-y-auto p-0"
               >
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="p-6"
-                >
-                  <SheetHeader className="text-left mb-8">
-                    <SheetTitle className="text-xl font-bold">
+                <div className="flex min-h-full flex-col px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-14">
+                  <SheetHeader className="px-0 text-left">
+                    <SheetTitle className="text-2xl tracking-tight">
                       Eduard Stefan
                     </SheetTitle>
-                    <SheetDescription className="sr-only">
-                      {navigationLabel}
-                    </SheetDescription>
+                    <SheetDescription>{navigationLabel}</SheetDescription>
                   </SheetHeader>
-                  <nav className="flex flex-col gap-2">
-                    {navItems.map((item, index) => {
+
+                  <nav
+                    aria-label={navigationLabel}
+                    className="mt-10 flex flex-col"
+                  >
+                    {navItems.map((item) => {
                       const href = getNavHref(item);
                       const text = getNavText(item);
                       const active = isActive(item);
 
                       return (
-                        <motion.div
+                        <Link
                           key={item.key}
-                          initial={{ opacity: 0, x: 20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{
-                            duration: 0.3,
-                            delay: index * 0.1,
-                          }}
-                        >
-                          <Link
-                            href={href}
-                            className={cn(
-                              "group relative flex items-center px-4 py-2 text-lg font-medium rounded-md transition-colors duration-300",
-                              "hover:text-primary",
-                              active && "text-primary"
-                            )}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            <span className="relative z-10">{text}</span>
-                            <motion.span
-                              className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary origin-left"
-                              initial={{ scaleX: active ? 1 : 0 }}
-                              animate={{ scaleX: active ? 1 : 0 }}
-                              whileHover={{ scaleX: 1 }}
-                              transition={{
-                                duration: 0.3,
-                                ease: [0.25, 1, 0.25, 1],
-                              }}
-                            />
-                            {active && (
-                              <motion.div
-                                className="absolute inset-0 rounded-md bg-primary/5 -z-10"
-                                layoutId="activeMobileNavItem"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{
-                                  type: "spring",
-                                  stiffness: 380,
-                                  damping: 30,
-                                }}
-                              />
-                            )}
-                          </Link>
-                        </motion.div>
-                      );
-                    })}
-                    <motion.div
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{
-                        duration: 0.3,
-                        delay: navItems.length * 0.1,
-                      }}
-                      className="mt-6 pt-6 border-t"
-                    >
-                      <Button asChild className="w-full" size="lg">
-                        <I18nLink
-                          href="/schedule"
+                          href={href}
+                          aria-current={active ? "page" : undefined}
+                          className={cn(
+                            "justify-start rounded-none border-b px-0 py-5 text-2xl font-medium tracking-tight no-underline transition-colors",
+                            "hover:text-primary hover:no-underline focus-visible:text-primary",
+                            active && "text-primary"
+                          )}
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
-                          <Calendar className="size-5" />
-                          {contactMeText}
-                        </I18nLink>
-                      </Button>
-                    </motion.div>
+                          {text}
+                        </Link>
+                      );
+                    })}
                   </nav>
-                </motion.div>
+
+                  <div className="mt-auto space-y-6 pt-10">
+                    <Button asChild size="lg" className="w-full">
+                      <a
+                        href={whatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <WhatsAppIcon className="size-5" />
+                        {contactMeText}
+                      </a>
+                    </Button>
+
+                    <div className="flex items-center justify-between border-t pt-5">
+                      <ModeToggle />
+                      {languageToggle}
+                    </div>
+                  </div>
+                </div>
               </SheetContent>
             </Sheet>
           </div>
