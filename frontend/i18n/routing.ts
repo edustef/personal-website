@@ -21,10 +21,6 @@ export const routing = defineRouting({
       ro: "/calculator-roi",
       es: "/calculadora-roi",
     },
-    "/start-your-project": {
-      ro: "/incepe-proiectul-tau",
-      es: "/inicia-tu-proyecto",
-    },
     "/privacy-policy": {
       ro: "/politica-de-confidentialitate",
       es: "/politica-de-privacidad",

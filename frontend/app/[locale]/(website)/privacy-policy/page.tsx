@@ -73,7 +73,7 @@ export default async function PrivacyPolicyPage(props: Props) {
           <ul className="mb-4 list-disc pl-6">
             <li className="mb-2">{t("sections.dataCollected.items.email")}</li>
             <li className="mb-2">
-              {t("sections.dataCollected.items.projectDetails")}
+              {t("sections.dataCollected.items.message")}
             </li>
             <li className="mb-2">
               {t("sections.dataCollected.items.technicalInfo")}
@@ -89,9 +89,6 @@ export default async function PrivacyPolicyPage(props: Props) {
           <ul className="mb-4 list-disc pl-6">
             <li className="mb-2">
               {t("sections.purpose.items.communication")}
-            </li>
-            <li className="mb-2">
-              {t("sections.purpose.items.projectEstimate")}
             </li>
             <li className="mb-2">{t("sections.purpose.items.analytics")}</li>
           </ul>

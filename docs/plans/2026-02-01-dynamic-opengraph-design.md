@@ -2,7 +2,7 @@
 
 > **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
-**Goal:** Add dynamic OpenGraph images to blog listing, blog posts, start-your-project, and privacy-policy pages using a shared generator with the site's dark gradient background and Cardo font.
+**Goal:** Add dynamic OpenGraph images to blog listing, blog posts, and privacy-policy pages using a shared generator with the site's dark gradient background and Cardo font.
 
 **Architecture:** Shared OG image generator utility with per-route `opengraph-image.tsx` files following Next.js App Router conventions.
 
@@ -262,50 +262,7 @@ git commit -m "feat(og): add dynamic OG image for blog posts"
 
 ---
 
-## Task 4: Add OG Image for Start Your Project
-
-**Files:**
-- Create: `frontend/app/[locale]/(website)/start-your-project/opengraph-image.tsx`
-
-**Step 1: Create the OG image route**
-
-```tsx
-import { generateOgImage, OG_CONTENT_TYPE, OG_SIZE } from "@/lib/og-image";
-
-export const alt = "Start Your Project";
-export const size = OG_SIZE;
-export const contentType = OG_CONTENT_TYPE;
-
-export default async function Image({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-
-  // Localized titles
-  const titles: Record<string, string> = {
-    en: "Start Your Project",
-    es: "Inicia Tu Proyecto",
-    ro: "Începe Proiectul Tău",
-  };
-
-  const title = titles[locale] || titles.en;
-
-  return generateOgImage(title);
-}
-```
-
-**Step 2: Commit**
-
-```bash
-git add frontend/app/[locale]/(website)/start-your-project/opengraph-image.tsx
-git commit -m "feat(og): add dynamic OG image for start-your-project"
-```
-
----
-
-## Task 5: Add OG Image for Privacy Policy
+## Task 4: Add OG Image for Privacy Policy
 
 **Files:**
 - Create: `frontend/app/[locale]/(website)/privacy-policy/opengraph-image.tsx`
@@ -348,7 +305,7 @@ git commit -m "feat(og): add dynamic OG image for privacy-policy"
 
 ---
 
-## Task 6: Test and Verify
+## Task 5: Test and Verify
 
 **Step 1: Run the development server**
 
@@ -361,7 +318,6 @@ cd frontend && npm run dev
 Visit these URLs in your browser to see the generated images:
 - `http://localhost:3000/en/blog/opengraph-image`
 - `http://localhost:3000/en/blog/[any-existing-slug]/opengraph-image`
-- `http://localhost:3000/en/start-your-project/opengraph-image`
 - `http://localhost:3000/en/privacy-policy/opengraph-image`
 
 **Step 3: Verify meta tags**
@@ -380,8 +336,8 @@ Use browser DevTools to check that `<meta property="og:image">` tags are generat
 
 This plan creates:
 - 1 shared generator (`lib/og-image.tsx`)
-- 4 OG image routes for blog, blog posts, start-your-project, and privacy-policy
+- 3 OG image routes for blog, blog posts, and privacy-policy
 - Localized titles for all 3 languages (en, es, ro)
 - Consistent dark gradient background with Cardo font
 
-Total tasks: 6
+Total tasks: 5
