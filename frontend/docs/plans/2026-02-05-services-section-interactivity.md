@@ -765,7 +765,7 @@ export default async function ServicesSection({
   const phone = profileT("phone");
   const whatsappUrl = phone
     ? `https://wa.me/${phone.replace(/[^0-9]/g, "")}`
-    : "https://wa.me/40775378525";
+    : "https://wa.me/40770378214";
 
   // Pre-translate all services for client components
   const translatedServices = servicesToDisplay.map((service, index) => ({

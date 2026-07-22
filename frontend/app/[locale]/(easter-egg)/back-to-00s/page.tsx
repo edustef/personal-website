@@ -109,7 +109,7 @@ export default async function BackTo00sPage(props: Props) {
           </p>
 
           <a
-            href="https://wa.me/40775378525"
+            href="https://wa.me/40770378214"
             style={{
               display: "inline-block",
               background:
@@ -598,7 +598,7 @@ export default async function BackTo00sPage(props: Props) {
                   {howIPriceT(`${pkg}.bestFor`)}
                 </p>
                 <a
-                  href="https://wa.me/40775378525"
+                  href="https://wa.me/40770378214"
                   style={{
                     display: "inline-block",
                     background: "linear-gradient(to bottom, #336699, #224466)",
@@ -774,7 +774,7 @@ export default async function BackTo00sPage(props: Props) {
             }}
           >
             <a
-              href="https://wa.me/40775378525"
+              href="https://wa.me/40770378214"
               style={{
                 display: "inline-block",
                 background: "linear-gradient(to bottom, #25d366, #128c4e)",
