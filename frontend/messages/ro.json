@@ -100,7 +100,8 @@
       "services": "Servicii",
       "pricing": "Prețuri",
       "blog": "Blog",
-      "sanity": "Sanity CMS"
+      "sanity": "Sanity CMS",
+      "lab": "Lab"
     }
   },
   "home": {
@@ -192,6 +193,7 @@
         "pricing": "Prețuri",
         "howIWork": "Cum Lucrez",
         "blog": "Blog",
+        "lab": "Lab",
         "servicesSlug": "servicii",
         "pricingSlug": "preturi",
         "howIWorkSlug": "cum-lucrez",
@@ -527,6 +529,31 @@
       "avgConversionLift": {
         "value": "15%+",
         "label": "Creștere Medie Conversii"
+      }
+    }
+  },
+  "lab": {
+    "metadataTitle": "Lab | Experimente UI",
+    "metadataDescription": "O colecție în creștere de experimente de interfață, studii de interacțiune și mici detalii web utile.",
+    "eyebrow": "Lab · Experimente de interfață",
+    "count": "001 / în lucru",
+    "title": "Idei mici, construite până când se simt bine.",
+    "intro": "O colecție în creștere de studii de interfață, ciudățenii utile și detalii mici care merită atenție.",
+    "next": "Mai multe experimente sunt deja pe masa de lucru.",
+    "dock": {
+      "index": "Experimentul 001",
+      "category": "Navigație · Interacțiune",
+      "title": "Magnetic Dock",
+      "description": "Un studiu de navigație compactă ce răspunde la apropierea pointerului fără să deplaseze elementele din jur.",
+      "instruction": "Mișcă pointerul peste dock, navighează cu tastatura sau atinge o pictogramă.",
+      "activeLabel": "Selectat",
+      "ariaLabel": "Experiment de navigație magnetică",
+      "items": {
+        "home": "Acasă",
+        "search": "Caută",
+        "layers": "Straturi",
+        "ideas": "Idei",
+        "settings": "Setări"
       }
     }
   },

@@ -16,7 +16,7 @@ import { useRef } from "react";
 export type MagneticDockItem = {
   id: string;
   label: string;
-  href: string;
+  href?: string;
   icon: ReactNode;
   active?: boolean;
   onSelect?: () => void;
@@ -68,6 +68,29 @@ function DockItem({
     [1, magnification, 1]
   );
   const scale = useSpring(scaleTarget, SPRING);
+  const interactiveClassName = cn(
+    "relative grid size-[var(--dock-item-size)] touch-manipulation place-items-center rounded-full p-0",
+    "text-muted-foreground no-underline transition-[background-color,color,box-shadow] duration-200",
+    "hover:bg-accent hover:text-foreground focus-visible:bg-accent focus-visible:text-foreground",
+    "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none",
+    "active:bg-accent/80 motion-reduce:transition-none",
+    item.active &&
+      "bg-foreground text-background shadow-sm hover:bg-foreground hover:text-background focus-visible:bg-foreground focus-visible:text-background"
+  );
+  const contents = (
+    <>
+      <span className="grid size-5 place-items-center" aria-hidden="true">
+        {item.icon}
+      </span>
+      <span
+        className={cn(
+          "absolute -bottom-1 left-1/2 size-1 -translate-x-1/2 rounded-full bg-current transition-opacity duration-200 motion-reduce:transition-none",
+          item.active ? "opacity-100" : "opacity-0"
+        )}
+        aria-hidden="true"
+      />
+    </>
+  );
 
   return (
     <motion.li
@@ -75,33 +98,28 @@ function DockItem({
       className="group/dock-item relative grid shrink-0 place-items-center"
       style={{ scale: reduceMotion ? 1 : scale }}
     >
-      <Link
-        aria-current={item.active ? "location" : undefined}
-        aria-label={item.label}
-        className={cn(
-          "relative grid size-[var(--dock-item-size)] touch-manipulation place-items-center rounded-full p-0",
-          "text-muted-foreground no-underline transition-[background-color,color,box-shadow] duration-200",
-          "hover:bg-accent hover:text-foreground focus-visible:bg-accent focus-visible:text-foreground",
-          "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none",
-          "active:bg-accent/80 motion-reduce:transition-none",
-          item.active &&
-            "bg-foreground text-background shadow-sm hover:bg-foreground hover:text-background focus-visible:bg-foreground focus-visible:text-background"
-        )}
-        href={item.href}
-        onClick={item.onSelect}
-        variant="ghost"
-      >
-        <span className="grid size-5 place-items-center" aria-hidden="true">
-          {item.icon}
-        </span>
-        <span
-          className={cn(
-            "absolute -bottom-1 left-1/2 size-1 -translate-x-1/2 rounded-full bg-current transition-opacity duration-200 motion-reduce:transition-none",
-            item.active ? "opacity-100" : "opacity-0"
-          )}
-          aria-hidden="true"
-        />
-      </Link>
+      {item.href ? (
+        <Link
+          aria-current={item.active ? "location" : undefined}
+          aria-label={item.label}
+          className={interactiveClassName}
+          href={item.href}
+          onClick={item.onSelect}
+          variant="ghost"
+        >
+          {contents}
+        </Link>
+      ) : (
+        <button
+          aria-label={item.label}
+          aria-pressed={item.active}
+          className={interactiveClassName}
+          onClick={item.onSelect}
+          type="button"
+        >
+          {contents}
+        </button>
+      )}
 
       <span
         aria-hidden="true"

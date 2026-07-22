@@ -37,6 +37,7 @@ const navItems = [
   { key: "howIWork" },
   { key: "pricing" },
   { key: "blog", href: "/blog" },
+  { key: "lab", href: "/lab" },
 ] as const;
 
 export function Header({ className, languageToggle }: HeaderProps) {
@@ -54,6 +55,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
   const pricingText = headerT("nav.pricing");
   const howIWorkText = headerT("nav.howIWork");
   const blogText = headerT("nav.blog");
+  const labText = headerT("nav.lab");
   const servicesSlug = headerT("nav.servicesSlug");
   const pricingSlug = headerT("nav.pricingSlug");
   const howIWorkSlug = headerT("nav.howIWorkSlug");
@@ -176,6 +178,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
     if (item.key === "services") return servicesText;
     if (item.key === "pricing") return pricingText;
     if (item.key === "howIWork") return howIWorkText;
+    if (item.key === "lab") return labText;
     return blogText;
   };
 
@@ -225,7 +228,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
         {skipLinkText}
       </a>
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-        <div className="flex items-center gap-6 md:gap-10">
+        <div className="flex items-center gap-6 md:gap-6 lg:gap-10">
           <motion.div
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}

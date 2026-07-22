@@ -14,6 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...getEntries("/roi-calculator"),
     ...getEntries("/privacy-policy"),
     ...getEntries("/blog"),
+    ...getEntries("/lab"),
     ...posts.map((post) => {
       // Find English version for x-default, or fallback to current post
       const englishVersion = post.translations.find((t) => t.locale === "en");

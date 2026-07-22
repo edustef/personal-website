@@ -100,7 +100,8 @@
       "services": "Servicios",
       "pricing": "Precios",
       "blog": "Blog",
-      "sanity": "Sanity CMS"
+      "sanity": "Sanity CMS",
+      "lab": "Lab"
     }
   },
   "home": {
@@ -192,6 +193,7 @@
         "pricing": "Precios",
         "howIWork": "Cómo trabajo",
         "blog": "Blog",
+        "lab": "Lab",
         "servicesSlug": "servicios",
         "pricingSlug": "precios",
         "howIWorkSlug": "como-trabajo",
@@ -527,6 +529,31 @@
       "avgConversionLift": {
         "value": "15%+",
         "label": "Aumento Medio de Conversión"
+      }
+    }
+  },
+  "lab": {
+    "metadataTitle": "Lab | Experimentos de UI",
+    "metadataDescription": "Una colección creciente de experimentos de interfaz, estudios de interacción y pequeños detalles web útiles.",
+    "eyebrow": "Lab · Experimentos de interfaz",
+    "count": "001 / en curso",
+    "title": "Ideas pequeñas, construidas hasta que se sienten bien.",
+    "intro": "Una colección creciente de estudios de interfaz, rarezas útiles y pequeños detalles que merecen atención.",
+    "next": "Ya hay más experimentos en la mesa de trabajo.",
+    "dock": {
+      "index": "Experimento 001",
+      "category": "Navegación · Interacción",
+      "title": "Magnetic Dock",
+      "description": "Un estudio de navegación compacta que responde a la proximidad del puntero sin mover el diseño a su alrededor.",
+      "instruction": "Mueve el puntero sobre el dock, usa el teclado o toca un icono.",
+      "activeLabel": "Seleccionado",
+      "ariaLabel": "Experimento de navegación magnética",
+      "items": {
+        "home": "Inicio",
+        "search": "Buscar",
+        "layers": "Capas",
+        "ideas": "Ideas",
+        "settings": "Ajustes"
       }
     }
   },

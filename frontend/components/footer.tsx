@@ -61,6 +61,12 @@ export async function Footer({ className, locale }: FooterProps) {
                 >
                   {t("menu.blog")}
                 </Link>
+                <Link
+                  href="/lab"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {t("menu.lab")}
+                </Link>
               </nav>
             </div>
 

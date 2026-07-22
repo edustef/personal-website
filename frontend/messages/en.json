@@ -100,7 +100,8 @@
       "services": "Services",
       "pricing": "Pricing",
       "blog": "Blog",
-      "sanity": "Sanity CMS"
+      "sanity": "Sanity CMS",
+      "lab": "Lab"
     }
   },
   "home": {
@@ -192,6 +193,7 @@
         "pricing": "Pricing",
         "howIWork": "How I Work",
         "blog": "Blog",
+        "lab": "Lab",
         "servicesSlug": "services",
         "pricingSlug": "pricing",
         "howIWorkSlug": "how-i-work",
@@ -527,6 +529,31 @@
       "avgConversionLift": {
         "value": "15%+",
         "label": "Avg. Conversion Lift"
+      }
+    }
+  },
+  "lab": {
+    "metadataTitle": "Lab | UI Experiments",
+    "metadataDescription": "A growing collection of interface experiments, interaction studies, and useful little web details.",
+    "eyebrow": "Lab · Interface experiments",
+    "count": "001 / ongoing",
+    "title": "Small ideas, built until they feel right.",
+    "intro": "A growing collection of interface studies, useful oddities, and tiny details worth obsessing over.",
+    "next": "More experiments are already on the workbench.",
+    "dock": {
+      "index": "Experiment 001",
+      "category": "Navigation · Interaction",
+      "title": "Magnetic Dock",
+      "description": "A compact navigation study that responds to pointer proximity without shifting the surrounding layout.",
+      "instruction": "Move across the dock, focus with the keyboard, or tap an icon.",
+      "activeLabel": "Selected",
+      "ariaLabel": "Magnetic dock experiment",
+      "items": {
+        "home": "Home",
+        "search": "Search",
+        "layers": "Layers",
+        "ideas": "Ideas",
+        "settings": "Settings"
       }
     }
   },
