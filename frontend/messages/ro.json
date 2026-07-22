@@ -228,7 +228,7 @@
     "menu": {
       "title": "Meniu",
       "services": "Servicii",
-      "pricing": "Prețuri",
+      "pricing": "Colaborare",
       "blog": "Blog"
     }
   },
@@ -315,11 +315,11 @@
       "menuLabel": "Meniu",
       "nav": {
         "services": "Servicii",
-        "pricing": "Prețuri",
+        "pricing": "Colaborare",
         "howIWork": "Cum Lucrez",
         "blog": "Blog",
         "servicesSlug": "servicii",
-        "pricingSlug": "preturi",
+        "pricingSlug": "colaborare",
         "howIWorkSlug": "how-i-work"
       }
     },
@@ -485,81 +485,41 @@
       ]
     }
   },
+  "waysToWorkTogether": {
+    "label": "Moduri de colaborare",
+    "headline": "Un proiect clar, construit în jurul nevoilor site-ului tău.",
+    "subtitle": "După o discuție scurtă, transform problema într-un plan clar, cu livrabilele, durata și suportul potrivite.",
+    "engagementTitle": "Construim ce are nevoie echipa ta. Predăm un sistem pe care îl poate gestiona.",
+    "description": "Poate fi un site nou pe Sanity, o migrare controlată din CMS-ul actual sau îmbunătățiri într-un sistem existent. Proiectul este definit după rezultat, nu după un pachet prestabilit.",
+    "scopeLabel": "Tipuri de proiect",
+    "scopeValue": "Site-uri noi, migrări CMS și îmbunătățiri de sistem",
+    "timelineLabel": "Durata uzuală",
+    "timelineValue": "3–10 săptămâni",
+    "timelineNote": "Ai nevoie de ajutor continuu? Suportul integrat se stabilește în funcție de prioritățile și ritmul echipei tale.",
+    "includesTitle": "Un proiect obișnuit include",
+    "includedItems": [
+      "Descoperire și maparea fluxului de lucru și a conținutului",
+      "Model de conținut Sanity și experiența editorilor",
+      "Un sistem reutilizabil de pagini cu preview-uri live",
+      "QA, plan de lansare, documentație și predare"
+    ],
+    "cta": "Spune-mi despre site-ul tău"
+  },
   "howIPrice": {
     "label": "Prețuri",
     "headline": "Cât costă",
     "subtitle": "Le potrivesc pe proiectul tău, după o discuție scurtă.",
-    "intro": "Construiesc sisteme de conținut pe care echipele nu le depășesc: un Sanity CMS, un design system și un site de marketing rapid pe care echipa ta îl poate gestiona. Alege modelul care se potrivește cu unde ești.",
-    "packages": {
-      "title": "Modele de colaborare",
-      "subtitle": "Alege ce se potrivește cu unde e echipa ta acum.",
-      "mostPopular": "Cel Mai Popular",
-      "whatYouGet": "Ce primești",
-      "showMore": "Vezi mai mult",
-      "showLess": "Vezi mai puțin",
-      "getQuote": "Cere Oferta Ta Personalizată",
-      "timeline": "Termen"
-    },
     "launch": {
       "title": "Build-ul",
-      "bestFor": "Ideal pentru: echipe care au nevoie de un CMS și un design system solide pe care să construiască.",
-      "description": "Un Sanity CMS, o librărie de componente reutilizabile și un site de marketing rapid. Fundația pe care echipa ta construiește tot restul.",
-      "timeline": "3-5 săptămâni",
-      "features": [
-        "Scheme Sanity modelate după conținutul tău",
-        "Design system mapat pe brandul tău",
-        "Blocuri de pagină reutilizabile pe care echipa ta le combină",
-        "SEO tehnic și Core Web Vitals",
-        "Training pentru editori și documentație de predare"
-      ]
+      "bestFor": "Ideal pentru: echipe care au nevoie de un CMS și un design system solide pe care să construiască."
     },
     "growth": {
       "title": "Migrarea",
-      "bestFor": "Ideal pentru: echipe care se mută de pe un CMS vechi sau încâlcit.",
-      "description": "Tot din Build, plus o mutare controlată de pe setup-ul actual, cu migrarea conținutului, redirect-uri și verificări la lansare.",
-      "timeline": "6-10 săptămâni",
-      "features": [
-        "Tot din Build, plus:",
-        "Migrare de conținut de pe WordPress, Contentful sau custom",
-        "Hartă de redirect-uri și verificări SEO înainte și după lansare",
-        "Localizare pentru mai multe limbi",
-        "Analiză și tracking de conversie",
-        "Trecere de CRO peste paginile tale cheie"
-      ]
+      "bestFor": "Ideal pentru: echipe care se mută de pe un CMS vechi sau încâlcit."
     },
     "custom": {
       "title": "Partener Integrat",
-      "bestFor": "Ideal pentru: echipe care vor să lucrez alături de ele pe termen lung.",
-      "description": "Lucrez ca parte din echipa ta: extind design system-ul, public pagini și țin sistemul sănătos pe măsură ce crește.",
-      "timeline": "Lunar, continuu",
-      "features": [
-        "Lucru direct cu designerii și devs tăi",
-        "Componente și tipuri noi de pagină când ai nevoie",
-        "Performanță și SEO ținute sub control",
-        "Aplicații complexe, dashboard-uri și integrări",
-        "Un sistem care crește fără să se abată de la brand"
-      ]
-    },
-    "addOns": {
-      "title": "Servicii separate",
-      "subtitle": "Utile și de sine stătătoare, construit de mine sau nu.",
-      "seo": {
-        "title": "Migrare pe Sanity",
-        "benefit": "Migrarea conținutului, redirect-uri și verificări la lansare incluse."
-      },
-      "store": {
-        "title": "Sprint Design System",
-        "benefit": "Extrag o librărie de componente reutilizabile din site-ul tău actual."
-      },
-      "multiLanguage": {
-        "title": "Localizare",
-        "benefit": "Configurare multi-limbă cu hreflang corect și slug-uri localizate."
-      },
-      "analytics": {
-        "title": "Sprint CRO",
-        "benefit": "Audit și refacerea paginilor cheie ca să crească conversia."
-      },
-      "contactForPricing": "Află prețurile →"
+      "bestFor": "Ideal pentru: echipe care vor să lucrez alături de ele pe termen lung."
     }
   },
   "roiCalculator": {
@@ -637,7 +597,7 @@
     },
     "faq-5": {
       "question": "Pe ce construiești site-ul?",
-      "answer": "Sanity pentru CMS, Next.js și TypeScript pentru front-end, cu un design system și blocuri reutilizabile deasupra. Rapid, solid pe SEO și făcut să scaleze. Vezi secțiunea <link>Prețuri</link> pentru ce include fiecare model."
+      "answer": "Sanity pentru CMS, Next.js și TypeScript pentru front-end, cu un design system și blocuri reutilizabile deasupra. Rapid, solid pe SEO și făcut să scaleze. Vezi <link>modurile de colaborare</link> pentru ce include fiecare proiect."
     },
     "faq-6": {
       "question": "Nu rămânem blocați pe Sanity?",
