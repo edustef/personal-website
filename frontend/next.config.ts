@@ -24,6 +24,7 @@ const nextConfig: NextConfig = {
     optimizePackageImports: [
       "@splinetool/react-spline",
       "@rive-app/react-canvas",
+      "lucide-react",
       "motion",
     ],
   },
