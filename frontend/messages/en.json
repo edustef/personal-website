@@ -1,161 +1,8 @@
 {
-  "startYourProject": {
-    "slug": "start-your-project",
-    "title": "Start Your Project",
-    "description": "Choose the option that best describes you."
-  },
-  "clientProjectInflow": {
-    "step0": {
-      "title": "First things first...",
-      "description": "To tailor the questions for you, are you technical?",
-      "technical": {
-        "title": "Yes, I'm technical",
-        "description": "I understand code, stacks, and development flows."
-      },
-      "nonTechnical": {
-        "title": "No, I'm non-technical",
-        "description": "I focus on business/design, I need you to handle the tech."
-      }
-    },
-    "step1": {
-      "title": "What do you want to create or improve?",
-      "description": "Select all that apply.",
-      "options": {
-        "newWebsite": "A new website",
-        "improveWebsite": "Improve/redesign current website",
-        "mobileApp": "A mobile app (iOS/Android)",
-        "aiFeatures": "Add AI features",
-        "performance": "Improve performance/SEO",
-        "maintenance": "Ongoing maintenance",
-        "notSure": "Not sure yet"
-      }
-    },
-    "step2": {
-      "title": "Audience & Purpose",
-      "description": "Who is this for and what is the main goal?",
-      "audience": {
-        "label": "Who is your project for?",
-        "customers": "Customers",
-        "internalTeam": "Internal team",
-        "community": "Community/users",
-        "other": "Other"
-      },
-      "purpose": {
-        "label": "What is the main purpose?",
-        "generateLeads": "Generate leads",
-        "sellProducts": "Sell products/services",
-        "showcasePortfolio": "Showcase portfolio",
-        "improveWorkflow": "Improve workflow",
-        "increaseConversions": "Increase conversions",
-        "validateIdea": "Validate app idea",
-        "other": "Other"
-      }
-    },
-    "step3": {
-      "title": "Which features do you need?",
-      "description": "Select the core functionalities.",
-      "features": {
-        "landingPage": "Landing page",
-        "multiPage": "Multi-page website",
-        "blog": "Blog",
-        "booking": "Booking system",
-        "ecommerce": "E-commerce",
-        "apiIntegrations": "API integrations",
-        "headlessCms": "Headless CMS",
-        "customComponents": "Custom components",
-        "authentication": "Authentication",
-        "userProfiles": "User profiles",
-        "chatMessaging": "Chat/Messaging",
-        "pushNotifications": "Push notifications",
-        "mapsGeolocation": "Maps/Geolocation",
-        "payments": "Payments",
-        "aiAssistant": "AI assistant",
-        "customChatbot": "Custom chatbot",
-        "automatedWorkflows": "Automated workflows",
-        "dataDashboards": "Data dashboards"
-      }
-    },
-    "step4": {
-      "title": "Do you already have something started?",
-      "options": {
-        "fromScratch": "No, starting from scratch",
-        "needsImprovement": "Yes — needs improvement",
-        "haveDesigns": "I have designs",
-        "haveBranding": "I have branding",
-        "haveBackend": "I have backend/API",
-        "haveContent": "I have content",
-        "justExploring": "Just exploring"
-      },
-      "currentLink": {
-        "label": "Share your current link (optional)",
-        "placeholder": "https://..."
-      }
-    },
-    "step5": {
-      "title": "Budget & Timeline",
-      "description": "This helps me understand the scope.",
-      "budget": {
-        "label": "Budget Range",
-        "range1": "€1,000–2,500",
-        "range2": "€2,500–5,000",
-        "range3": "€5,000–10,000",
-        "range4": "€10,000-20,000",
-        "range5": "€20,000+",
-        "dontKnow": "I don't know yet"
-      },
-      "timeline": {
-        "label": "When would you like to start?",
-        "placeholder": "Timeline",
-        "asap": "ASAP",
-        "oneTwoMonths": "In 1–2 months",
-        "threePlusMonths": "In 3+ months",
-        "justExploring": "Just exploring"
-      }
-    },
-    "step6": {
-      "title": "Tell me a bit about your business or goals",
-      "description": "Optional context to help me understand.",
-      "businessContext": {
-        "placeholder": "My business helps X do Y..."
-      },
-      "successCriteria": {
-        "label": "What does success look like for you?",
-        "placeholder": "I want to increase sales by 20%..."
-      }
-    },
-    "step7": {
-      "title": "Where should I send your personalized plan?",
-      "email": {
-        "label": "Email Address",
-        "placeholder": "you@example.com",
-        "error": "Please enter a valid email address."
-      },
-      "bookCall": {
-        "label": "I'd also like to book a 15-min intro call."
-      },
-      "privacyConsent": {
-        "label": "I agree to the processing of my personal data in accordance with the",
-        "link": "Privacy Policy",
-        "error": "You must agree to the Privacy Policy to submit this form."
-      },
-      "submit": {
-        "button": "Get My Personalized Estimate",
-        "submitting": "Submitting..."
-      }
-    },
-    "navigation": {
-      "back": "Back",
-      "next": "Next"
-    },
-    "messages": {
-      "submitted": "Project inquiry submitted! We'll be in touch soon.",
-      "submitError": "Failed to submit. Please try again."
-    }
-  },
   "privacyPolicy": {
     "title": "Privacy Policy",
     "description": "Our privacy policy explains how we collect, use, and protect your personal data in compliance with GDPR.",
-    "lastUpdated": "Last updated: January 2025",
+    "lastUpdated": "Last updated: July 2026",
     "sections": {
       "introduction": {
         "title": "Introduction",
@@ -169,8 +16,8 @@
         "title": "Data We Collect",
         "intro": "We collect the following types of personal data:",
         "items": {
-          "email": "Email address (when you submit a project inquiry form)",
-          "projectDetails": "Project-related information (budget, timeline, features, business context, etc.)",
+          "email": "Email address (when you use the contact form or booking flow)",
+          "message": "The message or booking details you submit",
           "technicalInfo": "Technical information automatically collected (IP address, browser type, device information) through our analytics service"
         }
       },
@@ -178,18 +25,17 @@
         "title": "Purpose of Processing",
         "intro": "We process your personal data for the following purposes:",
         "items": {
-          "communication": "To communicate with you regarding your project inquiry and provide project estimates",
-          "projectEstimate": "To understand your project requirements and provide personalized recommendations",
+          "communication": "To respond to your messages and manage bookings",
           "analytics": "To analyze website usage and improve our services (using cookieless analytics)"
         }
       },
       "legalBasis": {
         "title": "Legal Basis",
-        "content": "We process your personal data based on your explicit consent when you submit the project inquiry form. For analytics purposes, we use cookieless tracking that does not require consent as it uses privacy-preserving server-side hashing."
+        "content": "We process information you choose to submit so we can respond to your message or provide the booking service you request. For analytics purposes, we use cookieless tracking that does not require consent as it uses privacy-preserving server-side hashing."
       },
       "dataRetention": {
         "title": "Data Retention",
-        "content": "We retain your personal data only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, or as required by law. Project inquiry data is typically retained for up to 2 years unless you request deletion earlier."
+        "content": "We retain contact and booking data only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, or as required by law."
       },
       "yourRights": {
         "title": "Your Rights",
@@ -256,13 +102,6 @@
       "headline": "Tools & Technologies",
       "subtitle": "Sanity, Next.js, TypeScript, and whatever your stack needs"
     },
-    "ctaButtons": [
-      {
-        "text": "Start a Project",
-        "href": "/start-your-project",
-        "variant": "secondary"
-      }
-    ],
     "aboutMe": {
       "label": "Who I am",
       "headline": "About Me",
@@ -274,7 +113,6 @@
       "label": "Get in touch",
       "headline": "Site can't scale? Team stuck waiting on devs? Let's fix that.",
       "subtitle": "Tell me where your CMS or site is holding you back. I'll tell you how I'd fix it.",
-      "ctaButton": "Start a project",
       "ctaButtonSecondary": "Ask a quick question",
       "whatsappLabel": "Quick question? Message me"
     }
@@ -306,8 +144,7 @@
     "description": "Sanity CMS and design systems for teams that ship.",
     "header": {
       "cta": {
-        "text": "Let's chat",
-        "href": "/start-your-project"
+        "text": "Let's chat"
       },
       "homeButtonLabel": "Home",
       "navLabel": "Primary navigation",

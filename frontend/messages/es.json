@@ -1,161 +1,8 @@
 {
-  "startYourProject": {
-    "slug": "inicia-tu-proyecto",
-    "title": "Inicia Tu Proyecto",
-    "description": "Elige la opción que mejor te describa."
-  },
-  "clientProjectInflow": {
-    "step0": {
-      "title": "Primero lo primero...",
-      "description": "Para adaptar las preguntas para ti, ¿eres técnico?",
-      "technical": {
-        "title": "Sí, soy técnico",
-        "description": "Entiendo código, tecnologías y flujos de desarrollo."
-      },
-      "nonTechnical": {
-        "title": "No, no soy técnico",
-        "description": "Me enfoco en negocios/diseño, necesito que te encargues de la parte técnica."
-      }
-    },
-    "step1": {
-      "title": "¿Qué quieres crear o mejorar?",
-      "description": "Selecciona todas las que apliquen.",
-      "options": {
-        "newWebsite": "Un sitio web nuevo",
-        "improveWebsite": "Mejorar/rediseñar sitio web actual",
-        "mobileApp": "Una aplicación móvil (iOS/Android)",
-        "aiFeatures": "Agregar funciones de IA",
-        "performance": "Mejorar rendimiento/SEO",
-        "maintenance": "Mantenimiento continuo",
-        "notSure": "Aún no estoy seguro"
-      }
-    },
-    "step2": {
-      "title": "Audiencia y Propósito",
-      "description": "¿Para quién es esto y cuál es el objetivo principal?",
-      "audience": {
-        "label": "¿Para quién es tu proyecto?",
-        "customers": "Clientes",
-        "internalTeam": "Equipo interno",
-        "community": "Comunidad/usuarios",
-        "other": "Otro"
-      },
-      "purpose": {
-        "label": "¿Cuál es el propósito principal?",
-        "generateLeads": "Generar leads",
-        "sellProducts": "Vender productos/servicios",
-        "showcasePortfolio": "Mostrar portafolio",
-        "improveWorkflow": "Mejorar flujo de trabajo",
-        "increaseConversions": "Aumentar conversiones",
-        "validateIdea": "Validar idea de aplicación",
-        "other": "Otro"
-      }
-    },
-    "step3": {
-      "title": "¿Qué funciones necesitas?",
-      "description": "Selecciona las funcionalidades principales.",
-      "features": {
-        "landingPage": "Página de destino",
-        "multiPage": "Sitio web multi-página",
-        "blog": "Blog",
-        "booking": "Sistema de reservas",
-        "ecommerce": "E-commerce",
-        "apiIntegrations": "Integraciones API",
-        "headlessCms": "Headless CMS",
-        "customComponents": "Componentes personalizados",
-        "authentication": "Autenticación",
-        "userProfiles": "Perfiles de usuario",
-        "chatMessaging": "Chat/Mensajería",
-        "pushNotifications": "Notificaciones push",
-        "mapsGeolocation": "Mapas/Geolocalización",
-        "payments": "Pagos",
-        "aiAssistant": "Asistente de IA",
-        "customChatbot": "Chatbot personalizado",
-        "automatedWorkflows": "Flujos de trabajo automatizados",
-        "dataDashboards": "Paneles de datos"
-      }
-    },
-    "step4": {
-      "title": "¿Ya tienes algo iniciado?",
-      "options": {
-        "fromScratch": "No, empezando desde cero",
-        "needsImprovement": "Sí — necesita mejoras",
-        "haveDesigns": "Tengo diseños",
-        "haveBranding": "Tengo marca",
-        "haveBackend": "Tengo backend/API",
-        "haveContent": "Tengo contenido",
-        "justExploring": "Solo explorando"
-      },
-      "currentLink": {
-        "label": "Comparte tu enlace actual (opcional)",
-        "placeholder": "https://..."
-      }
-    },
-    "step5": {
-      "title": "Presupuesto y Cronograma",
-      "description": "Esto me ayuda a entender el alcance.",
-      "budget": {
-        "label": "Rango de Presupuesto",
-        "range1": "€1,000–2,500",
-        "range2": "€2,500–5,000",
-        "range3": "€5,000–10,000",
-        "range4": "€10,000-20,000",
-        "range5": "€20,000+",
-        "dontKnow": "Aún no lo sé"
-      },
-      "timeline": {
-        "label": "¿Cuándo te gustaría comenzar?",
-        "placeholder": "Cronograma",
-        "asap": "Lo antes posible",
-        "oneTwoMonths": "En 1–2 meses",
-        "threePlusMonths": "En 3+ meses",
-        "justExploring": "Solo explorando"
-      }
-    },
-    "step6": {
-      "title": "Cuéntame un poco sobre tu negocio u objetivos",
-      "description": "Contexto opcional para ayudarme a entender.",
-      "businessContext": {
-        "placeholder": "Mi negocio ayuda a X a hacer Y..."
-      },
-      "successCriteria": {
-        "label": "¿Cómo se ve el éxito para ti?",
-        "placeholder": "Quiero aumentar las ventas en un 20%..."
-      }
-    },
-    "step7": {
-      "title": "¿A dónde debo enviar tu plan personalizado?",
-      "email": {
-        "label": "Dirección de Correo Electrónico",
-        "placeholder": "tu@ejemplo.com",
-        "error": "Por favor ingresa una dirección de correo electrónico válida."
-      },
-      "bookCall": {
-        "label": "También me gustaría reservar una llamada introductoria de 15 minutos."
-      },
-      "privacyConsent": {
-        "label": "Acepto el procesamiento de mis datos personales de acuerdo con la",
-        "link": "Política de Privacidad",
-        "error": "Debes aceptar la Política de Privacidad para enviar este formulario."
-      },
-      "submit": {
-        "button": "Obtener Mi Estimación Personalizada",
-        "submitting": "Enviando..."
-      }
-    },
-    "navigation": {
-      "back": "Atrás",
-      "next": "Siguiente"
-    },
-    "messages": {
-      "submitted": "¡Consulta de proyecto enviada! Nos pondremos en contacto pronto.",
-      "submitError": "Error al enviar. Por favor intenta de nuevo."
-    }
-  },
   "privacyPolicy": {
     "title": "Política de Privacidad",
     "description": "Nuestra política de privacidad explica cómo recopilamos, usamos y protegemos sus datos personales en cumplimiento del GDPR.",
-    "lastUpdated": "Última actualización: Enero 2025",
+    "lastUpdated": "Última actualización: Julio de 2026",
     "sections": {
       "introduction": {
         "title": "Introducción",
@@ -169,8 +16,8 @@
         "title": "Datos que Recopilamos",
         "intro": "Recopilamos los siguientes tipos de datos personales:",
         "items": {
-          "email": "Dirección de correo electrónico (cuando envía un formulario de consulta de proyecto)",
-          "projectDetails": "Información relacionada con el proyecto (presupuesto, cronograma, características, contexto comercial, etc.)",
+          "email": "Dirección de correo electrónico (cuando utiliza el formulario de contacto o el flujo de reservas)",
+          "message": "El mensaje o los detalles de la reserva que envía",
           "technicalInfo": "Información técnica recopilada automáticamente (dirección IP, tipo de navegador, información del dispositivo) a través de nuestro servicio de análisis"
         }
       },
@@ -178,18 +25,17 @@
         "title": "Propósito del Tratamiento",
         "intro": "Procesamos sus datos personales para los siguientes propósitos:",
         "items": {
-          "communication": "Para comunicarnos con usted respecto a su consulta de proyecto y proporcionar estimaciones de proyecto",
-          "projectEstimate": "Para entender los requisitos de su proyecto y proporcionar recomendaciones personalizadas",
+          "communication": "Para responder a sus mensajes y gestionar las reservas",
           "analytics": "Para analizar el uso del sitio web y mejorar nuestros servicios (usando análisis sin cookies)"
         }
       },
       "legalBasis": {
         "title": "Base Legal",
-        "content": "Procesamos sus datos personales basándonos en su consentimiento explícito cuando envía el formulario de consulta de proyecto. Para fines de análisis, utilizamos seguimiento sin cookies que no requiere consentimiento ya que utiliza hash preservador de privacidad del lado del servidor."
+        "content": "Procesamos la información que decide enviar para responder a su mensaje o prestar el servicio de reserva que solicita. Para fines de análisis, utilizamos seguimiento sin cookies que no requiere consentimiento ya que utiliza hash preservador de privacidad del lado del servidor."
       },
       "dataRetention": {
         "title": "Retención de Datos",
-        "content": "Conservamos sus datos personales solo durante el tiempo necesario para cumplir con los propósitos descritos en esta Política de Privacidad, o según lo requiera la ley. Los datos de consulta de proyecto generalmente se conservan hasta 2 años a menos que solicite su eliminación antes."
+        "content": "Conservamos los datos de contacto y reserva solo durante el tiempo necesario para cumplir con los propósitos descritos en esta Política de Privacidad, o según lo requiera la ley."
       },
       "yourRights": {
         "title": "Sus Derechos",
@@ -256,13 +102,6 @@
       "headline": "Herramientas y Tecnologías",
       "subtitle": "Sanity, Next.js, TypeScript y lo que pida tu stack"
     },
-    "ctaButtons": [
-      {
-        "text": "Iniciar un proyecto",
-        "href": "/start-your-project",
-        "variant": "secondary"
-      }
-    ],
     "aboutMe": {
       "label": "Quién soy",
       "headline": "Sobre Mí",
@@ -274,7 +113,6 @@
       "label": "Ponerse en contacto",
       "headline": "¿Tu sitio no escala? ¿Tu equipo depende de los devs? Lo arreglamos.",
       "subtitle": "Cuéntame dónde te está frenando tu CMS o tu sitio. Te digo cómo lo resolvería.",
-      "ctaButton": "Iniciar un proyecto",
       "ctaButtonSecondary": "Hacer una pregunta rápida",
       "whatsappLabel": "¿Pregunta rápida? Escríbeme"
     }
@@ -306,8 +144,7 @@
     "description": "Sanity CMS y sistemas de diseño para equipos que publican.",
     "header": {
       "cta": {
-        "text": "Hablemos",
-        "href": "/start-your-project"
+        "text": "Hablemos"
       },
       "homeButtonLabel": "Casa",
       "navLabel": "Navegacion principal",

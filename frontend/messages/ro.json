@@ -1,161 +1,8 @@
 {
-  "startYourProject": {
-    "slug": "incepe-proiectul-tau",
-    "title": "Începe Proiectul Tău",
-    "description": "Alege opțiunea care te descrie cel mai bine."
-  },
-  "clientProjectInflow": {
-    "step0": {
-      "title": "Hai să începem...",
-      "description": "Ca să îți adaptez întrebările, ești tehnic?",
-      "technical": {
-        "title": "Da, sunt tehnic",
-        "description": "Înțeleg cod, tehnologii și cum funcționează dezvoltarea."
-      },
-      "nonTechnical": {
-        "title": "Nu, nu sunt tehnic",
-        "description": "Mă ocup de business/design, am nevoie să te ocupi tu de partea tehnică."
-      }
-    },
-    "step1": {
-      "title": "Ce vrei să creezi sau să îmbunătățești?",
-      "description": "Selectează tot ce se aplică.",
-      "options": {
-        "newWebsite": "Un site nou",
-        "improveWebsite": "Îmbunătățire/redesign site existent",
-        "mobileApp": "O aplicație mobilă (iOS/Android)",
-        "aiFeatures": "Funcții AI",
-        "performance": "Performanță/SEO mai bun",
-        "maintenance": "Întreținere continuă",
-        "notSure": "Nu știu încă"
-      }
-    },
-    "step2": {
-      "title": "Public și Scop",
-      "description": "Pentru cine e proiectul și care e obiectivul principal?",
-      "audience": {
-        "label": "Pentru cine e proiectul?",
-        "customers": "Clienți",
-        "internalTeam": "Echipă internă",
-        "community": "Comunitate/utilizatori",
-        "other": "Altceva"
-      },
-      "purpose": {
-        "label": "Care e scopul principal?",
-        "generateLeads": "Generare lead-uri",
-        "sellProducts": "Vânzare produse/servicii",
-        "showcasePortfolio": "Prezentare portofoliu",
-        "improveWorkflow": "Îmbunătățire flux de lucru",
-        "increaseConversions": "Creștere conversii",
-        "validateIdea": "Validare idee de aplicație",
-        "other": "Altceva"
-      }
-    },
-    "step3": {
-      "title": "Ce funcționalități ai nevoie?",
-      "description": "Selectează funcțiile de bază.",
-      "features": {
-        "landingPage": "Landing page",
-        "multiPage": "Site cu mai multe pagini",
-        "blog": "Blog",
-        "booking": "Sistem de rezervări",
-        "ecommerce": "E-commerce",
-        "apiIntegrations": "Integrări API",
-        "headlessCms": "Headless CMS",
-        "customComponents": "Componente custom",
-        "authentication": "Autentificare",
-        "userProfiles": "Profiluri utilizatori",
-        "chatMessaging": "Chat/Mesagerie",
-        "pushNotifications": "Notificări push",
-        "mapsGeolocation": "Hărți/Localizare",
-        "payments": "Plăți",
-        "aiAssistant": "Asistent AI",
-        "customChatbot": "Chatbot personalizat",
-        "automatedWorkflows": "Automatizări",
-        "dataDashboards": "Dashboard-uri de date"
-      }
-    },
-    "step4": {
-      "title": "Ai deja ceva început?",
-      "options": {
-        "fromScratch": "Nu, pornesc de la zero",
-        "needsImprovement": "Da — dar trebuie îmbunătățit",
-        "haveDesigns": "Am design-uri",
-        "haveBranding": "Am branding",
-        "haveBackend": "Am backend/API",
-        "haveContent": "Am conținut",
-        "justExploring": "Doar mă informez"
-      },
-      "currentLink": {
-        "label": "Link-ul site-ului actual (opțional)",
-        "placeholder": "https://..."
-      }
-    },
-    "step5": {
-      "title": "Buget și Termen",
-      "description": "Mă ajută să înțeleg dimensiunea proiectului.",
-      "budget": {
-        "label": "Buget Estimat",
-        "range1": "€1.000–2.500",
-        "range2": "€2.500–5.000",
-        "range3": "€5.000–10.000",
-        "range4": "€10.000-20.000",
-        "range5": "€20.000+",
-        "dontKnow": "Nu știu încă"
-      },
-      "timeline": {
-        "label": "Când vrei să începem?",
-        "placeholder": "Termen",
-        "asap": "Cât mai repede",
-        "oneTwoMonths": "În 1–2 luni",
-        "threePlusMonths": "În 3+ luni",
-        "justExploring": "Doar mă informez"
-      }
-    },
-    "step6": {
-      "title": "Spune-mi puțin despre afacerea ta",
-      "description": "Context opțional, dar mă ajută să înțeleg mai bine.",
-      "businessContext": {
-        "placeholder": "Afacerea mea ajută X să facă Y..."
-      },
-      "successCriteria": {
-        "label": "Cum arată succesul pentru tine?",
-        "placeholder": "Vreau să cresc vânzările cu 20%..."
-      }
-    },
-    "step7": {
-      "title": "Unde îți trimit oferta personalizată?",
-      "email": {
-        "label": "Adresa de Email",
-        "placeholder": "tu@exemplu.com",
-        "error": "Te rog introdu o adresă de email validă."
-      },
-      "bookCall": {
-        "label": "Vreau și un apel introductiv de 15 minute."
-      },
-      "privacyConsent": {
-        "label": "Accept procesarea datelor în conformitate cu",
-        "link": "Politica de Confidențialitate",
-        "error": "Trebuie să accepți Politica de Confidențialitate pentru a trimite."
-      },
-      "submit": {
-        "button": "Trimite și Primește Oferta",
-        "submitting": "Se trimite..."
-      }
-    },
-    "navigation": {
-      "back": "Înapoi",
-      "next": "Continuă"
-    },
-    "messages": {
-      "submitted": "Am primit cererea ta! Revin cu un răspuns în curând.",
-      "submitError": "Ceva n-a mers. Te rog încearcă din nou."
-    }
-  },
   "privacyPolicy": {
     "title": "Politica de Confidențialitate",
     "description": "Politica noastră de confidențialitate explică modul în care colectăm, folosim și protejăm datele dvs. personale în conformitate cu GDPR.",
-    "lastUpdated": "Ultima actualizare: Ianuarie 2025",
+    "lastUpdated": "Ultima actualizare: Iulie 2026",
     "sections": {
       "introduction": {
         "title": "Introducere",
@@ -169,8 +16,8 @@
         "title": "Date pe care le Colectăm",
         "intro": "Colectăm următoarele tipuri de date personale:",
         "items": {
-          "email": "Adresă de e-mail (când trimiteți un formular de cerere de proiect)",
-          "projectDetails": "Informații legate de proiect (buget, termen, caracteristici, context de afaceri, etc.)",
+          "email": "Adresa de e-mail (când folosiți formularul de contact sau fluxul de programare)",
+          "message": "Mesajul sau detaliile programării pe care le trimiteți",
           "technicalInfo": "Informații tehnice colectate automat (adresă IP, tip de browser, informații despre dispozitiv) prin serviciul nostru de analiză"
         }
       },
@@ -178,18 +25,17 @@
         "title": "Scopul Prelucrării",
         "intro": "Prelucrăm datele dvs. personale în următoarele scopuri:",
         "items": {
-          "communication": "Pentru a comunica cu dvs. cu privire la cererea dvs. de proiect și pentru a furniza estimări de proiect",
-          "projectEstimate": "Pentru a înțelege cerințele proiectului dvs. și pentru a furniza recomandări personalizate",
+          "communication": "Pentru a răspunde mesajelor dvs. și a gestiona programările",
           "analytics": "Pentru a analiza utilizarea site-ului web și pentru a îmbunătăți serviciile noastre (folosind analiză fără cookie-uri)"
         }
       },
       "legalBasis": {
         "title": "Baza Legală",
-        "content": "Prelucrăm datele dvs. personale pe baza consimțământului dvs. explicit când trimiteți formularul de cerere de proiect. În scopuri de analiză, folosim urmărirea fără cookie-uri care nu necesită consimțământ, deoarece folosește hash-uri care păstrează confidențialitatea pe partea serverului."
+        "content": "Prelucrăm informațiile pe care alegeți să le trimiteți pentru a răspunde mesajului dvs. sau pentru a furniza serviciul de programare solicitat. În scopuri de analiză, folosim urmărirea fără cookie-uri care nu necesită consimțământ, deoarece folosește hash-uri care păstrează confidențialitatea pe partea serverului."
       },
       "dataRetention": {
         "title": "Păstrarea Datelor",
-        "content": "Păstrăm datele dvs. personale doar atât timp cât este necesar pentru a îndeplini scopurile descrise în această Politică de Confidențialitate sau conform cerințelor legii. Datele cererii de proiect sunt de obicei păstrate până la 2 ani, cu excepția cazului în care solicitați ștergerea mai devreme."
+        "content": "Păstrăm datele de contact și programare doar atât timp cât este necesar pentru a îndeplini scopurile descrise în această Politică de Confidențialitate sau conform cerințelor legii."
       },
       "yourRights": {
         "title": "Drepturile Dvs.",
@@ -256,13 +102,6 @@
       "headline": "Instrumente și Tehnologii",
       "subtitle": "Sanity, Next.js, TypeScript și orice cere stack-ul tău"
     },
-    "ctaButtons": [
-      {
-        "text": "Începe un proiect",
-        "href": "/start-your-project",
-        "variant": "secondary"
-      }
-    ],
     "aboutMe": {
       "label": "Cine sunt",
       "headline": "Despre Mine",
@@ -274,7 +113,6 @@
       "label": "Ia legătura",
       "headline": "Site-ul nu scalează? Echipa stă după programatori? Hai să rezolvăm.",
       "subtitle": "Spune-mi unde te încurcă CMS-ul sau site-ul. Îți spun cum aș rezolva.",
-      "ctaButton": "Începe un proiect",
       "ctaButtonSecondary": "Pune o întrebare rapidă",
       "whatsappLabel": "Întrebare rapidă? Scrie-mi"
     }
@@ -306,8 +144,7 @@
     "description": "Sanity CMS și design systems pentru echipe care livrează.",
     "header": {
       "cta": {
-        "text": "Hai să vorbim",
-        "href": "/start-your-project"
+        "text": "Hai să vorbim"
       },
       "homeButtonLabel": "Acasă",
       "navLabel": "Navigație principală",
