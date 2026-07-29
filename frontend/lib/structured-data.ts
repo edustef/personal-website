@@ -17,8 +17,8 @@ export type PersonSchema = {
   sameAs?: string[];
   url?: string;
   worksFor?: {
-      "@type": "Organization";
-      name: string;
+    "@type": "Organization";
+    name: string;
   };
   knowsAbout?: string[];
 };
@@ -104,7 +104,7 @@ export function createPersonSchema(
   if (person.picture) {
     schema.image = person.picture;
   }
-  
+
   if (person.jobTitle) {
     schema.jobTitle = person.jobTitle;
   }
@@ -112,16 +112,16 @@ export function createPersonSchema(
   if (person.url) {
     schema.url = person.url;
   }
-  
+
   if (person.worksFor) {
-     schema.worksFor = {
-        "@type": "Organization",
-        name: person.worksFor
-     };
+    schema.worksFor = {
+      "@type": "Organization",
+      name: person.worksFor,
+    };
   }
-  
+
   if (person.knowsAbout && person.knowsAbout.length > 0) {
-      schema.knowsAbout = person.knowsAbout;
+    schema.knowsAbout = person.knowsAbout;
   }
 
   if (person.socialLinks && person.socialLinks.length > 0) {
@@ -250,14 +250,13 @@ export type ServiceSchema = {
   url?: string;
 };
 
-export function createServiceSchema(
-  service: {
-    name: string;
-    description: string;
-    providerName: string;
-    url?: string;
-  },
-): ServiceSchema {
+export function createServiceSchema(service: {
+  name: string;
+  description: string;
+  providerName: string;
+  serviceType?: string;
+  url?: string;
+}): ServiceSchema {
   const schema: ServiceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -268,7 +267,7 @@ export function createServiceSchema(
       name: service.providerName,
     },
     areaServed: "Worldwide",
-    serviceType: "Web Development",
+    serviceType: service.serviceType || "Web Development",
   };
 
   if (service.url) {

@@ -1,5 +1,4 @@
 import { BGPattern } from "@/components/ui/bg-pattern";
-import { SectionHeader } from "@/components/ui/section-header";
 import { Button } from "@/components/ui/button";
 import { CardContent } from "@/components/ui/card";
 import {
@@ -8,7 +7,8 @@ import {
   CarouselDots,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { getWhatsAppUrl } from "@/lib/utils";
+import { SectionHeader } from "@/components/ui/section-header";
+import { getPathname } from "@/i18n/navigation";
 import { type Service, services } from "@/lib/data/services";
 import { cn } from "@/lib/utils";
 import { Globe, Headphones, Layers, Palette, Rocket, Zap } from "lucide-react";
@@ -46,7 +46,7 @@ const glowColors = [
   "217 91% 60%", // Blue
   "262 83% 58%", // Purple
   "142 71% 45%", // Green
-  "24 95% 53%",  // Orange
+  "24 95% 53%", // Orange
   "339 90% 51%", // Pink
   "198 93% 60%", // Cyan
 ];
@@ -65,7 +65,6 @@ export default async function ServicesSection({
 
   const locale = await getLocale();
   const t = await getTranslations({ locale, namespace: "services" });
-  const profileT = await getTranslations({ locale, namespace: "profile" });
 
   const featuredServices = servicesToDisplay.filter((s) => s.featured);
   const otherServices = servicesToDisplay.filter((s) => !s.featured);
@@ -75,8 +74,7 @@ export default async function ServicesSection({
     namespace: "settings.header",
   });
   const servicesSlug = headerT("nav.servicesSlug");
-
-  const whatsappUrl = getWhatsAppUrl(profileT("phone"));
+  const projectUrl = getPathname({ locale, href: "/schedule" });
 
   return (
     <section
@@ -214,7 +212,7 @@ export default async function ServicesSection({
         </div>
 
         {/* Section CTA */}
-        <ServicesCTA whatsappUrl={whatsappUrl} ctaText={t("cta")} />
+        <ServicesCTA ctaUrl={projectUrl} ctaText={t("cta")} />
       </div>
     </section>
   );

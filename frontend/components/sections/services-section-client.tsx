@@ -252,11 +252,11 @@ export function ServiceCardMobile({
 }
 
 type ServicesCTAProps = {
-  whatsappUrl: string;
+  ctaUrl: string;
   ctaText: string;
 };
 
-export function ServicesCTA({ whatsappUrl, ctaText }: ServicesCTAProps) {
+export function ServicesCTA({ ctaUrl, ctaText }: ServicesCTAProps) {
   return (
     <motion.div
       className="mt-12 text-center px-4"
@@ -266,9 +266,7 @@ export function ServicesCTA({ whatsappUrl, ctaText }: ServicesCTAProps) {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
     >
       <Button asChild size="lg" variant="outline">
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-          {ctaText}
-        </a>
+        <a href={ctaUrl}>{ctaText}</a>
       </Button>
     </motion.div>
   );

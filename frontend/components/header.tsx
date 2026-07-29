@@ -1,7 +1,6 @@
 "use client";
 
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
-import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { ModeToggle } from "@/components/theme-toggle";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Link } from "@/components/ui/link";
@@ -20,9 +19,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { usePathname } from "@/i18n/navigation";
-import { cn, getWhatsAppUrl } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { AnimatePresence } from "framer-motion";
-import { Menu } from "lucide-react";
+import { ArrowUpRight, Menu } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
@@ -34,6 +33,7 @@ type HeaderProps = {
 
 const navItems = [
   { key: "services" },
+  { key: "sanity", href: "/services/sanity" },
   { key: "howIWork" },
   { key: "pricing" },
   { key: "blog", href: "/blog" },
@@ -48,9 +48,9 @@ export function Header({ className, languageToggle }: HeaderProps) {
   const homeButtonLabel = headerT("homeButtonLabel");
   const contactMeText = headerT("cta.text");
   const menuLabel = headerT("menuLabel");
-  const whatsappUrl = getWhatsAppUrl(undefined);
 
   const servicesText = headerT("nav.services");
+  const sanityText = headerT("nav.sanity");
   const pricingText = headerT("nav.pricing");
   const howIWorkText = headerT("nav.howIWork");
   const blogText = headerT("nav.blog");
@@ -174,6 +174,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
 
   const getNavText = (item: (typeof navItems)[number]) => {
     if (item.key === "services") return servicesText;
+    if (item.key === "sanity") return sanityText;
     if (item.key === "pricing") return pricingText;
     if (item.key === "howIWork") return howIWorkText;
     return blogText;
@@ -317,14 +318,10 @@ export function Header({ className, languageToggle }: HeaderProps) {
                   className="hidden md:block"
                 >
                   <Button asChild variant="default" size="sm">
-                    <a
-                      href={whatsappUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <WhatsAppIcon className="size-4" />
+                    <Link href="/schedule">
                       {contactMeText}
-                    </a>
+                      <ArrowUpRight className="size-4" />
+                    </Link>
                   </Button>
                 </motion.div>
               )}
@@ -402,15 +399,13 @@ export function Header({ className, languageToggle }: HeaderProps) {
 
                   <div className="mt-auto space-y-6 pt-10">
                     <Button asChild size="lg" className="w-full">
-                      <a
-                        href={whatsappUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Link
+                        href="/schedule"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        <WhatsAppIcon className="size-5" />
                         {contactMeText}
-                      </a>
+                        <ArrowUpRight className="size-5" />
+                      </Link>
                     </Button>
 
                     <div className="flex items-center justify-between border-t pt-5">

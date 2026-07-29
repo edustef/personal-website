@@ -37,7 +37,7 @@ export async function generateMetadata(
   return {
     metadataBase: localized.metadataBase,
     title: {
-      template: `%s | ${localized.title}`,
+      template: "%s | Eduard Stefan",
       default: localized.title,
     },
     description: localized.description,
@@ -48,7 +48,7 @@ export async function generateMetadata(
       type: "website",
       locale,
       title: {
-        template: `%s | ${localized.title}`,
+        template: "%s | Eduard Stefan",
         default: localized.title,
       },
       description: localized.description,
@@ -143,10 +143,10 @@ export default async function LocaleLayout(props: Props) {
     <html
       data-scroll-behavior="smooth"
       lang={params.locale}
-      className={`${cardo.variable} ${dmMono.variable} font-light bg-background text-foreground transition-colors duration-300`}
+      className={`${cardo.variable} ${dmMono.variable} font-light bg-background text-foreground`}
       suppressHydrationWarning
     >
-      <body className="isolate transition-colors duration-300 ease-in-out">
+      <body className="isolate">
         {personSchema && (
           <Script
             type="application/ld+json"
@@ -168,12 +168,7 @@ export default async function LocaleLayout(props: Props) {
         <MobileProvider>
           <NextIntlClientProvider>
             <ConvexClientProvider>
-              <ThemeProvider
-                attribute="class"
-                defaultTheme="dark"
-                enableSystem
-                disableTransitionOnChange
-              >
+              <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
                 <ScrollRestoration />
                 <Toaster />
                 <FacebookPixel />

@@ -44,6 +44,12 @@ export async function Footer({ className, locale }: FooterProps) {
                   {t("menu.services")}
                 </Link>
                 <Link
+                  href="/services/sanity"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {t("menu.sanity")}
+                </Link>
+                <Link
                   href={`/#${pricingSlug}`}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >

@@ -5,8 +5,8 @@ import AboutMeSection from "@/components/sections/about-me-section";
 import ContactSection from "@/components/sections/contact-section";
 import HowIWorkSection from "@/components/sections/how-i-work-section";
 // import PortfolioSection from "@/components/sections/portfolio-section";
+import SanitySpotlightSection from "@/components/sections/sanity-spotlight-section";
 import ServicesSection from "@/components/sections/services-section";
-import ToolsSection from "@/components/sections/tools-section";
 import WaysToWorkTogetherSection from "@/components/sections/ways-to-work-together-section";
 import { BackgroundPaperShaders } from "@/components/ui/background-paper-shaders";
 // import { InteractiveNebulaShader } from "@/components/ui/liquid-shader";
@@ -33,8 +33,6 @@ type Props = {
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
   const { locale } = params;
-
-  const t = await getTranslations({ locale, namespace: "home.seo" });
 
   return {
     alternates: {
@@ -98,20 +96,17 @@ export default async function Page(props: Props) {
       {/* <InteractiveNebulaShader disableCenterDimming /> */}
       <HeroSection />
 
+      {/* Verified case studies will sit here once proof data is approved. */}
+
       <ServicesSection />
 
-      {/* Portfolio hidden for now — pending refresh */}
-      {/* <PortfolioSection /> */}
-
-      <ToolsSection />
-
-      <AboutMeSection />
+      <SanitySpotlightSection />
 
       <HowIWorkSection />
 
-      {/* <CaseStudiesSection /> */}
-
       <WaysToWorkTogetherSection />
+
+      <AboutMeSection />
 
       <FAQSection />
 

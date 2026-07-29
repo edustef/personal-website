@@ -1,0 +1,45 @@
+.icon {
+  transition:
+    transform 180ms cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 160ms cubic-bezier(0.23, 1, 0.32, 1),
+    filter 180ms cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform, opacity, filter;
+}
+
+:global(html.theme-changing) .icon {
+  transition:
+    transform 180ms cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 160ms cubic-bezier(0.23, 1, 0.32, 1),
+    filter 180ms cubic-bezier(0.23, 1, 0.32, 1) !important;
+}
+
+.sun {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  filter: blur(0);
+}
+
+:global(.dark) .sun {
+  transform: rotate(-90deg) scale(0.9);
+  opacity: 0;
+  filter: blur(2px);
+}
+
+.moon {
+  position: absolute;
+  transform: rotate(90deg) scale(0.9);
+  opacity: 0;
+  filter: blur(2px);
+}
+
+:global(.dark) .moon {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon {
+    transition-duration: 0.01ms;
+  }
+}

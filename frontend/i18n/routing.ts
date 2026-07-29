@@ -21,6 +21,10 @@ export const routing = defineRouting({
       ro: "/calculator-roi",
       es: "/calculadora-roi",
     },
+    "/services/sanity": {
+      ro: "/servicii/sanity",
+      es: "/servicios/sanity",
+    },
     "/privacy-policy": {
       ro: "/politica-de-confidentialitate",
       es: "/politica-de-privacidad",

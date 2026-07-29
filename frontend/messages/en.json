@@ -98,15 +98,16 @@
     "menu": {
       "title": "Menu",
       "services": "Services",
-      "pricing": "Work together",
-      "blog": "Blog"
+      "pricing": "Ways to work",
+      "blog": "Blog",
+      "sanity": "Sanity CMS"
     }
   },
   "home": {
-    "headline": "Ship on-brand pages <strong>at the speed of marketing</strong>.",
-    "tagline": "I build marketing sites on Sanity, backed by a real design system and reusable blocks. Your team publishes new pages without joining a developer queue.",
-    "aboutMeDescription": "I build content systems and marketing sites that teams can run themselves.",
-    "announcementLabel": "Sanity CMS and design systems for <strong>teams that ship</strong>",
+    "headline": "Web platforms that keep <strong>product and marketing moving</strong>.",
+    "tagline": "I build marketing sites, content platforms, dashboards, and integrations that stay fast, coherent, and maintainable as teams grow. Sanity is my CMS specialty.",
+    "aboutMeDescription": "I build marketing sites and connected web platforms that teams can keep evolving.",
+    "announcementLabel": "Web platforms for <strong>teams that keep shipping</strong>",
     "resumeButtonLabel": "See my resume",
     "findMeOnLabel": "Find me on",
     "contactMe": "Message me",
@@ -117,9 +118,9 @@
     "orBookTime": "Book a call",
     "workedWith": "What I work with",
     "heroTrust": [
-      "Publish without a dev queue",
-      "You own the code",
-      "No commitment, just a chat"
+      "Senior front-end partner",
+      "Design-system discipline",
+      "You own the code"
     ],
     "tools": {
       "label": "Technologies",
@@ -129,17 +130,32 @@
     "aboutMe": {
       "label": "Who I am",
       "headline": "About Me",
-      "subtitle": "Content systems teams can keep using as they grow",
-      "description": "I'm a front-end engineer who builds marketing sites and content systems for companies that outgrew their old setup. I care about two things: a CMS your team can run without me, and a front-end that stays fast and on-brand as it grows. I've built design systems, reusable component libraries, and Sanity Studios that marketing teams actually like using. The unglamorous parts, like schemas, migrations, and handoff docs, are what decide whether a site still works in two years. So I sweat them.",
-      "cta": "Talk about your site"
+      "subtitle": "Senior engineering without the agency handoff chain",
+      "description": "I'm a front-end engineer who helps established product and marketing teams build the web surfaces around their business: marketing sites, content platforms, portals, dashboards, and integrations. I work directly with designers, editors, and developers, then leave behind clear systems—not a dependency on me. Sanity is my CMS specialty, but the job is always bigger than a tool: make the platform useful, maintainable, and ready for what comes next.",
+      "cta": "Discuss a project"
     },
     "contact": {
       "label": "Get in touch",
-      "headline": "Site can't scale? Team stuck waiting on devs? Let's fix that.",
-      "subtitle": "Tell me where your CMS or site is holding you back. I'll tell you how I'd fix it.",
-      "ctaButton": "Talk about your site",
-      "ctaButtonSecondary": "Book a call",
-      "whatsappLabel": "Talk about your site"
+      "headline": "Have a web platform that needs to move forward?",
+      "subtitle": "Tell me what your team is building, replacing, or trying to untangle. I'll tell you where I can help.",
+      "ctaButton": "Book a project call",
+      "ctaButtonSecondary": "Ask a quick question",
+      "whatsappLabel": "Quick question? Message me"
+    },
+    "heroLabel": "Front-end engineering for established teams",
+    "primaryCta": "Discuss a project",
+    "secondaryCta": "Explore Sanity services",
+    "sanitySpotlight": {
+      "label": "Flagship specialization",
+      "eyebrow": "Sanity-first when structured content is the right foundation.",
+      "headline": "A content platform your team can actually run.",
+      "description": "I build and replatform Sanity systems around real editorial workflows—from schemas and reusable blocks to previews, localization, migration, and handoff.",
+      "cta": "Explore Sanity CMS services",
+      "systemItems": [
+        "Structured content",
+        "Reusable page system",
+        "Production front-end"
+      ]
     }
   },
   "profile": {
@@ -162,10 +178,10 @@
   },
   "settings": {
     "title": "Eduard Stefan",
-    "description": "Sanity CMS and design systems for teams that ship.",
+    "description": "Marketing sites and connected web platforms for established product and marketing teams.",
     "header": {
       "cta": {
-        "text": "Talk about your site"
+        "text": "Discuss a project"
       },
       "homeButtonLabel": "Home",
       "navLabel": "Primary navigation",
@@ -173,17 +189,18 @@
       "menuLabel": "Menu",
       "nav": {
         "services": "Services",
-        "pricing": "Work together",
+        "pricing": "Ways to work",
         "howIWork": "How I Work",
         "blog": "Blog",
         "servicesSlug": "services",
         "pricingSlug": "ways-to-work-together",
-        "howIWorkSlug": "how-i-work"
+        "howIWorkSlug": "how-i-work",
+        "sanity": "Sanity CMS"
       }
     },
     "seo": {
-      "title": "Eduard Stefan | Sanity CMS & Design Systems",
-      "description": "I build marketing sites on Sanity with content models, reusable page blocks, controlled migrations, and a clear handoff."
+      "title": "Eduard Stefan | Web Platforms for Product & Marketing Teams",
+      "description": "I build marketing sites, content platforms, dashboards, and integrations for established teams. Senior front-end engineering with Sanity CMS expertise."
     }
   },
   "skills": {
@@ -265,73 +282,69 @@
   },
   "services": {
     "label": "What I do",
-    "headline": "From content chaos to a system that scales",
-    "subtitle": "I connect content models, reusable page blocks, migration, and handoff into one working system.",
-    "cta": "Talk about your site",
+    "headline": "One partner across the web surfaces your team depends on",
+    "subtitle": "Focused front-end engineering for public sites, internal products, and the systems connecting them.",
+    "cta": "Discuss your project",
     "svc-1": {
-      "title": "Content models built around real workflows",
-      "description": "Sanity schemas are shaped around the pages your team publishes, who edits them, and how content moves from draft to live. Localization is planned into the model when the project needs it."
+      "title": "Marketing and content platforms",
+      "description": "Fast, multilingual marketing sites supported by reusable components, structured content, and conversion-aware UX. Sanity is my flagship CMS specialization."
     },
     "svc-2": {
-      "title": "Reusable page blocks that stay on brand",
-      "description": "A component library with deliberate layout and content guardrails. Editors can assemble new pages from reusable blocks, with UX and conversion thinking built into the patterns."
+      "title": "Connected product surfaces",
+      "description": "Portals, dashboards, integrations, and internal tools that fit your existing product, data, and design systems instead of becoming another isolated app."
     },
     "svc-3": {
-      "title": "Controlled migration and launch",
-      "description": "Content is mapped, migrated, and checked in stages. Redirects, launch testing, and an agreed rollback plan reduce risk without promising unchanged rankings."
-    },
-    "svc-4": {
-      "title": "A handoff the team can own",
-      "description": "Editors and developers get training, documentation, and access to the code and content they need. I can stay involved, but the setup is designed not to depend on me."
+      "title": "Platform evolution",
+      "description": "Ongoing front-end partnership for teams shipping new capabilities without letting performance, accessibility, or visual consistency drift."
     }
   },
   "howIWork": {
     "label": "Process",
     "headline": "How I work",
-    "subtitle": "No surprises. Clear progress until your team owns it.",
-    "cta": "Talk about your site",
+    "subtitle": "Direct collaboration, working software, and clear ownership from first decision to handoff.",
+    "cta": "Discuss a project",
     "planning": {
-      "title": "We map your content and your team",
+      "title": "We map the problem and the system around it",
       "paragraphs": [
-        "We start with how your team actually works. What pages you ship, who edits them, and where the current setup slows you down. Then we model the content and agree on scope."
+        "We start with the people, workflows, and systems the work needs to serve. Then we agree on scope, technical boundaries, and what success looks like."
       ],
       "bulletPoints": [
-        "Content modeled around real pages",
-        "Editors involved early",
+        "Users and workflows mapped",
+        "Existing stack understood",
         "Scope and milestones up front"
       ]
     },
     "development": {
-      "title": "I build the system. You watch it take shape.",
+      "title": "I build in the open",
       "paragraphs": [
-        "No going dark for weeks. You get regular updates, working previews in Sanity, and room to adjust before anything is locked in."
+        "No going dark for weeks. You get regular updates, working builds, and room to adjust while decisions are still inexpensive."
       ],
       "bulletPoints": [
         "Frequent check-ins",
-        "Live previews, not slide decks",
-        "Room to iterate"
+        "Working software, not status theatre",
+        "Feedback before decisions harden"
       ]
     },
     "deployment": {
-      "title": "We launch carefully, with a rollback plan",
+      "title": "We launch with the edges covered",
       "paragraphs": [
-        "I handle the technical side: migration, redirects, hosting, and tracking. We test everything, fix what needs fixing, then go live with confidence."
+        "Performance, accessibility, analytics, integrations, redirects, and rollback planning are treated as launch work—not cleanup for later."
       ],
       "bulletPoints": [
-        "Migration and redirects handled",
-        "Analytics wired up",
-        "SEO checks before and after launch"
+        "Critical paths tested",
+        "Tracking and integrations verified",
+        "Rollback and ownership clear"
       ]
     },
     "postDeployment": {
-      "title": "Your team runs it. I'm here if you need me.",
+      "title": "Your team owns what comes next",
       "paragraphs": [
-        "You own everything. I train your editors and devs, leave clear docs, and stay available for whatever comes next."
+        "You own the code, decisions, and documentation. I hand over cleanly or stay embedded when ongoing evolution is the better model."
       ],
       "bulletPoints": [
-        "You own the code and content",
-        "Training and docs included",
-        "Ongoing support available"
+        "Code and decisions documented",
+        "Team handoff included",
+        "Ongoing partnership optional"
       ]
     }
   },
@@ -428,30 +441,30 @@
     "label": "FAQ",
     "headline": "Questions you might have",
     "subtitle": "The stuff teams usually ask before we start.",
-    "cta": "Talk about your site",
+    "cta": "More questions? Let's talk",
     "faq-1": {
       "question": "How long does a project take?",
-      "answer": "Depends on scope. A CMS and design-system build usually runs 3-5 weeks. A migration with a full marketing site is 6-10 weeks. I'll give you a real timeline after a call, not a guess."
+      "answer": "A focused build can take a few weeks; a larger platform or migration can take several months. I give you a delivery plan after understanding the systems, dependencies, and decision-makers involved."
     },
     "faq-2": {
-      "question": "Can you migrate us off our current CMS?",
-      "answer": "Yes. I can move you from WordPress, Contentful, or hardcoded pages to Sanity. I migrate the content carefully, map redirects, and check search performance before and after launch."
+      "question": "What kinds of products do you build?",
+      "answer": "Marketing sites, content platforms, portals, dashboards, integrations, and the front-end systems connecting them. I focus on web surfaces used by established product and marketing teams."
     },
     "faq-3": {
-      "question": "Will my team be able to manage the site without you?",
-      "answer": "That's the whole point. I model the CMS around how your team works, document it, and train your editors and devs. You own the code and the content, and you can export everything anytime."
+      "question": "Will our team own the result?",
+      "answer": "Yes. The code lives in your repository, decisions are documented, and the handoff is part of the work. I can stay involved, but the system should never depend on me being there."
     },
     "faq-4": {
       "question": "Do you work with our existing designers and developers?",
       "answer": "Yes. I'm comfortable plugging into an existing team, matching your conventions, and handing off cleanly. I can also run a project solo end to end if that's what you need."
     },
     "faq-5": {
-      "question": "What do you build the site on?",
-      "answer": "Sanity for the CMS, Next.js and TypeScript for the front-end, with a design system and reusable blocks on top. Fast, SEO-solid, and built to scale. See <link>ways to work together</link> for what every engagement includes."
+      "question": "What technology do you use?",
+      "answer": "Usually React, Next.js, and TypeScript, integrated with the systems your team already uses. For structured content, Sanity is my specialty. The architecture follows the job rather than forcing every project into the same stack."
     },
     "faq-6": {
-      "question": "Aren't we locked into Sanity?",
-      "answer": "Partly, and I won't pretend otherwise. The CMS itself is a vendor bet. But the parts that matter stay yours: the front-end is standard Next.js in your repo, the schemas are code you own, and your content exports to JSON anytime. Moving off later is a real option, not a one-way door."
+      "question": "Can you improve an existing platform instead of replacing it?",
+      "answer": "Yes. A rebuild is not automatically the right answer. I can work inside an existing codebase, improve the highest-cost areas first, and help your team decide what should be retained, refactored, or replaced."
     }
   },
   "blog": {
@@ -585,6 +598,223 @@
     },
     "success": {
       "bookingCancelled": "Booking cancelled"
+    }
+  },
+  "sanityService": {
+    "seo": {
+      "title": "Sanity CMS Development & Migration",
+      "description": "Sanity CMS builds, migrations, and design systems for product and marketing teams. Structured content, reusable blocks, previews, localization, and handoff.",
+      "serviceName": "Sanity CMS development and migration"
+    },
+    "hero": {
+      "label": "Sanity CMS development",
+      "headline": "Ship on-brand pages at the speed of marketing.",
+      "description": "I build Sanity content platforms, reusable page systems, and production front-ends around the way your editors and developers actually work.",
+      "primaryCta": "Discuss your Sanity platform",
+      "secondaryCta": "Compare engagement options",
+      "flowLabel": "Platform anatomy",
+      "trust": [
+        "Editor-first workflows",
+        "You own the code",
+        "Migration and handoff included"
+      ],
+      "flow": [
+        {
+          "title": "Content model",
+          "description": "Structured around real editorial decisions."
+        },
+        {
+          "title": "Page system",
+          "description": "Reusable blocks mapped to your brand."
+        },
+        {
+          "title": "Front-end",
+          "description": "Fast, accessible, and ready to extend."
+        },
+        {
+          "title": "Editorial workflow",
+          "description": "Preview, publish, localize, and govern."
+        }
+      ]
+    },
+    "tension": {
+      "label": "The real problem",
+      "headline": "A CMS should remove the developer queue—not recreate it.",
+      "intro": "Sanity is flexible. Without the right content model, component boundaries, and editorial workflow, that flexibility becomes another system your team works around.",
+      "problems": [
+        {
+          "title": "Editors still need developers",
+          "description": "Every campaign needs a new template, a code change, or manual cleanup before it can launch."
+        },
+        {
+          "title": "Reusable blocks stop being reusable",
+          "description": "Components drift, one-off variants multiply, and pages stop feeling like one coherent brand."
+        },
+        {
+          "title": "Migration risk gets underestimated",
+          "description": "Content, redirects, localization, analytics, previews, and rollback plans all surface too late."
+        }
+      ]
+    },
+    "system": {
+      "label": "The system",
+      "headline": "CMS, design system, and front-end designed as one platform.",
+      "intro": "The value is not Sanity in isolation. It is the operating system around it: content your team understands, components they can trust, and engineering that stays maintainable.",
+      "capabilities": [
+        {
+          "eyebrow": "01 / Content",
+          "title": "A Studio built around editorial work",
+          "description": "Schemas, validation, references, and desk structure modeled around the content your team actually publishes.",
+          "points": [
+            "Content modeling and governance",
+            "Custom Studio workflows",
+            "Localization and permissions"
+          ]
+        },
+        {
+          "eyebrow": "02 / Brand",
+          "title": "A page system that stays on-brand",
+          "description": "Reusable components map design decisions into safe choices, so teams move faster without creating visual drift.",
+          "points": [
+            "Design-system implementation",
+            "Composable page sections",
+            "Visual editing and previews"
+          ]
+        },
+        {
+          "eyebrow": "03 / Delivery",
+          "title": "A production front-end built to evolve",
+          "description": "Next.js and TypeScript with performance, accessibility, search, analytics, and maintainability treated as core requirements.",
+          "points": [
+            "Technical SEO and Core Web Vitals",
+            "Analytics and integrations",
+            "Documentation and handoff"
+          ]
+        }
+      ]
+    },
+    "offers": {
+      "label": "Engagements",
+      "headline": "Three ways to move your content platform forward.",
+      "intro": "Start with a new foundation, migrate a system you have outgrown, or add senior Sanity capacity to the team you already have.",
+      "build": {
+        "title": "The Build",
+        "bestFor": "For teams creating a new Sanity platform",
+        "description": "A Sanity Studio, reusable page system, and production front-end designed and delivered together.",
+        "timeline": "Usually 3-5 weeks",
+        "features": [
+          "Content model and Studio structure",
+          "Design system and reusable blocks",
+          "Preview and publishing workflow",
+          "Technical SEO and performance",
+          "Training and handoff"
+        ]
+      },
+      "migration": {
+        "title": "The Migration",
+        "bestFor": "For teams leaving an old or tangled CMS",
+        "description": "A controlled replatform to Sanity with the content, routes, search visibility, and launch safeguards handled.",
+        "timeline": "Usually 6-10 weeks",
+        "features": [
+          "Everything in The Build",
+          "Content inventory and migration",
+          "Redirect and localization mapping",
+          "Launch checks and rollback plan",
+          "Post-launch validation"
+        ]
+      },
+      "partner": {
+        "title": "Embedded Partner",
+        "bestFor": "For teams evolving an existing Sanity platform",
+        "description": "Senior front-end and Sanity support working directly with your designers, editors, and developers.",
+        "timeline": "Monthly, ongoing",
+        "features": [
+          "New schemas and page types",
+          "Design-system evolution",
+          "Workflow and Studio improvements",
+          "Performance and search stewardship",
+          "Connected apps and integrations"
+        ]
+      }
+    },
+    "process": {
+      "label": "Delivery",
+      "headline": "Editors are involved before the system hardens.",
+      "intro": "Working previews and early editorial feedback expose the expensive mistakes while they are still inexpensive to fix.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Model the work",
+          "description": "Map content, roles, publishing flows, integrations, and edge cases before translating them into schemas."
+        },
+        {
+          "number": "02",
+          "title": "Build in working slices",
+          "description": "Connect Studio, components, and front-end incrementally so editors and developers can test real workflows."
+        },
+        {
+          "number": "03",
+          "title": "Migrate and rehearse",
+          "description": "Validate content, redirects, localization, analytics, search, and the rollback path before launch day."
+        },
+        {
+          "number": "04",
+          "title": "Hand over clearly",
+          "description": "Train the team, document decisions, transfer ownership, and agree on the right support model for what follows."
+        }
+      ]
+    },
+    "fit": {
+      "label": "Fit",
+      "headline": "Sanity is a strong choice—not an automatic one.",
+      "intro": "I recommend it when the content and team benefit from structure, reuse, and custom workflows. I will say when a simpler system is the better decision.",
+      "goodFitTitle": "Sanity is likely a fit when",
+      "notFitTitle": "Consider something simpler when",
+      "goodFit": [
+        "Multiple teams publish across channels or regions",
+        "Content structure and reuse matter more than free-form pages",
+        "Your workflow needs previews, roles, or custom editorial tools",
+        "You want a front-end independent from the CMS"
+      ],
+      "notFit": [
+        "The site is small, static, and changes rarely",
+        "Editors only need a handful of fixed pages",
+        "Your team cannot own a custom front-end",
+        "The platform cost outweighs the workflow benefit"
+      ]
+    },
+    "faq": {
+      "label": "FAQ",
+      "headline": "Questions teams ask before committing to Sanity",
+      "subtitle": "The practical answers—including the trade-offs.",
+      "items": [
+        {
+          "question": "Can you migrate us from WordPress or Contentful?",
+          "answer": "Yes. I inventory the source content, map it into the new model, migrate assets and references, preserve URLs where possible, create redirects where needed, and validate the result before launch."
+        },
+        {
+          "question": "Will editors need developer help to publish pages?",
+          "answer": "Routine publishing should not require it. The page system defines safe, reusable choices for editors while developers retain control over the components and constraints that protect the brand."
+        },
+        {
+          "question": "Are we locked into Sanity?",
+          "answer": "Partly. Sanity is a vendor decision, and pretending otherwise would be misleading. Your front-end remains standard code in your repository, your schemas are code you own, and your content can be exported. Moving later still takes work, but it remains a real option."
+        },
+        {
+          "question": "Can you work with our existing designers and developers?",
+          "answer": "Yes. I can own the Sanity and front-end work end to end or work inside an existing team, matching its design system, repository conventions, review process, and release workflow."
+        },
+        {
+          "question": "What happens after launch?",
+          "answer": "Your team receives training, documentation, and ownership of the code and content model. I can hand over completely or continue as an embedded partner for new workflows, components, and integrations."
+        }
+      ]
+    },
+    "final": {
+      "label": "Next step",
+      "headline": "Build a content platform your team can keep moving with.",
+      "description": "Share the current setup, the workflows that hurt, and what needs to change. I will respond with the questions and next step that matter.",
+      "cta": "Discuss your Sanity platform"
     }
   }
 }
