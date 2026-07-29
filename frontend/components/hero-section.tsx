@@ -60,7 +60,7 @@ export default async function HeroSection() {
             >
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                 <WhatsAppIcon className="size-5" />
-                {t("letsChat")}
+                {t("primaryCta")}
               </a>
             </Button>
             <Button
