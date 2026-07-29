@@ -98,7 +98,7 @@
     "menu": {
       "title": "Menu",
       "services": "Services",
-      "pricing": "Ways to work",
+      "pricing": "Pricing",
       "blog": "Blog",
       "sanity": "Sanity CMS"
     }
@@ -189,11 +189,11 @@
       "menuLabel": "Menu",
       "nav": {
         "services": "Services",
-        "pricing": "Ways to work",
+        "pricing": "Pricing",
         "howIWork": "How I Work",
         "blog": "Blog",
         "servicesSlug": "services",
-        "pricingSlug": "ways-to-work-together",
+        "pricingSlug": "pricing",
         "howIWorkSlug": "how-i-work",
         "sanity": "Sanity CMS"
       }
@@ -349,7 +349,7 @@
     }
   },
   "waysToWorkTogether": {
-    "label": "Ways to work together",
+    "label": "Pricing",
     "headline": "One project, scoped around what your site needs.",
     "subtitle": "After a short call, I turn the problem into a clear plan with the right deliverables, timeline, and support.",
     "engagementTitle": "Build what your team needs. Leave them with a system they can run.",

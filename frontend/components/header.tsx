@@ -1,6 +1,7 @@
 "use client";
 
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { ModeToggle } from "@/components/theme-toggle";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Link } from "@/components/ui/link";
@@ -19,9 +20,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { usePathname } from "@/i18n/navigation";
-import { cn } from "@/lib/utils";
+import { cn, getWhatsAppUrl } from "@/lib/utils";
 import { AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
@@ -49,6 +50,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
   const contactMeText = headerT("cta.text");
   const menuLabel = headerT("menuLabel");
 
+  const whatsappUrl = getWhatsAppUrl(undefined);
   const servicesText = headerT("nav.services");
   const sanityText = headerT("nav.sanity");
   const pricingText = headerT("nav.pricing");
@@ -318,10 +320,14 @@ export function Header({ className, languageToggle }: HeaderProps) {
                   className="hidden md:block"
                 >
                   <Button asChild variant="default" size="sm">
-                    <Link href="/schedule">
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <WhatsAppIcon className="size-4" />
                       {contactMeText}
-                      <ArrowUpRight className="size-4" />
-                    </Link>
+                    </a>
                   </Button>
                 </motion.div>
               )}
@@ -399,13 +405,15 @@ export function Header({ className, languageToggle }: HeaderProps) {
 
                   <div className="mt-auto space-y-6 pt-10">
                     <Button asChild size="lg" className="w-full">
-                      <Link
-                        href="/schedule"
+                      <a
+                        href={whatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
+                        <WhatsAppIcon className="size-5" />
                         {contactMeText}
-                        <ArrowUpRight className="size-5" />
-                      </Link>
+                      </a>
                     </Button>
 
                     <div className="flex items-center justify-between border-t pt-5">

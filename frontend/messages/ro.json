@@ -98,7 +98,7 @@
     "menu": {
       "title": "Meniu",
       "services": "Servicii",
-      "pricing": "Cum colaborăm",
+      "pricing": "Prețuri",
       "blog": "Blog",
       "sanity": "Sanity CMS"
     }
@@ -189,11 +189,11 @@
       "menuLabel": "Meniu",
       "nav": {
         "services": "Servicii",
-        "pricing": "Cum colaborăm",
+        "pricing": "Prețuri",
         "howIWork": "Cum Lucrez",
         "blog": "Blog",
         "servicesSlug": "servicii",
-        "pricingSlug": "colaborare",
+        "pricingSlug": "preturi",
         "howIWorkSlug": "cum-lucrez",
         "sanity": "Sanity CMS"
       }
@@ -349,7 +349,7 @@
     }
   },
   "waysToWorkTogether": {
-    "label": "Moduri de colaborare",
+    "label": "Prețuri",
     "headline": "Un proiect clar, construit în jurul nevoilor site-ului tău.",
     "subtitle": "După o discuție scurtă, transform problema într-un plan clar, cu livrabilele, durata și suportul potrivite.",
     "engagementTitle": "Construim ce are nevoie echipa ta. Predăm un sistem pe care îl poate gestiona.",

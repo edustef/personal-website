@@ -1,9 +1,11 @@
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Button } from "@/components/ui/button";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Link } from "@/i18n/navigation";
 import { getSocialIcon } from "@/lib/social-icons";
-import { ArrowRight, Calendar } from "lucide-react";
+import { getWhatsAppUrl } from "@/lib/utils";
+import { Calendar } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 
 type SocialLink = {
@@ -19,7 +21,11 @@ export default async function ContactSection({
   socialLinks,
 }: ContactSectionProps) {
   const locale = await getLocale();
-  const t = await getTranslations({ locale, namespace: "home" });
+  const [t, profileT] = await Promise.all([
+    getTranslations({ locale, namespace: "home" }),
+    getTranslations({ locale, namespace: "profile" }),
+  ]);
+  const whatsappUrl = getWhatsAppUrl(profileT("phone"));
 
   const hasSocialLinks = socialLinks && socialLinks.length > 0;
 
@@ -43,10 +49,10 @@ export default async function ContactSection({
             className="w-full sm:w-auto"
           >
             <Button asChild size="lg" variant="default" className="w-full">
-              <Link href="/schedule">
-                {t("contact.ctaButton")}
-                <ArrowRight className="size-5" />
-              </Link>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <WhatsAppIcon className="size-5" />
+                {t("letsChat")}
+              </a>
             </Button>
           </AnimatedContainer>
 

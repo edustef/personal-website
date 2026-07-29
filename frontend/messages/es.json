@@ -98,7 +98,7 @@
     "menu": {
       "title": "Menú",
       "services": "Servicios",
-      "pricing": "Cómo colaborar",
+      "pricing": "Precios",
       "blog": "Blog",
       "sanity": "Sanity CMS"
     }
@@ -189,11 +189,11 @@
       "menuLabel": "Menú",
       "nav": {
         "services": "Servicios",
-        "pricing": "Cómo colaborar",
+        "pricing": "Precios",
         "howIWork": "Cómo trabajo",
         "blog": "Blog",
         "servicesSlug": "servicios",
-        "pricingSlug": "trabajar-juntos",
+        "pricingSlug": "precios",
         "howIWorkSlug": "como-trabajo",
         "sanity": "Sanity CMS"
       }
@@ -349,7 +349,7 @@
     }
   },
   "waysToWorkTogether": {
-    "label": "Formas de trabajar juntos",
+    "label": "Precios",
     "headline": "Un proyecto claro, definido según lo que necesita tu sitio.",
     "subtitle": "Después de una breve llamada, convierto el problema en un plan claro con los entregables, el plazo y el apoyo adecuados.",
     "engagementTitle": "Construimos lo que tu equipo necesita y dejamos un sistema que pueda gestionar.",
