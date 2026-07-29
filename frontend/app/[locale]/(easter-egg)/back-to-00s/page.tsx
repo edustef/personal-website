@@ -707,7 +707,7 @@ export default async function BackTo00sPage(props: Props) {
                             href="#pricing"
                             style={{
                               color: "#0000ff",
-                              textDecoration: "underline",
+                              textDecoration: "none",
                             }}
                           >
                             {chunks}
@@ -846,7 +846,7 @@ export default async function BackTo00sPage(props: Props) {
           }}
         >
           Copyright {new Date().getFullYear()} | All Rights Reserved |{" "}
-          <a href="/" style={{ color: "#6699cc", textDecoration: "underline" }}>
+          <a href="/" style={{ color: "#6699cc", textDecoration: "none" }}>
             Back to Modern Site
           </a>
         </p>

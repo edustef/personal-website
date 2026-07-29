@@ -237,6 +237,9 @@ html.theme-changing *::after {
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
   }
+  a {
+    text-decoration-line: none;
+  }
   html.header-scrolled header {
     @apply bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300;
   }

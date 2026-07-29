@@ -155,16 +155,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
       {/* Content Below Image */}
       <div className="p-6 flex flex-col flex-grow relative">
-        {/* Category with animated underline */}
-        <div className="relative inline-flex mb-2 self-start">
-          <p className="text-sm font-medium text-primary">{project.category}</p>
-          <motion.div
-            className="absolute -bottom-0.5 left-0 h-px bg-primary"
-            initial={{ width: 0 }}
-            animate={{ width: isActive ? "100%" : "0%" }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          />
-        </div>
+        <p className="mb-2 self-start text-sm font-medium text-primary">
+          {project.category}
+        </p>
         <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
           {project.title}
         </h3>

@@ -140,7 +140,7 @@ export default function BlogClient({ posts }: { posts: BlogPost[] }) {
           <button
             type="button"
             onClick={handleClearFilters}
-            className="text-sm text-primary hover:underline"
+            className="text-primary hover:text-foreground text-sm transition-colors"
           >
             {t("clearFilters")}
           </button>

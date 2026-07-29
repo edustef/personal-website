@@ -241,15 +241,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
               className="group relative flex items-center gap-2 p-0 text-xl font-bold shrink-0 transition-colors hover:text-primary"
               href="/"
             >
-              <span className="relative">
-                Eduard Stefan
-                <motion.span
-                  className="absolute bottom-0 left-0 h-0.5 w-full bg-primary origin-left"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3, ease: [0.25, 1, 0.25, 1] }}
-                />
-              </span>
+              <span>Eduard Stefan</span>
             </Link>
           </motion.div>
 
@@ -275,16 +267,6 @@ export function Header({ className, languageToggle }: HeaderProps) {
                         )}
                       >
                         <span className="relative z-10">{text}</span>
-                        <motion.span
-                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary origin-left"
-                          initial={{ scaleX: active ? 1 : 0 }}
-                          animate={{ scaleX: active ? 1 : 0 }}
-                          whileHover={{ scaleX: 1 }}
-                          transition={{
-                            duration: 0.3,
-                            ease: [0.25, 1, 0.25, 1],
-                          }}
-                        />
                         {active && (
                           <motion.div
                             className="absolute inset-0 rounded-md bg-primary/5 -z-10"
@@ -388,8 +370,8 @@ export function Header({ className, languageToggle }: HeaderProps) {
                           href={href}
                           aria-current={active ? "page" : undefined}
                           className={cn(
-                            "justify-start rounded-none border-b px-0 py-5 text-2xl font-medium tracking-tight no-underline transition-colors",
-                            "hover:text-primary hover:no-underline focus-visible:text-primary",
+                            "justify-start rounded-none border-b px-0 py-5 text-2xl font-medium tracking-tight transition-colors",
+                            "hover:text-primary focus-visible:text-primary",
                             active && "text-primary"
                           )}
                           onClick={() => setIsMobileMenuOpen(false)}

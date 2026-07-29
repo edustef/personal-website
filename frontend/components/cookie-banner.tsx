@@ -161,7 +161,7 @@ export function CookieBanner() {
                     {t("description")}{" "}
                     <Link
                       href="/privacy-policy"
-                      className="underline underline-offset-4 hover:text-foreground transition-colors"
+                      className="transition-colors hover:text-foreground"
                     >
                       {t("privacyLink")}
                     </Link>

@@ -137,7 +137,7 @@ export default async function PrivacyPolicyPage(props: Props) {
             }
             <a
               href="mailto:contact@eduardstefan.dev"
-              className="text-primary underline hover:no-underline"
+              className="text-primary hover:text-foreground"
             >
               contact@eduardstefan.dev
             </a>
@@ -180,7 +180,7 @@ export default async function PrivacyPolicyPage(props: Props) {
             {t("sections.contact.content").split("contact@eduardstefan.dev")[0]}
             <a
               href="mailto:contact@eduardstefan.dev"
-              className="text-primary underline hover:no-underline"
+              className="text-primary hover:text-foreground"
             >
               contact@eduardstefan.dev
             </a>
