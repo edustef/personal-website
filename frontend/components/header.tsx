@@ -34,7 +34,6 @@ type HeaderProps = {
 
 const navItems = [
   { key: "services" },
-  { key: "sanity", href: "/services/sanity" },
   { key: "howIWork" },
   { key: "pricing" },
   { key: "blog", href: "/blog" },
@@ -52,7 +51,6 @@ export function Header({ className, languageToggle }: HeaderProps) {
 
   const whatsappUrl = getWhatsAppUrl(undefined);
   const servicesText = headerT("nav.services");
-  const sanityText = headerT("nav.sanity");
   const pricingText = headerT("nav.pricing");
   const howIWorkText = headerT("nav.howIWork");
   const blogText = headerT("nav.blog");
@@ -176,7 +174,6 @@ export function Header({ className, languageToggle }: HeaderProps) {
 
   const getNavText = (item: (typeof navItems)[number]) => {
     if (item.key === "services") return servicesText;
-    if (item.key === "sanity") return sanityText;
     if (item.key === "pricing") return pricingText;
     if (item.key === "howIWork") return howIWorkText;
     return blogText;
