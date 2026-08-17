@@ -662,7 +662,7 @@
       "intro": "Valoarea nu este Sanity izolat. Este sistemul de operare din jurul lui: conținut pe care echipa îl înțelege, componente în care poate avea încredere și inginerie ușor de întreținut.",
       "capabilities": [
         {
-          "eyebrow": "01 / Conținut",
+          "eyebrow": "Conținut",
           "title": "Un Studio construit în jurul muncii editoriale",
           "description": "Scheme, validări, referințe și structură de lucru modelate după conținutul pe care echipa ta îl publică.",
           "points": [
@@ -672,7 +672,7 @@
           ]
         },
         {
-          "eyebrow": "02 / Brand",
+          "eyebrow": "Brand",
           "title": "Un sistem de pagini care rămâne pe brand",
           "description": "Componentele reutilizabile transformă deciziile de design în opțiuni sigure, astfel încât echipele să se miște mai repede fără derivă vizuală.",
           "points": [
@@ -682,7 +682,7 @@
           ]
         },
         {
-          "eyebrow": "03 / Livrare",
+          "eyebrow": "Livrare",
           "title": "Un front-end de producție construit să evolueze",
           "description": "Next.js și TypeScript cu performanța, accesibilitatea, căutarea, analytics și mentenanța tratate ca cerințe de bază.",
           "points": [
@@ -695,7 +695,7 @@
     },
     "offers": {
       "label": "Colaborări",
-      "headline": "Trei moduri de a duce platforma de conținut înainte.",
+      "headline": "Alege colaborarea potrivită pentru a duce platforma de conținut înainte.",
       "intro": "Pornește cu o fundație nouă, migrează un sistem pe care l-ai depășit sau adaugă experiență Sanity senior echipei existente.",
       "build": {
         "title": "Build-ul",
@@ -743,22 +743,18 @@
       "intro": "Preview-urile funcționale și feedbackul editorial timpuriu expun greșelile scumpe cât timp sunt încă ieftin de corectat.",
       "steps": [
         {
-          "number": "01",
           "title": "Modelăm munca",
           "description": "Mapăm conținutul, rolurile, fluxurile de publicare, integrările și cazurile limită înainte să le transformăm în scheme."
         },
         {
-          "number": "02",
           "title": "Construim în etape funcționale",
           "description": "Conectăm Studio, componentele și front-end-ul incremental, astfel încât editorii și dezvoltatorii să testeze fluxuri reale."
         },
         {
-          "number": "03",
           "title": "Migrăm și repetăm lansarea",
           "description": "Validăm conținutul, redirect-urile, localizarea, analytics, căutarea și planul de revenire înainte de ziua lansării."
         },
         {
-          "number": "04",
           "title": "Predăm clar",
           "description": "Instruim echipa, documentăm deciziile, transferăm proprietatea și stabilim modelul potrivit de suport pentru ce urmează."
         }

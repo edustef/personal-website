@@ -662,7 +662,7 @@
       "intro": "El valor no es Sanity por separado. Es el sistema operativo que lo rodea: contenido que tu equipo entiende, componentes en los que puede confiar e ingeniería que sigue siendo mantenible.",
       "capabilities": [
         {
-          "eyebrow": "01 / Contenido",
+          "eyebrow": "Contenido",
           "title": "Un Studio construido alrededor del trabajo editorial",
           "description": "Esquemas, validaciones, referencias y estructura de escritorio modelados según el contenido que tu equipo publica.",
           "points": [
@@ -672,7 +672,7 @@
           ]
         },
         {
-          "eyebrow": "02 / Marca",
+          "eyebrow": "Marca",
           "title": "Un sistema de páginas que sigue fiel a la marca",
           "description": "Los componentes reutilizables convierten decisiones de diseño en opciones seguras, para que los equipos avancen sin generar deriva visual.",
           "points": [
@@ -682,7 +682,7 @@
           ]
         },
         {
-          "eyebrow": "03 / Entrega",
+          "eyebrow": "Entrega",
           "title": "Un front-end de producción construido para evolucionar",
           "description": "Next.js y TypeScript con rendimiento, accesibilidad, búsqueda, analytics y mantenimiento tratados como requisitos centrales.",
           "points": [
@@ -695,7 +695,7 @@
     },
     "offers": {
       "label": "Colaboraciones",
-      "headline": "Tres formas de hacer avanzar tu plataforma de contenido.",
+      "headline": "Elige la forma adecuada de hacer avanzar tu plataforma de contenido.",
       "intro": "Empieza con una base nueva, migra un sistema que has superado o añade experiencia senior en Sanity al equipo que ya tienes.",
       "build": {
         "title": "El Build",
@@ -743,22 +743,18 @@
       "intro": "Los previews funcionales y el feedback editorial temprano exponen los errores caros mientras todavía son baratos de corregir.",
       "steps": [
         {
-          "number": "01",
           "title": "Modelar el trabajo",
           "description": "Mapeamos contenido, roles, flujos de publicación, integraciones y casos límite antes de traducirlos a esquemas."
         },
         {
-          "number": "02",
           "title": "Construir en partes funcionales",
           "description": "Conectamos Studio, componentes y front-end de forma incremental para que editores y desarrolladores prueben flujos reales."
         },
         {
-          "number": "03",
           "title": "Migrar y ensayar",
           "description": "Validamos contenido, redirecciones, localización, analytics, búsqueda y rollback antes del día de lanzamiento."
         },
         {
-          "number": "04",
           "title": "Entregar con claridad",
           "description": "Formamos al equipo, documentamos decisiones, transferimos propiedad y acordamos el modelo de soporte adecuado para lo siguiente."
         }

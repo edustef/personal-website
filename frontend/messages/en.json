@@ -662,7 +662,7 @@
       "intro": "The value is not Sanity in isolation. It is the operating system around it: content your team understands, components they can trust, and engineering that stays maintainable.",
       "capabilities": [
         {
-          "eyebrow": "01 / Content",
+          "eyebrow": "Content",
           "title": "A Studio built around editorial work",
           "description": "Schemas, validation, references, and desk structure modeled around the content your team actually publishes.",
           "points": [
@@ -672,7 +672,7 @@
           ]
         },
         {
-          "eyebrow": "02 / Brand",
+          "eyebrow": "Brand",
           "title": "A page system that stays on-brand",
           "description": "Reusable components map design decisions into safe choices, so teams move faster without creating visual drift.",
           "points": [
@@ -682,7 +682,7 @@
           ]
         },
         {
-          "eyebrow": "03 / Delivery",
+          "eyebrow": "Delivery",
           "title": "A production front-end built to evolve",
           "description": "Next.js and TypeScript with performance, accessibility, search, analytics, and maintainability treated as core requirements.",
           "points": [
@@ -695,7 +695,7 @@
     },
     "offers": {
       "label": "Engagements",
-      "headline": "Three ways to move your content platform forward.",
+      "headline": "Choose the right way to move your content platform forward.",
       "intro": "Start with a new foundation, migrate a system you have outgrown, or add senior Sanity capacity to the team you already have.",
       "build": {
         "title": "The Build",
@@ -743,22 +743,18 @@
       "intro": "Working previews and early editorial feedback expose the expensive mistakes while they are still inexpensive to fix.",
       "steps": [
         {
-          "number": "01",
           "title": "Model the work",
           "description": "Map content, roles, publishing flows, integrations, and edge cases before translating them into schemas."
         },
         {
-          "number": "02",
           "title": "Build in working slices",
           "description": "Connect Studio, components, and front-end incrementally so editors and developers can test real workflows."
         },
         {
-          "number": "03",
           "title": "Migrate and rehearse",
           "description": "Validate content, redirects, localization, analytics, search, and the rollback path before launch day."
         },
         {
-          "number": "04",
           "title": "Hand over clearly",
           "description": "Train the team, document decisions, transfer ownership, and agree on the right support model for what follows."
         }
