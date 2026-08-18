@@ -4,7 +4,7 @@ import roiCalculatorOpengraphRo from "@/assets/images/roi-calculator-ro.png";
 import RoiCalculatorSection from "@/components/sections/roi-calculator-section";
 import { BackgroundPaperShaders } from "@/components/ui/background-paper-shaders";
 import { routing } from "@/i18n/routing";
-import { getCanonicalUrl } from "@/lib/seo";
+import { getCanonicalUrl, getLocalizedAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -28,13 +28,16 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
   const title = t("title");
   const description = t("description");
-  const ogImage = roiCalculatorOgImages[locale as keyof typeof roiCalculatorOgImages] || roiCalculatorOgImages.en;
+  const ogImage =
+    roiCalculatorOgImages[locale as keyof typeof roiCalculatorOgImages] ||
+    roiCalculatorOgImages.en;
 
   return {
     title,
     description,
     alternates: {
       canonical: getCanonicalUrl(locale, "/roi-calculator"),
+      languages: getLocalizedAlternates("/roi-calculator"),
     },
     openGraph: {
       type: "website",

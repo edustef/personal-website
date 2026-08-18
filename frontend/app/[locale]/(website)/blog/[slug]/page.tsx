@@ -1,4 +1,4 @@
-import { getAllPostSlugs, getBlogPost } from "@/lib/blog";
+import { getAllPostSlugs, getBlogPost, getPostTranslations } from "@/lib/blog";
 import { getCanonicalUrl } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 import { getTranslations } from "next-intl/server";
@@ -39,11 +39,44 @@ export async function generateMetadata({
     return {};
   }
 
+  const translations = await getPostTranslations(slug, locale);
+  const englishTranslation = translations.find(
+    (translation) => translation.locale === "en"
+  );
+  const canonical = getCanonicalUrl(locale, `/blog/${slug}`);
+  const languages = Object.fromEntries(
+    translations.map((translation) => [
+      translation.locale,
+      getCanonicalUrl(translation.locale, `/blog/${translation.slug}`),
+    ])
+  );
+
   return {
     title: post.title,
     description: post.description,
     alternates: {
-      canonical: getCanonicalUrl(locale, `/blog/${slug}`),
+      canonical,
+      languages: {
+        ...languages,
+        "x-default": englishTranslation
+          ? getCanonicalUrl("en", `/blog/${englishTranslation.slug}`)
+          : canonical,
+      },
+    },
+    openGraph: {
+      type: "article",
+      locale,
+      title: post.title,
+      description: post.description,
+      url: canonical,
+      publishedTime: post.date,
+      authors: post.author ? [post.author] : undefined,
+      tags: post.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
     },
   };
 }
@@ -73,7 +106,9 @@ export default async function BlogPostPage({
     | Array<{ name: string; url: string }>
     | undefined;
 
-  const content = <MDXRemote source={post.content} components={mdxComponents} />;
+  const content = (
+    <MDXRemote source={post.content} components={mdxComponents} />
+  );
 
   return (
     <BlogPostClient

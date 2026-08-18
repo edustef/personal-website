@@ -2,6 +2,7 @@ import SanityServicePage from "@/components/sections/sanity-service-page";
 import { BackgroundPaperShaders } from "@/components/ui/background-paper-shaders";
 import { getPathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { getLocalizedAlternates } from "@/lib/seo";
 import {
   createFAQPageSchema,
   createServiceSchema,
@@ -49,6 +50,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     description,
     alternates: {
       canonical,
+      languages: getLocalizedAlternates("/services/sanity"),
     },
     openGraph: {
       type: "website",
