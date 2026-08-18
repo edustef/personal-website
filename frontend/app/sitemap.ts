@@ -26,7 +26,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ),
         alternates: {
           languages: {
-            "x-default": `${getBaseUrl()}/blog/${xDefaultSlug}`,
+            "x-default": getUrl(
+              { pathname: "/blog/[slug]", params: { slug: xDefaultSlug } },
+              routing.defaultLocale
+            ),
             ...Object.fromEntries(
               post.translations.map((t) => [
                 t.locale,
@@ -62,15 +65,9 @@ function getEntries(href: Href) {
 }
 
 function getXDefaultUrl(href: Href) {
-  // x-default points to the root URL without locale prefix
-  // This tells Google the root is the language negotiator
-  if (typeof href === "string") {
-    return getBaseUrl() + href;
-  }
-  const params = "params" in href ? href.params : undefined;
-  const slug = params && "slug" in params ? String(params.slug) : "";
-  const pathname = href.pathname.replace("[slug]", slug);
-  return getBaseUrl() + pathname;
+  // Use the default-language page itself. Locale-less URLs redirect, so they
+  // should not be advertised as sitemap alternates.
+  return getUrl(href, routing.defaultLocale);
 }
 
 function getUrl(href: Href, locale: Locale) {

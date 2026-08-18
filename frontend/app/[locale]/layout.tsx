@@ -13,7 +13,11 @@ import { ScrollRestoration } from "@/components/scroll-restoration";
 import { ThemeProvider } from "@/components/theme-provider";
 import { MobileProvider } from "@/contexts/mobile-context";
 import { locales } from "@/i18n/routing";
-import { getCanonicalUrl, getLocalizedSettingsMetadata } from "@/lib/seo";
+import {
+  getCanonicalUrl,
+  getLocalizedAlternates,
+  getLocalizedSettingsMetadata,
+} from "@/lib/seo";
 import {
   createPersonSchema,
   createWebSiteSchema,
@@ -43,6 +47,7 @@ export async function generateMetadata(
     description: localized.description,
     alternates: {
       canonical: getCanonicalUrl(locale, "/"),
+      languages: getLocalizedAlternates("/"),
     },
     openGraph: {
       type: "website",

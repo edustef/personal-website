@@ -1,5 +1,5 @@
 import { getBlogPosts } from "@/lib/blog";
-import { getCanonicalUrl } from "@/lib/seo";
+import { getCanonicalUrl, getLocalizedAlternates } from "@/lib/seo";
 import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
 import BlogClient from "./blog-client";
@@ -15,6 +15,19 @@ export async function generateMetadata({
     description: t("description"),
     alternates: {
       canonical: getCanonicalUrl(locale, "/blog"),
+      languages: getLocalizedAlternates("/blog"),
+    },
+    openGraph: {
+      type: "website",
+      locale,
+      title: t("title"),
+      description: t("description"),
+      url: getCanonicalUrl(locale, "/blog"),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
     },
   };
 }

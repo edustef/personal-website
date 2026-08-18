@@ -10,11 +10,14 @@ import ServicesSection from "@/components/sections/services-section";
 import WaysToWorkTogetherSection from "@/components/sections/ways-to-work-together-section";
 import { BackgroundPaperShaders } from "@/components/ui/background-paper-shaders";
 // import { InteractiveNebulaShader } from "@/components/ui/liquid-shader";
-import { getPathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { faqs } from "@/lib/data/faqs";
 import { services } from "@/lib/data/services";
-import { getCanonicalUrl } from "@/lib/seo";
+import {
+  getCanonicalUrl,
+  getLocalizedAlternates,
+  getLocalizedUrl,
+} from "@/lib/seo";
 import {
   createFAQPageSchema,
   createServiceSchema,
@@ -36,7 +39,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
   return {
     alternates: {
-      canonical: getPathname({ locale, href: "/" }),
+      canonical: getLocalizedUrl("/", locale),
+      languages: getLocalizedAlternates("/"),
     },
   };
 }
