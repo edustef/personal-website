@@ -15,6 +15,7 @@ import { type Service, services } from "@/lib/data/services";
 import { ArrowUpRight } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import Image, { type StaticImageData } from "next/image";
+import { ServicesGridMotion } from "./services-grid-motion";
 
 type ServicesSectionProps = { services?: Service[] };
 
@@ -37,7 +38,7 @@ function ThemedArtifactImage({
         fill
         aria-hidden="true"
         sizes={sizes}
-        className={`${className} dark:hidden`}
+        className={`${className} will-change-transform dark:hidden`}
       />
       <Image
         src={darkSrc}
@@ -45,7 +46,7 @@ function ThemedArtifactImage({
         fill
         aria-hidden="true"
         sizes={sizes}
-        className={`hidden ${className} dark:block`}
+        className={`hidden ${className} will-change-transform dark:block`}
       />
     </>
   );
@@ -53,7 +54,10 @@ function ThemedArtifactImage({
 
 function PageLayoutArtifact() {
   return (
-    <figure className="relative order-first aspect-[3/2] w-full overflow-hidden border-foreground/12 border-b md:order-last md:aspect-auto md:min-h-64 md:border-b-0 md:border-l">
+    <figure
+      data-service-artifact
+      className="relative order-first aspect-[3/2] w-full overflow-hidden border-foreground/12 border-b md:order-last md:aspect-auto md:min-h-64 md:border-b-0 md:border-l"
+    >
       <ThemedArtifactImage
         lightSrc={pageLayoutImage}
         darkSrc={pageLayoutDarkImage}
@@ -67,6 +71,7 @@ function PageLayoutArtifact() {
 function ContentModelArtifact({ alternate = false }: { alternate?: boolean }) {
   return (
     <figure
+      data-service-artifact
       className={`relative order-first aspect-square w-full self-stretch overflow-hidden md:aspect-auto md:min-h-64 ${alternate ? "xl:order-last" : "md:order-last"}`}
     >
       <ThemedArtifactImage
@@ -81,7 +86,10 @@ function ContentModelArtifact({ alternate = false }: { alternate?: boolean }) {
 
 function MigrationArtifact() {
   return (
-    <figure className="relative order-first aspect-square w-full self-stretch overflow-hidden md:order-last md:aspect-auto md:min-h-44">
+    <figure
+      data-service-artifact
+      className="relative order-first aspect-square w-full self-stretch overflow-hidden md:order-last md:aspect-auto md:min-h-44"
+    >
       <ThemedArtifactImage
         lightSrc={migrationSheetImage}
         darkSrc={migrationSheetDarkImage}
@@ -95,6 +103,7 @@ function MigrationArtifact() {
 function SpacingArtifact({ alternate = false }: { alternate?: boolean }) {
   return (
     <figure
+      data-service-artifact
       className={`relative order-first aspect-[1586/992] w-full self-stretch overflow-hidden md:aspect-auto md:min-h-44 ${alternate ? "xl:order-last" : "md:order-last"}`}
     >
       <ThemedArtifactImage
@@ -109,7 +118,10 @@ function SpacingArtifact({ alternate = false }: { alternate?: boolean }) {
 
 function PerformanceArtifact() {
   return (
-    <figure className="relative order-first aspect-square w-full self-stretch overflow-hidden md:order-last md:aspect-auto md:min-h-44">
+    <figure
+      data-service-artifact
+      className="relative order-first aspect-square w-full self-stretch overflow-hidden md:order-last md:aspect-auto md:min-h-44"
+    >
       <ThemedArtifactImage
         lightSrc={qualityAuditImage}
         darkSrc={qualityAuditDarkImage}
@@ -178,7 +190,10 @@ function EvidenceCell({
 
 function ContinuityArtifact() {
   return (
-    <figure className="relative order-first aspect-[1923/818] w-full overflow-hidden md:aspect-auto md:min-h-32 xl:order-last">
+    <figure
+      data-service-artifact
+      className="relative order-first aspect-[1923/818] w-full overflow-hidden md:aspect-auto md:min-h-32 xl:order-last"
+    >
       <ThemedArtifactImage
         lightSrc={continuityTimelineImage}
         darkSrc={continuityTimelineDarkImage}
@@ -221,7 +236,7 @@ export default async function ServicesSection({
           </p>
         </header>
 
-        <div className="mt-8 grid overflow-hidden border-foreground/18 border-t border-l xl:grid-cols-12">
+        <ServicesGridMotion>
           {first ? (
             <CapabilityCell
               title={t(first.titleKey)}
@@ -275,12 +290,12 @@ export default async function ServicesSection({
               <ContinuityArtifact />
             </article>
           ))}
-        </div>
+        </ServicesGridMotion>
 
         <div className="mt-7 flex justify-end">
           <Link
             href="/schedule"
-            className="group inline-flex min-h-11 items-center gap-2 border-foreground/48 border-b pt-0.5 font-medium transition-colors hover:border-primary hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            className="group inline-flex min-h-11 items-center gap-2 border-foreground/48 border-b pt-0.5 font-medium transition-colors hover:border-primary hover:text-primary motion-safe:transition-transform motion-safe:duration-200 motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           >
             {t("cta")}
             <ArrowUpRight
