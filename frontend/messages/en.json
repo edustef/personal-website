@@ -280,20 +280,34 @@
   },
   "services": {
     "label": "What I do",
-    "headline": "One partner across the web surfaces your team depends on",
-    "subtitle": "Focused front-end engineering for public sites, internal products, and the systems connecting them.",
+    "headline": "Websites and digital products, built as one system",
+    "subtitle": "Front-end engineering for public sites, internal tools, and the systems connecting them.",
     "cta": "Discuss your project",
+    "artifacts": {
+      "migration": {
+        "title": "CMS migrations",
+        "description": "Careful moves from legacy content to modern foundations."
+      },
+      "spacing": {
+        "title": "Design systems",
+        "description": "Reusable components and patterns that keep teams aligned."
+      },
+      "performance": {
+        "title": "Front-end quality",
+        "description": "Audit and stabilization where speed, access, or consistency drift."
+      }
+    },
     "svc-1": {
-      "title": "Marketing and content platforms",
-      "description": "Fast, multilingual marketing sites supported by reusable components, structured content, and conversion-aware UX. Sanity is my flagship CMS specialization."
+      "title": "Marketing sites",
+      "description": "Fast, multilingual sites with structured content, flexible editing, and Sanity at the core."
     },
     "svc-2": {
-      "title": "Connected product surfaces",
-      "description": "Portals, dashboards, integrations, and internal tools that fit your existing product, data, and design systems instead of becoming another isolated app."
+      "title": "Connected product tools",
+      "description": "Portals, dashboards, and integrations that fit your product, data, and design systems."
     },
     "svc-3": {
       "title": "Platform evolution",
-      "description": "Ongoing front-end partnership for teams shipping new capabilities without letting performance, accessibility, or visual consistency drift."
+      "description": "Ongoing front-end support for releases that stay fast, accessible, and consistent."
     }
   },
   "howIWork": {

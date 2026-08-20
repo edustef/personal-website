@@ -284,20 +284,34 @@
   },
   "services": {
     "label": "Lo que hago",
-    "headline": "Un solo partner para las superficies web de las que depende tu equipo",
-    "subtitle": "Ingeniería front-end enfocada en sitios públicos, productos internos y los sistemas que los conectan.",
+    "headline": "Sitios web y productos digitales, construidos como un solo sistema",
+    "subtitle": "Ingeniería front-end para sitios públicos, herramientas internas y los sistemas que los conectan.",
     "cta": "Hablar de tu proyecto",
+    "artifacts": {
+      "migration": {
+        "title": "Migraciones de CMS",
+        "description": "Transiciones cuidadosas desde contenido heredado a bases modernas."
+      },
+      "spacing": {
+        "title": "Sistemas de diseño",
+        "description": "Componentes y patrones reutilizables que mantienen alineados a los equipos."
+      },
+      "performance": {
+        "title": "Calidad front-end",
+        "description": "Auditoría y estabilización cuando la velocidad, el acceso o la coherencia se degradan."
+      }
+    },
     "svc-1": {
-      "title": "Plataformas de marketing y contenido",
-      "description": "Sitios de marketing rápidos y multiidioma, respaldados por componentes reutilizables, contenido estructurado y UX orientado a conversión. Sanity es mi principal especialidad CMS."
+      "title": "Sitios de marketing",
+      "description": "Sitios rápidos y multiidioma con contenido estructurado, edición flexible y Sanity como base."
     },
     "svc-2": {
-      "title": "Superficies de producto conectadas",
-      "description": "Portales, paneles, integraciones y herramientas internas que encajan con tus sistemas de producto, datos y diseño, en vez de convertirse en otra app aislada."
+      "title": "Productos conectados",
+      "description": "Portales, paneles e integraciones que encajan con tus sistemas de producto, datos y diseño."
     },
     "svc-3": {
       "title": "Evolución de plataforma",
-      "description": "Colaboración front-end continua para equipos que lanzan nuevas capacidades sin dejar que el rendimiento, la accesibilidad o la coherencia visual se degraden."
+      "description": "Soporte front-end continuo para lanzamientos rápidos, accesibles y coherentes."
     }
   },
   "howIWork": {

@@ -284,20 +284,34 @@
   },
   "services": {
     "label": "Ce fac",
-    "headline": "Un singur partener pentru suprafețele web de care depinde echipa ta",
-    "subtitle": "Inginerie front-end concentrată pe site-uri publice, produse interne și sistemele care le conectează.",
+    "headline": "Site-uri și produse digitale, construite ca un singur sistem",
+    "subtitle": "Inginerie front-end pentru site-uri publice, unelte interne și sistemele care le conectează.",
     "cta": "Discută proiectul tău",
+    "artifacts": {
+      "migration": {
+        "title": "Migrări CMS",
+        "description": "Treceri atente de la conținut vechi la fundații moderne."
+      },
+      "spacing": {
+        "title": "Sisteme de design",
+        "description": "Componente și tipare reutilizabile care mențin echipele aliniate."
+      },
+      "performance": {
+        "title": "Calitate front-end",
+        "description": "Audit și stabilizare când viteza, accesul sau coerența se degradează."
+      }
+    },
     "svc-1": {
-      "title": "Platforme de marketing și conținut",
-      "description": "Site-uri de marketing rapide, multilingve, susținute de componente reutilizabile, conținut structurat și UX orientat spre conversie. Sanity este specializarea mea CMS principală."
+      "title": "Site-uri de marketing",
+      "description": "Site-uri rapide, multilingve, cu conținut structurat, editare flexibilă și Sanity la bază."
     },
     "svc-2": {
-      "title": "Suprafețe de produs conectate",
-      "description": "Portaluri, dashboard-uri, integrări și unelte interne care se potrivesc cu produsul, datele și design system-ul existent, în loc să devină încă o aplicație izolată."
+      "title": "Produse conectate",
+      "description": "Portaluri, dashboard-uri și integrări care se potrivesc cu produsul, datele și sistemul tău de design."
     },
     "svc-3": {
       "title": "Evoluția platformei",
-      "description": "Parteneriat front-end continuu pentru echipe care livrează capabilități noi fără să lase performanța, accesibilitatea sau coerența vizuală să se degradeze."
+      "description": "Suport front-end continuu pentru versiuni rapide, accesibile și coerente."
     }
   },
   "howIWork": {
