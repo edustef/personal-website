@@ -302,6 +302,7 @@ html.theme-changing *::after {
     --hero-muted: rgb(25 25 20 / 0.72);
     --hero-copy: rgb(25 25 20 / 0.82);
     --hero-rule: rgb(25 25 20 / 0.3);
+    --hero-grid-rule: rgb(25 25 20 / 0.18);
     --hero-rule-strong: rgb(25 25 20 / 0.58);
 
     color: var(--hero-fg);
@@ -314,6 +315,7 @@ html.theme-changing *::after {
     --hero-muted: rgb(255 255 255 / 0.72);
     --hero-copy: rgb(255 255 255 / 0.82);
     --hero-rule: rgb(255 255 255 / 0.3);
+    --hero-grid-rule: rgb(255 255 255 / 0.18);
     --hero-rule-strong: rgb(255 255 255 / 0.65);
 
     background-color: #121210;

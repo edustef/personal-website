@@ -57,12 +57,12 @@ export default async function HeroSection() {
           <p className="editorial-label max-w-[21rem] leading-relaxed text-[var(--hero-muted)]">
             {t("heroEyebrow")}
           </p>
-          <h1 className="editorial-display mt-3 max-w-[75rem] text-[clamp(3.15rem,5.15vw,5.4rem)] text-[var(--hero-fg)] [text-wrap:wrap] md:mt-4">
+          <h1 className="editorial-display mt-3 max-w-[75rem] text-balance text-[clamp(3.15rem,5.15vw,5.4rem)] text-[var(--hero-fg)] md:mt-4">
             <span className="sm:whitespace-nowrap">{headlineLead},</span>
             <br className="hidden sm:block" />
             <span className="sm:whitespace-nowrap">{headlineRest}</span>
           </h1>
-          <p className="mt-3 max-w-2xl text-[0.96rem] leading-relaxed text-[var(--hero-copy)] md:mt-2 md:text-lg">
+          <p className="mt-3 max-w-2xl text-pretty text-[0.96rem] leading-relaxed text-[var(--hero-copy)] md:mt-2 md:text-lg">
             {t("tagline")}
           </p>
         </AnimatedContainer>
@@ -93,11 +93,11 @@ export default async function HeroSection() {
         </AnimatedContainer>
 
         {Array.isArray(trustItems) && trustItems.length > 0 ? (
-          <div className="mt-7 grid border-[var(--hero-rule)] border-t text-[0.82rem] text-[var(--hero-muted)] sm:grid-cols-3 md:mt-7 md:text-sm">
+          <div className="mt-7 grid border-[var(--hero-grid-rule)] border-t text-[0.82rem] text-[var(--hero-muted)] sm:grid-cols-3 md:mt-7 md:text-sm">
             {trustItems.map((item) => (
               <div
                 key={item}
-                className="flex min-h-11 items-center border-[var(--hero-rule)] border-b py-2.5 sm:border-r sm:border-b-0 sm:px-6 sm:first:pl-0 sm:last:border-r-0"
+                className="flex min-h-11 items-center border-[var(--hero-grid-rule)] border-b py-2.5 sm:border-r sm:border-b-0 sm:px-6 sm:first:pl-0 sm:last:border-r-0"
               >
                 {item}
               </div>
