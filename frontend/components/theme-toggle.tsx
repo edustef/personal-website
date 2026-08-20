@@ -50,9 +50,9 @@ export function ModeToggle() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          variant="outline"
+          variant="utility"
           size="icon"
-          className="transition-[transform,background-color,border-color,box-shadow] duration-150 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)]"
+          className="transition-colors duration-150 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)]"
         >
           <Sun className={`size-[1.2rem] ${styles.icon} ${styles.sun}`} />
           <Moon className={`size-[1.2rem] ${styles.icon} ${styles.moon}`} />

@@ -27,7 +27,7 @@ export default async function WebsiteLayout(props: Props) {
         <Header languageToggle={props.languageToggle} />
         <main
           id="main-content"
-          className="mt-16 flex flex-1 flex-col justify-center"
+          className="mt-16 flex flex-1 flex-col justify-center md:mt-20"
         >
           {props.children}
         </main>

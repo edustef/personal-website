@@ -2,26 +2,29 @@
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
 
+/* Editorial portfolio system — 2026 redesign. */
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: hsl(223.8136 -172.5242% 100.0000%);
-  --foreground: hsl(223.8136 0.0000% 3.9388%);
-  --card: hsl(223.8136 -172.5242% 100.0000%);
-  --card-foreground: hsl(223.8136 0.0000% 3.9388%);
+  --background: hsl(43 24% 91%);
+  --foreground: hsl(60 6% 9%);
+  --card: hsl(42 24% 94%);
+  --card-foreground: hsl(60 6% 9%);
   --popover: hsl(223.8136 -172.5242% 100.0000%);
   --popover-foreground: hsl(223.8136 0.0000% 3.9388%);
-  --primary: hsl(223.8136 0.0000% 9.0527%);
-  --primary-foreground: hsl(223.8136 0.0004% 98.0256%);
-  --secondary: hsl(223.8136 0.0002% 96.0587%);
+  --primary: hsl(72 88% 61%);
+  --primary-text: hsl(73 72% 25%);
+  --primary-foreground: hsl(60 6% 9%);
+  --secondary: hsl(23 34% 49%);
   --secondary-foreground: hsl(223.8136 0.0000% 9.0527%);
-  --muted: hsl(223.8136 0.0002% 90.0587%);
-  --muted-foreground: hsl(223.8136 0.0000% 25.1519%);
+  --muted: hsl(38 16% 84%);
+  --muted-foreground: hsl(35 7% 34%);
   --accent: hsl(223.8136 0.0002% 96.0587%);
   --accent-foreground: hsl(223.8136 0.0000% 9.0527%);
   --destructive: hsl(351.7303 123.6748% 40.5257%);
   --destructive-foreground: hsl(223.8136 -172.5242% 100.0000%);
-  --border: hsl(223.8136 0.0001% 89.8161%);
+  --border: hsl(40 8% 59%);
   --input: hsl(223.8136 0.0001% 89.8161%);
   --ring: hsl(223.8136 0.0000% 63.0163%);
   --chart-1: hsl(211.788 101.9718% 78.6759%);
@@ -47,10 +50,10 @@
   --sidebar-accent-foreground: hsl(223.8136 0.0000% 9.0527%);
   --sidebar-border: hsl(223.8136 0.0001% 89.8161%);
   --sidebar-ring: hsl(223.8136 0.0000% 63.0163%);
-  --font-sans: var(--font-cardo), serif;
-  --font-serif: serif;
-  --font-mono: JetBrains Mono, monospace;
-  --radius: 0.625rem;
+  --font-sans: var(--font-manrope), sans-serif;
+  --font-serif: var(--font-manrope), sans-serif;
+  --font-mono: var(--font-dm-mono), monospace;
+  --radius: 0.375rem;
   --shadow-x: 0;
   --shadow-y: 1px;
   --shadow-blur: 3px;
@@ -76,14 +79,15 @@
 }
 
 .dark {
-  --background: hsl(223.8136 0.0000% 3.9388%);
-  --foreground: hsl(223.8136 0.0004% 98.0256%);
+  --background: hsl(60 5% 7%);
+  --foreground: hsl(42 24% 93%);
   --card: hsl(223.8136 0.0000% 9.0527%);
   --card-foreground: hsl(223.8136 0.0004% 98.0256%);
   --popover: hsl(223.8136 0.0000% 14.9382%);
   --popover-foreground: hsl(223.8136 0.0004% 98.0256%);
-  --primary: hsl(223.8136 0.0001% 89.8161%);
-  --primary-foreground: hsl(223.8136 0.0000% 9.0527%);
+  --primary: hsl(72 88% 61%);
+  --primary-text: var(--primary);
+  --primary-foreground: hsl(60 6% 9%);
   --secondary: hsl(223.8136 0.0000% 14.9382%);
   --secondary-foreground: hsl(223.8136 0.0004% 98.0256%);
   --muted: hsl(223.8136 0.0000% 14.9382%);
@@ -118,10 +122,10 @@
   --sidebar-accent-foreground: hsl(223.8136 0.0004% 98.0256%);
   --sidebar-border: hsl(223.8136 0.0000% 15.5096%);
   --sidebar-ring: hsl(223.8136 0.0000% 32.1993%);
-  --font-sans: var(--font-cardo), serif;
-  --font-serif: serif;
-  --font-mono: JetBrains Mono, monospace;
-  --radius: 0.625rem;
+  --font-sans: var(--font-manrope), sans-serif;
+  --font-serif: var(--font-manrope), sans-serif;
+  --font-mono: var(--font-dm-mono), monospace;
+  --radius: 0.375rem;
   --shadow-x: 0;
   --shadow-y: 1px;
   --shadow-blur: 3px;
@@ -150,6 +154,7 @@
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
+  --color-primary-text: var(--primary-text);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -236,6 +241,12 @@ html.theme-changing *::after {
   body {
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
+    background-image: radial-gradient(
+        circle at 20% 0%,
+        rgb(255 255 255 / 0.22),
+        transparent 32%
+      ),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
   }
   a {
     text-decoration-line: none;
@@ -247,6 +258,95 @@ html.theme-changing *::after {
   header {
     @apply transition-all duration-300;
   }
+}
+
+@layer components {
+  .editorial-shell {
+    @apply mx-auto w-full max-w-[90rem] px-5 sm:px-8 lg:px-12;
+  }
+
+  .editorial-label {
+    @apply font-mono text-[0.68rem] font-medium uppercase tracking-[0.14em];
+  }
+
+  .editorial-display {
+    @apply text-balance font-sans font-normal leading-[0.94] tracking-[-0.055em];
+  }
+
+  .editorial-rule {
+    @apply border-border/70 border-t;
+  }
+
+  .signal-button {
+    @apply rounded-[2px] px-6 py-3.5 font-sans font-semibold shadow-none transition-opacity hover:opacity-90;
+
+    color: var(--signal-fg, var(--primary-foreground));
+    background-color: var(--signal-bg, var(--primary));
+  }
+
+  .dark-instrument {
+    --primary-text: var(--primary);
+
+    color: #f2eee5;
+    background-color: #121210;
+    background-image: radial-gradient(
+        circle at 70% 10%,
+        rgb(169 111 82 / 0.18),
+        transparent 34%
+      ),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E");
+  }
+
+  .hero-instrument {
+    --hero-fg: #191914;
+    --hero-muted: rgb(25 25 20 / 0.72);
+    --hero-copy: rgb(25 25 20 / 0.82);
+    --hero-rule: rgb(25 25 20 / 0.3);
+    --hero-rule-strong: rgb(25 25 20 / 0.58);
+
+    color: var(--hero-fg);
+    background-color: #e8e1d5;
+  }
+
+  .dark .hero-instrument {
+    --primary-text: var(--primary);
+    --hero-fg: #f4f0e7;
+    --hero-muted: rgb(255 255 255 / 0.72);
+    --hero-copy: rgb(255 255 255 / 0.82);
+    --hero-rule: rgb(255 255 255 / 0.3);
+    --hero-rule-strong: rgb(255 255 255 / 0.65);
+
+    background-color: #121210;
+  }
+}
+
+/* Keep the acid-lime signal for surfaces, but use a readable olive when the
+   same accent is foreground text on light pages. Dark cinematic surfaces opt
+   back into the brighter signal color through their local token. */
+.contrast-dark {
+  --primary-text: var(--primary);
+}
+
+.hero-header {
+  --primary-text: hsl(73 72% 25%);
+
+  color: #191914;
+}
+
+.dark .hero-header {
+  --primary-text: var(--primary);
+
+  color: #f4f0e7;
+}
+
+.text-primary {
+  color: var(--primary-text);
+}
+
+.hover\:text-primary:hover,
+.focus-visible\:text-primary:focus-visible,
+.group:hover .group-hover\:text-primary {
+  color: var(--primary-text);
 }
 
 @keyframes shimmer {

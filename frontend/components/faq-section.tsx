@@ -4,74 +4,64 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { AnimatedContainer } from "@/components/ui/animated-container";
-import { Button } from "@/components/ui/button";
-import { SectionHeader } from "@/components/ui/section-header";
 import { type FAQ, faqs } from "@/lib/data/faqs";
 import { getWhatsAppUrl } from "@/lib/utils";
 import { getLocale, getTranslations } from "next-intl/server";
 
-type FAQSectionProps = {
-  faqs?: FAQ[];
-};
+type FAQSectionProps = { faqs?: FAQ[] };
 
 export default async function FAQSection({ faqs: faqsProp }: FAQSectionProps) {
-  const faqsToDisplay = faqsProp || faqs;
-  if (!faqsToDisplay || faqsToDisplay.length === 0) {
-    return null;
-  }
-
+  const items = faqsProp || faqs;
+  if (!items?.length) return null;
   const locale = await getLocale();
-  const t = await getTranslations({ locale, namespace: "faq" });
-  const profileT = await getTranslations({ locale, namespace: "profile" });
-
+  const [t, profileT] = await Promise.all([
+    getTranslations({ locale, namespace: "faq" }),
+    getTranslations({ locale, namespace: "profile" }),
+  ]);
   const whatsappUrl = getWhatsAppUrl(profileT("phone"));
-
-  const sortedFaqs = [...faqsToDisplay].sort((a, b) => a.order - b.order);
+  const sortedFaqs = [...items].sort((a, b) => a.order - b.order);
 
   return (
-    <section id="faq" className="scroll-mt-16 py-12 md:py-16">
-      <div className="mx-auto max-w-4xl px-4">
-        <SectionHeader
-          label={t("label")}
-          headline={t("headline")}
-          subtitle={t("subtitle")}
-          anchorSlug="faq"
-          className="mb-16 px-0"
-        />
+    <section id="faq" className="scroll-mt-16 py-24 md:py-36">
+      <div className="editorial-shell grid gap-14 lg:grid-cols-12">
+        <div className="lg:col-span-4">
+          <p className="editorial-label">06 / {t("label")}</p>
+          <h2 className="editorial-display mt-5 text-5xl sm:text-6xl">
+            {t("headline")}
+          </h2>
+          <p className="text-muted-foreground mt-6 max-w-sm leading-relaxed">
+            {t("subtitle")}
+          </p>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-block border-foreground/50 border-b pb-1 font-medium hover:border-primary"
+          >
+            {t("cta")} ↗
+          </a>
+        </div>
 
-        <Accordion type="single" collapsible className="w-full">
-          {sortedFaqs.map((faq, index) => (
-            <AnimatedContainer
+        <Accordion
+          type="single"
+          collapsible
+          className="border-border/70 border-t lg:col-span-8"
+        >
+          {sortedFaqs.map((faq) => (
+            <AccordionItem
               key={faq._id}
-              trigger="scroll"
-              fadeDirection="up"
-              staggerIndex={index}
-              staggerDelay={0.08}
+              value={faq._id}
+              className="border-border/70"
             >
-              <AccordionItem value={faq._id}>
-                <AccordionTrigger className="text-left text-balance">
-                  {t(faq.questionKey)}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed text-pretty">
-                  {t(faq.answerKey)}
-                </AccordionContent>
-              </AccordionItem>
-            </AnimatedContainer>
+              <AccordionTrigger className="min-h-20 py-5 text-left text-xl font-normal tracking-tight hover:text-primary hover:no-underline md:text-2xl">
+                {t(faq.questionKey)}
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground max-w-2xl pb-7 text-base leading-relaxed md:text-lg">
+                {t(faq.answerKey)}
+              </AccordionContent>
+            </AccordionItem>
           ))}
         </Accordion>
-
-        <AnimatedContainer
-          trigger="scroll"
-          fadeDirection="up"
-          className="mt-12 text-center"
-        >
-          <Button asChild size="lg" variant="outline">
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-              {t("cta")}
-            </a>
-          </Button>
-        </AnimatedContainer>
       </div>
     </section>
   );

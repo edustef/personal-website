@@ -1,9 +1,9 @@
 "use client";
 
-import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { getWhatsAppUrl } from "@/lib/utils";
+import { ArrowUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const HERO_CONTACT_BUTTON_ID = "hero-contact-button";
@@ -53,7 +53,7 @@ export function FloatingContactButton({
           rel="noopener noreferrer"
           aria-label={contactMeText}
         >
-          <WhatsAppIcon className="size-5" />
+          <ArrowUpRight aria-hidden="true" className="size-5" />
         </a>
       </Button>
     </div>

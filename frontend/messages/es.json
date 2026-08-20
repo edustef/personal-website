@@ -104,8 +104,10 @@
     }
   },
   "home": {
-    "headline": "Plataformas web que mantienen <strong>producto y marketing en movimiento</strong>.",
-    "tagline": "Construyo sitios de marketing, plataformas de contenido, paneles e integraciones que siguen siendo rápidos, coherentes y mantenibles mientras los equipos crecen. Sanity es mi especialidad CMS.",
+    "headline": "Sistemas web complejos, hechos claros.",
+    "tagline": "Implementaciones en Sanity, migraciones de CMS y el frontend que las hace útiles.",
+    "heroEyebrow": "PARTNER FULL-STACK INDEPENDIENTE",
+    "availabilityNote": "DISPONIBLE PARA PROYECTOS SELECCIONADOS — 04",
     "aboutMeDescription": "Construyo sitios de marketing y plataformas web conectadas que los equipos pueden seguir evolucionando.",
     "announcementLabel": "Plataformas web para <strong>equipos que siguen entregando</strong>",
     "resumeButtonLabel": "Ver mi currículum",
@@ -114,13 +116,13 @@
     "scheduleCall": "Reservar una llamada",
     "contactDirectly": "Escríbeme",
     "letsChat": "Hablemos de tu sitio",
-    "seeHowIWork": "Reserva una llamada",
+    "seeHowIWork": "Así trabajo",
     "orBookTime": "Reserva una llamada",
     "workedWith": "Con qué trabajo",
     "heroTrust": [
-      "Partner front-end senior",
-      "Disciplina de sistema de diseño",
-      "El código es tuyo"
+      "Colaboración senior",
+      "Sistemas editoriales",
+      "Código en propiedad"
     ],
     "tools": {
       "label": "Tecnologías",
@@ -143,7 +145,7 @@
       "whatsappLabel": "¿Pregunta rápida? Escríbeme"
     },
     "heroLabel": "Ingeniería front-end para equipos consolidados",
-    "primaryCta": "Hablar de un proyecto",
+    "primaryCta": "Hablar del proyecto",
     "secondaryCta": "Explorar servicios de Sanity",
     "sanitySpotlight": {
       "label": "Especialidad principal",
@@ -181,7 +183,7 @@
     "description": "Sitios de marketing y plataformas web conectadas para equipos consolidados de producto y marketing.",
     "header": {
       "cta": {
-        "text": "Hablar de un proyecto"
+        "text": "Hablar del proyecto"
       },
       "homeButtonLabel": "Inicio",
       "navLabel": "Navegación principal",
@@ -189,8 +191,8 @@
       "menuLabel": "Menú",
       "nav": {
         "services": "Servicios",
-        "pricing": "Precios",
-        "howIWork": "Cómo trabajo",
+        "pricing": "Trabajemos juntos",
+        "howIWork": "Proceso",
         "blog": "Blog",
         "servicesSlug": "servicios",
         "pricingSlug": "precios",

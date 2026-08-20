@@ -104,8 +104,10 @@
     }
   },
   "home": {
-    "headline": "Web platforms that keep <strong>product and marketing moving</strong>.",
-    "tagline": "I build marketing sites, content platforms, dashboards, and integrations that stay fast, coherent, and maintainable as teams grow. Sanity is my CMS specialty.",
+    "headline": "Complex web systems, made clear.",
+    "tagline": "Sanity builds, CMS migrations, and the frontend that makes them useful.",
+    "heroEyebrow": "INDEPENDENT FULL-STACK PARTNER",
+    "availabilityNote": "AVAILABLE FOR SELECT PROJECTS — 04",
     "aboutMeDescription": "I build marketing sites and connected web platforms that teams can keep evolving.",
     "announcementLabel": "Web platforms for <strong>teams that keep shipping</strong>",
     "resumeButtonLabel": "See my resume",
@@ -114,14 +116,10 @@
     "scheduleCall": "Book a call",
     "contactDirectly": "Message me",
     "letsChat": "Talk about your site",
-    "seeHowIWork": "Book a call",
+    "seeHowIWork": "See how I work",
     "orBookTime": "Book a call",
     "workedWith": "What I work with",
-    "heroTrust": [
-      "Senior front-end partner",
-      "Design-system discipline",
-      "You own the code"
-    ],
+    "heroTrust": ["Senior partnership", "Editorial systems", "Code you own"],
     "tools": {
       "label": "Technologies",
       "headline": "Tools & Technologies",
@@ -143,7 +141,7 @@
       "whatsappLabel": "Quick question? Message me"
     },
     "heroLabel": "Front-end engineering for established teams",
-    "primaryCta": "Discuss a project",
+    "primaryCta": "Discuss project",
     "secondaryCta": "Explore Sanity services",
     "sanitySpotlight": {
       "label": "Flagship specialization",
@@ -181,7 +179,7 @@
     "description": "Marketing sites and connected web platforms for established product and marketing teams.",
     "header": {
       "cta": {
-        "text": "Discuss a project"
+        "text": "Discuss project"
       },
       "homeButtonLabel": "Home",
       "navLabel": "Primary navigation",
@@ -189,8 +187,8 @@
       "menuLabel": "Menu",
       "nav": {
         "services": "Services",
-        "pricing": "Pricing",
-        "howIWork": "How I Work",
+        "pricing": "Work together",
+        "howIWork": "Process",
         "blog": "Blog",
         "servicesSlug": "services",
         "pricingSlug": "pricing",

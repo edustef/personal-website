@@ -104,8 +104,10 @@
     }
   },
   "home": {
-    "headline": "Platforme web care mențin <strong>produsul și marketingul în mișcare</strong>.",
-    "tagline": "Construiesc site-uri de marketing, platforme de conținut, dashboard-uri și integrări care rămân rapide, coerente și ușor de întreținut pe măsură ce echipele cresc. Sanity este specializarea mea CMS.",
+    "headline": "Sisteme web complexe, făcute clare.",
+    "tagline": "Implementări Sanity, migrări CMS și front-endul care le face cu adevărat utile.",
+    "heroEyebrow": "PARTENER FULL-STACK INDEPENDENT",
+    "availabilityNote": "DISPONIBIL PENTRU PROIECTE SELECTATE — 04",
     "aboutMeDescription": "Construiesc site-uri de marketing și platforme web conectate pe care echipele le pot dezvolta în continuare.",
     "announcementLabel": "Platforme web pentru <strong>echipe care continuă să livreze</strong>",
     "resumeButtonLabel": "Vezi CV-ul meu",
@@ -114,13 +116,13 @@
     "scheduleCall": "Programează o discuție",
     "contactDirectly": "Scrie-mi",
     "letsChat": "Hai să vorbim despre site-ul tău",
-    "seeHowIWork": "Programează o discuție",
+    "seeHowIWork": "Vezi cum lucrez",
     "orBookTime": "Programează o discuție",
     "workedWith": "Cu ce lucrez",
     "heroTrust": [
-      "Partener front-end senior",
-      "Rigoare de design system",
-      "Codul este al tău"
+      "Parteneriat senior",
+      "Sisteme editoriale",
+      "Codul îți aparține"
     ],
     "tools": {
       "label": "Tehnologii",
@@ -143,7 +145,7 @@
       "whatsappLabel": "Întrebare rapidă? Scrie-mi"
     },
     "heroLabel": "Inginerie front-end pentru echipe mature",
-    "primaryCta": "Discută un proiect",
+    "primaryCta": "Discută proiectul",
     "secondaryCta": "Explorează serviciile Sanity",
     "sanitySpotlight": {
       "label": "Specializarea principală",
@@ -181,7 +183,7 @@
     "description": "Site-uri de marketing și platforme web conectate pentru echipe mature de produs și marketing.",
     "header": {
       "cta": {
-        "text": "Discută un proiect"
+        "text": "Discută proiectul"
       },
       "homeButtonLabel": "Acasă",
       "navLabel": "Navigație principală",
@@ -189,8 +191,8 @@
       "menuLabel": "Meniu",
       "nav": {
         "services": "Servicii",
-        "pricing": "Prețuri",
-        "howIWork": "Cum Lucrez",
+        "pricing": "Lucrăm împreună",
+        "howIWork": "Proces",
         "blog": "Blog",
         "servicesSlug": "servicii",
         "pricingSlug": "preturi",

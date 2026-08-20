@@ -1,21 +1,10 @@
-import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
-import { AnimatedContainer } from "@/components/ui/animated-container";
-import { Button } from "@/components/ui/button";
-import { SectionHeader } from "@/components/ui/section-header";
 import { Link } from "@/i18n/navigation";
-import { getSocialIcon } from "@/lib/social-icons";
 import { getWhatsAppUrl } from "@/lib/utils";
-import { Calendar } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 
-type SocialLink = {
-  name: string;
-  url: string;
-};
-
-type ContactSectionProps = {
-  socialLinks?: SocialLink[];
-};
+type SocialLink = { name: string; url: string };
+type ContactSectionProps = { socialLinks?: SocialLink[] };
 
 export default async function ContactSection({
   socialLinks,
@@ -27,81 +16,57 @@ export default async function ContactSection({
   ]);
   const whatsappUrl = getWhatsAppUrl(profileT("phone"));
 
-  const hasSocialLinks = socialLinks && socialLinks.length > 0;
-
   return (
-    <section id="contact" className="scroll-mt-12 py-12 md:py-16">
-      <div className="mx-auto max-w-6xl px-4">
-        <SectionHeader
-          label={t("contact.label")}
-          headline={t("contact.headline")}
-          subtitle={t("contact.subtitle")}
-          anchorSlug="contact"
-          className="mb-16 px-0"
-        />
-
-        <div className="flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center">
-          <AnimatedContainer
-            trigger="scroll"
-            fadeDirection="up"
-            staggerIndex={0}
-            staggerDelay={0.1}
-            className="w-full sm:w-auto"
+    <section
+      id="contact"
+      className="dark-instrument scroll-mt-16 border-white/15 border-t py-24 md:py-32"
+    >
+      <div className="editorial-shell text-center">
+        <p className="editorial-label text-white/50">
+          07 / {t("contact.label")}
+        </p>
+        <h2 className="editorial-display mx-auto mt-6 max-w-5xl text-5xl text-[#f4f0e7] sm:text-7xl lg:text-9xl">
+          {t("contact.headline")}
+        </h2>
+        <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/60 md:text-lg">
+          {t("contact.subtitle")}
+        </p>
+        <div className="mt-9 flex flex-col items-center gap-5">
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="signal-button inline-flex min-h-14 w-full max-w-lg items-center justify-center gap-2 text-lg"
           >
-            <Button asChild size="lg" variant="default" className="w-full">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <WhatsAppIcon className="size-5" />
-                {t("letsChat")}
-              </a>
-            </Button>
-          </AnimatedContainer>
-
-          <AnimatedContainer
-            trigger="scroll"
-            fadeDirection="up"
-            staggerIndex={1}
-            staggerDelay={0.1}
-            className="w-full sm:w-auto"
+            {t("letsChat")}
+            <ArrowUpRight className="size-5" />
+          </a>
+          <Link
+            href="/schedule"
+            className="border-white/45 border-b pb-1 text-white hover:border-primary hover:text-primary"
           >
-            <Button asChild size="lg" variant="outline" className="w-full">
-              <Link href="/schedule">
-                <Calendar className="size-5" />
-                {t("orBookTime")}
-              </Link>
-            </Button>
-          </AnimatedContainer>
+            {t("orBookTime")} ↗
+          </Link>
+        </div>
 
-          {hasSocialLinks && (
-            <AnimatedContainer
-              trigger="scroll"
-              fadeDirection="up"
-              staggerIndex={2}
-              staggerDelay={0.1}
-              className="flex gap-2"
-            >
-              {socialLinks.map((link) => {
-                const Icon = getSocialIcon(link.name);
-                return (
-                  <Button
-                    key={link.name}
-                    asChild
-                    size="lg"
-                    variant="outline"
-                    className="aspect-square p-0"
-                  >
-                    <a
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={link.name}
-                    >
-                      {Icon && <Icon className="size-5" />}
-                    </a>
-                  </Button>
-                );
-              })}
-            </AnimatedContainer>
-          )}
+        <div className="mt-20 flex flex-col gap-6 border-white/25 border-t pt-6 text-left font-mono text-xs uppercase tracking-wider text-white/55 md:flex-row md:items-center md:justify-between">
+          <span>Eduard Stefan</span>
+          <span>Oradea, Romania · Europe</span>
+          {socialLinks?.length ? (
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          ) : null}
         </div>
       </div>
     </section>

@@ -1,8 +1,6 @@
 "use client";
 
 import { AnimatedContainer } from "@/components/ui/animated-container";
-import { Button } from "@/components/ui/button";
-import { Timeline } from "@/components/ui/timeline";
 import type React from "react";
 
 interface TimelineData {
@@ -10,8 +8,7 @@ interface TimelineData {
   title: string;
   content: React.ReactNode;
 }
-
-interface HowIWorkSectionClientProps {
+interface Props {
   label: string;
   headline: string;
   subtitle: string;
@@ -27,48 +24,64 @@ export function HowIWorkSectionClient({
   timelineData,
   cta,
   ctaUrl,
-}: HowIWorkSectionClientProps) {
+}: Props) {
   return (
-    <section id="how-i-work" className="scroll-mt-12 relative py-12 md:py-16">
-      <div className="mx-auto max-w-6xl px-4">
+    <section
+      id="how-i-work"
+      className="dark-instrument scroll-mt-16 py-24 md:py-32"
+    >
+      <div className="editorial-shell">
         <AnimatedContainer
           trigger="scroll"
           fadeDirection="up"
-          className="mb-16 text-center"
+          className="grid gap-8 lg:grid-cols-12 lg:items-end"
         >
-          <p className="text-primary mb-3 text-sm font-medium uppercase tracking-wider">
-            {label}
-          </p>
-          <h2 className="text-foreground mb-4 text-3xl font-semibold tracking-tight md:text-4xl text-balance">
-            <a
-              href="#how-i-work"
-              className="hover:text-primary transition-colors"
-            >
+          <div className="lg:col-span-8">
+            <p className="editorial-label text-white/55">03 / {label}</p>
+            <h2 className="editorial-display mt-5 text-5xl text-[#f4f0e7] sm:text-6xl lg:text-8xl">
               {headline}
-            </a>
-          </h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg text-pretty">
+            </h2>
+          </div>
+          <p className="max-w-md text-white/62 leading-relaxed lg:col-span-4 lg:pb-2">
             {subtitle}
           </p>
         </AnimatedContainer>
 
-        <div className="relative w-full">
-          <Timeline data={timelineData} showHeader={false} />
+        <div className="relative mt-20 grid gap-0 border-white/25 border-t md:grid-cols-2 lg:grid-cols-4">
+          {timelineData.map((item, index) => (
+            <AnimatedContainer
+              key={item.id ?? item.title}
+              trigger="scroll"
+              fadeDirection="up"
+              staggerIndex={index}
+              className="group relative border-white/20 border-b px-0 py-8 md:px-7 lg:border-r"
+            >
+              <div className="absolute -top-2 left-0 size-4 rounded-full border border-[#c9b9a9] bg-[#121210] transition-colors group-hover:border-primary group-hover:bg-primary md:left-7" />
+              <p className="font-mono text-xs text-primary">
+                {String(index + 1).padStart(2, "0")}
+              </p>
+              <h3 className="mt-5 text-2xl font-normal leading-tight text-[#f4f0e7]">
+                {item.title}
+              </h3>
+              <div className="mt-6 max-h-52 overflow-hidden text-sm [&_.text-foreground]:!text-white/62 [&_li]:!gap-2 [&_p]:!text-white/62 [&_svg]:!size-4">
+                {item.content}
+              </div>
+            </AnimatedContainer>
+          ))}
         </div>
 
-        {cta && ctaUrl && (
-          <AnimatedContainer
-            trigger="scroll"
-            fadeDirection="up"
-            className="mt-12 text-center"
-          >
-            <Button asChild size="lg">
-              <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
-                {cta}
-              </a>
-            </Button>
-          </AnimatedContainer>
-        )}
+        {cta && ctaUrl ? (
+          <div className="mt-10 flex justify-end">
+            <a
+              href={ctaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-white/45 border-b pb-1 text-sm text-white hover:border-primary hover:text-primary"
+            >
+              {cta} ↗
+            </a>
+          </div>
+        ) : null}
       </div>
     </section>
   );
