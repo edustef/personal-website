@@ -145,7 +145,6 @@
     "secondaryCta": "Explore Sanity services",
     "sanitySpotlight": {
       "label": "Flagship specialization",
-      "eyebrow": "Sanity-first when structured content is the right foundation.",
       "headline": "Editorial freedom. Engineering discipline.",
       "description": "I build and replatform Sanity systems around real editorial workflows—from schemas and reusable blocks to previews, localization, migration, and handoff.",
       "cta": "Explore Sanity CMS services",
@@ -293,7 +292,7 @@
         "description": "Reusable components and patterns that keep teams aligned."
       },
       "performance": {
-        "title": "Front-end quality",
+        "title": "Performance",
         "description": "Audit and stabilization where speed, access, or consistency drift."
       }
     },
@@ -317,6 +316,7 @@
     "cta": "Discuss a project",
     "planning": {
       "title": "We map the problem and the system around it",
+      "artifactLabel": "Alignment brief",
       "paragraphs": [
         "We start with the people, workflows, and systems the work needs to serve. Then we agree on scope, technical boundaries, and what success looks like."
       ],
@@ -328,6 +328,7 @@
     },
     "development": {
       "title": "I build in the open",
+      "artifactLabel": "Build review",
       "paragraphs": [
         "No going dark for weeks. You get regular updates, working builds, and room to adjust while decisions are still inexpensive."
       ],
@@ -339,8 +340,9 @@
     },
     "deployment": {
       "title": "We launch with the edges covered",
+      "artifactLabel": "Launch checklist",
       "paragraphs": [
-        "Performance, accessibility, analytics, integrations, redirects, and rollback planning are treated as launch work—not cleanup for later."
+        "Performance, accessibility, analytics, integrations, redirects, and rollback planning are treated as launch work, not cleanup for later."
       ],
       "bulletPoints": [
         "Critical paths tested",
@@ -350,6 +352,7 @@
     },
     "postDeployment": {
       "title": "Your team owns what comes next",
+      "artifactLabel": "Ownership log",
       "paragraphs": [
         "You own the code, decisions, and documentation. I hand over cleanly or stay embedded when ongoing evolution is the better model."
       ],

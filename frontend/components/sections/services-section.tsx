@@ -226,7 +226,7 @@ export default async function ServicesSection({
       <div className="editorial-shell">
         <header className="max-w-[76rem]">
           <p className="editorial-label text-foreground/56">
-            01 / {t("label")}
+            {t("label")}
           </p>
           <h2 className="editorial-display mt-5 max-w-[22ch] text-[clamp(3rem,4.5vw,4.35rem)]">
             {t("headline")}

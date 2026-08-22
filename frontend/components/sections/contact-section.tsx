@@ -23,7 +23,7 @@ export default async function ContactSection({
     >
       <div className="editorial-shell text-center">
         <p className="editorial-label text-white/50">
-          07 / {t("contact.label")}
+          {t("contact.label")}
         </p>
         <h2 className="editorial-display mx-auto mt-6 max-w-5xl text-5xl text-[#f4f0e7] sm:text-7xl lg:text-9xl">
           {t("contact.headline")}

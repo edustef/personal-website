@@ -149,7 +149,6 @@
     "secondaryCta": "Explorar servicios de Sanity",
     "sanitySpotlight": {
       "label": "Especialidad principal",
-      "eyebrow": "Sanity-first cuando el contenido estructurado es la base adecuada.",
       "headline": "Libertad editorial. Rigor técnico.",
       "description": "Construyo y migro sistemas Sanity alrededor de flujos editoriales reales: desde esquemas y bloques reutilizables hasta previews, localización, migración y entrega.",
       "cta": "Explorar servicios de Sanity CMS",
@@ -321,6 +320,7 @@
     "cta": "Hablar de un proyecto",
     "planning": {
       "title": "Mapeamos el problema y el sistema que lo rodea",
+      "artifactLabel": "Ficha de alineación",
       "paragraphs": [
         "Empezamos por las personas, los flujos y los sistemas a los que el trabajo debe servir. Después acordamos alcance, límites técnicos y qué significa el éxito."
       ],
@@ -332,6 +332,7 @@
     },
     "development": {
       "title": "Construyo a la vista",
+      "artifactLabel": "Revisión de implementación",
       "paragraphs": [
         "No desaparezco durante semanas. Recibes actualizaciones regulares, builds funcionales y margen para ajustar mientras las decisiones todavía son baratas de cambiar."
       ],
@@ -343,6 +344,7 @@
     },
     "deployment": {
       "title": "Lanzamos con los bordes cubiertos",
+      "artifactLabel": "Lista de lanzamiento",
       "paragraphs": [
         "Rendimiento, accesibilidad, analytics, integraciones, redirecciones y plan de vuelta atrás son trabajo de lanzamiento, no limpieza para después."
       ],
@@ -354,6 +356,7 @@
     },
     "postDeployment": {
       "title": "Tu equipo es dueño de lo que viene",
+      "artifactLabel": "Registro de entrega",
       "paragraphs": [
         "El código, las decisiones y la documentación son tuyos. Entrego de forma limpia o sigo integrado cuando la evolución continua es el mejor modelo."
       ],

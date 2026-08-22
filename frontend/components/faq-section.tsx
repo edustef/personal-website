@@ -25,7 +25,7 @@ export default async function FAQSection({ faqs: faqsProp }: FAQSectionProps) {
     <section id="faq" className="scroll-mt-16 py-24 md:py-36">
       <div className="editorial-shell grid gap-14 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <p className="editorial-label">06 / {t("label")}</p>
+          <p className="editorial-label">{t("label")}</p>
           <h2 className="editorial-display mt-5 text-5xl sm:text-6xl">
             {t("headline")}
           </h2>

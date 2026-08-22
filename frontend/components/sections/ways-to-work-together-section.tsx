@@ -13,75 +13,118 @@ export default async function WaysToWorkTogetherSection() {
   const whatsappUrl = getWhatsAppUrl(undefined);
 
   return (
-    <section id={sectionSlug} className="scroll-mt-16 py-24 md:py-36">
-      <div className="editorial-shell grid gap-14 lg:grid-cols-12 lg:items-start">
-        <div className="lg:col-span-7 lg:pt-8">
-          <p className="editorial-label">04 / {t("label")}</p>
-          <h2 className="editorial-display mt-5 max-w-4xl text-5xl sm:text-6xl lg:text-8xl">
+    <section
+      id={sectionSlug}
+      className="dark-instrument scroll-mt-16 overflow-hidden border-white/14 border-t py-20 md:py-28 lg:py-32"
+    >
+      <div className="editorial-shell grid gap-16 lg:grid-cols-12 lg:items-center lg:gap-8 xl:gap-12">
+        <div className="lg:col-span-7 lg:pr-4 xl:pr-10">
+          <p className="editorial-label text-[#eee7dc]/62">
+            {headerT("nav.pricing")}
+          </p>
+
+          <h2 className="editorial-display mt-7 max-w-[12ch] text-[clamp(2.75rem,5vw,5rem)] text-[#f2ece2]">
             {t("headline")}
           </h2>
-          <p className="text-muted-foreground mt-7 max-w-xl text-lg leading-relaxed">
-            {t("subtitle")}
-          </p>
-          <h3 className="mt-12 max-w-2xl text-2xl font-normal leading-tight tracking-tight md:text-3xl">
-            {t("engagementTitle")}
-          </h3>
-          <p className="text-muted-foreground mt-5 max-w-2xl leading-relaxed md:text-lg">
-            {t("description")}
-          </p>
+
+          <div className="mt-10 max-w-[38rem] border-white/16 border-t pt-7 md:mt-12 md:grid md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-8">
+            <p className="text-base leading-[1.65] text-[#eee7dc]/78">
+              {t("subtitle")}
+            </p>
+            <div className="mt-6 md:mt-0">
+              <h3 className="text-lg leading-snug font-medium tracking-[-0.025em] text-[#f2ece2]">
+                {t("engagementTitle")}
+              </h3>
+              <p className="mt-3 text-sm leading-[1.65] text-[#eee7dc]/64">
+                {t("description")}
+              </p>
+            </div>
+          </div>
+
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="signal-button mt-9 inline-flex items-center gap-2"
+            className="group mt-9 inline-flex min-h-11 items-center gap-3 rounded-[2px] bg-primary px-6 py-3.5 font-semibold text-primary-foreground transition-[transform,opacity] duration-200 hover:-translate-y-0.5 hover:opacity-90 active:translate-y-px motion-reduce:transform-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           >
-            {t("cta")}
-            <ArrowUpRight className="size-4" />
+            <span>{t("cta")}</span>
+            <ArrowUpRight
+              aria-hidden="true"
+              className="size-4 shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none"
+            />
           </a>
         </div>
 
-        <div className="relative lg:col-span-5">
-          <div className="absolute -inset-3 rotate-2 bg-[#a96f52]/20" />
-          <div className="relative -rotate-1 border border-border bg-[#e4d9c9] p-6 shadow-[0_28px_60px_rgba(45,32,22,.16)] md:p-9">
-            <div className="flex items-center justify-between border-black/25 border-b pb-5">
-              <span className="editorial-label">
-                Engagement / specification
-              </span>
-              <span className="font-mono text-xs">ES—04</span>
+        <div className="relative mx-auto w-full max-w-[39rem] lg:col-span-5 lg:mx-0 lg:pl-3">
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-5 top-7 bottom-[-0.8rem] hidden rotate-[2.6deg] border border-[#795844]/35 bg-[#795844]/18 shadow-[0_2rem_4rem_rgb(0_0_0/0.28)] sm:block"
+          />
+
+          <article className="noise-overlay relative isolate border border-[#aaa094] bg-[#d8d0c3] px-5 pt-9 pb-5 text-[#1b1a17] shadow-[0_1.75rem_4rem_rgb(0_0_0/0.32)] sm:rotate-[1.5deg] sm:px-8 sm:pt-12 sm:pb-8 lg:px-7 xl:px-9">
+            <div
+              aria-hidden="true"
+              className="absolute -top-3 left-8 z-20 h-14 w-[1.1rem] rounded-full border-[2px] border-[#55524d] shadow-[inset_0_0_0_1px_rgb(255_255_255/0.45),2px_3px_4px_rgb(0_0_0/0.24)] sm:left-11 sm:h-16"
+            >
+              <span className="absolute inset-[3px] rounded-full border border-[#77736c]" />
             </div>
-            <dl className="mt-4">
-              <div className="grid gap-2 border-black/20 border-b py-6 sm:grid-cols-2">
-                <dt className="editorial-label text-black/55">
+
+            <header className="relative border-black/25 border-b pb-6 pl-10 sm:pb-8 sm:pl-12">
+              <p className="font-mono text-[0.62rem] font-medium uppercase tracking-[0.13em] text-black/55">
+                {headerT("nav.pricing")}
+              </p>
+              <p className="mt-4 max-w-[19ch] text-[clamp(1.65rem,4vw,2.35rem)] leading-[1.02] font-medium tracking-[-0.045em]">
+                {t("engagementTitle")}
+              </p>
+            </header>
+
+            <dl className="relative mt-6 border border-black/25 sm:mt-8">
+              <div className="grid grid-cols-[minmax(6.5rem,0.78fr)_minmax(0,1.22fr)] border-black/25 border-b">
+                <dt className="border-black/25 border-r px-3 py-4 font-mono text-[0.6rem] uppercase leading-snug tracking-[0.12em] text-black/58 sm:px-5 sm:py-5">
                   {t("scopeLabel")}
                 </dt>
-                <dd className="font-medium">{t("scopeValue")}</dd>
+                <dd className="px-3 py-4 text-sm leading-[1.45] font-medium sm:px-5 sm:py-5 sm:text-base">
+                  {t("scopeValue")}
+                </dd>
               </div>
-              <div className="grid gap-2 border-black/20 border-b py-6 sm:grid-cols-2">
-                <dt className="editorial-label text-black/55">
+
+              <div className="grid grid-cols-[minmax(6.5rem,0.78fr)_minmax(0,1.22fr)] border-black/25 border-b">
+                <dt className="border-black/25 border-r px-3 py-4 font-mono text-[0.6rem] uppercase leading-snug tracking-[0.12em] text-black/58 sm:px-5 sm:py-5">
                   {t("timelineLabel")}
                 </dt>
-                <dd className="text-2xl tracking-tight">
+                <dd className="px-3 py-4 text-xl leading-none font-medium tracking-[-0.035em] sm:px-5 sm:py-5 sm:text-2xl">
                   {t("timelineValue")}
                 </dd>
               </div>
+
+              <div className="grid grid-cols-[minmax(6.5rem,0.78fr)_minmax(0,1.22fr)]">
+                <dt className="border-black/25 border-r px-3 py-4 font-mono text-[0.6rem] uppercase leading-snug tracking-[0.12em] text-black/58 sm:px-5 sm:py-5">
+                  {t("includesTitle")}
+                </dt>
+                <dd>
+                  <ol className="px-3 py-2 sm:px-5 sm:py-3">
+                    {includedItems.map((item, index) => (
+                      <li
+                        key={item}
+                        className="grid grid-cols-[1.5rem_minmax(0,1fr)] gap-2 border-black/18 border-b py-2.5 text-[0.78rem] leading-[1.35] last:border-b-0 sm:text-sm"
+                      >
+                        <span className="font-mono text-[0.58rem] text-black/42">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </dd>
+              </div>
             </dl>
-            <p className="editorial-label mt-7 text-black/55">
-              {t("includesTitle")}
-            </p>
-            <ul className="mt-4 divide-y divide-black/20">
-              {includedItems.map((item, index) => (
-                <li key={item} className="flex gap-4 py-3">
-                  <span className="font-mono text-xs text-black/45">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-6 text-sm leading-relaxed text-black/55">
-              {t("timelineNote")}
-            </p>
-          </div>
+
+            <footer className="relative mt-5 border-black/25 border-t pt-4 sm:pt-5">
+              <p className="max-w-[31rem] text-xs leading-[1.55] text-black/62 sm:text-sm">
+                {t("timelineNote")}
+              </p>
+            </footer>
+          </article>
         </div>
       </div>
     </section>

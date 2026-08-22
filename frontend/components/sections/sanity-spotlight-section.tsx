@@ -264,10 +264,7 @@ export default async function SanitySpotlightSection() {
           className="order-1 lg:order-2 lg:col-span-6 lg:pl-4 xl:pl-7"
         >
           <p className="editorial-label text-black/58 dark:text-[#d9c6bb]/62">
-            02 / {t("label")}
-          </p>
-          <p className="mt-4 max-w-[32rem] text-sm leading-relaxed text-black/60 dark:text-[#d9c6bb]/64">
-            {t("eyebrow")}
+            {t("label")}
           </p>
           <h2 className="editorial-display mt-5 max-w-[22ch] text-[clamp(2.75rem,3.2vw,3rem)]">
             {t("headline")}

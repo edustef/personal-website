@@ -43,7 +43,7 @@ export function AboutMeSectionClient({
           fadeDirection="left"
           className="relative z-10 flex flex-col justify-center py-24 lg:col-span-6 lg:py-32"
         >
-          <p className="editorial-label">05 / {label}</p>
+          <p className="editorial-label">{label}</p>
           <h2 className="editorial-display mt-5 max-w-3xl text-5xl sm:text-6xl lg:text-8xl">
             {headline}
           </h2>
