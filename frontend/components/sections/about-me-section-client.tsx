@@ -1,16 +1,21 @@
 "use client";
 
-import { AnimatedContainer } from "@/components/ui/animated-container";
-import { motion, useScroll, useTransform } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "motion/react";
 import Image, { type StaticImageData } from "next/image";
 import { useRef } from "react";
 
 type Props = {
   label: string;
   headline: string;
-  subtitle: string;
   description: string;
   image: StaticImageData;
+  imageAlt: string;
   cta?: string;
   ctaUrl?: string;
 };
@@ -18,70 +23,71 @@ type Props = {
 export function AboutMeSectionClient({
   label,
   headline,
-  subtitle,
   description,
   image,
+  imageAlt,
   cta,
   ctaUrl,
 }: Props) {
   const sectionRef = useRef<HTMLElement>(null);
+  const shouldReduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
-  const imageY = useTransform(scrollYProgress, [0, 1], [36, -36]);
+  const imageY = useTransform(scrollYProgress, [0, 1], [24, -24]);
 
   return (
     <section
       id="about-me"
       ref={sectionRef}
-      className="scroll-mt-16 overflow-hidden bg-[#a96f52] text-[#171714]"
+      className="relative scroll-mt-16 overflow-hidden border-white/14 border-t bg-[#181412] text-[#f2ece2]"
     >
-      <div className="editorial-shell grid min-h-[46rem] lg:grid-cols-12">
-        <AnimatedContainer
-          trigger="scroll"
-          fadeDirection="left"
-          className="relative z-10 flex flex-col justify-center py-24 lg:col-span-6 lg:py-32"
+      <div className="editorial-shell grid lg:min-h-[52rem] lg:grid-cols-12">
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, x: -16 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.28 }}
+          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          className="relative z-10 flex flex-col justify-center py-20 sm:py-24 lg:col-span-6 lg:py-28 lg:pr-12 xl:pr-20"
         >
-          <p className="editorial-label">{label}</p>
-          <h2 className="editorial-display mt-5 max-w-3xl text-5xl sm:text-6xl lg:text-8xl">
+          <p className="editorial-label text-[#eee7dc]/62">{label}</p>
+          <h2 className="editorial-display mt-7 max-w-[12.5ch] text-[clamp(2.9rem,4.5vw,4.15rem)] text-[#f2ece2]">
             {headline}
           </h2>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-black/62">
-            {subtitle}
-          </p>
-          <p className="mt-10 max-w-xl border-black/30 border-t pt-6 text-lg leading-relaxed text-black/75">
+
+          <p className="mt-10 max-w-[34rem] border-white/18 border-t pt-7 text-base leading-[1.72] text-[#eee7dc]/76 sm:text-[1.05rem]">
             {description}
           </p>
+
           {cta && ctaUrl ? (
             <a
               href={ctaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 w-fit border-black/60 border-b pb-1 font-medium hover:border-primary"
+              className="group mt-9 inline-flex min-h-11 w-fit items-center gap-2 border-white/48 border-b pt-0.5 text-sm font-medium text-[#f2ece2] transition-colors hover:border-primary hover:text-primary motion-safe:transition-transform motion-safe:duration-200 motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
             >
-              {cta} ↗
+              <span>{cta}</span>
+              <ArrowUpRight
+                aria-hidden="true"
+                className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none"
+              />
             </a>
           ) : null}
-        </AnimatedContainer>
+        </motion.div>
 
-        <div className="relative min-h-[32rem] lg:col-span-6 lg:min-h-full">
+        <div className="relative min-h-[34rem] sm:min-h-[42rem] lg:col-span-6 lg:min-h-full">
           <motion.div
-            style={{ y: imageY }}
-            className="absolute inset-x-0 bottom-[-5rem] flex justify-center lg:inset-y-0 lg:right-[-8rem] lg:left-[-8rem] lg:items-end"
+            style={shouldReduceMotion ? undefined : { y: imageY }}
+            className="absolute inset-x-[-3.25rem] top-3 bottom-[-13.5rem] flex items-start justify-center sm:inset-x-[-1.5rem] sm:top-4 sm:bottom-[-17rem] lg:inset-x-[-8rem] lg:top-8 lg:bottom-[-30rem] lg:justify-end xl:right-[-10rem] xl:left-[-5rem]"
           >
             <Image
               src={image}
-              alt="Eduard Stefan"
-              priority={false}
-              className="h-auto max-h-[34rem] w-auto max-w-full object-contain grayscale contrast-125 mix-blend-multiply lg:max-h-[52rem] lg:max-w-none"
+              alt={imageAlt}
+              sizes="(max-width: 1023px) 125vw, 62vw"
+              className="h-full w-auto max-w-none object-contain object-top grayscale sepia-[0.18] contrast-[1.14] brightness-[0.82]"
             />
           </motion.div>
-          <div className="absolute right-4 bottom-10 rotate-[-4deg] font-mono text-xs leading-loose text-black/60 md:right-12">
-            design ↔ code
-            <br />
-            content ↔ delivery
-          </div>
         </div>
       </div>
     </section>

@@ -13,10 +13,10 @@ export default async function AboutMeSection() {
   return (
     <AboutMeSectionClient
       label={t("aboutMe.label")}
-      headline={t("aboutMe.headline")}
-      subtitle={t("aboutMe.subtitle")}
+      headline={t("aboutMe.subtitle")}
       description={t("aboutMe.description")}
       image={meTransparent}
+      imageAlt={profileT("name")}
       cta={t("aboutMe.cta")}
       ctaUrl={whatsappUrl}
     />
