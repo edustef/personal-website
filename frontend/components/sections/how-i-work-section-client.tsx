@@ -188,10 +188,10 @@ export function HowIWorkSectionClient({
               <div className="relative mt-8 md:mt-0 md:border-[#bdb3a5]/58 md:border-t">
                 <span
                   aria-hidden="true"
-                  className={`absolute -left-[31px] -top-[7px] size-3.5 rounded-full border bg-[#121210] motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-110 md:left-[11%] ${
+                  className={`absolute -left-[31px] -top-[7px] size-3.5 rounded-full border bg-[var(--dark-background)] motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-110 md:left-[11%] ${
                     index === 1
-                      ? "border-primary bg-primary shadow-[0_0_0_4px_#121210,0_0_0_5px_var(--primary)]"
-                      : "border-[#bdb3a5] shadow-[0_0_0_4px_#121210,0_0_0_5px_rgb(189_179_165/0.7)]"
+                      ? "border-primary bg-primary shadow-[0_0_0_4px_var(--dark-background),0_0_0_5px_var(--primary)]"
+                      : "border-[#bdb3a5] shadow-[0_0_0_4px_var(--dark-background),0_0_0_5px_rgb(189_179_165/0.7)]"
                   }`}
                 />
 

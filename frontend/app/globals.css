@@ -7,6 +7,19 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --editorial-dark: #11110f;
+  --editorial-dark-raised: #181412;
+  --editorial-dark-foreground: #f2ece2;
+  --editorial-dark-muted: rgb(238 231 220 / 0.72);
+  --editorial-dark-subtle: rgb(238 231 220 / 0.58);
+  --editorial-dark-rule: rgb(255 255 255 / 0.14);
+  --editorial-dark-rule-strong: rgb(255 255 255 / 0.24);
+  --editorial-paper: hsl(43 24% 91%);
+  --editorial-paper-raised: hsl(42 24% 94%);
+  --editorial-ink: hsl(60 6% 9%);
+  --editorial-clay: #a96f52;
+  --editorial-clay-dark: #281c18;
+  --dark-background: var(--editorial-dark);
   --background: hsl(43 24% 91%);
   --foreground: hsl(60 6% 9%);
   --card: hsl(42 24% 94%);
@@ -79,7 +92,7 @@
 }
 
 .dark {
-  --background: hsl(60 5% 7%);
+  --background: var(--dark-background);
   --foreground: hsl(42 24% 93%);
   --card: hsl(223.8136 0.0000% 9.0527%);
   --card-foreground: hsl(223.8136 0.0004% 98.0256%);
@@ -223,6 +236,7 @@
 
 html,
 body {
+  background-color: var(--dark-background);
   letter-spacing: var(--tracking-normal);
   overflow-x: clip;
 }
@@ -240,13 +254,9 @@ html.theme-changing *::after {
   }
   body {
     @apply bg-background text-foreground;
+    background-color: var(--dark-background);
+    background-image: none;
     letter-spacing: var(--tracking-normal);
-    background-image: radial-gradient(
-        circle at 20% 0%,
-        rgb(255 255 255 / 0.22),
-        transparent 32%
-      ),
-      url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
   }
   a {
     text-decoration-line: none;
@@ -269,6 +279,71 @@ html.theme-changing *::after {
     @apply font-mono text-[0.68rem] font-medium uppercase tracking-[0.14em];
   }
 
+  .editorial-section {
+    --section-foreground: var(--foreground);
+    --section-muted: var(--muted-foreground);
+    --section-subtle: color-mix(in srgb, currentColor 58%, transparent);
+    --section-rule: color-mix(in srgb, currentColor 16%, transparent);
+    --section-rule-strong: color-mix(in srgb, currentColor 25%, transparent);
+    --section-action-rule: color-mix(in srgb, currentColor 48%, transparent);
+
+    @apply py-20 sm:py-24 lg:py-32;
+  }
+
+  .editorial-section-label {
+    color: var(
+      --section-subtle,
+      color-mix(in srgb, currentColor 58%, transparent)
+    );
+  }
+
+  .editorial-section-title {
+    @apply text-balance font-sans font-normal leading-[0.96] tracking-[-0.05em];
+
+    color: var(--section-foreground, var(--foreground));
+    font-size: clamp(2.75rem, 4.6vw, 4.75rem);
+  }
+
+  .editorial-section-title-compact {
+    font-size: clamp(2.65rem, 3.6vw, 3.75rem);
+  }
+
+  .editorial-section-copy {
+    color: var(--section-muted, var(--muted-foreground));
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .editorial-text-link {
+    display: inline-flex;
+    min-height: 2.75rem;
+    width: fit-content;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--section-action-rule, currentColor);
+    padding-top: 0.125rem;
+    color: var(--section-foreground, currentColor);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition-property: color, border-color, transform;
+    transition-duration: 200ms;
+  }
+
+  .editorial-text-link:hover {
+    color: var(--primary-text);
+    border-color: var(--primary);
+    transform: translateY(-0.125rem);
+  }
+
+  .editorial-text-link:active {
+    transform: translateY(1px);
+  }
+
+  .editorial-text-link:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+  }
+
   .editorial-display {
     @apply text-balance font-sans font-normal leading-[0.94] tracking-[-0.055em];
   }
@@ -286,15 +361,68 @@ html.theme-changing *::after {
 
   .dark-instrument {
     --primary-text: var(--primary);
+    --section-foreground: var(--editorial-dark-foreground);
+    --section-muted: var(--editorial-dark-muted);
+    --section-subtle: var(--editorial-dark-subtle);
+    --section-rule: var(--editorial-dark-rule);
+    --section-rule-strong: var(--editorial-dark-rule-strong);
+    --section-action-rule: rgb(255 255 255 / 0.48);
 
-    color: #f2eee5;
-    background-color: #121210;
-    background-image: radial-gradient(
-        circle at 70% 10%,
-        rgb(169 111 82 / 0.18),
-        transparent 34%
-      ),
-      url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E");
+    color: var(--section-foreground);
+    background-color: var(--dark-background);
+    background-image: none;
+  }
+
+  .editorial-surface-raised {
+    background-color: var(--editorial-dark-raised);
+  }
+
+  .editorial-clay-surface {
+    --section-foreground: #171714;
+    --section-muted: rgb(23 23 20 / 0.7);
+    --section-subtle: rgb(23 23 20 / 0.58);
+    --section-rule: rgb(23 23 20 / 0.24);
+
+    color: var(--section-foreground);
+    background-color: var(--editorial-clay);
+  }
+
+  .dark .editorial-clay-surface {
+    --section-foreground: #f1e8e0;
+    --section-muted: rgb(234 223 215 / 0.72);
+    --section-subtle: rgb(217 198 187 / 0.62);
+    --section-rule: rgb(221 201 188 / 0.22);
+
+    background-color: var(--editorial-clay-dark);
+  }
+
+  .dark-instrument-smooth {
+    position: relative;
+    isolation: isolate;
+    background-color: var(--dark-background);
+    background-image: none;
+  }
+
+  .dark-instrument-smooth::before {
+    content: none;
+  }
+
+  .dark-instrument-smooth > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (min-width: 768px) {
+    .editorial-section-copy {
+      font-size: 1.0625rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .editorial-text-link:hover,
+    .editorial-text-link:active {
+      transform: none;
+    }
   }
 
   .hero-instrument {
@@ -309,6 +437,7 @@ html.theme-changing *::after {
     background-color: #e8e1d5;
   }
 
+  .dark.hero-instrument,
   .dark .hero-instrument {
     --primary-text: var(--primary);
     --hero-fg: #f4f0e7;
@@ -318,7 +447,7 @@ html.theme-changing *::after {
     --hero-grid-rule: rgb(255 255 255 / 0.18);
     --hero-rule-strong: rgb(255 255 255 / 0.65);
 
-    background-color: #121210;
+    background-color: var(--dark-background);
   }
 }
 

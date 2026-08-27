@@ -49,8 +49,11 @@ export function ModeToggle() {
   const currentTheme: Theme = themeOrder.includes(theme as Theme)
     ? (theme as Theme)
     : "dark";
+  const renderedTheme = mounted ? currentTheme : "dark";
   const nextTheme =
     themeOrder[(themeOrder.indexOf(currentTheme) + 1) % themeOrder.length];
+  const renderedNextTheme =
+    themeOrder[(themeOrder.indexOf(renderedTheme) + 1) % themeOrder.length];
   const systemTheme = resolvedTheme === "light" ? "light" : "dark";
 
   return (
@@ -60,8 +63,8 @@ export function ModeToggle() {
       size="icon"
       onClick={() => changeTheme(nextTheme)}
       data-theme={mounted ? currentTheme : undefined}
-      aria-label={`Current theme: ${currentTheme}. Switch to ${nextTheme}.`}
-      title={`${currentTheme[0].toUpperCase()}${currentTheme.slice(1)} theme`}
+      aria-label={`Current theme: ${renderedTheme}. Switch to ${renderedNextTheme}.`}
+      title={`${renderedTheme[0].toUpperCase()}${renderedTheme.slice(1)} theme`}
       className={styles.toggleButton}
     >
       <span aria-hidden="true" className={styles.iconStack}>
@@ -86,7 +89,9 @@ export function ModeToggle() {
         </span>
       </span>
       <span className="sr-only">
-        {currentTheme === "system" ? `System is currently ${systemTheme}.` : ""}
+        {mounted && currentTheme === "system"
+          ? `System is currently ${systemTheme}.`
+          : ""}
       </span>
     </Button>
   );

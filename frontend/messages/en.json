@@ -107,7 +107,7 @@
     "headline": "Complex web systems, made clear.",
     "tagline": "Sanity builds, CMS migrations, and the frontend that makes them useful.",
     "heroEyebrow": "INDEPENDENT FULL-STACK PARTNER",
-    "availabilityNote": "AVAILABLE FOR SELECT PROJECTS — 04",
+    "availabilityNote": "AVAILABLE FOR SELECT PROJECTS",
     "aboutMeDescription": "I build marketing sites and connected web platforms that teams can keep evolving.",
     "announcementLabel": "Web platforms for <strong>teams that keep shipping</strong>",
     "resumeButtonLabel": "See my resume",
@@ -453,33 +453,29 @@
     }
   },
   "faq": {
-    "label": "FAQ",
-    "headline": "Questions you might have",
-    "subtitle": "The stuff teams usually ask before we start.",
-    "cta": "More questions? Let's talk",
+    "label": "Questions",
+    "headline": "Before we start.",
+    "subtitle": "The practical things clients usually want clear.",
+    "cta": "Still unsure? Ask me directly",
     "faq-1": {
-      "question": "How long does a project take?",
-      "answer": "A focused build can take a few weeks; a larger platform or migration can take several months. I give you a delivery plan after understanding the systems, dependencies, and decision-makers involved."
+      "question": "What kinds of projects are the best fit?",
+      "answer": "I work best with established product and marketing teams on marketing sites, content platforms, portals, dashboards, and integrations. I also take on Sanity builds and migrations, plus focused improvements inside existing systems where content, code, and editorial workflow meet. The scope follows the outcome rather than a preset package."
     },
     "faq-2": {
-      "question": "What kinds of products do you build?",
-      "answer": "Marketing sites, content platforms, portals, dashboards, integrations, and the front-end systems connecting them. I focus on web surfaces used by established product and marketing teams."
+      "question": "Can you take over an existing codebase?",
+      "answer": "Yes. I first understand the architecture, constraints, team workflows, and the highest-cost areas. I preserve what works, then stabilize, refactor, or replace deliberately. A rewrite is never the automatic answer."
     },
     "faq-3": {
-      "question": "Will our team own the result?",
-      "answer": "Yes. The code lives in your repository, decisions are documented, and the handoff is part of the work. I can stay involved, but the system should never depend on me being there."
+      "question": "Do you handle content migration?",
+      "answer": "Yes. I can audit source content, map it into a new model, plan redirects, and validate what moves. For larger transitions, I stage the launch or cutover and shape the editorial workflow alongside the migration. Risk is planned and tested; I do not treat migration as a bulk copy job."
     },
     "faq-4": {
-      "question": "Do you work with our existing designers and developers?",
-      "answer": "Yes. I'm comfortable plugging into an existing team, matching your conventions, and handing off cleanly. I can also run a project solo end to end if that's what you need."
+      "question": "How do we work across time zones?",
+      "answer": "I work from Oradea on Eastern European time. We plan useful overlap around key decisions, then keep progress moving through written async updates and documented decisions. Calls have a purpose, so the project does not depend on everyone being online at once."
     },
     "faq-5": {
-      "question": "What technology do you use?",
-      "answer": "Usually React, Next.js, and TypeScript, integrated with the systems your team already uses. For structured content, Sanity is my specialty. The architecture follows the job rather than forcing every project into the same stack."
-    },
-    "faq-6": {
-      "question": "Can you improve an existing platform instead of replacing it?",
-      "answer": "Yes. A rebuild is not automatically the right answer. I can work inside an existing codebase, improve the highest-cost areas first, and help your team decide what should be retained, refactored, or replaced."
+      "question": "What happens after launch?",
+      "answer": "Your team owns the code, decisions, and documentation. I provide a clean handoff and help the people running the system understand it. If ongoing support is useful, I can stay embedded around your priorities, but there is no forced dependency."
     }
   },
   "blog": {

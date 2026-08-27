@@ -252,7 +252,7 @@ export default async function SanitySpotlightSection() {
   const systemItems = t.raw("systemItems") as string[];
 
   return (
-    <section className="contrast-dark overflow-hidden bg-[#a96f52] py-20 text-[#171714] md:py-28 dark:bg-[#281c18] dark:text-[#f1e8e0]">
+    <section className="editorial-clay-surface editorial-section contrast-dark overflow-hidden">
       <div className="editorial-shell grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-10 xl:gap-16">
         <div className="order-2 lg:order-1 lg:col-span-6">
           <ArtifactStack />
@@ -263,20 +263,20 @@ export default async function SanitySpotlightSection() {
           fadeDirection="right"
           className="order-1 lg:order-2 lg:col-span-6 lg:pl-4 xl:pl-7"
         >
-          <p className="editorial-label text-black/58 dark:text-[#d9c6bb]/62">
+          <p className="editorial-label editorial-section-label">
             {t("label")}
           </p>
-          <h2 className="editorial-display mt-5 max-w-[22ch] text-[clamp(2.75rem,3.2vw,3rem)]">
+          <h2 className="editorial-section-title editorial-section-title-compact mt-6 max-w-[22ch]">
             {t("headline")}
           </h2>
-          <p className="mt-7 max-w-[36rem] text-base leading-[1.65] text-black/70 dark:text-[#eadfd7]/72 md:text-[1.05rem]">
+          <p className="editorial-section-copy mt-7 max-w-[36rem]">
             {t("description")}
           </p>
-          <div className="mt-9 border-black/28 border-t dark:border-[#ddc9bc]/24">
+          <div className="mt-9 border-[var(--section-rule)] border-t">
             {systemItems.map((item) => (
               <div
                 key={item}
-                className="flex min-h-14 items-center border-black/22 border-b py-3 dark:border-[#ddc9bc]/20"
+                className="flex min-h-14 items-center border-[var(--section-rule)] border-b py-3"
               >
                 <span className="text-sm sm:text-base">{item}</span>
               </div>

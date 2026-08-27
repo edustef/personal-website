@@ -41,7 +41,7 @@ export function AboutMeSectionClient({
     <section
       id="about-me"
       ref={sectionRef}
-      className="relative scroll-mt-16 overflow-hidden border-white/14 border-t bg-[#181412] text-[#f2ece2]"
+      className="dark-instrument editorial-surface-raised relative scroll-mt-16 overflow-hidden border-[var(--section-rule)] border-t"
     >
       <div className="editorial-shell grid lg:min-h-[52rem] lg:grid-cols-12">
         <motion.div
@@ -49,14 +49,14 @@ export function AboutMeSectionClient({
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.28 }}
           transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 flex flex-col justify-center py-20 sm:py-24 lg:col-span-6 lg:py-28 lg:pr-12 xl:pr-20"
+          className="relative z-10 flex flex-col justify-center py-20 sm:py-24 lg:col-span-6 lg:py-32 lg:pr-12 xl:pr-20"
         >
-          <p className="editorial-label text-[#eee7dc]/62">{label}</p>
-          <h2 className="editorial-display mt-7 max-w-[12.5ch] text-[clamp(2.9rem,4.5vw,4.15rem)] text-[#f2ece2]">
+          <p className="editorial-label editorial-section-label">{label}</p>
+          <h2 className="editorial-section-title mt-6 max-w-[12.5ch]">
             {headline}
           </h2>
 
-          <p className="mt-10 max-w-[34rem] border-white/18 border-t pt-7 text-base leading-[1.72] text-[#eee7dc]/76 sm:text-[1.05rem]">
+          <p className="editorial-section-copy mt-10 max-w-[34rem] border-[var(--section-rule)] border-t pt-7">
             {description}
           </p>
 
@@ -65,7 +65,7 @@ export function AboutMeSectionClient({
               href={ctaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group mt-9 inline-flex min-h-11 w-fit items-center gap-2 border-white/48 border-b pt-0.5 text-sm font-medium text-[#f2ece2] transition-colors hover:border-primary hover:text-primary motion-safe:transition-transform motion-safe:duration-200 motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              className="editorial-text-link group mt-9"
             >
               <span>{cta}</span>
               <ArrowUpRight

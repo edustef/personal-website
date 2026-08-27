@@ -107,7 +107,7 @@
     "headline": "Sistemas web complejos, hechos claros.",
     "tagline": "Implementaciones en Sanity, migraciones de CMS y el frontend que las hace útiles.",
     "heroEyebrow": "PARTNER FULL-STACK INDEPENDIENTE",
-    "availabilityNote": "DISPONIBLE PARA PROYECTOS SELECCIONADOS — 04",
+    "availabilityNote": "DISPONIBLE PARA PROYECTOS SELECCIONADOS",
     "aboutMeDescription": "Construyo sitios de marketing y plataformas web conectadas que los equipos pueden seguir evolucionando.",
     "announcementLabel": "Plataformas web para <strong>equipos que siguen entregando</strong>",
     "resumeButtonLabel": "Ver mi currículum",
@@ -457,33 +457,29 @@
     }
   },
   "faq": {
-    "label": "FAQ",
-    "headline": "Preguntas que podrías tener",
-    "subtitle": "Lo que los equipos suelen preguntar antes de empezar.",
-    "cta": "¿Más preguntas? Hablemos",
+    "label": "Preguntas",
+    "headline": "Antes de empezar.",
+    "subtitle": "Las cuestiones prácticas que los clientes suelen querer dejar claras.",
+    "cta": "¿Aún tienes dudas? Pregúntame directamente",
     "faq-1": {
-      "question": "¿Cuánto tarda un proyecto?",
-      "answer": "Un build enfocado puede llevar unas semanas; una plataforma mayor o una migración puede durar varios meses. Te doy un plan de entrega después de entender los sistemas, dependencias y responsables de decisión implicados."
+      "question": "¿Qué tipo de proyectos encajan mejor?",
+      "answer": "El mejor encaje suele ser con equipos consolidados de producto o marketing: sitios, plataformas de contenido, portales, paneles e integraciones. También trabajo en proyectos y migraciones con Sanity, además de mejoras concretas en sistemas existentes donde se unen contenido, código y flujo editorial. El alcance parte del resultado, no de un paquete predefinido."
     },
     "faq-2": {
-      "question": "¿Qué tipos de productos construyes?",
-      "answer": "Sitios de marketing, plataformas de contenido, portales, paneles, integraciones y los sistemas front-end que los conectan. Me centro en superficies web utilizadas por equipos consolidados de producto y marketing."
+      "question": "¿Puedes hacerte cargo de una base de código existente?",
+      "answer": "Sí. Primero entiendo la arquitectura, las limitaciones, la forma de trabajar del equipo y las áreas que más coste generan. Conservo lo que funciona y después estabilizo, refactorizo o sustituyo de forma deliberada. Reescribirlo todo nunca es la respuesta automática."
     },
     "faq-3": {
-      "question": "¿Nuestro equipo será dueño del resultado?",
-      "answer": "Sí. El código vive en tu repositorio, las decisiones quedan documentadas y la entrega forma parte del trabajo. Puedo seguir involucrado, pero el sistema nunca debería depender de que yo esté presente."
+      "question": "¿Te encargas de migrar el contenido?",
+      "answer": "Sí. Puedo auditar el contenido de origen, mapearlo a un modelo nuevo, planificar las redirecciones y validar lo que se transfiere. En transiciones más amplias, preparo un lanzamiento por etapas o el cambio final y defino el flujo editorial junto con la migración. Los riesgos se planifican y se prueban; una migración no es una simple copia masiva."
     },
     "faq-4": {
-      "question": "¿Trabajas con nuestros diseñadores y desarrolladores actuales?",
-      "answer": "Sí. Me integro bien en un equipo existente, sigo vuestras convenciones y hago una entrega limpia. También puedo llevar un proyecto solo de principio a fin si es lo que necesitas."
+      "question": "¿Cómo trabajamos desde zonas horarias distintas?",
+      "answer": "Trabajo desde Oradea, en horario de Europa del Este. Acordamos un solapamiento útil para las decisiones importantes y mantenemos el avance con actualizaciones asíncronas por escrito y decisiones documentadas. Las llamadas tienen un propósito claro, así que el proyecto no depende de que todos estemos conectados a la vez."
     },
     "faq-5": {
-      "question": "¿Qué tecnología utilizas?",
-      "answer": "Normalmente React, Next.js y TypeScript, integrados con los sistemas que tu equipo ya utiliza. Para contenido estructurado, Sanity es mi especialidad. La arquitectura sigue el trabajo, en lugar de forzar cada proyecto al mismo stack."
-    },
-    "faq-6": {
-      "question": "¿Puedes mejorar una plataforma existente en vez de reemplazarla?",
-      "answer": "Sí. Un rebuild no es automáticamente la respuesta correcta. Puedo trabajar dentro del código existente, mejorar primero las áreas de mayor coste y ayudar al equipo a decidir qué conservar, refactorizar o reemplazar."
+      "question": "¿Qué ocurre después del lanzamiento?",
+      "answer": "El código, las decisiones y la documentación pertenecen a tu equipo. Hago una entrega clara y ayudo a las personas que gestionarán el sistema a entenderlo. Si resulta útil, puedo seguir integrado según las prioridades de tu equipo, pero sin crear una dependencia forzada."
     }
   },
   "blog": {

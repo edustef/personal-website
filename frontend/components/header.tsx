@@ -86,6 +86,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+
       // Clear active section when at top of page
       if (window.scrollY < 100) {
         setActiveSection("");
@@ -183,12 +184,12 @@ export function Header({ className, languageToggle }: HeaderProps) {
   return (
     <motion.header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 flex h-16 w-full items-center transition-all duration-300 md:h-20",
-        isScrolled
-          ? "border-b border-border/50 bg-background/88 text-foreground shadow-sm backdrop-blur-md"
-          : isHomePage
-            ? "hero-header bg-transparent"
-            : "bg-background/82 text-foreground backdrop-blur-md",
+        "contrast-dark z-50 flex h-16 w-full items-center text-[var(--editorial-dark-foreground)] md:h-20",
+        isHomePage
+          ? isScrolled
+            ? "fixed inset-x-0 top-0 border-[var(--editorial-dark-rule)] border-b bg-[var(--dark-background)]/92 backdrop-blur-md"
+            : "absolute inset-x-0 top-0 bg-transparent"
+          : "relative bg-[var(--dark-background)]",
         className
       )}
       initial={{ opacity: 0 }}
@@ -204,7 +205,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
       >
         {skipLinkText}
       </a>
-      <div className="w-full px-5 sm:px-8">
+      <div className="w-full px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-[1fr_auto] items-center gap-4 md:grid-cols-[1fr_2fr_1fr]">
           <motion.div
             whileHover={{ scale: 1.02 }}
@@ -313,14 +314,14 @@ export function Header({ className, languageToggle }: HeaderProps) {
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="contrast-dark w-full max-w-sm overflow-y-auto border-l border-white/15 bg-[#151512] p-0 text-[#f4f0e7]"
+                className="dark-instrument editorial-surface-raised w-full max-w-sm overflow-y-auto border-[var(--section-rule)] border-l p-0"
               >
                 <div className="flex min-h-full flex-col px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-14">
                   <SheetHeader className="px-0 text-left">
-                    <SheetTitle className="text-2xl tracking-tight text-white">
+                    <SheetTitle className="text-2xl tracking-tight text-[var(--section-foreground)]">
                       Eduard Stefan
                     </SheetTitle>
-                    <SheetDescription className="text-white/55">
+                    <SheetDescription className="text-[var(--section-subtle)]">
                       {navigationLabel}
                     </SheetDescription>
                   </SheetHeader>
@@ -340,7 +341,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
                           href={href}
                           aria-current={active ? "page" : undefined}
                           className={cn(
-                            "min-h-14 justify-start rounded-none border-white/20 border-b px-0 py-5 text-2xl font-medium tracking-tight text-white transition-colors",
+                            "min-h-14 justify-start rounded-none border-[var(--section-rule)] border-b px-0 py-5 text-2xl font-medium tracking-tight text-[var(--section-foreground)] transition-colors",
                             "hover:text-primary focus-visible:text-primary",
                             active && "text-primary"
                           )}
@@ -364,11 +365,11 @@ export function Header({ className, languageToggle }: HeaderProps) {
                       <ArrowUpRight aria-hidden="true" className="size-4" />
                     </a>
 
-                    <div className="flex items-center justify-end gap-3 border-white/20 border-t pt-5">
+                    <div className="flex items-center justify-end gap-3 border-[var(--section-rule)] border-t pt-5">
                       <div className="[&_button]:min-w-11 [&_button]:font-mono [&_button]:text-xs [&_button]:uppercase">
                         {languageToggle}
                       </div>
-                      <div className="border-white/30 border-l pl-3">
+                      <div className="border-[var(--section-rule-strong)] border-l pl-3">
                         <ModeToggle />
                       </div>
                     </div>

@@ -36,10 +36,4 @@ export const faqs: FAQ[] = [
     answerKey: "faq-5.answer",
     order: 4,
   },
-  {
-    _id: "faq-6",
-    questionKey: "faq-6.question",
-    answerKey: "faq-6.answer",
-    order: 5,
-  },
 ];

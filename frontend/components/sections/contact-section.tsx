@@ -19,16 +19,16 @@ export default async function ContactSection({
   return (
     <section
       id="contact"
-      className="dark-instrument scroll-mt-16 border-white/15 border-t py-24 md:py-32"
+      className="dark-instrument dark-instrument-smooth editorial-section scroll-mt-16 border-[var(--section-rule)] border-t"
     >
       <div className="editorial-shell text-center">
-        <p className="editorial-label text-white/50">
+        <p className="editorial-label editorial-section-label">
           {t("contact.label")}
         </p>
-        <h2 className="editorial-display mx-auto mt-6 max-w-5xl text-5xl text-[#f4f0e7] sm:text-7xl lg:text-9xl">
+        <h2 className="editorial-display mx-auto mt-6 max-w-5xl text-[clamp(3.25rem,8vw,7rem)] text-[var(--section-foreground)]">
           {t("contact.headline")}
         </h2>
-        <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/60 md:text-lg">
+        <p className="editorial-section-copy mx-auto mt-7 max-w-2xl">
           {t("contact.subtitle")}
         </p>
         <div className="mt-9 flex flex-col items-center gap-5">
@@ -41,15 +41,12 @@ export default async function ContactSection({
             {t("letsChat")}
             <ArrowUpRight className="size-5" />
           </a>
-          <Link
-            href="/schedule"
-            className="border-white/45 border-b pb-1 text-white hover:border-primary hover:text-primary"
-          >
+          <Link href="/schedule" className="editorial-text-link">
             {t("orBookTime")} ↗
           </Link>
         </div>
 
-        <div className="mt-20 flex flex-col gap-6 border-white/25 border-t pt-6 text-left font-mono text-xs uppercase tracking-wider text-white/55 md:flex-row md:items-center md:justify-between">
+        <div className="mt-20 flex flex-col gap-6 border-[var(--section-rule-strong)] border-t pt-6 text-left font-mono text-xs uppercase tracking-wider text-[var(--section-subtle)] md:flex-row md:items-center md:justify-between">
           <span>Eduard Stefan</span>
           <span>Oradea, Romania · Europe</span>
           {socialLinks?.length ? (
@@ -60,7 +57,7 @@ export default async function ContactSection({
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary"
+                  className="inline-flex min-h-11 items-center hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
                 >
                   {link.name}
                 </a>

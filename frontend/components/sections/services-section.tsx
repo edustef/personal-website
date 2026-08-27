@@ -221,17 +221,17 @@ export default async function ServicesSection({
   return (
     <section
       id={servicesSlug}
-      className="scroll-mt-16 bg-background py-20 text-foreground md:py-16 dark:bg-[#11110f]"
+      className="editorial-section scroll-mt-16 bg-background text-foreground dark:bg-[var(--dark-background)]"
     >
       <div className="editorial-shell">
         <header className="max-w-[76rem]">
-          <p className="editorial-label text-foreground/56">
+          <p className="editorial-label editorial-section-label">
             {t("label")}
           </p>
-          <h2 className="editorial-display mt-5 max-w-[22ch] text-[clamp(3rem,4.5vw,4.35rem)]">
+          <h2 className="editorial-section-title mt-6 max-w-[22ch]">
             {t("headline")}
           </h2>
-          <p className="mt-5 max-w-[50ch] text-base leading-[1.55] text-foreground/68 md:text-lg">
+          <p className="editorial-section-copy mt-6 max-w-[50ch]">
             {t("subtitle")}
           </p>
         </header>
@@ -293,10 +293,7 @@ export default async function ServicesSection({
         </ServicesGridMotion>
 
         <div className="mt-7 flex justify-end">
-          <Link
-            href="/schedule"
-            className="group inline-flex min-h-11 items-center gap-2 border-foreground/48 border-b pt-0.5 font-medium transition-colors hover:border-primary hover:text-primary motion-safe:transition-transform motion-safe:duration-200 motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
-          >
+          <Link href="/schedule" className="editorial-text-link group">
             {t("cta")}
             <ArrowUpRight
               aria-hidden="true"

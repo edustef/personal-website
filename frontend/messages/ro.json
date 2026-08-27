@@ -107,7 +107,7 @@
     "headline": "Sisteme web complexe, făcute clare.",
     "tagline": "Implementări Sanity, migrări CMS și front-endul care le face cu adevărat utile.",
     "heroEyebrow": "PARTENER FULL-STACK INDEPENDENT",
-    "availabilityNote": "DISPONIBIL PENTRU PROIECTE SELECTATE — 04",
+    "availabilityNote": "DISPONIBIL PENTRU PROIECTE SELECTATE",
     "aboutMeDescription": "Construiesc site-uri de marketing și platforme web conectate pe care echipele le pot dezvolta în continuare.",
     "announcementLabel": "Platforme web pentru <strong>echipe care continuă să livreze</strong>",
     "resumeButtonLabel": "Vezi CV-ul meu",
@@ -458,32 +458,28 @@
   },
   "faq": {
     "label": "Întrebări",
-    "headline": "Întrebări frecvente",
-    "subtitle": "Ce întreabă echipele de obicei înainte să începem.",
-    "cta": "Mai ai întrebări? Hai să vorbim",
+    "headline": "Înainte să începem.",
+    "subtitle": "Lucrurile practice pe care clienții vor, de obicei, să le clarificăm.",
+    "cta": "Încă nu e clar? Întreabă-mă direct",
     "faq-1": {
-      "question": "Cât durează un proiect?",
-      "answer": "Un build concentrat poate dura câteva săptămâni; o platformă mai mare sau o migrare poate dura câteva luni. Îți dau un plan de livrare după ce înțeleg sistemele, dependențele și factorii de decizie implicați."
+      "question": "Ce tipuri de proiecte ni se potrivesc cel mai bine?",
+      "answer": "Colaborez cel mai bine cu echipe mature de produs sau marketing pentru site-uri, platforme de conținut, portaluri, dashboard-uri și integrări. Preiau și proiecte Sanity, migrări sau intervenții punctuale în sisteme existente, acolo unde se întâlnesc conținutul, codul și fluxul editorial. Scopul proiectului pornește de la rezultat, nu de la un pachet prestabilit."
     },
     "faq-2": {
-      "question": "Ce tipuri de produse construiești?",
-      "answer": "Site-uri de marketing, platforme de conținut, portaluri, dashboard-uri, integrări și sistemele front-end care le conectează. Mă concentrez pe suprafețe web folosite de echipe mature de produs și marketing."
+      "question": "Poți prelua o bază de cod existentă?",
+      "answer": "Da. Încep prin a înțelege arhitectura, constrângerile, modul de lucru al echipei și zonele care costă cel mai mult. Păstrez ce funcționează, apoi stabilizez, refactorizez sau înlocuiesc în mod deliberat. O rescriere completă nu este niciodată răspunsul automat."
     },
     "faq-3": {
-      "question": "Echipa noastră va deține rezultatul?",
-      "answer": "Da. Codul stă în repository-ul tău, deciziile sunt documentate, iar predarea face parte din proiect. Pot rămâne implicat, dar sistemul nu trebuie să depindă vreodată de prezența mea."
+      "question": "Te ocupi de migrarea conținutului?",
+      "answer": "Da. Pot audita conținutul sursă, îl pot mapa într-un model nou, pot planifica redirecționările și valida ce este transferat. Pentru tranziții mai mari, pregătesc lansarea etapizată sau trecerea finală și definesc fluxul editorial odată cu migrarea. Riscurile sunt planificate și testate; migrarea nu este doar o copiere în masă."
     },
     "faq-4": {
-      "question": "Lucrezi cu designerii și dezvoltatorii noștri actuali?",
-      "answer": "Da. Mă integrez ușor într-o echipă existentă, respect convențiile voastre și fac o predare curată. Pot duce și un proiect singur, de la cap la coadă, dacă asta ai nevoie."
+      "question": "Cum lucrăm din fusuri orare diferite?",
+      "answer": "Lucrez din Oradea, pe fusul Europei de Est. Stabilim intervale de lucru comune pentru deciziile importante, apoi menținem ritmul prin actualizări asincrone în scris și decizii documentate. Apelurile au un scop clar, astfel încât proiectul să nu depindă de prezența simultană a tuturor."
     },
     "faq-5": {
-      "question": "Ce tehnologii folosești?",
-      "answer": "De obicei React, Next.js și TypeScript, integrate cu sistemele pe care echipa ta le folosește deja. Pentru conținut structurat, Sanity este specializarea mea. Arhitectura urmează nevoia proiectului, nu forțează fiecare proiect în același stack."
-    },
-    "faq-6": {
-      "question": "Poți îmbunătăți o platformă existentă în loc să o înlocuiești?",
-      "answer": "Da. Un rebuild nu este automat răspunsul corect. Pot lucra în codebase-ul existent, îmbunătăți mai întâi zonele cu cel mai mare cost și ajuta echipa să decidă ce merită păstrat, refactorizat sau înlocuit."
+      "question": "Ce se întâmplă după lansare?",
+      "answer": "Codul, deciziile și documentația aparțin echipei tale. Fac o predare clară și ajut oamenii care vor administra sistemul să îl înțeleagă. Dacă este util, pot rămâne implicat în funcție de prioritățile voastre, dar fără să creez o dependență forțată."
     }
   },
   "blog": {

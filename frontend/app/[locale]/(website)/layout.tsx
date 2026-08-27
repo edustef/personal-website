@@ -25,10 +25,7 @@ export default async function WebsiteLayout(props: Props) {
     <>
       <div className="relative isolate flex flex-col">
         <Header languageToggle={props.languageToggle} />
-        <main
-          id="main-content"
-          className="mt-16 flex flex-1 flex-col justify-center md:mt-20"
-        >
+        <main id="main-content" className="flex flex-1 flex-col justify-center">
           {props.children}
         </main>
       </div>

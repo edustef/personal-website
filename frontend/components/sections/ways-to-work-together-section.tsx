@@ -15,27 +15,25 @@ export default async function WaysToWorkTogetherSection() {
   return (
     <section
       id={sectionSlug}
-      className="dark-instrument scroll-mt-16 overflow-hidden border-white/14 border-t py-20 md:py-28 lg:py-32"
+      className="dark-instrument dark-instrument-smooth editorial-section scroll-mt-16 overflow-hidden border-[var(--section-rule)] border-t"
     >
       <div className="editorial-shell grid gap-16 lg:grid-cols-12 lg:items-center lg:gap-8 xl:gap-12">
         <div className="lg:col-span-7 lg:pr-4 xl:pr-10">
-          <p className="editorial-label text-[#eee7dc]/62">
+          <p className="editorial-label editorial-section-label">
             {headerT("nav.pricing")}
           </p>
 
-          <h2 className="editorial-display mt-7 max-w-[12ch] text-[clamp(2.75rem,5vw,5rem)] text-[#f2ece2]">
+          <h2 className="editorial-section-title mt-6 max-w-[12ch]">
             {t("headline")}
           </h2>
 
-          <div className="mt-10 max-w-[38rem] border-white/16 border-t pt-7 md:mt-12 md:grid md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-8">
-            <p className="text-base leading-[1.65] text-[#eee7dc]/78">
-              {t("subtitle")}
-            </p>
+          <div className="mt-10 max-w-[38rem] border-[var(--section-rule)] border-t pt-7 md:mt-12 md:grid md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-8">
+            <p className="editorial-section-copy">{t("subtitle")}</p>
             <div className="mt-6 md:mt-0">
-              <h3 className="text-lg leading-snug font-medium tracking-[-0.025em] text-[#f2ece2]">
+              <h3 className="text-lg leading-snug font-medium tracking-[-0.025em] text-[var(--section-foreground)]">
                 {t("engagementTitle")}
               </h3>
-              <p className="mt-3 text-sm leading-[1.65] text-[#eee7dc]/64">
+              <p className="mt-3 text-sm leading-[1.65] text-[var(--section-muted)]">
                 {t("description")}
               </p>
             </div>

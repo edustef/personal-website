@@ -58,17 +58,17 @@
 
 .systemThemeBadge {
   position: absolute;
-  top: -0.05rem;
-  right: -0.05rem;
-  width: 0.55rem;
-  height: 0.55rem;
+  top: -0.5rem;
+  right: -0.56rem;
+  width: 0.68rem;
+  height: 0.68rem;
 }
 
 .miniIcon {
   position: absolute;
   inset: 0;
-  width: 0.55rem;
-  height: 0.55rem;
+  width: 0.68rem;
+  height: 0.68rem;
   stroke-width: 2.5;
 }
 

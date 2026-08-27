@@ -1,4 +1,3 @@
-import heroWorkingSurfaceLight from "@/assets/images/hero-working-surface-light.png";
 import heroWorkingSurface from "@/assets/images/hero-working-surface.png";
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
 import { AnimatedContainer } from "@/components/ui/animated-container";
@@ -18,17 +17,8 @@ export default async function HeroSection() {
   const [headlineLead, headlineRest] = t("headline").split(", ");
 
   return (
-    <section className="hero-instrument relative -mt-16 min-h-[100svh] overflow-hidden border-b border-[var(--hero-rule)] md:-mt-20">
+    <section className="hero-instrument dark relative min-h-[100svh] overflow-hidden border-[var(--hero-rule)] border-b">
       <div className="absolute inset-0">
-        <Image
-          src={heroWorkingSurfaceLight}
-          alt=""
-          aria-hidden="true"
-          priority
-          fill
-          sizes="100vw"
-          className="object-cover object-[63%_center] opacity-60 dark:hidden md:object-center"
-        />
         <Image
           src={heroWorkingSurface}
           alt=""
@@ -36,11 +26,10 @@ export default async function HeroSection() {
           priority
           fill
           sizes="100vw"
-          className="hidden object-cover object-[63%_center] dark:block md:object-center"
+          className="object-cover object-[62%_center] md:object-center"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(244,240,231,.9)_0%,rgba(244,240,231,.62)_48%,rgba(244,240,231,.14)_100%)] dark:bg-[linear-gradient(90deg,rgba(13,13,11,.83)_0%,rgba(20,18,15,.59)_48%,rgba(16,15,13,.38)_100%)] md:bg-[linear-gradient(90deg,rgba(244,240,231,.82)_0%,rgba(244,240,231,.46)_55%,rgba(244,240,231,.08)_100%)] md:dark:bg-[linear-gradient(90deg,rgba(13,13,11,.7)_0%,rgba(20,18,15,.36)_55%,rgba(16,15,13,.26)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(238,232,220,.9)_0%,rgba(244,240,231,.08)_58%,rgba(244,240,231,.2)_100%)] dark:bg-[linear-gradient(0deg,rgba(12,12,10,.92)_0%,rgba(14,13,11,.26)_58%,rgba(10,10,9,.48)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_34%,transparent_0%,rgba(128,108,82,.04)_52%,rgba(83,69,50,.18)_100%)] dark:bg-[radial-gradient(circle_at_74%_34%,transparent_0%,rgba(9,9,8,.12)_52%,rgba(8,8,7,.52)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(13,13,11,.62)_0%,rgba(13,13,11,.34)_50%,rgba(13,13,11,.12)_100%)] md:bg-[linear-gradient(90deg,rgba(13,13,11,.54)_0%,rgba(13,13,11,.24)_52%,rgba(13,13,11,.08)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(10,10,9,.74)_0%,rgba(10,10,9,.08)_54%,rgba(10,10,9,.22)_100%)]" />
       </div>
 
       <div className="relative flex min-h-[100svh] w-full flex-col justify-end px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-28 sm:px-8 md:pb-6 md:pt-36 lg:px-12">
