@@ -33,7 +33,6 @@ type HeaderProps = {
 
 const navItems = [
   { key: "services" },
-  { key: "howIWork" },
   { key: "pricing" },
   { key: "blog", href: "/blog" },
 ] as const;
@@ -51,11 +50,9 @@ export function Header({ className, languageToggle }: HeaderProps) {
   const whatsappUrl = getWhatsAppUrl(undefined);
   const servicesText = headerT("nav.services");
   const pricingText = headerT("nav.pricing");
-  const howIWorkText = headerT("nav.howIWork");
   const blogText = headerT("nav.blog");
   const servicesSlug = headerT("nav.servicesSlug");
   const pricingSlug = headerT("nav.pricingSlug");
-  const howIWorkSlug = headerT("nav.howIWorkSlug");
 
   const isHomePage = pathname === "/";
 
@@ -101,11 +98,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
       setCurrentHash(hash);
       if (hash) {
         const sectionId = hash.slice(1);
-        if (
-          sectionId === servicesSlug ||
-          sectionId === pricingSlug ||
-          sectionId === howIWorkSlug
-        ) {
+        if (sectionId === servicesSlug || sectionId === pricingSlug) {
           setActiveSection(sectionId);
         }
       }
@@ -120,27 +113,22 @@ export function Header({ className, languageToggle }: HeaderProps) {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("hashchange", handleHashChange);
     };
-  }, [servicesSlug, pricingSlug, howIWorkSlug]);
+  }, [servicesSlug, pricingSlug]);
 
   useEffect(() => {
     if (!isHomePage) return;
 
     const servicesElement = document.getElementById(servicesSlug);
     const pricingElement = document.getElementById(pricingSlug);
-    const howIWorkElement = document.getElementById(howIWorkSlug);
 
-    if (!servicesElement || !pricingElement || !howIWorkElement) return;
+    if (!servicesElement || !pricingElement) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             const id = entry.target.id;
-            if (
-              id === servicesSlug ||
-              id === pricingSlug ||
-              id === howIWorkSlug
-            ) {
+            if (id === servicesSlug || id === pricingSlug) {
               setActiveSection(id);
             }
           }
@@ -154,19 +142,17 @@ export function Header({ className, languageToggle }: HeaderProps) {
 
     observer.observe(servicesElement);
     observer.observe(pricingElement);
-    observer.observe(howIWorkElement);
 
     return () => {
       observer.disconnect();
     };
-  }, [isHomePage, servicesSlug, pricingSlug, howIWorkSlug]);
+  }, [isHomePage, servicesSlug, pricingSlug]);
 
   const getNavHref = (item: (typeof navItems)[number]) => {
     if ("href" in item && item.href) return item.href;
     let slug: string;
     if (item.key === "services") slug = servicesSlug;
     else if (item.key === "pricing") slug = pricingSlug;
-    else if (item.key === "howIWork") slug = howIWorkSlug;
     else slug = "";
     return isHomePage ? `#${slug}` : `/#${slug}`;
   };
@@ -174,7 +160,6 @@ export function Header({ className, languageToggle }: HeaderProps) {
   const getNavText = (item: (typeof navItems)[number]) => {
     if (item.key === "services") return servicesText;
     if (item.key === "pricing") return pricingText;
-    if (item.key === "howIWork") return howIWorkText;
     return blogText;
   };
 
@@ -190,12 +175,6 @@ export function Header({ className, languageToggle }: HeaderProps) {
       return (
         isHomePage &&
         (currentHash === `#${pricingSlug}` || activeSection === pricingSlug)
-      );
-    }
-    if (item.key === "howIWork") {
-      return (
-        isHomePage &&
-        (currentHash === `#${howIWorkSlug}` || activeSection === howIWorkSlug)
       );
     }
     return false;

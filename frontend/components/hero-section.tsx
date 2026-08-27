@@ -2,7 +2,6 @@ import heroWorkingSurfaceLight from "@/assets/images/hero-working-surface-light.
 import heroWorkingSurface from "@/assets/images/hero-working-surface.png";
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
 import { AnimatedContainer } from "@/components/ui/animated-container";
-import { Link } from "@/i18n/navigation";
 import { getWhatsAppUrl } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
@@ -10,14 +9,12 @@ import Image from "next/image";
 
 export default async function HeroSection() {
   const locale = await getLocale();
-  const [t, profileT, headerT] = await Promise.all([
+  const [t, profileT] = await Promise.all([
     getTranslations({ locale, namespace: "home" }),
     getTranslations({ locale, namespace: "profile" }),
-    getTranslations({ locale, namespace: "settings.header" }),
   ]);
   const trustItems = t.raw("heroTrust") as string[];
   const whatsappUrl = getWhatsAppUrl(profileT("phone"));
-  const howIWorkSlug = headerT("nav.howIWorkSlug");
   const [headlineLead, headlineRest] = t("headline").split(", ");
 
   return (
@@ -84,12 +81,6 @@ export default async function HeroSection() {
             {t("primaryCta")}
             <ArrowUpRight aria-hidden="true" className="size-4" />
           </a>
-          <Link
-            href={{ pathname: "/", hash: howIWorkSlug }}
-            className="inline-flex min-h-11 items-center border-[var(--hero-rule-strong)] border-b pt-0.5 text-sm font-medium text-[var(--hero-fg)] transition-colors hover:border-primary hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
-          >
-            {t("seeHowIWork")}
-          </Link>
         </AnimatedContainer>
 
         {Array.isArray(trustItems) && trustItems.length > 0 ? (

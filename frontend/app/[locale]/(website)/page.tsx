@@ -3,7 +3,6 @@ import FAQSection from "@/components/faq-section";
 import HeroSection from "@/components/hero-section";
 import AboutMeSection from "@/components/sections/about-me-section";
 import ContactSection from "@/components/sections/contact-section";
-import HowIWorkSection from "@/components/sections/how-i-work-section";
 // import PortfolioSection from "@/components/sections/portfolio-section";
 import SanitySpotlightSection from "@/components/sections/sanity-spotlight-section";
 import ServicesSection from "@/components/sections/services-section";
@@ -103,8 +102,6 @@ export default async function Page(props: Props) {
       <ServicesSection />
 
       <SanitySpotlightSection />
-
-      <HowIWorkSection />
 
       <WaysToWorkTogetherSection />
 
