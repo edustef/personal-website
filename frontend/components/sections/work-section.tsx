@@ -65,13 +65,12 @@ function CompanyLogo({
   logo: StaticImageData;
 }) {
   return (
-    <div className="relative h-[4.75rem] w-44 shrink-0">
+    <div className="flex min-h-[6.5rem] w-44 shrink-0 items-center">
       <Image
         src={logo}
         alt={`${company} logo`}
-        fill
-        sizes="216px"
-        className="object-contain object-left"
+        sizes="176px"
+        className="h-auto w-44"
       />
     </div>
   );
