@@ -91,6 +91,7 @@
   "footer": {
     "privacyPolicy": "Politica de confidențialitate",
     "text": "© {currentYear} Eduard Sergiu Ștefan. Realizat cu Next.js.",
+    "location": "Oradea, România / lucrez în toată Europa",
     "legal": {
       "title": "Informații legale",
       "manageCookies": "Gestionează cookie-urile"
@@ -142,7 +143,14 @@
       "subtitle": "Spune-mi ce construiește, înlocuiește sau încearcă să descurce echipa ta. Îți spun unde pot ajuta.",
       "ctaButton": "Programează o discuție de proiect",
       "ctaButtonSecondary": "Pune o întrebare rapidă",
-      "whatsappLabel": "Întrebare rapidă? Scrie-mi"
+      "whatsappLabel": "Întrebare rapidă? Scrie-mi",
+      "close": {
+        "label": "Ia legătura",
+        "headlineLines": ["Lasă partea complicată", "la mine."],
+        "subtitle": "Un proiect nou, o migrare sau o platformă care are nevoie de experiență. Spune-mi ce e complicat și îți spun unde pot ajuta.",
+        "primaryCta": "Începe o conversație",
+        "secondaryCta": "Programează un apel scurt"
+      }
     },
     "heroLabel": "Inginerie front-end pentru echipe mature",
     "primaryCta": "Discută proiectul",
@@ -370,9 +378,8 @@
   "waysToWorkTogether": {
     "label": "Prețuri",
     "headline": "Un proiect clar, construit în jurul nevoilor site-ului tău.",
-    "subtitle": "După o discuție scurtă, transform problema într-un plan clar, cu livrabilele, durata și suportul potrivite.",
+    "subtitle": "Începem prin a clarifica nevoile afacerii și a mapa conținutul, utilizatorii și fluxurile de lucru. Apoi definesc proiectul, prioritățile și planul de livrare.",
     "engagementTitle": "Construim ce are nevoie echipa ta. Predăm un sistem pe care îl poate gestiona.",
-    "description": "Poate fi un site nou pe Sanity, o migrare controlată din CMS-ul actual sau îmbunătățiri într-un sistem existent. Proiectul este definit după rezultat, nu după un pachet prestabilit.",
     "scopeLabel": "Tipuri de proiect",
     "scopeValue": "Site-uri noi, migrări CMS și îmbunătățiri de sistem",
     "timelineLabel": "Durata uzuală",

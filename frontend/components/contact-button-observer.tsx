@@ -7,6 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const HERO_CONTACT_BUTTON_ID = "hero-contact-button";
+const CONTACT_SECTION_ID = "contact";
 const whatsappUrl = getWhatsAppUrl(undefined);
 
 export function FloatingContactButton({
@@ -19,11 +20,25 @@ export function FloatingContactButton({
 
   useEffect(() => {
     const heroButton = document.getElementById(HERO_CONTACT_BUTTON_ID);
+    const contactSection = document.getElementById(CONTACT_SECTION_ID);
     if (!heroButton) return;
 
+    let isHeroButtonVisible = true;
+    let isContactSectionVisible = false;
+
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setShowContactButton(!entry.isIntersecting);
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.target === heroButton) {
+            isHeroButtonVisible = entry.isIntersecting;
+          }
+
+          if (entry.target === contactSection) {
+            isContactSectionVisible = entry.isIntersecting;
+          }
+        }
+
+        setShowContactButton(!isHeroButtonVisible && !isContactSectionVisible);
       },
       {
         rootMargin: "-1px 0px 0px 0px",
@@ -32,6 +47,7 @@ export function FloatingContactButton({
     );
 
     observer.observe(heroButton);
+    if (contactSection) observer.observe(contactSection);
 
     return () => {
       observer.disconnect();

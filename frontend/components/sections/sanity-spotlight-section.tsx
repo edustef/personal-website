@@ -10,37 +10,39 @@ function ContentModelArtifact() {
   return (
     <div
       data-sanity-artifact-layer
-      className="absolute top-[2%] left-[2%] h-[66%] w-[68%] -rotate-[1.5deg] border border-[#b99c8d]/30 bg-[#34251f] shadow-[0_22px_55px_rgba(8,6,5,.4)]"
+      className="sanity-model-artifact absolute top-[2%] left-[2%] h-[66%] w-[68%] -rotate-[1.5deg] border border-[#b99c8d]/30 bg-[#34251f] shadow-[0_22px_55px_rgba(8,6,5,.4)]"
     >
-      <div className="flex h-8 items-center justify-between border-[#cbb2a4]/18 border-b px-3 font-mono text-[0.43rem] uppercase tracking-[0.14em] text-[#d5c4ba]/64 sm:h-10 sm:px-4 sm:text-[0.5rem]">
+      <div className="sanity-model-meta flex h-8 items-center justify-between border-[#cbb2a4]/18 border-b px-3 font-mono text-[0.43rem] uppercase tracking-[0.14em] text-[#d5c4ba]/64 sm:h-10 sm:px-4 sm:text-[0.5rem]">
         <span>Content model</span>
         <span>Schema map</span>
       </div>
       <div className="relative h-[calc(100%-2rem)] overflow-hidden p-3 sm:h-[calc(100%-2.5rem)] sm:p-4">
-        <div className="absolute top-[19%] left-[12%] w-[31%] border border-[#d6c3b8]/30 bg-[#2a1e1a] p-2 font-mono text-[0.42rem] text-[#eaded6]/74 sm:p-3 sm:text-[0.48rem]">
-          <p className="text-[#f2e6de]">Page</p>
+        <div className="sanity-model-node absolute top-[19%] left-[12%] w-[31%] border border-[#d6c3b8]/30 bg-[#2a1e1a] p-2 font-mono text-[0.42rem] text-[#eaded6]/74 sm:p-3 sm:text-[0.48rem]">
+          <p className="sanity-model-node-title text-[#f2e6de]">Page</p>
           <p className="mt-2 border-[#d6c3b8]/16 border-t pt-1.5">title</p>
           <p className="mt-1">slug</p>
           <p className="mt-1">blocks [ ]</p>
           <p className="mt-1">locale</p>
         </div>
-        <div className="absolute top-[10%] right-[8%] w-[34%] border border-[#d6c3b8]/30 bg-[#2a1e1a] p-2 font-mono text-[0.42rem] text-[#eaded6]/74 sm:p-3 sm:text-[0.48rem]">
-          <p className="text-[#f2e6de]">Reusable block</p>
+        <div className="sanity-model-node absolute top-[10%] right-[8%] w-[34%] border border-[#d6c3b8]/30 bg-[#2a1e1a] p-2 font-mono text-[0.42rem] text-[#eaded6]/74 sm:p-3 sm:text-[0.48rem]">
+          <p className="sanity-model-node-title text-[#f2e6de]">
+            Reusable block
+          </p>
           <p className="mt-2 border-[#d6c3b8]/16 border-t pt-1.5">heading</p>
           <p className="mt-1">content</p>
           <p className="mt-1">media ref</p>
         </div>
-        <div className="absolute right-[12%] bottom-[10%] w-[30%] border border-[#d6c3b8]/30 bg-[#2a1e1a] p-2 font-mono text-[0.42rem] text-[#eaded6]/74 sm:p-3 sm:text-[0.48rem]">
-          <p className="text-[#f2e6de]">Author</p>
+        <div className="sanity-model-node absolute right-[12%] bottom-[10%] w-[30%] border border-[#d6c3b8]/30 bg-[#2a1e1a] p-2 font-mono text-[0.42rem] text-[#eaded6]/74 sm:p-3 sm:text-[0.48rem]">
+          <p className="sanity-model-node-title text-[#f2e6de]">Author</p>
           <p className="mt-2 border-[#d6c3b8]/16 border-t pt-1.5">name</p>
           <p className="mt-1">bio</p>
           <p className="mt-1">image</p>
         </div>
-        <span className="absolute top-[32%] left-[43%] h-px w-[18%] bg-[#d6c3b8]/28" />
-        <span className="absolute top-[32%] left-[60%] h-[18%] w-px bg-[#d6c3b8]/28" />
-        <span className="absolute top-[50%] left-[59%] h-px w-[10%] bg-[#d6c3b8]/28" />
-        <span className="absolute bottom-[20%] left-[29%] h-[19%] w-px bg-[#d6c3b8]/28" />
-        <span className="absolute right-[38%] bottom-[20%] h-px w-[33%] bg-[#d6c3b8]/28" />
+        <span className="sanity-model-line absolute top-[32%] left-[43%] h-px w-[18%] bg-[#d6c3b8]/28" />
+        <span className="sanity-model-line absolute top-[32%] left-[60%] h-[18%] w-px bg-[#d6c3b8]/28" />
+        <span className="sanity-model-line absolute top-[50%] left-[59%] h-px w-[10%] bg-[#d6c3b8]/28" />
+        <span className="sanity-model-line absolute bottom-[20%] left-[29%] h-[19%] w-px bg-[#d6c3b8]/28" />
+        <span className="sanity-model-line absolute right-[38%] bottom-[20%] h-px w-[33%] bg-[#d6c3b8]/28" />
       </div>
     </div>
   );
@@ -50,9 +52,9 @@ function StudioArtifact() {
   return (
     <div
       data-sanity-artifact-layer
-      className="absolute top-[15%] right-[1%] h-[63%] w-[69%] rotate-[0.7deg] overflow-hidden border border-[#d3c1b6]/32 bg-[#171719] shadow-[0_28px_70px_rgba(6,5,4,.56)]"
+      className="sanity-studio-artifact absolute top-[15%] right-[1%] h-[63%] w-[69%] rotate-[0.7deg] overflow-hidden border border-[#d3c1b6]/32 bg-[#171719] shadow-[0_28px_70px_rgba(6,5,4,.56)]"
     >
-      <div className="flex h-8 items-center border-[#f1e8e1]/16 border-b bg-[#202023] font-mono text-[0.4rem] text-[#eee8e4]/62 sm:h-10 sm:text-[0.47rem]">
+      <div className="sanity-studio-topbar flex h-8 items-center border-[#f1e8e1]/16 border-b bg-[#202023] font-mono text-[0.4rem] text-[#eee8e4]/62 sm:h-10 sm:text-[0.47rem]">
         <div className="flex h-full w-[4.25rem] shrink-0 items-center gap-1.5 border-[#f1e8e1]/14 border-r px-2 sm:w-[5.75rem] sm:px-3">
           <span className="flex size-3 -rotate-6 items-center justify-center bg-[#f36458] font-sans text-[0.38rem] font-bold text-[#171719] sm:size-3.5 sm:text-[0.42rem]">
             S
@@ -60,7 +62,7 @@ function StudioArtifact() {
           <span className="text-[#f5efeb]">Sanity</span>
         </div>
         <div className="flex h-full min-w-0 flex-1 items-end gap-2 px-2 sm:gap-3 sm:px-3">
-          <span className="flex h-full items-center border-[#f36458] border-b text-[#f5efeb]">
+          <span className="sanity-studio-accent-border flex h-full items-center border-[#f36458] border-b text-[#f5efeb]">
             Structure
           </span>
           <span className="hidden h-full items-center sm:flex">
@@ -73,13 +75,13 @@ function StudioArtifact() {
       </div>
 
       <div className="grid h-[calc(100%-2rem)] grid-cols-[4.25rem_4.85rem_1fr] sm:h-[calc(100%-2.5rem)] sm:grid-cols-[5.75rem_7.5rem_1fr]">
-        <div className="min-w-0 border-[#f1e8e1]/14 border-r bg-[#1c1c1f] font-mono text-[0.36rem] text-[#eee8e4]/52 sm:text-[0.43rem]">
+        <div className="sanity-studio-panel sanity-studio-panel-muted min-w-0 border-[#f1e8e1]/14 border-r bg-[#1c1c1f] font-mono text-[0.36rem] text-[#eee8e4]/52 sm:text-[0.43rem]">
           <div className="flex h-6 items-center justify-between border-[#f1e8e1]/12 border-b px-1.5 text-[#f5efeb] sm:h-8 sm:px-2.5">
             <span>Content</span>
             <span className="text-[#eee8e4]/35">•••</span>
           </div>
           <div className="p-1 sm:p-1.5">
-            <p className="flex items-center justify-between bg-[#f1e8e1]/9 px-1.5 py-1 text-[#f5efeb] sm:px-2 sm:py-1.5">
+            <p className="sanity-studio-selected flex items-center justify-between bg-[#f1e8e1]/9 px-1.5 py-1 text-[#f5efeb] sm:px-2 sm:py-1.5">
               <span>Pages</span>
               <span>›</span>
             </p>
@@ -98,7 +100,7 @@ function StudioArtifact() {
           </div>
         </div>
 
-        <div className="min-w-0 border-[#f1e8e1]/14 border-r bg-[#202023] font-mono text-[0.34rem] text-[#eee8e4]/48 sm:text-[0.41rem]">
+        <div className="sanity-studio-panel min-w-0 border-[#f1e8e1]/14 border-r bg-[#202023] font-mono text-[0.34rem] text-[#eee8e4]/48 sm:text-[0.41rem]">
           <div className="flex h-6 items-center justify-between border-[#f1e8e1]/12 border-b px-1.5 text-[#f5efeb] sm:h-8 sm:px-2.5">
             <span>Pages</span>
             <span className="text-[0.52rem] text-[#eee8e4]/60 sm:text-[0.64rem]">
@@ -106,7 +108,7 @@ function StudioArtifact() {
             </span>
           </div>
           <div className="p-1 sm:p-1.5">
-            <div className="border border-[#f36458]/45 bg-[#f36458]/8 p-1.5 text-[#f5efeb] transition-colors duration-300 group-hover/artifacts:border-[#f36458]/70 group-hover/artifacts:bg-[#f36458]/12 sm:p-2">
+            <div className="sanity-studio-selected sanity-studio-accent-border border border-[#f36458]/45 bg-[#f36458]/8 p-1.5 text-[#f5efeb] transition-colors duration-300 group-hover/artifacts:border-[#f36458]/70 group-hover/artifacts:bg-[#f36458]/12 sm:p-2">
               <p className="truncate font-sans text-[0.4rem] leading-tight sm:text-[0.48rem]">
                 Thoughtful systems
               </p>
@@ -127,7 +129,7 @@ function StudioArtifact() {
           </div>
         </div>
 
-        <div className="flex min-w-0 flex-col bg-[#18181a]">
+        <div className="sanity-studio-form flex min-w-0 flex-col bg-[#18181a]">
           <div className="flex h-6 items-center justify-between border-[#f1e8e1]/12 border-b px-2 font-mono text-[0.34rem] text-[#eee8e4]/48 sm:h-8 sm:px-3 sm:text-[0.41rem]">
             <div className="flex items-center gap-1.5 sm:gap-2.5">
               <span className="text-[#f5efeb]">Page</span>
@@ -137,7 +139,7 @@ function StudioArtifact() {
           </div>
           <div className="min-h-0 flex-1 overflow-hidden p-2 sm:p-3">
             <div className="flex items-center gap-2 border-[#f1e8e1]/12 border-b pb-1.5 font-mono text-[0.32rem] text-[#eee8e4]/42 sm:gap-3 sm:pb-2 sm:text-[0.39rem]">
-              <span className="border-[#f36458] border-b pb-1 text-[#f5efeb]">
+              <span className="sanity-studio-accent-border border-[#f36458] border-b pb-1 text-[#f5efeb]">
                 Form
               </span>
               <span>Preview</span>
@@ -147,7 +149,7 @@ function StudioArtifact() {
               <p className="font-mono text-[0.31rem] text-[#eee8e4]/42 sm:text-[0.38rem]">
                 Title
               </p>
-              <div className="mt-1 border border-[#f1e8e1]/18 bg-[#212124] px-1.5 py-1 text-[0.4rem] leading-tight text-[#f5efeb] sm:px-2 sm:py-1.5 sm:text-[0.5rem]">
+              <div className="sanity-studio-field mt-1 border border-[#f1e8e1]/18 bg-[#212124] px-1.5 py-1 text-[0.4rem] leading-tight text-[#f5efeb] sm:px-2 sm:py-1.5 sm:text-[0.5rem]">
                 Thoughtful systems for digital publishing
               </div>
             </div>
@@ -155,7 +157,7 @@ function StudioArtifact() {
               <p className="font-mono text-[0.31rem] text-[#eee8e4]/42 sm:text-[0.38rem]">
                 Slug
               </p>
-              <div className="mt-1 truncate border border-[#f1e8e1]/18 bg-[#212124] px-1.5 py-1 font-mono text-[0.31rem] text-[#eee8e4]/55 sm:px-2 sm:py-1.5 sm:text-[0.38rem]">
+              <div className="sanity-studio-field mt-1 truncate border border-[#f1e8e1]/18 bg-[#212124] px-1.5 py-1 font-mono text-[0.31rem] text-[#eee8e4]/55 sm:px-2 sm:py-1.5 sm:text-[0.38rem]">
                 thoughtful-systems
               </div>
             </div>
@@ -163,13 +165,13 @@ function StudioArtifact() {
               <p className="font-mono text-[0.31rem] text-[#eee8e4]/42 sm:text-[0.38rem]">
                 Page builder
               </p>
-              <div className="mt-1 flex items-center justify-between border border-[#f1e8e1]/18 bg-[#212124] px-1.5 py-1 font-mono text-[0.31rem] text-[#eee8e4]/58 sm:px-2 sm:py-1.5 sm:text-[0.38rem]">
+              <div className="sanity-studio-field mt-1 flex items-center justify-between border border-[#f1e8e1]/18 bg-[#212124] px-1.5 py-1 font-mono text-[0.31rem] text-[#eee8e4]/58 sm:px-2 sm:py-1.5 sm:text-[0.38rem]">
                 <span>Hero + 5 blocks</span>
                 <span>›</span>
               </div>
             </div>
           </div>
-          <div className="flex h-7 items-center justify-end gap-2 border-[#f1e8e1]/12 border-t bg-[#202023] px-2 font-mono text-[0.32rem] sm:h-9 sm:px-3 sm:text-[0.39rem]">
+          <div className="sanity-studio-footer flex h-7 items-center justify-end gap-2 border-[#f1e8e1]/12 border-t bg-[#202023] px-2 font-mono text-[0.32rem] sm:h-9 sm:px-3 sm:text-[0.39rem]">
             <span className="text-[#eee8e4]/38">Changes saved</span>
             <span className="bg-[#f36458] px-2 py-1 text-[#171719] transition-colors duration-300 group-hover/artifacts:bg-[#ff766b] sm:px-2.5">
               Publish
@@ -252,7 +254,7 @@ export default async function SanitySpotlightSection() {
   const systemItems = t.raw("systemItems") as string[];
 
   return (
-    <section className="editorial-clay-surface editorial-section contrast-dark overflow-hidden">
+    <section className="editorial-section overflow-hidden bg-[var(--editorial-paper-raised)] text-foreground dark:bg-[var(--editorial-clay-dark)] dark:text-[var(--editorial-dark-foreground)]">
       <div className="editorial-shell grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-10 xl:gap-16">
         <div className="order-2 lg:order-1 lg:col-span-6">
           <ArtifactStack />

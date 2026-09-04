@@ -91,6 +91,7 @@
   "footer": {
     "privacyPolicy": "Privacy Policy",
     "text": "© {currentYear} Eduard Sergiu Stefan. Built with Next.js.",
+    "location": "Oradea, Romania / working across Europe",
     "legal": {
       "title": "Legal",
       "manageCookies": "Manage cookies"
@@ -138,7 +139,14 @@
       "subtitle": "Tell me what your team is building, replacing, or trying to untangle. I'll tell you where I can help.",
       "ctaButton": "Book a project call",
       "ctaButtonSecondary": "Ask a quick question",
-      "whatsappLabel": "Quick question? Message me"
+      "whatsappLabel": "Quick question? Message me",
+      "close": {
+        "label": "Get in touch",
+        "headlineLines": ["Bring me the", "complicated part."],
+        "subtitle": "A new build, migration, or platform that needs experienced hands. Tell me what's complicated, and I'll say where I can help.",
+        "primaryCta": "Start a conversation",
+        "secondaryCta": "Book a short call"
+      }
     },
     "heroLabel": "Front-end engineering for established teams",
     "primaryCta": "Discuss project",
@@ -366,9 +374,8 @@
   "waysToWorkTogether": {
     "label": "Pricing",
     "headline": "One project, scoped around what your site needs.",
-    "subtitle": "After a short call, I turn the problem into a clear plan with the right deliverables, timeline, and support.",
+    "subtitle": "We begin with discovery and content mapping to understand your business goals, users, and workflows. Then I shape the scope, priorities, and delivery plan.",
     "engagementTitle": "Build what your team needs. Leave them with a system they can run.",
-    "description": "That could mean a new Sanity site, a controlled migration from your current CMS, or focused work inside an existing system. The scope follows the outcome, not a preset package.",
     "scopeLabel": "Project types",
     "scopeValue": "New sites, CMS migrations, and system improvements",
     "timelineLabel": "Typical timeline",

@@ -57,10 +57,6 @@ export default async function Page(props: Props) {
   const faqT = await getTranslations({ locale, namespace: "faq" });
   const servicesT = await getTranslations({ locale, namespace: "services" });
 
-  const socialLinksRaw = profileT.raw("socialLinks") as
-    | Array<{ name: string; url: string }>
-    | undefined;
-
   // Generate Schemas
   const faqData = faqs.map((f) => ({
     question: faqT(f.questionKey),
@@ -109,7 +105,7 @@ export default async function Page(props: Props) {
 
       <FAQSection />
 
-      <ContactSection socialLinks={socialLinksRaw} />
+      <ContactSection />
 
       <FloatingContactButton contactMeText={t("letsChat")} />
     </>

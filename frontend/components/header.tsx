@@ -184,12 +184,12 @@ export function Header({ className, languageToggle }: HeaderProps) {
   return (
     <motion.header
       className={cn(
-        "contrast-dark z-50 flex h-16 w-full items-center text-[var(--editorial-dark-foreground)] md:h-20",
+        "hero-header z-50 flex h-16 w-full items-center md:h-20",
         isHomePage
           ? isScrolled
-            ? "fixed inset-x-0 top-0 border-[var(--editorial-dark-rule)] border-b bg-[var(--dark-background)]/92 backdrop-blur-md"
+            ? "fixed inset-x-0 top-0 border-border/70 border-b bg-background/92 backdrop-blur-md"
             : "absolute inset-x-0 top-0 bg-transparent"
-          : "relative bg-[var(--dark-background)]",
+          : "relative border-border/70 border-b bg-background",
         className
       )}
       initial={{ opacity: 0 }}
@@ -207,11 +207,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
       </a>
       <div className="w-full px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-[1fr_auto] items-center gap-4 md:grid-cols-[1fr_2fr_1fr]">
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2 }}
-          >
+          <div>
             <Link
               onClick={() => {
                 setActiveSection("");
@@ -219,18 +215,18 @@ export function Header({ className, languageToggle }: HeaderProps) {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
               aria-label={homeButtonLabel}
-              className="group relative flex min-h-11 items-center justify-start p-0 font-sans text-sm font-semibold tracking-[0.08em] whitespace-nowrap uppercase transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary md:text-base"
+              className="group relative flex min-h-11 items-center justify-start p-0 font-sans text-sm font-semibold tracking-[0.08em] whitespace-nowrap uppercase transition-colors duration-200 hover:scale-100 hover:text-primary active:scale-100 focus:scale-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary md:text-base"
               href="/"
             >
               <span>EDUARD STEFAN</span>
             </Link>
-          </motion.div>
+          </div>
 
           <NavigationMenu
             aria-label={navigationLabel}
             className="hidden max-w-none justify-self-center md:flex"
           >
-            <NavigationMenuList className="gap-4 lg:gap-7">
+            <NavigationMenuList className="gap-4 lg:gap-5 xl:gap-7">
               {navItems.map((item) => {
                 const href = getNavHref(item);
                 const text = getNavText(item);
@@ -242,7 +238,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
                       <Link
                         href={href}
                         className={cn(
-                          "group relative min-h-11 px-2 py-3 text-sm font-normal transition-colors duration-300 hover:bg-transparent hover:text-inherit focus:bg-transparent focus:text-inherit data-[active=true]:bg-transparent data-[active=true]:hover:bg-transparent lg:text-base",
+                          "group relative min-h-11 px-2 py-3 text-sm font-normal transition-colors duration-200 hover:scale-100 hover:bg-transparent hover:text-primary active:scale-100 focus:scale-100 focus:bg-transparent focus:text-primary data-[active=true]:scale-100 data-[active=true]:bg-transparent data-[active=true]:hover:bg-transparent lg:text-base",
                           active && "text-primary"
                         )}
                       >
@@ -268,7 +264,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <div className="ml-auto flex items-center gap-2 md:gap-3">
+          <div className="ml-auto flex items-center gap-1.5 text-sm md:gap-2 xl:gap-3">
             <AnimatePresence mode="wait">
               {showContactButton && (
                 <motion.div
@@ -276,16 +272,19 @@ export function Header({ className, languageToggle }: HeaderProps) {
                   animate={{ opacity: 1, scale: 1, x: 0 }}
                   exit={{ opacity: 0, scale: 0.9, x: -10 }}
                   transition={{ duration: 0.2 }}
-                  className="hidden md:block"
+                  className="hidden lg:block"
                 >
                   <a
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex min-h-9 items-center gap-2 bg-primary px-4 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+                    className="group inline-flex min-h-9 shrink-0 items-center gap-2 bg-primary px-3 font-semibold whitespace-nowrap text-primary-foreground transition-[opacity,transform] duration-200 hover:opacity-90 motion-safe:active:translate-y-px motion-reduce:transition-none xl:px-4"
                   >
                     {contactMeText}
-                    <ArrowUpRight aria-hidden="true" className="size-4" />
+                    <ArrowUpRight
+                      aria-hidden="true"
+                      className="size-4 shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none"
+                    />
                   </a>
                 </motion.div>
               )}
@@ -295,7 +294,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
               {languageToggle}
             </div>
 
-            <div className="hidden border-l border-current/30 pl-3 md:block">
+            <div className="hidden border-l border-current/30 pl-2 md:block xl:pl-3">
               <ModeToggle />
             </div>
 
@@ -359,10 +358,13 @@ export function Header({ className, languageToggle }: HeaderProps) {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="inline-flex min-h-12 w-full items-center justify-center gap-2 bg-primary px-6 font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+                      className="group inline-flex min-h-12 w-full items-center justify-center gap-2 bg-primary px-6 font-semibold whitespace-nowrap text-primary-foreground transition-[opacity,transform] duration-200 hover:opacity-90 motion-safe:active:translate-y-px motion-reduce:transition-none"
                     >
                       {contactMeText}
-                      <ArrowUpRight aria-hidden="true" className="size-4" />
+                      <ArrowUpRight
+                        aria-hidden="true"
+                        className="size-4 shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none"
+                      />
                     </a>
 
                     <div className="flex items-center justify-end gap-3 border-[var(--section-rule)] border-t pt-5">

@@ -91,6 +91,7 @@
   "footer": {
     "privacyPolicy": "Política de privacidad",
     "text": "© {currentYear} Eduard Sergiu Stefan. Creado con Next.js.",
+    "location": "Oradea, Rumanía / trabajo en toda Europa",
     "legal": {
       "title": "Información legal",
       "manageCookies": "Gestionar cookies"
@@ -142,7 +143,14 @@
       "subtitle": "Cuéntame qué está construyendo, reemplazando o intentando desenredar tu equipo. Te diré dónde puedo ayudar.",
       "ctaButton": "Reservar una llamada de proyecto",
       "ctaButtonSecondary": "Hacer una pregunta rápida",
-      "whatsappLabel": "¿Pregunta rápida? Escríbeme"
+      "whatsappLabel": "¿Pregunta rápida? Escríbeme",
+      "close": {
+        "label": "Ponte en contacto",
+        "headlineLines": ["Déjame a mí", "la parte complicada."],
+        "subtitle": "Un proyecto nuevo, una migración o una plataforma que necesita experiencia. Cuéntame qué es complicado y te diré dónde puedo ayudar.",
+        "primaryCta": "Inicia una conversación",
+        "secondaryCta": "Reserva una llamada breve"
+      }
     },
     "heroLabel": "Ingeniería front-end para equipos consolidados",
     "primaryCta": "Hablar del proyecto",
@@ -370,9 +378,8 @@
   "waysToWorkTogether": {
     "label": "Precios",
     "headline": "Un proyecto claro, definido según lo que necesita tu sitio.",
-    "subtitle": "Después de una breve llamada, convierto el problema en un plan claro con los entregables, el plazo y el apoyo adecuados.",
+    "subtitle": "Empezamos con descubrimiento y mapeo de contenidos para entender los objetivos del negocio, los usuarios y los flujos de trabajo. Después defino el alcance, las prioridades y el plan de entrega.",
     "engagementTitle": "Construimos lo que tu equipo necesita y dejamos un sistema que pueda gestionar.",
-    "description": "Puede ser un nuevo sitio con Sanity, una migración controlada desde tu CMS actual o mejoras dentro de un sistema existente. El alcance responde al resultado, no a un paquete predefinido.",
     "scopeLabel": "Tipos de proyecto",
     "scopeValue": "Nuevos sitios, migraciones de CMS y mejoras del sistema",
     "timelineLabel": "Plazo habitual",

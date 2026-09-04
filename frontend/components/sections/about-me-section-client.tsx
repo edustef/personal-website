@@ -79,13 +79,13 @@ export function AboutMeSectionClient({
         <div className="relative min-h-[34rem] sm:min-h-[42rem] lg:col-span-6 lg:min-h-full">
           <motion.div
             style={shouldReduceMotion ? undefined : { y: imageY }}
-            className="absolute inset-x-[-3.25rem] top-3 bottom-[-13.5rem] flex items-start justify-center sm:inset-x-[-1.5rem] sm:top-4 sm:bottom-[-17rem] lg:inset-x-[-8rem] lg:top-8 lg:bottom-[-30rem] lg:justify-end xl:right-[-10rem] xl:left-[-5rem]"
+            className="absolute inset-x-[-3.25rem] top-3 bottom-[-13.5rem] flex items-start justify-center sm:inset-x-[-1.5rem] sm:top-4 sm:bottom-[-17rem] lg:top-8 lg:right-[-24rem] lg:bottom-[-30rem] lg:left-[-8rem] lg:justify-end xl:right-[-10rem] xl:left-[-5rem]"
           >
             <Image
               src={image}
               alt={imageAlt}
               sizes="(max-width: 1023px) 125vw, 62vw"
-              className="h-full w-auto max-w-none object-contain object-top grayscale sepia-[0.18] contrast-[1.14] brightness-[0.82]"
+              className="h-full w-auto max-w-none object-contain object-top grayscale sepia-[0.18] contrast-[1.08] brightness-[0.96] dark:contrast-[1.14] dark:brightness-[0.82]"
             />
           </motion.div>
         </div>

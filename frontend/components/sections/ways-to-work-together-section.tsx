@@ -27,16 +27,8 @@ export default async function WaysToWorkTogetherSection() {
             {t("headline")}
           </h2>
 
-          <div className="mt-10 max-w-[38rem] border-[var(--section-rule)] border-t pt-7 md:mt-12 md:grid md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-8">
+          <div className="mt-10 max-w-[34rem] border-[var(--section-rule)] border-t pt-7 md:mt-12">
             <p className="editorial-section-copy">{t("subtitle")}</p>
-            <div className="mt-6 md:mt-0">
-              <h3 className="text-lg leading-snug font-medium tracking-[-0.025em] text-[var(--section-foreground)]">
-                {t("engagementTitle")}
-              </h3>
-              <p className="mt-3 text-sm leading-[1.65] text-[var(--section-muted)]">
-                {t("description")}
-              </p>
-            </div>
           </div>
 
           <a

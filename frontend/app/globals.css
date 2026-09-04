@@ -26,9 +26,9 @@
   --card-foreground: hsl(60 6% 9%);
   --popover: hsl(223.8136 -172.5242% 100.0000%);
   --popover-foreground: hsl(223.8136 0.0000% 3.9388%);
-  --primary: hsl(72 88% 61%);
-  --primary-text: hsl(73 72% 25%);
-  --primary-foreground: hsl(60 6% 9%);
+  --primary: hsl(72 88% 57%);
+  --primary-text: var(--editorial-ink);
+  --primary-foreground: var(--editorial-ink);
   --secondary: hsl(23 34% 49%);
   --secondary-foreground: hsl(223.8136 0.0000% 9.0527%);
   --muted: hsl(38 16% 84%);
@@ -236,7 +236,7 @@
 
 html,
 body {
-  background-color: var(--dark-background);
+  background-color: var(--background);
   letter-spacing: var(--tracking-normal);
   overflow-x: clip;
 }
@@ -254,7 +254,7 @@ html.theme-changing *::after {
   }
   body {
     @apply bg-background text-foreground;
-    background-color: var(--dark-background);
+    background-color: var(--background);
     background-image: none;
     letter-spacing: var(--tracking-normal);
   }
@@ -360,6 +360,23 @@ html.theme-changing *::after {
   }
 
   .dark-instrument {
+    --section-foreground: var(--foreground);
+    --section-muted: var(--muted-foreground);
+    --section-subtle: color-mix(in srgb, currentColor 58%, transparent);
+    --section-rule: color-mix(in srgb, currentColor 16%, transparent);
+    --section-rule-strong: color-mix(in srgb, currentColor 25%, transparent);
+    --section-action-rule: color-mix(in srgb, currentColor 48%, transparent);
+
+    color: var(--section-foreground);
+    background-color: var(--background);
+    background-image: none;
+  }
+
+  .editorial-surface-raised {
+    background-color: var(--editorial-paper-raised);
+  }
+
+  .dark .dark-instrument {
     --primary-text: var(--primary);
     --section-foreground: var(--editorial-dark-foreground);
     --section-muted: var(--editorial-dark-muted);
@@ -370,10 +387,9 @@ html.theme-changing *::after {
 
     color: var(--section-foreground);
     background-color: var(--dark-background);
-    background-image: none;
   }
 
-  .editorial-surface-raised {
+  .dark .editorial-surface-raised {
     background-color: var(--editorial-dark-raised);
   }
 
@@ -399,8 +415,12 @@ html.theme-changing *::after {
   .dark-instrument-smooth {
     position: relative;
     isolation: isolate;
-    background-color: var(--dark-background);
+    background-color: var(--background);
     background-image: none;
+  }
+
+  .dark .dark-instrument-smooth {
+    background-color: var(--dark-background);
   }
 
   .dark-instrument-smooth::before {
@@ -437,6 +457,24 @@ html.theme-changing *::after {
     background-color: #e8e1d5;
   }
 
+  .hero-scrim-side {
+    background: linear-gradient(
+      90deg,
+      rgb(236 231 221 / 0.88) 0%,
+      rgb(236 231 221 / 0.62) 48%,
+      rgb(236 231 221 / 0.08) 100%
+    );
+  }
+
+  .hero-scrim-depth {
+    background: linear-gradient(
+      0deg,
+      rgb(232 225 213 / 0.84) 0%,
+      rgb(232 225 213 / 0.06) 54%,
+      rgb(232 225 213 / 0.34) 100%
+    );
+  }
+
   .dark.hero-instrument,
   .dark .hero-instrument {
     --primary-text: var(--primary);
@@ -449,6 +487,24 @@ html.theme-changing *::after {
 
     background-color: var(--dark-background);
   }
+
+  .dark .hero-scrim-side {
+    background: linear-gradient(
+      90deg,
+      rgb(13 13 11 / 0.62) 0%,
+      rgb(13 13 11 / 0.34) 50%,
+      rgb(13 13 11 / 0.12) 100%
+    );
+  }
+
+  .dark .hero-scrim-depth {
+    background: linear-gradient(
+      0deg,
+      rgb(10 10 9 / 0.74) 0%,
+      rgb(10 10 9 / 0.08) 54%,
+      rgb(10 10 9 / 0.22) 100%
+    );
+  }
 }
 
 /* Keep the acid-lime signal for surfaces, but use a readable olive when the
@@ -459,7 +515,7 @@ html.theme-changing *::after {
 }
 
 .hero-header {
-  --primary-text: hsl(73 72% 25%);
+  --primary-text: var(--editorial-ink);
 
   color: #191914;
 }
@@ -468,6 +524,80 @@ html.theme-changing *::after {
   --primary-text: var(--primary);
 
   color: #f4f0e7;
+}
+
+/* The Sanity artifact keeps its dark instrument palette in dark mode. These
+   scoped overrides give the same composition a paper-and-chrome light mode. */
+:root:not(.dark) .sanity-model-artifact {
+  border-color: rgb(91 79 70 / 0.24);
+  color: #554a42;
+  background-color: #ded6cc;
+  box-shadow: 0 22px 55px rgb(47 39 33 / 0.18);
+}
+
+:root:not(.dark) .sanity-model-meta {
+  border-color: rgb(74 64 57 / 0.18);
+  color: rgb(74 64 57 / 0.66);
+}
+
+:root:not(.dark) .sanity-model-node {
+  border-color: rgb(74 64 57 / 0.24);
+  color: rgb(74 64 57 / 0.7);
+  background-color: #f0ebe5;
+}
+
+:root:not(.dark) .sanity-model-node-title {
+  color: #2b2824;
+}
+
+:root:not(.dark) .sanity-model-node > p:nth-child(2) {
+  border-color: rgb(74 64 57 / 0.16);
+}
+
+:root:not(.dark) .sanity-model-line {
+  background-color: rgb(74 64 57 / 0.28);
+}
+
+:root:not(.dark) .sanity-studio-artifact {
+  border-color: rgb(52 48 44 / 0.24);
+  color: #514b46;
+  background-color: #f8f6f2;
+  box-shadow: 0 28px 64px rgb(37 33 29 / 0.22);
+}
+
+:root:not(.dark) .sanity-studio-artifact * {
+  border-color: rgb(52 48 44 / 0.14);
+  color: inherit;
+}
+
+:root:not(.dark) .sanity-studio-topbar,
+:root:not(.dark) .sanity-studio-footer {
+  background-color: #ece8e2;
+}
+
+:root:not(.dark) .sanity-studio-panel {
+  background-color: #f4f1ec;
+}
+
+:root:not(.dark) .sanity-studio-panel-muted {
+  background-color: #ede9e3;
+}
+
+:root:not(.dark) .sanity-studio-form {
+  background-color: #faf8f5;
+}
+
+:root:not(.dark) .sanity-studio-selected {
+  background-color: rgb(243 100 88 / 0.09);
+}
+
+:root:not(.dark) .sanity-studio-field {
+  border-color: rgb(52 48 44 / 0.2);
+  background-color: #f0ede8;
+}
+
+:root:not(.dark) .sanity-studio-accent-border {
+  border-color: #d9554b;
 }
 
 .text-primary {

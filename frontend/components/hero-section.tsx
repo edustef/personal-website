@@ -1,4 +1,5 @@
-import heroWorkingSurface from "@/assets/images/hero-working-surface.png";
+import heroWorkingSurfaceLight from "@/assets/images/hero-working-surface-light.png";
+import heroWorkingSurfaceDark from "@/assets/images/hero-working-surface.png";
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { getWhatsAppUrl } from "@/lib/utils";
@@ -17,19 +18,28 @@ export default async function HeroSection() {
   const [headlineLead, headlineRest] = t("headline").split(", ");
 
   return (
-    <section className="hero-instrument dark relative min-h-[100svh] overflow-hidden border-[var(--hero-rule)] border-b">
+    <section className="hero-instrument relative min-h-[100svh] overflow-hidden border-[var(--hero-rule)] border-b">
       <div className="absolute inset-0">
         <Image
-          src={heroWorkingSurface}
+          src={heroWorkingSurfaceLight}
           alt=""
           aria-hidden="true"
           priority
           fill
           sizes="100vw"
-          className="object-cover object-[62%_center] md:object-center"
+          className="object-cover object-[62%_center] dark:hidden md:object-center"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(13,13,11,.62)_0%,rgba(13,13,11,.34)_50%,rgba(13,13,11,.12)_100%)] md:bg-[linear-gradient(90deg,rgba(13,13,11,.54)_0%,rgba(13,13,11,.24)_52%,rgba(13,13,11,.08)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(10,10,9,.74)_0%,rgba(10,10,9,.08)_54%,rgba(10,10,9,.22)_100%)]" />
+        <Image
+          src={heroWorkingSurfaceDark}
+          alt=""
+          aria-hidden="true"
+          priority
+          fill
+          sizes="100vw"
+          className="hidden object-cover object-[62%_center] dark:block md:object-center"
+        />
+        <div className="hero-scrim-side absolute inset-0" />
+        <div className="hero-scrim-depth absolute inset-0" />
       </div>
 
       <div className="relative flex min-h-[100svh] w-full flex-col justify-end px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-28 sm:px-8 md:pb-6 md:pt-36 lg:px-12">
@@ -65,10 +75,13 @@ export default async function HeroSection() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="signal-button inline-flex min-h-12 items-center justify-center gap-3 px-7"
+            className="signal-button group inline-flex min-h-12 items-center justify-center gap-3 px-7 motion-safe:active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           >
             {t("primaryCta")}
-            <ArrowUpRight aria-hidden="true" className="size-4" />
+            <ArrowUpRight
+              aria-hidden="true"
+              className="size-4 shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none"
+            />
           </a>
         </AnimatedContainer>
 
