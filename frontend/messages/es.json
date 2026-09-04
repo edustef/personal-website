@@ -165,6 +165,17 @@
         "Sistema de páginas reutilizable",
         "Front-end de producción"
       ]
+    },
+    "work": {
+      "label": "Hecho & en proceso",
+      "headline": "Dónde trabajo. Qué construyo.",
+      "description": "Trabajo de producto, proyectos independientes y pequeños experimentos que mantienen vivo el oficio.",
+      "present": "presente",
+      "current": "Actual",
+      "experimentsLabel": "Experimentos",
+      "experimentsStatus": "En proceso.",
+      "experiments": ["Calculadora ROI", "Volver a los ’00", "Magnetic Dock"],
+      "moreInTheLab": "more_in_the_lab"
     }
   },
   "profile": {
@@ -461,6 +472,9 @@
     },
     "job-2": {
       "description": "- Trabajé estrechamente con diseñadores y gerentes de producto para convertir el diseño en características de alta calidad y listas para producción\n- Desarrollé componentes reutilizables que se integran con Headless CMS, lo que hizo posible la construcción independiente de páginas\n- Implementé Storybook en el código base para un mejor desarrollo y tener una única fuente de verdad\n- Trabajé con las herramientas y características más recientes de React (ESNext, componentes funcionales de React, hooks, Webpack, Vite, etc.)"
+    },
+    "job-3": {
+      "description": "Desarrollo web en Agile Freaks."
     }
   },
   "faq": {

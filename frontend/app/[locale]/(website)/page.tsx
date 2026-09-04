@@ -7,6 +7,7 @@ import ContactSection from "@/components/sections/contact-section";
 import SanitySpotlightSection from "@/components/sections/sanity-spotlight-section";
 import ServicesSection from "@/components/sections/services-section";
 import WaysToWorkTogetherSection from "@/components/sections/ways-to-work-together-section";
+import WorkSection from "@/components/sections/work-section";
 // import { InteractiveNebulaShader } from "@/components/ui/liquid-shader";
 import { routing } from "@/i18n/routing";
 import { faqs } from "@/lib/data/faqs";
@@ -98,6 +99,8 @@ export default async function Page(props: Props) {
       <ServicesSection />
 
       <SanitySpotlightSection />
+
+      <WorkSection locale={locale} />
 
       <WaysToWorkTogetherSection />
 

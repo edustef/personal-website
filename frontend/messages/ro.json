@@ -165,6 +165,17 @@
         "Sistem de pagini reutilizabile",
         "Front-end de producție"
       ]
+    },
+    "work": {
+      "label": "Construit & în lucru",
+      "headline": "Unde lucrez. Ce construiesc.",
+      "description": "Muncă de produs, proiecte independente și experimente mici care mă țin aproape de meserie.",
+      "present": "prezent",
+      "current": "Acum",
+      "experimentsLabel": "Experimente",
+      "experimentsStatus": "În lucru.",
+      "experiments": ["Calculator ROI", "Înapoi în anii ’00", "Magnetic Dock"],
+      "moreInTheLab": "more_in_the_lab"
     }
   },
   "profile": {
@@ -461,6 +472,9 @@
     },
     "job-2": {
       "description": "- Am lucrat îndeaproape cu designerii și managerii de produs pentru a transforma designul în funcționalități de înaltă calitate și gata pentru producție\n- Am dezvoltat componente reutilizabile care se integrează cu Headless CMS, ceea ce a făcut posibilă construirea independentă a paginilor\n- Am implementat Storybook în codul sursă pentru o dezvoltare mai bună și pentru a avea o singură sursă de adevăr\n- Am lucrat cu cele mai noi instrumente și funcționalități React (ESNext, componente funcționale React, hooks, Webpack, Vite, etc.)"
+    },
+    "job-3": {
+      "description": "Dezvoltare web la Agile Freaks."
     }
   },
   "faq": {

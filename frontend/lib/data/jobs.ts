@@ -1,5 +1,6 @@
 import cosentinoLogo from "@/assets/images/cosention-logo.png";
-import swissborgLogo from "@/assets/images/swissborg-logo.png";
+import agileFreaksLogo from "@/assets/logos/agile-freaks.svg";
+import swissborgLogo from "@/assets/logos/swissborg.svg";
 import type { StaticImageData } from "next/image";
 
 export type Job = {
@@ -15,6 +16,17 @@ export type Job = {
 };
 
 export const jobs: Job[] = [
+  {
+    _id: "cce88fd6-f418-41c7-9e1d-f4fbdbcd2c15",
+    position: "Web Developer",
+    company: "Agile Freaks",
+    startDate: "2026-04-01",
+    endDate: null,
+    isCurrent: true,
+    descriptionKey: "jobs.job-3.description",
+    logo: agileFreaksLogo,
+    skills: ["TypeScript", "React", "Next.js"],
+  },
   {
     _id: "7dd627c1-777c-46cd-8321-58170dd47f64",
     position: "Intern Web Developer",

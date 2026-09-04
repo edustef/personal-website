@@ -161,6 +161,17 @@
         "Reusable page system",
         "Production front-end"
       ]
+    },
+    "work": {
+      "label": "Built & building",
+      "headline": "Where I work. What I build.",
+      "description": "Product work, independent builds, and small experiments that keep the craft moving.",
+      "present": "present",
+      "current": "Current",
+      "experimentsLabel": "Experiments",
+      "experimentsStatus": "Work in progress.",
+      "experiments": ["ROI Calculator", "Back to the ’00s", "Magnetic Dock"],
+      "moreInTheLab": "more_in_the_lab"
     }
   },
   "profile": {
@@ -457,6 +468,9 @@
     },
     "job-2": {
       "description": "- Worked closely with designers and product managers to bring design into high quality and production-ready features\n- Developed reusable components that integrate with Headless CMS which made independent page building possible.\n- Implemented Storybook into the codebase for better development and having a single source of truth\n- Worked with latest React tools and features (ESNext, React functional components, hooks, Webpack, Vite, etc.)"
+    },
+    "job-3": {
+      "description": "Web development at Agile Freaks."
     }
   },
   "faq": {
