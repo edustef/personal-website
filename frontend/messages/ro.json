@@ -89,9 +89,10 @@
     "save": "Salvează opțiunile"
   },
   "footer": {
+    "name": "Eduard Stefan",
     "privacyPolicy": "Politica de confidențialitate",
-    "text": "© {currentYear} Eduard Sergiu Ștefan. Realizat cu Next.js.",
-    "location": "Oradea, România / lucrez în toată Europa",
+    "text": "© {currentYear} Eduard Stefan. Realizat cu Next.js.",
+    "location": "Stabilit în Oradea, România. Lucrez cu companii din Europa și SUA.",
     "legal": {
       "title": "Informații legale",
       "manageCookies": "Gestionează cookie-urile"

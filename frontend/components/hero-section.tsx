@@ -18,7 +18,7 @@ export default async function HeroSection() {
   const [headlineLead, headlineRest] = t("headline").split(", ");
 
   return (
-    <section className="hero-instrument relative min-h-[100svh] overflow-hidden border-[var(--hero-rule)] border-b">
+    <section className="hero-instrument relative min-h-[100svh] overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src={heroWorkingSurfaceLight}
@@ -42,55 +42,57 @@ export default async function HeroSection() {
         <div className="hero-scrim-depth absolute inset-0" />
       </div>
 
-      <div className="relative flex min-h-[100svh] w-full flex-col justify-end px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-28 sm:px-8 md:pb-6 md:pt-36 lg:px-12">
-        <AnimatedContainer
-          className="max-w-[63rem]"
-          duration={1.4}
-          delay={0.05}
-          ease="veryGentle"
-          offset={18}
-        >
-          <p className="editorial-label max-w-[21rem] leading-relaxed text-[var(--hero-muted)]">
-            {t("heroEyebrow")}
-          </p>
-          <h1 className="editorial-display mt-3 max-w-[75rem] text-balance text-[clamp(3.15rem,5.15vw,5.4rem)] text-[var(--hero-fg)] md:mt-4">
-            <span className="sm:whitespace-nowrap">{headlineLead},</span>
-            <br className="hidden sm:block" />
-            <span className="sm:whitespace-nowrap">{headlineRest}</span>
-          </h1>
-          <p className="mt-3 max-w-2xl text-pretty text-[0.96rem] leading-relaxed text-[var(--hero-copy)] md:mt-2 md:text-lg">
-            {t("tagline")}
-          </p>
-        </AnimatedContainer>
-
-        <AnimatedContainer
-          className="mt-6 flex flex-wrap items-center gap-x-9 gap-y-3 md:mt-5"
-          duration={1.2}
-          delay={0.2}
-          ease="veryGentle"
-          offset={12}
-        >
-          <a
-            id={HERO_CONTACT_BUTTON_ID}
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="signal-button group inline-flex min-h-12 items-center justify-center gap-3 px-7 motion-safe:active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+      <div className="relative flex min-h-[100svh] w-full flex-col justify-end pt-28 md:pt-36">
+        <div className="px-5 sm:px-8 lg:px-12">
+          <AnimatedContainer
+            className="max-w-[63rem]"
+            duration={1.4}
+            delay={0.05}
+            ease="veryGentle"
+            offset={18}
           >
-            {t("primaryCta")}
-            <ArrowUpRight
-              aria-hidden="true"
-              className="size-4 shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none"
-            />
-          </a>
-        </AnimatedContainer>
+            <p className="editorial-label max-w-[21rem] leading-relaxed text-[var(--hero-muted)]">
+              {t("heroEyebrow")}
+            </p>
+            <h1 className="editorial-display mt-3 max-w-[75rem] text-balance text-[clamp(3.15rem,5.15vw,5.4rem)] text-[var(--hero-fg)] md:mt-4">
+              <span className="sm:whitespace-nowrap">{headlineLead},</span>
+              <br className="hidden sm:block" />
+              <span className="sm:whitespace-nowrap">{headlineRest}</span>
+            </h1>
+            <p className="mt-3 max-w-2xl text-pretty text-[0.96rem] leading-relaxed text-[var(--hero-copy)] md:mt-2 md:text-lg">
+              {t("tagline")}
+            </p>
+          </AnimatedContainer>
+
+          <AnimatedContainer
+            className="mt-6 flex flex-wrap items-center gap-x-9 gap-y-3 md:mt-5"
+            duration={1.2}
+            delay={0.2}
+            ease="veryGentle"
+            offset={12}
+          >
+            <a
+              id={HERO_CONTACT_BUTTON_ID}
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="signal-button group inline-flex min-h-12 items-center justify-center gap-3 px-7 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            >
+              {t("primaryCta")}
+              <ArrowUpRight
+                aria-hidden="true"
+                className="size-4 shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none"
+              />
+            </a>
+          </AnimatedContainer>
+        </div>
 
         {Array.isArray(trustItems) && trustItems.length > 0 ? (
           <div className="mt-7 grid border-[var(--hero-grid-rule)] border-t text-[0.82rem] text-[var(--hero-muted)] sm:grid-cols-3 md:mt-7 md:text-sm">
             {trustItems.map((item) => (
               <div
                 key={item}
-                className="flex min-h-11 items-center border-[var(--hero-grid-rule)] border-b py-2.5 sm:border-r sm:border-b-0 sm:px-6 sm:first:pl-0 sm:last:border-r-0"
+                className="flex min-h-11 items-center border-[var(--hero-grid-rule)] px-5 py-2.5 sm:border-r sm:px-6 sm:first:pl-8 sm:last:border-r-0 lg:first:pl-12"
               >
                 {item}
               </div>

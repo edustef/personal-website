@@ -69,7 +69,10 @@ export function FloatingContactButton({
           rel="noopener noreferrer"
           aria-label={contactMeText}
         >
-          <ArrowUpRight aria-hidden="true" className="size-5" />
+          <ArrowUpRight
+            aria-hidden="true"
+            className="size-5 transition-transform duration-200 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5 motion-reduce:transform-none"
+          />
         </a>
       </Button>
     </div>

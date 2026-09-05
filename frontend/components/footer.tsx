@@ -40,7 +40,7 @@ export async function Footer({ className, locale }: FooterProps) {
           <div className="grid gap-6 lg:grid-cols-[auto_minmax(16rem,1fr)_auto] lg:items-center lg:gap-10">
             <div>
               <p className="font-mono text-xs font-medium uppercase tracking-[0.13em] text-[#f2ece2]">
-                {profileT("name")}
+                {t("name")}
               </p>
               <p className="mt-2 max-w-[28rem] text-sm leading-relaxed text-[#eee7dc]/60 lg:hidden">
                 {t("location")}

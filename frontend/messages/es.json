@@ -89,9 +89,10 @@
     "save": "Guardar preferencias"
   },
   "footer": {
+    "name": "Eduard Stefan",
     "privacyPolicy": "Política de privacidad",
-    "text": "© {currentYear} Eduard Sergiu Stefan. Creado con Next.js.",
-    "location": "Oradea, Rumanía / trabajo en toda Europa",
+    "text": "© {currentYear} Eduard Stefan. Creado con Next.js.",
+    "location": "Con sede en Oradea, Rumanía. Trabajo con empresas de Europa y Estados Unidos.",
     "legal": {
       "title": "Información legal",
       "manageCookies": "Gestionar cookies"

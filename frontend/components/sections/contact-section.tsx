@@ -53,7 +53,7 @@ export default async function ContactSection() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="signal-button group inline-flex min-h-16 w-full items-center justify-center gap-2 px-6 py-4 text-base whitespace-nowrap transition-[opacity,transform] duration-200 motion-safe:active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary motion-reduce:transition-none sm:text-lg"
+              className="signal-button group inline-flex min-h-16 w-full items-center justify-center gap-2 px-6 py-4 text-base whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:text-lg"
             >
               <span>{t("primaryCta")}</span>
               <ArrowUpRight

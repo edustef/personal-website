@@ -353,7 +353,7 @@ html.theme-changing *::after {
   }
 
   .signal-button {
-    @apply rounded-[2px] px-6 py-3.5 font-sans font-semibold shadow-none transition-opacity hover:opacity-90;
+    @apply rounded-[2px] px-6 py-3.5 font-sans font-semibold shadow-none transition-[opacity,transform] duration-200 ease-out hover:opacity-90 motion-safe:active:translate-y-px motion-reduce:transition-none;
 
     color: var(--signal-fg, var(--primary-foreground));
     background-color: var(--signal-bg, var(--primary));

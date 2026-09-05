@@ -35,7 +35,7 @@ export default async function WaysToWorkTogetherSection() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mt-9 inline-flex min-h-11 items-center gap-3 rounded-[2px] bg-primary px-6 py-3.5 font-semibold text-primary-foreground transition-[transform,opacity] duration-200 hover:-translate-y-0.5 hover:opacity-90 active:translate-y-px motion-reduce:transform-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            className="signal-button group mt-9 inline-flex min-h-11 items-center gap-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           >
             <span>{t("cta")}</span>
             <ArrowUpRight

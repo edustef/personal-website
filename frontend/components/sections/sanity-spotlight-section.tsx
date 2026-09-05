@@ -2,9 +2,16 @@ import publishedEditorialWorkflow from "@/assets/images/sanity/published-editori
 import { SanityArtifactMotion } from "@/components/sections/sanity-artifact-motion";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { Link } from "@/i18n/navigation";
-import { ArrowUpRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  Braces,
+  LayoutTemplate,
+  MonitorCheck,
+} from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
+
+const systemIcons = [Braces, LayoutTemplate, MonitorCheck] as const;
 
 function ContentModelArtifact() {
   return (
@@ -274,24 +281,33 @@ export default async function SanitySpotlightSection() {
           <p className="editorial-section-copy mt-7 max-w-[36rem]">
             {t("description")}
           </p>
-          <div className="mt-9 border-[var(--section-rule)] border-t">
-            {systemItems.map((item) => (
-              <div
-                key={item}
-                className="flex min-h-14 items-center border-[var(--section-rule)] border-b py-3"
-              >
-                <span className="text-sm sm:text-base">{item}</span>
-              </div>
-            ))}
+          <div className="mt-9">
+            {systemItems.map((item, index) => {
+              const Icon = systemIcons[index] ?? Braces;
+
+              return (
+                <div
+                  key={item}
+                  className="flex min-h-14 items-center gap-4 py-3"
+                >
+                  <Icon
+                    aria-hidden="true"
+                    className="size-5 shrink-0 text-primary"
+                    strokeWidth={1.5}
+                  />
+                  <span className="text-sm sm:text-base">{item}</span>
+                </div>
+              );
+            })}
           </div>
           <Link
             href="/services/sanity"
-            className="signal-button group mt-8 inline-flex min-h-12 items-center justify-center gap-3 px-6 motion-safe:active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            className="signal-button group mt-8 inline-flex min-h-12 items-center justify-center gap-3 px-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           >
             <span className="whitespace-nowrap">{t("cta")}</span>
             <ArrowUpRight
               aria-hidden="true"
-              className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none"
+              className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none"
             />
           </Link>
         </AnimatedContainer>

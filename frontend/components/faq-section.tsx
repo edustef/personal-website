@@ -45,14 +45,10 @@ export default async function FAQSection({ faqs: faqsProp }: FAQSectionProps) {
             type="single"
             collapsible
             defaultValue="faq-2"
-            className="border-[var(--section-rule-strong)] border-t motion-reduce:[&_[data-slot=accordion-content]]:animate-none"
+            className="motion-reduce:[&_[data-slot=accordion-content]]:animate-none"
           >
             {sortedFaqs.map((faq) => (
-              <AccordionItem
-                key={faq._id}
-                value={faq._id}
-                className="border-[var(--section-rule-strong)] last:border-b"
-              >
+              <AccordionItem key={faq._id} value={faq._id} className="border-0">
                 <AccordionTrigger className="group min-h-20 items-center rounded-none py-5 text-left text-[1.2rem] leading-[1.25] font-normal tracking-[-0.025em] hover:text-primary hover:no-underline focus-visible:border-transparent focus-visible:ring-primary/85 focus-visible:ring-offset-4 focus-visible:ring-offset-background dark:focus-visible:ring-offset-[var(--dark-background)] sm:min-h-24 sm:py-6 sm:text-[1.4rem] md:text-[1.55rem] [&>svg]:hidden after:ml-3 after:flex after:size-11 after:shrink-0 after:items-center after:justify-center after:font-mono after:text-[1.8rem] after:leading-none after:font-light after:text-current after:content-['+'] data-[state=open]:text-foreground data-[state=open]:after:text-primary data-[state=open]:after:content-['−']">
                   {t(faq.questionKey)}
                 </AccordionTrigger>

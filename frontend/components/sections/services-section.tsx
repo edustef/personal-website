@@ -19,6 +19,9 @@ import { ServicesGridMotion } from "./services-grid-motion";
 
 type ServicesSectionProps = { services?: Service[] };
 
+const mobileStackCardClass =
+  "relative min-h-[calc(100svh-4rem)] overflow-hidden border-foreground/18 border-l bg-background motion-reduce:min-h-0 dark:bg-[var(--dark-background)] md:min-h-0 md:border-l-0 md:bg-transparent md:dark:bg-transparent";
+
 function ThemedArtifactImage({
   lightSrc,
   darkSrc,
@@ -145,7 +148,8 @@ function CapabilityCell({
 }) {
   return (
     <article
-      className={`grid min-w-0 border-foreground/18 border-r border-b md:h-64 md:grid-cols-[minmax(15rem,0.82fr)_minmax(16rem,1.18fr)] xl:h-72 ${className ?? ""}`}
+      data-service-card
+      className={`${mobileStackCardClass} grid min-w-0 border-foreground/18 border-r border-b md:h-64 md:grid-cols-[minmax(15rem,0.82fr)_minmax(16rem,1.18fr)] xl:h-72 ${className ?? ""}`}
     >
       <div className="flex min-w-0 flex-col p-5 sm:p-7 md:justify-center xl:p-6">
         <div>
@@ -166,13 +170,18 @@ function EvidenceCell({
   title,
   description,
   artifact,
+  className,
 }: {
   title: string;
   description: string;
   artifact: React.ReactNode;
+  className?: string;
 }) {
   return (
-    <article className="grid min-w-0 border-foreground/18 border-r border-b md:h-48 md:grid-cols-[minmax(11rem,0.95fr)_minmax(10rem,1.05fr)]">
+    <article
+      data-service-card
+      className={`${mobileStackCardClass} grid min-w-0 border-foreground/18 border-r border-b md:h-48 md:grid-cols-[minmax(11rem,0.95fr)_minmax(10rem,1.05fr)] ${className ?? ""}`}
+    >
       <div className="flex min-w-0 flex-col p-5 sm:p-6 md:justify-center">
         <div>
           <h3 className="max-w-[16ch] text-[1.45rem] leading-[1.02] font-normal tracking-[-0.035em] text-balance">
@@ -254,28 +263,30 @@ export default async function ServicesSection({
             />
           ) : null}
 
-          <div className="grid min-w-0 xl:col-span-12 xl:grid-cols-3">
-            <EvidenceCell
-              title={t("artifacts.migration.title")}
-              description={t("artifacts.migration.description")}
-              artifact={<MigrationArtifact />}
-            />
-            <EvidenceCell
-              title={t("artifacts.spacing.title")}
-              description={t("artifacts.spacing.description")}
-              artifact={<SpacingArtifact alternate />}
-            />
-            <EvidenceCell
-              title={t("artifacts.performance.title")}
-              description={t("artifacts.performance.description")}
-              artifact={<PerformanceArtifact />}
-            />
-          </div>
+          <EvidenceCell
+            title={t("artifacts.migration.title")}
+            description={t("artifacts.migration.description")}
+            artifact={<MigrationArtifact />}
+            className="xl:col-span-4"
+          />
+          <EvidenceCell
+            title={t("artifacts.spacing.title")}
+            description={t("artifacts.spacing.description")}
+            artifact={<SpacingArtifact alternate />}
+            className="xl:col-span-4"
+          />
+          <EvidenceCell
+            title={t("artifacts.performance.title")}
+            description={t("artifacts.performance.description")}
+            artifact={<PerformanceArtifact />}
+            className="xl:col-span-4"
+          />
 
           {remaining.map((service) => (
             <article
               key={service._id}
-              className="grid min-w-0 border-foreground/18 border-r border-b md:h-40 md:grid-cols-[minmax(18rem,0.35fr)_minmax(24rem,0.65fr)] xl:col-span-12"
+              data-service-card
+              className={`${mobileStackCardClass} grid min-w-0 border-foreground/18 border-r border-b md:h-40 md:grid-cols-[minmax(18rem,0.35fr)_minmax(24rem,0.65fr)] xl:col-span-12`}
             >
               <div className="flex min-w-0 flex-col p-5 sm:p-7 md:justify-center xl:p-8">
                 <div>
@@ -292,7 +303,7 @@ export default async function ServicesSection({
           ))}
         </ServicesGridMotion>
 
-        <div className="mt-7 flex justify-end">
+        <div className="mt-7 flex justify-start md:justify-end">
           <Link href="/schedule" className="editorial-text-link group">
             {t("cta")}
             <ArrowUpRight

@@ -6,6 +6,8 @@ import { type ReactNode, useLayoutEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const MOBILE_CARD_PEEK = 24;
+
 type ServicesGridMotionProps = {
   children: ReactNode;
 };
@@ -19,44 +21,112 @@ export function ServicesGridMotion({ children }: ServicesGridMotionProps) {
 
     const media = gsap.matchMedia();
 
-    media.add("(prefers-reduced-motion: no-preference)", () => {
-      const artifacts = gsap.utils.toArray<HTMLElement>(
-        "[data-service-artifact]",
-        root
-      );
-
-      const context = gsap.context(() => {
-        const timeline = gsap.timeline({
-          defaults: { ease: "power3.out" },
-          scrollTrigger: {
-            trigger: root,
-            start: "top 82%",
-            toggleActions: "play none none reverse",
-          },
-        });
-
-        for (const [index, artifact] of artifacts.entries()) {
-          const images = artifact.querySelectorAll("img");
-          const direction = index % 2 === 0 ? -1 : 1;
-          const at = index * 0.075;
-
-          timeline.fromTo(
-            artifact,
-            { autoAlpha: 0.68, y: 16 },
-            { autoAlpha: 1, y: 0, duration: 0.68 },
-            at
+    media.add(
+      "(max-width: 767px) and (prefers-reduced-motion: no-preference)",
+      () => {
+        const context = gsap.context(() => {
+          const cards = gsap.utils.toArray<HTMLElement>(
+            "[data-service-card]",
+            root
           );
-          timeline.fromTo(
-            images,
-            { scale: 1.055, x: direction * 8 },
-            { scale: 1, x: 0, duration: 0.78 },
-            at
-          );
-        }
-      }, root);
+          const [firstCard, ...upcomingCards] = cards;
 
-      return () => context.revert();
-    });
+          if (!firstCard || upcomingCards.length === 0) return;
+
+          gsap.set(cards, {
+            zIndex: (index) => index + 1,
+            transformOrigin: "center top",
+            willChange: "transform",
+          });
+          gsap.set(root, { overflow: "hidden", position: "relative" });
+          gsap.set(firstCard, { position: "relative", x: 0 });
+          gsap.set(upcomingCards, {
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            x: () => root.clientWidth,
+          });
+          gsap.set(upcomingCards[0], {
+            x: () => root.clientWidth - MOBILE_CARD_PEEK,
+          });
+
+          const timeline = gsap.timeline({
+            defaults: { duration: 1, ease: "none" },
+            scrollTrigger: {
+              trigger: root,
+              start: "top top",
+              end: () => `+=${root.offsetHeight * upcomingCards.length}`,
+              pin: true,
+              scrub: 0.4,
+              anticipatePin: 1,
+              invalidateOnRefresh: true,
+            },
+          });
+
+          for (const [index, card] of upcomingCards.entries()) {
+            const previousCard = cards[index];
+            const followingCard = upcomingCards[index + 1];
+
+            timeline.to(previousCard, { scale: 0.975 }, index);
+            timeline.to(card, { x: 0 }, index);
+
+            if (followingCard) {
+              timeline.set(
+                followingCard,
+                { x: () => root.clientWidth - MOBILE_CARD_PEEK },
+                index + 0.9
+              );
+            }
+          }
+        }, root);
+
+        return () => context.revert();
+      }
+    );
+
+    media.add(
+      "(min-width: 768px) and (prefers-reduced-motion: no-preference)",
+      () => {
+        const artifacts = gsap.utils.toArray<HTMLElement>(
+          "[data-service-artifact]",
+          root
+        );
+
+        const context = gsap.context(() => {
+          const timeline = gsap.timeline({
+            defaults: { ease: "power3.out" },
+            scrollTrigger: {
+              trigger: root,
+              start: "top 82%",
+              toggleActions: "play none none reverse",
+            },
+          });
+
+          for (const [index, artifact] of artifacts.entries()) {
+            const images = artifact.querySelectorAll("img");
+            const direction = index % 2 === 0 ? -1 : 1;
+            const at = index * 0.075;
+
+            timeline.fromTo(
+              artifact,
+              { autoAlpha: 0.68, y: 16 },
+              { autoAlpha: 1, y: 0, duration: 0.68 },
+              at
+            );
+            timeline.fromTo(
+              images,
+              { scale: 1.055, x: direction * 8 },
+              { scale: 1, x: 0, duration: 0.78 },
+              at
+            );
+          }
+        }, root);
+
+        return () => context.revert();
+      }
+    );
 
     media.add(
       "(prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine)",
@@ -111,7 +181,7 @@ export function ServicesGridMotion({ children }: ServicesGridMotionProps) {
   return (
     <div
       ref={rootRef}
-      className="mt-8 grid overflow-hidden border-foreground/18 border-t border-l xl:grid-cols-12"
+      className="mt-8 grid overflow-hidden border-foreground/18 border-t md:border-l xl:grid-cols-12"
     >
       {children}
     </div>
