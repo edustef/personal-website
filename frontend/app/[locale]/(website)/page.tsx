@@ -3,12 +3,11 @@ import FAQSection from "@/components/faq-section";
 import HeroSection from "@/components/hero-section";
 import AboutMeSection from "@/components/sections/about-me-section";
 import ContactSection from "@/components/sections/contact-section";
-import HowIWorkSection from "@/components/sections/how-i-work-section";
 // import PortfolioSection from "@/components/sections/portfolio-section";
 import SanitySpotlightSection from "@/components/sections/sanity-spotlight-section";
 import ServicesSection from "@/components/sections/services-section";
 import WaysToWorkTogetherSection from "@/components/sections/ways-to-work-together-section";
-import { BackgroundPaperShaders } from "@/components/ui/background-paper-shaders";
+import WorkSection from "@/components/sections/work-section";
 // import { InteractiveNebulaShader } from "@/components/ui/liquid-shader";
 import { routing } from "@/i18n/routing";
 import { faqs } from "@/lib/data/faqs";
@@ -59,10 +58,6 @@ export default async function Page(props: Props) {
   const faqT = await getTranslations({ locale, namespace: "faq" });
   const servicesT = await getTranslations({ locale, namespace: "services" });
 
-  const socialLinksRaw = profileT.raw("socialLinks") as
-    | Array<{ name: string; url: string }>
-    | undefined;
-
   // Generate Schemas
   const faqData = faqs.map((f) => ({
     question: faqT(f.questionKey),
@@ -96,7 +91,6 @@ export default async function Page(props: Props) {
           dangerouslySetInnerHTML={{ __html: sanitizeJsonLd(schema) }}
         />
       ))}
-      <BackgroundPaperShaders />
       {/* <InteractiveNebulaShader disableCenterDimming /> */}
       <HeroSection />
 
@@ -106,7 +100,7 @@ export default async function Page(props: Props) {
 
       <SanitySpotlightSection />
 
-      <HowIWorkSection />
+      <WorkSection locale={locale} />
 
       <WaysToWorkTogetherSection />
 
@@ -114,7 +108,7 @@ export default async function Page(props: Props) {
 
       <FAQSection />
 
-      <ContactSection socialLinks={socialLinksRaw} />
+      <ContactSection />
 
       <FloatingContactButton contactMeText={t("letsChat")} />
     </>

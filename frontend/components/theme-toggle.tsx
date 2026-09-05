@@ -1,24 +1,24 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
+import { Monitor, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import * as React from "react";
 
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import styles from "./theme-toggle.module.css";
 
+const themeOrder = ["light", "dark", "system"] as const;
+
+type Theme = (typeof themeOrder)[number];
+
 export function ModeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, theme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
   const transitionTimeout = React.useRef<number | null>(null);
 
   React.useEffect(() => {
+    setMounted(true);
+
     return () => {
       if (transitionTimeout.current) {
         window.clearTimeout(transitionTimeout.current);
@@ -46,29 +46,53 @@ export function ModeToggle() {
     [setTheme]
   );
 
+  const currentTheme: Theme = themeOrder.includes(theme as Theme)
+    ? (theme as Theme)
+    : "dark";
+  const renderedTheme = mounted ? currentTheme : "dark";
+  const nextTheme =
+    themeOrder[(themeOrder.indexOf(currentTheme) + 1) % themeOrder.length];
+  const renderedNextTheme =
+    themeOrder[(themeOrder.indexOf(renderedTheme) + 1) % themeOrder.length];
+  const systemTheme = resolvedTheme === "light" ? "light" : "dark";
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button
-          variant="outline"
-          size="icon"
-          className="transition-[transform,background-color,border-color,box-shadow] duration-150 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)]"
+    <Button
+      type="button"
+      variant="utility"
+      size="icon"
+      onClick={() => changeTheme(nextTheme)}
+      data-theme={mounted ? currentTheme : undefined}
+      aria-label={`Current theme: ${renderedTheme}. Switch to ${renderedNextTheme}.`}
+      title={`${renderedTheme[0].toUpperCase()}${renderedTheme.slice(1)} theme`}
+      className={styles.toggleButton}
+    >
+      <span aria-hidden="true" className={styles.iconStack}>
+        <Sun
+          className={`${styles.icon} ${styles.stateIcon} ${styles.lightIcon}`}
+        />
+        <Moon
+          className={`${styles.icon} ${styles.stateIcon} ${styles.darkIcon}`}
+        />
+        <span
+          className={`${styles.icon} ${styles.stateIcon} ${styles.systemIcon}`}
         >
-          <Sun className={`size-[1.2rem] ${styles.icon} ${styles.sun}`} />
-          <Moon className={`size-[1.2rem] ${styles.icon} ${styles.moon}`} />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuRadioGroup
-          value={theme || "dark"}
-          onValueChange={changeTheme}
-        >
-          <DropdownMenuRadioItem value="light">Light</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="dark">Dark</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="system">System</DropdownMenuRadioItem>
-        </DropdownMenuRadioGroup>
-      </DropdownMenuContent>
-    </DropdownMenu>
+          <Monitor className={styles.monitorIcon} />
+          <span className={styles.systemThemeBadge}>
+            <Sun
+              className={`${styles.icon} ${styles.miniIcon} ${styles.sun}`}
+            />
+            <Moon
+              className={`${styles.icon} ${styles.miniIcon} ${styles.moon}`}
+            />
+          </span>
+        </span>
+      </span>
+      <span className="sr-only">
+        {mounted && currentTheme === "system"
+          ? `System is currently ${systemTheme}.`
+          : ""}
+      </span>
+    </Button>
   );
 }

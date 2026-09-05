@@ -2,26 +2,42 @@
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
 
+/* Editorial portfolio system — 2026 redesign. */
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: hsl(223.8136 -172.5242% 100.0000%);
-  --foreground: hsl(223.8136 0.0000% 3.9388%);
-  --card: hsl(223.8136 -172.5242% 100.0000%);
-  --card-foreground: hsl(223.8136 0.0000% 3.9388%);
+  --editorial-dark: #11110f;
+  --editorial-dark-raised: #181412;
+  --editorial-dark-foreground: #f2ece2;
+  --editorial-dark-muted: rgb(238 231 220 / 0.72);
+  --editorial-dark-subtle: rgb(238 231 220 / 0.58);
+  --editorial-dark-rule: rgb(255 255 255 / 0.14);
+  --editorial-dark-rule-strong: rgb(255 255 255 / 0.24);
+  --editorial-paper: hsl(43 24% 91%);
+  --editorial-paper-raised: hsl(42 24% 94%);
+  --editorial-ink: hsl(60 6% 9%);
+  --editorial-clay: #a96f52;
+  --editorial-clay-dark: #281c18;
+  --dark-background: var(--editorial-dark);
+  --background: hsl(43 24% 91%);
+  --foreground: hsl(60 6% 9%);
+  --card: hsl(42 24% 94%);
+  --card-foreground: hsl(60 6% 9%);
   --popover: hsl(223.8136 -172.5242% 100.0000%);
   --popover-foreground: hsl(223.8136 0.0000% 3.9388%);
-  --primary: hsl(223.8136 0.0000% 9.0527%);
-  --primary-foreground: hsl(223.8136 0.0004% 98.0256%);
-  --secondary: hsl(223.8136 0.0002% 96.0587%);
+  --primary: hsl(72 88% 57%);
+  --primary-text: var(--editorial-ink);
+  --primary-foreground: var(--editorial-ink);
+  --secondary: hsl(23 34% 49%);
   --secondary-foreground: hsl(223.8136 0.0000% 9.0527%);
-  --muted: hsl(223.8136 0.0002% 90.0587%);
-  --muted-foreground: hsl(223.8136 0.0000% 25.1519%);
+  --muted: hsl(38 16% 84%);
+  --muted-foreground: hsl(35 7% 34%);
   --accent: hsl(223.8136 0.0002% 96.0587%);
   --accent-foreground: hsl(223.8136 0.0000% 9.0527%);
   --destructive: hsl(351.7303 123.6748% 40.5257%);
   --destructive-foreground: hsl(223.8136 -172.5242% 100.0000%);
-  --border: hsl(223.8136 0.0001% 89.8161%);
+  --border: hsl(40 8% 59%);
   --input: hsl(223.8136 0.0001% 89.8161%);
   --ring: hsl(223.8136 0.0000% 63.0163%);
   --chart-1: hsl(211.788 101.9718% 78.6759%);
@@ -47,10 +63,10 @@
   --sidebar-accent-foreground: hsl(223.8136 0.0000% 9.0527%);
   --sidebar-border: hsl(223.8136 0.0001% 89.8161%);
   --sidebar-ring: hsl(223.8136 0.0000% 63.0163%);
-  --font-sans: var(--font-cardo), serif;
-  --font-serif: serif;
-  --font-mono: JetBrains Mono, monospace;
-  --radius: 0.625rem;
+  --font-sans: var(--font-manrope), sans-serif;
+  --font-serif: var(--font-manrope), sans-serif;
+  --font-mono: var(--font-dm-mono), monospace;
+  --radius: 0.375rem;
   --shadow-x: 0;
   --shadow-y: 1px;
   --shadow-blur: 3px;
@@ -76,14 +92,15 @@
 }
 
 .dark {
-  --background: hsl(223.8136 0.0000% 3.9388%);
-  --foreground: hsl(223.8136 0.0004% 98.0256%);
+  --background: var(--dark-background);
+  --foreground: hsl(42 24% 93%);
   --card: hsl(223.8136 0.0000% 9.0527%);
   --card-foreground: hsl(223.8136 0.0004% 98.0256%);
   --popover: hsl(223.8136 0.0000% 14.9382%);
   --popover-foreground: hsl(223.8136 0.0004% 98.0256%);
-  --primary: hsl(223.8136 0.0001% 89.8161%);
-  --primary-foreground: hsl(223.8136 0.0000% 9.0527%);
+  --primary: hsl(72 88% 61%);
+  --primary-text: var(--primary);
+  --primary-foreground: hsl(60 6% 9%);
   --secondary: hsl(223.8136 0.0000% 14.9382%);
   --secondary-foreground: hsl(223.8136 0.0004% 98.0256%);
   --muted: hsl(223.8136 0.0000% 14.9382%);
@@ -118,10 +135,10 @@
   --sidebar-accent-foreground: hsl(223.8136 0.0004% 98.0256%);
   --sidebar-border: hsl(223.8136 0.0000% 15.5096%);
   --sidebar-ring: hsl(223.8136 0.0000% 32.1993%);
-  --font-sans: var(--font-cardo), serif;
-  --font-serif: serif;
-  --font-mono: JetBrains Mono, monospace;
-  --radius: 0.625rem;
+  --font-sans: var(--font-manrope), sans-serif;
+  --font-serif: var(--font-manrope), sans-serif;
+  --font-mono: var(--font-dm-mono), monospace;
+  --radius: 0.375rem;
   --shadow-x: 0;
   --shadow-y: 1px;
   --shadow-blur: 3px;
@@ -150,6 +167,7 @@
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
+  --color-primary-text: var(--primary-text);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -218,6 +236,7 @@
 
 html,
 body {
+  background-color: var(--background);
   letter-spacing: var(--tracking-normal);
   overflow-x: clip;
 }
@@ -235,6 +254,8 @@ html.theme-changing *::after {
   }
   body {
     @apply bg-background text-foreground;
+    background-color: var(--background);
+    background-image: none;
     letter-spacing: var(--tracking-normal);
   }
   a {
@@ -247,6 +268,346 @@ html.theme-changing *::after {
   header {
     @apply transition-all duration-300;
   }
+}
+
+@layer components {
+  .editorial-shell {
+    @apply mx-auto w-full max-w-[90rem] px-5 sm:px-8 lg:px-12;
+  }
+
+  .editorial-label {
+    @apply font-mono text-[0.68rem] font-medium uppercase tracking-[0.14em];
+  }
+
+  .editorial-section {
+    --section-foreground: var(--foreground);
+    --section-muted: var(--muted-foreground);
+    --section-subtle: color-mix(in srgb, currentColor 58%, transparent);
+    --section-rule: color-mix(in srgb, currentColor 16%, transparent);
+    --section-rule-strong: color-mix(in srgb, currentColor 25%, transparent);
+    --section-action-rule: color-mix(in srgb, currentColor 48%, transparent);
+
+    @apply py-20 sm:py-24 lg:py-32;
+  }
+
+  .editorial-section-label {
+    color: var(
+      --section-subtle,
+      color-mix(in srgb, currentColor 58%, transparent)
+    );
+  }
+
+  .editorial-section-title {
+    @apply text-balance font-sans font-normal leading-[0.96] tracking-[-0.05em];
+
+    color: var(--section-foreground, var(--foreground));
+    font-size: clamp(2.75rem, 4.6vw, 4.75rem);
+  }
+
+  .editorial-section-title-compact {
+    font-size: clamp(2.65rem, 3.6vw, 3.75rem);
+  }
+
+  .editorial-section-copy {
+    color: var(--section-muted, var(--muted-foreground));
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .editorial-text-link {
+    display: inline-flex;
+    min-height: 2.75rem;
+    width: fit-content;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--section-action-rule, currentColor);
+    padding-top: 0.125rem;
+    color: var(--section-foreground, currentColor);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition-property: color, border-color, transform;
+    transition-duration: 200ms;
+  }
+
+  .editorial-text-link:hover {
+    color: var(--primary-text);
+    border-color: var(--primary);
+    transform: translateY(-0.125rem);
+  }
+
+  .editorial-text-link:active {
+    transform: translateY(1px);
+  }
+
+  .editorial-text-link:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+  }
+
+  .editorial-display {
+    @apply text-balance font-sans font-normal leading-[0.94] tracking-[-0.055em];
+  }
+
+  .editorial-rule {
+    @apply border-border/70 border-t;
+  }
+
+  .signal-button {
+    @apply rounded-[2px] px-6 py-3.5 font-sans font-semibold shadow-none transition-[opacity,transform] duration-200 ease-out hover:opacity-90 motion-safe:active:translate-y-px motion-reduce:transition-none;
+
+    color: var(--signal-fg, var(--primary-foreground));
+    background-color: var(--signal-bg, var(--primary));
+  }
+
+  .dark-instrument {
+    --section-foreground: var(--foreground);
+    --section-muted: var(--muted-foreground);
+    --section-subtle: color-mix(in srgb, currentColor 58%, transparent);
+    --section-rule: color-mix(in srgb, currentColor 16%, transparent);
+    --section-rule-strong: color-mix(in srgb, currentColor 25%, transparent);
+    --section-action-rule: color-mix(in srgb, currentColor 48%, transparent);
+
+    color: var(--section-foreground);
+    background-color: var(--background);
+    background-image: none;
+  }
+
+  .editorial-surface-raised {
+    background-color: var(--editorial-paper-raised);
+  }
+
+  .dark .dark-instrument {
+    --primary-text: var(--primary);
+    --section-foreground: var(--editorial-dark-foreground);
+    --section-muted: var(--editorial-dark-muted);
+    --section-subtle: var(--editorial-dark-subtle);
+    --section-rule: var(--editorial-dark-rule);
+    --section-rule-strong: var(--editorial-dark-rule-strong);
+    --section-action-rule: rgb(255 255 255 / 0.48);
+
+    color: var(--section-foreground);
+    background-color: var(--dark-background);
+  }
+
+  .dark .editorial-surface-raised {
+    background-color: var(--editorial-dark-raised);
+  }
+
+  .editorial-clay-surface {
+    --section-foreground: #171714;
+    --section-muted: rgb(23 23 20 / 0.7);
+    --section-subtle: rgb(23 23 20 / 0.58);
+    --section-rule: rgb(23 23 20 / 0.24);
+
+    color: var(--section-foreground);
+    background-color: var(--editorial-clay);
+  }
+
+  .dark .editorial-clay-surface {
+    --section-foreground: #f1e8e0;
+    --section-muted: rgb(234 223 215 / 0.72);
+    --section-subtle: rgb(217 198 187 / 0.62);
+    --section-rule: rgb(221 201 188 / 0.22);
+
+    background-color: var(--editorial-clay-dark);
+  }
+
+  .dark-instrument-smooth {
+    position: relative;
+    isolation: isolate;
+    background-color: var(--background);
+    background-image: none;
+  }
+
+  .dark .dark-instrument-smooth {
+    background-color: var(--dark-background);
+  }
+
+  .dark-instrument-smooth::before {
+    content: none;
+  }
+
+  .dark-instrument-smooth > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (min-width: 768px) {
+    .editorial-section-copy {
+      font-size: 1.0625rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .editorial-text-link:hover,
+    .editorial-text-link:active {
+      transform: none;
+    }
+  }
+
+  .hero-instrument {
+    --hero-fg: #191914;
+    --hero-muted: rgb(25 25 20 / 0.72);
+    --hero-copy: rgb(25 25 20 / 0.82);
+    --hero-rule: rgb(25 25 20 / 0.3);
+    --hero-grid-rule: rgb(25 25 20 / 0.18);
+    --hero-rule-strong: rgb(25 25 20 / 0.58);
+
+    color: var(--hero-fg);
+    background-color: #e8e1d5;
+  }
+
+  .hero-scrim-side {
+    background: linear-gradient(
+      90deg,
+      rgb(236 231 221 / 0.88) 0%,
+      rgb(236 231 221 / 0.62) 48%,
+      rgb(236 231 221 / 0.08) 100%
+    );
+  }
+
+  .hero-scrim-depth {
+    background: linear-gradient(
+      0deg,
+      rgb(232 225 213 / 0.84) 0%,
+      rgb(232 225 213 / 0.06) 54%,
+      rgb(232 225 213 / 0.34) 100%
+    );
+  }
+
+  .dark.hero-instrument,
+  .dark .hero-instrument {
+    --primary-text: var(--primary);
+    --hero-fg: #f4f0e7;
+    --hero-muted: rgb(255 255 255 / 0.72);
+    --hero-copy: rgb(255 255 255 / 0.82);
+    --hero-rule: rgb(255 255 255 / 0.3);
+    --hero-grid-rule: rgb(255 255 255 / 0.18);
+    --hero-rule-strong: rgb(255 255 255 / 0.65);
+
+    background-color: var(--dark-background);
+  }
+
+  .dark .hero-scrim-side {
+    background: linear-gradient(
+      90deg,
+      rgb(13 13 11 / 0.62) 0%,
+      rgb(13 13 11 / 0.34) 50%,
+      rgb(13 13 11 / 0.12) 100%
+    );
+  }
+
+  .dark .hero-scrim-depth {
+    background: linear-gradient(
+      0deg,
+      rgb(10 10 9 / 0.74) 0%,
+      rgb(10 10 9 / 0.08) 54%,
+      rgb(10 10 9 / 0.22) 100%
+    );
+  }
+}
+
+/* Keep the acid-lime signal for surfaces, but use a readable olive when the
+   same accent is foreground text on light pages. Dark cinematic surfaces opt
+   back into the brighter signal color through their local token. */
+.contrast-dark {
+  --primary-text: var(--primary);
+}
+
+.hero-header {
+  --primary-text: var(--editorial-ink);
+
+  color: #191914;
+}
+
+.dark .hero-header {
+  --primary-text: var(--primary);
+
+  color: #f4f0e7;
+}
+
+/* The Sanity artifact keeps its dark instrument palette in dark mode. These
+   scoped overrides give the same composition a paper-and-chrome light mode. */
+:root:not(.dark) .sanity-model-artifact {
+  border-color: rgb(91 79 70 / 0.24);
+  color: #554a42;
+  background-color: #ded6cc;
+  box-shadow: 0 22px 55px rgb(47 39 33 / 0.18);
+}
+
+:root:not(.dark) .sanity-model-meta {
+  border-color: rgb(74 64 57 / 0.18);
+  color: rgb(74 64 57 / 0.66);
+}
+
+:root:not(.dark) .sanity-model-node {
+  border-color: rgb(74 64 57 / 0.24);
+  color: rgb(74 64 57 / 0.7);
+  background-color: #f0ebe5;
+}
+
+:root:not(.dark) .sanity-model-node-title {
+  color: #2b2824;
+}
+
+:root:not(.dark) .sanity-model-node > p:nth-child(2) {
+  border-color: rgb(74 64 57 / 0.16);
+}
+
+:root:not(.dark) .sanity-model-line {
+  background-color: rgb(74 64 57 / 0.28);
+}
+
+:root:not(.dark) .sanity-studio-artifact {
+  border-color: rgb(52 48 44 / 0.24);
+  color: #514b46;
+  background-color: #f8f6f2;
+  box-shadow: 0 28px 64px rgb(37 33 29 / 0.22);
+}
+
+:root:not(.dark) .sanity-studio-artifact * {
+  border-color: rgb(52 48 44 / 0.14);
+  color: inherit;
+}
+
+:root:not(.dark) .sanity-studio-topbar,
+:root:not(.dark) .sanity-studio-footer {
+  background-color: #ece8e2;
+}
+
+:root:not(.dark) .sanity-studio-panel {
+  background-color: #f4f1ec;
+}
+
+:root:not(.dark) .sanity-studio-panel-muted {
+  background-color: #ede9e3;
+}
+
+:root:not(.dark) .sanity-studio-form {
+  background-color: #faf8f5;
+}
+
+:root:not(.dark) .sanity-studio-selected {
+  background-color: rgb(243 100 88 / 0.09);
+}
+
+:root:not(.dark) .sanity-studio-field {
+  border-color: rgb(52 48 44 / 0.2);
+  background-color: #f0ede8;
+}
+
+:root:not(.dark) .sanity-studio-accent-border {
+  border-color: #d9554b;
+}
+
+.text-primary {
+  color: var(--primary-text);
+}
+
+.hover\:text-primary:hover,
+.focus-visible\:text-primary:focus-visible,
+.group:hover .group-hover\:text-primary {
+  color: var(--primary-text);
 }
 
 @keyframes shimmer {

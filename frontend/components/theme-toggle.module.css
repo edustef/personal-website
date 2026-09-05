@@ -1,3 +1,9 @@
+.toggleButton {
+  width: 2.75rem;
+  min-width: 2.75rem;
+  height: 2.75rem;
+}
+
 .icon {
   transition:
     transform 180ms cubic-bezier(0.23, 1, 0.32, 1),
@@ -6,11 +12,64 @@
   will-change: transform, opacity, filter;
 }
 
-:global(html.theme-changing) .icon {
-  transition:
-    transform 180ms cubic-bezier(0.23, 1, 0.32, 1),
-    opacity 160ms cubic-bezier(0.23, 1, 0.32, 1),
-    filter 180ms cubic-bezier(0.23, 1, 0.32, 1) !important;
+.iconStack {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.stateIcon {
+  position: absolute;
+  inset: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  opacity: 0;
+  filter: blur(2px);
+}
+
+.lightIcon {
+  transform: rotate(-90deg) scale(0.9);
+}
+
+.darkIcon,
+.systemIcon {
+  transform: rotate(90deg) scale(0.9);
+}
+
+.toggleButton[data-theme="light"] .lightIcon,
+.toggleButton[data-theme="dark"] .darkIcon,
+.toggleButton[data-theme="system"] .systemIcon {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  filter: blur(0);
+}
+
+.systemIcon {
+  display: grid;
+  place-items: center;
+}
+
+.monitorIcon {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.systemThemeBadge {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.56rem;
+  width: 0.68rem;
+  height: 0.68rem;
+}
+
+.miniIcon {
+  position: absolute;
+  inset: 0;
+  width: 0.68rem;
+  height: 0.68rem;
+  stroke-width: 2.5;
 }
 
 .sun {
@@ -38,8 +97,23 @@
   filter: blur(0);
 }
 
+:global(html.theme-changing) .icon {
+  transition:
+    transform 180ms cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 160ms cubic-bezier(0.23, 1, 0.32, 1),
+    filter 180ms cubic-bezier(0.23, 1, 0.32, 1) !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .icon {
     transition-duration: 0.01ms;
+  }
+}
+
+@media (min-width: 48rem) {
+  .toggleButton {
+    width: 2.5rem;
+    min-width: 2.5rem;
+    height: 2.5rem;
   }
 }

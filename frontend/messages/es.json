@@ -89,8 +89,10 @@
     "save": "Guardar preferencias"
   },
   "footer": {
+    "name": "Eduard Stefan",
     "privacyPolicy": "Política de privacidad",
-    "text": "© {currentYear} Eduard Sergiu Stefan. Creado con Next.js.",
+    "text": "© {currentYear} Eduard Stefan. Creado con Next.js.",
+    "location": "Con sede en Oradea, Rumanía. Trabajo con empresas de Europa y Estados Unidos.",
     "legal": {
       "title": "Información legal",
       "manageCookies": "Gestionar cookies"
@@ -104,8 +106,10 @@
     }
   },
   "home": {
-    "headline": "Plataformas web que mantienen <strong>producto y marketing en movimiento</strong>.",
-    "tagline": "Construyo sitios de marketing, plataformas de contenido, paneles e integraciones que siguen siendo rápidos, coherentes y mantenibles mientras los equipos crecen. Sanity es mi especialidad CMS.",
+    "headline": "Sistemas web complejos, hechos claros.",
+    "tagline": "Implementaciones en Sanity, migraciones de CMS y el frontend que las hace útiles.",
+    "heroEyebrow": "PARTNER FULL-STACK INDEPENDIENTE",
+    "availabilityNote": "DISPONIBLE PARA PROYECTOS SELECCIONADOS",
     "aboutMeDescription": "Construyo sitios de marketing y plataformas web conectadas que los equipos pueden seguir evolucionando.",
     "announcementLabel": "Plataformas web para <strong>equipos que siguen entregando</strong>",
     "resumeButtonLabel": "Ver mi currículum",
@@ -114,13 +118,13 @@
     "scheduleCall": "Reservar una llamada",
     "contactDirectly": "Escríbeme",
     "letsChat": "Hablemos de tu sitio",
-    "seeHowIWork": "Reserva una llamada",
+    "seeHowIWork": "Así trabajo",
     "orBookTime": "Reserva una llamada",
     "workedWith": "Con qué trabajo",
     "heroTrust": [
-      "Partner front-end senior",
-      "Disciplina de sistema de diseño",
-      "El código es tuyo"
+      "Colaboración senior",
+      "Sistemas editoriales",
+      "Código en propiedad"
     ],
     "tools": {
       "label": "Tecnologías",
@@ -131,7 +135,7 @@
       "label": "Quién soy",
       "headline": "Sobre Mí",
       "subtitle": "Ingeniería senior sin la cadena de traspasos de una agencia",
-      "description": "Soy ingeniero front-end y ayudo a equipos consolidados de producto y marketing a construir las superficies web alrededor de su negocio: sitios de marketing, plataformas de contenido, portales, paneles e integraciones. Trabajo directamente con diseñadores, editores y desarrolladores, y dejo sistemas claros, no una dependencia de mí. Sanity es mi especialidad CMS, pero el trabajo siempre va más allá de una herramienta: hacer que la plataforma sea útil, mantenible y esté preparada para lo siguiente.",
+      "description": "Soy ingeniero front-end y ayudo a equipos consolidados de producto y marketing a construir sitios, plataformas de contenido, portales, paneles e integraciones. Trabajo directamente con diseñadores, editores y desarrolladores y dejo sistemas claros y mantenibles. Sanity es mi especialidad CMS, pero la plataforma siempre va primero.",
       "cta": "Hablar de un proyecto"
     },
     "contact": {
@@ -140,15 +144,21 @@
       "subtitle": "Cuéntame qué está construyendo, reemplazando o intentando desenredar tu equipo. Te diré dónde puedo ayudar.",
       "ctaButton": "Reservar una llamada de proyecto",
       "ctaButtonSecondary": "Hacer una pregunta rápida",
-      "whatsappLabel": "¿Pregunta rápida? Escríbeme"
+      "whatsappLabel": "¿Pregunta rápida? Escríbeme",
+      "close": {
+        "label": "Ponte en contacto",
+        "headlineLines": ["Déjame a mí", "la parte complicada."],
+        "subtitle": "Un proyecto nuevo, una migración o una plataforma que necesita experiencia. Cuéntame qué es complicado y te diré dónde puedo ayudar.",
+        "primaryCta": "Inicia una conversación",
+        "secondaryCta": "Reserva una llamada breve"
+      }
     },
     "heroLabel": "Ingeniería front-end para equipos consolidados",
-    "primaryCta": "Hablar de un proyecto",
+    "primaryCta": "Hablar del proyecto",
     "secondaryCta": "Explorar servicios de Sanity",
     "sanitySpotlight": {
       "label": "Especialidad principal",
-      "eyebrow": "Sanity-first cuando el contenido estructurado es la base adecuada.",
-      "headline": "Una plataforma de contenido que tu equipo puede gestionar de verdad.",
+      "headline": "Libertad editorial. Rigor técnico.",
       "description": "Construyo y migro sistemas Sanity alrededor de flujos editoriales reales: desde esquemas y bloques reutilizables hasta previews, localización, migración y entrega.",
       "cta": "Explorar servicios de Sanity CMS",
       "systemItems": [
@@ -156,6 +166,17 @@
         "Sistema de páginas reutilizable",
         "Front-end de producción"
       ]
+    },
+    "work": {
+      "label": "Hecho & en proceso",
+      "headline": "Dónde trabajo. Qué construyo.",
+      "description": "Trabajo de producto, proyectos independientes y pequeños experimentos que mantienen vivo el oficio.",
+      "present": "presente",
+      "current": "Actual",
+      "experimentsLabel": "Experimentos",
+      "experimentsStatus": "En proceso.",
+      "experiments": ["Calculadora ROI", "Volver a los ’00", "Magnetic Dock"],
+      "moreInTheLab": "more_in_the_lab"
     }
   },
   "profile": {
@@ -181,7 +202,7 @@
     "description": "Sitios de marketing y plataformas web conectadas para equipos consolidados de producto y marketing.",
     "header": {
       "cta": {
-        "text": "Hablar de un proyecto"
+        "text": "Hablar del proyecto"
       },
       "homeButtonLabel": "Inicio",
       "navLabel": "Navegación principal",
@@ -189,8 +210,8 @@
       "menuLabel": "Menú",
       "nav": {
         "services": "Servicios",
-        "pricing": "Precios",
-        "howIWork": "Cómo trabajo",
+        "pricing": "Trabajemos juntos",
+        "howIWork": "Proceso",
         "blog": "Blog",
         "servicesSlug": "servicios",
         "pricingSlug": "precios",
@@ -282,20 +303,34 @@
   },
   "services": {
     "label": "Lo que hago",
-    "headline": "Un solo partner para las superficies web de las que depende tu equipo",
-    "subtitle": "Ingeniería front-end enfocada en sitios públicos, productos internos y los sistemas que los conectan.",
+    "headline": "Sitios web y productos digitales, construidos como un solo sistema",
+    "subtitle": "Ingeniería front-end para sitios públicos, herramientas internas y los sistemas que los conectan.",
     "cta": "Hablar de tu proyecto",
+    "artifacts": {
+      "migration": {
+        "title": "Migraciones de CMS",
+        "description": "Transiciones cuidadosas desde contenido heredado a bases modernas."
+      },
+      "spacing": {
+        "title": "Sistemas de diseño",
+        "description": "Componentes y patrones reutilizables que mantienen alineados a los equipos."
+      },
+      "performance": {
+        "title": "Calidad front-end",
+        "description": "Auditoría y estabilización cuando la velocidad, el acceso o la coherencia se degradan."
+      }
+    },
     "svc-1": {
-      "title": "Plataformas de marketing y contenido",
-      "description": "Sitios de marketing rápidos y multiidioma, respaldados por componentes reutilizables, contenido estructurado y UX orientado a conversión. Sanity es mi principal especialidad CMS."
+      "title": "Sitios de marketing",
+      "description": "Sitios rápidos y multiidioma con contenido estructurado, edición flexible y Sanity como base."
     },
     "svc-2": {
-      "title": "Superficies de producto conectadas",
-      "description": "Portales, paneles, integraciones y herramientas internas que encajan con tus sistemas de producto, datos y diseño, en vez de convertirse en otra app aislada."
+      "title": "Productos conectados",
+      "description": "Portales, paneles e integraciones que encajan con tus sistemas de producto, datos y diseño."
     },
     "svc-3": {
       "title": "Evolución de plataforma",
-      "description": "Colaboración front-end continua para equipos que lanzan nuevas capacidades sin dejar que el rendimiento, la accesibilidad o la coherencia visual se degraden."
+      "description": "Soporte front-end continuo para lanzamientos rápidos, accesibles y coherentes."
     }
   },
   "howIWork": {
@@ -305,6 +340,7 @@
     "cta": "Hablar de un proyecto",
     "planning": {
       "title": "Mapeamos el problema y el sistema que lo rodea",
+      "artifactLabel": "Ficha de alineación",
       "paragraphs": [
         "Empezamos por las personas, los flujos y los sistemas a los que el trabajo debe servir. Después acordamos alcance, límites técnicos y qué significa el éxito."
       ],
@@ -316,6 +352,7 @@
     },
     "development": {
       "title": "Construyo a la vista",
+      "artifactLabel": "Revisión de implementación",
       "paragraphs": [
         "No desaparezco durante semanas. Recibes actualizaciones regulares, builds funcionales y margen para ajustar mientras las decisiones todavía son baratas de cambiar."
       ],
@@ -327,6 +364,7 @@
     },
     "deployment": {
       "title": "Lanzamos con los bordes cubiertos",
+      "artifactLabel": "Lista de lanzamiento",
       "paragraphs": [
         "Rendimiento, accesibilidad, analytics, integraciones, redirecciones y plan de vuelta atrás son trabajo de lanzamiento, no limpieza para después."
       ],
@@ -338,6 +376,7 @@
     },
     "postDeployment": {
       "title": "Tu equipo es dueño de lo que viene",
+      "artifactLabel": "Registro de entrega",
       "paragraphs": [
         "El código, las decisiones y la documentación son tuyos. Entrego de forma limpia o sigo integrado cuando la evolución continua es el mejor modelo."
       ],
@@ -351,9 +390,8 @@
   "waysToWorkTogether": {
     "label": "Precios",
     "headline": "Un proyecto claro, definido según lo que necesita tu sitio.",
-    "subtitle": "Después de una breve llamada, convierto el problema en un plan claro con los entregables, el plazo y el apoyo adecuados.",
+    "subtitle": "Empezamos con descubrimiento y mapeo de contenidos para entender los objetivos del negocio, los usuarios y los flujos de trabajo. Después defino el alcance, las prioridades y el plan de entrega.",
     "engagementTitle": "Construimos lo que tu equipo necesita y dejamos un sistema que pueda gestionar.",
-    "description": "Puede ser un nuevo sitio con Sanity, una migración controlada desde tu CMS actual o mejoras dentro de un sistema existente. El alcance responde al resultado, no a un paquete predefinido.",
     "scopeLabel": "Tipos de proyecto",
     "scopeValue": "Nuevos sitios, migraciones de CMS y mejoras del sistema",
     "timelineLabel": "Plazo habitual",
@@ -435,36 +473,35 @@
     },
     "job-2": {
       "description": "- Trabajé estrechamente con diseñadores y gerentes de producto para convertir el diseño en características de alta calidad y listas para producción\n- Desarrollé componentes reutilizables que se integran con Headless CMS, lo que hizo posible la construcción independiente de páginas\n- Implementé Storybook en el código base para un mejor desarrollo y tener una única fuente de verdad\n- Trabajé con las herramientas y características más recientes de React (ESNext, componentes funcionales de React, hooks, Webpack, Vite, etc.)"
+    },
+    "job-3": {
+      "description": "Desarrollo web en Agile Freaks."
     }
   },
   "faq": {
-    "label": "FAQ",
-    "headline": "Preguntas que podrías tener",
-    "subtitle": "Lo que los equipos suelen preguntar antes de empezar.",
-    "cta": "¿Más preguntas? Hablemos",
+    "label": "Preguntas",
+    "headline": "Antes de empezar.",
+    "subtitle": "Las cuestiones prácticas que los clientes suelen querer dejar claras.",
+    "cta": "¿Aún tienes dudas? Pregúntame directamente",
     "faq-1": {
-      "question": "¿Cuánto tarda un proyecto?",
-      "answer": "Un build enfocado puede llevar unas semanas; una plataforma mayor o una migración puede durar varios meses. Te doy un plan de entrega después de entender los sistemas, dependencias y responsables de decisión implicados."
+      "question": "¿Qué tipo de proyectos encajan mejor?",
+      "answer": "El mejor encaje suele ser con equipos consolidados de producto o marketing: sitios, plataformas de contenido, portales, paneles e integraciones. También trabajo en proyectos y migraciones con Sanity, además de mejoras concretas en sistemas existentes donde se unen contenido, código y flujo editorial. El alcance parte del resultado, no de un paquete predefinido."
     },
     "faq-2": {
-      "question": "¿Qué tipos de productos construyes?",
-      "answer": "Sitios de marketing, plataformas de contenido, portales, paneles, integraciones y los sistemas front-end que los conectan. Me centro en superficies web utilizadas por equipos consolidados de producto y marketing."
+      "question": "¿Puedes hacerte cargo de una base de código existente?",
+      "answer": "Sí. Primero entiendo la arquitectura, las limitaciones, la forma de trabajar del equipo y las áreas que más coste generan. Conservo lo que funciona y después estabilizo, refactorizo o sustituyo de forma deliberada. Reescribirlo todo nunca es la respuesta automática."
     },
     "faq-3": {
-      "question": "¿Nuestro equipo será dueño del resultado?",
-      "answer": "Sí. El código vive en tu repositorio, las decisiones quedan documentadas y la entrega forma parte del trabajo. Puedo seguir involucrado, pero el sistema nunca debería depender de que yo esté presente."
+      "question": "¿Te encargas de migrar el contenido?",
+      "answer": "Sí. Puedo auditar el contenido de origen, mapearlo a un modelo nuevo, planificar las redirecciones y validar lo que se transfiere. En transiciones más amplias, preparo un lanzamiento por etapas o el cambio final y defino el flujo editorial junto con la migración. Los riesgos se planifican y se prueban; una migración no es una simple copia masiva."
     },
     "faq-4": {
-      "question": "¿Trabajas con nuestros diseñadores y desarrolladores actuales?",
-      "answer": "Sí. Me integro bien en un equipo existente, sigo vuestras convenciones y hago una entrega limpia. También puedo llevar un proyecto solo de principio a fin si es lo que necesitas."
+      "question": "¿Cómo trabajamos desde zonas horarias distintas?",
+      "answer": "Trabajo desde Oradea, en horario de Europa del Este. Acordamos un solapamiento útil para las decisiones importantes y mantenemos el avance con actualizaciones asíncronas por escrito y decisiones documentadas. Las llamadas tienen un propósito claro, así que el proyecto no depende de que todos estemos conectados a la vez."
     },
     "faq-5": {
-      "question": "¿Qué tecnología utilizas?",
-      "answer": "Normalmente React, Next.js y TypeScript, integrados con los sistemas que tu equipo ya utiliza. Para contenido estructurado, Sanity es mi especialidad. La arquitectura sigue el trabajo, en lugar de forzar cada proyecto al mismo stack."
-    },
-    "faq-6": {
-      "question": "¿Puedes mejorar una plataforma existente en vez de reemplazarla?",
-      "answer": "Sí. Un rebuild no es automáticamente la respuesta correcta. Puedo trabajar dentro del código existente, mejorar primero las áreas de mayor coste y ayudar al equipo a decidir qué conservar, refactorizar o reemplazar."
+      "question": "¿Qué ocurre después del lanzamiento?",
+      "answer": "El código, las decisiones y la documentación pertenecen a tu equipo. Hago una entrega clara y ayudo a las personas que gestionarán el sistema a entenderlo. Si resulta útil, puedo seguir integrado según las prioridades de tu equipo, pero sin crear una dependencia forzada."
     }
   },
   "blog": {

@@ -21,8 +21,7 @@ export function LanguageToggle({
   const locale = useLocale();
   const pathname = usePathname();
 
-  const currentLocaleTitle =
-    locales.find((l) => l.id === locale)?.title || locale.toUpperCase();
+  const currentLocaleTitle = locale.toUpperCase();
 
   if (!hrefs) {
     hrefs = locales.map((l) => ({ locale: l.id, href: pathname }));
@@ -31,7 +30,7 @@ export function LanguageToggle({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className={className}>
+        <Button variant="utility" className={className}>
           {currentLocaleTitle}
         </Button>
       </DropdownMenuTrigger>

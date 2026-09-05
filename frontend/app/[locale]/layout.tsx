@@ -2,7 +2,7 @@ import "../globals.css";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Cardo, DM_Mono } from "next/font/google";
+import { DM_Mono, Manrope } from "next/font/google";
 import { notFound } from "next/navigation";
 import { Toaster } from "sonner";
 
@@ -88,9 +88,9 @@ export async function generateStaticParams() {
   }));
 }
 
-const cardo = Cardo({
-  weight: ["400", "700"],
-  variable: "--font-cardo",
+const manrope = Manrope({
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-manrope",
   subsets: ["latin"],
   display: "swap",
 });
@@ -148,7 +148,7 @@ export default async function LocaleLayout(props: Props) {
     <html
       data-scroll-behavior="smooth"
       lang={params.locale}
-      className={`${cardo.variable} ${dmMono.variable} font-light bg-background text-foreground`}
+      className={`${manrope.variable} ${dmMono.variable} bg-background text-foreground`}
       suppressHydrationWarning
     >
       <body className="isolate">
@@ -173,7 +173,11 @@ export default async function LocaleLayout(props: Props) {
         <MobileProvider>
           <NextIntlClientProvider>
             <ConvexClientProvider>
-              <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="light"
+                enableSystem
+              >
                 <ScrollRestoration />
                 <Toaster />
                 <FacebookPixel />

@@ -1,9 +1,8 @@
 "use client";
 
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
-import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { ModeToggle } from "@/components/theme-toggle";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Link } from "@/components/ui/link";
 import {
   NavigationMenu,
@@ -22,7 +21,7 @@ import {
 import { usePathname } from "@/i18n/navigation";
 import { cn, getWhatsAppUrl } from "@/lib/utils";
 import { AnimatePresence } from "framer-motion";
-import { Menu } from "lucide-react";
+import { ArrowUpRight, Menu } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
@@ -34,7 +33,6 @@ type HeaderProps = {
 
 const navItems = [
   { key: "services" },
-  { key: "howIWork" },
   { key: "pricing" },
   { key: "blog", href: "/blog" },
 ] as const;
@@ -52,11 +50,9 @@ export function Header({ className, languageToggle }: HeaderProps) {
   const whatsappUrl = getWhatsAppUrl(undefined);
   const servicesText = headerT("nav.services");
   const pricingText = headerT("nav.pricing");
-  const howIWorkText = headerT("nav.howIWork");
   const blogText = headerT("nav.blog");
   const servicesSlug = headerT("nav.servicesSlug");
   const pricingSlug = headerT("nav.pricingSlug");
-  const howIWorkSlug = headerT("nav.howIWorkSlug");
 
   const isHomePage = pathname === "/";
 
@@ -90,6 +86,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+
       // Clear active section when at top of page
       if (window.scrollY < 100) {
         setActiveSection("");
@@ -102,11 +99,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
       setCurrentHash(hash);
       if (hash) {
         const sectionId = hash.slice(1);
-        if (
-          sectionId === servicesSlug ||
-          sectionId === pricingSlug ||
-          sectionId === howIWorkSlug
-        ) {
+        if (sectionId === servicesSlug || sectionId === pricingSlug) {
           setActiveSection(sectionId);
         }
       }
@@ -121,27 +114,22 @@ export function Header({ className, languageToggle }: HeaderProps) {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("hashchange", handleHashChange);
     };
-  }, [servicesSlug, pricingSlug, howIWorkSlug]);
+  }, [servicesSlug, pricingSlug]);
 
   useEffect(() => {
     if (!isHomePage) return;
 
     const servicesElement = document.getElementById(servicesSlug);
     const pricingElement = document.getElementById(pricingSlug);
-    const howIWorkElement = document.getElementById(howIWorkSlug);
 
-    if (!servicesElement || !pricingElement || !howIWorkElement) return;
+    if (!servicesElement || !pricingElement) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             const id = entry.target.id;
-            if (
-              id === servicesSlug ||
-              id === pricingSlug ||
-              id === howIWorkSlug
-            ) {
+            if (id === servicesSlug || id === pricingSlug) {
               setActiveSection(id);
             }
           }
@@ -155,19 +143,17 @@ export function Header({ className, languageToggle }: HeaderProps) {
 
     observer.observe(servicesElement);
     observer.observe(pricingElement);
-    observer.observe(howIWorkElement);
 
     return () => {
       observer.disconnect();
     };
-  }, [isHomePage, servicesSlug, pricingSlug, howIWorkSlug]);
+  }, [isHomePage, servicesSlug, pricingSlug]);
 
   const getNavHref = (item: (typeof navItems)[number]) => {
     if ("href" in item && item.href) return item.href;
     let slug: string;
     if (item.key === "services") slug = servicesSlug;
     else if (item.key === "pricing") slug = pricingSlug;
-    else if (item.key === "howIWork") slug = howIWorkSlug;
     else slug = "";
     return isHomePage ? `#${slug}` : `/#${slug}`;
   };
@@ -175,7 +161,6 @@ export function Header({ className, languageToggle }: HeaderProps) {
   const getNavText = (item: (typeof navItems)[number]) => {
     if (item.key === "services") return servicesText;
     if (item.key === "pricing") return pricingText;
-    if (item.key === "howIWork") return howIWorkText;
     return blogText;
   };
 
@@ -193,22 +178,18 @@ export function Header({ className, languageToggle }: HeaderProps) {
         (currentHash === `#${pricingSlug}` || activeSection === pricingSlug)
       );
     }
-    if (item.key === "howIWork") {
-      return (
-        isHomePage &&
-        (currentHash === `#${howIWorkSlug}` || activeSection === howIWorkSlug)
-      );
-    }
     return false;
   };
 
   return (
     <motion.header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 flex h-16 w-full items-center transition-all duration-300 md:h-20",
-        isScrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border/50 shadow-sm"
-          : "bg-transparent",
+        "hero-header z-50 flex h-16 w-full items-center md:h-20",
+        isHomePage
+          ? isScrolled
+            ? "fixed inset-x-0 top-0 border-border/70 border-b bg-background/92 backdrop-blur-md"
+            : "absolute inset-x-0 top-0 bg-transparent"
+          : "relative border-border/70 border-b bg-background",
         className
       )}
       initial={{ opacity: 0 }}
@@ -220,17 +201,13 @@ export function Header({ className, languageToggle }: HeaderProps) {
     >
       <a
         href="#main-content"
-        className="focus-visible:bg-primary focus-visible:text-primary-foreground focus-visible:ring-offset-background sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-4 focus-visible:left-4 focus-visible:z-50 focus-visible:rounded-full focus-visible:px-4 focus-visible:py-2 focus-visible:shadow-lg focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+        className="focus-visible:bg-primary focus-visible:text-primary-foreground sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-3 focus-visible:left-4 focus-visible:z-50 focus-visible:px-4 focus-visible:py-2 focus-visible:shadow-lg focus-visible:ring-2 focus-visible:outline-none"
       >
         {skipLinkText}
       </a>
-      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-        <div className="flex items-center gap-6 md:gap-10">
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2 }}
-          >
+      <div className="w-full px-5 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-[1fr_auto] items-center gap-4 md:grid-cols-[1fr_2fr_1fr]">
+          <div>
             <Link
               onClick={() => {
                 setActiveSection("");
@@ -238,18 +215,18 @@ export function Header({ className, languageToggle }: HeaderProps) {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
               aria-label={homeButtonLabel}
-              className="group relative flex items-center gap-2 p-0 text-xl font-bold shrink-0 transition-colors hover:text-primary"
+              className="group relative flex min-h-11 items-center justify-start p-0 font-sans text-sm font-semibold tracking-[0.08em] whitespace-nowrap uppercase transition-colors duration-200 hover:scale-100 hover:text-primary active:scale-100 focus:scale-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary md:text-base"
               href="/"
             >
-              <span>Eduard Stefan</span>
+              <span>EDUARD STEFAN</span>
             </Link>
-          </motion.div>
+          </div>
 
           <NavigationMenu
             aria-label={navigationLabel}
-            className="hidden flex-1 md:flex"
+            className="hidden max-w-none justify-self-center md:flex"
           >
-            <NavigationMenuList className="gap-1">
+            <NavigationMenuList className="gap-4 lg:gap-5 xl:gap-7">
               {navItems.map((item) => {
                 const href = getNavHref(item);
                 const text = getNavText(item);
@@ -261,15 +238,14 @@ export function Header({ className, languageToggle }: HeaderProps) {
                       <Link
                         href={href}
                         className={cn(
-                          "group relative px-4 py-2 text-sm font-medium transition-colors duration-300",
-                          "hover:text-primary",
+                          "group relative min-h-11 px-2 py-3 text-sm font-normal transition-colors duration-200 hover:scale-100 hover:bg-transparent hover:text-primary active:scale-100 focus:scale-100 focus:bg-transparent focus:text-primary data-[active=true]:scale-100 data-[active=true]:bg-transparent data-[active=true]:hover:bg-transparent lg:text-base",
                           active && "text-primary"
                         )}
                       >
                         <span className="relative z-10">{text}</span>
                         {active && (
                           <motion.div
-                            className="absolute inset-0 rounded-md bg-primary/5 -z-10"
+                            className="absolute inset-x-2 bottom-1 h-px bg-primary -z-10"
                             layoutId="activeNavItem"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -288,7 +264,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <div className="flex items-center gap-2 md:gap-3 ml-auto">
+          <div className="ml-auto flex items-center gap-1.5 text-sm md:gap-2 xl:gap-3">
             <AnimatePresence mode="wait">
               {showContactButton && (
                 <motion.div
@@ -296,47 +272,39 @@ export function Header({ className, languageToggle }: HeaderProps) {
                   animate={{ opacity: 1, scale: 1, x: 0 }}
                   exit={{ opacity: 0, scale: 0.9, x: -10 }}
                   transition={{ duration: 0.2 }}
-                  className="hidden md:block"
+                  className="hidden lg:block"
                 >
-                  <Button asChild variant="default" size="sm">
-                    <a
-                      href={whatsappUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <WhatsAppIcon className="size-4" />
-                      {contactMeText}
-                    </a>
-                  </Button>
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex min-h-9 shrink-0 items-center gap-2 bg-primary px-3 font-semibold whitespace-nowrap text-primary-foreground transition-[opacity,transform] duration-200 hover:opacity-90 motion-safe:active:translate-y-px motion-reduce:transition-none xl:px-4"
+                  >
+                    {contactMeText}
+                    <ArrowUpRight
+                      aria-hidden="true"
+                      className="size-4 shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none"
+                    />
+                  </a>
                 </motion.div>
               )}
             </AnimatePresence>
 
-            <motion.div
-              className="hidden md:block"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-            >
-              <ModeToggle />
-            </motion.div>
-
-            <motion.div
-              className="hidden md:block"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-            >
+            <div className="hidden md:block [&_button]:min-w-11 [&_button]:px-2 [&_button]:font-mono [&_button]:text-xs [&_button]:uppercase">
               {languageToggle}
-            </motion.div>
+            </div>
+
+            <div className="hidden border-l border-current/30 pl-2 md:block xl:pl-3">
+              <ModeToggle />
+            </div>
 
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <button
                   type="button"
                   className={cn(
-                    buttonVariants({ variant: "outline", size: "icon" }),
-                    "md:hidden"
+                    buttonVariants({ variant: "utility", size: "icon" }),
+                    "size-11 md:hidden"
                   )}
                   aria-label={menuLabel}
                 >
@@ -345,14 +313,16 @@ export function Header({ className, languageToggle }: HeaderProps) {
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="w-full max-w-sm overflow-y-auto p-0"
+                className="dark-instrument editorial-surface-raised w-full max-w-sm overflow-y-auto border-[var(--section-rule)] border-l p-0"
               >
                 <div className="flex min-h-full flex-col px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-14">
                   <SheetHeader className="px-0 text-left">
-                    <SheetTitle className="text-2xl tracking-tight">
+                    <SheetTitle className="text-2xl tracking-tight text-[var(--section-foreground)]">
                       Eduard Stefan
                     </SheetTitle>
-                    <SheetDescription>{navigationLabel}</SheetDescription>
+                    <SheetDescription className="text-[var(--section-subtle)]">
+                      {navigationLabel}
+                    </SheetDescription>
                   </SheetHeader>
 
                   <nav
@@ -370,7 +340,7 @@ export function Header({ className, languageToggle }: HeaderProps) {
                           href={href}
                           aria-current={active ? "page" : undefined}
                           className={cn(
-                            "justify-start rounded-none border-b px-0 py-5 text-2xl font-medium tracking-tight transition-colors",
+                            "min-h-14 justify-start rounded-none border-[var(--section-rule)] border-b px-0 py-5 text-2xl font-medium tracking-tight text-[var(--section-foreground)] transition-colors",
                             "hover:text-primary focus-visible:text-primary",
                             active && "text-primary"
                           )}
@@ -383,21 +353,27 @@ export function Header({ className, languageToggle }: HeaderProps) {
                   </nav>
 
                   <div className="mt-auto space-y-6 pt-10">
-                    <Button asChild size="lg" className="w-full">
-                      <a
-                        href={whatsappUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        <WhatsAppIcon className="size-5" />
-                        {contactMeText}
-                      </a>
-                    </Button>
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="group inline-flex min-h-12 w-full items-center justify-center gap-2 bg-primary px-6 font-semibold whitespace-nowrap text-primary-foreground transition-[opacity,transform] duration-200 hover:opacity-90 motion-safe:active:translate-y-px motion-reduce:transition-none"
+                    >
+                      {contactMeText}
+                      <ArrowUpRight
+                        aria-hidden="true"
+                        className="size-4 shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none"
+                      />
+                    </a>
 
-                    <div className="flex items-center justify-between border-t pt-5">
-                      <ModeToggle />
-                      {languageToggle}
+                    <div className="flex items-center justify-end gap-3 border-[var(--section-rule)] border-t pt-5">
+                      <div className="[&_button]:min-w-11 [&_button]:font-mono [&_button]:text-xs [&_button]:uppercase">
+                        {languageToggle}
+                      </div>
+                      <div className="border-[var(--section-rule-strong)] border-l pl-3">
+                        <ModeToggle />
+                      </div>
                     </div>
                   </div>
                 </div>

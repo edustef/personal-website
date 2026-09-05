@@ -89,8 +89,10 @@
     "save": "Salvează opțiunile"
   },
   "footer": {
+    "name": "Eduard Stefan",
     "privacyPolicy": "Politica de confidențialitate",
-    "text": "© {currentYear} Eduard Sergiu Ștefan. Realizat cu Next.js.",
+    "text": "© {currentYear} Eduard Stefan. Realizat cu Next.js.",
+    "location": "Stabilit în Oradea, România. Lucrez cu companii din Europa și SUA.",
     "legal": {
       "title": "Informații legale",
       "manageCookies": "Gestionează cookie-urile"
@@ -104,8 +106,10 @@
     }
   },
   "home": {
-    "headline": "Platforme web care mențin <strong>produsul și marketingul în mișcare</strong>.",
-    "tagline": "Construiesc site-uri de marketing, platforme de conținut, dashboard-uri și integrări care rămân rapide, coerente și ușor de întreținut pe măsură ce echipele cresc. Sanity este specializarea mea CMS.",
+    "headline": "Sisteme web complexe, făcute clare.",
+    "tagline": "Implementări Sanity, migrări CMS și front-endul care le face cu adevărat utile.",
+    "heroEyebrow": "PARTENER FULL-STACK INDEPENDENT",
+    "availabilityNote": "DISPONIBIL PENTRU PROIECTE SELECTATE",
     "aboutMeDescription": "Construiesc site-uri de marketing și platforme web conectate pe care echipele le pot dezvolta în continuare.",
     "announcementLabel": "Platforme web pentru <strong>echipe care continuă să livreze</strong>",
     "resumeButtonLabel": "Vezi CV-ul meu",
@@ -114,13 +118,13 @@
     "scheduleCall": "Programează o discuție",
     "contactDirectly": "Scrie-mi",
     "letsChat": "Hai să vorbim despre site-ul tău",
-    "seeHowIWork": "Programează o discuție",
+    "seeHowIWork": "Vezi cum lucrez",
     "orBookTime": "Programează o discuție",
     "workedWith": "Cu ce lucrez",
     "heroTrust": [
-      "Partener front-end senior",
-      "Rigoare de design system",
-      "Codul este al tău"
+      "Parteneriat senior",
+      "Sisteme editoriale",
+      "Codul îți aparține"
     ],
     "tools": {
       "label": "Tehnologii",
@@ -131,7 +135,7 @@
       "label": "Cine sunt",
       "headline": "Despre Mine",
       "subtitle": "Inginerie senior fără lanțul de predări al unei agenții",
-      "description": "Sunt inginer front-end și ajut echipe mature de produs și marketing să construiască suprafețele web din jurul afacerii: site-uri de marketing, platforme de conținut, portaluri, dashboard-uri și integrări. Lucrez direct cu designeri, editori și dezvoltatori, apoi las în urmă sisteme clare—nu o dependență de mine. Sanity este specializarea mea CMS, dar miza este mereu mai mare decât o unealtă: o platformă utilă, ușor de întreținut și pregătită pentru ce urmează.",
+      "description": "Sunt inginer front-end și ajut echipe mature de produs și marketing să construiască site-uri, platforme de conținut, portaluri, dashboard-uri și integrări. Lucrez direct cu designeri, editori și dezvoltatori și las în urmă sisteme clare, ușor de întreținut. Sanity este specializarea mea CMS, dar platforma rămâne mereu pe primul loc.",
       "cta": "Discută un proiect"
     },
     "contact": {
@@ -140,15 +144,21 @@
       "subtitle": "Spune-mi ce construiește, înlocuiește sau încearcă să descurce echipa ta. Îți spun unde pot ajuta.",
       "ctaButton": "Programează o discuție de proiect",
       "ctaButtonSecondary": "Pune o întrebare rapidă",
-      "whatsappLabel": "Întrebare rapidă? Scrie-mi"
+      "whatsappLabel": "Întrebare rapidă? Scrie-mi",
+      "close": {
+        "label": "Ia legătura",
+        "headlineLines": ["Lasă partea complicată", "la mine."],
+        "subtitle": "Un proiect nou, o migrare sau o platformă care are nevoie de experiență. Spune-mi ce e complicat și îți spun unde pot ajuta.",
+        "primaryCta": "Începe o conversație",
+        "secondaryCta": "Programează un apel scurt"
+      }
     },
     "heroLabel": "Inginerie front-end pentru echipe mature",
-    "primaryCta": "Discută un proiect",
+    "primaryCta": "Discută proiectul",
     "secondaryCta": "Explorează serviciile Sanity",
     "sanitySpotlight": {
       "label": "Specializarea principală",
-      "eyebrow": "Sanity-first când conținutul structurat este fundația potrivită.",
-      "headline": "O platformă de conținut pe care echipa ta chiar o poate gestiona.",
+      "headline": "Libertate editorială. Rigoare tehnică.",
       "description": "Construiesc și migrez sisteme Sanity în jurul fluxurilor editoriale reale—de la scheme și blocuri reutilizabile la preview, localizare, migrare și predare.",
       "cta": "Explorează serviciile Sanity CMS",
       "systemItems": [
@@ -156,6 +166,17 @@
         "Sistem de pagini reutilizabile",
         "Front-end de producție"
       ]
+    },
+    "work": {
+      "label": "Construit & în lucru",
+      "headline": "Unde lucrez. Ce construiesc.",
+      "description": "Muncă de produs, proiecte independente și experimente mici care mă țin aproape de meserie.",
+      "present": "prezent",
+      "current": "Acum",
+      "experimentsLabel": "Experimente",
+      "experimentsStatus": "În lucru.",
+      "experiments": ["Calculator ROI", "Înapoi în anii ’00", "Magnetic Dock"],
+      "moreInTheLab": "more_in_the_lab"
     }
   },
   "profile": {
@@ -181,7 +202,7 @@
     "description": "Site-uri de marketing și platforme web conectate pentru echipe mature de produs și marketing.",
     "header": {
       "cta": {
-        "text": "Discută un proiect"
+        "text": "Discută proiectul"
       },
       "homeButtonLabel": "Acasă",
       "navLabel": "Navigație principală",
@@ -189,8 +210,8 @@
       "menuLabel": "Meniu",
       "nav": {
         "services": "Servicii",
-        "pricing": "Prețuri",
-        "howIWork": "Cum Lucrez",
+        "pricing": "Lucrăm împreună",
+        "howIWork": "Proces",
         "blog": "Blog",
         "servicesSlug": "servicii",
         "pricingSlug": "preturi",
@@ -282,20 +303,34 @@
   },
   "services": {
     "label": "Ce fac",
-    "headline": "Un singur partener pentru suprafețele web de care depinde echipa ta",
-    "subtitle": "Inginerie front-end concentrată pe site-uri publice, produse interne și sistemele care le conectează.",
+    "headline": "Site-uri și produse digitale, construite ca un singur sistem",
+    "subtitle": "Inginerie front-end pentru site-uri publice, unelte interne și sistemele care le conectează.",
     "cta": "Discută proiectul tău",
+    "artifacts": {
+      "migration": {
+        "title": "Migrări CMS",
+        "description": "Treceri atente de la conținut vechi la fundații moderne."
+      },
+      "spacing": {
+        "title": "Sisteme de design",
+        "description": "Componente și tipare reutilizabile care mențin echipele aliniate."
+      },
+      "performance": {
+        "title": "Calitate front-end",
+        "description": "Audit și stabilizare când viteza, accesul sau coerența se degradează."
+      }
+    },
     "svc-1": {
-      "title": "Platforme de marketing și conținut",
-      "description": "Site-uri de marketing rapide, multilingve, susținute de componente reutilizabile, conținut structurat și UX orientat spre conversie. Sanity este specializarea mea CMS principală."
+      "title": "Site-uri de marketing",
+      "description": "Site-uri rapide, multilingve, cu conținut structurat, editare flexibilă și Sanity la bază."
     },
     "svc-2": {
-      "title": "Suprafețe de produs conectate",
-      "description": "Portaluri, dashboard-uri, integrări și unelte interne care se potrivesc cu produsul, datele și design system-ul existent, în loc să devină încă o aplicație izolată."
+      "title": "Produse conectate",
+      "description": "Portaluri, dashboard-uri și integrări care se potrivesc cu produsul, datele și sistemul tău de design."
     },
     "svc-3": {
       "title": "Evoluția platformei",
-      "description": "Parteneriat front-end continuu pentru echipe care livrează capabilități noi fără să lase performanța, accesibilitatea sau coerența vizuală să se degradeze."
+      "description": "Suport front-end continuu pentru versiuni rapide, accesibile și coerente."
     }
   },
   "howIWork": {
@@ -305,6 +340,7 @@
     "cta": "Discută un proiect",
     "planning": {
       "title": "Mapăm problema și sistemul din jurul ei",
+      "artifactLabel": "Fișă de aliniere",
       "paragraphs": [
         "Începem cu oamenii, fluxurile și sistemele pe care munca trebuie să le deservească. Apoi stabilim scopul, limitele tehnice și cum arată succesul."
       ],
@@ -316,6 +352,7 @@
     },
     "development": {
       "title": "Construiesc la vedere",
+      "artifactLabel": "Revizie de implementare",
       "paragraphs": [
         "Nu dispar săptămâni întregi. Primești actualizări regulate, build-uri funcționale și spațiu de ajustare cât timp deciziile sunt încă ieftin de schimbat."
       ],
@@ -327,8 +364,9 @@
     },
     "deployment": {
       "title": "Lansăm cu marginile acoperite",
+      "artifactLabel": "Listă de lansare",
       "paragraphs": [
-        "Performanța, accesibilitatea, analytics, integrările, redirect-urile și planul de revenire sunt muncă de lansare—nu curățenie pentru mai târziu."
+        "Performanța, accesibilitatea, analytics, integrările, redirect-urile și planul de revenire sunt muncă de lansare, nu curățenie pentru mai târziu."
       ],
       "bulletPoints": [
         "Fluxurile critice testate",
@@ -338,6 +376,7 @@
     },
     "postDeployment": {
       "title": "Echipa ta deține ce urmează",
+      "artifactLabel": "Jurnal de predare",
       "paragraphs": [
         "Codul, deciziile și documentația sunt ale tale. Predau curat sau rămân integrat când evoluția continuă este modelul potrivit."
       ],
@@ -351,9 +390,8 @@
   "waysToWorkTogether": {
     "label": "Prețuri",
     "headline": "Un proiect clar, construit în jurul nevoilor site-ului tău.",
-    "subtitle": "După o discuție scurtă, transform problema într-un plan clar, cu livrabilele, durata și suportul potrivite.",
+    "subtitle": "Începem prin a clarifica nevoile afacerii și a mapa conținutul, utilizatorii și fluxurile de lucru. Apoi definesc proiectul, prioritățile și planul de livrare.",
     "engagementTitle": "Construim ce are nevoie echipa ta. Predăm un sistem pe care îl poate gestiona.",
-    "description": "Poate fi un site nou pe Sanity, o migrare controlată din CMS-ul actual sau îmbunătățiri într-un sistem existent. Proiectul este definit după rezultat, nu după un pachet prestabilit.",
     "scopeLabel": "Tipuri de proiect",
     "scopeValue": "Site-uri noi, migrări CMS și îmbunătățiri de sistem",
     "timelineLabel": "Durata uzuală",
@@ -435,36 +473,35 @@
     },
     "job-2": {
       "description": "- Am lucrat îndeaproape cu designerii și managerii de produs pentru a transforma designul în funcționalități de înaltă calitate și gata pentru producție\n- Am dezvoltat componente reutilizabile care se integrează cu Headless CMS, ceea ce a făcut posibilă construirea independentă a paginilor\n- Am implementat Storybook în codul sursă pentru o dezvoltare mai bună și pentru a avea o singură sursă de adevăr\n- Am lucrat cu cele mai noi instrumente și funcționalități React (ESNext, componente funcționale React, hooks, Webpack, Vite, etc.)"
+    },
+    "job-3": {
+      "description": "Dezvoltare web la Agile Freaks."
     }
   },
   "faq": {
     "label": "Întrebări",
-    "headline": "Întrebări frecvente",
-    "subtitle": "Ce întreabă echipele de obicei înainte să începem.",
-    "cta": "Mai ai întrebări? Hai să vorbim",
+    "headline": "Înainte să începem.",
+    "subtitle": "Lucrurile practice pe care clienții vor, de obicei, să le clarificăm.",
+    "cta": "Încă nu e clar? Întreabă-mă direct",
     "faq-1": {
-      "question": "Cât durează un proiect?",
-      "answer": "Un build concentrat poate dura câteva săptămâni; o platformă mai mare sau o migrare poate dura câteva luni. Îți dau un plan de livrare după ce înțeleg sistemele, dependențele și factorii de decizie implicați."
+      "question": "Ce tipuri de proiecte ni se potrivesc cel mai bine?",
+      "answer": "Colaborez cel mai bine cu echipe mature de produs sau marketing pentru site-uri, platforme de conținut, portaluri, dashboard-uri și integrări. Preiau și proiecte Sanity, migrări sau intervenții punctuale în sisteme existente, acolo unde se întâlnesc conținutul, codul și fluxul editorial. Scopul proiectului pornește de la rezultat, nu de la un pachet prestabilit."
     },
     "faq-2": {
-      "question": "Ce tipuri de produse construiești?",
-      "answer": "Site-uri de marketing, platforme de conținut, portaluri, dashboard-uri, integrări și sistemele front-end care le conectează. Mă concentrez pe suprafețe web folosite de echipe mature de produs și marketing."
+      "question": "Poți prelua o bază de cod existentă?",
+      "answer": "Da. Încep prin a înțelege arhitectura, constrângerile, modul de lucru al echipei și zonele care costă cel mai mult. Păstrez ce funcționează, apoi stabilizez, refactorizez sau înlocuiesc în mod deliberat. O rescriere completă nu este niciodată răspunsul automat."
     },
     "faq-3": {
-      "question": "Echipa noastră va deține rezultatul?",
-      "answer": "Da. Codul stă în repository-ul tău, deciziile sunt documentate, iar predarea face parte din proiect. Pot rămâne implicat, dar sistemul nu trebuie să depindă vreodată de prezența mea."
+      "question": "Te ocupi de migrarea conținutului?",
+      "answer": "Da. Pot audita conținutul sursă, îl pot mapa într-un model nou, pot planifica redirecționările și valida ce este transferat. Pentru tranziții mai mari, pregătesc lansarea etapizată sau trecerea finală și definesc fluxul editorial odată cu migrarea. Riscurile sunt planificate și testate; migrarea nu este doar o copiere în masă."
     },
     "faq-4": {
-      "question": "Lucrezi cu designerii și dezvoltatorii noștri actuali?",
-      "answer": "Da. Mă integrez ușor într-o echipă existentă, respect convențiile voastre și fac o predare curată. Pot duce și un proiect singur, de la cap la coadă, dacă asta ai nevoie."
+      "question": "Cum lucrăm din fusuri orare diferite?",
+      "answer": "Lucrez din Oradea, pe fusul Europei de Est. Stabilim intervale de lucru comune pentru deciziile importante, apoi menținem ritmul prin actualizări asincrone în scris și decizii documentate. Apelurile au un scop clar, astfel încât proiectul să nu depindă de prezența simultană a tuturor."
     },
     "faq-5": {
-      "question": "Ce tehnologii folosești?",
-      "answer": "De obicei React, Next.js și TypeScript, integrate cu sistemele pe care echipa ta le folosește deja. Pentru conținut structurat, Sanity este specializarea mea. Arhitectura urmează nevoia proiectului, nu forțează fiecare proiect în același stack."
-    },
-    "faq-6": {
-      "question": "Poți îmbunătăți o platformă existentă în loc să o înlocuiești?",
-      "answer": "Da. Un rebuild nu este automat răspunsul corect. Pot lucra în codebase-ul existent, îmbunătăți mai întâi zonele cu cel mai mare cost și ajuta echipa să decidă ce merită păstrat, refactorizat sau înlocuit."
+      "question": "Ce se întâmplă după lansare?",
+      "answer": "Codul, deciziile și documentația aparțin echipei tale. Fac o predare clară și ajut oamenii care vor administra sistemul să îl înțeleagă. Dacă este util, pot rămâne implicat în funcție de prioritățile voastre, dar fără să creez o dependență forțată."
     }
   },
   "blog": {

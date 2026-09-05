@@ -105,7 +105,7 @@ export default async function SanityServicePage() {
               <Button asChild size="lg" className="w-full sm:w-auto">
                 <Link href="/schedule">
                   {t("hero.primaryCta")}
-                  <ArrowRight className="size-5" />
+                  <ArrowRight className="size-5 transition-transform duration-200 group-hover/btn:translate-x-0.5 motion-reduce:transform-none" />
                 </Link>
               </Button>
               <Button

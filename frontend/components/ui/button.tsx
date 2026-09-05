@@ -5,21 +5,23 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "group/btn relative inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.97] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:hover:scale-100 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive overflow-hidden",
+  "group/btn relative inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-xl font-medium transition-[background-color,border-color,color,box-shadow,opacity,transform] duration-200 ease-out active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:hover:scale-100 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive overflow-hidden motion-reduce:transition-none",
   {
     variants: {
       variant: {
         default:
-          "bg-primary shadow-lg hover:shadow-xl text-primary-foreground hover:bg-primary/90 disabled:shadow-none before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700 before:ease-out",
+          "bg-primary shadow-lg hover:shadow-xl text-primary-foreground hover:bg-primary/90 motion-safe:active:translate-y-px disabled:shadow-none before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700 before:ease-out",
         destructive:
-          "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 shadow-lg hover:shadow-xl",
+          "bg-destructive text-white hover:bg-destructive/90 hover:scale-[1.02] active:scale-[0.97] focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 shadow-lg hover:shadow-xl",
         outline:
-          "border bg-background shadow-sm disabled:shadow-none hover:shadow-md hover:bg-accent/5 hover:border-primary/50 dark:hover:border-primary/50 dark:hover:bg-accent/10 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-primary/10 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700 before:ease-out",
+          "border bg-background shadow-sm disabled:shadow-none hover:scale-[1.02] hover:shadow-md hover:bg-accent/5 hover:border-primary/50 active:scale-[0.97] dark:hover:border-primary/50 dark:hover:bg-accent/10 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-primary/10 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700 before:ease-out",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-sm hover:shadow-md",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:scale-[1.02] active:scale-[0.97] shadow-sm hover:shadow-md",
         ghost:
-          "hover:bg-accent/10 hover:text-accent-foreground dark:hover:bg-accent/20",
-        link: "hover:text-primary",
+          "hover:bg-accent/10 hover:text-accent-foreground hover:scale-[1.02] active:scale-[0.97] dark:hover:bg-accent/20",
+        utility:
+          "rounded-none bg-transparent shadow-none hover:bg-transparent hover:text-primary",
+        link: "hover:text-primary hover:scale-[1.02] active:scale-[0.97]",
       },
       size: {
         default: "h-10 px-5 py-2 has-[>svg]:px-4",

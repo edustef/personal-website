@@ -1,218 +1,317 @@
-import { BGPattern } from "@/components/ui/bg-pattern";
-import { Button } from "@/components/ui/button";
-import { CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselDots,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import { SectionHeader } from "@/components/ui/section-header";
-import { getPathname } from "@/i18n/navigation";
+import contentModelDarkImage from "@/assets/images/services/content-model-dark.webp";
+import contentModelImage from "@/assets/images/services/content-model.webp";
+import continuityTimelineDarkImage from "@/assets/images/services/continuity-timeline-dark.webp";
+import continuityTimelineImage from "@/assets/images/services/continuity-timeline.webp";
+import migrationSheetDarkImage from "@/assets/images/services/migration-sheet-dark.webp";
+import migrationSheetImage from "@/assets/images/services/migration-sheet.webp";
+import pageLayoutDarkImage from "@/assets/images/services/page-layout-dark.webp";
+import pageLayoutImage from "@/assets/images/services/page-layout.webp";
+import qualityAuditDarkImage from "@/assets/images/services/quality-audit-dark.webp";
+import qualityAuditImage from "@/assets/images/services/quality-audit.webp";
+import spacingSpecDarkImage from "@/assets/images/services/spacing-spec-dark.webp";
+import spacingSpecImage from "@/assets/images/services/spacing-spec.webp";
+import { Link } from "@/i18n/navigation";
 import { type Service, services } from "@/lib/data/services";
-import { cn } from "@/lib/utils";
-import { Globe, Headphones, Layers, Palette, Rocket, Zap } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
-import {
-  ServiceCard,
-  ServiceCardMobile,
-  ServicesCTA,
-} from "./services-section-client";
+import Image, { type StaticImageData } from "next/image";
+import { ServicesGridMotion } from "./services-grid-motion";
 
-const iconMap: Record<string, React.ElementType> = {
-  layers: Layers,
-  zap: Zap,
-  rocket: Rocket,
-  palette: Palette,
-  headphones: Headphones,
-  globe: Globe,
-};
+type ServicesSectionProps = { services?: Service[] };
 
-const patternVariants: Array<"dots" | "diagonal-stripes" | "grid"> = [
-  "diagonal-stripes",
-  "dots",
-  "grid",
-];
+const mobileStackCardClass =
+  "relative min-h-[calc(100svh-4rem)] overflow-hidden border-foreground/18 border-l bg-background motion-reduce:min-h-0 dark:bg-[var(--dark-background)] md:min-h-0 md:border-l-0 md:bg-transparent md:dark:bg-transparent";
 
-function getPatternForService(
-  index: number
-): "dots" | "diagonal-stripes" | "grid" {
-  const patternIndex = index % patternVariants.length;
-  return patternVariants[patternIndex];
+function ThemedArtifactImage({
+  lightSrc,
+  darkSrc,
+  sizes,
+  className,
+}: {
+  lightSrc: StaticImageData;
+  darkSrc: StaticImageData;
+  sizes: string;
+  className: string;
+}) {
+  return (
+    <>
+      <Image
+        src={lightSrc}
+        alt=""
+        fill
+        aria-hidden="true"
+        sizes={sizes}
+        className={`${className} will-change-transform dark:hidden`}
+      />
+      <Image
+        src={darkSrc}
+        alt=""
+        fill
+        aria-hidden="true"
+        sizes={sizes}
+        className={`hidden ${className} will-change-transform dark:block`}
+      />
+    </>
+  );
 }
 
-// Define glow colors for variety
-const glowColors = [
-  "217 91% 60%", // Blue
-  "262 83% 58%", // Purple
-  "142 71% 45%", // Green
-  "24 95% 53%", // Orange
-  "339 90% 51%", // Pink
-  "198 93% 60%", // Cyan
-];
+function PageLayoutArtifact() {
+  return (
+    <figure
+      data-service-artifact
+      className="relative order-first aspect-[3/2] w-full overflow-hidden border-foreground/12 border-b md:order-last md:aspect-auto md:min-h-64 md:border-b-0 md:border-l"
+    >
+      <ThemedArtifactImage
+        lightSrc={pageLayoutImage}
+        darkSrc={pageLayoutDarkImage}
+        sizes="(min-width: 1280px) 20vw, (min-width: 768px) 50vw, 100vw"
+        className="object-cover"
+      />
+    </figure>
+  );
+}
 
-type ServicesSectionProps = {
-  services?: Service[];
-};
+function ContentModelArtifact({ alternate = false }: { alternate?: boolean }) {
+  return (
+    <figure
+      data-service-artifact
+      className={`relative order-first aspect-square w-full self-stretch overflow-hidden md:aspect-auto md:min-h-64 ${alternate ? "xl:order-last" : "md:order-last"}`}
+    >
+      <ThemedArtifactImage
+        lightSrc={contentModelImage}
+        darkSrc={contentModelDarkImage}
+        sizes="(min-width: 1280px) 20vw, (min-width: 768px) 50vw, 100vw"
+        className="object-cover"
+      />
+    </figure>
+  );
+}
+
+function MigrationArtifact() {
+  return (
+    <figure
+      data-service-artifact
+      className="relative order-first aspect-square w-full self-stretch overflow-hidden md:order-last md:aspect-auto md:min-h-44"
+    >
+      <ThemedArtifactImage
+        lightSrc={migrationSheetImage}
+        darkSrc={migrationSheetDarkImage}
+        sizes="(min-width: 1280px) 16vw, (min-width: 768px) 50vw, 100vw"
+        className="object-cover"
+      />
+    </figure>
+  );
+}
+
+function SpacingArtifact({ alternate = false }: { alternate?: boolean }) {
+  return (
+    <figure
+      data-service-artifact
+      className={`relative order-first aspect-[1586/992] w-full self-stretch overflow-hidden md:aspect-auto md:min-h-44 ${alternate ? "xl:order-last" : "md:order-last"}`}
+    >
+      <ThemedArtifactImage
+        lightSrc={spacingSpecImage}
+        darkSrc={spacingSpecDarkImage}
+        sizes="(min-width: 1280px) 16vw, (min-width: 768px) 50vw, 100vw"
+        className="object-cover"
+      />
+    </figure>
+  );
+}
+
+function PerformanceArtifact() {
+  return (
+    <figure
+      data-service-artifact
+      className="relative order-first aspect-square w-full self-stretch overflow-hidden md:order-last md:aspect-auto md:min-h-44"
+    >
+      <ThemedArtifactImage
+        lightSrc={qualityAuditImage}
+        darkSrc={qualityAuditDarkImage}
+        sizes="(min-width: 1280px) 16vw, (min-width: 768px) 50vw, 100vw"
+        className="object-cover"
+      />
+    </figure>
+  );
+}
+
+function CapabilityCell({
+  title,
+  description,
+  artifact,
+  className,
+}: {
+  title: string;
+  description: string;
+  artifact: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <article
+      data-service-card
+      className={`${mobileStackCardClass} grid min-w-0 border-foreground/18 border-r border-b md:h-64 md:grid-cols-[minmax(15rem,0.82fr)_minmax(16rem,1.18fr)] xl:h-72 ${className ?? ""}`}
+    >
+      <div className="flex min-w-0 flex-col p-5 sm:p-7 md:justify-center xl:p-6">
+        <div>
+          <h3 className="max-w-[18ch] text-[1.75rem] leading-[1.02] font-normal tracking-[-0.04em] text-balance sm:text-[2rem]">
+            {title}
+          </h3>
+          <p className="mt-3 max-w-[38ch] text-[0.82rem] leading-[1.5] text-foreground/66 sm:text-[0.86rem]">
+            {description}
+          </p>
+        </div>
+      </div>
+      {artifact}
+    </article>
+  );
+}
+
+function EvidenceCell({
+  title,
+  description,
+  artifact,
+  className,
+}: {
+  title: string;
+  description: string;
+  artifact: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <article
+      data-service-card
+      className={`${mobileStackCardClass} grid min-w-0 border-foreground/18 border-r border-b md:h-48 md:grid-cols-[minmax(11rem,0.95fr)_minmax(10rem,1.05fr)] ${className ?? ""}`}
+    >
+      <div className="flex min-w-0 flex-col p-5 sm:p-6 md:justify-center">
+        <div>
+          <h3 className="max-w-[16ch] text-[1.45rem] leading-[1.02] font-normal tracking-[-0.035em] text-balance">
+            {title}
+          </h3>
+          <p className="mt-3 max-w-[34ch] text-[0.82rem] leading-[1.5] text-foreground/62">
+            {description}
+          </p>
+        </div>
+      </div>
+      {artifact}
+    </article>
+  );
+}
+
+function ContinuityArtifact() {
+  return (
+    <figure
+      data-service-artifact
+      className="relative order-first aspect-[1923/818] w-full overflow-hidden md:aspect-auto md:min-h-32 xl:order-last"
+    >
+      <ThemedArtifactImage
+        lightSrc={continuityTimelineImage}
+        darkSrc={continuityTimelineDarkImage}
+        sizes="(min-width: 768px) 65vw, 100vw"
+        className="object-cover"
+      />
+    </figure>
+  );
+}
 
 export default async function ServicesSection({
   services: servicesProp,
 }: ServicesSectionProps) {
-  const servicesToDisplay = servicesProp || services;
-  if (!servicesToDisplay || servicesToDisplay.length === 0) {
-    return null;
-  }
+  const items = servicesProp || services;
+  if (!items?.length) return null;
 
   const locale = await getLocale();
-  const t = await getTranslations({ locale, namespace: "services" });
-
-  const featuredServices = servicesToDisplay.filter((s) => s.featured);
-  const otherServices = servicesToDisplay.filter((s) => !s.featured);
-
-  const headerT = await getTranslations({
-    locale,
-    namespace: "settings.header",
-  });
+  const [t, headerT] = await Promise.all([
+    getTranslations({ locale, namespace: "services" }),
+    getTranslations({ locale, namespace: "settings.header" }),
+  ]);
   const servicesSlug = headerT("nav.servicesSlug");
-  const projectUrl = getPathname({ locale, href: "/schedule" });
+  const [first, second, ...remaining] = items;
 
   return (
     <section
       id={servicesSlug}
-      className="scroll-mt-12 overflow-x-hidden py-12 md:py-16"
+      className="editorial-section scroll-mt-16 bg-background text-foreground dark:bg-[var(--dark-background)]"
     >
-      <div className="mx-auto max-w-6xl md:px-6">
-        <SectionHeader
-          label={t("label")}
-          headline={t("headline")}
-          subtitle={t("subtitle")}
-          anchorSlug={servicesSlug}
-        />
+      <div className="editorial-shell">
+        <header className="max-w-[76rem]">
+          <p className="editorial-label editorial-section-label">
+            {t("label")}
+          </p>
+          <h2 className="editorial-section-title mt-6 max-w-[22ch]">
+            {t("headline")}
+          </h2>
+          <p className="editorial-section-copy mt-6 max-w-[50ch]">
+            {t("subtitle")}
+          </p>
+        </header>
 
-        {/* Desktop Grid */}
-        <div className="hidden md:grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {featuredServices.map((service, index) => {
-            const Icon = iconMap[service.icon] || Layers;
-            const patternVariant = getPatternForService(index);
-            const glowColor = glowColors[index % glowColors.length];
+        <ServicesGridMotion>
+          {first ? (
+            <CapabilityCell
+              title={t(first.titleKey)}
+              description={t(first.descriptionKey)}
+              artifact={<PageLayoutArtifact />}
+              className="xl:col-span-6"
+            />
+          ) : null}
+          {second ? (
+            <CapabilityCell
+              title={t(second.titleKey)}
+              description={t(second.descriptionKey)}
+              artifact={<ContentModelArtifact alternate />}
+              className="xl:col-span-6"
+            />
+          ) : null}
 
-            return (
-              <ServiceCard
-                key={service._id}
-                index={index}
-                featured
-                glowColor={glowColor}
-                className="lg:col-span-2 lg:row-span-2"
-              >
-                <div className="isolate relative h-full w-full overflow-hidden">
-                  <BGPattern
-                    variant={patternVariant}
-                    mask="fade-edges"
-                    opacity={0.25}
-                  />
-                  <CardContent className="relative p-8">
-                    <div className="mb-4 inline-flex rounded-xl bg-primary/10 p-3 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-                      <Icon className="size-8 text-primary transition-transform duration-300 group-hover:rotate-6" />
-                    </div>
-                    <h3 className="text-foreground mb-3 break-words text-xl font-semibold text-balance">
-                      {t(service.titleKey)}
-                    </h3>
-                    <p className="text-muted-foreground text-lg break-words leading-relaxed text-pretty">
-                      {t(service.descriptionKey)}
-                    </p>
-                  </CardContent>
+          <EvidenceCell
+            title={t("artifacts.migration.title")}
+            description={t("artifacts.migration.description")}
+            artifact={<MigrationArtifact />}
+            className="xl:col-span-4"
+          />
+          <EvidenceCell
+            title={t("artifacts.spacing.title")}
+            description={t("artifacts.spacing.description")}
+            artifact={<SpacingArtifact alternate />}
+            className="xl:col-span-4"
+          />
+          <EvidenceCell
+            title={t("artifacts.performance.title")}
+            description={t("artifacts.performance.description")}
+            artifact={<PerformanceArtifact />}
+            className="xl:col-span-4"
+          />
+
+          {remaining.map((service) => (
+            <article
+              key={service._id}
+              data-service-card
+              className={`${mobileStackCardClass} grid min-w-0 border-foreground/18 border-r border-b md:h-40 md:grid-cols-[minmax(18rem,0.35fr)_minmax(24rem,0.65fr)] xl:col-span-12`}
+            >
+              <div className="flex min-w-0 flex-col p-5 sm:p-7 md:justify-center xl:p-8">
+                <div>
+                  <h3 className="max-w-[16ch] text-[1.65rem] leading-[1.02] font-normal tracking-[-0.04em] text-balance sm:text-[1.9rem]">
+                    {t(service.titleKey)}
+                  </h3>
+                  <p className="mt-3 max-w-[38ch] text-sm leading-[1.5] text-foreground/64">
+                    {t(service.descriptionKey)}
+                  </p>
                 </div>
-              </ServiceCard>
-            );
-          })}
+              </div>
+              <ContinuityArtifact />
+            </article>
+          ))}
+        </ServicesGridMotion>
 
-          {otherServices.map((service, index) => {
-            const Icon = iconMap[service.icon] || Layers;
-            const patternVariant = getPatternForService(
-              featuredServices.length + index
-            );
-            const glowColor =
-              glowColors[(featuredServices.length + index) % glowColors.length];
-
-            return (
-              <ServiceCard
-                key={service._id}
-                index={featuredServices.length + index}
-                glowColor={glowColor}
-              >
-                <div className="isolate relative h-full w-full overflow-hidden">
-                  <BGPattern
-                    variant={patternVariant}
-                    mask="fade-edges"
-                    size={20}
-                    opacity={0.25}
-                  />
-                  <CardContent className="relative p-6">
-                    <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-                      <Icon className="size-6 text-primary transition-transform duration-300 group-hover:rotate-6" />
-                    </div>
-                    <h3 className="text-foreground mb-2 break-words text-xl md:text-base font-semibold text-balance">
-                      {t(service.titleKey)}
-                    </h3>
-                    <p className="text-muted-foreground break-words text-lg md:text-base leading-relaxed text-pretty">
-                      {t(service.descriptionKey)}
-                    </p>
-                  </CardContent>
-                </div>
-              </ServiceCard>
-            );
-          })}
+        <div className="mt-7 flex justify-start md:justify-end">
+          <Link href="/schedule" className="editorial-text-link group">
+            {t("cta")}
+            <ArrowUpRight
+              aria-hidden="true"
+              className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none"
+            />
+          </Link>
         </div>
-
-        {/* Mobile Carousel with scroll animations */}
-        <div className="md:hidden">
-          <Carousel className="w-full" aria-label={t("headline")}>
-            <CarouselContent className="-ml-4 px-4 pb-4">
-              {[...featuredServices, ...otherServices].map((service, index) => {
-                const Icon = iconMap[service.icon] || Layers;
-                const patternVariant = getPatternForService(index);
-                const glowColor = glowColors[index % glowColors.length];
-
-                return (
-                  <CarouselItem
-                    key={service._id}
-                    className={cn(
-                      "pl-4 basis-[85%]",
-                      index === servicesToDisplay.length - 1 && "mr-4"
-                    )}
-                  >
-                    <ServiceCardMobile
-                      index={index}
-                      glowColor={glowColor}
-                      icon={<Icon className="size-7 text-primary" />}
-                      bgPattern={
-                        <BGPattern
-                          variant={patternVariant}
-                          mask="fade-edges"
-                          size={20}
-                          opacity={0.25}
-                        />
-                      }
-                    >
-                      <h3 className="text-foreground mb-2 break-words text-xl font-semibold text-balance">
-                        {t(service.titleKey)}
-                      </h3>
-                      <p className="text-muted-foreground break-words text-lg leading-relaxed flex-grow text-pretty">
-                        {t(service.descriptionKey)}
-                      </p>
-                    </ServiceCardMobile>
-                  </CarouselItem>
-                );
-              })}
-            </CarouselContent>
-            <div className="mt-6">
-              <CarouselDots />
-            </div>
-          </Carousel>
-        </div>
-
-        {/* Section CTA */}
-        <ServicesCTA ctaUrl={projectUrl} ctaText={t("cta")} />
       </div>
     </section>
   );

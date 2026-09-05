@@ -89,8 +89,10 @@
     "save": "Save choices"
   },
   "footer": {
+    "name": "Eduard Stefan",
     "privacyPolicy": "Privacy Policy",
-    "text": "© {currentYear} Eduard Sergiu Stefan. Built with Next.js.",
+    "text": "© {currentYear} Eduard Stefan. Built with Next.js.",
+    "location": "Based in Oradea, Romania. Working with companies across Europe and the US.",
     "legal": {
       "title": "Legal",
       "manageCookies": "Manage cookies"
@@ -104,8 +106,10 @@
     }
   },
   "home": {
-    "headline": "Web platforms that keep <strong>product and marketing moving</strong>.",
-    "tagline": "I build marketing sites, content platforms, dashboards, and integrations that stay fast, coherent, and maintainable as teams grow. Sanity is my CMS specialty.",
+    "headline": "Complex web systems, made clear.",
+    "tagline": "Sanity builds, CMS migrations, and the frontend that makes them useful.",
+    "heroEyebrow": "INDEPENDENT FULL-STACK PARTNER",
+    "availabilityNote": "AVAILABLE FOR SELECT PROJECTS",
     "aboutMeDescription": "I build marketing sites and connected web platforms that teams can keep evolving.",
     "announcementLabel": "Web platforms for <strong>teams that keep shipping</strong>",
     "resumeButtonLabel": "See my resume",
@@ -114,14 +118,10 @@
     "scheduleCall": "Book a call",
     "contactDirectly": "Message me",
     "letsChat": "Talk about your site",
-    "seeHowIWork": "Book a call",
+    "seeHowIWork": "See how I work",
     "orBookTime": "Book a call",
     "workedWith": "What I work with",
-    "heroTrust": [
-      "Senior front-end partner",
-      "Design-system discipline",
-      "You own the code"
-    ],
+    "heroTrust": ["Senior partnership", "Editorial systems", "Code you own"],
     "tools": {
       "label": "Technologies",
       "headline": "Tools & Technologies",
@@ -131,7 +131,7 @@
       "label": "Who I am",
       "headline": "About Me",
       "subtitle": "Senior engineering without the agency handoff chain",
-      "description": "I'm a front-end engineer who helps established product and marketing teams build the web surfaces around their business: marketing sites, content platforms, portals, dashboards, and integrations. I work directly with designers, editors, and developers, then leave behind clear systems—not a dependency on me. Sanity is my CMS specialty, but the job is always bigger than a tool: make the platform useful, maintainable, and ready for what comes next.",
+      "description": "I'm a front-end engineer who helps established product and marketing teams build marketing sites, content platforms, portals, dashboards, and integrations. I work directly with designers, editors, and developers, leaving clear, maintainable systems behind. Sanity is my CMS specialty, but the platform always comes first.",
       "cta": "Discuss a project"
     },
     "contact": {
@@ -140,15 +140,21 @@
       "subtitle": "Tell me what your team is building, replacing, or trying to untangle. I'll tell you where I can help.",
       "ctaButton": "Book a project call",
       "ctaButtonSecondary": "Ask a quick question",
-      "whatsappLabel": "Quick question? Message me"
+      "whatsappLabel": "Quick question? Message me",
+      "close": {
+        "label": "Get in touch",
+        "headlineLines": ["Bring me the", "complicated part."],
+        "subtitle": "A new build, migration, or platform that needs experienced hands. Tell me what's complicated, and I'll say where I can help.",
+        "primaryCta": "Start a conversation",
+        "secondaryCta": "Book a short call"
+      }
     },
     "heroLabel": "Front-end engineering for established teams",
-    "primaryCta": "Discuss a project",
+    "primaryCta": "Discuss project",
     "secondaryCta": "Explore Sanity services",
     "sanitySpotlight": {
       "label": "Flagship specialization",
-      "eyebrow": "Sanity-first when structured content is the right foundation.",
-      "headline": "A content platform your team can actually run.",
+      "headline": "Editorial freedom. Engineering discipline.",
       "description": "I build and replatform Sanity systems around real editorial workflows—from schemas and reusable blocks to previews, localization, migration, and handoff.",
       "cta": "Explore Sanity CMS services",
       "systemItems": [
@@ -156,6 +162,17 @@
         "Reusable page system",
         "Production front-end"
       ]
+    },
+    "work": {
+      "label": "Built & building",
+      "headline": "Where I work. What I build.",
+      "description": "Product work, independent builds, and small experiments that keep the craft moving.",
+      "present": "present",
+      "current": "Current",
+      "experimentsLabel": "Experiments",
+      "experimentsStatus": "Work in progress.",
+      "experiments": ["ROI Calculator", "Back to the ’00s", "Magnetic Dock"],
+      "moreInTheLab": "more_in_the_lab"
     }
   },
   "profile": {
@@ -181,7 +198,7 @@
     "description": "Marketing sites and connected web platforms for established product and marketing teams.",
     "header": {
       "cta": {
-        "text": "Discuss a project"
+        "text": "Discuss project"
       },
       "homeButtonLabel": "Home",
       "navLabel": "Primary navigation",
@@ -189,8 +206,8 @@
       "menuLabel": "Menu",
       "nav": {
         "services": "Services",
-        "pricing": "Pricing",
-        "howIWork": "How I Work",
+        "pricing": "Work together",
+        "howIWork": "Process",
         "blog": "Blog",
         "servicesSlug": "services",
         "pricingSlug": "pricing",
@@ -282,20 +299,34 @@
   },
   "services": {
     "label": "What I do",
-    "headline": "One partner across the web surfaces your team depends on",
-    "subtitle": "Focused front-end engineering for public sites, internal products, and the systems connecting them.",
+    "headline": "Websites and digital products, built as one system",
+    "subtitle": "Front-end engineering for public sites, internal tools, and the systems connecting them.",
     "cta": "Discuss your project",
+    "artifacts": {
+      "migration": {
+        "title": "CMS migrations",
+        "description": "Careful moves from legacy content to modern foundations."
+      },
+      "spacing": {
+        "title": "Design systems",
+        "description": "Reusable components and patterns that keep teams aligned."
+      },
+      "performance": {
+        "title": "Performance",
+        "description": "Audit and stabilization where speed, access, or consistency drift."
+      }
+    },
     "svc-1": {
-      "title": "Marketing and content platforms",
-      "description": "Fast, multilingual marketing sites supported by reusable components, structured content, and conversion-aware UX. Sanity is my flagship CMS specialization."
+      "title": "Marketing sites",
+      "description": "Fast, multilingual sites with structured content, flexible editing, and Sanity at the core."
     },
     "svc-2": {
-      "title": "Connected product surfaces",
-      "description": "Portals, dashboards, integrations, and internal tools that fit your existing product, data, and design systems instead of becoming another isolated app."
+      "title": "Connected product tools",
+      "description": "Portals, dashboards, and integrations that fit your product, data, and design systems."
     },
     "svc-3": {
       "title": "Platform evolution",
-      "description": "Ongoing front-end partnership for teams shipping new capabilities without letting performance, accessibility, or visual consistency drift."
+      "description": "Ongoing front-end support for releases that stay fast, accessible, and consistent."
     }
   },
   "howIWork": {
@@ -305,6 +336,7 @@
     "cta": "Discuss a project",
     "planning": {
       "title": "We map the problem and the system around it",
+      "artifactLabel": "Alignment brief",
       "paragraphs": [
         "We start with the people, workflows, and systems the work needs to serve. Then we agree on scope, technical boundaries, and what success looks like."
       ],
@@ -316,6 +348,7 @@
     },
     "development": {
       "title": "I build in the open",
+      "artifactLabel": "Build review",
       "paragraphs": [
         "No going dark for weeks. You get regular updates, working builds, and room to adjust while decisions are still inexpensive."
       ],
@@ -327,8 +360,9 @@
     },
     "deployment": {
       "title": "We launch with the edges covered",
+      "artifactLabel": "Launch checklist",
       "paragraphs": [
-        "Performance, accessibility, analytics, integrations, redirects, and rollback planning are treated as launch work—not cleanup for later."
+        "Performance, accessibility, analytics, integrations, redirects, and rollback planning are treated as launch work, not cleanup for later."
       ],
       "bulletPoints": [
         "Critical paths tested",
@@ -338,6 +372,7 @@
     },
     "postDeployment": {
       "title": "Your team owns what comes next",
+      "artifactLabel": "Ownership log",
       "paragraphs": [
         "You own the code, decisions, and documentation. I hand over cleanly or stay embedded when ongoing evolution is the better model."
       ],
@@ -351,9 +386,8 @@
   "waysToWorkTogether": {
     "label": "Pricing",
     "headline": "One project, scoped around what your site needs.",
-    "subtitle": "After a short call, I turn the problem into a clear plan with the right deliverables, timeline, and support.",
+    "subtitle": "We begin with discovery and content mapping to understand your business goals, users, and workflows. Then I shape the scope, priorities, and delivery plan.",
     "engagementTitle": "Build what your team needs. Leave them with a system they can run.",
-    "description": "That could mean a new Sanity site, a controlled migration from your current CMS, or focused work inside an existing system. The scope follows the outcome, not a preset package.",
     "scopeLabel": "Project types",
     "scopeValue": "New sites, CMS migrations, and system improvements",
     "timelineLabel": "Typical timeline",
@@ -435,36 +469,35 @@
     },
     "job-2": {
       "description": "- Worked closely with designers and product managers to bring design into high quality and production-ready features\n- Developed reusable components that integrate with Headless CMS which made independent page building possible.\n- Implemented Storybook into the codebase for better development and having a single source of truth\n- Worked with latest React tools and features (ESNext, React functional components, hooks, Webpack, Vite, etc.)"
+    },
+    "job-3": {
+      "description": "Web development at Agile Freaks."
     }
   },
   "faq": {
-    "label": "FAQ",
-    "headline": "Questions you might have",
-    "subtitle": "The stuff teams usually ask before we start.",
-    "cta": "More questions? Let's talk",
+    "label": "Questions",
+    "headline": "Before we start.",
+    "subtitle": "The practical things clients usually want clear.",
+    "cta": "Still unsure? Ask me directly",
     "faq-1": {
-      "question": "How long does a project take?",
-      "answer": "A focused build can take a few weeks; a larger platform or migration can take several months. I give you a delivery plan after understanding the systems, dependencies, and decision-makers involved."
+      "question": "What kinds of projects are the best fit?",
+      "answer": "I work best with established product and marketing teams on marketing sites, content platforms, portals, dashboards, and integrations. I also take on Sanity builds and migrations, plus focused improvements inside existing systems where content, code, and editorial workflow meet. The scope follows the outcome rather than a preset package."
     },
     "faq-2": {
-      "question": "What kinds of products do you build?",
-      "answer": "Marketing sites, content platforms, portals, dashboards, integrations, and the front-end systems connecting them. I focus on web surfaces used by established product and marketing teams."
+      "question": "Can you take over an existing codebase?",
+      "answer": "Yes. I first understand the architecture, constraints, team workflows, and the highest-cost areas. I preserve what works, then stabilize, refactor, or replace deliberately. A rewrite is never the automatic answer."
     },
     "faq-3": {
-      "question": "Will our team own the result?",
-      "answer": "Yes. The code lives in your repository, decisions are documented, and the handoff is part of the work. I can stay involved, but the system should never depend on me being there."
+      "question": "Do you handle content migration?",
+      "answer": "Yes. I can audit source content, map it into a new model, plan redirects, and validate what moves. For larger transitions, I stage the launch or cutover and shape the editorial workflow alongside the migration. Risk is planned and tested; I do not treat migration as a bulk copy job."
     },
     "faq-4": {
-      "question": "Do you work with our existing designers and developers?",
-      "answer": "Yes. I'm comfortable plugging into an existing team, matching your conventions, and handing off cleanly. I can also run a project solo end to end if that's what you need."
+      "question": "How do we work across time zones?",
+      "answer": "I work from Oradea on Eastern European time. We plan useful overlap around key decisions, then keep progress moving through written async updates and documented decisions. Calls have a purpose, so the project does not depend on everyone being online at once."
     },
     "faq-5": {
-      "question": "What technology do you use?",
-      "answer": "Usually React, Next.js, and TypeScript, integrated with the systems your team already uses. For structured content, Sanity is my specialty. The architecture follows the job rather than forcing every project into the same stack."
-    },
-    "faq-6": {
-      "question": "Can you improve an existing platform instead of replacing it?",
-      "answer": "Yes. A rebuild is not automatically the right answer. I can work inside an existing codebase, improve the highest-cost areas first, and help your team decide what should be retained, refactored, or replaced."
+      "question": "What happens after launch?",
+      "answer": "Your team owns the code, decisions, and documentation. I provide a clean handoff and help the people running the system understand it. If ongoing support is useful, I can stay embedded around your priorities, but there is no forced dependency."
     }
   },
   "blog": {

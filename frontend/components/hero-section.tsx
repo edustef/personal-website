@@ -1,15 +1,11 @@
+import heroWorkingSurfaceLight from "@/assets/images/hero-working-surface-light.png";
+import heroWorkingSurfaceDark from "@/assets/images/hero-working-surface.png";
 import { HERO_CONTACT_BUTTON_ID } from "@/components/contact-button-observer";
-import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { AnimatedContainer } from "@/components/ui/animated-container";
-import { Button } from "@/components/ui/button";
-import { Link } from "@/i18n/navigation";
 import { getWhatsAppUrl } from "@/lib/utils";
-import { Calendar, Code2, Layers3, UsersRound } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
-
-// Icons paired to the heroTrust items, in order:
-// 0: senior partnership, 1: design-system discipline, 2: code ownership
-const trustIcons = [UsersRound, Layers3, Code2];
+import Image from "next/image";
 
 export default async function HeroSection() {
   const locale = await getLocale();
@@ -19,87 +15,95 @@ export default async function HeroSection() {
   ]);
   const trustItems = t.raw("heroTrust") as string[];
   const whatsappUrl = getWhatsAppUrl(profileT("phone"));
+  const [headlineLead, headlineRest] = t("headline").split(", ");
 
   return (
-    <section className="py-12 md:py-16">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="flex flex-col items-center gap-10 text-center">
+    <section className="hero-instrument relative min-h-[100svh] overflow-hidden">
+      <div className="absolute inset-0">
+        <Image
+          src={heroWorkingSurfaceLight}
+          alt=""
+          aria-hidden="true"
+          priority
+          fill
+          sizes="100vw"
+          className="object-cover object-[62%_center] dark:hidden md:object-center"
+        />
+        <Image
+          src={heroWorkingSurfaceDark}
+          alt=""
+          aria-hidden="true"
+          priority
+          fill
+          sizes="100vw"
+          className="hidden object-cover object-[62%_center] dark:block md:object-center"
+        />
+        <div className="hero-scrim-side absolute inset-0" />
+        <div className="hero-scrim-depth absolute inset-0" />
+      </div>
+
+      <div className="relative flex min-h-[100svh] w-full flex-col justify-end pt-28 md:pt-36">
+        <div className="px-5 sm:px-8 lg:px-12">
           <AnimatedContainer
-            className="flex max-w-3xl flex-col items-center"
-            duration={2.5}
-            delay={0.1}
+            className="max-w-[63rem]"
+            duration={1.4}
+            delay={0.05}
             ease="veryGentle"
-            offset={16}
+            offset={18}
           >
-            <h1 className="text-foreground group relative text-balance text-4xl leading-tight md:text-6xl">
-              {t.rich("headline", {
-                strong: (chunks) => (
-                  <strong className="text-primary font-semibold">
-                    {chunks}
-                  </strong>
-                ),
-              })}
+            <p className="editorial-label max-w-[21rem] leading-relaxed text-[var(--hero-muted)]">
+              {t("heroEyebrow")}
+            </p>
+            <h1 className="editorial-display mt-3 max-w-[75rem] text-balance text-[clamp(3.15rem,5.15vw,5.4rem)] text-[var(--hero-fg)] md:mt-4">
+              <span className="sm:whitespace-nowrap">{headlineLead},</span>
+              <br className="hidden sm:block" />
+              <span className="sm:whitespace-nowrap">{headlineRest}</span>
             </h1>
-            <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-pretty md:text-xl">
+            <p className="mt-3 max-w-2xl text-pretty text-[0.96rem] leading-relaxed text-[var(--hero-copy)] md:mt-2 md:text-lg">
               {t("tagline")}
             </p>
           </AnimatedContainer>
 
           <AnimatedContainer
-            className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row"
-            duration={2}
-            delay={0.4}
+            className="mt-6 flex flex-wrap items-center gap-x-9 gap-y-3 md:mt-5"
+            duration={1.2}
+            delay={0.2}
             ease="veryGentle"
             offset={12}
           >
-            <Button
-              asChild
-              size="lg"
-              className="w-full sm:w-auto"
+            <a
               id={HERO_CONTACT_BUTTON_ID}
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="signal-button group inline-flex min-h-12 items-center justify-center gap-3 px-7 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
             >
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <WhatsAppIcon className="size-5" />
-                {t("primaryCta")}
-              </a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="w-full sm:w-auto"
-            >
-              <Link href="/schedule">
-                <Calendar className="size-5" />
-                {t("seeHowIWork")}
-              </Link>
-            </Button>
+              {t("primaryCta")}
+              <ArrowUpRight
+                aria-hidden="true"
+                className="size-4 shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none"
+              />
+            </a>
           </AnimatedContainer>
-
-          {Array.isArray(trustItems) && trustItems.length > 0 && (
-            <AnimatedContainer
-              className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
-              duration={2}
-              delay={0.5}
-              ease="veryGentle"
-              offset={8}
-            >
-              {trustItems.map((item, index) => {
-                const Icon = trustIcons[index % trustIcons.length];
-                return (
-                  <span
-                    key={item}
-                    className="text-muted-foreground flex items-center gap-1.5 text-sm"
-                  >
-                    <Icon className="text-primary size-4" />
-                    {item}
-                  </span>
-                );
-              })}
-            </AnimatedContainer>
-          )}
         </div>
+
+        {Array.isArray(trustItems) && trustItems.length > 0 ? (
+          <div className="mt-7 grid border-[var(--hero-grid-rule)] border-t text-[0.82rem] text-[var(--hero-muted)] sm:grid-cols-3 md:mt-7 md:text-sm">
+            {trustItems.map((item) => (
+              <div
+                key={item}
+                className="flex min-h-11 items-center border-[var(--hero-grid-rule)] px-5 py-2.5 sm:border-r sm:px-6 sm:first:pl-8 sm:last:border-r-0 lg:first:pl-12"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        ) : null}
       </div>
+
+      <p className="editorial-label absolute right-5 bottom-[29%] hidden origin-bottom-right rotate-90 text-primary sm:right-8 lg:right-12 lg:block">
+        {t("availabilityNote")}
+      </p>
     </section>
   );
 }
